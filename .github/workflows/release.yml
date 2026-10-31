@@ -1,0 +1,33 @@
+name: Release
+
+# Push a tag like v0.1.0 to build the store packages and attach them, with
+# their SHA-256 hashes, to a GitHub release. Store uploads stay manual.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Check the tag matches package.json
+        run: test "v$(node -p "require('./package.json').version")" = "${GITHUB_REF_NAME}"
+      - name: Build the store packages
+        run: npm run zip
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: |
+            .output/*.zip
+            .output/SHA256SUMS.txt
+          generate_release_notes: true
