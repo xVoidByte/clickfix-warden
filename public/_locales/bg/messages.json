@@ -107,8 +107,8 @@
   "confirmBodyStrong": { "message": "зарази компютъра ви и да открадне паролите, запазените карти и крипто портфейлите ви" },
   "confirmOnlyReported": { "message": "Правете го само ако знаете, че докладът е грешен." },
   "confirmOnlyKnown": { "message": "Правете го само за сайтове, които познавате добре." },
-  "confirmCheckTrust": { "message": "Разбирам, че мога да загубя акаунтите и парите си, спри защитата на този сайт" },
-  "confirmCheckOpen": { "message": "Разбирам, че мога да загубя акаунтите и парите си, отвори този сайт" },
+  "confirmCheckTrust": { "message": "Разбирам, че мога да загубя данни за вход, бисквитки и пари, ако се доверя на сайта" },
+  "confirmCheckOpen": { "message": "Разбирам, че мога да загубя данни за вход, бисквитки и пари, ако отворя сайта" },
   "confirmTrust": { "message": "Имам доверие на сайта" },
   "confirmOpen": { "message": "Отвори въпреки това" },
   "confirmKeep": { "message": "Остави ме защитен" },
@@ -146,6 +146,7 @@
   "popupRulesBundled": { "message": "вградени" },
   "popupRulesUpdated": { "message": "обновени онлайн" },
   "supportShort": { "message": "Подкрепи" },
+  "tipSupport": { "message": "Отваря страница, от която можете да подкрепите ClickFix Warden с дарение" },
   "supportProject": { "message": "Подкрепи проекта" },
 
   "kind_clipboard": { "message": "Команда в клипборда" },

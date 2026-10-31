@@ -94,6 +94,24 @@ input[type='text'], select, textarea {
 }
 .tip:hover::after, .tip:focus::after { visibility: visible; }
 
+/* support button with a heart */
+.support {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: var(--raised);
+  border: 1px solid var(--line2);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.support:hover { background: var(--line); border-color: #4A4C53; color: #FFFFFF; }
+.support[hidden] { display: none; }
+.support.small { padding: 5px 10px; font-size: 13px; gap: 6px; }
+
 /* plain ruled rows */
 .rows { border-top: 1px solid var(--line); }
 .rows > .row { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); }

@@ -29,6 +29,9 @@ export const PARTS_CSS = `
 .g-btn:focus-visible, .g-check input:focus-visible { outline: 3px solid #8AB4F8; outline-offset: 2px; }
 .g-check { display: flex; align-items: flex-start; gap: 10px; padding: 14px; border-radius: 12px; background: #1A1B1E; border: 1px solid #34363C; font-size: 14px; line-height: 1.5; color: #F3F3F4; cursor: pointer; }
 .g-check input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: #FF5C5C; flex-shrink: 0; }
+.g-check span { white-space: nowrap; }
+.g-card.wide { width: 780px; container-type: inline-size; }
+@container (max-width: 720px) { .g-check span { white-space: normal; } }
 .g-card { width: 560px; max-width: calc(100vw - 32px); max-height: calc(100vh - 32px); overflow: auto; box-sizing: border-box; background: #222327; border: 1px solid #34363C; border-radius: 18px; box-shadow: 0 24px 70px rgba(0,0,0,0.55); padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 14px; color: #F3F3F4; text-align: left; }
 .g-backdrop { position: fixed; inset: 0; background: rgba(8,8,10,0.66); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 2147483647; }
 .g-note { margin: 0; padding: 12px 14px; border-radius: 12px; background: #1A1B1E; border: 1px solid #34363C; font-size: 14px; line-height: 1.55; color: #F3F3F4; }
@@ -93,7 +96,8 @@ export interface ConfirmOptions {
 /** The "Stop protecting this site?" confirmation, the confirm button stays off until the risk box is ticked. */
 export function confirmDialog(doc: Document, opts: ConfirmOptions): HTMLElement {
   const backdrop = el(doc, 'div', 'g-backdrop');
-  const card = el(doc, 'div', 'g-card');
+  // Wide enough to keep the risk sentence on one line, it wraps on narrow screens.
+  const card = el(doc, 'div', 'g-card wide');
   card.setAttribute('role', 'alertdialog');
   card.setAttribute('aria-modal', 'true');
   const title = el(doc, 'h1', 'g-title white', t(opts.mode === 'trust' ? 'confirmTrustTitle' : 'confirmOpenTitle', opts.host));

@@ -298,6 +298,9 @@ test.describe('extension pages', () => {
     await page.click('.g-card .g-btn.primary');
     await expect(page.locator('#sites')).not.toContainText('intranet.example.com');
     await page.click('#addSite');
+    // On a normal window the risk sentence fits on one line.
+    const lineHeight = await page.locator('.g-card .g-check span').evaluate((e) => e.getBoundingClientRect().height);
+    expect(lineHeight).toBeLessThan(30);
     await page.locator('.g-card .g-check input').check();
     await page.click('.g-card .g-btn.danger');
     await expect(page.locator('#sites')).toContainText('intranet.example.com');

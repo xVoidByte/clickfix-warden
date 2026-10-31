@@ -15,6 +15,7 @@
       nav .item.active { background: var(--raised); color: #FFFFFF; font-weight: 600; }
       nav .grow { flex: 1; min-height: 24px; }
       nav .foot { padding: 8px 12px; color: var(--muted); font-size: 14px; }
+      nav .support { align-self: flex-start; margin: 0 0 8px 4px; }
       main { flex: 999 1 560px; min-width: 0; padding: 36px 56px 64px; display: flex; flex-direction: column; gap: 44px; max-width: 980px; }
       section h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.015em; }
       section h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
@@ -58,7 +59,10 @@
         <a class="item" href="#database" data-i18n="navDatabase">Database</a>
         <a class="item" href="#about" data-i18n="navAbout">About</a>
         <span class="grow"></span>
-        <a class="foot" id="donateLink" target="_blank" rel="noopener noreferrer" hidden data-i18n="supportProject">Support the project</a>
+        <a class="support" id="donateLink" target="_blank" rel="noopener noreferrer" hidden data-i18n-title="tipSupport">
+          <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 C12 21 3 15.2 3 8.9 C3 6.2 5.1 4 7.7 4 C9.5 4 11.1 5 12 6.5 C12.9 5 14.5 4 16.3 4 C18.9 4 21 6.2 21 8.9 C21 15.2 12 21 12 21 Z" fill="#FF5C5C"></path></svg>
+          <span data-i18n="supportProject">Support the project</span>
+        </a>
         <span class="foot" id="version"></span>
       </nav>
 

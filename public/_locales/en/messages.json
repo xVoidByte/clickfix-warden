@@ -107,8 +107,8 @@
   "confirmBodyStrong": { "message": "infect your computer and steal your passwords, saved credit cards and crypto wallets" },
   "confirmOnlyReported": { "message": "Only do this if you know the report is wrong." },
   "confirmOnlyKnown": { "message": "Only do this for sites you know well." },
-  "confirmCheckTrust": { "message": "I understand that I can lose my accounts and money, stop protecting this site" },
-  "confirmCheckOpen": { "message": "I understand that I can lose my accounts and money, open this site" },
+  "confirmCheckTrust": { "message": "I understand that I can lose my credentials, cookies and money by whitelisting this site" },
+  "confirmCheckOpen": { "message": "I understand that I can lose my credentials, cookies and money by opening this site" },
   "confirmTrust": { "message": "Trust this site" },
   "confirmOpen": { "message": "Open anyway" },
   "confirmKeep": { "message": "Keep me protected" },
@@ -146,6 +146,7 @@
   "popupRulesBundled": { "message": "built in" },
   "popupRulesUpdated": { "message": "updated online" },
   "supportShort": { "message": "Support" },
+  "tipSupport": { "message": "Opens a page where you can support ClickFix Warden with a donation" },
   "supportProject": { "message": "Support the project" },
 
   "kind_clipboard": { "message": "Clipboard command" },
