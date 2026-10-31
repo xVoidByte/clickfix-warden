@@ -4,9 +4,9 @@ Upload `.output/clickfix-warden-<version>-chrome.zip` at https://chrome.google.c
 
 ## Store listing tab
 
-- Description, the English description from `listing.md`. Add the Bulgarian one under the Bulgarian language.
+- Description, the English description from `listing.md`.
 - Category, Privacy & Security
-- Language, English (Bulgarian is picked up from the package as well)
+- Language, English
 - Store icon, `public/icon/128.png`
 - Screenshots, `store/screenshots/1-*.png` to `5-*.png` (1280x800)
 - Small promo tile, `store/screenshots/promo-440x280.png`

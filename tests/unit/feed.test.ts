@@ -64,11 +64,8 @@ describe('rules files', () => {
     for (const r of rules.page.instructions) expect(() => new RegExp(r.re, 'iu'), r.id).not.toThrow();
     for (const r of rules.protocols) expect(() => new RegExp(r.re, 'i'), r.id).not.toThrow();
   });
-  it('every rule has an English and a Bulgarian label', () => {
-    for (const r of [...rules.command, ...rules.protocols]) {
-      expect(r.label.en, r.id).toBeTruthy();
-      expect(r.label.bg, r.id).toBeTruthy();
-    }
+  it('every rule has an English label', () => {
+    for (const r of [...rules.command, ...rules.protocols]) expect(r.label.en, r.id).toBeTruthy();
   });
 });
 

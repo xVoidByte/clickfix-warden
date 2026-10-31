@@ -11,7 +11,7 @@ Submit at https://addons.mozilla.org/developers/ as a listed add-on.
 
 - Name, ClickFix Warden
 - Summary, the 250 character text from `listing.md`
-- Description, from `listing.md`, add the Bulgarian translation as well
+- Description, from `listing.md`
 - Categories, Privacy & Security
 - Support website, https://github.com/xVoidByte/ClickFixWarden/issues
 - Homepage, https://github.com/xVoidByte/ClickFixWarden

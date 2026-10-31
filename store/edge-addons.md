@@ -12,7 +12,7 @@ Upload `.output/clickfix-warden-<version>-edge.zip` in Partner Center at https:/
 
 ## Store listings
 
-Add English and Bulgarian.
+Add English.
 
 - Description, from `listing.md`
 - Short description, the 132 character line from `listing.md`

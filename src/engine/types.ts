@@ -1,5 +1,5 @@
 export type Lang = 'en' | 'bg';
-export type Label = Record<Lang, string>;
+export type Label = { en: string } & Partial<Record<string, string>>;
 
 export type CommandCategory = 'exec' | 'fetch' | 'hallmark';
 
