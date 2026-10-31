@@ -36,7 +36,7 @@ Protects users from ClickFix and fake CAPTCHA social engineering attacks, and fr
 
 **Are you using remote code?**
 
-No. The extension downloads `feed.json` and `rules.json`, JSON data files signed with Ed25519. They hold addresses and text patterns that the packaged code reads, and they are never evaluated or run as code. All JavaScript ships inside the package.
+No. The extension downloads `hot.json`, `hot-delta.json`, `bulk.json` and `rules.json`, JSON data files signed with Ed25519. They hold addresses and text patterns that the packaged code reads, and they are never evaluated or run as code. All JavaScript ships inside the package.
 
 **Data usage**
 

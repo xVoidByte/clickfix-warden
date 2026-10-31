@@ -28,7 +28,7 @@ ClickFix Warden collects no data. It has no account, no telemetry and no server 
 - `src/content/hooks.ts` runs in the page before any page script and wraps the functions a lure needs. It asks the isolated guard script for a verdict through a synchronous DOM event that page code cannot see or answer.
 - `src/engine` cleans up the command and scores what it can do, the ClickFix hallmarks it carries and the page around it, including the button that was clicked.
 - `rules/rules.json` holds every pattern as data. The extension downloads a signed copy every hour, so new variants reach everyone without a store review, and nothing remote is ever run as code.
-- `feed-builder` turns the abuse.ch exports into `feed.json`, signs it with Ed25519 and publishes it through GitHub Actions. The extension refuses any file that is unsigned, signed with another key or older than what it has.
+- `feed-builder` turns the abuse.ch exports into signed files published through GitHub Actions. `hot.json` holds ClickFix reports, hosts, IPs and ThreatFox links and comes with an hourly `hot-delta.json`, so a browser that is up to date only downloads what changed. `bulk.json` holds the URLhaus download links and is fetched once a day. The extension refuses any file that is unsigned, signed with another key or older than what it has.
 
 ## Install
 

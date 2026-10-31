@@ -31,8 +31,8 @@ Build instructions
   The built add-on is in .output/firefox-mv3 and matches the uploaded package.
 
 What the extension downloads
-  Once an hour it fetches https://xvoidbyte.github.io/clickfix-warden/v1/feed.json and rules.json with
-  their .sig files. Both are JSON data verified with Ed25519 against the key in src/feed/public-key.ts,
+  Once an hour it fetches hot-delta.json (or hot.json) and rules.json from https://xvoidbyte.github.io/clickfix-warden/v1/,
+  once a day bulk.json, each with its .sig file. All of them are JSON data verified with Ed25519 against the key in src/feed/public-key.ts,
   and are never evaluated as code.
 
 How to test
