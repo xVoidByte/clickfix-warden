@@ -21,7 +21,7 @@ body {
   font: 15px/1.55 'CFW Jakarta', 'CFW Manrope', 'Plus Jakarta Sans', Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-a { color: #E9E9EB; }
+a { color: #E9E9EB; text-decoration: none; }
 a:hover { color: #FFFFFF; }
 h1, h2, h3 { margin: 0; line-height: 1.2; }
 strong { color: #FFFFFF; font-weight: 700; }
@@ -56,22 +56,23 @@ input[type='text'], select, textarea {
 .switch input:disabled ~ .track { opacity: 0.5; }
 .switch input:focus-visible ~ .track { outline: 3px solid #8AB4F8; outline-offset: 2px; }
 
-/* help icon with the tooltip text shown on hover or focus */
+/* help icon, a drawn info mark in a soft circle, the tooltip shows on hover or focus */
 .tip {
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  border: 1.5px solid #6B6E76;
+  background: var(--raised);
+  border: 1px solid var(--line2);
   color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: none;
   cursor: help;
 }
+.tip svg { width: 14px; height: 14px; }
+.tip:hover, .tip:focus-visible { background: var(--line2); border-color: var(--btnline); color: #FFFFFF; }
 .tip::after {
   content: attr(data-tip);
   position: absolute;

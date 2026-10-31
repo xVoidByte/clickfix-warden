@@ -22,8 +22,29 @@ function make<K extends keyof HTMLElementTagNameMap>(tag: K, props: Record<strin
   return e;
 }
 
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+/** A drawn info mark, a dot over a rounded stem. */
+function infoIcon(): SVGSVGElement {
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', '0 0 16 16');
+  svg.setAttribute('aria-hidden', 'true');
+  const dot = document.createElementNS(SVG_NS, 'circle');
+  dot.setAttribute('cx', '8');
+  dot.setAttribute('cy', '4.4');
+  dot.setAttribute('r', '1.35');
+  dot.setAttribute('fill', 'currentColor');
+  const stem = document.createElementNS(SVG_NS, 'path');
+  stem.setAttribute('d', 'M8 7.6 V12');
+  stem.setAttribute('stroke', 'currentColor');
+  stem.setAttribute('stroke-width', '2.1');
+  stem.setAttribute('stroke-linecap', 'round');
+  svg.append(dot, stem);
+  return svg;
+}
+
 function tip(key: string): HTMLElement {
-  const s = make('span', { className: 'tip', tabIndex: 0, textContent: 'i' });
+  const s = make('span', { className: 'tip', tabIndex: 0 }, infoIcon());
   s.dataset.tip = t(key);
   s.setAttribute('aria-label', t(key));
   return s;
@@ -98,7 +119,7 @@ function renderSites(): void {
   list.replaceChildren();
   if (!eff.settings.trustedSites.length) list.append(make('div', { className: 'row muted', textContent: t('trustedEmpty') }));
   for (const site of eff.settings.trustedSites) {
-    const remove = make('button', { className: 'textlink', textContent: t('trustedRemove'), title: t('tipTrustedRemove'), disabled: locked('trustedSites') });
+    const remove = make('button', { className: 'g-btn small', textContent: t('trustedRemove'), title: t('tipTrustedRemove'), disabled: locked('trustedSites') });
     remove.addEventListener('click', async () => {
       await saveSettings({ trustedSites: eff.settings.trustedSites.filter((s) => s !== site) });
       await refresh();
@@ -195,7 +216,7 @@ async function runHistoryScan(days: number): Promise<void> {
     for (const r of f.records) {
       const line = make('div', { textContent: [SOURCE_NAMES[r.source], t('category_' + r.category), r.malware, r.firstSeen].filter(Boolean).join(', ') + ' ' });
       if (/^https:\/\/(urlhaus|threatfox|feodotracker)\.abuse\.ch\//.test(r.ref))
-        line.append(make('a', { href: r.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') }));
+        line.append(make('a', { className: 'g-btn small', href: r.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') }));
       report.append(line);
     }
     table.append(make('tr', {}, make('td', { textContent: f.lastVisit ? new Date(f.lastVisit).toLocaleString() : '' }), make('td', { className: 'url', textContent: f.url }), report));
@@ -256,7 +277,7 @@ $('scanExtensions').addEventListener('click', () => {
           { className: 'found' },
           make('strong', { className: 'red', textContent: `${ext.name} (${ext.id})` }),
           make('div', { className: 'muted', textContent: t('extensionsKnownAs', info.name) }),
-          make('div', { className: 'inline' }, remove, make('a', { href: info.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') })),
+          make('div', { className: 'inline' }, remove, make('a', { className: 'g-btn small', href: info.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') })),
         ),
       );
     }

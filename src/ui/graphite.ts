@@ -25,6 +25,11 @@ export const PARTS_CSS = `
 .g-btn.primary { font-weight: 700; background: #F3F3F4; color: #111214; border-color: #F3F3F4; }
 .g-btn.danger { color: #FF5C5C; border-color: #FF5C5C; }
 .g-btn.small { font-size: 14px; border-radius: 10px; padding: 8px 14px; }
+.g-btn:hover:not(:disabled) { background: #2A2B30; border-color: #5A5C63; color: #FFFFFF; }
+.g-btn.primary:hover:not(:disabled) { background: #FFFFFF; border-color: #FFFFFF; color: #111214; }
+.g-btn.danger:hover:not(:disabled) { background: #3A2224; border-color: #FF5C5C; color: #FF7A7A; }
+a.g-btn { display: inline-flex; align-items: center; text-decoration: none; }
+.g-btn[hidden] { display: none; }
 .g-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .g-btn:focus-visible, .g-check input:focus-visible { outline: 3px solid #8AB4F8; outline-offset: 2px; }
 .g-check { display: flex; align-items: flex-start; gap: 10px; padding: 14px; border-radius: 12px; background: #1A1B1E; border: 1px solid #34363C; font-size: 14px; line-height: 1.5; color: #F3F3F4; cursor: pointer; }

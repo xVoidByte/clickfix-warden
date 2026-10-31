@@ -21,8 +21,6 @@ ${PARTS_CSS}
 .banner { position: fixed; top: 12px; left: 12px; right: 12px; z-index: 2147483647; background: #1A1B1E; border: 1px solid #2A2B30; border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.45); display: flex; align-items: center; gap: 14px; padding: 12px 16px; flex-wrap: wrap; }
 .banner .text { flex: 1 1 320px; min-width: 0; font-size: 14px; line-height: 1.5; color: #C4C6CC; }
 .banner .text strong { color: #FFFFFF; font-weight: 700; }
-.banner a { color: #E9E9EB; }
-.banner a:hover { color: #FFFFFF; }
 .close { background: none; border: none; padding: 8px; cursor: pointer; border-radius: 8px; }
 .close:focus-visible { outline: 3px solid #8AB4F8; }
 `;
@@ -141,13 +139,6 @@ function bannerText(alert: AlertData): HTMLElement {
       const what = el(document, 'strong', undefined, rep.what);
       if (rep.firstSeen) text.append(...tParts('repLine', [rep.source, what, longDate(rep.firstSeen, uiLang())]));
       else text.append(...tParts('repLineNoDate', [rep.source, what]));
-      if (/^https:\/\/(urlhaus|threatfox|feodotracker)\.abuse\.ch\//.test(rep.ref)) {
-        const a = el(document, 'a', undefined, t('bannerDetails'));
-        a.href = rep.ref;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        text.append(' ', a);
-      }
     }
   } else if (alert.kind === 'web3-loader') {
     text.append(el(document, 'strong', undefined, t('bannerWeb3')), ' ', t('bannerWeb3Detail'));
@@ -190,7 +181,16 @@ function showBanner(alert: AlertData, actions: OverlayActions): void {
   close.setAttribute('aria-label', t('btnClose'));
   close.append(closeIcon());
   close.addEventListener('click', () => bar.remove());
-  bar.append(box, bannerText(alert), trust, leave, close);
+  bar.append(box, bannerText(alert));
+  const rep = alert.kind === 'reputation' && alert.hits?.length ? whatOfReport(alert.hits) : null;
+  if (rep && /^https:\/\/(urlhaus|threatfox|feodotracker)\.abuse\.ch\//.test(rep.ref)) {
+    const details = el(document, 'a', 'g-btn small', t('bannerDetails'));
+    details.href = rep.ref;
+    details.target = '_blank';
+    details.rel = 'noopener noreferrer';
+    bar.append(details);
+  }
+  bar.append(trust, leave, close);
   wrap.append(bar);
   r.append(wrap);
 }

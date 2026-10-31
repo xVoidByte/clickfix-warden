@@ -16,8 +16,11 @@
       h1 { margin: 0; color: var(--text); font-size: 32px; letter-spacing: -0.015em; }
       h2 { margin: 0 0 6px; color: var(--text); font-size: 18px; }
       section { padding: 20px 0; border-top: 1px solid var(--line); }
-      a { color: #E9E9EB; }
+      a { color: #E9E9EB; text-decoration: none; }
       a:hover { color: #FFFFFF; }
+      .btn { display: inline-flex; align-items: center; font-size: 15px; font-weight: 600; color: #F3F3F4; border: 1px solid #44464D; border-radius: 12px; padding: 10px 18px; }
+      .btn:hover { background: #2A2B30; border-color: #5A5C63; }
+      .links { display: flex; gap: 10px; flex-wrap: wrap; }
       strong { color: #FFFFFF; }
       .muted { color: var(--muted); }
       .lead { font-size: 18px; margin: 20px 0 28px; }
@@ -29,7 +32,8 @@
       <p class="lead">A free, open source browser extension that stops ClickFix and fake CAPTCHA attacks, the pages that trick you into pasting a command into Run, Terminal or File Explorer, and warns you about sites reported as malicious in public threat databases.</p>
       <section>
         <h2>Privacy first</h2>
-        <p>No account, no telemetry, no server of its own. Every check runs inside your browser. <a href="privacy.html">Privacy policy</a></p>
+        <p>No account, no telemetry, no server of its own. Every check runs inside your browser.</p>
+        <p class="links"><a class="btn" href="privacy.html">Privacy policy</a></p>
       </section>
       <section>
         <h2>Database</h2>
@@ -37,7 +41,7 @@
         <p class="muted" id="meta">Loading status</p>
       </section>
       <section>
-        <p><a href="https://github.com/xVoidByte/ClickFixWarden">Source code and issues on GitHub</a></p>
+        <p class="links"><a class="btn" href="https://github.com/xVoidByte/ClickFixWarden">Source code on GitHub</a><a class="btn" href="https://github.com/xVoidByte/ClickFixWarden/issues">Report a problem</a></p>
       </section>
     </main>
     <script>

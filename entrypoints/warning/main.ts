@@ -41,7 +41,7 @@ async function render(): Promise<void> {
   }
   row.append(val);
   if (rep && /^https:\/\/(urlhaus|threatfox|feodotracker)\.abuse\.ch\//.test(rep.ref)) {
-    const a = el(document, 'a', undefined, t('bannerDetails'));
+    const a = el(document, 'a', 'g-btn small', t('bannerDetails'));
     a.href = rep.ref;
     a.target = '_blank';
     a.rel = 'noopener noreferrer';

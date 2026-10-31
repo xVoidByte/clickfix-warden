@@ -16,13 +16,14 @@
       .site .host { font-size: 15px; font-weight: 600; word-break: break-all; }
       .site .status { margin-top: 4px; font-size: 14px; color: var(--text2); }
       .site .status strong.red { color: var(--red); }
-      .site .trust { margin-top: 8px; background: none; border: none; padding: 0; color: var(--muted); font-size: 13px; text-decoration: underline; cursor: pointer; }
+      .site .trust { margin-top: 12px; }
       .stats { padding: 16px 18px; font-size: 14px; line-height: 1.65; color: var(--text2); }
       .recent { padding: 0 18px 8px; font-size: 14px; color: var(--text2); }
       .recent .item { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
       .recent .item span:last-child { color: var(--muted); white-space: nowrap; }
-      footer { padding: 14px 18px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 18px; font-size: 14px; font-weight: 600; }
-      footer { flex-wrap: wrap; row-gap: 10px; }
+      footer { padding: 14px 18px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+      footer { flex-wrap: wrap; }
+      footer .g-btn.small { padding: 6px 12px; font-size: 13px; }
       footer a { white-space: nowrap; }
       footer .support { margin-inline-start: auto; }
       .g-backdrop { position: fixed; }
@@ -42,13 +43,13 @@
     <div class="site">
       <div class="host" id="host"></div>
       <div class="status" id="status"></div>
-      <button class="trust" id="trust" hidden></button>
+      <button class="trust g-btn small" id="trust" hidden></button>
     </div>
     <div class="stats" id="stats"></div>
     <div class="recent" id="recent"></div>
     <footer>
-      <a href="#" id="openOptions" data-i18n="popupSettings">Settings</a>
-      <a href="#" id="openHistory" data-i18n="popupHistory">Check my history</a>
+      <a href="#" class="g-btn small" id="openOptions" data-i18n="popupSettings">Settings</a>
+      <a href="#" class="g-btn small" id="openHistory" data-i18n="popupHistory">Check my history</a>
       <a href="#" class="support small" id="donate" hidden data-i18n-title="tipSupport">
         <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21 C12 21 3 15.2 3 8.9 C3 6.2 5.1 4 7.7 4 C9.5 4 11.1 5 12 6.5 C12.9 5 14.5 4 16.3 4 C18.9 4 21 6.2 21 8.9 C21 15.2 12 21 12 21 Z" fill="#FF5C5C"></path></svg>
         <span data-i18n="supportShort">Support</span>

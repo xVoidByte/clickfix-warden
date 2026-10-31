@@ -25,8 +25,7 @@
       .rows > .row .switch { margin-inline-start: 10px; }
       .rows > .row.lang select { min-width: 200px; }
       .inline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-      .textlink { background: none; border: none; padding: 0; color: var(--muted); font-size: 14px; text-decoration: underline; cursor: pointer; }
-      .textlink:disabled { opacity: 0.5; cursor: default; }
+      td .g-btn.small { padding: 4px 10px; font-size: 13px; margin-inline-start: 6px; vertical-align: middle; }
       .ok { color: #8BD8A3; font-weight: 600; }
       .found { margin-top: 12px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
       .notice { padding: 14px 16px; border-radius: 12px; background: var(--raised); color: var(--text2); }
@@ -121,7 +120,7 @@
             </select>
             <button class="g-btn primary" id="scanHistory" data-i18n="historyScan" data-i18n-title="tipHistoryScan">Check my history</button>
             <button class="g-btn" id="exportHistory" hidden data-i18n="exportJson" data-i18n-title="tipExport">Export JSON</button>
-            <button class="textlink" id="dropHistory" hidden data-i18n="historyDrop" data-i18n-title="tipHistoryDrop">Remove history access</button>
+            <button class="g-btn" id="dropHistory" hidden data-i18n="historyDrop" data-i18n-title="tipHistoryDrop">Remove history access</button>
           </div>
           <div id="historyResult"></div>
         </section>
@@ -131,7 +130,7 @@
           <p class="lead" data-i18n="extensionsLead">Look for installed browser extensions that are known to be malicious.</p>
           <div class="inline">
             <button class="g-btn" id="scanExtensions" data-i18n="extensionsScan" data-i18n-title="tipExtensionsScan">Check installed extensions</button>
-            <button class="textlink" id="dropManagement" hidden data-i18n="extensionsDrop" data-i18n-title="tipExtensionsDrop">Remove access</button>
+            <button class="g-btn" id="dropManagement" hidden data-i18n="extensionsDrop" data-i18n-title="tipExtensionsDrop">Remove access</button>
           </div>
           <div id="extensionsResult"></div>
         </section>
@@ -141,7 +140,7 @@
           <p class="lead" data-i18n="logLead">What ClickFix Warden blocked or warned about.</p>
           <div class="inline">
             <button class="g-btn" id="exportLog" data-i18n="exportJson" data-i18n-title="tipExportLog">Export JSON</button>
-            <button class="textlink" id="clearLog" data-i18n="logClear" data-i18n-title="tipLogClear">Clear the log</button>
+            <button class="g-btn danger" id="clearLog" data-i18n="logClear" data-i18n-title="tipLogClear">Clear the log</button>
           </div>
           <div class="table-wrap" id="logTable"></div>
         </section>
@@ -162,8 +161,8 @@
           <p class="lead" data-i18n="aboutPrivacy">ClickFix Warden collects no data.</p>
           <p class="muted" data-i18n="aboutNetwork">The only thing it downloads is the signed database and rules from GitHub.</p>
           <div class="inline">
-            <a id="projectLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutProject">Source code</a>
-            <a id="privacyLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutPolicy">Privacy policy</a>
+            <a class="g-btn small" id="projectLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutProject">Source code</a>
+            <a class="g-btn small" id="privacyLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutPolicy">Privacy policy</a>
           </div>
         </section>
       </main>
