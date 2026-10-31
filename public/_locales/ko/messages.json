@@ -393,7 +393,7 @@
     "message": "신고된 사이트"
   },
   "kind_reputation_block": {
-    "message": "알려진 ClickFix 사이트"
+    "message": "위험한 사이트"
   },
   "action_blocked": {
     "message": "차단됨"
@@ -519,10 +519,10 @@
     "message": "공개 위협 데이터베이스에 악성으로 등록된 사이트에 경고 표시줄을 보여 줍니다"
   },
   "setBlockPage": {
-    "message": "알려진 ClickFix 사이트를 열리기 전에 차단"
+    "message": "신고된 사이트를 열리기 전에 차단"
   },
   "tipBlockPage": {
-    "message": "데이터베이스에 ClickFix 페이지로 등록된 사이트 대신 전체 페이지 경고를 보여 줍니다"
+    "message": "데이터베이스에 위험하다고 등록된 사이트가 열리기 전에 전체 페이지 경고를 보여 줍니다"
   },
   "setFeedUpdates": {
     "message": "데이터베이스와 규칙 업데이트 다운로드"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 사이트는 공개 위협 데이터베이스에 등록되어 있습니다. 이런 페이지는 $2 명령을 붙여 넣도록 속입니다."
+  },
+  "warnLeadOther": {
+    "message": "$1 사이트는 $2에 $3로 등록되어 있습니다. 이 사이트를 열면 컴퓨터가 $4 악성코드에 감염될 수 있습니다."
   },
   "confirmBody": {
     "message": "계속하면 ClickFix Warden이 이 사이트를 더 이상 검사하지 않으며, 이런 페이지는 $1 수 있습니다."

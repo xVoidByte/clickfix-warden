@@ -393,7 +393,7 @@
     "message": "Ilmoitettu sivusto"
   },
   "kind_reputation_block": {
-    "message": "Tunnettu ClickFix-sivusto"
+    "message": "Vaarallinen sivusto"
   },
   "action_blocked": {
     "message": "estetty"
@@ -519,10 +519,10 @@
     "message": "Näyttää varoituspalkin sivustoilla, jotka on merkitty haitallisiksi julkisissa uhkatietokannoissa"
   },
   "setBlockPage": {
-    "message": "Estä tunnetut ClickFix-sivustot ennen kuin ne latautuvat"
+    "message": "Estä ilmoitetut sivustot ennen kuin ne latautuvat"
   },
   "tipBlockPage": {
-    "message": "Näyttää koko sivun varoituksen sellaisen sivuston sijaan, jonka tietokannat ovat merkinneet ClickFix-sivuksi"
+    "message": "Näyttää koko sivun varoituksen ennen kuin sivusto, jonka tietokannat ovat merkinneet vaaralliseksi, ehtii latautua"
   },
   "setFeedUpdates": {
     "message": "Lataa tietokannan ja sääntöjen päivitykset"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "Osoite $1 on merkitty julkisiin uhkatietokantoihin. Tällaiset sivut huijaavat sinut liittämään komennon, joka $2."
+  },
+  "warnLeadOther": {
+    "message": "$2 on merkinnyt osoitteen $1 $3. Sen avaaminen voi saastuttaa tietokoneesi haittaohjelmalla, joka $4."
   },
   "confirmBody": {
     "message": "Jos jatkat, ClickFix Warden lopettaa sen tarkistamisen, ja tällainen sivu voi $1."

@@ -393,7 +393,7 @@
     "message": "Situs yang dilaporkan"
   },
   "kind_reputation_block": {
-    "message": "Situs ClickFix yang dikenal"
+    "message": "Situs berbahaya"
   },
   "action_blocked": {
     "message": "diblokir"
@@ -519,10 +519,10 @@
     "message": "Menampilkan bilah peringatan di situs yang tercantum sebagai berbahaya di basis data ancaman publik"
   },
   "setBlockPage": {
-    "message": "Blokir situs ClickFix yang dikenal sebelum dimuat"
+    "message": "Blokir situs yang dilaporkan sebelum dimuat"
   },
   "tipBlockPage": {
-    "message": "Menampilkan peringatan satu halaman penuh alih-alih situs yang dicantumkan basis data sebagai halaman ClickFix"
+    "message": "Menampilkan peringatan satu halaman penuh sebelum situs yang dicantumkan basis data sebagai berbahaya dapat dimuat"
   },
   "setFeedUpdates": {
     "message": "Unduh pembaruan basis data dan aturan"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 tercantum di basis data ancaman publik. Halaman seperti ini menipu Anda agar menempelkan perintah yang $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 tercantum di $2 sebagai $3. Membukanya dapat menginfeksi komputer Anda dengan malware yang $4."
   },
   "confirmBody": {
     "message": "Jika Anda melanjutkan, ClickFix Warden berhenti memeriksanya, dan halaman seperti ini dapat $1."

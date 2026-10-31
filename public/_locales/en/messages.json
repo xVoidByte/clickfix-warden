@@ -393,7 +393,7 @@
     "message": "Reported site"
   },
   "kind_reputation_block": {
-    "message": "Known ClickFix site"
+    "message": "Dangerous site"
   },
   "action_blocked": {
     "message": "blocked"
@@ -519,10 +519,10 @@
     "message": "Shows a warning bar on sites listed as malicious in public threat databases"
   },
   "setBlockPage": {
-    "message": "Block known ClickFix sites before they load"
+    "message": "Block reported sites before they load"
   },
   "tipBlockPage": {
-    "message": "Shows a full-page warning instead of a site that the databases list as a ClickFix page"
+    "message": "Shows a full-page warning before a site that the databases list as dangerous can load"
   },
   "setFeedUpdates": {
     "message": "Download database and rule updates"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 is listed in public threat databases. Pages like this trick you into pasting a command that $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 is listed in $2 as $3. Opening it can infect your computer with malware that $4."
   },
   "confirmBody": {
     "message": "If you continue, ClickFix Warden stops checking it, and a page like this can $1."

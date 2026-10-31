@@ -33,7 +33,7 @@ WHAT IT STOPS
 - Known malicious extensions such as fake ad blockers, on request
 
 REPORTED SITES
-ClickFix Warden also warns you about sites, download links and servers reported in the public URLhaus, ThreatFox and Feodo Tracker databases by abuse.ch, and stops sites reported as ClickFix pages before they load. You can check your browsing history against the same database, inside your browser, whenever you want.
+ClickFix Warden also warns you about sites, download links and servers reported in the public URLhaus, ThreatFox and Feodo Tracker databases by abuse.ch, and stops them before they load. You can check your browsing history against the same database, inside your browser, whenever you want.
 
 ALWAYS UP TO DATE
 Attackers change their tricks every week - the detection rules and the database update every hour from a digitally signed source, without waiting for a new version of the extension.

@@ -375,6 +375,11 @@ export function startGuard(): void {
       if (!status?.hits?.length) return;
       pageReported = true;
       if (!settings.reputation || !settings.enabled || status.trusted) return;
+      // The warning page is on its way, stop the site from loading any further in the meantime.
+      if (status.blocked) {
+        window.stop();
+        return;
+      }
       const render = () =>
         showAlert({ kind: 'reputation', host, hits: status.hits }, overlayActions, settings.customWarning);
       if (document.documentElement) render();

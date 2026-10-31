@@ -393,7 +393,7 @@
     "message": "Gemeldete Website"
   },
   "kind_reputation_block": {
-    "message": "Bekannte ClickFix-Website"
+    "message": "Gefährliche Website"
   },
   "action_blocked": {
     "message": "blockiert"
@@ -519,10 +519,10 @@
     "message": "Zeigt eine Warnleiste auf Websites, die in öffentlichen Bedrohungsdatenbanken als schädlich geführt werden"
   },
   "setBlockPage": {
-    "message": "Bekannte ClickFix-Websites vor dem Laden blockieren"
+    "message": "Gemeldete Websites vor dem Laden blockieren"
   },
   "tipBlockPage": {
-    "message": "Zeigt eine ganzseitige Warnung statt einer Website, die in den Datenbanken als ClickFix-Seite geführt wird"
+    "message": "Zeigt eine ganzseitige Warnung, bevor eine Website geladen wird, die in den Datenbanken als gefährlich geführt wird"
   },
   "setFeedUpdates": {
     "message": "Updates für Datenbank und Regeln herunterladen"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 ist in öffentlichen Bedrohungsdatenbanken gelistet. Seiten wie diese bringen Sie dazu, einen Befehl einzufügen, der $2."
+  },
+  "warnLeadOther": {
+    "message": "Laut $2 ist $1 $3. Das Öffnen kann Ihren Computer mit Schadsoftware infizieren, die $4."
   },
   "confirmBody": {
     "message": "Wenn Sie fortfahren, prüft ClickFix Warden diese Website nicht mehr, und eine Seite wie diese kann $1."

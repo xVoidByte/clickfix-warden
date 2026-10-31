@@ -393,7 +393,7 @@
     "message": "被举报的网站"
   },
   "kind_reputation_block": {
-    "message": "已知 ClickFix 网站"
+    "message": "危险网站"
   },
   "action_blocked": {
     "message": "已拦截"
@@ -519,10 +519,10 @@
     "message": "在被公开威胁数据库列为恶意的网站上显示警告栏"
   },
   "setBlockPage": {
-    "message": "在已知 ClickFix 网站加载前将其拦截"
+    "message": "在被举报的网站加载前将其拦截"
   },
   "tipBlockPage": {
-    "message": "对数据库列为 ClickFix 页面的网站，显示整页警告来代替网站内容"
+    "message": "在数据库列为危险的网站加载前，显示整页警告"
   },
   "setFeedUpdates": {
     "message": "下载数据库和规则更新"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 已被列入公开的威胁数据库。这类页面会诱骗你粘贴一条会$2的命令。"
+  },
+  "warnLeadOther": {
+    "message": "$1 已被 $2 列为$3。打开它可能会让你的电脑感染会$4的恶意软件。"
   },
   "confirmBody": {
     "message": "如果继续，ClickFix Warden 将停止检查此网站，而这类页面可能会$1。"

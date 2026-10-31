@@ -393,7 +393,7 @@
     "message": "Zgłoszona strona"
   },
   "kind_reputation_block": {
-    "message": "Znana strona ClickFix"
+    "message": "Niebezpieczna strona"
   },
   "action_blocked": {
     "message": "zablokowano"
@@ -519,10 +519,10 @@
     "message": "Pokazuje pasek ostrzeżenia na stronach oznaczonych jako złośliwe w publicznych bazach zagrożeń"
   },
   "setBlockPage": {
-    "message": "Blokuj znane strony ClickFix przed ich wczytaniem"
+    "message": "Blokuj zgłoszone strony przed ich wczytaniem"
   },
   "tipBlockPage": {
-    "message": "Pokazuje ostrzeżenie na całą stronę zamiast witryny, którą bazy oznaczają jako stronę ClickFix"
+    "message": "Pokazuje ostrzeżenie na całą stronę, zanim wczyta się witryna, którą bazy oznaczają jako niebezpieczną"
   },
   "setFeedUpdates": {
     "message": "Pobieraj aktualizacje bazy i reguł"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "Strona $1 figuruje w publicznych bazach zagrożeń. Takie strony nakłaniają do wklejenia polecenia, które $2."
+  },
+  "warnLeadOther": {
+    "message": "Strona $1 figuruje w bazie $2 jako $3. Jej otwarcie może zainfekować komputer złośliwym oprogramowaniem, które $4."
   },
   "confirmBody": {
     "message": "Po przejściu dalej ClickFix Warden przestanie ją sprawdzać, a taka strona będzie mogła $1."

@@ -393,7 +393,7 @@
     "message": "Rapportert nettsted"
   },
   "kind_reputation_block": {
-    "message": "Kjent ClickFix-nettsted"
+    "message": "Farlig nettsted"
   },
   "action_blocked": {
     "message": "ble blokkert"
@@ -519,10 +519,10 @@
     "message": "Viser en advarselslinje på nettsteder som er oppført som skadelige i offentlige trusseldatabaser"
   },
   "setBlockPage": {
-    "message": "Blokker kjente ClickFix-nettsteder før de lastes inn"
+    "message": "Blokker rapporterte nettsteder før de lastes inn"
   },
   "tipBlockPage": {
-    "message": "Viser en helsidesadvarsel i stedet for et nettsted som databasene oppgir som en ClickFix-side"
+    "message": "Viser en helsidesadvarsel før et nettsted som databasene oppgir som farlig, kan lastes inn"
   },
   "setFeedUpdates": {
     "message": "Last ned oppdateringer av databasen og reglene"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 er oppført i offentlige trusseldatabaser. Slike sider lurer deg til å lime inn en kommando som $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 er oppført i $2 som $3. Hvis du åpner det, kan datamaskinen din bli infisert med skadevare som $4."
   },
   "confirmBody": {
     "message": "Hvis du fortsetter, slutter ClickFix Warden å kontrollere det, og en side som denne kan $1."

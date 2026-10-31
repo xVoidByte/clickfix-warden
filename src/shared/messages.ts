@@ -38,6 +38,8 @@ export interface AlertData {
 export interface PageStatus {
   hits: FeedHit[];
   trusted: boolean;
+  /** The background is already sending this tab to the warning page. */
+  blocked?: boolean;
 }
 
 export type Message =

@@ -393,7 +393,7 @@
     "message": "Rapporterad webbplats"
   },
   "kind_reputation_block": {
-    "message": "Känd ClickFix-webbplats"
+    "message": "Farlig webbplats"
   },
   "action_blocked": {
     "message": "blockerades"
@@ -519,10 +519,10 @@
     "message": "Visar ett varningsfält på webbplatser som listas som skadliga i offentliga hotdatabaser"
   },
   "setBlockPage": {
-    "message": "Blockera kända ClickFix-webbplatser innan de läses in"
+    "message": "Blockera rapporterade webbplatser innan de läses in"
   },
   "tipBlockPage": {
-    "message": "Visar en helsidesvarning i stället för en webbplats som databaserna listar som en ClickFix-sida"
+    "message": "Visar en helsidesvarning innan en webbplats som databaserna listar som farlig kan läsas in"
   },
   "setFeedUpdates": {
     "message": "Ladda ner uppdateringar av databasen och reglerna"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 är listad i offentliga hotdatabaser. Sådana sidor lurar dig att klistra in ett kommando som $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 är listad i $2 som $3. Om du öppnar den kan din dator infekteras med skadlig kod som $4."
   },
   "confirmBody": {
     "message": "Om du fortsätter slutar ClickFix Warden att kontrollera den, och en sådan sida kan $1."

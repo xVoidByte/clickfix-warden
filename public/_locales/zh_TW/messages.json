@@ -393,7 +393,7 @@
     "message": "遭回報的網站"
   },
   "kind_reputation_block": {
-    "message": "已知的 ClickFix 網站"
+    "message": "危險網站"
   },
   "action_blocked": {
     "message": "已封鎖"
@@ -519,10 +519,10 @@
     "message": "在公開威脅資料庫列為惡意的網站上顯示警告列"
   },
   "setBlockPage": {
-    "message": "在已知的 ClickFix 網站載入前加以封鎖"
+    "message": "在遭回報的網站載入前加以封鎖"
   },
   "tipBlockPage": {
-    "message": "對資料庫列為 ClickFix 頁面的網站，改為顯示整頁警告"
+    "message": "在資料庫列為危險的網站載入前，顯示整頁警告"
   },
   "setFeedUpdates": {
     "message": "下載資料庫和規則更新"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 已列入公開的威脅資料庫。這類頁面會誘騙你貼上一個會$2的指令。"
+  },
+  "warnLeadOther": {
+    "message": "$1 已被 $2 列為$3。開啟它可能會讓你的電腦感染會$4的惡意軟體。"
   },
   "confirmBody": {
     "message": "如果繼續，ClickFix Warden 將停止檢查此網站，而這類頁面可能會$1。"

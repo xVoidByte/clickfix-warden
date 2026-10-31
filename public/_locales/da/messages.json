@@ -393,7 +393,7 @@
     "message": "Rapporteret websted"
   },
   "kind_reputation_block": {
-    "message": "Kendt ClickFix-websted"
+    "message": "Farligt websted"
   },
   "action_blocked": {
     "message": "blev blokeret"
@@ -519,10 +519,10 @@
     "message": "Viser en advarselsbjælke på websteder, der er opført som ondsindede i offentlige trusselsdatabaser"
   },
   "setBlockPage": {
-    "message": "Bloker kendte ClickFix-websteder, før de indlæses"
+    "message": "Bloker rapporterede websteder, før de indlæses"
   },
   "tipBlockPage": {
-    "message": "Viser en advarsel på hele siden i stedet for et websted, som databaserne angiver som en ClickFix-side"
+    "message": "Viser en advarsel på hele siden, før et websted, som databaserne angiver som farligt, kan indlæses"
   },
   "setFeedUpdates": {
     "message": "Download opdateringer af databasen og reglerne"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 er opført i offentlige trusselsdatabaser. Sider som denne narrer dig til at indsætte en kommando, der $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 er opført i $2 som $3. Hvis du åbner det, kan din computer blive inficeret med malware, der $4."
   },
   "confirmBody": {
     "message": "Hvis du fortsætter, holder ClickFix Warden op med at kontrollere det, og en side som denne kan $1."

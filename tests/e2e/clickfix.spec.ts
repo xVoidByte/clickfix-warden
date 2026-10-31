@@ -215,7 +215,22 @@ test.describe('normal pages stay untouched', () => {
 });
 
 test.describe('reputation', () => {
-  test('reported site shows the warning bar', async ({ context, sw }) => {
+  test('reported malware site is stopped before it loads with a malware warning', async ({ context, sw, extId }) => {
+    const page = await context.newPage();
+    await page.goto(site('reported.test')).catch(() => undefined);
+    await expect.poll(() => page.url()).toContain(`chrome-extension://${extId}/warning.html`);
+    await expect(page.locator('#lead')).toContainText('can infect your computer');
+    await expect(page.locator('.advice')).toBeHidden();
+    await expect.poll(async () => (await lastDetection(sw))?.kind).toBe('reputation-block');
+  });
+
+  test('with blocking before load turned off a reported site shows the warning bar', async ({ context, sw }) => {
+    await sw.evaluate(async () => {
+      await chrome.storage.local.set({ settings: { blockPage: false } });
+    });
+    await expect
+      .poll(() => sw.evaluate(async () => ((await chrome.storage.local.get('effective')).effective as { settings: { blockPage: boolean } } | undefined)?.settings.blockPage))
+      .toBe(false);
     const page = await context.newPage();
     await page.goto(site('reported.test'));
     await expect.poll(() => overlayShown(page)).toBe(true);
@@ -238,11 +253,11 @@ test.describe('reputation', () => {
     await expect.poll(() => overlayShown(page)).toBe(true);
   });
 
-  test('download link from the daily URLhaus part is reported', async ({ context, sw }) => {
+  test('download link from the daily URLhaus part is stopped before it loads', async ({ context, extId }) => {
     const page = await context.newPage();
-    await page.goto(site('download.test', '/setup.exe'));
-    await expect.poll(() => overlayShown(page)).toBe(true);
-    await expect.poll(async () => (await lastDetection(sw))?.kind).toBe('reputation');
+    await page.goto(site('download.test', '/setup.exe')).catch(() => undefined);
+    await expect.poll(() => page.url()).toContain(`chrome-extension://${extId}/warning.html`);
+    await expect(page.locator('#reports')).toContainText('URLhaus');
   });
 
   test('hourly change list adds and removes reports', async ({ context, sw, extId }) => {
@@ -254,8 +269,8 @@ test.describe('reputation', () => {
       .poll(() => sw.evaluate(async () => ((await chrome.storage.local.get('feedMeta')).feedMeta as { hotGenerated: string }).hotGenerated))
       .not.toBe(before);
     const added = await context.newPage();
-    await added.goto(site('delta-added.test'));
-    await expect.poll(() => overlayShown(added)).toBe(true);
+    await added.goto(site('delta-added.test')).catch(() => undefined);
+    await expect.poll(() => added.url()).toContain(`chrome-extension://${extId}/warning.html`);
     const removed = await context.newPage();
     await removed.goto(site('payload-reported.test'));
     await removed.waitForTimeout(2000);

@@ -393,7 +393,7 @@
     "message": "Bejelentett webhely"
   },
   "kind_reputation_block": {
-    "message": "Ismert ClickFix-webhely"
+    "message": "Veszélyes webhely"
   },
   "action_blocked": {
     "message": "letiltva"
@@ -519,10 +519,10 @@
     "message": "Figyelmeztető sávot jelenít meg a nyilvános fenyegetési adatbázisokban kártékonyként szereplő webhelyeken"
   },
   "setBlockPage": {
-    "message": "Ismert ClickFix-webhelyek letiltása betöltés előtt"
+    "message": "Bejelentett webhelyek letiltása betöltés előtt"
   },
   "tipBlockPage": {
-    "message": "Teljes oldalas figyelmeztetést jelenít meg azon webhelyek helyett, amelyeket az adatbázisok ClickFix-oldalként tartanak nyilván"
+    "message": "Teljes oldalas figyelmeztetést jelenít meg, mielőtt betöltődne egy webhely, amelyet az adatbázisok veszélyesként tartanak nyilván"
   },
   "setFeedUpdates": {
     "message": "Adatbázis- és szabályfrissítések letöltése"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 szerepel a nyilvános fenyegetési adatbázisokban. Az ilyen oldalak trükkel ráveszik, hogy beillesszen egy parancsot, amely $2."
+  },
+  "warnLeadOther": {
+    "message": "$2 szerint $1 $3. Megnyitása olyan kártevővel fertőzheti meg a számítógépét, amely $4."
   },
   "confirmBody": {
     "message": "Ha folytatja, a ClickFix Warden többé nem ellenőrzi ezt a webhelyet, egy ilyen oldal pedig képes $1."

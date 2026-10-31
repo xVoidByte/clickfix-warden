@@ -393,7 +393,7 @@
     "message": "報告済みのサイト"
   },
   "kind_reputation_block": {
-    "message": "既知の ClickFix サイト"
+    "message": "危険なサイト"
   },
   "action_blocked": {
     "message": "ブロック"
@@ -519,10 +519,10 @@
     "message": "公開されている脅威データベースで悪意があるとされたサイトに警告バーを表示します"
   },
   "setBlockPage": {
-    "message": "既知の ClickFix サイトを読み込む前にブロックする"
+    "message": "報告されたサイトを読み込む前にブロックする"
   },
   "tipBlockPage": {
-    "message": "データベースで ClickFix ページとされたサイトの代わりに、全画面の警告を表示します"
+    "message": "データベースで危険とされたサイトが読み込まれる前に、全画面の警告を表示します"
   },
   "setFeedUpdates": {
     "message": "データベースとルールの更新をダウンロードする"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 は公開されている脅威データベースに登録されています。このようなページは、だまして$2コマンドを貼り付けさせます。"
+  },
+  "warnLeadOther": {
+    "message": "$1 は $2 に$3として登録されています。開くと、コンピューターが$4マルウェアに感染するおそれがあります。"
   },
   "confirmBody": {
     "message": "続行すると ClickFix Warden はこのサイトのチェックを停止し、このようなページが$1おそれがあります。"

@@ -1,7 +1,7 @@
 import { browser, type Browser } from 'wxt/browser';
 import { lookupKeys } from '../src/feed/db';
 import { ipKey, lookupKeysForUrl } from '../src/feed/keys';
-import { type FeedHit, hasClickFix } from '../src/feed/types';
+import type { FeedHit } from '../src/feed/types';
 import { updateAll } from '../src/feed/update';
 import { FEED_REFRESH_MINUTES } from '../src/shared/constants';
 import { addDetection } from '../src/shared/log';
@@ -74,7 +74,7 @@ function warningUrl(target: string): string {
   return browser.runtime.getURL('/warning.html') + '?u=' + encodeURIComponent(target);
 }
 
-/** Looks up a top-level navigation and sends ClickFix pages to the warning page. */
+/** Looks up a top-level navigation and sends every reported address to the warning page before the site can react. */
 async function checkNavigation(tabId: number, url: string): Promise<void> {
   if (tabId < 0 || !/^https?:/i.test(url)) return;
   const { settings } = await getEffective();
@@ -89,7 +89,7 @@ async function checkNavigation(tabId: number, url: string): Promise<void> {
   const ipHits = previous?.url === url ? previous.ipHits : [];
   await writeTab(tabId, { url, hits, ipHits });
   await setBadge(tabId, hits.length + ipHits.length > 0);
-  if (hits.length && settings.blockPage && hasClickFix(hits) && !(await isBypassed(host))) {
+  if (hits.length && settings.blockPage && !(await isBypassed(host))) {
     await addDetection({
       kind: 'reputation-block',
       action: 'blocked',
@@ -111,7 +111,8 @@ async function pageStatus(url: string, tabId: number | undefined): Promise<PageS
     state = { url, hits: await lookupKeys(lookupKeysForUrl(url)), ipHits: state?.url === url ? state.ipHits : [] };
     if (tabId !== undefined) await writeTab(tabId, state);
   }
-  return { hits: [...state.hits, ...state.ipHits], trusted };
+  const blocked = state.hits.length > 0 && settings.blockPage && !(await isBypassed(host));
+  return { hits: [...state.hits, ...state.ipHits], trusted, blocked };
 }
 
 async function leave(tabId: number): Promise<void> {

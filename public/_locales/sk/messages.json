@@ -393,7 +393,7 @@
     "message": "Nahlásený web"
   },
   "kind_reputation_block": {
-    "message": "Známy web ClickFix"
+    "message": "Nebezpečný web"
   },
   "action_blocked": {
     "message": "zablokované"
@@ -519,10 +519,10 @@
     "message": "Zobrazí varovný pruh na weboch, ktoré sú vo verejných databázach hrozieb vedené ako škodlivé"
   },
   "setBlockPage": {
-    "message": "Blokovať známe weby ClickFix ešte pred načítaním"
+    "message": "Blokovať nahlásené weby ešte pred načítaním"
   },
   "tipBlockPage": {
-    "message": "Namiesto webu, ktorý databázy vedú ako stránku ClickFix, zobrazí varovanie na celú stránku"
+    "message": "Zobrazí varovanie na celú stránku skôr, ako sa načíta web, ktorý databázy vedú ako nebezpečný"
   },
   "setFeedUpdates": {
     "message": "Sťahovať aktualizácie databázy a pravidiel"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "Web $1 je vedený vo verejných databázach hrozieb. Takéto stránky vás oklamú, aby ste vložili príkaz, ktorý $2."
+  },
+  "warnLeadOther": {
+    "message": "Web $1 je v databáze $2 vedený ako $3. Jeho otvorenie môže váš počítač infikovať malvérom, ktorý $4."
   },
   "confirmBody": {
     "message": "Ak budete pokračovať, ClickFix Warden prestane tento web kontrolovať a takáto stránka môže $1."

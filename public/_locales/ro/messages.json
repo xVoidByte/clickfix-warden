@@ -393,7 +393,7 @@
     "message": "Adresă raportată"
   },
   "kind_reputation_block": {
-    "message": "Adresă ClickFix cunoscută"
+    "message": "Adresă periculoasă"
   },
   "action_blocked": {
     "message": "blocată"
@@ -519,10 +519,10 @@
     "message": "Afișează o bară de avertizare pe site-urile listate ca rău intenționate în baze de date publice despre amenințări"
   },
   "setBlockPage": {
-    "message": "Blocați site-urile ClickFix cunoscute înainte să se încarce"
+    "message": "Blocați site-urile raportate înainte să se încarce"
   },
   "tipBlockPage": {
-    "message": "Afișează un avertisment pe toată pagina în locul unui site pe care bazele de date îl listează ca pagină ClickFix"
+    "message": "Afișează un avertisment pe toată pagina înainte să se încarce un site pe care bazele de date îl listează ca periculos"
   },
   "setFeedUpdates": {
     "message": "Descărcați actualizările bazei de date și ale regulilor"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 este listat în baze de date publice despre amenințări. Paginile de acest fel vă păcălesc să lipiți o comandă care $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 este listat în $2 ca $3. Dacă îl deschideți, vă poate infecta computerul cu malware care $4."
   },
   "confirmBody": {
     "message": "Dacă continuați, ClickFix Warden nu îl mai verifică, iar o pagină ca aceasta vă poate $1."

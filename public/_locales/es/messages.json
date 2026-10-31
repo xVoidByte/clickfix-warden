@@ -393,7 +393,7 @@
     "message": "Sitio denunciado"
   },
   "kind_reputation_block": {
-    "message": "Sitio ClickFix conocido"
+    "message": "Sitio peligroso"
   },
   "action_blocked": {
     "message": "bloqueado"
@@ -519,10 +519,10 @@
     "message": "Muestra una barra de aviso en sitios que figuran como maliciosos en bases de datos públicas de amenazas"
   },
   "setBlockPage": {
-    "message": "Bloquear sitios ClickFix conocidos antes de que carguen"
+    "message": "Bloquear sitios denunciados antes de que carguen"
   },
   "tipBlockPage": {
-    "message": "Muestra un aviso a página completa en lugar de un sitio que las bases de datos registran como página ClickFix"
+    "message": "Muestra un aviso a página completa antes de que cargue un sitio que las bases de datos registran como peligroso"
   },
   "setFeedUpdates": {
     "message": "Descargar actualizaciones de la base de datos y las reglas"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 figura en bases de datos públicas de amenazas. Las páginas de este tipo le engañan para que pegue un comando que $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 figura en $2 como $3. Abrirlo puede infectar su equipo con malware que $4."
   },
   "confirmBody": {
     "message": "Si continúa, ClickFix Warden dejará de comprobar este sitio, y una página como esta puede $1."

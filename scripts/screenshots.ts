@@ -99,11 +99,18 @@ try {
   await slide(context, '2-says-what-and-why.png', 'Says in plain words what was blocked and why', await capture(page));
 
   await page.goto(`http://clickfix-site.test:47123/`).catch(() => undefined);
-  await page.waitForURL(/warning\.html/);
+  // The site is stopped mid-load and replaced, so watch the address instead of waiting for a load event.
+  for (let i = 0; i < 50 && !page.url().includes('warning.html'); i++) await sleep(200);
+  await page.waitForLoadState('load');
   await slide(context, '3-known-clickfix-site.png', 'Blocks known ClickFix sites before they load', await capture(page));
 
+  // The banner is what a site reported by its server address shows, so this slide turns off blocking before load.
+  await sw.evaluate(async () => chrome.storage.local.set({ settings: { blockPage: false } }));
+  await sleep(800);
   await page.goto(`http://reported.test:47123/`);
   await slide(context, '4-reported-site.png', 'Warns about sites reported in public threat databases', await capture(page));
+  await sw.evaluate(async () => chrome.storage.local.set({ settings: {} }));
+  await sleep(800);
 
   const options = await context.newPage();
   await options.goto(`chrome-extension://${extId}/options.html`);
@@ -122,5 +129,10 @@ try {
   console.log(`Screenshots written to ${out}`);
 } finally {
   server.kill();
-  rmSync(profile, { recursive: true, force: true });
+  // Windows can hold the profile for a moment after a crash, leaving it must not hide the real error.
+  try {
+    rmSync(profile, { recursive: true, force: true });
+  } catch {
+    // removed on the next run
+  }
 }

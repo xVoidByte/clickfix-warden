@@ -1,5 +1,5 @@
 import { browser } from 'wxt/browser';
-import type { FeedHit } from '../../src/feed/types';
+import { type FeedHit, hasClickFix } from '../../src/feed/types';
 import { loadI18nOverride, localizePage, t, tParts, uiLang } from '../../src/shared/i18n';
 import type { Message } from '../../src/shared/messages';
 import { longDate, whatOfReport } from '../../src/ui/explain';
@@ -27,7 +27,10 @@ async function render(): Promise<void> {
   const rep = whatOfReport(hits);
   const lead = document.getElementById('lead')!;
   const strong = (s: string) => el(document, 'strong', undefined, s);
-  if (rep) lead.append(...tParts('warnLead', [strong(host), rep.source, strong(rep.what), strong(t('warnSteals'))]));
+  // The paste advice only fits ClickFix pages, other reports get a plain malware warning.
+  const clickfix = !rep || hasClickFix(hits);
+  document.querySelector<HTMLElement>('.advice')!.hidden = !clickfix;
+  if (rep) lead.append(...tParts(clickfix ? 'warnLead' : 'warnLeadOther', [strong(host), rep.source, strong(rep.what), strong(t('warnSteals'))]));
   else lead.append(...tParts('warnLeadUnknown', [strong(host), strong(t('warnSteals'))]));
 
   const row = document.getElementById('reports')!;

@@ -393,7 +393,7 @@
     "message": "Gemelde site"
   },
   "kind_reputation_block": {
-    "message": "Bekende ClickFix-site"
+    "message": "Gevaarlijke site"
   },
   "action_blocked": {
     "message": "geblokkeerd"
@@ -519,10 +519,10 @@
     "message": "Toont een waarschuwingsbalk op sites die in openbare dreigingsdatabases als schadelijk staan vermeld"
   },
   "setBlockPage": {
-    "message": "Bekende ClickFix-sites blokkeren voordat ze laden"
+    "message": "Gemelde sites blokkeren voordat ze laden"
   },
   "tipBlockPage": {
-    "message": "Toont een waarschuwing over de hele pagina in plaats van een site die de databases als ClickFix-pagina vermelden"
+    "message": "Toont een waarschuwing over de hele pagina voordat een site die de databases als gevaarlijk vermelden, kan laden"
   },
   "setFeedUpdates": {
     "message": "Updates van database en regels downloaden"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 staat vermeld in openbare dreigingsdatabases. Pagina's zoals deze verleiden u om een opdracht te plakken die $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 staat in $2 vermeld als $3. Als u de site opent, kan uw computer geïnfecteerd raken met malware die $4."
   },
   "confirmBody": {
     "message": "Als u doorgaat, controleert ClickFix Warden deze site niet meer en kan een pagina als deze $1."

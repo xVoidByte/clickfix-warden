@@ -393,7 +393,7 @@
     "message": "Bildirilen site"
   },
   "kind_reputation_block": {
-    "message": "Bilinen ClickFix sitesi"
+    "message": "Tehlikeli site"
   },
   "action_blocked": {
     "message": "engellendi"
@@ -519,10 +519,10 @@
     "message": "Herkese açık tehdit veritabanlarında kötü amaçlı olarak listelenen sitelerde uyarı çubuğu gösterir"
   },
   "setBlockPage": {
-    "message": "Bilinen ClickFix sitelerini yüklenmeden engelle"
+    "message": "Bildirilen siteleri yüklenmeden engelle"
   },
   "tipBlockPage": {
-    "message": "Veritabanlarının ClickFix sayfası olarak listelediği bir site yerine tam sayfa uyarı gösterir"
+    "message": "Veritabanlarının tehlikeli olarak listelediği bir site yüklenmeden önce tam sayfa uyarı gösterir"
   },
   "setFeedUpdates": {
     "message": "Veritabanı ve kural güncellemelerini indir"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 herkese açık tehdit veritabanlarında listeleniyor. Bu tür sayfalar sizi kandırarak $2 bir komutu yapıştırmanızı sağlar."
+  },
+  "warnLeadOther": {
+    "message": "$1, $2 veritabanında $3 olarak listeleniyor. Bu siteyi açmak bilgisayarınıza $4 kötü amaçlı bir yazılım bulaştırabilir."
   },
   "confirmBody": {
     "message": "Devam ederseniz ClickFix Warden bu siteyi denetlemeyi bırakır ve böyle bir sayfa $1."

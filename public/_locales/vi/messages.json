@@ -393,7 +393,7 @@
     "message": "Trang bị báo cáo"
   },
   "kind_reputation_block": {
-    "message": "Trang ClickFix đã biết"
+    "message": "Trang nguy hiểm"
   },
   "action_blocked": {
     "message": "đã chặn"
@@ -519,10 +519,10 @@
     "message": "Hiển thị thanh cảnh báo trên các trang được liệt kê là độc hại trong cơ sở dữ liệu mối đe dọa công khai"
   },
   "setBlockPage": {
-    "message": "Chặn các trang ClickFix đã biết trước khi chúng tải"
+    "message": "Chặn các trang bị báo cáo trước khi chúng tải"
   },
   "tipBlockPage": {
-    "message": "Hiển thị cảnh báo toàn trang thay cho trang mà cơ sở dữ liệu liệt kê là trang ClickFix"
+    "message": "Hiển thị cảnh báo toàn trang trước khi tải một trang mà cơ sở dữ liệu liệt kê là nguy hiểm"
   },
   "setFeedUpdates": {
     "message": "Tải xuống bản cập nhật cơ sở dữ liệu và quy tắc"
@@ -748,6 +748,9 @@
   },
   "warnLeadUnknown": {
     "message": "$1 có trong các cơ sở dữ liệu mối đe dọa công khai. Những trang như thế này lừa bạn dán một lệnh sẽ $2."
+  },
+  "warnLeadOther": {
+    "message": "$1 được $2 liệt kê là $3. Mở trang này có thể khiến máy tính của bạn bị nhiễm phần mềm độc hại chuyên $4."
   },
   "confirmBody": {
     "message": "Nếu bạn tiếp tục, ClickFix Warden sẽ ngừng kiểm tra trang này, và một trang như thế này có thể $1."

@@ -27,7 +27,7 @@ Protects users from ClickFix and fake CAPTCHA social engineering attacks, and fr
 - storage, Saves the user's settings, trusted sites, the local detection log and the current detection rules on the device.
 - unlimitedStorage, Keeps the downloaded list of reported addresses, tens of thousands of entries, in IndexedDB so every lookup happens on the device.
 - alarms, Schedules the hourly download of the signed database and detection rules.
-- webNavigation, Checks the address of each page the user opens against the local database before it loads, so known ClickFix sites can be stopped with a warning page.
+- webNavigation, Checks the address of each page the user opens against the local database before it loads, so reported sites can be stopped with a warning page.
 - webRequest, Reads the IP address of the server a page comes from, without blocking or changing any request, to compare it with reported malware control servers.
 - clipboardWrite, When a page has already put a malicious command in the clipboard, replaces it with a harmless note so that pasting it does nothing.
 - Host permission (all sites), ClickFix pages appear on any domain, including hacked legitimate sites, so the content scripts that watch clipboard writes and paste instructions have to run on every page. The same permission lets the extension download its database from xvoidbyte.github.io.
