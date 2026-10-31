@@ -1,0 +1,11 @@
+node_modules/
+.output/
+.wxt/
+.work/
+dist/
+test-results/
+playwright-report/
+*.log
+.env.local
+*.pem
+!tests/fixtures/test-signing-key.pem
