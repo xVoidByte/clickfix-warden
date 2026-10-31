@@ -2,6 +2,8 @@ name: Publish database
 
 # Rebuilds the signed database and rules every hour and publishes them to
 # GitHub Pages. A failed run publishes nothing, so the last good copy stays up.
+# Until both secrets exist the run only leaves a notice, so a fresh fork does
+# not fail every hour.
 
 on:
   schedule:
@@ -25,24 +27,44 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.secrets.outputs.ready }}
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - name: Check that the secrets are set
+        id: secrets
+        env:
+          ABUSECH_AUTH_KEY: ${{ secrets.ABUSECH_AUTH_KEY }}
+          FEED_SIGNING_KEY: ${{ secrets.FEED_SIGNING_KEY }}
+        run: |
+          if [ -z "$ABUSECH_AUTH_KEY" ] || [ -z "$FEED_SIGNING_KEY" ]; then
+            echo "::notice::ABUSECH_AUTH_KEY or FEED_SIGNING_KEY is not set, nothing was published"
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.secrets.outputs.ready == 'true'
+        uses: actions/checkout@v7
+      - if: steps.secrets.outputs.ready == 'true'
+        uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
-      - run: npm ci --ignore-scripts
+      - if: steps.secrets.outputs.ready == 'true'
+        run: npm ci --ignore-scripts
       - name: Build and sign the database
+        if: steps.secrets.outputs.ready == 'true'
         env:
           ABUSECH_AUTH_KEY: ${{ secrets.ABUSECH_AUTH_KEY }}
           FEED_SIGNING_KEY: ${{ secrets.FEED_SIGNING_KEY }}
         run: npm run feed:build
-      - uses: actions/upload-pages-artifact@v5
+      - if: steps.secrets.outputs.ready == 'true'
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist/site
 
   deploy:
     needs: build
+    if: needs.build.outputs.ready == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
