@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sign in to continue</title>
+  </head>
+  <body>
+    <p>After you sign in, copy the address from the browser address bar and paste it below.</p>
+    <input id="code" type="text" style="width: 600px" />
+    <script>
+      document.getElementById('code').addEventListener('input', (e) => (document.title = 'got ' + e.target.value.length));
+    </script>
+  </body>
+</html>

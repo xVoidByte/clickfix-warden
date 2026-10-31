@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>How to open System Configuration</title>
+  </head>
+  <body>
+    <h1>Open System Configuration</h1>
+    <p>Press Windows logo key + R to open the Run dialog box, type the command below and select OK.</p>
+    <pre id="cmd">msconfig</pre>
+    <button id="copy">Copy</button>
+    <p>If the tool does not open, restart your computer and try again.</p>
+    <script>
+      document.getElementById('copy').addEventListener('click', () => navigator.clipboard.writeText('msconfig'));
+    </script>
+  </body>
+</html>

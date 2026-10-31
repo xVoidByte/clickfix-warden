@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Video player</title>
+  </head>
+  <body>
+    <div id="player" style="width: 320px; height: 180px; background: #000"></div>
+    <button id="fs">Full screen</button>
+    <script>
+      document.getElementById('fs').addEventListener('click', async () => {
+        try {
+          await document.getElementById('player').requestFullscreen();
+          document.title = 'fullscreen ok';
+        } catch (e) {
+          document.title = 'fullscreen ' + e.name;
+        }
+      });
+    </script>
+  </body>
+</html>

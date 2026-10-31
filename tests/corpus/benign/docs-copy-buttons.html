@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Installation guide</title>
+  </head>
+  <body>
+    <h1>Installation</h1>
+    <p>Open a terminal and run one of these commands.</p>
+    <div class="block"><pre>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</pre><button class="copy" aria-label="Copy">Copy</button></div>
+    <div class="block"><pre>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</pre><button class="copy" aria-label="Copy">Copy</button></div>
+    <div class="block"><pre>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</pre><button class="copy" aria-label="Copy">Copy</button></div>
+    <div class="block"><pre>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression</pre><button class="copy" aria-label="Copy">Copy</button></div>
+    <div class="block"><pre>curl -fsSL https://get.docker.com -o get-docker.sh &amp;&amp; sudo sh get-docker.sh</pre><button class="copy" aria-label="Copy">Copy</button></div>
+    <script>
+      for (const btn of document.querySelectorAll('.copy')) {
+        btn.addEventListener('click', async () => {
+          await navigator.clipboard.writeText(btn.previousElementSibling.textContent);
+          btn.textContent = 'Copied';
+        });
+      }
+    </script>
+  </body>
+</html>

