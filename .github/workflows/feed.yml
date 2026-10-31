@@ -1,10 +1,10 @@
 name: Publish database
 
-# Rebuilds and publishes the signed database every hour, a failed run publishes nothing and missing secrets only leave a notice.
+# Rebuilds and publishes the signed database every hour with a backup slot, a failed run publishes nothing and missing secrets only leave a notice.
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '7,37 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -27,18 +27,28 @@ jobs:
     outputs:
       ready: ${{ steps.secrets.outputs.ready }}
     steps:
-      - name: Check that the secrets are set
+      # The :37 slot only publishes when GitHub skipped the :07 one, so browsers stay one step behind and keep getting the small delta.
+      - name: Check the secrets and the age of the live database
         id: secrets
         env:
           ABUSECH_AUTH_KEY: ${{ secrets.ABUSECH_AUTH_KEY }}
           FEED_SIGNING_KEY: ${{ secrets.FEED_SIGNING_KEY }}
+          EVENT: ${{ github.event_name }}
         run: |
           if [ -z "$ABUSECH_AUTH_KEY" ] || [ -z "$FEED_SIGNING_KEY" ]; then
             echo "::notice::ABUSECH_AUTH_KEY or FEED_SIGNING_KEY is not set, nothing was published"
             echo "ready=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "ready=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+          if [ "$EVENT" = "schedule" ]; then
+            generated=$(curl -fsS https://xvoidbyte.github.io/ClickFixWarden/v1/meta.json | python3 -c 'import json,sys; print(json.load(sys.stdin)["generated"])' || true)
+            if [ -n "$generated" ] && [ $(( $(date +%s) - $(date -d "$generated" +%s) )) -lt 2700 ]; then
+              echo "::notice::The live database from $generated is less than 45 minutes old, nothing was published"
+              echo "ready=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
       - if: steps.secrets.outputs.ready == 'true'
         uses: actions/checkout@v7
       - if: steps.secrets.outputs.ready == 'true'
