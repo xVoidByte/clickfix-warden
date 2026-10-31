@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "enabled": { "type": "boolean", "title": "Protection on", "description": "Turns all protection on or off." },
+    "clipboard": { "type": "boolean", "title": "Clipboard protection", "description": "Blocks dangerous commands that websites put in the clipboard." },
+    "paste": { "type": "boolean", "title": "Sign-in link paste protection", "description": "Blocks pasting sign-in links that carry an authorization code into websites." },
+    "protocols": { "type": "boolean", "title": "Program link protection", "description": "Blocks links that open Script Editor, Windows search on remote folders and similar programs." },
+    "fullscreen": { "type": "boolean", "title": "Fake full-screen page protection", "description": "Stops fake update pages from taking over the screen." },
+    "pageWarnings": { "type": "boolean", "title": "Paste instruction warnings", "description": "Warns about pages that tell visitors to paste something into Run or Terminal." },
+    "reputation": { "type": "boolean", "title": "Reported site warnings", "description": "Warns about sites listed in public threat databases." },
+    "blockPage": { "type": "boolean", "title": "Block known ClickFix sites", "description": "Shows a full-page warning before a known ClickFix site loads." },
+    "web3": { "type": "boolean", "title": "Blockchain loader warnings", "description": "Warns when a site loads hidden code from a blockchain." },
+    "feedUpdates": { "type": "boolean", "title": "Database updates", "description": "Downloads the signed database and rules every hour." },
+    "trustedSites": { "type": "array", "items": { "type": "string" }, "title": "Trusted sites", "description": "Sites that are never checked, for example internal tools." },
+    "customWarning": { "type": "string", "title": "Message in warnings", "description": "Extra text shown in every warning, for example the IT helpdesk contact." },
+    "lockSettings": { "type": "boolean", "title": "Lock settings", "description": "Prevents users from changing any setting." }
+  }
+}

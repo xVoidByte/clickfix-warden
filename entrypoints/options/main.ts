@@ -1,0 +1,366 @@
+import { browser } from 'wxt/browser';
+import { BUNDLED_RULES, pickRules } from '../../src/engine/rules';
+import { lookupKeys } from '../../src/feed/db';
+import { lookupKeysForUrl } from '../../src/feed/keys';
+import { type FeedMeta, type FeedRecord, SOURCE_NAMES, type UpdateState } from '../../src/feed/types';
+import type { UpdateResult } from '../../src/feed/update';
+import { DONATE_URL, PRIVACY_URL, PROJECT_URL } from '../../src/shared/constants';
+import { localizePage, relativeTime, t } from '../../src/shared/i18n';
+import type { Detection, Message } from '../../src/shared/messages';
+import { computeEffectiveSettings, type EffectiveSettings, normalizeSite, saveSettings, type Settings } from '../../src/shared/settings';
+
+localizePage();
+const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
+const send = <T>(msg: Message) => browser.runtime.sendMessage(msg) as Promise<T>;
+
+function make<K extends keyof HTMLElementTagNameMap>(tag: K, props: Record<string, unknown> = {}, ...children: (Node | string)[]): HTMLElementTagNameMap[K] {
+  const e = document.createElement(tag);
+  Object.assign(e, props);
+  e.append(...children);
+  return e;
+}
+
+function tip(key: string): HTMLElement {
+  const s = make('span', { className: 'tip', tabIndex: 0, textContent: 'i' });
+  s.dataset.tip = t(key);
+  s.setAttribute('aria-label', t(key));
+  return s;
+}
+
+function download(name: string, data: unknown): void {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = make('a', { href: URL.createObjectURL(blob), download: name });
+  document.body.append(a);
+  a.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(a.href);
+    a.remove();
+  }, 1000);
+}
+
+const stamp = () => new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+
+// ---- protection toggles ----
+const TOGGLES: { key: keyof Settings; label: string; tip: string; sub?: boolean }[] = [
+  { key: 'enabled', label: 'setEnabled', tip: 'tipEnabled' },
+  { key: 'clipboard', label: 'setClipboard', tip: 'tipClipboard' },
+  { key: 'paste', label: 'setPaste', tip: 'tipPaste' },
+  { key: 'protocols', label: 'setProtocols', tip: 'tipProtocols' },
+  { key: 'fullscreen', label: 'setFullscreen', tip: 'tipFullscreen' },
+  { key: 'pageWarnings', label: 'setPageWarnings', tip: 'tipPageWarnings' },
+  { key: 'web3', label: 'setWeb3', tip: 'tipWeb3' },
+  { key: 'reputation', label: 'setReputation', tip: 'tipReputation' },
+  { key: 'blockPage', label: 'setBlockPage', tip: 'tipBlockPage', sub: true },
+  { key: 'feedUpdates', label: 'setFeedUpdates', tip: 'tipFeedUpdates' },
+];
+
+let eff: EffectiveSettings;
+
+function locked(key: string): boolean {
+  return eff.locked || eff.managedKeys.includes(key);
+}
+
+function renderToggles(): void {
+  const box = $('toggles');
+  box.replaceChildren();
+  for (const item of TOGGLES) {
+    const input = make('input', { type: 'checkbox', checked: eff.settings[item.key] as boolean, disabled: locked(item.key) });
+    input.id = 'set-' + item.key;
+    input.addEventListener('change', async () => {
+      await saveSettings({ [item.key]: input.checked } as Partial<Settings>);
+      await refresh();
+    });
+    const label = make('label', { htmlFor: input.id, textContent: t(item.label) });
+    const name = make('div', { className: 'name' }, label, tip(item.tip));
+    const sw = make('label', { className: 'switch' }, input, make('span', { className: 'track' }));
+    const row = make('div', { className: 'setting' + (item.sub ? ' sub' : '') }, name, sw);
+    box.append(row);
+  }
+}
+
+// ---- trusted sites ----
+function renderSites(): void {
+  const list = $('sites');
+  list.replaceChildren();
+  if (!eff.settings.trustedSites.length) list.append(make('li', { className: 'empty', textContent: t('trustedEmpty') }));
+  for (const site of eff.settings.trustedSites) {
+    const remove = make('button', { className: 'link', textContent: t('trustedRemove'), title: t('tipTrustedRemove'), disabled: locked('trustedSites') });
+    remove.addEventListener('click', async () => {
+      await saveSettings({ trustedSites: eff.settings.trustedSites.filter((s) => s !== site) });
+      await refresh();
+    });
+    list.append(make('li', {}, make('span', { className: 'mono', textContent: site }), remove));
+  }
+  $<HTMLButtonElement>('addSite').disabled = locked('trustedSites');
+  $<HTMLInputElement>('siteInput').disabled = locked('trustedSites');
+}
+
+$('addSite').addEventListener('click', async () => {
+  const input = $<HTMLInputElement>('siteInput');
+  const site = normalizeSite(input.value);
+  if (!site || !site.includes('.')) return;
+  if (!eff.settings.trustedSites.includes(site)) await saveSettings({ trustedSites: [...eff.settings.trustedSites, site] });
+  input.value = '';
+  await refresh();
+});
+$('siteInput').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') $('addSite').click();
+});
+
+// ---- custom warning text ----
+$('saveWarning').addEventListener('click', async () => {
+  await saveSettings({ customWarning: $<HTMLTextAreaElement>('customWarning').value.trim() });
+  $('savedNote').hidden = false;
+  setTimeout(() => ($('savedNote').hidden = true), 2000);
+  await refresh();
+});
+
+// ---- history check ----
+interface HistoryFinding {
+  url: string;
+  title: string;
+  lastVisit: string;
+  records: FeedRecord[];
+}
+let historyFindings: HistoryFinding[] = [];
+
+async function runHistoryScan(days: number): Promise<void> {
+  const out = $('historyResult');
+  out.replaceChildren(make('p', { className: 'muted', textContent: t('historyScanning') }));
+  const history = (browser as unknown as { history: typeof browser.history }).history;
+  const items = await history.search({ text: '', startTime: Date.now() - days * 86_400_000, maxResults: 100_000 });
+  const byKey = new Map<string, typeof items>();
+  for (const item of items) {
+    if (!item.url) continue;
+    for (const key of lookupKeysForUrl(item.url)) {
+      const list = byKey.get(key);
+      if (list) list.push(item);
+      else byKey.set(key, [item]);
+    }
+  }
+  const keys = [...byKey.keys()];
+  const found = new Map<string, HistoryFinding>();
+  for (let i = 0; i < keys.length; i += 4000) {
+    const hits = await lookupKeys(keys.slice(i, i + 4000));
+    for (const hit of hits) {
+      for (const item of byKey.get(hit.key) ?? []) {
+        const f = found.get(item.url!) ?? {
+          url: item.url!,
+          title: item.title ?? '',
+          lastVisit: item.lastVisitTime ? new Date(item.lastVisitTime).toISOString() : '',
+          records: [],
+        };
+        f.records.push(...hit.records);
+        found.set(item.url!, f);
+      }
+    }
+  }
+  historyFindings = [...found.values()].sort((a, b) => b.lastVisit.localeCompare(a.lastVisit));
+  out.replaceChildren(make('p', { textContent: t('historyChecked', [String(items.length), String(days)]) }));
+  $('exportHistory').hidden = false;
+  if (!historyFindings.length) {
+    out.append(make('p', {}, make('span', { className: 'pill ok', textContent: t('historyClean') })));
+    return;
+  }
+  out.append(make('p', {}, make('span', { className: 'pill bad', textContent: t('historyFound', String(historyFindings.length)) })));
+  out.append(make('p', { className: 'small muted', textContent: t('historyAdvice') }));
+  const table = make('table');
+  table.append(make('tr', {}, make('th', { textContent: t('colVisited') }), make('th', { textContent: t('colAddress') }), make('th', { textContent: t('colReport') })));
+  for (const f of historyFindings.slice(0, 300)) {
+    const report = make('td');
+    for (const r of f.records) {
+      const line = make('div', { textContent: [SOURCE_NAMES[r.source], t('category_' + r.category), r.malware, r.firstSeen].filter(Boolean).join(', ') + ' ' });
+      if (/^https:\/\/(urlhaus|threatfox|feodotracker)\.abuse\.ch\//.test(r.ref))
+        line.append(make('a', { href: r.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') }));
+      report.append(line);
+    }
+    table.append(make('tr', {}, make('td', { textContent: f.lastVisit ? new Date(f.lastVisit).toLocaleString() : '' }), make('td', { className: 'url mono', textContent: f.url }), report));
+  }
+  out.append(make('div', { className: 'table-wrap' }, table));
+}
+
+$('scanHistory').addEventListener('click', () => {
+  const days = Number($<HTMLSelectElement>('historyDays').value) || 30;
+  // The permission prompt has to open straight from the click.
+  browser.permissions.request({ permissions: ['history'] }).then(async (granted) => {
+    if (!granted) {
+      $('historyResult').replaceChildren(make('p', { className: 'muted', textContent: t('historyDenied') }));
+      return;
+    }
+    $('dropHistory').hidden = false;
+    await saveSettings({ historyDays: days });
+    try {
+      await runHistoryScan(days);
+    } catch (e) {
+      $('historyResult').replaceChildren(make('p', { className: 'muted', textContent: String(e) }));
+    }
+  });
+});
+$('exportHistory').addEventListener('click', () => download(`clickfix-warden-history-${stamp()}.json`, historyFindings));
+$('dropHistory').addEventListener('click', async () => {
+  await browser.permissions.remove({ permissions: ['history'] });
+  $('dropHistory').hidden = true;
+});
+
+// ---- extensions check ----
+$('scanExtensions').addEventListener('click', () => {
+  browser.permissions.request({ permissions: ['management'] }).then(async (granted) => {
+    const out = $('extensionsResult');
+    if (!granted) {
+      out.replaceChildren(make('p', { className: 'muted', textContent: t('extensionsDenied') }));
+      return;
+    }
+    $('dropManagement').hidden = false;
+    const { rules: stored } = await browser.storage.local.get('rules');
+    const rules = pickRules(stored);
+    const management = (browser as unknown as { management: typeof browser.management }).management;
+    const all = await management.getAll();
+    const bad = new Map(rules.extensions.malicious.map((m) => [m.id, m]));
+    const found = all.filter((ext) => bad.has(ext.id));
+    out.replaceChildren(make('p', { textContent: t('extensionsChecked', String(all.length)) }));
+    if (!found.length) {
+      out.append(make('p', {}, make('span', { className: 'pill ok', textContent: t('extensionsClean') })));
+      return;
+    }
+    for (const ext of found) {
+      const remove = make('button', { className: 'danger', textContent: t('extensionsRemove'), title: t('tipExtensionsRemove') });
+      remove.addEventListener('click', () => void management.uninstall(ext.id, { showConfirmDialog: true }));
+      const info = bad.get(ext.id)!;
+      out.append(
+        make(
+          'div',
+          { className: 'notice' },
+          make('strong', { textContent: `${ext.name} (${ext.id})` }),
+          make('div', { className: 'small', textContent: t('extensionsKnownAs', info.name) }),
+          make('div', { className: 'row' }, remove, make('a', { href: info.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') })),
+        ),
+      );
+    }
+  });
+});
+$('dropManagement').addEventListener('click', async () => {
+  await browser.permissions.remove({ permissions: ['management'] });
+  $('dropManagement').hidden = true;
+});
+
+// ---- detection log ----
+async function renderLog(): Promise<Detection[]> {
+  const { log } = (await browser.storage.local.get('log')) as { log?: Detection[] };
+  const list = log ?? [];
+  const box = $('logTable');
+  box.replaceChildren();
+  if (!list.length) {
+    box.append(make('p', { className: 'empty', textContent: t('popupNoDetections') }));
+    return list;
+  }
+  const table = make('table');
+  table.append(
+    make('tr', {}, make('th', { textContent: t('colTime') }), make('th', { textContent: t('colWhat') }), make('th', { textContent: t('colSite') }), make('th', { className: 'opt', textContent: t('colDetails') })),
+  );
+  for (const d of list.slice(0, 200)) {
+    const details = make('td', { className: 'opt' });
+    if (d.command || d.reasons.length) {
+      const det = make('details', {}, make('summary', { textContent: t('logShow') }));
+      if (d.reasons.length) det.append(make('div', { className: 'small muted', textContent: d.reasons.join(', ') }));
+      if (d.command) det.append(make('pre', { textContent: d.command }));
+      details.append(det);
+    }
+    table.append(
+      make(
+        'tr',
+        {},
+        make('td', { textContent: new Date(d.time).toLocaleString() }),
+        make('td', { textContent: `${t('kind_' + d.kind.replace(/-/g, '_'))}, ${t('action_' + d.action.replace(/-/g, '_'))}` }),
+        make('td', { className: 'url', textContent: d.host || d.url }),
+        details,
+      ),
+    );
+  }
+  box.append(table);
+  return list;
+}
+$('exportLog').addEventListener('click', async () => {
+  const { log } = (await browser.storage.local.get('log')) as { log?: Detection[] };
+  download(`clickfix-warden-log-${stamp()}.json`, log ?? []);
+});
+$('clearLog').addEventListener('click', async () => {
+  if (!confirm(t('logClearConfirm'))) return;
+  await send({ type: 'clear-log' });
+  await renderLog();
+});
+
+// ---- database ----
+async function renderDatabase(): Promise<void> {
+  const { feedMeta, updateState, rules } = (await browser.storage.local.get(['feedMeta', 'updateState', 'rules'])) as {
+    feedMeta?: FeedMeta;
+    updateState?: UpdateState;
+    rules?: unknown;
+  };
+  const status = $('dbStatus');
+  const active = pickRules(rules);
+  const lines = [
+    feedMeta ? t('dbGenerated', [String(feedMeta.count), relativeTime(feedMeta.generated)]) : t('popupFeedNone'),
+    feedMeta ? t('dbChecked', relativeTime(feedMeta.checked)) : '',
+    t('popupRulesLine', [String(active.version), active === BUNDLED_RULES ? t('popupRulesBundled') : t('popupRulesUpdated')]),
+    updateState?.lastError ? t('dbError', updateState.lastError) : '',
+  ].filter(Boolean);
+  status.replaceChildren(...lines.map((l) => make('div', { textContent: l })));
+  const sources = $('dbSources');
+  sources.replaceChildren(...(feedMeta?.sources ?? []).map((s) => make('li', { textContent: `${SOURCE_NAMES[s.id] ?? s.name}: ${s.count}` })));
+}
+$('updateNow').addEventListener('click', async () => {
+  const btn = $<HTMLButtonElement>('updateNow');
+  btn.disabled = true;
+  $('updateResult').textContent = t('popupUpdating');
+  const result = await send<UpdateResult>({ type: 'update-now' });
+  btn.disabled = false;
+  $('updateResult').textContent = result?.error ? t('dbError', result.error) : t('dbUpdated');
+  await renderDatabase();
+});
+
+// ---- about and welcome ----
+$<HTMLAnchorElement>('projectLink').href = PROJECT_URL;
+$<HTMLAnchorElement>('privacyLink').href = PRIVACY_URL;
+if (DONATE_URL) {
+  const d = $<HTMLAnchorElement>('donateLink');
+  d.href = DONATE_URL;
+  d.hidden = false;
+}
+$('version').textContent = `v${browser.runtime.getManifest().version}`;
+
+async function checkHostAccess(): Promise<void> {
+  const granted = await browser.permissions.contains({ origins: ['<all_urls>'] });
+  $('hostAccess').hidden = granted;
+  if (!granted) $('welcome').hidden = false;
+}
+$('grantHosts').addEventListener('click', () => {
+  browser.permissions.request({ origins: ['<all_urls>'] }).then(() => checkHostAccess());
+});
+if (new URLSearchParams(location.search).has('welcome')) $('welcome').hidden = false;
+
+async function refresh(): Promise<void> {
+  eff = await computeEffectiveSettings();
+  $('managedNote').hidden = !(eff.locked || eff.managedKeys.length);
+  renderToggles();
+  renderSites();
+  const ta = $<HTMLTextAreaElement>('customWarning');
+  ta.value = eff.settings.customWarning;
+  ta.disabled = locked('customWarning');
+  $<HTMLButtonElement>('saveWarning').disabled = locked('customWarning');
+  $<HTMLSelectElement>('historyDays').value = String(eff.settings.historyDays);
+}
+
+void (async () => {
+  await refresh();
+  await renderLog();
+  await renderDatabase();
+  await checkHostAccess();
+  if (await browser.permissions.contains({ permissions: ['history'] })) $('dropHistory').hidden = false;
+  if (await browser.permissions.contains({ permissions: ['management'] })) $('dropManagement').hidden = false;
+})();
+
+browser.storage.onChanged.addListener((changes, area) => {
+  if (area !== 'local') return;
+  if (changes.log) void renderLog();
+  if (changes.feedMeta || changes.updateState || changes.rules) void renderDatabase();
+});

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ClickFix Warden</title>
+    <link rel="stylesheet" href="../../src/ui/page.css" />
+    <style>
+      body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 16px; background: var(--danger-bg); }
+      main { background: var(--card); border: 1px solid var(--line); border-radius: 16px; max-width: 640px; width: 100%; padding: 28px; box-shadow: 0 18px 60px rgba(0,0,0,.18); }
+      h1 { color: var(--danger); font-size: 24px; margin: 18px 0 10px; }
+      .url { background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; word-break: break-all; margin: 12px 0; }
+      .reports { margin: 14px 0 0; padding: 0; list-style: none; }
+      .reports li { border-top: 1px solid var(--line); padding: 10px 0; }
+      .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; align-items: center; }
+      .actions .spacer { flex: 1; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="brand"><img src="/icon/48.png" alt="" /><span class="name">ClickFix Warden</span></div>
+      <h1 data-i18n="warnTitle">Dangerous site blocked</h1>
+      <p data-i18n="warnBody">This site is listed in public threat databases as a ClickFix page.</p>
+      <div class="url mono" id="url"></div>
+      <h2 class="small muted" data-i18n="warnReports">Reports</h2>
+      <ul class="reports" id="reports"></ul>
+      <p class="small muted" data-i18n="warnAdvice">Never paste anything a website gives you into Run, Terminal or File Explorer.</p>
+      <div class="actions">
+        <button class="primary" id="leave" data-i18n="warnLeave" data-i18n-title="warnLeaveTip">Go back to safety</button>
+        <span class="spacer"></span>
+        <button class="link danger" id="continue" data-i18n="warnContinue" data-i18n-title="warnContinueTip">Continue anyway</button>
+      </div>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
