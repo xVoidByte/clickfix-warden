@@ -1,0 +1,162 @@
+{
+  "format": 1,
+  "version": 1,
+  "minEngine": 1,
+  "updated": "2026-10-31",
+  "thresholds": {
+    "block": 70,
+    "warn": 45,
+    "capabilityCap": 45,
+    "contextCap": 60
+  },
+  "command": [
+    { "id": "exec-powershell", "cat": "exec", "w": 15, "re": "\\b(powershell|pwsh)(\\.exe)?\\b", "label": { "en": "Starts PowerShell", "bg": "Стартира PowerShell" } },
+    { "id": "exec-cmd", "cat": "exec", "w": 10, "re": "\\bcmd(\\.exe)?\\s+/[ckr]\\b", "label": { "en": "Starts the Command Prompt", "bg": "Стартира командния ред" } },
+    { "id": "exec-mshta", "cat": "exec", "w": 30, "re": "\\bmshta(\\.exe)?\\b", "label": { "en": "Runs a script through mshta", "bg": "Пуска скрипт през mshta" } },
+    { "id": "exec-rundll32", "cat": "exec", "w": 20, "re": "\\brundll32(\\.exe)?\\b", "label": { "en": "Loads code through rundll32", "bg": "Зарежда код през rundll32" } },
+    { "id": "exec-regsvr32", "cat": "exec", "w": 20, "re": "\\bregsvr32(\\.exe)?\\b", "label": { "en": "Loads code through regsvr32", "bg": "Зарежда код през regsvr32" } },
+    { "id": "exec-msiexec", "cat": "exec", "w": 15, "re": "\\bmsiexec(\\.exe)?\\b", "label": { "en": "Installs a package with msiexec", "bg": "Инсталира пакет с msiexec" } },
+    { "id": "exec-certutil", "cat": "exec", "w": 15, "re": "\\bcertutil(\\.exe)?\\b", "label": { "en": "Uses certutil", "bg": "Използва certutil" } },
+    { "id": "exec-bitsadmin", "cat": "exec", "w": 15, "re": "\\bbitsadmin(\\.exe)?\\b", "label": { "en": "Uses bitsadmin", "bg": "Използва bitsadmin" } },
+    { "id": "exec-wscript", "cat": "exec", "w": 15, "re": "\\b(wscript|cscript)(\\.exe)?\\b", "label": { "en": "Runs a Windows script", "bg": "Пуска Windows скрипт" } },
+    { "id": "exec-conhost", "cat": "exec", "w": 10, "re": "\\bconhost(\\.exe)?\\b", "label": { "en": "Starts a console host", "bg": "Стартира конзолен процес" } },
+    { "id": "exec-forfiles", "cat": "exec", "w": 15, "re": "\\bforfiles(\\.exe)?\\b", "label": { "en": "Runs a command through forfiles", "bg": "Пуска команда през forfiles" } },
+    { "id": "exec-finger", "cat": "exec", "w": 25, "re": "\\bfinger(\\.exe)?\\s+\\S+@\\S+", "label": { "en": "Downloads text with finger", "bg": "Сваля текст с finger" } },
+    { "id": "exec-nslookup", "cat": "exec", "w": 10, "re": "\\b(nslookup(\\.exe)?|resolve-dnsname)\\b", "label": { "en": "Makes a DNS lookup", "bg": "Прави DNS заявка" } },
+    { "id": "exec-cmdkey", "cat": "exec", "w": 15, "re": "\\bcmdkey(\\.exe)?\\b", "label": { "en": "Stores Windows credentials", "bg": "Записва Windows пароли" } },
+    { "id": "exec-persistence", "cat": "exec", "w": 10, "re": "\\b(schtasks(\\.exe)?\\s+/create|reg(\\.exe)?\\s+add)\\b", "label": { "en": "Changes startup tasks or the registry", "bg": "Променя задачи при стартиране или регистъра" } },
+    { "id": "exec-iex", "cat": "exec", "w": 20, "re": "\\b(iex|invoke-expression)\\b", "label": { "en": "Runs text as code", "bg": "Изпълнява текст като код" } },
+    { "id": "exec-start-process", "cat": "exec", "w": 10, "re": "\\bstart-process\\b", "label": { "en": "Starts another program", "bg": "Стартира друга програма" } },
+    { "id": "exec-pushd-unc", "cat": "exec", "w": 15, "re": "\\bpushd\\s+\\\\\\\\", "label": { "en": "Opens a remote network folder", "bg": "Отваря отдалечена мрежова папка" } },
+    { "id": "exec-explorer-unc", "cat": "exec", "w": 15, "re": "\\bexplorer(\\.exe)?\\s+[\"']?\\\\\\\\", "label": { "en": "Opens a remote network folder", "bg": "Отваря отдалечена мрежова папка" } },
+    { "id": "exec-net-use", "cat": "exec", "w": 10, "re": "\\bnet(\\.exe)?\\s+use\\b", "label": { "en": "Connects a network drive", "bg": "Свързва мрежово устройство" } },
+    { "id": "exec-lolbin", "cat": "exec", "w": 15, "re": "\\b(msbuild|installutil|odbcconf|cmstp|pcalua|syncappvpublishingserver|mavinject|msxsl|wmic)(\\.exe)?\\b", "label": { "en": "Uses a Windows tool often abused by malware", "bg": "Използва Windows инструмент, често злоупотребяван от зловреден софтуер" } },
+    { "id": "exec-shell", "cat": "exec", "w": 15, "re": "(\\|\\s*(sudo\\s+)?(ba|z|da)?sh\\b|\\b(ba|z)?sh\\s+-c\\b)", "label": { "en": "Runs a shell command", "bg": "Пуска команда в терминала" } },
+    { "id": "exec-osascript", "cat": "exec", "w": 25, "re": "\\bosascript\\b", "label": { "en": "Runs an AppleScript", "bg": "Пуска AppleScript" } },
+    { "id": "exec-script-lang", "cat": "exec", "w": 10, "re": "\\b(python[23]?|perl|ruby)\\s+-[ce]\\b", "label": { "en": "Runs a script one-liner", "bg": "Пуска скрипт на един ред" } },
+    { "id": "exec-chmod-run", "cat": "exec", "w": 10, "re": "\\bchmod\\s+(\\+x|[0-7]{3,4})\\b", "label": { "en": "Makes a downloaded file runnable", "bg": "Прави свален файл изпълним" } },
+
+    { "id": "fetch-ps-web", "cat": "fetch", "w": 15, "re": "\\b(iwr|irm|invoke-webrequest|invoke-restmethod|downloadstring|downloadfile|downloaddata|net\\.webclient|start-bitstransfer|system\\.net\\.http)\\b", "label": { "en": "Downloads something from the internet", "bg": "Сваля нещо от интернет" } },
+    { "id": "fetch-pipe-iex", "cat": "fetch", "w": 15, "re": "\\|\\s*(iex|invoke-expression)\\b", "label": { "en": "Runs whatever it downloads", "bg": "Изпълнява каквото свали" } },
+    { "id": "fetch-curl", "cat": "fetch", "w": 5, "re": "\\b(curl|wget)(\\.exe)?\\b", "label": { "en": "Downloads something from the internet", "bg": "Сваля нещо от интернет" } },
+    { "id": "fetch-url", "cat": "fetch", "w": 5, "re": "\\b(https?|hxxps?)://", "label": { "en": "Contains a web address", "bg": "Съдържа уеб адрес" } },
+    { "id": "fetch-cmd-subst", "cat": "fetch", "w": 15, "re": "\\$\\(\\s*(curl|wget)\\b", "label": { "en": "Runs whatever it downloads", "bg": "Изпълнява каквото свали" } },
+    { "id": "fetch-pipe-shell", "cat": "fetch", "w": 15, "re": "\\b(curl|wget)\\b[^|\\n]{0,300}\\|\\s*(sudo\\s+)?(ba|z|da)?sh\\b", "label": { "en": "Runs whatever it downloads", "bg": "Изпълнява каквото свали" } },
+
+    { "id": "hall-hidden-window", "cat": "hallmark", "w": 30, "re": "(^|\\s)[-/]w(i(n(d(o(w(s(t(y(l(e)?)?)?)?)?)?)?)?)?)?\\s+[\"']?(h(i(d(d(e(n)?)?)?)?)?|1)\\b", "label": { "en": "Runs with a hidden window", "bg": "Работи със скрит прозорец" } },
+    { "id": "hall-minimized", "cat": "hallmark", "w": 15, "re": "((^|\\s)-w(indowstyle)?\\s+min(imized)?\\b|\\bstart\\s+(\"\"\\s+)?/min\\b)", "label": { "en": "Runs minimized so you do not notice", "bg": "Работи минимизирано, за да не го забележите" } },
+    { "id": "hall-encoded", "cat": "hallmark", "w": 25, "re": "(^|\\s)-e(c|n|nc|ncod|ncode|ncoded|ncodedcommand)?\\s+[a-z0-9+/=]{16,}", "label": { "en": "Hides the real command in Base64", "bg": "Крие истинската команда в Base64" } },
+    { "id": "hall-frombase64", "cat": "hallmark", "w": 20, "re": "frombase64string", "label": { "en": "Decodes hidden Base64 code", "bg": "Декодира скрит Base64 код" } },
+    { "id": "hall-decoy-comment", "cat": "hallmark", "w": 50, "re": "(\\s#|\\srem\\s|\\s::|\\s//)[^\\n]{0,80}(robot|human|captcha|verif|cloudflare|ray id|id:|човек|робот|человек|humano|mensch|humain|umano|insan|człowiek|людин)", "label": { "en": "Fake verification text hidden after the command", "bg": "Фалшив текст за проверка, скрит след командата" } },
+    { "id": "hall-decoy-phrase", "cat": "hallmark", "w": 40, "re": "(i am not a robot|i'm not a robot|im not a robot|verification id|captcha verification|human verification|verify you are human|не съм робот|я не робот)", "label": { "en": "Pretends to be a CAPTCHA check", "bg": "Представя се за CAPTCHA проверка" } },
+    { "id": "hall-mshta-remote", "cat": "hallmark", "w": 40, "re": "\\bmshta(\\.exe)?\\s+[\"']?(https?:|\\\\\\\\|vbscript:|javascript:)", "label": { "en": "Runs a script straight from the internet", "bg": "Пуска скрипт директно от интернет" } },
+    { "id": "hall-msiexec-remote", "cat": "hallmark", "w": 35, "re": "\\bmsiexec(\\.exe)?\\b[^\\n]{0,80}(https?://|\\\\\\\\)", "label": { "en": "Installs a package straight from the internet", "bg": "Инсталира пакет директно от интернет" } },
+    { "id": "hall-regsvr32-remote", "cat": "hallmark", "w": 35, "re": "\\bregsvr32(\\.exe)?\\b[^\\n]{0,120}(/i:\\s*[\"']?https?|scrobj|\\\\\\\\)", "label": { "en": "Loads code from a remote location", "bg": "Зарежда код от отдалечено място" } },
+    { "id": "hall-rundll32-remote", "cat": "hallmark", "w": 35, "re": "\\brundll32(\\.exe)?\\b[^\\n]{0,40}(\\\\\\\\|https?://|javascript:)", "label": { "en": "Loads code from a remote location", "bg": "Зарежда код от отдалечено място" } },
+    { "id": "hall-certutil-download", "cat": "hallmark", "w": 35, "re": "\\bcertutil(\\.exe)?\\b[^\\n]{0,80}-urlcache", "label": { "en": "Downloads a file with certutil", "bg": "Сваля файл с certutil" } },
+    { "id": "hall-bitsadmin-download", "cat": "hallmark", "w": 30, "re": "\\bbitsadmin(\\.exe)?\\b[^\\n]{0,80}/transfer", "label": { "en": "Downloads a file with bitsadmin", "bg": "Сваля файл с bitsadmin" } },
+    { "id": "hall-finger-pipe", "cat": "hallmark", "w": 40, "re": "\\bfinger(\\.exe)?\\s+\\S+@\\S+[^\\n]{0,40}\\|", "label": { "en": "Downloads commands with finger and runs them", "bg": "Сваля команди с finger и ги пуска" } },
+    { "id": "hall-dns-exec", "cat": "hallmark", "w": 35, "re": "(\\bnslookup\\b[^\\n]{0,200}(\\|\\s*(iex|cmd|powershell|pwsh|findstr|sh|bash)\\b|-q(uerytype)?=txt|-type=txt)|\\bresolve-dnsname\\b[^\\n]{0,200}\\btxt\\b)", "label": { "en": "Pulls hidden commands from DNS records", "bg": "Изтегля скрити команди от DNS записи" } },
+    { "id": "hall-webdav", "cat": "hallmark", "w": 35, "re": "(\\\\\\\\[a-z0-9.-]+@ssl(@\\d+)?\\\\|davwwwroot|\\\\\\\\[0-9]{1,3}(\\.[0-9]{1,3}){3}(@\\d+)?\\\\)", "label": { "en": "Runs files from a remote network share", "bg": "Пуска файлове от отдалечена мрежова папка" } },
+    { "id": "hall-cmdkey", "cat": "hallmark", "w": 30, "re": "\\bcmdkey(\\.exe)?\\s+/(add|generic)", "label": { "en": "Saves a login for a remote server", "bg": "Записва вход за отдалечен сървър" } },
+    { "id": "hall-conhost-headless", "cat": "hallmark", "w": 35, "re": "\\bconhost(\\.exe)?\\s+--headless", "label": { "en": "Starts a console without a window", "bg": "Стартира конзола без прозорец" } },
+    { "id": "hall-ip-url", "cat": "hallmark", "w": 20, "re": "\\b(https?|hxxps?)://[0-9]{1,3}(\\.[0-9]{1,3}){3}", "label": { "en": "Downloads from a bare IP address", "bg": "Сваля от гол IP адрес" } },
+    { "id": "hall-temp-exec", "cat": "hallmark", "w": 20, "re": "(%temp%|\\$env:temp|%appdata%|\\$env:appdata|%localappdata%|\\$env:localappdata|/tmp/|programdata)[^\\n]{0,80}\\.(exe|dll|hta|vbs|js|ps1|bat|cmd|msi|scr)\\b", "label": { "en": "Drops a program into a hidden folder", "bg": "Слага програма в скрита папка" } },
+    { "id": "hall-base64-shell", "cat": "hallmark", "w": 40, "re": "base64\\s+(-d|--decode|-di)\\b[^\\n]{0,60}\\|\\s*(sudo\\s+)?(ba|z)?sh\\b", "label": { "en": "Decodes hidden code and runs it in the terminal", "bg": "Декодира скрит код и го пуска в терминала" } },
+    { "id": "hall-osascript-shell", "cat": "hallmark", "w": 35, "re": "\\bosascript\\b[^\\n]{0,200}(do shell script|display dialog|password|curl)", "label": { "en": "Uses AppleScript to run commands or ask for your password", "bg": "Използва AppleScript, за да пуска команди или да иска паролата ви" } },
+    { "id": "hall-osascript-password", "cat": "hallmark", "w": 30, "re": "display dialog[^\\n]{0,200}(password|парола|пароль|hidden answer)", "label": { "en": "Shows a fake window that asks for your password", "bg": "Показва фалшив прозорец, който иска паролата ви" } },
+    { "id": "hall-quiet-install", "cat": "hallmark", "w": 20, "re": "\\bmsiexec(\\.exe)?\\b[^\\n]{0,120}/(q|qn|quiet|passive)\\b", "label": { "en": "Installs silently without showing anything", "bg": "Инсталира тихо, без да показва нищо" } },
+    { "id": "hall-quarantine", "cat": "hallmark", "w": 35, "re": "\\bxattr\\s+-(c|d|r|cr|rc)\\b", "label": { "en": "Removes macOS download protection", "bg": "Маха защитата на macOS за свалени файлове" } },
+    { "id": "hall-tmp-exec-unix", "cat": "hallmark", "w": 25, "re": "(&&|;)\\s*[\"']?(/tmp/|/private/tmp/|/var/tmp/)\\S+[\"']?\\s*(&\\s*)?$", "label": { "en": "Runs a file it just dropped in a temporary folder", "bg": "Пуска файл, който току-що е сложил във временна папка" } },
+    { "id": "hall-dev-tcp", "cat": "hallmark", "w": 35, "re": "/dev/tcp/", "label": { "en": "Opens a hidden network connection", "bg": "Отваря скрита мрежова връзка" } },
+    { "id": "hall-defender", "cat": "hallmark", "w": 30, "re": "\\b(add-mppreference|set-mppreference)\\b|-exclusionpath", "label": { "en": "Turns off Windows Defender protection", "bg": "Изключва защитата на Windows Defender" } },
+    { "id": "hall-amsi", "cat": "hallmark", "w": 40, "re": "amsi(utils|initfailed|scanbuffer)", "label": { "en": "Disables antivirus scanning", "bg": "Изключва проверката на антивирусната програма" } },
+    { "id": "hall-reflection", "cat": "hallmark", "w": 25, "re": "\\[(system\\.)?reflection\\.assembly\\]::load", "label": { "en": "Loads a hidden program into memory", "bg": "Зарежда скрита програма в паметта" } },
+    { "id": "hall-clear-tracks", "cat": "hallmark", "w": 10, "re": "(\\bclear-history\\b|\\bhistory\\s+-c\\b|\\bunset\\s+histfile\\b)", "label": { "en": "Erases its tracks", "bg": "Заличава следите си" } }
+  ],
+  "structure": {
+    "paddingMin": 20,
+    "padding": { "w": 40, "label": { "en": "Command hidden behind a wall of blank space", "bg": "Командата е скрита зад много празно място" } },
+    "invisible": { "w": 30, "label": { "en": "Contains invisible characters", "bg": "Съдържа невидими символи" } },
+    "homoglyph": { "w": 30, "label": { "en": "Uses look-alike letters to dodge filters", "bg": "Използва подобни букви, за да заобиколи филтрите" } },
+    "obfuscation": { "w": 25, "label": { "en": "Command is scrambled to hide what it does", "bg": "Командата е разбъркана, за да скрие какво прави" } },
+    "base64": { "w": 10, "label": { "en": "Contains hidden Base64 code", "bg": "Съдържа скрит Base64 код" } }
+  },
+  "page": {
+    "maxTextLength": 20000,
+    "standaloneMinScore": 50,
+    "standaloneMaxTextLength": 5000,
+    "instructions": [
+      { "id": "page-win-r", "group": "open", "w": 30, "re": "(?:\\bwin(?:dows)?(?:\\s*(?:logo\\s*)?(?:key|button|клавиш(?:а|ът)?|taste|tecla|touche|tasto|tuşu?|klawisz))?|⊞|❖)\\s*\\]?\\s*(?:\\+|＋|plus|and|и|y|e|und|et|ve|i)\\s*\\[?\\s*[\"'“„«]?r\\b" },
+      { "id": "page-win-x", "group": "open", "w": 30, "re": "((?:\\bwin(?:dows)?(?:\\s*(?:logo\\s*)?(?:key|button|клавиш(?:а|ът)?|taste|tecla|touche|tasto|tuşu?|klawisz))?|⊞|❖)\\s*\\]?\\s*(?:\\+|＋|plus|and|и|y|e|und|et|ve|i)\\s*\\[?\\s*[\"'“„«]?x\\b|\\b(?:windows\\s+)?(?:terminal|powershell)\\s*\\((?:admin|администратор)\\))" },
+      { "id": "page-mac-terminal", "group": "open", "w": 25, "re": "(?:\\bcmd|\\bcommand|⌘)\\s*(?:\\+|＋)?\\s*(?:space|spacebar|интервал|пробел|espacio|leertaste|espace|spazio|espaço|boşluk|spacja)\\b" },
+      { "id": "page-open-terminal", "group": "open", "w": 15, "re": "(\\bopen (?:the )?terminal\\b|отворете терминал|отвори терминал|откройте терминал|abra (?:el|o) terminal|öffnen sie (?:das )?terminal|ouvrez (?:le )?terminal|apri (?:il )?terminale|terminali açın|otwórz terminal)" },
+      { "id": "page-filefix", "group": "open", "w": 20, "re": "(\\bfile explorer\\b|\\baddress bar\\b|\\bctrl\\s*(?:\\+|＋)\\s*l\\b|адресн(?:ата|ия) лента|адресн(?:ой|ую) строк|explorador de archivos|barra de direcciones|datei-explorer|adressleiste|explorateur de fichiers|barre d'adresse|esplora file|barra degli indirizzi|explorador de arquivos|barra de endereço|dosya gezgini|adres çubuğu|eksplorator plików|pasek adresu)" },
+      { "id": "page-paste", "group": "paste", "w": 15, "re": "(?:\\bctrl|\\bcontrol|\\bstrg|\\bctl|\\bcmd|\\bcommand|⌘)\\s*(?:\\+|＋)\\s*v\\b" },
+      { "id": "page-enter", "group": "enter", "w": 5, "re": "(press|hit|tap|натиснете|натисни|нажмите|нажми|presione|pulse|pulsa|drücken sie|drücke|appuyez sur|premi|pressione|basın|naciśnij|натисніть)\\s+(?:the\\s+)?[\"'“„«]?(?:enter|ввод|ентър|intro|eingabe|entrée|invio)" },
+      { "id": "page-run-dialog", "group": "open", "w": 10, "re": "(\\brun (?:dialog|box|window|command)\\b|диалогов(?:ия|ият)? прозорец|окно\\s*[«\"]?выполнить|ventana ejecutar|cuadro de diálogo ejecutar|dialogfeld ausführen|boîte de dialogue exécuter|finestra esegui|caixa executar|çalıştır penceresi|okno uruchom)" },
+      { "id": "page-verify-human", "group": "lure", "w": 15, "re": "(verify (?:that )?you(?:'re| are) (?:a )?human|i(?:'m| am) not a robot|human verification|verification steps|verify you are not a (?:robot|bot)|не съм робот|потвърдете, че сте човек|я не робот|подтвердите, что вы (?:не робот|человек)|no soy un robot|verifica que eres humano|ich bin kein roboter|je ne suis pas un robot|non sono un robot|não sou um robô|ben robot değilim|nie jestem robotem|я не робот|підтвердіть, що ви людина)" },
+      { "id": "page-fake-update", "group": "lure", "w": 10, "re": "(working on updates|installing updates|do not turn off your (?:computer|pc)|don't turn off your (?:computer|pc)|critical (?:security )?update|не изключвайте компютъра|инсталиране на актуализации|не выключайте компьютер|установка обновлений|no apague (?:el|su) (?:equipo|ordenador)|schalten sie (?:den|ihren) (?:pc|computer) nicht aus|n'éteignez pas (?:votre )?ordinateur|non spegnere il (?:computer|pc))" },
+      { "id": "page-fix", "group": "lure", "w": 10, "re": "(how to fix|\\bfix it\\b|copy (?:the )?fix|fix (?:this|the) (?:error|issue|problem)|как да (?:го )?поправ|как исправить|cómo solucionar|so beheben|comment (?:le )?corriger)" }
+    ]
+  },
+  "trigger": {
+    "captchaLike": { "w": 25, "re": "(robot|human|verif|captcha|turnstile|cloudflare|i'm not|не съм|потвърд|подтверд|человек|човек|verifica|humano|mensch|humain)" },
+    "fixLike": { "w": 15, "re": "(\\bfix\\b|\\brepair\\b|\\bsolve\\b|\\bupdate\\b|поправ|исправ|solucion|reparar|corriger|beheben)" },
+    "copyLike": { "w": -10, "re": "(\\bcopy\\b|\\bcopied\\b|копирай|копира|копировать|скопировать|copiar|kopieren|copier|\\bcopia\\b|kopyala|kopiuj)" }
+  },
+  "context": {
+    "pageReported": 35,
+    "web3Loader": 20,
+    "manualCopy": -10
+  },
+  "consentfix": {
+    "re": [
+      "^\\s*https?://(localhost|127\\.0\\.0\\.1|\\[::1\\])(:\\d+)?/\\S*[?&#]code=[^\\s&]{10,}",
+      "^\\s*https?://login\\.(microsoftonline\\.com|live\\.com|windows\\.net)/\\S*nativeclient\\S*[?&#]code=",
+      "^\\s*https?://\\S+[?&#](code|id_token|access_token)=[^\\s&]{20,}\\S*[?&](state|session_state|client_info)="
+    ],
+    "allowedHosts": ["localhost", "127.0.0.1", "login.microsoftonline.com", "login.live.com", "login.windows.net", "accounts.google.com", "github.com"]
+  },
+  "protocols": [
+    { "id": "proto-applescript", "re": "^applescript:", "label": { "en": "Tried to open Script Editor with a prepared script", "bg": "Опит да отвори Script Editor с подготвен скрипт" } },
+    { "id": "proto-search-ms", "re": "^search(-ms)?:", "label": { "en": "Tried to open a Windows search window on a remote folder", "bg": "Опит да отвори прозорец за търсене в Windows към отдалечена папка" } },
+    { "id": "proto-ms-msdt", "re": "^ms-msdt:", "label": { "en": "Tried to start the Windows troubleshooter with hidden settings", "bg": "Опит да стартира инструмента за отстраняване на проблеми в Windows със скрити настройки" } },
+    { "id": "proto-ms-officecmd", "re": "^ms-officecmd:", "label": { "en": "Tried to start Office with hidden settings", "bg": "Опит да стартира Office със скрити настройки" } },
+    { "id": "proto-ms-appinstaller", "re": "^ms-appinstaller:", "label": { "en": "Tried to install an app package from the internet", "bg": "Опит да инсталира приложение от интернет" } }
+  ],
+  "fullscreen": {
+    "keyboardLockMinScore": 25,
+    "fullscreenMinScore": 45
+  },
+  "web3": {
+    "rpcHosts": [
+      "bsc-dataseed.binance.org", "bsc-dataseed1.binance.org", "bsc-dataseed2.binance.org", "bsc-dataseed3.binance.org", "bsc-dataseed4.binance.org",
+      "bsc-dataseed.bnbchain.org", "bsc-dataseed1.defibit.io", "bsc-dataseed1.ninicoin.io", "bsc-rpc.publicnode.com", "bsc.publicnode.com",
+      "polygon-rpc.com", "polygon-bor-rpc.publicnode.com", "polygon.llamarpc.com", "rpc.ankr.com"
+    ],
+    "testnetHosts": [
+      "data-seed-prebsc-1-s1.bnbchain.org", "data-seed-prebsc-2-s1.bnbchain.org", "data-seed-prebsc-1-s2.bnbchain.org", "data-seed-prebsc-2-s2.bnbchain.org",
+      "data-seed-prebsc-1-s1.binance.org", "data-seed-prebsc-2-s1.binance.org", "bsc-testnet.publicnode.com", "bsc-testnet-rpc.publicnode.com",
+      "bsc-testnet.public.blastapi.io", "bsc-testnet.bnbchain.org", "rpc-amoy.polygon.technology", "polygon-amoy.drpc.org"
+    ]
+  },
+  "feed": {
+    "clickfixTags": ["clickfix", "fakecaptcha", "fakecaptchas", "clearfake", "kongtuke", "filefix", "consentfix", "crashfix", "jackfix", "terminalfix", "etherhiding", "smartapesg"],
+    "noHostLevel": [
+      "github.com", "gist.github.com", "raw.githubusercontent.com", "objects.githubusercontent.com", "release-assets.githubusercontent.com", "codeload.github.com", "github.io",
+      "gitlab.com", "bitbucket.org", "sourceforge.net", "archive.org",
+      "google.com", "docs.google.com", "drive.google.com", "drive.usercontent.google.com", "sites.google.com", "storage.googleapis.com", "firebasestorage.googleapis.com", "googleusercontent.com",
+      "dropbox.com", "www.dropbox.com", "dl.dropboxusercontent.com", "onedrive.live.com", "1drv.ms", "sharepoint.com", "microsoft.com", "live.com", "office.com", "windows.net", "blob.core.windows.net",
+      "discord.com", "cdn.discordapp.com", "media.discordapp.net", "t.me", "telegram.org",
+      "pastebin.com", "paste.ee", "mediafire.com", "www.mediafire.com", "mega.nz", "transfer.sh", "wetransfer.com", "we.tl",
+      "amazonaws.com", "s3.amazonaws.com", "cloudfront.net", "r2.dev", "pages.dev", "workers.dev", "vercel.app", "netlify.app", "web.app", "firebaseapp.com", "glitch.me",
+      "apple.com", "icloud.com", "bit.ly", "tinyurl.com", "youtube.com", "facebook.com", "instagram.com", "x.com", "twitter.com", "linkedin.com", "reddit.com"
+    ]
+  },
+  "extensions": {
+    "malicious": [
+      { "id": "cpcdkmjddocikjdkbbeiaafnpdbdafmi", "name": "NexShield - Advanced Web Guardian", "ref": "https://www.huntress.com/blog/malicious-browser-extention-crashfix-kongtuke" }
+    ]
+  }
+}
