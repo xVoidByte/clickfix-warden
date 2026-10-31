@@ -1,9 +1,6 @@
 name: Publish database
 
-# Rebuilds the signed database and rules every hour and publishes them to
-# GitHub Pages. A failed run publishes nothing, so the last good copy stays up.
-# Until both secrets exist the run only leaves a notice, so a fresh fork does
-# not fail every hour.
+# Rebuilds and publishes the signed database every hour, a failed run publishes nothing and missing secrets only leave a notice.
 
 on:
   schedule:

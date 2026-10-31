@@ -1,7 +1,6 @@
 name: Release
 
-# Push a tag like v0.1.0 to build the store packages and attach them, with
-# their SHA-256 hashes, to a GitHub release. Store uploads stay manual.
+# A v* tag builds the store packages and attaches them with their SHA-256 hashes to a GitHub release.
 
 on:
   push:

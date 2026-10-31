@@ -1,6 +1,4 @@
-// In-page warnings, drawn inside a closed shadow root so page styles and
-// scripts cannot read or restyle them. All page-supplied text goes in through
-// textContent, never as HTML.
+// In-page warnings inside a closed shadow root, page text only ever goes in through textContent.
 
 import type { DisplayPart } from '../engine/types';
 import type { FeedHit } from '../feed/types';

@@ -1,8 +1,4 @@
-// Renders the store screenshots and promo tiles into store/screenshots.
-// Uses the end-to-end build and the local test server, so every page shown
-// is one of the inert replicas from tests/corpus.
-//
-//   npm run build:e2e && npm run screenshots
+// Renders the store screenshots and promo tiles from the e2e build and the inert test replicas, run npm run build:e2e first.
 
 import { type ChildProcess, spawn } from 'node:child_process';
 import { mkdirSync, readFileSync, rmSync } from 'node:fs';

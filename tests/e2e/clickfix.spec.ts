@@ -110,8 +110,7 @@ test.describe('lure pages', () => {
 
   test('ConsentFix paste of a sign-in code link', async ({ context, sw }) => {
     const page = await context.newPage();
-    // The clipboard API needs a secure page, so the link is copied on 127.0.0.1 first. The lure
-    // itself runs on its own host because 127.0.0.1 is a legitimate place to paste these links.
+    // The clipboard API needs a secure page, so copy on 127.0.0.1 and run the lure on its own host, since 127.0.0.1 may receive sign-in links.
     await page.goto(BASE + '/site.html');
     await writeClipboard(page, 'http://localhost:53682/?code=0.AXEAabcdefghijklmnopqrstuvwxyz1234567890&state=xyz123');
     await page.goto(site('phish.test', '/lures/consentfix.html'));

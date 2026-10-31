@@ -1,6 +1,4 @@
-// Commands modelled on public ClickFix reports. Every address points at a
-// reserved test name (.invalid, example.com) or a TEST-NET IP, so none of them
-// can reach a real server even if pasted somewhere by mistake.
+// Commands modelled on public ClickFix reports, every address is a reserved test name or a TEST-NET IP.
 
 function b64utf16(s: string): string {
   return Buffer.from(s, 'utf16le').toString('base64');

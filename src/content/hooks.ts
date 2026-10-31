@@ -1,8 +1,4 @@
-// Runs in the page's own JavaScript world at document_start, before any page
-// script. It wraps the browser functions a ClickFix page uses to fill the
-// clipboard or take over the screen, and asks the isolated guard script for a
-// verdict through a synchronous DOM event. If the guard is not there yet, a
-// bundled copy of the engine decides on its own.
+// Page-world hooks installed before any page script, they ask the guard for a verdict and fall back to the bundled engine.
 
 import { externalScheme, matchProtocol, web3Host } from '../engine/checks';
 import { BUNDLED_RULES } from '../engine/rules';

@@ -1,12 +1,4 @@
-// Lists ClickFix reports that ThreatFox and URLhaus added recently, so new
-// lure styles can be reviewed and turned into rules. It only reads the
-// abuse.ch exports, it never opens any of the listed sites.
-//
-//   ABUSECH_AUTH_KEY=... npm run review:clickfix            last 7 days
-//   ABUSECH_AUTH_KEY=... npm run review:clickfix -- 30      last 30 days
-//
-// Entries already shown on an earlier run are marked as seen, the list of
-// seen reports is kept in .work/review-seen.json.
+// Lists recent ClickFix reports from ThreatFox and URLhaus without opening any site, needs ABUSECH_AUTH_KEY and takes an optional day count.
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';

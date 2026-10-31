@@ -1,5 +1,4 @@
-// Writes SHA-256 hashes of every store package next to them, so anyone can
-// check that a package in a store matches the one built from this repository.
+// Writes SHA256SUMS.txt for the store packages so anyone can check them against this repository.
 import { createHash } from 'node:crypto';
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';

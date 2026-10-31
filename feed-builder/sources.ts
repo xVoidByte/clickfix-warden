@@ -1,5 +1,4 @@
-// Parsers for the abuse.ch exports. They turn each source into lookup keys
-// with one report per entry, using the same key format as the extension.
+// Parsers that turn each abuse.ch export into lookup keys in the same format the extension uses.
 
 import { cleanHost, hostKey, ipKey, isIp, urlKey } from '../src/feed/keys';
 import type { Category, FeedRecordTuple, FeedSource } from '../src/feed/types';

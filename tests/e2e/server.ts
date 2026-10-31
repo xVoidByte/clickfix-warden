@@ -1,6 +1,4 @@
-// Local web server for the end-to-end tests. It serves the lure and benign
-// page replicas and a small feed signed with the test key. The browser maps
-// every *.test host to this server, so nothing leaves the machine.
+// Local server for the e2e tests with the page replicas and a feed signed by the test key, every *.test host maps here.
 
 import { createPrivateKey, sign } from 'node:crypto';
 import { readFileSync, existsSync } from 'node:fs';

@@ -1,8 +1,4 @@
-// Lookup keys shared by the feed builder and the extension, so both sides
-// normalise addresses the same way.
-//   h:<host>        a whole host and everything under it
-//   u:<host><path>  one exact address, scheme ignored
-//   i:<ip>          a server IP address
+// Lookup keys shared with the feed builder, h is a host and its subdomains, u is one exact address without the scheme, i is a server IP.
 
 const IPV4 = /^\d{1,3}(\.\d{1,3}){3}$/;
 

@@ -1,7 +1,4 @@
-// Event names shared by the page-world hooks and the isolated guard script.
-// Both run at document_start before any page script, and the guard listens in
-// the capture phase on window and stops propagation, so page code never sees
-// or answers these events.
+// Event names shared by the page hooks and the guard, which catches them first in the capture phase so page code never sees them.
 export const EVT = {
   ping: 'cfw:ping',
   check: 'cfw:check',

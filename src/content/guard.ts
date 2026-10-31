@@ -1,6 +1,4 @@
-// Isolated-world side of the clipboard protection. It answers the page-world
-// hooks, adds what it knows about the page (instructions, the clicked button,
-// reputation), shows warnings and writes the local log.
+// Isolated-world guard that answers the page hooks, adds page context, shows warnings and writes the local log.
 
 import { browser } from 'wxt/browser';
 import { externalScheme, isConsentFixPaste, matchProtocol } from '../engine/checks';

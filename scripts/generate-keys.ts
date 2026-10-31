@@ -1,10 +1,4 @@
-// Creates the Ed25519 key pair that signs feed.json and rules.json.
-//
-//   npm run keys:generate                 production key, private half saved outside the repo
-//   npm run keys:generate -- --test       throwaway key for the end-to-end tests
-//
-// The private key never goes into the repository. Put its contents in the
-// FEED_SIGNING_KEY secret of the GitHub repository and keep a backup.
+// Creates the Ed25519 signing key pair and saves the private half outside the repo, --test writes a throwaway key for the e2e tests.
 
 import { generateKeyPairSync } from 'node:crypto';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';

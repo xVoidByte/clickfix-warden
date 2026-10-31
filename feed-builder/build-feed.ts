@@ -1,15 +1,4 @@
-// Builds the signed database and rules that the extension downloads.
-//
-// Runs every hour in GitHub Actions (.github/workflows/feed.yml):
-//   ABUSECH_AUTH_KEY   free key from https://auth.abuse.ch/
-//   FEED_SIGNING_KEY   Ed25519 private key in PEM form
-//
-// Output goes to dist/site, which is published to GitHub Pages:
-//   v1/feed.json, v1/feed.json.sig, v1/rules.json, v1/rules.json.sig, v1/meta.json
-//   index.html, privacy.html
-//
-// If any source fails or looks empty the run stops before publishing, so the
-// last good database stays online.
+// Builds the signed feed.json and rules.json from the abuse.ch exports into dist/site for GitHub Pages, and stops before publishing if any source fails.
 
 import { createPrivateKey, createPublicKey, sign, verify } from 'node:crypto';
 import { cpSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
