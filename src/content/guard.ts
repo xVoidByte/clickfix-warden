@@ -112,19 +112,19 @@ export function startGuard(): void {
     }
   }
 
-  function log(kind: DetectionKind, action: DetectionAction, extra: { score?: number; reasons?: string[]; command?: string; what?: string } = {}): void {
+  function log(kind: DetectionKind, action: DetectionAction, extra: { score?: number; reasons?: string[]; what?: string } = {}): void {
     void sendMessage({
       type: 'log',
-      detection: { kind, action, url: location.href, host, score: extra.score, reasons: extra.reasons ?? [], command: extra.command, what: extra.what },
+      detection: { kind, action, url: location.href, host, score: extra.score, reasons: extra.reasons ?? [], what: extra.what },
     });
   }
 
   // The command itself is never shown, only what it does and why it was stopped, so nobody copies it from the warning.
-  function reportVerdict(kind: DetectionKind, v: Verdict, original: string, hits?: FeedHit[]): void {
+  function reportVerdict(kind: DetectionKind, v: Verdict, hits?: FeedHit[]): void {
     const reasons: Reason[] = hits?.length ? [{ id: 'payload-reported', w: 30 }, ...v.reasons] : v.reasons;
     const what = whatOfCommand(reasons);
     present({ kind, host, score: v.score, what, why: whyOfCommand(reasons) });
-    log(kind, 'blocked', { score: v.score, reasons: reasons.filter((r) => r.w >= 10).map((r) => r.id), command: original, what });
+    log(kind, 'blocked', { score: v.score, reasons: reasons.filter((r) => r.w >= 10).map((r) => r.id), what });
   }
 
   async function writeSafeClipboard(): Promise<void> {
@@ -153,7 +153,7 @@ export function startGuard(): void {
     const hits = await sendMessage<FeedHit[]>({ type: 'lookup-targets', urls: v.urls });
     if (!Array.isArray(hits) || !hits.length) return;
     await writeSafeClipboard();
-    reportVerdict('clipboard', v, original, hits);
+    reportVerdict('clipboard', v, hits);
   }
 
   const overlayActions = {
@@ -176,7 +176,7 @@ export function startGuard(): void {
         if (!settings.clipboard) return false;
         const v = evaluateCommand(payload, rules, context(false));
         if (v.level === 'block') {
-          reportVerdict('clipboard', v, payload);
+          reportVerdict('clipboard', v);
           return true;
         }
         if (v.level === 'warn') void checkTargets(v, payload);
@@ -215,7 +215,7 @@ export function startGuard(): void {
     const key = 'proto_' + rule.id.replace(/^proto-/, '').replace(/-/g, '_');
     const what = t(key) !== key ? t(key) : label(rule.label, rule.id);
     present({ kind: 'protocol', host, what, why: t('protocolWhy') });
-    log('protocol', 'blocked', { reasons: [rule.id], command: url, what });
+    log('protocol', 'blocked', { reasons: [rule.id], what });
     return true;
   }
 
@@ -300,7 +300,7 @@ export function startGuard(): void {
     if (v.level !== 'block') return;
     e.clipboardData?.setData('text/plain', safeText());
     e.preventDefault();
-    reportVerdict('manual-copy', v, text);
+    reportVerdict('manual-copy', v);
   };
   window.addEventListener('copy', onCopy, true);
   window.addEventListener('cut', onCopy, true);
@@ -315,8 +315,7 @@ export function startGuard(): void {
       e.stopImmediatePropagation();
       const what = t('pasteWhat');
       present({ kind: 'paste', host, what, why: t('pasteWhy') });
-      // The pasted link holds a sign-in code, so only a redacted copy goes in the log.
-      log('paste', 'blocked', { reasons: ['consentfix'], what, command: text.replace(/([?&#](code|id_token|access_token|session_state|client_info)=)[^&#\s]+/gi, '$1[removed]').slice(0, 500) });
+      log('paste', 'blocked', { reasons: ['consentfix'], what });
     },
     true,
   );

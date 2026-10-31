@@ -118,10 +118,9 @@ test.describe('lure pages', () => {
     await page.keyboard.press('Control+V');
     await expect.poll(() => overlayShown(page)).toBe(true);
     expect(await page.inputValue('#code')).toBe('');
-    const last = await sw.evaluate(async () => ((await chrome.storage.local.get('log')).log as { kind: string; command: string }[])[0]);
+    const last = await sw.evaluate(async () => ((await chrome.storage.local.get('log')).log as Record<string, unknown>[])[0]);
     expect(last.kind).toBe('paste');
-    expect(last.command).toContain('[removed]');
-    expect(last.command).not.toContain('abcdefghij');
+    expect(JSON.stringify(last)).not.toContain('abcdefghij');
   });
 
   test('applescript link that opens Script Editor', async ({ context, sw }) => {

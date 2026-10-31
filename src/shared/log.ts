@@ -10,7 +10,6 @@ export function addDetection(entry: Omit<Detection, 'id' | 'time'>): Promise<Det
     ...entry,
     id: crypto.randomUUID(),
     time: new Date().toISOString(),
-    command: entry.command?.slice(0, 2000),
     reasons: entry.reasons.slice(0, 30),
   };
   const run = chain.then(async () => {
@@ -22,7 +21,7 @@ export function addDetection(entry: Omit<Detection, 'id' | 'time'>): Promise<Det
       dup &&
       dup.kind === detection.kind &&
       dup.url === detection.url &&
-      dup.command === detection.command &&
+      dup.what === detection.what &&
       Date.now() - new Date(dup.time).getTime() < 10_000
     )
       return dup;

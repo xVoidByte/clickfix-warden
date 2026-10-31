@@ -22,7 +22,6 @@ export interface Detection {
   host: string;
   score?: number;
   reasons: string[];
-  command?: string;
   what?: string;
 }
 
