@@ -16,9 +16,11 @@ Stops ClickFix and fake CAPTCHA pages that trick you into pasting a command into
 
 ## Description (English)
 
-ClickFix pages pretend to be a CAPTCHA, a browser error or a Windows update. They quietly put a command in your clipboard and walk you through pressing Win+R, Ctrl+V and Enter, or pasting into Terminal or the File Explorer address bar. That one paste installs password stealers and remote access tools. It is one of the most common ways people get infected today, and antivirus often sees it too late.
+ClickFix pages pretend to be a CAPTCHA, a browser error or a Windows update, they quietly put a command in your clipboard and walk you through pressing Win+R, Ctrl+V and Enter, or pasting into Terminal or the File Explorer address bar.
 
-ClickFix Warden stops the command before it reaches your clipboard, puts a harmless note there instead and tells you in plain words what the page tried to do and why it was stopped. The command itself is never shown, so nobody can copy it by mistake.
+That one paste installs password stealers and remote access tools, it is one of the most common ways people get infected today, and antivirus often sees it too late.
+
+ClickFix Warden stops the command before it reaches your clipboard, puts a harmless note there instead and tells you in plain words what the page tried to do and why it was stopped, the command itself is never shown, so nobody can copy it by mistake.
 
 WHAT IT STOPS
 - Fake CAPTCHA, "verify you are human", browser error and "fix it" pages that fill your clipboard
@@ -34,7 +36,7 @@ REPORTED SITES
 ClickFix Warden also warns you about sites, download links and servers reported in the public URLhaus, ThreatFox and Feodo Tracker databases by abuse.ch, and stops sites reported as ClickFix pages before they load. You can check your browsing history against the same database, inside your browser, whenever you want.
 
 ALWAYS UP TO DATE
-Attackers change their tricks every week. The detection rules and the database update every hour from a digitally signed source, without waiting for a new version of the extension.
+Attackers change their tricks every week - the detection rules and the database update every hour from a digitally signed source, without waiting for a new version of the extension.
 
 PRIVATE BY DESIGN
 - No account, no telemetry, no analytics, no server of its own
@@ -43,7 +45,7 @@ PRIVATE BY DESIGN
 - Open source at https://github.com/xVoidByte/ClickFixWarden
 
 DOES NOT GET IN YOUR WAY
-Install guides with copy buttons, support articles and everything else you copy keep working. A command is only stopped when it carries the marks of a ClickFix attack, or when the page around it tells you to paste it somewhere it should not go. A site you know can still be trusted after a clear warning about the risk.
+Install guides with copy buttons, support articles and everything else you copy keep working - a command is only stopped when it carries the marks of a ClickFix attack, or when the page around it tells you to paste it somewhere it should not go. A site you know can still be trusted after a clear warning about the risk.
 
 FOR ORGANISATIONS
 Every setting can be set and locked by policy, and you can add your own help desk message to every warning.
