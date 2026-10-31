@@ -227,8 +227,14 @@ test.describe('reputation', () => {
     const page = await context.newPage();
     await page.goto(site('clickfix-site.test')).catch(() => undefined);
     await expect.poll(() => page.url()).toContain(`chrome-extension://${extId}/warning.html`);
-    await expect(page.locator('#reports li')).toHaveCount(1);
+    await expect(page.locator('#reports')).toContainText('ThreatFox');
+    await expect(page.locator('#lead')).toContainText('a ClickFix page that spreads ClearFake');
+    // Opening it anyway needs the risk box ticked first.
     await page.click('#continue');
+    const confirm = page.locator('.g-btn.danger');
+    await expect(confirm).toBeDisabled();
+    await page.locator('.g-check input').check();
+    await confirm.click();
     await expect.poll(() => page.url()).toBe(site('clickfix-site.test'));
     await expect.poll(() => overlayShown(page)).toBe(true);
   });
@@ -284,12 +290,27 @@ test.describe('extension pages', () => {
     expect(errors).toEqual([]);
   });
 
+  test('adding a trusted site asks for confirmation first', async ({ context, sw, extId }) => {
+    const page = await context.newPage();
+    await page.goto(`chrome-extension://${extId}/options.html`);
+    await page.fill('#siteInput', 'intranet.example.com');
+    await page.click('#addSite');
+    await page.click('.g-card .g-btn.primary');
+    await expect(page.locator('#sites')).not.toContainText('intranet.example.com');
+    await page.click('#addSite');
+    await page.locator('.g-card .g-check input').check();
+    await page.click('.g-card .g-btn.danger');
+    await expect(page.locator('#sites')).toContainText('intranet.example.com');
+    const stored = await sw.evaluate(async () => ((await chrome.storage.local.get('settings')).settings as { trustedSites: string[] }).trustedSites);
+    expect(stored).toContain('intranet.example.com');
+  });
+
   test('popup renders', async ({ context, extId }) => {
     const page = await context.newPage();
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(String(e)));
     await page.goto(`chrome-extension://${extId}/popup.html`);
-    await expect(page.locator('#feedLine')).toContainText('4 reports');
+    await expect(page.locator('#stats')).toContainText('4');
     expect(errors).toEqual([]);
   });
 });

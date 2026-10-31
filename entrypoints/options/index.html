@@ -7,146 +7,160 @@
     <meta name="manifest.open_in_tab" content="true" />
     <link rel="stylesheet" href="../../src/ui/page.css" />
     <style>
-      body { padding: 0 16px 48px; }
-      .page { max-width: 860px; margin: 0 auto; }
-      header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 0 14px; flex-wrap: wrap; }
-      nav { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 8px; font-size: 13px; }
-      section { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
-      section > h2 { font-size: 17px; margin-bottom: 4px; }
-      section > p.lead { margin: 0 0 12px; color: var(--muted); }
-      .setting { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); }
-      .setting:first-of-type { border-top: none; }
-      .setting .name { display: flex; align-items: center; }
-      .setting.sub .name { padding-left: 22px; }
-      .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-      .sites { list-style: none; margin: 10px 0 0; padding: 0; }
-      .sites li { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-top: 1px solid var(--line); }
-      .sites li:first-child { border-top: none; }
-      .welcome { border-color: var(--accent); }
-      .notice { background: var(--warn-bg); border-radius: 10px; padding: 10px 12px; margin: 10px 0; }
-      table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
-      th, td { text-align: left; padding: 7px 6px; border-top: 1px solid var(--line); vertical-align: top; }
-      th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .02em; border-top: none; }
+      .layout { display: flex; flex-wrap: wrap; min-height: 100vh; }
+      nav { flex: 0 0 260px; padding: 36px 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
+      nav .brand { margin-bottom: 28px; font-size: 17px; }
+      nav .item { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-size: 15px; text-decoration: none; }
+      nav .item:hover { color: var(--text); }
+      nav .item.active { background: var(--raised); color: #FFFFFF; font-weight: 600; }
+      nav .grow { flex: 1; min-height: 24px; }
+      nav .foot { padding: 8px 12px; color: var(--muted); font-size: 14px; }
+      main { flex: 999 1 560px; min-width: 0; padding: 36px 56px 64px; display: flex; flex-direction: column; gap: 44px; max-width: 980px; }
+      section h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.015em; }
+      section h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+      section .lead { margin: 6px 0 14px; color: var(--muted); }
+      .rows > .row.setting { padding: 11px 0; }
+      .rows > .row .sub { padding-left: 22px; }
+      .rows > .row .switch { margin-left: 10px; }
+      .inline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+      .textlink { background: none; border: none; padding: 0; color: var(--muted); font-size: 14px; text-decoration: underline; cursor: pointer; }
+      .textlink:disabled { opacity: 0.5; cursor: default; }
+      .ok { color: #8BD8A3; font-weight: 600; }
+      .found { margin-top: 12px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+      .notice { padding: 14px 16px; border-radius: 12px; background: var(--raised); color: var(--text2); }
+      .notice strong { color: #FFFFFF; }
+      textarea { width: 100%; min-height: 80px; resize: vertical; }
+      table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+      th, td { text-align: left; padding: 9px 8px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+      th { color: var(--muted); font-weight: 600; font-size: 13px; }
       td.url { word-break: break-all; }
-      details pre { white-space: pre-wrap; word-break: break-all; background: var(--code); border-radius: 8px; padding: 8px; margin: 6px 0 0; }
       .table-wrap { overflow-x: auto; }
-      textarea { width: 100%; min-height: 70px; resize: vertical; }
-      .sources { margin: 8px 0 0; padding-left: 18px; }
-      .empty { color: var(--muted); padding: 8px 0; }
-      @media (max-width: 560px) { .setting { align-items: flex-start; } th.opt, td.opt { display: none; } }
+      .sources { margin: 8px 0 0; padding-left: 18px; color: var(--text2); }
+      #dbStatus { color: var(--text2); line-height: 1.7; }
+      @media (max-width: 720px) {
+        nav { flex-basis: 100%; border-right: none; border-bottom: 1px solid var(--line); padding: 20px 16px; flex-direction: row; flex-wrap: wrap; }
+        nav .brand { flex-basis: 100%; margin-bottom: 8px; }
+        nav .grow, nav .foot { display: none; }
+        main { padding: 24px 16px 48px; }
+        th.opt, td.opt { display: none; }
+      }
     </style>
   </head>
   <body>
-    <div class="page">
-      <header>
-        <div class="brand"><img src="/icon/48.png" alt="" /><span class="name">ClickFix Warden</span></div>
-        <span class="muted small" id="version"></span>
-      </header>
-      <nav>
-        <a href="#protection" data-i18n="navProtection">Protection</a>
-        <a href="#trusted" data-i18n="navTrusted">Trusted sites</a>
-        <a href="#history" data-i18n="navHistory">History check</a>
-        <a href="#extensions" data-i18n="navExtensions">Extensions check</a>
-        <a href="#log" data-i18n="navLog">Detection log</a>
-        <a href="#database" data-i18n="navDatabase">Database</a>
-        <a href="#about" data-i18n="navAbout">About</a>
+    <div class="layout">
+      <nav aria-label="Settings sections">
+        <a class="brand" href="#protection"><img src="/icon/48.png" alt="" /><span>ClickFix Warden</span></a>
+        <a class="item active" href="#protection" data-i18n="navProtection">Protection</a>
+        <a class="item" href="#trusted" data-i18n="navTrusted">Trusted sites</a>
+        <a class="item" href="#history" data-i18n="navHistory">History check</a>
+        <a class="item" href="#extensions" data-i18n="navExtensions">Extensions check</a>
+        <a class="item" href="#log" data-i18n="navLog">Detection log</a>
+        <a class="item" href="#database" data-i18n="navDatabase">Database</a>
+        <a class="item" href="#about" data-i18n="navAbout">About</a>
+        <span class="grow"></span>
+        <a class="foot" id="donateLink" target="_blank" rel="noopener noreferrer" hidden data-i18n="supportProject">Support the project</a>
+        <span class="foot" id="version"></span>
       </nav>
 
-      <section class="welcome" id="welcome" hidden>
-        <h2 data-i18n="welcomeTitle">You are protected</h2>
-        <p data-i18n="welcomeBody">ClickFix Warden now watches for pages that try to trick you into running commands, and warns you about sites reported as malicious.</p>
-        <p class="small muted" data-i18n="welcomePrivacy">Everything is checked inside your browser, nothing about your browsing is sent anywhere.</p>
-        <div class="notice" id="hostAccess" hidden>
-          <p data-i18n="welcomeHostAccess">ClickFix Warden needs access to all websites to protect them.</p>
-          <button class="primary" id="grantHosts" data-i18n="welcomeGrant" data-i18n-title="tipGrantHosts">Allow on all websites</button>
-        </div>
-      </section>
+      <main>
+        <section id="welcome" hidden>
+          <h1 data-i18n="welcomeTitle">You are protected</h1>
+          <p class="lead" data-i18n="welcomeBody">ClickFix Warden now watches for pages that try to trick you into running commands.</p>
+          <p class="muted" data-i18n="welcomePrivacy">Everything is checked inside your browser.</p>
+          <div class="notice" id="hostAccess" hidden>
+            <p data-i18n="welcomeHostAccess">ClickFix Warden needs access to all websites to protect them.</p>
+            <button class="g-btn primary" id="grantHosts" data-i18n="welcomeGrant" data-i18n-title="tipGrantHosts">Allow on all websites</button>
+          </div>
+        </section>
 
-      <div class="notice" id="managedNote" hidden data-i18n="managedNote">Some settings are managed by your organisation.</div>
+        <div class="notice" id="managedNote" hidden data-i18n="managedNote">Some settings are managed by your organisation.</div>
 
-      <section id="protection">
-        <h2 data-i18n="navProtection">Protection</h2>
-        <p class="lead" data-i18n="protectionLead">Choose what ClickFix Warden watches for.</p>
-        <div id="toggles"></div>
-      </section>
+        <section id="protection">
+          <h1 data-i18n="navProtection">Protection</h1>
+          <p class="lead" data-i18n="protectionLead">Choose what ClickFix Warden watches for.</p>
+          <div class="rows" id="toggles"></div>
+        </section>
 
-      <section id="trusted">
-        <h2 data-i18n="navTrusted">Trusted sites</h2>
-        <p class="lead" data-i18n="trustedLead">ClickFix Warden does not check sites you trust. Only add sites you know well.</p>
-        <div class="row">
-          <input type="text" id="siteInput" data-i18n-placeholder="trustedPlaceholder" placeholder="example.com" />
-          <button id="addSite" data-i18n="trustedAdd" data-i18n-title="tipTrustedAdd">Add</button>
-        </div>
-        <ul class="sites" id="sites"></ul>
-      </section>
+        <section id="trusted">
+          <h2 data-i18n="navTrusted">Trusted sites</h2>
+          <p class="lead" data-i18n="trustedLead">These sites are not checked at all.</p>
+          <div class="inline">
+            <label for="siteInput" class="visually-hidden" data-i18n="trustedInputLabel">Site address</label>
+            <input type="text" id="siteInput" data-i18n-placeholder="trustedPlaceholder" placeholder="intranet.company.com" style="width: 320px; max-width: 100%" />
+            <button class="g-btn" id="addSite" data-i18n="trustedAdd" data-i18n-title="tipTrustedAdd">Add</button>
+          </div>
+          <div class="rows" id="sites" style="margin-top: 12px"></div>
+        </section>
 
-      <section id="org">
-        <h2 data-i18n="orgTitle">Message in warnings</h2>
-        <p class="lead" data-i18n="orgLead">Extra text shown in every warning, for example who to contact in your company.</p>
-        <textarea id="customWarning" maxlength="500" data-i18n-placeholder="orgPlaceholder"></textarea>
-        <div class="row" style="margin-top: 8px">
-          <button id="saveWarning" data-i18n="orgSave" data-i18n-title="tipOrgSave">Save</button>
-          <span class="small muted" id="savedNote" hidden data-i18n="orgSaved">Saved</span>
-        </div>
-      </section>
+        <section id="org">
+          <h2 data-i18n="orgTitle">Message in warnings</h2>
+          <p class="lead" data-i18n="orgLead">Extra text shown in every warning.</p>
+          <label for="customWarning" class="visually-hidden" data-i18n="orgTitle">Message in warnings</label>
+          <textarea id="customWarning" maxlength="500" data-i18n-placeholder="orgPlaceholder"></textarea>
+          <div class="inline" style="margin-top: 10px">
+            <button class="g-btn" id="saveWarning" data-i18n="orgSave" data-i18n-title="tipOrgSave">Save</button>
+            <span class="muted" id="savedNote" hidden data-i18n="orgSaved">Saved</span>
+          </div>
+        </section>
 
-      <section id="history">
-        <h2 data-i18n="navHistory">History check</h2>
-        <p class="lead" data-i18n="historyLead">Check whether you visited any site that is now listed in the database. The check runs only in your browser.</p>
-        <div class="row">
-          <select id="historyDays" data-i18n-title="tipHistoryDays">
-            <option value="7" data-i18n="historyDays7">Last 7 days</option>
-            <option value="30" data-i18n="historyDays30">Last 30 days</option>
-            <option value="90" data-i18n="historyDays90">Last 90 days</option>
-          </select>
-          <button class="primary" id="scanHistory" data-i18n="historyScan" data-i18n-title="tipHistoryScan">Check my history</button>
-          <button id="exportHistory" hidden data-i18n="exportJson" data-i18n-title="tipExport">Export JSON</button>
-          <button class="link" id="dropHistory" hidden data-i18n="historyDrop" data-i18n-title="tipHistoryDrop">Remove history access</button>
-        </div>
-        <div id="historyResult"></div>
-      </section>
+        <section id="history">
+          <h2 data-i18n="navHistory">History check</h2>
+          <p class="lead" data-i18n="historyLead">Check whether you visited any site that is now listed in the database.</p>
+          <div class="inline">
+            <label for="historyDays" class="visually-hidden" data-i18n="tipHistoryDays">How far back to look</label>
+            <select id="historyDays" data-i18n-title="tipHistoryDays">
+              <option value="7" data-i18n="historyDays7">Last 7 days</option>
+              <option value="30" data-i18n="historyDays30">Last 30 days</option>
+              <option value="90" data-i18n="historyDays90">Last 90 days</option>
+            </select>
+            <button class="g-btn primary" id="scanHistory" data-i18n="historyScan" data-i18n-title="tipHistoryScan">Check my history</button>
+            <button class="g-btn" id="exportHistory" hidden data-i18n="exportJson" data-i18n-title="tipExport">Export JSON</button>
+            <button class="textlink" id="dropHistory" hidden data-i18n="historyDrop" data-i18n-title="tipHistoryDrop">Remove history access</button>
+          </div>
+          <div id="historyResult"></div>
+        </section>
 
-      <section id="extensions">
-        <h2 data-i18n="navExtensions">Extensions check</h2>
-        <p class="lead" data-i18n="extensionsLead">Look for installed browser extensions that are known to be malicious, such as fake ad blockers used in CrashFix attacks.</p>
-        <div class="row">
-          <button id="scanExtensions" data-i18n="extensionsScan" data-i18n-title="tipExtensionsScan">Check installed extensions</button>
-          <button class="link" id="dropManagement" hidden data-i18n="extensionsDrop" data-i18n-title="tipExtensionsDrop">Remove access</button>
-        </div>
-        <div id="extensionsResult"></div>
-      </section>
+        <section id="extensions">
+          <h2 data-i18n="navExtensions">Extensions check</h2>
+          <p class="lead" data-i18n="extensionsLead">Look for installed browser extensions that are known to be malicious.</p>
+          <div class="inline">
+            <button class="g-btn" id="scanExtensions" data-i18n="extensionsScan" data-i18n-title="tipExtensionsScan">Check installed extensions</button>
+            <button class="textlink" id="dropManagement" hidden data-i18n="extensionsDrop" data-i18n-title="tipExtensionsDrop">Remove access</button>
+          </div>
+          <div id="extensionsResult"></div>
+        </section>
 
-      <section id="log">
-        <h2 data-i18n="navLog">Detection log</h2>
-        <p class="lead" data-i18n="logLead">What ClickFix Warden blocked or warned about. The log stays on this computer.</p>
-        <div class="row">
-          <button id="exportLog" data-i18n="exportJson" data-i18n-title="tipExportLog">Export JSON</button>
-          <button class="link danger" id="clearLog" data-i18n="logClear" data-i18n-title="tipLogClear">Clear the log</button>
-        </div>
-        <div class="table-wrap" id="logTable"></div>
-      </section>
+        <section id="log">
+          <h2 data-i18n="navLog">Detection log</h2>
+          <p class="lead" data-i18n="logLead">What ClickFix Warden blocked or warned about.</p>
+          <div class="inline">
+            <button class="g-btn" id="exportLog" data-i18n="exportJson" data-i18n-title="tipExportLog">Export JSON</button>
+            <button class="textlink" id="clearLog" data-i18n="logClear" data-i18n-title="tipLogClear">Clear the log</button>
+          </div>
+          <div class="table-wrap" id="logTable"></div>
+        </section>
 
-      <section id="database">
-        <h2 data-i18n="navDatabase">Database</h2>
-        <p class="lead" data-i18n="databaseLead">Reports come from public abuse.ch databases and are checked against a digital signature before use.</p>
-        <div id="dbStatus"></div>
-        <ul class="sources" id="dbSources"></ul>
-        <div class="row" style="margin-top: 10px">
-          <button id="updateNow" data-i18n="popupUpdate" data-i18n-title="tipUpdateNow">Update now</button>
-          <span class="small muted" id="updateResult"></span>
-        </div>
-      </section>
+        <section id="database">
+          <h2 data-i18n="navDatabase">Database</h2>
+          <p class="lead" data-i18n="databaseLead">Reports come from the public abuse.ch databases.</p>
+          <div id="dbStatus"></div>
+          <ul class="sources" id="dbSources"></ul>
+          <div class="inline" style="margin-top: 12px">
+            <button class="g-btn" id="updateNow" data-i18n="popupUpdate" data-i18n-title="tipUpdateNow">Update now</button>
+            <span class="muted" id="updateResult"></span>
+          </div>
+        </section>
 
-      <section id="about">
-        <h2 data-i18n="navAbout">About</h2>
-        <p data-i18n="aboutPrivacy">ClickFix Warden collects no data. It has no account, no telemetry and no server of its own.</p>
-        <p class="small muted" data-i18n="aboutNetwork">The only thing it downloads is the signed database and rules from GitHub, which sees the same request any update makes.</p>
-        <div class="row">
-          <a id="projectLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutProject">Source code</a>
-          <a id="privacyLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutPolicy">Privacy policy</a>
-          <a id="donateLink" target="_blank" rel="noopener noreferrer" hidden data-i18n="supportProject">Support the project</a>
-        </div>
-      </section>
+        <section id="about">
+          <h2 data-i18n="navAbout">About</h2>
+          <p class="lead" data-i18n="aboutPrivacy">ClickFix Warden collects no data.</p>
+          <p class="muted" data-i18n="aboutNetwork">The only thing it downloads is the signed database and rules from GitHub.</p>
+          <div class="inline">
+            <a id="projectLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutProject">Source code</a>
+            <a id="privacyLink" target="_blank" rel="noopener noreferrer" data-i18n="aboutPolicy">Privacy policy</a>
+          </div>
+        </section>
+      </main>
     </div>
     <script type="module" src="./main.ts"></script>
   </body>

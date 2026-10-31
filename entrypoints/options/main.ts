@@ -8,7 +8,10 @@ import { DONATE_URL, PRIVACY_URL, PROJECT_URL } from '../../src/shared/constants
 import { localizePage, relativeTime, t } from '../../src/shared/i18n';
 import type { Detection, Message } from '../../src/shared/messages';
 import { computeEffectiveSettings, type EffectiveSettings, normalizeSite, saveSettings, type Settings } from '../../src/shared/settings';
+import { confirmDialog } from '../../src/ui/graphite';
+import { addPageParts } from '../../src/ui/page-parts';
 
+addPageParts();
 localizePage();
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 const send = <T>(msg: Message) => browser.runtime.sendMessage(msg) as Promise<T>;
@@ -70,11 +73,9 @@ function renderToggles(): void {
       await saveSettings({ [item.key]: input.checked } as Partial<Settings>);
       await refresh();
     });
-    const label = make('label', { htmlFor: input.id, textContent: t(item.label) });
-    const name = make('div', { className: 'name' }, label, tip(item.tip));
-    const sw = make('label', { className: 'switch' }, input, make('span', { className: 'track' }));
-    const row = make('div', { className: 'setting' + (item.sub ? ' sub' : '') }, name, sw);
-    box.append(row);
+    const label = make('label', { htmlFor: input.id, className: 'grow' + (item.sub ? ' sub' : ''), textContent: t(item.label) });
+    const sw = make('span', { className: 'switch' }, input, make('span', { className: 'track' }), make('span', { className: 'knob' }));
+    box.append(make('div', { className: 'row setting' }, label, tip(item.tip), sw));
   }
 }
 
@@ -82,26 +83,36 @@ function renderToggles(): void {
 function renderSites(): void {
   const list = $('sites');
   list.replaceChildren();
-  if (!eff.settings.trustedSites.length) list.append(make('li', { className: 'empty', textContent: t('trustedEmpty') }));
+  if (!eff.settings.trustedSites.length) list.append(make('div', { className: 'row muted', textContent: t('trustedEmpty') }));
   for (const site of eff.settings.trustedSites) {
-    const remove = make('button', { className: 'link', textContent: t('trustedRemove'), title: t('tipTrustedRemove'), disabled: locked('trustedSites') });
+    const remove = make('button', { className: 'textlink', textContent: t('trustedRemove'), title: t('tipTrustedRemove'), disabled: locked('trustedSites') });
     remove.addEventListener('click', async () => {
       await saveSettings({ trustedSites: eff.settings.trustedSites.filter((s) => s !== site) });
       await refresh();
     });
-    list.append(make('li', {}, make('span', { className: 'mono', textContent: site }), remove));
+    list.append(make('div', { className: 'row' }, make('span', { className: 'grow', textContent: site }), remove));
   }
   $<HTMLButtonElement>('addSite').disabled = locked('trustedSites');
   $<HTMLInputElement>('siteInput').disabled = locked('trustedSites');
 }
 
-$('addSite').addEventListener('click', async () => {
+$('addSite').addEventListener('click', () => {
   const input = $<HTMLInputElement>('siteInput');
   const site = normalizeSite(input.value);
-  if (!site || !site.includes('.')) return;
-  if (!eff.settings.trustedSites.includes(site)) await saveSettings({ trustedSites: [...eff.settings.trustedSites, site] });
-  input.value = '';
-  await refresh();
+  if (!site || !site.includes('.') || eff.settings.trustedSites.includes(site)) return;
+  // Trusting a site here needs the same confirmation as in a warning.
+  document.body.append(
+    confirmDialog(document, {
+      host: site,
+      reported: false,
+      mode: 'trust',
+      onConfirm: async () => {
+        await saveSettings({ trustedSites: [...eff.settings.trustedSites, site] });
+        input.value = '';
+        await refresh();
+      },
+    }),
+  );
 });
 $('siteInput').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') $('addSite').click();
@@ -159,11 +170,11 @@ async function runHistoryScan(days: number): Promise<void> {
   out.replaceChildren(make('p', { textContent: t('historyChecked', [String(items.length), String(days)]) }));
   $('exportHistory').hidden = false;
   if (!historyFindings.length) {
-    out.append(make('p', {}, make('span', { className: 'pill ok', textContent: t('historyClean') })));
+    out.append(make('p', { className: 'ok', textContent: t('historyClean') }));
     return;
   }
-  out.append(make('p', {}, make('span', { className: 'pill bad', textContent: t('historyFound', String(historyFindings.length)) })));
-  out.append(make('p', { className: 'small muted', textContent: t('historyAdvice') }));
+  out.append(make('p', {}, make('strong', { className: 'red', textContent: t('historyFound', String(historyFindings.length)) })));
+  out.append(make('p', { className: 'muted', textContent: t('historyAdvice') }));
   const table = make('table');
   table.append(make('tr', {}, make('th', { textContent: t('colVisited') }), make('th', { textContent: t('colAddress') }), make('th', { textContent: t('colReport') })));
   for (const f of historyFindings.slice(0, 300)) {
@@ -174,7 +185,7 @@ async function runHistoryScan(days: number): Promise<void> {
         line.append(make('a', { href: r.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') }));
       report.append(line);
     }
-    table.append(make('tr', {}, make('td', { textContent: f.lastVisit ? new Date(f.lastVisit).toLocaleString() : '' }), make('td', { className: 'url mono', textContent: f.url }), report));
+    table.append(make('tr', {}, make('td', { textContent: f.lastVisit ? new Date(f.lastVisit).toLocaleString() : '' }), make('td', { className: 'url', textContent: f.url }), report));
   }
   out.append(make('div', { className: 'table-wrap' }, table));
 }
@@ -219,20 +230,20 @@ $('scanExtensions').addEventListener('click', () => {
     const found = all.filter((ext) => bad.has(ext.id));
     out.replaceChildren(make('p', { textContent: t('extensionsChecked', String(all.length)) }));
     if (!found.length) {
-      out.append(make('p', {}, make('span', { className: 'pill ok', textContent: t('extensionsClean') })));
+      out.append(make('p', { className: 'ok', textContent: t('extensionsClean') }));
       return;
     }
     for (const ext of found) {
-      const remove = make('button', { className: 'danger', textContent: t('extensionsRemove'), title: t('tipExtensionsRemove') });
+      const remove = make('button', { className: 'g-btn danger small', textContent: t('extensionsRemove'), title: t('tipExtensionsRemove') });
       remove.addEventListener('click', () => void management.uninstall(ext.id, { showConfirmDialog: true }));
       const info = bad.get(ext.id)!;
       out.append(
         make(
           'div',
-          { className: 'notice' },
-          make('strong', { textContent: `${ext.name} (${ext.id})` }),
-          make('div', { className: 'small', textContent: t('extensionsKnownAs', info.name) }),
-          make('div', { className: 'row' }, remove, make('a', { href: info.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') })),
+          { className: 'found' },
+          make('strong', { className: 'red', textContent: `${ext.name} (${ext.id})` }),
+          make('div', { className: 'muted', textContent: t('extensionsKnownAs', info.name) }),
+          make('div', { className: 'inline' }, remove, make('a', { href: info.ref, target: '_blank', rel: 'noopener noreferrer', textContent: t('bannerDetails') })),
         ),
       );
     }
@@ -250,7 +261,7 @@ async function renderLog(): Promise<Detection[]> {
   const box = $('logTable');
   box.replaceChildren();
   if (!list.length) {
-    box.append(make('p', { className: 'empty', textContent: t('popupNoDetections') }));
+    box.append(make('p', { className: 'muted', textContent: t('popupNoDetections') }));
     return list;
   }
   const table = make('table');
@@ -258,13 +269,8 @@ async function renderLog(): Promise<Detection[]> {
     make('tr', {}, make('th', { textContent: t('colTime') }), make('th', { textContent: t('colWhat') }), make('th', { textContent: t('colSite') }), make('th', { className: 'opt', textContent: t('colDetails') })),
   );
   for (const d of list.slice(0, 200)) {
-    const details = make('td', { className: 'opt' });
-    if (d.command || d.reasons.length) {
-      const det = make('details', {}, make('summary', { textContent: t('logShow') }));
-      if (d.reasons.length) det.append(make('div', { className: 'small muted', textContent: d.reasons.join(', ') }));
-      if (d.command) det.append(make('pre', { textContent: d.command }));
-      details.append(det);
-    }
+    // What was found, never the command itself, so nobody copies it from here.
+    const details = make('td', { className: 'opt', textContent: d.what ?? '' });
     table.append(
       make(
         'tr',

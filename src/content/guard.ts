@@ -10,6 +10,7 @@ import type { FeedHit } from '../feed/types';
 import { label, t } from '../shared/i18n';
 import type { AlertData, DetectionAction, DetectionKind, Message, PageStatus, TabMessage } from '../shared/messages';
 import { DEFAULT_SETTINGS, type EffectiveSettings, isTrusted, type Settings } from '../shared/settings';
+import { whatOfCommand, whyOfCommand, whyOfPage } from '../ui/explain';
 import { showAlert } from '../ui/overlay';
 import { type CheckDetail, EVT, type SignalDetail, safeText } from './protocol';
 
@@ -102,12 +103,6 @@ export function startGuard(): void {
   }
 
   // ---- reporting ----
-  function reasonText(r: Reason): string {
-    if (r.label) return label(r.label, r.id);
-    const msg = t('r_' + r.id.replace(/-/g, '_'));
-    return msg.startsWith('r_') ? r.id : msg;
-  }
-
   function present(alert: AlertData): void {
     if (isTop) {
       showAlert(alert, overlayActions, settings.customWarning);
@@ -116,22 +111,19 @@ export function startGuard(): void {
     }
   }
 
-  function log(kind: DetectionKind, action: DetectionAction, extra: { score?: number; reasons?: string[]; command?: string } = {}): void {
+  function log(kind: DetectionKind, action: DetectionAction, extra: { score?: number; reasons?: string[]; command?: string; what?: string } = {}): void {
     void sendMessage({
       type: 'log',
-      detection: { kind, action, url: location.href, host, score: extra.score, reasons: extra.reasons ?? [], command: extra.command },
+      detection: { kind, action, url: location.href, host, score: extra.score, reasons: extra.reasons ?? [], command: extra.command, what: extra.what },
     });
   }
 
+  // The command itself is never shown, only what it does and why it was stopped, so nobody copies it from the warning.
   function reportVerdict(kind: DetectionKind, v: Verdict, original: string, hits?: FeedHit[]): void {
-    // Strongest reasons first, small ones like "contains a web address" left out.
-    const reasons = v.reasons
-      .filter((r) => r.w >= 10)
-      .sort((a, b) => b.w - a.w)
-      .map((r) => ({ id: r.id, text: reasonText(r) }));
-    if (hits?.length) reasons.unshift({ id: 'payload-reported', text: t('r_payload_reported') });
-    present({ kind, host, score: v.score, reasons, display: v.norm.display, decoded: v.norm.decoded, original });
-    log(kind, 'blocked', { score: v.score, reasons: reasons.map((r) => r.id), command: original });
+    const reasons: Reason[] = hits?.length ? [{ id: 'payload-reported', w: 30 }, ...v.reasons] : v.reasons;
+    const what = whatOfCommand(reasons);
+    present({ kind, host, score: v.score, what, why: whyOfCommand(reasons) });
+    log(kind, 'blocked', { score: v.score, reasons: reasons.filter((r) => r.w >= 10).map((r) => r.id), command: original, what });
   }
 
   async function writeSafeClipboard(): Promise<void> {
@@ -168,16 +160,7 @@ export function startGuard(): void {
     trust: (h: string) => {
       trusted = true;
       void sendMessage({ type: 'trust-site', host: h });
-      log('clipboard', 'trusted', { reasons: [] });
-    },
-    copyAnyway: async (text: string) => {
-      try {
-        await navigator.clipboard.writeText(text);
-        log('clipboard', 'copied-anyway', { command: text, reasons: [] });
-        return true;
-      } catch {
-        return false;
-      }
+      log('reputation', 'trusted', { reasons: [] });
     },
   };
 
@@ -207,8 +190,9 @@ export function startGuard(): void {
             ? p.score >= rules.fullscreen.keyboardLockMinScore && (p.groups.has('open') || p.ids.has('page-fake-update'))
             : p.score >= rules.fullscreen.fullscreenMinScore && p.ids.has('page-fake-update');
         if (block) {
-          present({ kind: 'fullscreen', host, score: p.score, reasons: p.reasons.map((r) => ({ id: r.id, text: reasonText(r) })) });
-          log('fullscreen', 'blocked', { score: p.score, reasons: p.reasons.map((r) => r.id) });
+          const what = t('fullscreenWhat');
+          present({ kind: 'fullscreen', host, score: p.score, what, why: whyOfPage(p.reasons) });
+          log('fullscreen', 'blocked', { score: p.score, reasons: p.reasons.map((r) => r.id), what });
           try {
             if (document.fullscreenElement) void document.exitFullscreen();
           } catch {
@@ -227,9 +211,9 @@ export function startGuard(): void {
     if (!active() || !settings.protocols) return false;
     const rule = matchProtocol(url, rules);
     if (!rule) return false;
-    const text = label(rule.label, rule.id);
-    present({ kind: 'protocol', host, reasons: [{ id: rule.id, text }], display: [{ t: 'text', v: url.slice(0, 600) }] });
-    log('protocol', 'blocked', { reasons: [rule.id], command: url });
+    const what = label(rule.label, rule.id);
+    present({ kind: 'protocol', host, what, why: t('protocolWhy') });
+    log('protocol', 'blocked', { reasons: [rule.id], command: url, what });
     return true;
   }
 
@@ -282,7 +266,7 @@ export function startGuard(): void {
       if (detail.kind !== 'web3' || !settings.web3) return;
       web3[detail.net] = true;
       if (detail.net === 'testnet' && active()) {
-        present({ kind: 'web3-loader', host, reasons: [], detail: t('bannerWeb3Detail') });
+        present({ kind: 'web3-loader', host });
         log('web3-loader', 'warned', { reasons: [`rpc:${detail.host}`] });
       }
     },
@@ -327,9 +311,10 @@ export function startGuard(): void {
       if (!text || !isConsentFixPaste(text, host, rules)) return;
       e.preventDefault();
       e.stopImmediatePropagation();
-      present({ kind: 'paste', host, reasons: [{ id: 'consentfix', text: t('r_consentfix') }] });
+      const what = t('pasteWhat');
+      present({ kind: 'paste', host, what, why: t('pasteWhy') });
       // The pasted link holds a sign-in code, so only a redacted copy goes in the log.
-      log('paste', 'blocked', { reasons: ['consentfix'], command: text.replace(/([?&#](code|id_token|access_token|session_state|client_info)=)[^&#\s]+/gi, '$1[removed]').slice(0, 500) });
+      log('paste', 'blocked', { reasons: ['consentfix'], what, command: text.replace(/([?&#](code|id_token|access_token|session_state|client_info)=)[^&#\s]+/gi, '$1[removed]').slice(0, 500) });
     },
     true,
   );
@@ -361,7 +346,7 @@ export function startGuard(): void {
     scans++;
     const p = pageVerdict(true);
     if (!p.standalone) return;
-    present({ kind: 'page-instructions', host, reasons: p.reasons.map((r) => ({ id: r.id, text: reasonText(r) })) });
+    present({ kind: 'page-instructions', host });
     log('page-instructions', 'warned', { score: p.score, reasons: p.reasons.map((r) => r.id) });
     scans = 99;
   }
@@ -390,7 +375,7 @@ export function startGuard(): void {
       pageReported = true;
       if (!settings.reputation || !settings.enabled || status.trusted) return;
       const render = () =>
-        showAlert({ kind: 'reputation', host, reasons: [], hits: status.hits }, overlayActions, settings.customWarning);
+        showAlert({ kind: 'reputation', host, hits: status.hits }, overlayActions, settings.customWarning);
       if (document.documentElement) render();
       else document.addEventListener('DOMContentLoaded', render, { once: true });
       log('reputation', 'warned', {

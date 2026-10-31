@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "version": 1,
+  "version": 2,
   "minEngine": 1,
   "updated": "2026-10-31",
   "thresholds": {
@@ -119,11 +119,11 @@
     "allowedHosts": ["localhost", "127.0.0.1", "login.microsoftonline.com", "login.live.com", "login.windows.net", "accounts.google.com", "github.com"]
   },
   "protocols": [
-    { "id": "proto-applescript", "re": "^applescript:", "label": { "en": "Tried to open Script Editor with a prepared script", "bg": "Опит да отвори Script Editor с подготвен скрипт" } },
-    { "id": "proto-search-ms", "re": "^search(-ms)?:", "label": { "en": "Tried to open a Windows search window on a remote folder", "bg": "Опит да отвори прозорец за търсене в Windows към отдалечена папка" } },
-    { "id": "proto-ms-msdt", "re": "^ms-msdt:", "label": { "en": "Tried to start the Windows troubleshooter with hidden settings", "bg": "Опит да стартира инструмента за отстраняване на проблеми в Windows със скрити настройки" } },
-    { "id": "proto-ms-officecmd", "re": "^ms-officecmd:", "label": { "en": "Tried to start Office with hidden settings", "bg": "Опит да стартира Office със скрити настройки" } },
-    { "id": "proto-ms-appinstaller", "re": "^ms-appinstaller:", "label": { "en": "Tried to install an app package from the internet", "bg": "Опит да инсталира приложение от интернет" } }
+    { "id": "proto-applescript", "re": "^applescript:", "label": { "en": "Script Editor with a prepared script", "bg": "Script Editor с подготвен скрипт" } },
+    { "id": "proto-search-ms", "re": "^search(-ms)?:", "label": { "en": "a Windows search window on a remote folder", "bg": "прозорец за търсене в Windows към отдалечена папка" } },
+    { "id": "proto-ms-msdt", "re": "^ms-msdt:", "label": { "en": "the Windows troubleshooter with hidden settings", "bg": "инструмента за отстраняване на проблеми в Windows със скрити настройки" } },
+    { "id": "proto-ms-officecmd", "re": "^ms-officecmd:", "label": { "en": "Office with hidden settings", "bg": "Office със скрити настройки" } },
+    { "id": "proto-ms-appinstaller", "re": "^ms-appinstaller:", "label": { "en": "an app installer from the internet", "bg": "инсталатор на приложение от интернет" } }
   ],
   "fullscreen": {
     "keyboardLockMinScore": 25,

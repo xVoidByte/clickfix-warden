@@ -1,4 +1,3 @@
-import type { DisplayPart } from '../engine/types';
 import type { FeedHit } from '../feed/types';
 
 export type DetectionKind =
@@ -24,18 +23,16 @@ export interface Detection {
   score?: number;
   reasons: string[];
   command?: string;
+  what?: string;
 }
 
-/** What an in-page dialog shows, built by the content script that caught the problem. */
+/** What an in-page warning shows, the two bold phrases say what was found and why it was stopped. */
 export interface AlertData {
   kind: DetectionKind;
   host: string;
   score?: number;
-  reasons: { id: string; text: string }[];
-  display?: DisplayPart[];
-  decoded?: string[];
-  original?: string;
-  detail?: string;
+  what?: string;
+  why?: string;
   hits?: FeedHit[];
 }
 

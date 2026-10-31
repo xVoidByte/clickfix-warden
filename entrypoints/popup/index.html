@@ -6,53 +6,47 @@
     <title>ClickFix Warden</title>
     <link rel="stylesheet" href="../../src/ui/page.css" />
     <style>
-      body { width: 360px; }
-      header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid var(--line); background: var(--card); }
-      section { padding: 12px 16px; border-bottom: 1px solid var(--line); }
-      .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-      .host { font-weight: 600; word-break: break-all; }
-      .status { margin: 6px 0 8px; }
-      .reports { font-size: 12.5px; margin: 6px 0 0; padding-left: 18px; }
-      .recent { list-style: none; margin: 6px 0 0; padding: 0; }
-      .recent li { padding: 6px 0; border-top: 1px solid var(--line); font-size: 12.5px; }
-      .recent li:first-child { border-top: none; }
-      footer { display: flex; flex-wrap: wrap; gap: 14px; padding: 12px 16px; }
-      h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); margin-bottom: 4px; }
-      .off { background: var(--warn-bg); padding: 8px 16px; font-size: 12.5px; }
+      body { width: 360px; background: var(--surface); }
+      header { padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; }
+      header .name { font-size: 16px; font-weight: 700; }
+      .onoff { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); cursor: pointer; }
+      .onoff input { width: 18px; height: 18px; margin: 0; accent-color: #F3F3F4; }
+      .off { margin: 0 12px 10px; padding: 10px 14px; border-radius: 12px; background: var(--redbg); color: #FFFFFF; font-size: 14px; }
+      .site { margin: 0 12px; padding: 14px; border-radius: 12px; background: var(--raised); }
+      .site .host { font-size: 15px; font-weight: 600; word-break: break-all; }
+      .site .status { margin-top: 4px; font-size: 14px; color: var(--text2); }
+      .site .status strong.red { color: var(--red); }
+      .site .trust { margin-top: 8px; background: none; border: none; padding: 0; color: var(--muted); font-size: 13px; text-decoration: underline; cursor: pointer; }
+      .stats { padding: 16px 18px; font-size: 14px; line-height: 1.65; color: var(--text2); }
+      .recent { padding: 0 18px 8px; font-size: 14px; color: var(--text2); }
+      .recent .item { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
+      .recent .item span:last-child { color: var(--muted); white-space: nowrap; }
+      footer { padding: 14px 18px; border-top: 1px solid var(--line); display: flex; gap: 18px; font-size: 14px; font-weight: 600; }
+      .g-backdrop { position: fixed; }
+      .g-card { width: 340px; padding: 20px; }
+      .g-title { font-size: 20px; }
+      .g-title.white { font-size: 19px; }
+      .g-label { font-size: 12px; }
+      .g-text { font-size: 14px; }
     </style>
   </head>
   <body>
     <header>
-      <div class="brand"><img src="/icon/48.png" alt="" /><span class="name">ClickFix Warden</span></div>
-      <label class="row">
-        <span class="switch"><input type="checkbox" id="enabled" /><span class="track"></span></span>
-        <span class="tip" tabindex="0" data-i18n-tip="tipEnabled">i</span>
-      </label>
+      <span class="name">ClickFix Warden</span>
+      <label class="onoff" data-i18n-title="tipEnabled"><input type="checkbox" id="enabled" /> <span data-i18n="popupOn">On</span></label>
     </header>
     <div class="off" id="offNote" hidden data-i18n="popupOff">Protection is turned off.</div>
-    <section>
-      <h2 data-i18n="popupThisSite">This site</h2>
+    <div class="site">
       <div class="host" id="host"></div>
       <div class="status" id="status"></div>
-      <ul class="reports" id="reports" hidden></ul>
-      <button class="link" id="trust"></button>
-    </section>
-    <section>
-      <h2 data-i18n="popupProtection">Protection</h2>
-      <div class="row small">
-        <span id="feedLine"></span>
-        <button class="link" id="update" data-i18n="popupUpdate" data-i18n-title="tipUpdateNow">Update now</button>
-      </div>
-      <div class="small muted" id="rulesLine"></div>
-    </section>
-    <section>
-      <h2 data-i18n="popupRecent">Recent detections</h2>
-      <ul class="recent" id="recent"></ul>
-    </section>
+      <button class="trust" id="trust" hidden></button>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="recent" id="recent"></div>
     <footer>
       <a href="#" id="openOptions" data-i18n="popupSettings">Settings</a>
       <a href="#" id="openHistory" data-i18n="popupHistory">Check my history</a>
-      <a href="#" id="donate" hidden data-i18n="supportProject">Support the project</a>
+      <a href="#" id="donate" hidden data-i18n="supportShort">Support</a>
     </footer>
     <script type="module" src="./main.ts"></script>
   </body>

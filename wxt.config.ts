@@ -19,6 +19,12 @@ export default defineConfig({
     optional_permissions: ['history', 'management'],
     host_permissions: ['<all_urls>'],
     action: { default_title: '__MSG_extName__' },
+    // The warning fonts load into pages, Chrome hands them out under a per-session address so sites cannot probe for the extension.
+    web_accessible_resources: [
+      browser === 'firefox'
+        ? { resources: ['fonts/*.woff2'], matches: ['<all_urls>'] }
+        : { resources: ['fonts/*.woff2'], matches: ['<all_urls>'], use_dynamic_url: true },
+    ],
     ...(browser === 'firefox'
       ? {
           browser_specific_settings: {

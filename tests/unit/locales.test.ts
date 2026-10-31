@@ -29,6 +29,12 @@ function usedKeys(): Set<string> {
   for (const c of ['clickfix', 'malware', 'c2', 'phishing']) keys.add('category_' + c);
   for (const k of ['clipboard', 'manual_copy', 'paste', 'protocol', 'fullscreen', 'page_instructions', 'web3_loader', 'reputation', 'reputation_block']) keys.add('kind_' + k);
   for (const a of ['blocked', 'warned', 'copied_anyway', 'continued', 'trusted']) keys.add('action_' + a);
+  for (const s of ['powershell', 'applescript', 'terminal', 'script', 'cmd', 'windows', 'generic']) keys.add('what_' + s).add('what_' + s + '_hidden');
+  for (const e of ['download_run', 'disables_av', 'password', 'remote_share', 'remote_script', 'remote_install', 'dns', 'finger', 'runs']) keys.add('effect_' + e);
+  for (const l of ['captcha', 'update', 'fix']) keys.add('lure_' + l);
+  for (const g of ['explorer', 'terminal', 'run', 'paste']) keys.add('target_' + g);
+  for (const c of ['clickfix', 'malware', 'c2', 'phishing']) keys.add('rep_' + c).add('rep_' + c + '_family');
+  for (const k of ['titleClipboard', 'titleManual', 'titlePaste', 'titleProtocol', 'titleFullscreen', 'descClipboardA', 'descClipboardB', 'descNote', 'descManualA', 'descManualB', 'descManualNote', 'descPasteA', 'descPasteB', 'descProtocolA', 'descFullscreenA', 'descStoppedB', 'descFullscreenNote']) keys.add(k);
   return keys;
 }
 
@@ -41,12 +47,6 @@ describe('translations', () => {
       expect(en[key], `en ${key}`).toBeDefined();
       expect(bg[key], `bg ${key}`).toBeDefined();
     }
-  });
-  it('page and rule reasons have a text', () => {
-    const rules = JSON.parse(readFileSync(resolve(root, 'rules/rules.json'), 'utf8'));
-    for (const r of rules.page.instructions) expect(en['r_' + r.id.replace(/-/g, '_')], r.id).toBeDefined();
-    for (const id of ['trigger-captcha', 'trigger-fix', 'page-reported', 'page-web3', 'payload-reported', 'consentfix'])
-      expect(en['r_' + id.replace(/-/g, '_')], id).toBeDefined();
   });
   it('store limits are respected', () => {
     for (const lang of [en, bg]) {
