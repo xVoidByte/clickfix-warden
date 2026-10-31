@@ -1,0 +1,41 @@
+  <h1>Personvernerklæring for ClickFix Warden</h1>
+  <p class="muted">Sist oppdatert 31. oktober 2026</p>
+
+  <h2>Kort fortalt</h2>
+  <p>ClickFix Warden samler ikke inn, lagrer ikke på noen server, selger ikke og deler ikke data om deg. Den har ingen konto, ingen analyse, ingen telemetri og ingen egen server. Alle kontroller skjer i nettleseren din.</p>
+
+  <h2>Hva utvidelsen ser på, og hvor</h2>
+  <ul>
+    <li><strong>Adressene til sidene du åpner</strong>, sammenlignes med en kopi av offentlige trusseldatabaser som er lagret i nettleseren din. Adressen sendes aldri noe sted.</li>
+    <li><strong>Tekst som en side prøver å legge på utklippstavlen din</strong>, og tekst du kopierer, kontrolleres inne på siden for skjulte kommandoer. Den sendes aldri noe sted.</li>
+    <li><strong>Tekst på siden</strong> leses inne på siden for å oppdage instruksjoner som «trykk på Win og R, deretter Ctrl og V». Den sendes aldri noe sted.</li>
+    <li><strong>Tekst du limer inn på et nettsted</strong>, kontrolleres for påloggingslenker som inneholder en autorisasjonskode. Den sendes aldri noe sted.</li>
+    <li><strong>IP-adressen til serveren</strong> en side kommer fra, slik nettleseren oppgir den, sammenlignes med den lokale kopien av databasene.</li>
+  </ul>
+
+  <h2>Hva som blir værende på datamaskinen din</h2>
+  <ul>
+    <li>Innstillingene dine og listen din over klarerte nettsteder.</li>
+    <li>En logg over hva som ble blokkert eller advart om, maksimalt 500 oppføringer, som du kan eksportere eller tømme når som helst. Påloggingskoder fjernes fra loggen.</li>
+    <li>Den nedlastede kopien av trusseldatabasene og gjenkjenningsreglene.</li>
+  </ul>
+  <p>Innstillingene lagres i nettleserens lokale lagring, ikke i nettlesersynkroniseringen, så de havner heller ikke i nettleserkontoen din.</p>
+
+  <h2>Valgfrie kontroller</h2>
+  <ul>
+    <li><strong>Historikksjekk.</strong> Bare når du trykker på knappen, ber utvidelsen om tillatelse til å lese nettleserhistorikken din, sammenligner den med den lokale databasen i nettleseren din og viser deg resultatet. Ingenting sendes noe sted, og du kan gi fra deg tillatelsen med ett klikk.</li>
+    <li><strong>Utvidelsessjekk.</strong> Bare når du trykker på knappen, ber utvidelsen om tillatelse til å vise de installerte utvidelsene dine og sammenligner ID-ene deres med en liste over kjente skadelige utvidelser i nettleseren din. Du kan gi fra deg tillatelsen med ett klikk.</li>
+  </ul>
+
+  <h2>De eneste nettverksforespørslene</h2>
+  <p>Omtrent én gang i timen laster utvidelsen ned de siste endringene i trusseldatabasen og gjenkjenningsreglene fra <code>xvoidbyte.github.io</code>, som driftes av GitHub Pages, og én gang om dagen hele listen over rapporterte nedlastingslenker, hver fil med sin digitale signatur. Disse forespørslene inneholder ingen identifikator og ingen informasjon om surfingen din. GitHub mottar IP-adressen din og nettleserversjonen på samme måte som for alle andre nettsider, i henhold til <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Du kan slå av disse oppdateringene i innstillingene, og utvidelsen fortsetter da å fungere med de innebygde reglene sine.</p>
+  <p>Hvis du klikker på en «Detaljer»-lenke i en advarsel, åpner nettleseren den offentlige rapporten på abuse.ch i en ny fane, som enhver annen lenke du klikker på.</p>
+
+  <h2>Hvor rapportene kommer fra</h2>
+  <p>Databasen bygges fra de offentlige prosjektene URLhaus, ThreatFox og Feodo Tracker, som drives av <a href="https://abuse.ch/">abuse.ch</a>. Utvidelsen rapporterer aldri noe tilbake til dem.</p>
+
+  <h2>Organisasjoner</h2>
+  <p>En administrator kan angi alternativene for utvidelsen via nettleserregler. Disse innstillingene leses fra nettleseren og sendes heller ikke noe sted.</p>
+
+  <h2>Endringer og kontakt</h2>
+  <p>Eventuelle endringer i denne erklæringen publiseres på denne siden og i <a href="https://github.com/xVoidByte/ClickFixWarden">prosjektets kodelager</a>. Spørsmål kan stilles via <a href="https://github.com/xVoidByte/ClickFixWarden/issues">GitHub issues</a>.</p>

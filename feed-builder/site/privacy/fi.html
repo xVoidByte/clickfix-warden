@@ -1,0 +1,41 @@
+  <h1>ClickFix Wardenin tietosuojakäytäntö</h1>
+  <p class="muted">Päivitetty viimeksi 31. lokakuuta 2026</p>
+
+  <h2>Lyhyesti</h2>
+  <p>ClickFix Warden ei kerää sinusta tietoja, ei tallenna niitä millekään palvelimelle, ei myy niitä eikä jaa niitä. Sillä ei ole tiliä, analytiikkaa, telemetriaa eikä omaa palvelinta. Kaikki tarkistukset tehdään selaimessasi.</p>
+
+  <h2>Mitä laajennus tarkastelee ja missä</h2>
+  <ul>
+    <li><strong>Avaamiesi sivujen osoitteita</strong> verrataan selaimeesi tallennettuun kopioon julkisista uhkatietokannoista. Osoitetta ei koskaan lähetetä minnekään.</li>
+    <li><strong>Teksti, jonka sivu yrittää laittaa leikepöydällesi</strong>, ja kopioimasi teksti tarkistetaan sivun sisällä piilotettujen komentojen varalta. Sitä ei koskaan lähetetä minnekään.</li>
+    <li><strong>Sivun teksti</strong> luetaan sivun sisällä, jotta ohjeet kuten ”paina Win ja R, sitten Ctrl ja V” tunnistetaan. Sitä ei koskaan lähetetä minnekään.</li>
+    <li><strong>Sivustolle liittämäsi teksti</strong> tarkistetaan sellaisten kirjautumislinkkien varalta, jotka sisältävät valtuutuskoodin. Sitä ei koskaan lähetetä minnekään.</li>
+    <li><strong>Sen palvelimen IP-osoitetta</strong>, jolta sivu tulee, sellaisena kuin selain sen ilmoittaa, verrataan tietokantojen paikalliseen kopioon.</li>
+  </ul>
+
+  <h2>Mitä jää tietokoneellesi</h2>
+  <ul>
+    <li>Asetuksesi ja luotettujen sivustojen luettelosi.</li>
+    <li>Loki siitä, mitä estettiin tai mistä varoitettiin, enintään 500 merkintää, jonka voit viedä tai tyhjentää milloin tahansa. Kirjautumiskoodit poistetaan lokista.</li>
+    <li>Ladattu kopio uhkatietokannoista ja tunnistussäännöistä.</li>
+  </ul>
+  <p>Asetukset säilytetään selaimen paikallisessa tallennustilassa eikä selaimen synkronoinnissa, joten ne eivät päädy myöskään selaintilillesi.</p>
+
+  <h2>Valinnaiset tarkistukset</h2>
+  <ul>
+    <li><strong>Historian tarkistus.</strong> Vasta kun painat painiketta, laajennus pyytää lupaa lukea selaushistoriaasi, vertaa sitä paikalliseen tietokantaan selaimessasi ja näyttää sinulle tuloksen. Mitään ei lähetetä minnekään, ja voit luopua luvasta yhdellä napsautuksella.</li>
+    <li><strong>Laajennusten tarkistus.</strong> Vasta kun painat painiketta, laajennus pyytää lupaa luetella asennetut laajennuksesi ja vertaa niiden tunnuksia tunnettujen haitallisten laajennusten luetteloon selaimessasi. Voit luopua luvasta yhdellä napsautuksella.</li>
+  </ul>
+
+  <h2>Ainoat verkkopyynnöt</h2>
+  <p>Noin kerran tunnissa laajennus lataa uusimmat muutokset uhkatietokantaan ja tunnistussääntöihin osoitteesta <code>xvoidbyte.github.io</code>, joka toimii GitHub Pagesissa, ja kerran päivässä koko luettelon ilmoitetuista latauslinkeistä, jokaisen tiedoston digitaalisen allekirjoituksen kanssa. Nämä pyynnöt eivät sisällä tunnistetta eivätkä tietoja selaamisestasi. GitHub saa IP-osoitteesi ja selaimesi version samalla tavalla kuin minkä tahansa verkkosivun kohdalla, ja niihin sovelletaan asiakirjaa <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Voit poistaa nämä päivitykset käytöstä asetuksissa, jolloin laajennus toimii edelleen sisäänrakennetuilla säännöillään.</p>
+  <p>Jos napsautat varoituksessa olevaa Lisätiedot-linkkiä, selaimesi avaa julkisen raportin abuse.ch-sivustolla uuteen välilehteen kuten minkä tahansa muun linkin, jota napsautat.</p>
+
+  <h2>Mistä ilmoitukset tulevat</h2>
+  <p>Tietokanta kootaan julkisista URLhaus-, ThreatFox- ja Feodo Tracker -projekteista, joita ylläpitää <a href="https://abuse.ch/">abuse.ch</a>. Laajennus ei koskaan ilmoita niille mitään takaisin.</p>
+
+  <h2>Organisaatiot</h2>
+  <p>Järjestelmänvalvoja voi määrittää laajennuksen asetukset selainkäytäntöjen avulla. Nämä asetukset luetaan selaimesta, eikä niitäkään lähetetä minnekään.</p>
+
+  <h2>Muutokset ja yhteystiedot</h2>
+  <p>Kaikki tähän käytäntöön tehtävät muutokset julkaistaan tällä sivulla ja <a href="https://github.com/xVoidByte/ClickFixWarden">projektin koodivarastossa</a>. Kysymyksiä voi esittää <a href="https://github.com/xVoidByte/ClickFixWarden/issues">GitHubin issues-osiossa</a>.</p>

@@ -1,0 +1,41 @@
+  <h1>A ClickFix Warden adatvédelmi irányelvei</h1>
+  <p class="muted">Utoljára frissítve 2026. október 31.</p>
+
+  <h2>Röviden</h2>
+  <p>A ClickFix Warden nem gyűjt, nem tárol semmilyen kiszolgálón, nem ad el és nem oszt meg Önről semmilyen adatot. Nincs fiókja, analitikája, telemetriája és saját kiszolgálója. Minden ellenőrzés a böngészőjében történik.</p>
+
+  <h2>Mit vizsgál a bővítmény, és hol</h2>
+  <ul>
+    <li><strong>A megnyitott oldalak címeit</strong> a bővítmény a böngészőjében tárolt nyilvános fenyegetési adatbázisok másolatával veti össze. A címet soha nem küldi el sehová.</li>
+    <li><strong>Azt a szöveget, amelyet egy oldal a vágólapra próbál tenni</strong>, és az Ön által másolt szöveget a bővítmény az oldalon belül ellenőrzi, rejtett parancsokat keresve. Ezt soha nem küldi el sehová.</li>
+    <li><strong>Az oldalon lévő szöveget</strong> a bővítmény az oldalon belül olvassa el, hogy felismerje az olyan utasításokat, mint „nyomja meg a Win és az R billentyűt, majd a Ctrl és a V billentyűt”. Ezt soha nem küldi el sehová.</li>
+    <li><strong>A webhelyekre beillesztett szöveget</strong> a bővítmény engedélyezési kódot tartalmazó bejelentkezési linkeket keresve ellenőrzi. Ezt soha nem küldi el sehová.</li>
+    <li><strong>Annak a kiszolgálónak az IP-címét</strong>, ahonnan egy oldal érkezik, a bővítmény a böngésző által megadott formában veti össze az adatbázisok helyi másolatával.</li>
+  </ul>
+
+  <h2>Mi marad a számítógépén</h2>
+  <ul>
+    <li>A beállításai és a megbízható webhelyek listája.</li>
+    <li>Napló arról, hogy mit tiltott le vagy mire figyelmeztetett a bővítmény, legfeljebb 500 bejegyzéssel, amelyet bármikor exportálhat vagy törölhet. A bejelentkezési kódok törlődnek a naplóból.</li>
+    <li>A fenyegetési adatbázisok és az észlelési szabályok letöltött másolata.</li>
+  </ul>
+  <p>A beállításokat a böngésző helyi tárhelye őrzi, nem a böngésző szinkronizálása, így a böngészőfiókjába sem kerülnek.</p>
+
+  <h2>Választható ellenőrzések</h2>
+  <ul>
+    <li><strong>Előzmények ellenőrzése.</strong> A bővítmény csak a gomb megnyomásakor kér engedélyt a böngészési előzmények olvasására, a böngészőjén belül összeveti azokat a helyi adatbázissal, és megmutatja az eredményt. Semmit nem küld el sehová, és az engedélyt egy kattintással visszaadhatja.</li>
+    <li><strong>Bővítmények ellenőrzése.</strong> A bővítmény csak a gomb megnyomásakor kér engedélyt a telepített bővítményei listázására, és a böngészőjén belül összeveti azok azonosítóit az ismert kártékony bővítmények listájával. Az engedélyt egy kattintással visszaadhatja.</li>
+  </ul>
+
+  <h2>Az egyetlen hálózati kérések</h2>
+  <p>A bővítmény nagyjából óránként letölti a fenyegetési adatbázis és az észlelési szabályok legújabb módosításait az <code>xvoidbyte.github.io</code> címről, amelyet a GitHub Pages üzemeltet, naponta egyszer pedig a bejelentett letöltési linkek teljes listáját, minden fájlt a saját digitális aláírásával. Ezek a kérések nem tartalmaznak azonosítót és semmilyen információt a böngészéséről. A GitHub ugyanúgy megkapja az IP-címét és a böngészője verzióját, mint bármely weboldal esetében, a <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a> szerint. Ezeket a frissítéseket kikapcsolhatja a beállításokban, a bővítmény ekkor a beépített szabályaival működik tovább.</p>
+  <p>Ha egy figyelmeztetésben a „Részletek” linkre kattint, a böngészője új lapon megnyitja a nyilvános jelentést az abuse.ch oldalán, ugyanúgy, mint bármely más linket, amelyre rákattint.</p>
+
+  <h2>Honnan származnak a bejelentések</h2>
+  <p>Az adatbázis az <a href="https://abuse.ch/">abuse.ch</a> által működtetett nyilvános URLhaus, ThreatFox és Feodo Tracker projektekből készül. A bővítmény soha nem jelent vissza nekik semmit.</p>
+
+  <h2>Szervezetek</h2>
+  <p>A rendszergazda böngészőházirendeken keresztül állíthatja be a bővítmény beállításait. Ezeket a beállításokat a bővítmény a böngészőből olvassa, és ezeket sem küldi el sehová.</p>
+
+  <h2>Módosítások és kapcsolat</h2>
+  <p>Az irányelvek minden módosítását közzétesszük ezen az oldalon és a <a href="https://github.com/xVoidByte/ClickFixWarden">projekt tárolójában</a>. Kérdéseket a <a href="https://github.com/xVoidByte/ClickFixWarden/issues">GitHub issues</a> oldalon lehet feltenni.</p>

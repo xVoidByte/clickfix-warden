@@ -1,0 +1,41 @@
+  <h1>Polityka prywatności ClickFix Warden</h1>
+  <p class="muted">Ostatnia aktualizacja 31 października 2026 r.</p>
+
+  <h2>W skrócie</h2>
+  <p>ClickFix Warden nie zbiera, nie przechowuje na żadnym serwerze, nie sprzedaje ani nie udostępnia żadnych danych o użytkowniku. Nie ma kont, analityki, telemetrii ani własnego serwera. Każde sprawdzenie odbywa się w przeglądarce.</p>
+
+  <h2>Co sprawdza rozszerzenie i gdzie</h2>
+  <ul>
+    <li><strong>Adresy otwieranych stron</strong> są porównywane z kopią publicznych baz zagrożeń przechowywaną w przeglądarce. Adres nigdy nie jest nigdzie wysyłany.</li>
+    <li><strong>Tekst, który strona próbuje umieścić w schowku</strong>, oraz tekst kopiowany przez użytkownika jest sprawdzany na stronie pod kątem ukrytych poleceń. Nigdy nie jest nigdzie wysyłany.</li>
+    <li><strong>Tekst na stronie</strong> jest odczytywany na stronie, aby wykryć instrukcje typu „naciśnij Win i R, a potem Ctrl i V”. Nigdy nie jest nigdzie wysyłany.</li>
+    <li><strong>Tekst wklejany na stronę</strong> jest sprawdzany pod kątem linków logowania zawierających kod autoryzacji. Nigdy nie jest nigdzie wysyłany.</li>
+    <li><strong>Adres IP serwera</strong>, z którego pochodzi strona, podany przez przeglądarkę, jest porównywany z lokalną kopią baz.</li>
+  </ul>
+
+  <h2>Co zostaje na komputerze</h2>
+  <ul>
+    <li>Ustawienia i lista zaufanych stron.</li>
+    <li>Dziennik zablokowanych zdarzeń i ostrzeżeń, maksymalnie 500 wpisów, który można w każdej chwili wyeksportować lub wyczyścić. Kody logowania są usuwane z dziennika.</li>
+    <li>Pobrana kopia baz zagrożeń i reguł wykrywania.</li>
+  </ul>
+  <p>Ustawienia są przechowywane w lokalnej pamięci przeglądarki, a nie w synchronizacji przeglądarki, więc nie trafiają też na konto w przeglądarce.</p>
+
+  <h2>Dodatkowe sprawdzenia</h2>
+  <ul>
+    <li><strong>Sprawdzanie historii.</strong> Dopiero po naciśnięciu przycisku rozszerzenie prosi o uprawnienie do odczytu historii przeglądania, porównuje ją z lokalną bazą w przeglądarce i pokazuje wynik. Nic nie jest nigdzie wysyłane, a uprawnienie można cofnąć jednym kliknięciem.</li>
+    <li><strong>Sprawdzanie rozszerzeń.</strong> Dopiero po naciśnięciu przycisku rozszerzenie prosi o uprawnienie do wyświetlenia listy zainstalowanych rozszerzeń i porównuje ich identyfikatory z listą znanych złośliwych w przeglądarce. Uprawnienie można cofnąć jednym kliknięciem.</li>
+  </ul>
+
+  <h2>Jedyne żądania sieciowe</h2>
+  <p>Mniej więcej raz na godzinę rozszerzenie pobiera najnowsze zmiany bazy zagrożeń i reguł wykrywania z <code>xvoidbyte.github.io</code>, hostowanego przez GitHub Pages, a raz dziennie pełną listę zgłoszonych linków do pobierania, każdy plik z podpisem cyfrowym. Te żądania nie zawierają żadnego identyfikatora ani informacji o przeglądaniu. GitHub otrzymuje adres IP i wersję przeglądarki tak samo jak przy każdej stronie internetowej, zgodnie z <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">ogólnym oświadczeniem GitHub o ochronie prywatności</a>. Te aktualizacje można wyłączyć w ustawieniach, rozszerzenie działa wtedy dalej z wbudowanymi regułami.</p>
+  <p>Po kliknięciu linku „Szczegóły” w ostrzeżeniu przeglądarka otwiera publiczny raport w abuse.ch w nowej karcie, jak każdy kliknięty link.</p>
+
+  <h2>Skąd pochodzą zgłoszenia</h2>
+  <p>Baza powstaje z publicznych projektów URLhaus, ThreatFox i Feodo Tracker prowadzonych przez <a href="https://abuse.ch/">abuse.ch</a>. Rozszerzenie nigdy niczego im nie zgłasza.</p>
+
+  <h2>Organizacje</h2>
+  <p>Administrator może ustawić opcje rozszerzenia za pomocą zasad przeglądarki. Te ustawienia są odczytywane z przeglądarki i również nie są nigdzie wysyłane.</p>
+
+  <h2>Zmiany i kontakt</h2>
+  <p>Każda zmiana tej polityki zostanie opublikowana na tej stronie i w <a href="https://github.com/xVoidByte/ClickFixWarden">repozytorium projektu</a>. Pytania można zadawać przez <a href="https://github.com/xVoidByte/ClickFixWarden/issues">zgłoszenia na GitHubie</a>.</p>

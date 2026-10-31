@@ -1,25 +1,72 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ClickFix Warden Privacy Policy</title>
     <link rel="icon" href="icon.png" />
     <style>
-      :root { --bg: #ffffff; --fg: #1b1f24; --muted: #57606a; --line: #d8dee4; --accent: #0b57d0; }
-      @media (prefers-color-scheme: dark) { :root { --bg: #15181c; --fg: #e6e8eb; --muted: #9aa4af; --line: #333a44; --accent: #8ab4f8; } }
-      body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
-      main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-      h1 { font-size: 28px; margin: 0 0 4px; }
-      h2 { font-size: 20px; margin: 32px 0 8px; }
-      a { color: var(--accent); }
+      :root { color-scheme: dark; --bg: #111214; --surface: #1A1B1E; --line: #2A2B30; --line2: #34363C; --text: #F3F3F4; --text2: #C4C6CC; --muted: #A6A8AE; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text2); font: 16px/1.65 system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+      header { max-width: 760px; margin: 0 auto; padding: 24px 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+      .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; text-decoration: none; }
+      .brand img { width: 28px; height: 28px; }
+      select { font: inherit; font-size: 14px; background: var(--surface); color: var(--text); border: 1px solid var(--line2); border-radius: 10px; padding: 8px 12px; }
+      main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+      h1 { color: var(--text); font-size: 30px; line-height: 1.2; margin: 0 0 4px; letter-spacing: -0.015em; }
+      h2 { color: var(--text); font-size: 20px; margin: 32px 0 8px; }
+      strong { color: #FFFFFF; }
+      a { color: #E9E9EB; }
+      a:hover { color: #FFFFFF; }
+      code { color: var(--text); }
       .muted { color: var(--muted); }
-      hr { border: none; border-top: 1px solid var(--line); margin: 40px 0; }
       li { margin: 4px 0; }
+      select:focus-visible, a:focus-visible { outline: 3px solid #8AB4F8; outline-offset: 2px; }
     </style>
   </head>
   <body>
-    <main>
+    <header>
+      <a class="brand" href="./"><img src="icon.png" alt="" /><span>ClickFix Warden</span></a>
+      <label>
+        <span style="position: absolute; width: 1px; height: 1px; overflow: hidden">Language</span>
+        <select id="lang" aria-label="Language">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="bg">Български</option>
+          <option value="cs">Čeština</option>
+          <option value="da">Dansk</option>
+          <option value="de">Deutsch</option>
+          <option value="el">Ελληνικά</option>
+          <option value="es">Español</option>
+          <option value="fi">Suomi</option>
+          <option value="fr">Français</option>
+          <option value="he">עברית</option>
+          <option value="hi">हिन्दी</option>
+          <option value="hu">Magyar</option>
+          <option value="id">Bahasa Indonesia</option>
+          <option value="it">Italiano</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="nb">Norsk bokmål</option>
+          <option value="nl">Nederlands</option>
+          <option value="pl">Polski</option>
+          <option value="pt_BR">Português (Brasil)</option>
+          <option value="pt_PT">Português (Portugal)</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="sk">Slovenčina</option>
+          <option value="sv">Svenska</option>
+          <option value="th">ไทย</option>
+          <option value="tr">Türkçe</option>
+          <option value="uk">Українська</option>
+          <option value="vi">Tiếng Việt</option>
+          <option value="zh_CN">简体中文</option>
+          <option value="zh_TW">繁體中文</option>
+        </select>
+      </label>
+    </header>
+    <main id="content">
       <h1>ClickFix Warden Privacy Policy</h1>
       <p class="muted">Last updated 31 October 2026</p>
 
@@ -61,7 +108,38 @@
 
       <h2>Changes and contact</h2>
       <p>Any change to this policy will be published on this page and in the <a href="https://github.com/xVoidByte/ClickFixWarden">project repository</a>. Questions can be asked through <a href="https://github.com/xVoidByte/ClickFixWarden/issues">GitHub issues</a>.</p>
-
     </main>
+    <script>
+      // English is the default, ?lang= or the picker loads another translation of the same text.
+      const select = document.getElementById('lang');
+      const codes = Array.from(select.options).map((o) => o.value);
+      const english = document.getElementById('content').innerHTML;
+      const rtl = ['ar', 'he'];
+      async function show(code) {
+        if (!codes.includes(code)) code = 'en';
+        select.value = code;
+        const main = document.getElementById('content');
+        if (code === 'en') main.innerHTML = english;
+        else {
+          try {
+            const res = await fetch('privacy/' + code + '.html', { cache: 'no-cache' });
+            if (!res.ok) throw new Error(String(res.status));
+            main.innerHTML = await res.text();
+          } catch {
+            main.innerHTML = english;
+            code = 'en';
+            select.value = 'en';
+          }
+        }
+        document.documentElement.lang = code.replace('_', '-');
+        document.documentElement.dir = rtl.includes(code) ? 'rtl' : 'ltr';
+        const url = new URL(location.href);
+        if (code === 'en') url.searchParams.delete('lang');
+        else url.searchParams.set('lang', code);
+        history.replaceState(null, '', url);
+      }
+      select.addEventListener('change', () => show(select.value));
+      show(new URLSearchParams(location.search).get('lang') || 'en');
+    </script>
   </body>
 </html>

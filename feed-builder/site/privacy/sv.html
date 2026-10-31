@@ -1,0 +1,41 @@
+  <h1>Integritetspolicy för ClickFix Warden</h1>
+  <p class="muted">Senast uppdaterad 31 oktober 2026</p>
+
+  <h2>Kort version</h2>
+  <p>ClickFix Warden samlar inte in, lagrar inte på någon server, säljer inte och delar inte några uppgifter om dig. Tillägget har inget konto, ingen analys, ingen telemetri och ingen egen server. Alla kontroller sker i din webbläsare.</p>
+
+  <h2>Vad tillägget tittar på, och var</h2>
+  <ul>
+    <li><strong>Adresserna till sidorna du öppnar</strong> jämförs med en kopia av offentliga hotdatabaser som lagras i din webbläsare. Adressen skickas aldrig någonstans.</li>
+    <li><strong>Text som en sida försöker lägga i ditt urklipp</strong>, och text som du kopierar, kontrolleras på sidan efter dolda kommandon. Den skickas aldrig någonstans.</li>
+    <li><strong>Text på sidan</strong> läses på sidan för att upptäcka instruktioner som ”tryck på Win och R, sedan Ctrl och V”. Den skickas aldrig någonstans.</li>
+    <li><strong>Text som du klistrar in på en webbplats</strong> kontrolleras efter inloggningslänkar som innehåller en auktoriseringskod. Den skickas aldrig någonstans.</li>
+    <li><strong>IP-adressen till servern</strong> som en sida kommer från, så som webbläsaren anger den, jämförs med den lokala kopian av databaserna.</li>
+  </ul>
+
+  <h2>Vad som stannar på din dator</h2>
+  <ul>
+    <li>Dina inställningar och din lista över betrodda webbplatser.</li>
+    <li>En logg över vad som blockerats eller varnats för, högst 500 poster, som du kan exportera eller rensa när som helst. Inloggningskoder tas bort från loggen.</li>
+    <li>Den nedladdade kopian av hotdatabaserna och identifieringsreglerna.</li>
+  </ul>
+  <p>Inställningarna sparas i webbläsarens lokala lagring, inte i webbläsarsynkroniseringen, så de når inte heller ditt webbläsarkonto.</p>
+
+  <h2>Valfria kontroller</h2>
+  <ul>
+    <li><strong>Historikkontroll.</strong> Först när du trycker på knappen ber tillägget om behörighet att läsa din webbhistorik, jämför den med den lokala databasen i din webbläsare och visar resultatet för dig. Inget skickas någonstans, och du kan lämna tillbaka behörigheten med ett klick.</li>
+    <li><strong>Tilläggskontroll.</strong> Först när du trycker på knappen ber tillägget om behörighet att lista dina installerade tillägg och jämför deras ID:n med en lista över kända skadliga tillägg i din webbläsare. Du kan lämna tillbaka behörigheten med ett klick.</li>
+  </ul>
+
+  <h2>De enda nätverksförfrågningarna</h2>
+  <p>Ungefär en gång i timmen laddar tillägget ner de senaste ändringarna i hotdatabasen och identifieringsreglerna från <code>xvoidbyte.github.io</code>, som drivs av GitHub Pages, och en gång om dagen den fullständiga listan över rapporterade nedladdningslänkar, varje fil med sin digitala signatur. Förfrågningarna innehåller ingen identifierare och ingen information om din surfning. GitHub tar emot din IP-adress och webbläsarversion på samma sätt som för vilken webbsida som helst, enligt <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Du kan stänga av uppdateringarna i inställningarna, tillägget fortsätter då att fungera med sina inbyggda regler.</p>
+  <p>Om du klickar på en länk ”Detaljer” i en varning öppnar din webbläsare den offentliga rapporten på abuse.ch i en ny flik, precis som med vilken annan länk som helst.</p>
+
+  <h2>Var rapporterna kommer ifrån</h2>
+  <p>Databasen byggs från de offentliga projekten URLhaus, ThreatFox och Feodo Tracker som drivs av <a href="https://abuse.ch/">abuse.ch</a>. Tillägget rapporterar aldrig något tillbaka till dem.</p>
+
+  <h2>Organisationer</h2>
+  <p>En administratör kan ställa in tilläggets alternativ genom webbläsarpolicyer. De inställningarna läses från webbläsaren och skickas inte heller någonstans.</p>
+
+  <h2>Ändringar och kontakt</h2>
+  <p>Alla ändringar av den här policyn publiceras på den här sidan och i <a href="https://github.com/xVoidByte/ClickFixWarden">projektets kodförråd</a>. Frågor kan ställas via <a href="https://github.com/xVoidByte/ClickFixWarden/issues">ärenden på GitHub</a>.</p>

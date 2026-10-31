@@ -1,0 +1,41 @@
+  <h1>Zásady ochrany osobných údajov ClickFix Warden</h1>
+  <p class="muted">Posledná aktualizácia 31. októbra 2026</p>
+
+  <h2>V skratke</h2>
+  <p>ClickFix Warden nezhromažďuje, neukladá na žiadny server, nepredáva ani nezdieľa žiadne údaje o vás. Nemá účet, analytiku, telemetriu ani vlastný server. Každá kontrola prebieha priamo vo vašom prehliadači.</p>
+
+  <h2>Čo rozšírenie kontroluje a kde</h2>
+  <ul>
+    <li><strong>Adresy stránok, ktoré otvárate,</strong> sa porovnávajú s kópiou verejných databáz hrozieb uloženou vo vašom prehliadači. Adresa sa nikdy nikam neodosiela.</li>
+    <li><strong>Text, ktorý sa stránka pokúša vložiť do vašej schránky</strong>, a text, ktorý kopírujete, sa priamo v stránke kontroluje na skryté príkazy. Nikdy sa nikam neodosiela.</li>
+    <li><strong>Text na stránke</strong> sa číta priamo v stránke, aby sa odhalili pokyny ako „stlačte Win a R, potom Ctrl a V“. Nikdy sa nikam neodosiela.</li>
+    <li><strong>Text, ktorý vkladáte do webu</strong>, sa kontroluje na prihlasovacie odkazy s autorizačným kódom. Nikdy sa nikam neodosiela.</li>
+    <li><strong>IP adresa servera</strong>, z ktorého stránka pochádza, podľa údajov prehliadača, sa porovnáva s miestnou kópiou databáz.</li>
+  </ul>
+
+  <h2>Čo zostáva vo vašom počítači</h2>
+  <ul>
+    <li>Vaše nastavenia a zoznam dôveryhodných webov.</li>
+    <li>Denník toho, čo bolo zablokované alebo pred čím sa varovalo, najviac 500 záznamov, ktorý môžete kedykoľvek exportovať alebo vymazať. Prihlasovacie kódy sa z denníka odstraňujú.</li>
+    <li>Stiahnutá kópia databáz hrozieb a pravidiel detekcie.</li>
+  </ul>
+  <p>Nastavenia sa ukladajú v miestnom úložisku prehliadača, nie v synchronizácii prehliadača, takže sa nedostanú ani do vášho účtu v prehliadači.</p>
+
+  <h2>Voliteľné kontroly</h2>
+  <ul>
+    <li><strong>Kontrola histórie.</strong> Až keď stlačíte tlačidlo, rozšírenie požiada o povolenie čítať históriu prehliadania, porovná ju s miestnou databázou vo vašom prehliadači a ukáže vám výsledok. Nič sa nikam neodosiela a povolenie môžete jedným kliknutím vrátiť.</li>
+    <li><strong>Kontrola rozšírení.</strong> Až keď stlačíte tlačidlo, rozšírenie požiada o povolenie zobraziť zoznam nainštalovaných rozšírení a porovná ich ID so zoznamom známych škodlivých priamo vo vašom prehliadači. Povolenie môžete jedným kliknutím vrátiť.</li>
+  </ul>
+
+  <h2>Jediné sieťové požiadavky</h2>
+  <p>Približne raz za hodinu rozšírenie stiahne najnovšie zmeny databázy hrozieb a pravidiel detekcie z <code>xvoidbyte.github.io</code>, ktorý hosťuje GitHub Pages, a raz denne úplný zoznam nahlásených odkazov na stiahnutie, každý súbor s digitálnym podpisom. Tieto požiadavky neobsahujú žiadny identifikátor ani informácie o vašom prehliadaní. GitHub dostane vašu IP adresu a verziu prehliadača rovnako ako pri akejkoľvek webovej stránke, v súlade s <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">všeobecným vyhlásením GitHubu o ochrane osobných údajov</a>. Tieto aktualizácie môžete vypnúť v nastaveniach, rozšírenie potom ďalej funguje so svojimi vstavanými pravidlami.</p>
+  <p>Ak vo varovaní kliknete na odkaz „Podrobnosti“, prehliadač otvorí verejné hlásenie na abuse.ch v novej karte, rovnako ako akýkoľvek iný odkaz.</p>
+
+  <h2>Odkiaľ hlásenia pochádzajú</h2>
+  <p>Databáza vzniká z verejných projektov URLhaus, ThreatFox a Feodo Tracker, ktoré prevádzkuje <a href="https://abuse.ch/">abuse.ch</a>. Rozšírenie im nikdy nič nehlási späť.</p>
+
+  <h2>Organizácie</h2>
+  <p>Správca môže nastaviť možnosti rozšírenia pomocou pravidiel prehliadača. Tieto nastavenia sa čítajú z prehliadača a tiež sa nikam neodosielajú.</p>
+
+  <h2>Zmeny a kontakt</h2>
+  <p>Akákoľvek zmena týchto zásad bude zverejnená na tejto stránke a v <a href="https://github.com/xVoidByte/ClickFixWarden">repozitári projektu</a>. Otázky môžete klásť prostredníctvom <a href="https://github.com/xVoidByte/ClickFixWarden/issues">GitHub Issues</a>.</p>
