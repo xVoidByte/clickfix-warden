@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ClickFix Warden</title>
+    <meta name="description" content="Browser extension that stops ClickFix and fake CAPTCHA attacks and warns about sites reported as malicious." />
+    <link rel="icon" href="icon.png" />
+    <style>
+      :root { --bg: #f6f7f9; --card: #ffffff; --fg: #1b1f24; --muted: #57606a; --line: #d8dee4; --accent: #0b57d0; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #15181c; --card: #1e2228; --fg: #e6e8eb; --muted: #9aa4af; --line: #333a44; --accent: #8ab4f8; } }
+      body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif; }
+      main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+      header { display: flex; align-items: center; gap: 14px; }
+      header img { width: 56px; height: 56px; }
+      h1 { font-size: 30px; margin: 0; }
+      a { color: var(--accent); }
+      .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin: 18px 0; }
+      .muted { color: var(--muted); }
+      code { font-size: 14px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header><img src="icon.png" alt="" /><h1>ClickFix Warden</h1></header>
+      <p>A free, open source browser extension that stops ClickFix and fake CAPTCHA attacks, the pages that trick you into pasting a command into Run, Terminal or File Explorer, and warns you about sites reported as malicious in public threat databases.</p>
+      <div class="card">
+        <p><strong>Privacy first.</strong> No account, no telemetry, no server of its own. Every check runs inside your browser. <a href="privacy.html">Privacy policy</a></p>
+      </div>
+      <div class="card">
+        <p><strong>Database.</strong> This site hosts the signed database and detection rules the extension downloads every hour, built from the public URLhaus, ThreatFox and Feodo Tracker projects by abuse.ch.</p>
+        <p class="muted" id="meta">Loading status</p>
+      </div>
+      <p><a href="https://github.com/xVoidByte/clickfix-warden">Source code and issues on GitHub</a></p>
+    </main>
+    <script>
+      fetch('v1/meta.json', { cache: 'no-cache' })
+        .then((r) => r.json())
+        .then((m) => {
+          document.getElementById('meta').textContent =
+            'Published ' + new Date(m.generated).toLocaleString() + ', ' + m.keys + ' addresses, ' + m.clickfix + ' of them ClickFix, rules version ' + m.rulesVersion + '.';
+        })
+        .catch(() => (document.getElementById('meta').textContent = 'Status unavailable.'));
+    </script>
+  </body>
+</html>
