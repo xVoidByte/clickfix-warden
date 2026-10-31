@@ -55,8 +55,22 @@ button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .close { border: none; font-size: 20px; line-height: 1; padding: 4px 8px; color: var(--muted); }
 `;
 
-const SHIELD =
-  '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#c5221f" d="M12 2 4 5v6c0 5 3.4 9.6 8 11 4.6-1.4 8-6 8-11V5l-8-3z"/><path fill="#fff" d="M11 7h2v6h-2zm0 8h2v2h-2z"/></svg>';
+const SVG_NS = 'http://www.w3.org/2000/svg';
+
+/** Red shield with an exclamation mark, built node by node. */
+function shield(): SVGSVGElement {
+  const s = document.createElementNS(SVG_NS, 'svg');
+  s.setAttribute('viewBox', '0 0 24 24');
+  s.setAttribute('aria-hidden', 'true');
+  const body = document.createElementNS(SVG_NS, 'path');
+  body.setAttribute('fill', '#c5221f');
+  body.setAttribute('d', 'M12 2 4 5v6c0 5 3.4 9.6 8 11 4.6-1.4 8-6 8-11V5l-8-3z');
+  const mark = document.createElementNS(SVG_NS, 'path');
+  mark.setAttribute('fill', '#fff');
+  mark.setAttribute('d', 'M11 7h2v6h-2zm0 8h2v2h-2z');
+  s.append(body, mark);
+  return s;
+}
 
 let hostEl: HTMLElement | null = null;
 let shadow: ShadowRoot | null = null;
@@ -82,13 +96,6 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, text?: 
   return e;
 }
 
-function svg(markup: string): HTMLElement {
-  const span = document.createElement('span');
-  span.style.display = 'contents';
-  // Static markup defined above, never page content.
-  span.innerHTML = markup;
-  return span;
-}
 
 function renderCommand(parts: DisplayPart[], decoded: string[] | undefined): HTMLElement {
   const box = el('pre', 'cmd');
@@ -148,7 +155,7 @@ function showDialog(alert: AlertData, actions: OverlayActions, customWarning: st
   card.setAttribute('aria-describedby', 'cfw-body');
 
   const brand = el('div', 'brand');
-  brand.append(svg(SHIELD), 'ClickFix Warden');
+  brand.append(shield(), 'ClickFix Warden');
   const [heading, body] = title(alert.kind);
   const h1 = el('h1', undefined, heading);
   h1.id = 'cfw-title';
@@ -303,7 +310,7 @@ function showBanner(alert: AlertData, actions: OverlayActions): void {
   close.setAttribute('aria-label', t('overlayClose'));
   close.addEventListener('click', () => bar.remove());
   btns.append(leave, trust, close);
-  bar.append(svg(SHIELD), text, btns);
+  bar.append(shield(), text, btns);
   wrap.append(bar);
   r.append(wrap);
 }
