@@ -43,6 +43,7 @@ const TYPES: Record<string, string> = { '.html': 'text/html; charset=utf-8', '.j
 createServer((req, res) => {
   const url = new URL(req.url ?? '/', 'http://localhost');
   const host = (req.headers.host ?? '').split(':')[0];
+  if (process.env.LOG_REQUESTS) console.log(`${req.method} ${host}${url.pathname}`);
   let body = files[url.pathname];
   let type = TYPES[extname(url.pathname)] ?? 'text/plain';
   if (!body) {
