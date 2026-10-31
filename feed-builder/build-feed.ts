@@ -8,7 +8,7 @@ import { isUsableRules } from '../src/engine/rules';
 import type { RulesFile } from '../src/engine/types';
 import { FEED_PUBLIC_KEY } from '../src/feed/public-key';
 import { diffEntries, type FeedDelta, type FeedEntry, type FeedPart, type FeedSource, type SourceCount, splitEntries } from '../src/feed/types';
-import { type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus, SOURCE_LABELS } from './sources';
+import { type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus, promoteClickFixHosts, SOURCE_LABELS } from './sources';
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, process.env.OUT_DIR ?? 'dist/site');
@@ -88,7 +88,8 @@ console.log('Downloading Feodo Tracker');
 const feodo = await download('https://feodotracker.abuse.ch/downloads/ipblocklist.json');
 counts.feodo = fromFeodo(new TextDecoder().decode(feodo!), opts, entries);
 
-console.log(`Reports: URLhaus ${counts.urlhaus}, ThreatFox ${counts.threatfox}, Feodo ${counts.feodo}, keys ${entries.size}`);
+const promoted = promoteClickFixHosts(opts, entries);
+console.log(`Reports: URLhaus ${counts.urlhaus}, ThreatFox ${counts.threatfox}, Feodo ${counts.feodo}, ClickFix hosts ${promoted}, keys ${entries.size}`);
 if (counts.urlhaus < 100) fail(`URLhaus gave only ${counts.urlhaus} reports, the export format may have changed`);
 if (counts.threatfox < 100) fail(`ThreatFox gave only ${counts.threatfox} reports, the export format may have changed`);
 

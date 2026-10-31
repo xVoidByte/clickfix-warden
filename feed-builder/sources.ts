@@ -195,4 +195,28 @@ export function fromFeodo(json: string, opts: BuildOptions, entries: Entries): n
   return count;
 }
 
+/** A host that served a reported ClickFix address is listed as a whole, except shared hosting where only the exact address counts. */
+export function promoteClickFixHosts(opts: BuildOptions, entries: Entries): number {
+  const noHost = new Set(opts.noHostLevel.map((h) => h.toLowerCase()));
+  const byHost = new Map<string, FeedRecordTuple[]>();
+  for (const [key, records] of entries) {
+    if (!key.startsWith('u:')) continue;
+    const clickfix = records.filter((r) => r[1] === 'clickfix');
+    if (!clickfix.length) continue;
+    const host = cleanHost(key.slice(2).split('/')[0].replace(/:\d+$/, ''));
+    if (!host || noHost.has(host)) continue;
+    const list = byHost.get(host) ?? [];
+    list.push(...clickfix);
+    byHost.set(host, list);
+  }
+  let count = 0;
+  for (const [host, records] of byHost) {
+    const key = isIp(host) ? ipKey(host) : hostKey(host);
+    // The newest reports are enough to explain the warning, three keep the file small.
+    for (const record of [...records].sort((a, b) => (a[3] < b[3] ? 1 : -1)).slice(0, 3)) add(entries, key, record);
+    count++;
+  }
+  return count;
+}
+
 export const SOURCE_LABELS: Record<FeedSource, string> = { urlhaus: 'URLhaus', threatfox: 'ThreatFox', feodo: 'Feodo Tracker' };

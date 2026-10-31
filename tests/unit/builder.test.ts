@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ageDays, type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus, parseCsvLine } from '../../feed-builder/sources';
+import { ageDays, type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus, parseCsvLine, promoteClickFixHosts } from '../../feed-builder/sources';
 import { BUNDLED_RULES } from '../../src/engine/rules';
 import { diffEntries, type FeedEntry, refFor, splitEntries } from '../../src/feed/types';
 
@@ -67,6 +67,28 @@ describe('URLhaus', () => {
   it('never lists a whole shared host', () => {
     expect(entries.has('h:raw.githubusercontent.com')).toBe(false);
     expect(entries.has('u:raw.githubusercontent.com/someone/repo/main/a.exe')).toBe(true);
+  });
+});
+
+describe('ClickFix hosts', () => {
+  const entries: Entries = new Map();
+  fromUrlhaus(URLHAUS, opts, entries);
+  fromUrlhaus(
+    `# id,dateadded,url,url_status,last_online,threat,tags,urlhaus_link,reporter
+"9101","2026-10-30 08:00:00","https://cdn.jsdelivr.net/gh/x/y/a.js","online","","malware_download","ClickFix","",""\n"9102","2026-10-30 08:00:00","http://192.0.2.70/p.ps1","online","","malware_download","ClickFix","",""\n`,
+    opts,
+    entries,
+  );
+  const promoted = promoteClickFixHosts(opts, entries);
+  it('lists the whole host of a reported ClickFix address', () => {
+    expect(entries.get('h:cdn.example.invalid')?.[0]).toEqual(['urlhaus', 'clickfix', '', '2026-10-30', '9001', ['ClickFix', 'ps1']]);
+    expect(entries.get('i:192.0.2.70')?.[0][1]).toBe('clickfix');
+    expect(promoted).toBe(2);
+  });
+  it('leaves malware downloads and shared CDNs at the exact address', () => {
+    expect(entries.has('i:192.0.2.10')).toBe(false);
+    expect(entries.has('h:cdn.jsdelivr.net')).toBe(false);
+    expect(entries.has('u:cdn.jsdelivr.net/gh/x/y/a.js')).toBe(true);
   });
 });
 

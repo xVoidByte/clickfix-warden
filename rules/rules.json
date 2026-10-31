@@ -147,6 +147,7 @@
     "noHostLevel": [
       "github.com", "gist.github.com", "raw.githubusercontent.com", "objects.githubusercontent.com", "release-assets.githubusercontent.com", "codeload.github.com", "github.io",
       "gitlab.com", "bitbucket.org", "sourceforge.net", "archive.org",
+      "cdn.jsdelivr.net", "fastly.jsdelivr.net", "gcore.jsdelivr.net", "testingcf.jsdelivr.net", "unpkg.com", "cdnjs.cloudflare.com", "ajax.googleapis.com", "code.jquery.com", "esm.sh", "cdn.skypack.dev", "raw.githack.com", "rawcdn.githack.com", "cdn.statically.io", "cdn.rawgit.com", "registry.npmjs.org",
       "google.com", "docs.google.com", "drive.google.com", "drive.usercontent.google.com", "sites.google.com", "storage.googleapis.com", "firebasestorage.googleapis.com", "googleusercontent.com",
       "dropbox.com", "www.dropbox.com", "dl.dropboxusercontent.com", "onedrive.live.com", "1drv.ms", "sharepoint.com", "microsoft.com", "live.com", "office.com", "windows.net", "blob.core.windows.net",
       "discord.com", "cdn.discordapp.com", "media.discordapp.net", "t.me", "telegram.org",
