@@ -89,7 +89,7 @@ ClickFix Warden ви предупреждава и за сайтове, линк
 ## Screenshot captions
 
 1. Stops fake CAPTCHA pages before the command reaches your clipboard
-2. Shows exactly what the page tried to make you run
+2. Says in plain words what was blocked and why
 3. Blocks known ClickFix sites before they load
 4. Warns about sites reported in public threat databases
 5. Every check runs in your browser, nothing is collected
