@@ -44,7 +44,7 @@ export const BENIGN: Record<string, string> = {
   winget: 'winget install --id Git.Git -e --source winget',
   npm: 'npm install --save-dev typescript',
   pip: 'python -m pip install requests',
-  git: 'git clone https://github.com/xVoidByte/clickfix-warden.git',
+  git: 'git clone https://github.com/xVoidByte/ClickFixWarden.git',
   docker_run: 'docker run -it --rm ubuntu:24.04 bash',
   kubectl: 'kubectl apply -f deployment.yaml',
   'execution policy': 'Set-ExecutionPolicy RemoteSigned -Scope CurrentUser',

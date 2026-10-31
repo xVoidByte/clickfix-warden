@@ -40,7 +40,7 @@ PRIVATE BY DESIGN
 - No account, no telemetry, no analytics, no server of its own
 - Every check runs inside your browser, your browsing never leaves your computer
 - The only download is the signed database and rules from GitHub
-- Open source at https://github.com/xVoidByte/clickfix-warden
+- Open source at https://github.com/xVoidByte/ClickFixWarden
 
 DOES NOT GET IN YOUR WAY
 Install guides with copy buttons, support articles and everything else you copy keep working. A command is only stopped when it carries the marks of a ClickFix attack, or when the page around it tells you to paste it somewhere it should not go. You can always trust a site with one click.
@@ -76,7 +76,7 @@ ClickFix Warden ви предупреждава и за сайтове, линк
 - Без акаунт, без телеметрия, без анализи, без собствен сървър
 - Всяка проверка става във вашия браузър, сърфирането ви не напуска компютъра ви
 - Единственото сваляне е подписаната база и правилата от GitHub
-- Отворен код на https://github.com/xVoidByte/clickfix-warden
+- Отворен код на https://github.com/xVoidByte/ClickFixWarden
 
 НЕ ВИ ПРЕЧИ
 Ръководства за инсталиране с бутони за копиране, статии за поддръжка и всичко друго, което копирате, работят както преди. Команда се спира само когато носи белезите на ClickFix атака или когато страницата около нея ви казва да я поставите там, където не трябва. Винаги можете да се доверите на сайт с едно натискане.

@@ -23,7 +23,7 @@ Pages that merely show commands with a copy button, like install guides for Rust
 
 ## Privacy
 
-ClickFix Warden collects no data. It has no account, no telemetry and no server of its own, and every check runs inside your browser. The only network request is the hourly download of the signed database and rules from GitHub Pages, which carries nothing about you or your browsing. The detection log and the optional history check stay on your computer. See the [privacy policy](https://xvoidbyte.github.io/clickfix-warden/privacy.html).
+ClickFix Warden collects no data. It has no account, no telemetry and no server of its own, and every check runs inside your browser. The only network request is the hourly download of the signed database and rules from GitHub Pages, which carries nothing about you or your browsing. The detection log and the optional history check stay on your computer. See the [privacy policy](https://xvoidbyte.github.io/ClickFixWarden/privacy.html).
 
 ## How it works
 

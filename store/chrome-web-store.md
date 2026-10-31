@@ -12,8 +12,8 @@ Upload `.output/clickfix-warden-<version>-chrome.zip` at https://chrome.google.c
 - Small promo tile, `store/screenshots/promo-440x280.png`
 - Marquee promo tile, `store/screenshots/marquee-1400x560.png`
 - Official URL, none
-- Homepage URL, https://github.com/xVoidByte/clickfix-warden
-- Support URL, https://github.com/xVoidByte/clickfix-warden/issues
+- Homepage URL, https://github.com/xVoidByte/ClickFixWarden
+- Support URL, https://github.com/xVoidByte/ClickFixWarden/issues
 - Mature content, no
 
 ## Privacy practices tab
@@ -44,7 +44,7 @@ Tick none of the data types. ClickFix Warden does not collect or transmit any us
 
 **Privacy policy URL**
 
-https://xvoidbyte.github.io/clickfix-warden/privacy.html
+https://xvoidbyte.github.io/ClickFixWarden/privacy.html
 
 ## Distribution tab
 

@@ -5,9 +5,9 @@ Upload `.output/clickfix-warden-<version>-edge.zip` in Partner Center at https:/
 ## Properties
 
 - Category, pick the closest one to security that the list offers at the time of upload
-- Privacy policy, required, https://xvoidbyte.github.io/clickfix-warden/privacy.html
-- Website, https://github.com/xVoidByte/clickfix-warden
-- Support contact, https://github.com/xVoidByte/clickfix-warden/issues
+- Privacy policy, required, https://xvoidbyte.github.io/ClickFixWarden/privacy.html
+- Website, https://github.com/xVoidByte/ClickFixWarden
+- Support contact, https://github.com/xVoidByte/ClickFixWarden/issues
 - Mature content, no
 
 ## Store listings

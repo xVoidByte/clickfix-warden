@@ -12,9 +12,9 @@ import { type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus,
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, process.env.OUT_DIR ?? 'dist/site');
-const PUBLIC_BASE = process.env.PUBLIC_BASE ?? 'https://xvoidbyte.github.io/clickfix-warden/';
+const PUBLIC_BASE = process.env.PUBLIC_BASE ?? 'https://xvoidbyte.github.io/ClickFixWarden/';
 const unsigned = process.argv.includes('--unsigned');
-const UA = 'clickfix-warden-feed (+https://github.com/xVoidByte/clickfix-warden)';
+const UA = 'clickfix-warden-feed (+https://github.com/xVoidByte/ClickFixWarden)';
 
 const authKey = process.env.ABUSECH_AUTH_KEY?.trim();
 if (!authKey) fail('ABUSECH_AUTH_KEY is not set. Create a free key at https://auth.abuse.ch/ and add it as a repository secret.');

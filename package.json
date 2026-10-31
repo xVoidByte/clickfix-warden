@@ -6,7 +6,7 @@
   "description": "Browser extension that stops ClickFix and fake CAPTCHA attacks and warns about sites reported as malicious.",
   "license": "MIT",
   "author": "xVoidByte",
-  "homepage": "https://github.com/xVoidByte/clickfix-warden",
+  "homepage": "https://github.com/xVoidByte/ClickFixWarden",
   "engines": {
     "node": ">=22"
   },

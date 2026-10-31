@@ -13,10 +13,10 @@ Submit at https://addons.mozilla.org/developers/ as a listed add-on.
 - Summary, the 250 character text from `listing.md`
 - Description, from `listing.md`, add the Bulgarian translation as well
 - Categories, Privacy & Security
-- Support website, https://github.com/xVoidByte/clickfix-warden/issues
-- Homepage, https://github.com/xVoidByte/clickfix-warden
+- Support website, https://github.com/xVoidByte/ClickFixWarden/issues
+- Homepage, https://github.com/xVoidByte/ClickFixWarden
 - License, MIT
-- Privacy policy, paste the text from https://xvoidbyte.github.io/clickfix-warden/privacy.html
+- Privacy policy, paste the text from https://xvoidbyte.github.io/ClickFixWarden/privacy.html
 - Screenshots, `store/screenshots/1-*.png` to `5-*.png`
 - Data collection, the manifest declares `data_collection_permissions` as `none`, which matches the privacy policy
 
@@ -31,7 +31,7 @@ Build instructions
   The built add-on is in .output/firefox-mv3 and matches the uploaded package.
 
 What the extension downloads
-  Once an hour it fetches hot-delta.json (or hot.json) and rules.json from https://xvoidbyte.github.io/clickfix-warden/v1/,
+  Once an hour it fetches hot-delta.json (or hot.json) and rules.json from https://xvoidbyte.github.io/ClickFixWarden/v1/,
   once a day bulk.json, each with its .sig file. All of them are JSON data verified with Ed25519 against the key in src/feed/public-key.ts,
   and are never evaluated as code.
 

@@ -14,7 +14,7 @@ export default defineConfig({
     name: '__MSG_extName__',
     description: '__MSG_extDescription__',
     default_locale: 'en',
-    homepage_url: 'https://github.com/xVoidByte/clickfix-warden',
+    homepage_url: 'https://github.com/xVoidByte/ClickFixWarden',
     permissions: ['storage', 'unlimitedStorage', 'alarms', 'webNavigation', 'webRequest', 'clipboardWrite'],
     optional_permissions: ['history', 'management'],
     host_permissions: ['<all_urls>'],
