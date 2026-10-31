@@ -126,7 +126,11 @@ export function startGuard(): void {
   }
 
   function reportVerdict(kind: DetectionKind, v: Verdict, original: string, hits?: FeedHit[]): void {
-    const reasons = v.reasons.filter((r) => r.w > 0).map((r) => ({ id: r.id, text: reasonText(r) }));
+    // Strongest reasons first, small ones like "contains a web address" left out.
+    const reasons = v.reasons
+      .filter((r) => r.w >= 10)
+      .sort((a, b) => b.w - a.w)
+      .map((r) => ({ id: r.id, text: reasonText(r) }));
     if (hits?.length) reasons.unshift({ id: 'payload-reported', text: t('r_payload_reported') });
     present({ kind, host, score: v.score, reasons, display: v.norm.display, decoded: v.norm.decoded, original });
     log(kind, 'blocked', { score: v.score, reasons: reasons.map((r) => r.id), command: original });

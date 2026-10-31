@@ -176,7 +176,7 @@ function showDialog(alert: AlertData, actions: OverlayActions, customWarning: st
       if (seen.has(reason.text)) continue;
       seen.add(reason.text);
       ul.append(el('li', undefined, reason.text));
-      if (seen.size >= 8) break;
+      if (seen.size >= 6) break;
     }
     card.append(ul);
   }
