@@ -18,7 +18,7 @@ Stops ClickFix and fake CAPTCHA pages that trick you into pasting a command into
 
 ClickFix pages pretend to be a CAPTCHA, a browser error or a Windows update. They quietly put a command in your clipboard and walk you through pressing Win+R, Ctrl+V and Enter, or pasting into Terminal or the File Explorer address bar. That one paste installs password stealers and remote access tools. It is one of the most common ways people get infected today, and antivirus often sees it too late.
 
-ClickFix Warden stops the command before it reaches your clipboard, puts a harmless note there instead and shows you exactly what the page tried to make you run.
+ClickFix Warden stops the command before it reaches your clipboard, puts a harmless note there instead and tells you in plain words what the page tried to do and why it was stopped. The command itself is never shown, so nobody can copy it by mistake.
 
 WHAT IT STOPS
 - Fake CAPTCHA, "verify you are human", browser error and "fix it" pages that fill your clipboard
@@ -43,7 +43,7 @@ PRIVATE BY DESIGN
 - Open source at https://github.com/xVoidByte/ClickFixWarden
 
 DOES NOT GET IN YOUR WAY
-Install guides with copy buttons, support articles and everything else you copy keep working. A command is only stopped when it carries the marks of a ClickFix attack, or when the page around it tells you to paste it somewhere it should not go. You can always trust a site with one click.
+Install guides with copy buttons, support articles and everything else you copy keep working. A command is only stopped when it carries the marks of a ClickFix attack, or when the page around it tells you to paste it somewhere it should not go. A site you know can still be trusted after a clear warning about the risk.
 
 FOR ORGANISATIONS
 Every setting can be set and locked by policy, and you can add your own help desk message to every warning.
