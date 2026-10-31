@@ -16,7 +16,7 @@ Submit at https://addons.mozilla.org/developers/ as a listed add-on.
 - Support website, https://github.com/xVoidByte/ClickFixWarden/issues
 - Homepage, https://github.com/xVoidByte/ClickFixWarden
 - License, MIT
-- Privacy policy, paste the text from https://xvoidbyte.github.io/ClickFixWarden/privacy.html
+- Privacy policy, paste `firefox-privacy-policy.txt`, the plain text of https://xvoidbyte.github.io/ClickFixWarden/privacy.html
 - Screenshots, `store/screenshots/1-*.png` to `5-*.png`
 - Data collection, the manifest declares `data_collection_permissions` as `none`, which matches the privacy policy
 

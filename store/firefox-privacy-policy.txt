@@ -1,0 +1,53 @@
+ClickFix Warden Privacy Policy
+
+Last updated 31 October 2026
+
+The short version
+
+ClickFix Warden does not collect, store on any server, sell or share any data about you. It has no account, no analytics, no telemetry and no server of its own. Every check happens inside your browser.
+
+What the extension looks at, and where
+
+- Addresses of the pages you open are compared with a copy of public threat databases that is stored inside your browser. The address is never sent anywhere.
+
+- Text that a page tries to put in your clipboard, and text you copy, is checked inside the page for hidden commands. It is never sent anywhere.
+
+- Text on the page is read inside the page to spot instructions such as "press Win and R, then Ctrl and V". It is never sent anywhere.
+
+- Text you paste into a website is checked for sign-in links that carry an authorization code. It is never sent anywhere.
+
+- The IP address of the server a page comes from, as reported by the browser, is compared with the local copy of the databases.
+
+What stays on your computer
+
+- Your settings and your list of trusted sites.
+
+- A log of what was blocked or warned about, at most 500 entries, which you can export or clear at any time. Sign-in codes are removed from the log.
+
+- The downloaded copy of the threat databases and detection rules.
+
+Settings are kept in local browser storage, not in browser sync, so they do not reach your browser account either.
+
+Optional checks
+
+- History check. Only when you press the button, the extension asks for permission to read your browsing history, compares it with the local database inside your browser and shows you the result. Nothing is sent anywhere, and you can give the permission back with one click.
+
+- Extensions check. Only when you press the button, the extension asks for permission to list your installed extensions and compares their IDs with a list of known malicious ones inside your browser. You can give the permission back with one click.
+
+The only network requests
+
+About once an hour the extension downloads the latest changes to the threat database and the detection rules from xvoidbyte.github.io, which is hosted by GitHub Pages, and once a day the full list of reported download links, each file with its digital signature. These requests carry no identifier and no information about your browsing. GitHub receives your IP address and browser version the same way it does for any web page, under the GitHub General Privacy Statement (https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). You can turn these updates off in the settings, the extension then keeps working with its built-in rules.
+
+If you click a "Details" link in a warning, your browser opens the public report on abuse.ch in a new tab, like any link you click.
+
+Where the reports come from
+
+The database is built from the public URLhaus, ThreatFox and Feodo Tracker projects run by abuse.ch (https://abuse.ch/). The extension never reports anything back to them.
+
+Organisations
+
+An administrator can set the extension's options through browser policies. Those settings are read from the browser and are not sent anywhere either.
+
+Changes and contact
+
+Any change to this policy will be published on this page and in the project repository (https://github.com/xVoidByte/ClickFixWarden). Questions can be asked through GitHub issues (https://github.com/xVoidByte/ClickFixWarden/issues).
