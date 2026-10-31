@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 import { unzipSync } from 'fflate';
 import { type BuildOptions, type Entries, fromThreatfox, fromUrlhaus } from '../feed-builder/sources';
 import { BUNDLED_RULES } from '../src/engine/rules';
+import { refFor } from '../src/feed/types';
 
 const key = process.env.ABUSECH_AUTH_KEY?.trim();
 if (!key) {
@@ -46,7 +47,8 @@ const seen = new Set<string>(existsSync(seenPath) ? (JSON.parse(readFileSync(see
 for (const [k, records] of entries) {
   for (const r of records) {
     if (r[1] !== 'clickfix' || r[3] < cutoff) continue;
-    rows.push({ seen: seen.has(r[4]), first: r[3], source: r[0], what: defang(k.slice(2)), malware: r[2], tags: r[5].join(', '), ref: r[4] });
+    const ref = refFor(r[0], r[4]);
+    rows.push({ seen: seen.has(ref), first: r[3], source: r[0], what: defang(k.slice(2)), malware: r[2], tags: r[5].join(', '), ref });
   }
 }
 rows.sort((a, b) => Number(a.seen) - Number(b.seen) || b.first.localeCompare(a.first));

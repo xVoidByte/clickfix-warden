@@ -113,8 +113,8 @@ export function fromUrlhaus(csv: string, opts: BuildOptions, entries: Entries): 
     if (!key) continue;
     const tags = splitTags(row.tags ?? '');
     const category: Category = isClickFix(tags, opts) ? 'clickfix' : 'malware';
-    const ref = /^https:\/\/urlhaus\.abuse\.ch\//.test(row.urlhaus_link ?? '') ? row.urlhaus_link : `https://urlhaus.abuse.ch/url/${row.id}/`;
-    add(entries, key, ['urlhaus', category, '', day(row.dateadded), ref, tags]);
+    // Only ClickFix tags are kept for URLhaus, the rest (elf, mirai, 32-bit) mean nothing to a visitor.
+    add(entries, key, ['urlhaus', category, '', day(row.dateadded), row.id, category === 'clickfix' ? tags.slice(0, 3) : []]);
     count++;
   }
   return count;
@@ -150,7 +150,7 @@ export function fromThreatfox(csv: string, opts: BuildOptions, entries: Entries)
     const malware = row.malware_printable && !/^unknown/i.test(row.malware_printable) ? row.malware_printable : '';
     const clickfix = isClickFix([...tags, malware, row.malware_alias ?? ''], opts);
     const category: Category = clickfix ? 'clickfix' : row.threat_type === 'botnet_cc' ? 'c2' : 'malware';
-    const record: FeedRecordTuple = ['threatfox', category, malware, day(row.first_seen_utc), `https://threatfox.abuse.ch/ioc/${row.ioc_id}/`, tags];
+    const record: FeedRecordTuple = ['threatfox', category, malware, day(row.first_seen_utc), row.ioc_id, tags.slice(0, 3)];
     if (type === 'domain') {
       if (confidence < opts.minConfidence || ageDays(seen, opts.now) > opts.maxAgeDays) continue;
       const host = cleanHost(value);
@@ -189,7 +189,7 @@ export function fromFeodo(json: string, opts: BuildOptions, entries: Entries): n
     if (!row.ip_address || !isIp(row.ip_address)) continue;
     const last = row.last_online ?? row.first_seen;
     if (ageDays(last, opts.now) > opts.ipMaxAgeDays) continue;
-    add(entries, ipKey(row.ip_address), ['feodo', 'c2', row.malware ?? '', day(row.first_seen), `https://feodotracker.abuse.ch/browse/host/${row.ip_address}/`, []]);
+    add(entries, ipKey(row.ip_address), ['feodo', 'c2', row.malware ?? '', day(row.first_seen), row.ip_address, []]);
     count++;
   }
   return count;

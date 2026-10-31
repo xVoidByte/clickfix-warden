@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { ageDays, type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus, parseCsvLine } from '../../feed-builder/sources';
 import { BUNDLED_RULES } from '../../src/engine/rules';
+import { diffEntries, type FeedEntry, refFor, splitEntries } from '../../src/feed/types';
 
 // Synthetic rows in the abuse.ch export layout, with reserved test names only.
 const now = new Date('2026-10-31T12:00:00Z');
@@ -59,9 +60,9 @@ describe('URLhaus', () => {
     expect(count).toBe(3);
     expect(entries.has('u:old.example.invalid/x.exe')).toBe(false);
   });
-  it('marks ClickFix tags', () => {
-    expect(entries.get('u:cdn.example.invalid/v.ps1')?.[0][1]).toBe('clickfix');
-    expect(entries.get('u:192.0.2.10/i.sh')?.[0][1]).toBe('malware');
+  it('marks ClickFix tags and keeps only those', () => {
+    expect(entries.get('u:cdn.example.invalid/v.ps1')?.[0]).toEqual(['urlhaus', 'clickfix', '', '2026-10-30', '9001', ['ClickFix', 'ps1']]);
+    expect(entries.get('u:192.0.2.10/i.sh')?.[0]).toEqual(['urlhaus', 'malware', '', '2026-10-29', '9002', []]);
   });
   it('never lists a whole shared host', () => {
     expect(entries.has('h:raw.githubusercontent.com')).toBe(false);
@@ -78,7 +79,7 @@ describe('ThreatFox', () => {
       'clickfix',
       'ClearFake',
       '2026-10-20',
-      'https://threatfox.abuse.ch/ioc/101/',
+      '101',
       ['ClickFix', 'FakeCaptcha'],
     ]);
     expect(entries.get('u:evil.example.invalid/gate.php')?.[0][1]).toBe('malware');
@@ -98,5 +99,36 @@ describe('Feodo Tracker', () => {
     fromFeodo(FEODO, opts, entries);
     expect(entries.has('i:192.0.2.60')).toBe(true);
     expect(entries.has('i:192.0.2.61')).toBe(false);
+  });
+});
+
+describe('hot and bulk parts', () => {
+  const entries: FeedEntry[] = [
+    ['h:lure.example.invalid', [['threatfox', 'clickfix', 'ClearFake', '2026-10-20', '101', []]]],
+    ['i:192.0.2.50', [['threatfox', 'c2', 'Remcos', '2026-10-22', '103', []]]],
+    ['u:cdn.example.invalid/v.ps1', [['urlhaus', 'clickfix', '', '2026-10-30', '9001', ['ClickFix']]]],
+    ['u:192.0.2.10/i.sh', [['urlhaus', 'malware', '', '2026-10-29', '9002', []]]],
+    ['u:evil.example.invalid/gate.php', [['threatfox', 'malware', 'Lumma Stealer', '2026-10-21', '102', []]]],
+  ];
+  it('keeps ClickFix, hosts, IPs and ThreatFox hot and plain URLhaus links in bulk', () => {
+    const { hot, bulk } = splitEntries(entries);
+    expect(hot.map((e) => e[0])).toEqual(['h:lure.example.invalid', 'i:192.0.2.50', 'u:cdn.example.invalid/v.ps1', 'u:evil.example.invalid/gate.php']);
+    expect(bulk.map((e) => e[0])).toEqual(['u:192.0.2.10/i.sh']);
+  });
+  it('builds an hourly change list', () => {
+    const next: FeedEntry[] = [
+      entries[0],
+      ['i:192.0.2.50', [['threatfox', 'c2', 'Remcos', '2026-10-22', '103', ['Remcos']]]],
+      ['h:new.example.invalid', [['threatfox', 'clickfix', 'ClearFake', '2026-10-31', '104', []]]],
+    ];
+    const { put, del } = diffEntries(entries, next);
+    expect(put.map((e) => e[0])).toEqual(['i:192.0.2.50', 'h:new.example.invalid']);
+    expect(del).toEqual(['u:cdn.example.invalid/v.ps1', 'u:192.0.2.10/i.sh', 'u:evil.example.invalid/gate.php']);
+  });
+  it('turns report ids back into links', () => {
+    expect(refFor('threatfox', '101')).toBe('https://threatfox.abuse.ch/ioc/101/');
+    expect(refFor('urlhaus', '9001')).toBe('https://urlhaus.abuse.ch/url/9001/');
+    expect(refFor('feodo', '192.0.2.60')).toBe('https://feodotracker.abuse.ch/browse/host/192.0.2.60/');
+    expect(refFor('urlhaus', '../evil')).toBe('');
   });
 });

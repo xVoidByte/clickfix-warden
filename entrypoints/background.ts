@@ -170,7 +170,7 @@ async function handle(msg: Message, sender: Browser.runtime.MessageSender): Prom
       return true;
     }
     case 'update-now':
-      return updateAll();
+      return updateAll({ forceBulk: true });
     case 'clear-log':
       await browser.storage.local.set({ log: [] });
       return true;

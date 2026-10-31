@@ -233,6 +233,30 @@ test.describe('reputation', () => {
     await expect.poll(() => overlayShown(page)).toBe(true);
   });
 
+  test('download link from the daily URLhaus part is reported', async ({ context, sw }) => {
+    const page = await context.newPage();
+    await page.goto(site('download.test', '/setup.exe'));
+    await expect.poll(() => overlayShown(page)).toBe(true);
+    await expect.poll(async () => (await lastDetection(sw))?.kind).toBe('reputation');
+  });
+
+  test('hourly change list adds and removes reports', async ({ context, sw, extId }) => {
+    const before = await sw.evaluate(async () => ((await chrome.storage.local.get('feedMeta')).feedMeta as { hotGenerated: string }).hotGenerated);
+    const ext = await context.newPage();
+    await ext.goto(`chrome-extension://${extId}/popup.html`);
+    await ext.evaluate(() => (globalThis as unknown as { chrome: { runtime: { sendMessage(m: unknown): Promise<unknown> } } }).chrome.runtime.sendMessage({ type: 'update-now' }));
+    await expect
+      .poll(() => sw.evaluate(async () => ((await chrome.storage.local.get('feedMeta')).feedMeta as { hotGenerated: string }).hotGenerated))
+      .not.toBe(before);
+    const added = await context.newPage();
+    await added.goto(site('delta-added.test'));
+    await expect.poll(() => overlayShown(added)).toBe(true);
+    const removed = await context.newPage();
+    await removed.goto(site('payload-reported.test'));
+    await removed.waitForTimeout(2000);
+    expect(await overlayShown(removed)).toBe(false);
+  });
+
   test('trusted site is not checked', async ({ context, sw }) => {
     await sw.evaluate(async () => {
       await chrome.storage.local.set({ settings: { trustedSites: ['reported.test'] } });
@@ -256,7 +280,7 @@ test.describe('extension pages', () => {
     await expect(page.locator('#toggles .setting')).toHaveCount(10);
     await expect(page.locator('#toggles .tip')).toHaveCount(10);
     for (const tip of await page.locator('#toggles .tip').all()) expect((await tip.getAttribute('data-tip'))!.length).toBeGreaterThan(10);
-    await expect(page.locator('#dbStatus')).toContainText('3');
+    await expect(page.locator('#dbStatus')).toContainText('4 reports');
     expect(errors).toEqual([]);
   });
 
@@ -265,7 +289,7 @@ test.describe('extension pages', () => {
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(String(e)));
     await page.goto(`chrome-extension://${extId}/popup.html`);
-    await expect(page.locator('#feedLine')).toContainText('3');
+    await expect(page.locator('#feedLine')).toContainText('4 reports');
     expect(errors).toEqual([]);
   });
 });

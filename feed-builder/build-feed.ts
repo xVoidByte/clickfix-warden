@@ -1,4 +1,4 @@
-// Builds the signed feed.json and rules.json from the abuse.ch exports into dist/site for GitHub Pages, and stops before publishing if any source fails.
+// Builds the signed hot.json, bulk.json, hourly hot-delta.json and rules.json from the abuse.ch exports into dist/site, and stops before publishing if any source fails.
 
 import { createPrivateKey, createPublicKey, sign, verify } from 'node:crypto';
 import { cpSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -7,11 +7,12 @@ import { unzipSync } from 'fflate';
 import { isUsableRules } from '../src/engine/rules';
 import type { RulesFile } from '../src/engine/types';
 import { FEED_PUBLIC_KEY } from '../src/feed/public-key';
-import type { FeedFile, FeedSource } from '../src/feed/types';
+import { diffEntries, type FeedDelta, type FeedEntry, type FeedPart, type FeedSource, type SourceCount, splitEntries } from '../src/feed/types';
 import { type BuildOptions, type Entries, fromFeodo, fromThreatfox, fromUrlhaus, SOURCE_LABELS } from './sources';
 
 const root = resolve(import.meta.dirname, '..');
 const out = resolve(root, process.env.OUT_DIR ?? 'dist/site');
+const PUBLIC_BASE = process.env.PUBLIC_BASE ?? 'https://xvoidbyte.github.io/clickfix-warden/';
 const unsigned = process.argv.includes('--unsigned');
 const UA = 'clickfix-warden-feed (+https://github.com/xVoidByte/clickfix-warden)';
 
@@ -91,25 +92,47 @@ console.log(`Reports: URLhaus ${counts.urlhaus}, ThreatFox ${counts.threatfox}, 
 if (counts.urlhaus < 100) fail(`URLhaus gave only ${counts.urlhaus} reports, the export format may have changed`);
 if (counts.threatfox < 100) fail(`ThreatFox gave only ${counts.threatfox} reports, the export format may have changed`);
 
-const feed: FeedFile = {
-  format: 1,
-  generated: opts.now.toISOString(),
-  sources: (Object.keys(counts) as FeedSource[]).map((id) => ({ id, name: SOURCE_LABELS[id], count: counts[id] })),
-  entries: [...entries.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1)),
+const generated = opts.now.toISOString();
+const sources: SourceCount[] = (Object.keys(counts) as FeedSource[]).map((id) => ({ id, name: SOURCE_LABELS[id], count: counts[id] }));
+const all: FeedEntry[] = [...entries.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1));
+const { hot, bulk } = splitEntries(all);
+const hotFile: FeedPart = { format: 2, part: 'hot', generated, sources, entries: hot };
+const bulkFile: FeedPart = { format: 2, part: 'bulk', generated, sources, entries: bulk };
+
+const files: Record<string, Buffer> = {
+  'hot.json': Buffer.from(JSON.stringify(hotFile)),
+  'bulk.json': Buffer.from(JSON.stringify(bulkFile)),
+  'rules.json': rulesText,
 };
-const feedBytes = Buffer.from(JSON.stringify(feed));
+
+// The hourly delta is built against the hot.json that is live right now.
+const previous = await download(`${PUBLIC_BASE}v1/hot.json`, true);
+if (previous) {
+  try {
+    const prev = JSON.parse(new TextDecoder().decode(previous)) as FeedPart;
+    if (prev.format === 2 && prev.part === 'hot' && prev.generated < generated) {
+      const { put, del } = diffEntries(prev.entries, hot);
+      const delta: FeedDelta = { format: 2, part: 'hot-delta', base: prev.generated, generated, sources, put, del };
+      files['hot-delta.json'] = Buffer.from(JSON.stringify(delta));
+      console.log(`Delta against ${prev.generated}: ${put.length} changed, ${del.length} removed`);
+    }
+  } catch {
+    console.log('The live hot.json could not be read, publishing without a delta');
+  }
+}
 
 mkdirSync(resolve(out, 'v1'), { recursive: true });
-writeFileSync(resolve(out, 'v1/feed.json'), feedBytes);
-writeFileSync(resolve(out, 'v1/rules.json'), rulesText);
+for (const [name, data] of Object.entries(files)) writeFileSync(resolve(out, 'v1', name), data);
 writeFileSync(
   resolve(out, 'v1/meta.json'),
   JSON.stringify(
     {
-      generated: feed.generated,
-      keys: entries.size,
-      sources: feed.sources,
-      clickfix: [...entries.values()].filter((r) => r.some((x) => x[1] === 'clickfix')).length,
+      generated,
+      keys: all.length,
+      hot: hot.length,
+      bulk: bulk.length,
+      clickfix: all.filter(([, r]) => r.some((x) => x[1] === 'clickfix')).length,
+      sources,
       rulesVersion: rules.version,
     },
     null,
@@ -120,10 +143,10 @@ writeFileSync(
 if (!unsigned) {
   const pem = process.env.FEED_SIGNING_KEY;
   if (!pem?.includes('PRIVATE KEY')) fail('FEED_SIGNING_KEY is not set. Add the private key PEM as a repository secret.');
-  writeFileSync(resolve(out, 'v1/feed.json.sig'), signFile(feedBytes, pem));
-  writeFileSync(resolve(out, 'v1/rules.json.sig'), signFile(rulesText, pem));
+  for (const [name, data] of Object.entries(files)) writeFileSync(resolve(out, 'v1', name + '.sig'), signFile(data, pem));
 }
 
 cpSync(resolve(root, 'feed-builder/site'), out, { recursive: true });
 writeFileSync(resolve(out, '.nojekyll'), '');
-console.log(`Written to ${out} (${(feedBytes.length / 1024 / 1024).toFixed(1)} MB feed)`);
+const mb = (b: Buffer | undefined) => (b ? (b.length / 1024 / 1024).toFixed(1) : '0') + ' MB';
+console.log(`Written to ${out}, hot ${hot.length} (${mb(files['hot.json'])}), bulk ${bulk.length} (${mb(files['bulk.json'])}), delta ${mb(files['hot-delta.json'])}`);

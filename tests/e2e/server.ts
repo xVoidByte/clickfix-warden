@@ -12,29 +12,51 @@ const PORT = 47123;
 const key = createPrivateKey(readFileSync(resolve(root, 'tests/fixtures/test-signing-key.pem')));
 const signB64 = (data: Buffer) => sign(null, data, key).toString('base64');
 
-const feed = Buffer.from(
+const generated = new Date().toISOString();
+const sources = [
+  { id: 'threatfox', name: 'ThreatFox', count: 2 },
+  { id: 'urlhaus', name: 'URLhaus', count: 2 },
+];
+const hot = Buffer.from(
   JSON.stringify({
-    format: 1,
-    generated: new Date().toISOString(),
-    sources: [
-      { id: 'threatfox', name: 'ThreatFox', count: 2 },
-      { id: 'urlhaus', name: 'URLhaus', count: 1 },
-    ],
+    format: 2,
+    part: 'hot',
+    generated,
+    sources,
     entries: [
-      ['h:reported.test', [['threatfox', 'malware', 'Lumma Stealer', '2026-10-01', 'https://threatfox.abuse.ch/ioc/1/', ['Lumma']]]],
-      ['h:clickfix-site.test', [['threatfox', 'clickfix', 'ClearFake', '2026-10-20', 'https://threatfox.abuse.ch/ioc/2/', ['ClickFix', 'FakeCaptcha']]]],
-      ['h:payload-reported.test', [['urlhaus', 'malware', '', '2026-10-25', 'https://urlhaus.abuse.ch/url/3/', ['ps1']]]],
+      ['h:clickfix-site.test', [['threatfox', 'clickfix', 'ClearFake', '2026-10-20', '2', ['ClickFix', 'FakeCaptcha']]]],
+      ['h:payload-reported.test', [['threatfox', 'malware', '', '2026-10-25', '3', []]]],
+      ['h:reported.test', [['threatfox', 'malware', 'Lumma Stealer', '2026-10-01', '1', ['Lumma']]]],
     ],
+  }),
+);
+const bulk = Buffer.from(
+  JSON.stringify({
+    format: 2,
+    part: 'bulk',
+    generated,
+    sources,
+    entries: [['u:download.test:47123/setup.exe', [['urlhaus', 'malware', '', '2026-10-28', '4', []]]]],
+  }),
+);
+const delta = Buffer.from(
+  JSON.stringify({
+    format: 2,
+    part: 'hot-delta',
+    base: generated,
+    generated: new Date(Date.parse(generated) + 60_000).toISOString(),
+    sources,
+    put: [['h:delta-added.test', [['threatfox', 'malware', 'Remcos', '2026-10-31', '5', []]]]],
+    del: ['h:payload-reported.test'],
   }),
 );
 const rules = readFileSync(resolve(root, 'rules/rules.json'));
 
-const files: Record<string, Buffer> = {
-  '/feed/v1/feed.json': feed,
-  '/feed/v1/feed.json.sig': Buffer.from(signB64(feed)),
-  '/feed/v1/rules.json': rules,
-  '/feed/v1/rules.json.sig': Buffer.from(signB64(rules)),
-};
+const files: Record<string, Buffer> = {};
+for (const [name, data] of Object.entries({ 'hot.json': hot, 'bulk.json': bulk, 'hot-delta.json': delta, 'rules.json': rules })) {
+  files[`/feed/v1/${name}`] = data;
+  files[`/feed/v1/${name}.sig`] = Buffer.from(signB64(data));
+}
 
 const TYPES: Record<string, string> = { '.html': 'text/html; charset=utf-8', '.json': 'application/json', '.sig': 'text/plain' };
 

@@ -1,8 +1,9 @@
-import { type FeedFile, type FeedHit, toRecord } from './types';
+import { type FeedEntry, type FeedHit, type FeedRecordTuple, toRecord } from './types';
 
 const DB_NAME = 'clickfix-warden';
-const STORE = 'ioc';
-const VERSION = 1;
+const VERSION = 2;
+export type StoreName = 'hot' | 'bulk';
+const STORES: StoreName[] = ['hot', 'bulk'];
 
 let dbPromise: Promise<IDBDatabase> | null = null;
 
@@ -12,7 +13,8 @@ function open(): Promise<IDBDatabase> {
     const req = indexedDB.open(DB_NAME, VERSION);
     req.onupgradeneeded = () => {
       const db = req.result;
-      if (!db.objectStoreNames.contains(STORE)) db.createObjectStore(STORE);
+      if (db.objectStoreNames.contains('ioc')) db.deleteObjectStore('ioc');
+      for (const name of STORES) if (!db.objectStoreNames.contains(name)) db.createObjectStore(name);
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => {
@@ -31,45 +33,62 @@ function done(tx: IDBTransaction): Promise<void> {
   });
 }
 
-/** Swaps the whole database for a new feed in one transaction. */
-export async function replaceFeed(feed: FeedFile): Promise<void> {
+/** Swaps one store for a new set of entries in a single transaction. */
+export async function replaceStore(name: StoreName, entries: FeedEntry[]): Promise<void> {
   const db = await open();
-  const tx = db.transaction(STORE, 'readwrite');
-  const store = tx.objectStore(STORE);
+  const tx = db.transaction(name, 'readwrite');
+  const store = tx.objectStore(name);
   store.clear();
-  for (const [key, records] of feed.entries) store.put(records, key);
+  for (const [key, records] of entries) store.put(records, key);
+  await done(tx);
+}
+
+/** Applies an hourly change list to the hot store. */
+export async function applyDelta(put: FeedEntry[], del: string[]): Promise<void> {
+  const db = await open();
+  const tx = db.transaction('hot', 'readwrite');
+  const store = tx.objectStore('hot');
+  for (const key of del) store.delete(key);
+  for (const [key, records] of put) store.put(records, key);
   await done(tx);
 }
 
 export async function countEntries(): Promise<number> {
   const db = await open();
-  const tx = db.transaction(STORE, 'readonly');
-  const req = tx.objectStore(STORE).count();
-  return new Promise((resolve, reject) => {
-    req.onsuccess = () => resolve(req.result);
-    req.onerror = () => reject(req.error);
-  });
-}
-
-/** Looks up many keys in one read transaction, returns only the ones found. */
-export async function lookupKeys(keys: string[]): Promise<FeedHit[]> {
-  if (!keys.length) return [];
-  const db = await open();
-  const tx = db.transaction(STORE, 'readonly');
-  const store = tx.objectStore(STORE);
-  const hits: FeedHit[] = [];
-  await Promise.all(
-    keys.map(
-      (key) =>
-        new Promise<void>((resolve) => {
-          const req = store.get(key);
-          req.onsuccess = () => {
-            if (Array.isArray(req.result)) hits.push({ key, records: req.result.map(toRecord) });
-            resolve();
-          };
-          req.onerror = () => resolve();
+  const tx = db.transaction(STORES, 'readonly');
+  const counts = await Promise.all(
+    STORES.map(
+      (name) =>
+        new Promise<number>((resolve, reject) => {
+          const req = tx.objectStore(name).count();
+          req.onsuccess = () => resolve(req.result);
+          req.onerror = () => reject(req.error);
         }),
     ),
   );
-  return hits;
+  return counts.reduce((a, b) => a + b, 0);
+}
+
+/** Looks up many keys in both stores in one read transaction, returns only the ones found. */
+export async function lookupKeys(keys: string[]): Promise<FeedHit[]> {
+  if (!keys.length) return [];
+  const db = await open();
+  const tx = db.transaction(STORES, 'readonly');
+  const found = new Map<string, FeedRecordTuple[]>();
+  await Promise.all(
+    STORES.flatMap((name) =>
+      keys.map(
+        (key) =>
+          new Promise<void>((resolve) => {
+            const req = tx.objectStore(name).get(key);
+            req.onsuccess = () => {
+              if (Array.isArray(req.result)) found.set(key, [...(found.get(key) ?? []), ...req.result]);
+              resolve();
+            };
+            req.onerror = () => resolve();
+          }),
+      ),
+    ),
+  );
+  return [...found].map(([key, records]) => ({ key, records: records.map(toRecord) }));
 }
