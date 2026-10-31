@@ -98,6 +98,11 @@ describe('page instructions', () => {
     expect(v.ids.has('page-win-x')).toBe(true);
     expect(v.standalone).toBe(true);
   });
+  it('scores a Win+X box that asks to verify your request', () => {
+    const v = scorePageText('To verify your request Perform the following steps: Verification code copied. Awaiting terminal input... Press Win + X, choose Terminal or press I, press Ctrl + V to paste, press Enter', rules);
+    expect(v.ids.has('page-verify-human')).toBe(true);
+    expect(v.standalone).toBe(true);
+  });
   it('scores the macOS terminal variant', () => {
     const v = scorePageText('Press Cmd + Space, type Terminal, then press Cmd + V and Enter. Verify you are human', rules);
     expect(v.ids.has('page-mac-terminal')).toBe(true);

