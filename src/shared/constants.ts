@@ -3,7 +3,7 @@ export const FEED_BASE: string =
   (import.meta.env.WXT_FEED_BASE as string | undefined) || 'https://xvoidbyte.github.io/clickfix-warden/v1/';
 
 /** Leave empty to hide the "Support the project" link everywhere. */
-export const DONATE_URL = '';
+export const DONATE_URL = 'https://ko-fi.com/S6S51N452I';
 
 export const PROJECT_URL = 'https://github.com/xVoidByte/clickfix-warden';
 export const PRIVACY_URL = 'https://xvoidbyte.github.io/clickfix-warden/privacy.html';

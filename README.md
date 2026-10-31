@@ -1,5 +1,7 @@
 # ClickFix Warden
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S51N452I)
+
 A free, open source browser extension that stops ClickFix and fake CAPTCHA attacks and warns you about sites reported as malicious in public threat databases.
 
 ClickFix pages pretend to be a CAPTCHA, a browser error or a Windows update. They quietly put a command in your clipboard and walk you through pasting it into Run, Terminal or File Explorer, which installs an infostealer or a remote access tool. ClickFix Warden sees the command before it reaches your clipboard, swaps it for a harmless note and shows you what the page tried to make you run.
