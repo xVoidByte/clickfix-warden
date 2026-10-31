@@ -2,20 +2,19 @@ import { browser } from 'wxt/browser';
 import { pickRules } from '../../src/engine/rules';
 import type { FeedMeta, UpdateState } from '../../src/feed/types';
 import { DONATE_URL } from '../../src/shared/constants';
-import { localizePage, relativeTime, t } from '../../src/shared/i18n';
+import { loadI18nOverride, localizePage, relativeTime, t, tParts } from '../../src/shared/i18n';
 import type { Detection, Message, PageStatus } from '../../src/shared/messages';
 import { computeEffectiveSettings, isTrusted, saveSettings } from '../../src/shared/settings';
 import { confirmDialog, el } from '../../src/ui/graphite';
 import { addPageParts } from '../../src/ui/page-parts';
 
 addPageParts();
-localizePage();
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 const send = <T>(msg: Message) => browser.runtime.sendMessage(msg) as Promise<T>;
 const RECENT_MS = 30 * 60 * 1000;
 
 function kindLine(d: Detection): string {
-  return `${t('kind_' + d.kind.replace(/-/g, '_'))} ${t('action_' + d.action.replace(/-/g, '_'))}`;
+  return t('kindAction', [t('kind_' + d.kind.replace(/-/g, '_')), t('action_' + d.action.replace(/-/g, '_'))]);
 }
 
 async function render(): Promise<void> {
@@ -49,7 +48,7 @@ async function render(): Promise<void> {
     const page = await send<PageStatus>({ type: 'page-status', url });
     const recent = entries.find((d) => d.host === host && d.action === 'blocked' && Date.now() - Date.parse(d.time) < RECENT_MS);
     if (trusted) status.append(t('popupTrusted'));
-    else if (recent?.what) status.append(t('popupBlocked') + ' ', el(document, 'strong', 'red', recent.what), ' ' + relativeTime(recent.time));
+    else if (recent?.what) status.append(...tParts('popupBlockedLine', [el(document, 'strong', 'red', recent.what), relativeTime(recent.time)]));
     else if (page?.hits?.length) status.append(el(document, 'strong', 'red', t('popupReported')));
     else status.append(t('popupNoReports'));
     if (!eff.locked) {
@@ -82,7 +81,7 @@ async function render(): Promise<void> {
   stats.replaceChildren();
   if (feedMeta?.count) {
     const first = el(document, 'div');
-    first.append(el(document, 'strong', undefined, feedMeta.count.toLocaleString()), ' ' + t('popupReportsSuffix'));
+    first.append(...tParts('popupReports', [el(document, 'strong', undefined, feedMeta.count.toLocaleString())]));
     stats.append(first, el(document, 'div', undefined, t('popupUpdated', [relativeTime(feedMeta.generated), String(pickRules(rules).version)])));
   } else {
     stats.append(el(document, 'div', undefined, updateState?.lastError ? t('popupFeedError') : t('popupFeedNone')));
@@ -122,4 +121,8 @@ if (DONATE_URL) {
   donate.rel = 'noopener noreferrer';
 }
 
-void render();
+void (async () => {
+  await loadI18nOverride();
+  localizePage();
+  await render();
+})();

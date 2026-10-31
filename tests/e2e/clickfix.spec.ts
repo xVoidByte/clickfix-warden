@@ -284,7 +284,8 @@ test.describe('extension pages', () => {
     page.on('pageerror', (e) => errors.push(String(e)));
     await page.goto(`chrome-extension://${extId}/options.html`);
     await expect(page.locator('#toggles .setting')).toHaveCount(10);
-    await expect(page.locator('#toggles .tip')).toHaveCount(10);
+    await expect(page.locator('#toggles .tip')).toHaveCount(11);
+    await expect(page.locator('#language option')).toHaveCount(33);
     for (const tip of await page.locator('#toggles .tip').all()) expect((await tip.getAttribute('data-tip'))!.length).toBeGreaterThan(10);
     await expect(page.locator('#dbStatus')).toContainText('4 reports');
     expect(errors).toEqual([]);
@@ -306,6 +307,23 @@ test.describe('extension pages', () => {
     await expect(page.locator('#sites')).toContainText('intranet.example.com');
     const stored = await sw.evaluate(async () => ((await chrome.storage.local.get('settings')).settings as { trustedSites: string[] }).trustedSites);
     expect(stored).toContain('intranet.example.com');
+  });
+
+  test('the language picker switches the interface and English stays the default', async ({ context, extId }) => {
+    const page = await context.newPage();
+    await page.goto(`chrome-extension://${extId}/options.html`);
+    await expect(page.locator('html')).toHaveAttribute('lang', /^en/);
+    await expect(page.locator('nav .item.active')).toHaveText('Protection');
+    await page.selectOption('#language', 'de');
+    await expect(page.locator('html')).toHaveAttribute('lang', 'de');
+    await expect(page.locator('nav .item.active')).not.toHaveText('Protection');
+    const lure = await context.newPage();
+    await lure.goto(BASE + '/lures/turnstile-writetext.html');
+    await lure.click('#cb');
+    await expect.poll(() => overlayShown(lure)).toBe(true);
+    await page.bringToFront();
+    await page.selectOption('#language', '');
+    await expect(page.locator('html')).toHaveAttribute('lang', /^en/);
   });
 
   test('popup renders', async ({ context, extId }) => {

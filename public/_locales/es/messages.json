@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Detiene ataques ClickFix y CAPTCHA falsos que le engañan para ejecutar comandos, y avisa de sitios denunciados como maliciosos."
+  },
+  "dangerLabel": {
+    "message": "SITIO POTENCIALMENTE PELIGROSO"
+  },
+  "titleClipboard": {
+    "message": "Comando peligroso bloqueado"
+  },
+  "titleManual": {
+    "message": "Comando peligroso no copiado"
+  },
+  "titlePaste": {
+    "message": "Pegado peligroso bloqueado"
+  },
+  "titleProtocol": {
+    "message": "Enlace peligroso bloqueado"
+  },
+  "titleFullscreen": {
+    "message": "Pantalla de actualización falsa bloqueada"
+  },
+  "descNote": {
+    "message": "Su portapapeles contiene ahora una nota inofensiva, así que pegar no hará nada."
+  },
+  "descManualNote": {
+    "message": "En su lugar se ha copiado una nota inofensiva."
+  },
+  "descFullscreenNote": {
+    "message": "Pulse Esc si algo sigue cubriendo la pantalla y después cierre la pestaña."
+  },
+  "whatTemplate": {
+    "message": "$1 que $2"
+  },
+  "what_powershell": {
+    "message": "un comando de PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "un comando oculto de PowerShell"
+  },
+  "what_applescript": {
+    "message": "un comando de AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "un comando oculto de AppleScript"
+  },
+  "what_terminal": {
+    "message": "un comando de Terminal"
+  },
+  "what_terminal_hidden": {
+    "message": "un comando oculto de Terminal"
+  },
+  "what_script": {
+    "message": "un comando de script"
+  },
+  "what_script_hidden": {
+    "message": "un comando de script oculto"
+  },
+  "what_cmd": {
+    "message": "un comando del Símbolo del sistema"
+  },
+  "what_cmd_hidden": {
+    "message": "un comando oculto del Símbolo del sistema"
+  },
+  "what_windows": {
+    "message": "un comando de Windows"
+  },
+  "what_windows_hidden": {
+    "message": "un comando oculto de Windows"
+  },
+  "what_generic": {
+    "message": "un comando"
+  },
+  "what_generic_hidden": {
+    "message": "un comando oculto"
+  },
+  "effect_download_run": {
+    "message": "descarga y ejecuta un programa"
+  },
+  "effect_disables_av": {
+    "message": "desactiva su protección antivirus"
+  },
+  "effect_password": {
+    "message": "le pide su contraseña con una ventana falsa"
+  },
+  "effect_remote_share": {
+    "message": "ejecuta archivos desde una carpeta compartida remota"
+  },
+  "effect_remote_script": {
+    "message": "ejecuta un script directamente desde Internet"
+  },
+  "effect_remote_install": {
+    "message": "instala un programa directamente desde Internet"
+  },
+  "effect_dns": {
+    "message": "obtiene comandos ocultos de registros DNS"
+  },
+  "effect_finger": {
+    "message": "obtiene comandos ocultos de un servidor remoto"
+  },
+  "effect_runs": {
+    "message": "se ejecuta en su equipo sin pedir permiso"
+  },
+  "whyPage1": {
+    "message": "la página $1"
+  },
+  "whyPage2": {
+    "message": "la página $1 y $2"
+  },
+  "lure_captcha": {
+    "message": "se hace pasar por un CAPTCHA"
+  },
+  "lure_update": {
+    "message": "finge instalar actualizaciones"
+  },
+  "lure_fix": {
+    "message": "presenta el comando como solución a un error"
+  },
+  "target_explorer": {
+    "message": "le pide que lo pegue en la barra de direcciones del Explorador de archivos"
+  },
+  "target_terminal": {
+    "message": "le pide que lo pegue en Terminal"
+  },
+  "target_run": {
+    "message": "le pide que lo pegue en el cuadro Ejecutar"
+  },
+  "target_paste": {
+    "message": "le pide que lo pegue en algún lugar de su equipo"
+  },
+  "why_payload_reported": {
+    "message": "el comando descarga archivos de una dirección denunciada como maliciosa"
+  },
+  "why_site_reported": {
+    "message": "este sitio está denunciado como malicioso"
+  },
+  "why_decoy": {
+    "message": "detrás del comando se esconde un texto de verificación falso"
+  },
+  "why_padding": {
+    "message": "el comando real está escondido tras un gran espacio en blanco"
+  },
+  "why_disguised": {
+    "message": "el comando está disfrazado para ocultar lo que hace"
+  },
+  "why_hidden_window": {
+    "message": "el comando se ejecuta en una ventana oculta"
+  },
+  "why_generic": {
+    "message": "el comando tiene las señales de un ataque ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "la página le pide que pegue un comando"
+  },
+  "fullscreenWhat": {
+    "message": "ocupar toda su pantalla como si fuera una actualización de Windows falsa"
+  },
+  "pasteWhat": {
+    "message": "un enlace de inicio de sesión con un código secreto"
+  },
+  "pasteWhy": {
+    "message": "una página como esta puede usarlo para hacerse con su cuenta"
+  },
+  "protocolWhy": {
+    "message": "los enlaces de este tipo pueden ejecutar comandos en su equipo sin que usted lo note"
+  },
+  "btnClose": {
+    "message": "Cerrar"
+  },
+  "btnLeave": {
+    "message": "Salir de este sitio"
+  },
+  "btnTrust": {
+    "message": "Confiar en este sitio"
+  },
+  "tipClose": {
+    "message": "Oculta este aviso y permanece en la página"
+  },
+  "tipLeave": {
+    "message": "Cierra esta página y abre una pestaña nueva"
+  },
+  "tipTrust": {
+    "message": "Detiene todas las comprobaciones en este sitio después de que lo confirme"
+  },
+  "tipUntrust": {
+    "message": "Vuelve a comprobar este sitio"
+  },
+  "bannerReported": {
+    "message": "Este sitio está denunciado como malicioso."
+  },
+  "bannerDetails": {
+    "message": "Detalles"
+  },
+  "bannerFirstSeen": {
+    "message": "visto por primera vez el $1"
+  },
+  "bannerWeb3": {
+    "message": "Este sitio carga código oculto desde una blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "Los sitios web hackeados usan este truco para mostrar páginas CAPTCHA falsas."
+  },
+  "bannerInstructions": {
+    "message": "Esta página le pide que pegue algo en Ejecutar, Terminal o el Explorador de archivos."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Los sitios web reales nunca le piden que haga eso."
+  },
+  "rep_clickfix": {
+    "message": "una página ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "una página ClickFix que propaga $1"
+  },
+  "rep_malware": {
+    "message": "una descarga de malware"
+  },
+  "rep_malware_family": {
+    "message": "una descarga de $1"
+  },
+  "rep_c2": {
+    "message": "un servidor de control de malware"
+  },
+  "rep_c2_family": {
+    "message": "un servidor de control de $1"
+  },
+  "rep_phishing": {
+    "message": "una página de phishing"
+  },
+  "rep_phishing_family": {
+    "message": "una página de phishing de $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "descarga de malware"
+  },
+  "category_c2": {
+    "message": "servidor de control de malware"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "¿Dejar de proteger $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "¿Abrir $1 de todos modos?"
+  },
+  "confirmReported": {
+    "message": "Este sitio está denunciado en bases de datos públicas de amenazas."
+  },
+  "confirmBodyStrong": {
+    "message": "infectar su equipo y robar sus contraseñas, tarjetas de crédito guardadas y monederos de criptomonedas"
+  },
+  "confirmOnlyReported": {
+    "message": "Hágalo solo si sabe que la denuncia es errónea."
+  },
+  "confirmOnlyKnown": {
+    "message": "Hágalo solo con sitios que conozca bien."
+  },
+  "confirmCheckTrust": {
+    "message": "Entiendo que puedo perder credenciales, cookies y dinero si confío en este sitio"
+  },
+  "confirmCheckOpen": {
+    "message": "Entiendo que puedo perder credenciales, cookies y dinero si abro este sitio"
+  },
+  "confirmTrust": {
+    "message": "Confiar en este sitio"
+  },
+  "confirmOpen": {
+    "message": "Abrir de todos modos"
+  },
+  "confirmKeep": {
+    "message": "Mantener la protección"
+  },
+  "warnTitle": {
+    "message": "Sitio peligroso bloqueado"
+  },
+  "warnAddress": {
+    "message": "Dirección"
+  },
+  "warnReportedBy": {
+    "message": "Denunciado por"
+  },
+  "warnSteals": {
+    "message": "roba sus contraseñas, tarjetas de crédito guardadas y monederos de criptomonedas"
+  },
+  "warnLeave": {
+    "message": "Volver a un lugar seguro"
+  },
+  "warnLeaveTip": {
+    "message": "Abre una pestaña nueva en lugar de este sitio"
+  },
+  "warnContinue": {
+    "message": "Abrir de todos modos"
+  },
+  "warnContinueTip": {
+    "message": "Abre el sitio durante la próxima hora después de que confirme el riesgo"
+  },
+  "warnAdvice": {
+    "message": "Ningún sitio web real le pide que pegue nada en Ejecutar, Terminal o el Explorador de archivos."
+  },
+  "popupOn": {
+    "message": "Activada"
+  },
+  "popupOff": {
+    "message": "La protección está desactivada."
+  },
+  "popupNotWebPage": {
+    "message": "No es una página web"
+  },
+  "popupTrusted": {
+    "message": "De su confianza, sin comprobar"
+  },
+  "popupReported": {
+    "message": "Denunciado como malicioso"
+  },
+  "popupNoReports": {
+    "message": "No hay denuncias sobre este sitio"
+  },
+  "popupUntrust": {
+    "message": "Dejar de confiar en este sitio"
+  },
+  "popupUpdated": {
+    "message": "Actualizado $1, versión de reglas $2"
+  },
+  "popupFeedNone": {
+    "message": "Base de datos aún no descargada"
+  },
+  "popupFeedError": {
+    "message": "Error al actualizar la base de datos, consulte la configuración"
+  },
+  "popupNoDetections": {
+    "message": "Nada bloqueado todavía"
+  },
+  "popupSettings": {
+    "message": "Configuración"
+  },
+  "popupHistory": {
+    "message": "Comprobar mi historial"
+  },
+  "popupUpdate": {
+    "message": "Actualizar ahora"
+  },
+  "popupUpdating": {
+    "message": "Actualizando"
+  },
+  "popupRulesLine": {
+    "message": "Reglas de detección versión $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "integradas"
+  },
+  "popupRulesUpdated": {
+    "message": "actualizadas en línea"
+  },
+  "supportShort": {
+    "message": "Apoyar"
+  },
+  "tipSupport": {
+    "message": "Abre una página donde puede apoyar ClickFix Warden con un donativo"
+  },
+  "supportProject": {
+    "message": "Apoyar el proyecto"
+  },
+  "kind_clipboard": {
+    "message": "Comando en el portapapeles"
+  },
+  "kind_manual_copy": {
+    "message": "Comando copiado"
+  },
+  "kind_paste": {
+    "message": "Pegado de enlace de inicio de sesión"
+  },
+  "kind_protocol": {
+    "message": "Enlace a un programa"
+  },
+  "kind_fullscreen": {
+    "message": "Aviso de actualización falso"
+  },
+  "kind_page_instructions": {
+    "message": "Texto con instrucciones para pegar"
+  },
+  "kind_web3_loader": {
+    "message": "Cargador desde blockchain"
+  },
+  "kind_reputation": {
+    "message": "Sitio denunciado"
+  },
+  "kind_reputation_block": {
+    "message": "Sitio ClickFix conocido"
+  },
+  "action_blocked": {
+    "message": "bloqueado"
+  },
+  "action_warned": {
+    "message": "aviso mostrado"
+  },
+  "action_copied_anyway": {
+    "message": "copiado de todos modos"
+  },
+  "action_continued": {
+    "message": "abierto de todos modos"
+  },
+  "action_trusted": {
+    "message": "marcado como de confianza"
+  },
+  "timeNever": {
+    "message": "nunca"
+  },
+  "timeJustNow": {
+    "message": "ahora mismo"
+  },
+  "timeMinutes": {
+    "message": "hace $1 min"
+  },
+  "timeHours": {
+    "message": "hace $1 h"
+  },
+  "timeDays": {
+    "message": "hace $1 días"
+  },
+  "navProtection": {
+    "message": "Protección"
+  },
+  "navTrusted": {
+    "message": "Sitios de confianza"
+  },
+  "navHistory": {
+    "message": "Comprobar historial"
+  },
+  "navExtensions": {
+    "message": "Comprobar extensiones"
+  },
+  "navLog": {
+    "message": "Registro de detecciones"
+  },
+  "navDatabase": {
+    "message": "Base de datos"
+  },
+  "navAbout": {
+    "message": "Acerca de"
+  },
+  "welcomeTitle": {
+    "message": "Su protección está activa"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden vigila ahora las páginas que intentan engañarle para que ejecute comandos, y le avisa de los sitios denunciados como maliciosos."
+  },
+  "welcomePrivacy": {
+    "message": "Todo se comprueba dentro de su navegador, no se envía a ningún sitio nada sobre su navegación."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden necesita acceso a todos los sitios web para protegerle en ellos."
+  },
+  "welcomeGrant": {
+    "message": "Permitir en todos los sitios web"
+  },
+  "tipGrantHosts": {
+    "message": "Permite que ClickFix Warden vigile cada página en busca de trucos ClickFix"
+  },
+  "managedNote": {
+    "message": "Su organización gestiona algunas opciones."
+  },
+  "protectionLead": {
+    "message": "Elija qué vigila ClickFix Warden. Todo se ejecuta dentro de su navegador."
+  },
+  "setEnabled": {
+    "message": "Protección activada"
+  },
+  "tipEnabled": {
+    "message": "Activa o desactiva todas las comprobaciones a la vez"
+  },
+  "setClipboard": {
+    "message": "Bloquear comandos peligrosos en el portapapeles"
+  },
+  "tipClipboard": {
+    "message": "Impide que las páginas pongan un comando oculto en su portapapeles y deja en su lugar una nota inofensiva"
+  },
+  "setPaste": {
+    "message": "Bloquear el pegado de enlaces de inicio de sesión en sitios web"
+  },
+  "tipPaste": {
+    "message": "Impide que pegue un enlace de inicio de sesión con un código secreto en una página que podría robar su cuenta"
+  },
+  "setProtocols": {
+    "message": "Bloquear enlaces que abren programas en su equipo"
+  },
+  "tipProtocols": {
+    "message": "Impide que las páginas abran el Editor de Scripts, la búsqueda de Windows en carpetas remotas y programas similares"
+  },
+  "setFullscreen": {
+    "message": "Detener páginas de actualización falsas a pantalla completa"
+  },
+  "tipFullscreen": {
+    "message": "Impide que las páginas que le piden pegar comandos bloqueen la pantalla con una actualización falsa"
+  },
+  "setPageWarnings": {
+    "message": "Avisar de páginas con instrucciones para pegar"
+  },
+  "tipPageWarnings": {
+    "message": "Muestra una barra de aviso cuando una página le pide que pegue algo en Ejecutar, Terminal o el Explorador de archivos"
+  },
+  "setWeb3": {
+    "message": "Vigilar el código cargado desde una blockchain"
+  },
+  "tipWeb3": {
+    "message": "Avisa cuando un sitio web normal obtiene código oculto de una blockchain, un truco que usan los sitios hackeados"
+  },
+  "setReputation": {
+    "message": "Avisar de sitios denunciados"
+  },
+  "tipReputation": {
+    "message": "Muestra una barra de aviso en sitios que figuran como maliciosos en bases de datos públicas de amenazas"
+  },
+  "setBlockPage": {
+    "message": "Bloquear sitios ClickFix conocidos antes de que carguen"
+  },
+  "tipBlockPage": {
+    "message": "Muestra un aviso a página completa en lugar de un sitio que las bases de datos registran como página ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Descargar actualizaciones de la base de datos y las reglas"
+  },
+  "tipFeedUpdates": {
+    "message": "Descarga cada hora la lista firmada de sitios denunciados y las reglas de detección más recientes"
+  },
+  "trustedLead": {
+    "message": "Estos sitios no se comprueban en absoluto, confiar en un sitio requiere la misma confirmación que en un aviso."
+  },
+  "trustedInputLabel": {
+    "message": "Dirección del sitio"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.empresa.com"
+  },
+  "trustedAdd": {
+    "message": "Añadir"
+  },
+  "tipTrustedAdd": {
+    "message": "Añade el sitio a la lista de sitios que no se comprueban, después de que lo confirme"
+  },
+  "trustedRemove": {
+    "message": "Quitar"
+  },
+  "tipTrustedRemove": {
+    "message": "Vuelve a comprobar este sitio"
+  },
+  "trustedEmpty": {
+    "message": "No hay sitios de confianza"
+  },
+  "orgTitle": {
+    "message": "Mensaje en los avisos"
+  },
+  "orgLead": {
+    "message": "Texto adicional que aparece en cada aviso, por ejemplo a quién contactar en su empresa."
+  },
+  "orgPlaceholder": {
+    "message": "Por ejemplo, llame al soporte informático antes de continuar"
+  },
+  "orgSave": {
+    "message": "Guardar"
+  },
+  "tipOrgSave": {
+    "message": "Guarda el texto que aparece en cada aviso"
+  },
+  "orgSaved": {
+    "message": "Guardado"
+  },
+  "historyLead": {
+    "message": "Compruebe si ha visitado algún sitio que ahora figura en la base de datos, la comprobación se hace solo en su navegador."
+  },
+  "historyDays7": {
+    "message": "Últimos 7 días"
+  },
+  "historyDays30": {
+    "message": "Últimos 30 días"
+  },
+  "historyDays90": {
+    "message": "Últimos 90 días"
+  },
+  "tipHistoryDays": {
+    "message": "Cuánto tiempo atrás se revisa"
+  },
+  "historyScan": {
+    "message": "Comprobar mi historial"
+  },
+  "tipHistoryScan": {
+    "message": "Pide acceso a su historial y lo compara con la base de datos dentro de su navegador"
+  },
+  "historyScanning": {
+    "message": "Comprobando"
+  },
+  "historyChecked": {
+    "message": "Se han comprobado $1 direcciones de los últimos $2 días."
+  },
+  "historyClean": {
+    "message": "Ningún sitio visitado figura en la lista"
+  },
+  "historyFound": {
+    "message": "$1 direcciones visitadas figuran en la lista"
+  },
+  "historyAdvice": {
+    "message": "Si ejecutó algo que le indicó un sitio de la lista, cambie sus contraseñas desde otro dispositivo y haga revisar este equipo."
+  },
+  "historyDenied": {
+    "message": "No se concedió el acceso al historial."
+  },
+  "historyDrop": {
+    "message": "Quitar el acceso al historial"
+  },
+  "tipHistoryDrop": {
+    "message": "Devuelve el permiso del historial hasta que vuelva a comprobarlo"
+  },
+  "exportJson": {
+    "message": "Exportar JSON"
+  },
+  "tipExport": {
+    "message": "Guarda los resultados como archivo JSON en este equipo"
+  },
+  "tipExportLog": {
+    "message": "Guarda el registro como archivo JSON en este equipo"
+  },
+  "colVisited": {
+    "message": "Última visita"
+  },
+  "colAddress": {
+    "message": "Dirección"
+  },
+  "colReport": {
+    "message": "Denuncia"
+  },
+  "colTime": {
+    "message": "Hora"
+  },
+  "colWhat": {
+    "message": "Qué"
+  },
+  "colSite": {
+    "message": "Sitio"
+  },
+  "colDetails": {
+    "message": "Detalles"
+  },
+  "extensionsLead": {
+    "message": "Busque extensiones del navegador instaladas que se sabe que son maliciosas, como los bloqueadores de anuncios falsos usados en ataques CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Comprobar extensiones instaladas"
+  },
+  "tipExtensionsScan": {
+    "message": "Pide permiso para ver la lista de sus extensiones y la compara con una lista de extensiones maliciosas conocidas"
+  },
+  "extensionsDrop": {
+    "message": "Quitar el acceso"
+  },
+  "tipExtensionsDrop": {
+    "message": "Devuelve el permiso para ver la lista de sus extensiones"
+  },
+  "extensionsDenied": {
+    "message": "No se concedió el acceso."
+  },
+  "extensionsChecked": {
+    "message": "Se han comprobado $1 extensiones instaladas."
+  },
+  "extensionsClean": {
+    "message": "No se ha encontrado ninguna extensión maliciosa conocida"
+  },
+  "extensionsKnownAs": {
+    "message": "Conocida como $1"
+  },
+  "extensionsRemove": {
+    "message": "Quitar"
+  },
+  "tipExtensionsRemove": {
+    "message": "Desinstala esta extensión después de que lo confirme"
+  },
+  "logLead": {
+    "message": "Lo que ClickFix Warden bloqueó o sobre lo que avisó, el registro se queda en este equipo."
+  },
+  "logClear": {
+    "message": "Borrar el registro"
+  },
+  "tipLogClear": {
+    "message": "Elimina todas las entradas del registro"
+  },
+  "logClearConfirm": {
+    "message": "¿Eliminar todas las entradas del registro de detecciones?"
+  },
+  "databaseLead": {
+    "message": "Las denuncias proceden de las bases de datos públicas de abuse.ch y se comprueban con una firma digital antes de usarlas."
+  },
+  "dbGenerated": {
+    "message": "$1 denuncias, publicadas $2"
+  },
+  "dbChecked": {
+    "message": "Última comprobación $1"
+  },
+  "dbError": {
+    "message": "Falló la última actualización, $1"
+  },
+  "dbUpdated": {
+    "message": "Actualizada"
+  },
+  "tipUpdateNow": {
+    "message": "Descarga ahora mismo la base de datos y las reglas más recientes"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden no recopila datos, no tiene cuentas, ni telemetría, ni servidor propio."
+  },
+  "aboutNetwork": {
+    "message": "Lo único que descarga es la base de datos y las reglas firmadas desde GitHub, que ve la misma solicitud que con cualquier actualización."
+  },
+  "aboutProject": {
+    "message": "Código fuente"
+  },
+  "aboutPolicy": {
+    "message": "Política de privacidad"
+  },
+  "descClipboard": {
+    "message": "Esta página ha intentado poner $1 en su portapapeles. Se ha bloqueado porque $2."
+  },
+  "descManual": {
+    "message": "El texto que intentó copiar es $1, y no se ha copiado porque $2."
+  },
+  "descPaste": {
+    "message": "Iba a pegar $1 en esta página. Se ha bloqueado porque $2."
+  },
+  "descProtocol": {
+    "message": "Esta página ha intentado abrir $1. Se ha bloqueado porque $2."
+  },
+  "descFullscreen": {
+    "message": "Esta página ha intentado $1. Se ha bloqueado porque $2."
+  },
+  "repLine": {
+    "message": "$1 lo registra como $2, visto por primera vez el $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 lo registra como $2."
+  },
+  "warnLead": {
+    "message": "$1 figura en $2 como $3. Las páginas de este tipo le engañan para que pegue un comando que $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 figura en bases de datos públicas de amenazas. Las páginas de este tipo le engañan para que pegue un comando que $2."
+  },
+  "confirmBody": {
+    "message": "Si continúa, ClickFix Warden dejará de comprobar este sitio, y una página como esta puede $1."
+  },
+  "popupBlockedLine": {
+    "message": "Se bloqueó $1 $2"
+  },
+  "popupReports": {
+    "message": "$1 direcciones denunciadas"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "el Editor de Scripts con un script preparado"
+  },
+  "proto_search_ms": {
+    "message": "una ventana de búsqueda de Windows en una carpeta remota"
+  },
+  "proto_ms_msdt": {
+    "message": "el solucionador de problemas de Windows con ajustes ocultos"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office con ajustes ocultos"
+  },
+  "proto_ms_appinstaller": {
+    "message": "un instalador de aplicaciones desde Internet"
+  },
+  "setLanguage": {
+    "message": "Idioma"
+  },
+  "tipLanguage": {
+    "message": "Cambia el idioma de ClickFix Warden, la opción Predeterminado del navegador sigue el idioma de su navegador"
+  },
+  "langBrowser": {
+    "message": "Predeterminado del navegador"
+  }
+}

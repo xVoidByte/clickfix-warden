@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "コマンドを実行させようとする ClickFix や偽の CAPTCHA による攻撃を防ぎ、悪意があると報告されたサイトについて警告します。"
+  },
+  "dangerLabel": {
+    "message": "危険なおそれのあるサイト"
+  },
+  "titleClipboard": {
+    "message": "危険なコマンドをブロックしました"
+  },
+  "titleManual": {
+    "message": "危険なコマンドはコピーされませんでした"
+  },
+  "titlePaste": {
+    "message": "危険な貼り付けをブロックしました"
+  },
+  "titleProtocol": {
+    "message": "危険なリンクをブロックしました"
+  },
+  "titleFullscreen": {
+    "message": "偽の更新画面をブロックしました"
+  },
+  "descNote": {
+    "message": "クリップボードには無害なメモが入っているため、貼り付けても何も起こりません。"
+  },
+  "descManualNote": {
+    "message": "代わりに無害なメモがコピーされました。"
+  },
+  "descFullscreenNote": {
+    "message": "まだ画面が何かに覆われている場合は Esc キーを押してから、タブを閉じてください。"
+  },
+  "whatTemplate": {
+    "message": "$2​$1"
+  },
+  "what_powershell": {
+    "message": "PowerShell コマンド"
+  },
+  "what_powershell_hidden": {
+    "message": "隠された PowerShell コマンド"
+  },
+  "what_applescript": {
+    "message": "AppleScript コマンド"
+  },
+  "what_applescript_hidden": {
+    "message": "隠された AppleScript コマンド"
+  },
+  "what_terminal": {
+    "message": "ターミナルのコマンド"
+  },
+  "what_terminal_hidden": {
+    "message": "隠されたターミナルのコマンド"
+  },
+  "what_script": {
+    "message": "スクリプト コマンド"
+  },
+  "what_script_hidden": {
+    "message": "隠されたスクリプト コマンド"
+  },
+  "what_cmd": {
+    "message": "コマンド プロンプトのコマンド"
+  },
+  "what_cmd_hidden": {
+    "message": "隠されたコマンド プロンプトのコマンド"
+  },
+  "what_windows": {
+    "message": "Windows コマンド"
+  },
+  "what_windows_hidden": {
+    "message": "隠された Windows コマンド"
+  },
+  "what_generic": {
+    "message": "コマンド"
+  },
+  "what_generic_hidden": {
+    "message": "隠されたコマンド"
+  },
+  "effect_download_run": {
+    "message": "プログラムをダウンロードして実行する"
+  },
+  "effect_disables_av": {
+    "message": "ウイルス対策の保護を無効にする"
+  },
+  "effect_password": {
+    "message": "偽のウィンドウでパスワードの入力を求める"
+  },
+  "effect_remote_share": {
+    "message": "リモートのネットワーク共有にあるファイルを実行する"
+  },
+  "effect_remote_script": {
+    "message": "インターネットから直接スクリプトを実行する"
+  },
+  "effect_remote_install": {
+    "message": "インターネットから直接プログラムをインストールする"
+  },
+  "effect_dns": {
+    "message": "DNS レコードから隠されたコマンドを取り出す"
+  },
+  "effect_finger": {
+    "message": "リモート サーバーから隠されたコマンドを取り出す"
+  },
+  "effect_runs": {
+    "message": "確認なしにコンピューター上で実行される"
+  },
+  "whyPage1": {
+    "message": "ページが$1"
+  },
+  "whyPage2": {
+    "message": "ページが$1うえ、$2"
+  },
+  "lure_captcha": {
+    "message": "CAPTCHA を装っている"
+  },
+  "lure_update": {
+    "message": "更新プログラムのインストールを装っている"
+  },
+  "lure_fix": {
+    "message": "コマンドをエラーの解決方法として示している"
+  },
+  "target_explorer": {
+    "message": "コマンドをエクスプローラーのアドレス バーに貼り付けるよう指示している"
+  },
+  "target_terminal": {
+    "message": "コマンドをターミナルに貼り付けるよう指示している"
+  },
+  "target_run": {
+    "message": "コマンドを「ファイル名を指定して実行」に貼り付けるよう指示している"
+  },
+  "target_paste": {
+    "message": "コマンドをコンピューターのどこかに貼り付けるよう指示している"
+  },
+  "why_payload_reported": {
+    "message": "コマンドが、悪意があると報告されたアドレスからダウンロードを行う"
+  },
+  "why_site_reported": {
+    "message": "このサイトが悪意のあるサイトとして報告されている"
+  },
+  "why_decoy": {
+    "message": "コマンドの後ろに偽の確認用テキストが隠されている"
+  },
+  "why_padding": {
+    "message": "本当のコマンドが空白の後ろに隠されている"
+  },
+  "why_disguised": {
+    "message": "コマンドが動作を隠すように偽装されている"
+  },
+  "why_hidden_window": {
+    "message": "コマンドが非表示のウィンドウで実行される"
+  },
+  "why_generic": {
+    "message": "コマンドに ClickFix 攻撃の特徴がある"
+  },
+  "why_fullscreen": {
+    "message": "ページがコマンドを貼り付けるよう指示している"
+  },
+  "fullscreenWhat": {
+    "message": "偽の Windows Update を装った画面全体の乗っ取り"
+  },
+  "pasteWhat": {
+    "message": "秘密のコードを含むサインイン リンク"
+  },
+  "pasteWhy": {
+    "message": "このようなページはそのリンクを使ってアカウントを乗っ取ることができる"
+  },
+  "protocolWhy": {
+    "message": "このようなリンクは、気付かないうちにコンピューター上でコマンドを実行できる"
+  },
+  "btnClose": {
+    "message": "閉じる"
+  },
+  "btnLeave": {
+    "message": "このサイトから離れる"
+  },
+  "btnTrust": {
+    "message": "このサイトを信頼する"
+  },
+  "tipClose": {
+    "message": "この警告を閉じて、このページにとどまります"
+  },
+  "tipLeave": {
+    "message": "このページを閉じて新しいタブを開きます"
+  },
+  "tipTrust": {
+    "message": "確認後、このサイトでのすべてのチェックを停止します"
+  },
+  "tipUntrust": {
+    "message": "このサイトのチェックを再開します"
+  },
+  "bannerReported": {
+    "message": "このサイトは悪意のあるサイトとして報告されています。"
+  },
+  "bannerDetails": {
+    "message": "詳細"
+  },
+  "bannerFirstSeen": {
+    "message": "初確認 $1"
+  },
+  "bannerWeb3": {
+    "message": "このサイトはブロックチェーンから隠されたコードを読み込んでいます。"
+  },
+  "bannerWeb3Detail": {
+    "message": "ハッキングされたウェブサイトは、この手口で偽の CAPTCHA ページを表示します。"
+  },
+  "bannerInstructions": {
+    "message": "このページは「ファイル名を指定して実行」、ターミナル、エクスプローラーに何かを貼り付けるよう指示しています。"
+  },
+  "bannerInstructionsDetail": {
+    "message": "正規のウェブサイトがこのような指示をすることはありません。"
+  },
+  "rep_clickfix": {
+    "message": "ClickFix ページ"
+  },
+  "rep_clickfix_family": {
+    "message": "$1 を広める ClickFix ページ"
+  },
+  "rep_malware": {
+    "message": "マルウェアの配布元"
+  },
+  "rep_malware_family": {
+    "message": "$1 の配布元"
+  },
+  "rep_c2": {
+    "message": "マルウェアの制御サーバー"
+  },
+  "rep_c2_family": {
+    "message": "$1 の制御サーバー"
+  },
+  "rep_phishing": {
+    "message": "フィッシング ページ"
+  },
+  "rep_phishing_family": {
+    "message": "$1 のフィッシング ページ"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "マルウェア配布"
+  },
+  "category_c2": {
+    "message": "マルウェア制御サーバー"
+  },
+  "category_phishing": {
+    "message": "フィッシング"
+  },
+  "confirmTrustTitle": {
+    "message": "$1 の保護を停止しますか?"
+  },
+  "confirmOpenTitle": {
+    "message": "それでも $1 を開きますか?"
+  },
+  "confirmReported": {
+    "message": "このサイトは公開されている脅威データベースで報告されています。"
+  },
+  "confirmBodyStrong": {
+    "message": "コンピューターを感染させ、パスワード、保存したクレジット カード、暗号資産ウォレットを盗む"
+  },
+  "confirmOnlyReported": {
+    "message": "報告が誤りだとわかっている場合にのみ実行してください。"
+  },
+  "confirmOnlyKnown": {
+    "message": "よく知っているサイトに対してのみ実行してください。"
+  },
+  "confirmCheckTrust": {
+    "message": "このサイトを許可すると認証情報、Cookie、お金を失うおそれがあることを理解しています"
+  },
+  "confirmCheckOpen": {
+    "message": "このサイトを開くと認証情報、Cookie、お金を失うおそれがあることを理解しています"
+  },
+  "confirmTrust": {
+    "message": "このサイトを信頼する"
+  },
+  "confirmOpen": {
+    "message": "それでも開く"
+  },
+  "confirmKeep": {
+    "message": "保護を続ける"
+  },
+  "warnTitle": {
+    "message": "危険なサイトをブロックしました"
+  },
+  "warnAddress": {
+    "message": "アドレス"
+  },
+  "warnReportedBy": {
+    "message": "報告元"
+  },
+  "warnSteals": {
+    "message": "パスワード、保存したクレジット カード、暗号資産ウォレットを盗む"
+  },
+  "warnLeave": {
+    "message": "安全な場所に戻る"
+  },
+  "warnLeaveTip": {
+    "message": "このサイトの代わりに新しいタブを開きます"
+  },
+  "warnContinue": {
+    "message": "それでも開く"
+  },
+  "warnContinueTip": {
+    "message": "リスクを確認した後、今後 1 時間このサイトを開けるようにします"
+  },
+  "warnAdvice": {
+    "message": "「ファイル名を指定して実行」、ターミナル、エクスプローラーに何かを貼り付けるよう求める正規のウェブサイトはありません。"
+  },
+  "popupOn": {
+    "message": "オン"
+  },
+  "popupOff": {
+    "message": "保護はオフになっています。"
+  },
+  "popupNotWebPage": {
+    "message": "ウェブページではありません"
+  },
+  "popupTrusted": {
+    "message": "信頼済みのため、チェックしていません"
+  },
+  "popupReported": {
+    "message": "悪意のあるサイトとして報告されています"
+  },
+  "popupNoReports": {
+    "message": "このサイトに関する報告はありません"
+  },
+  "popupUntrust": {
+    "message": "このサイトの信頼をやめる"
+  },
+  "popupUpdated": {
+    "message": "最終更新 $1、ルール バージョン $2"
+  },
+  "popupFeedNone": {
+    "message": "データベースはまだダウンロードされていません"
+  },
+  "popupFeedError": {
+    "message": "データベースの更新に失敗しました。設定を確認してください"
+  },
+  "popupNoDetections": {
+    "message": "まだ何もブロックしていません"
+  },
+  "popupSettings": {
+    "message": "設定"
+  },
+  "popupHistory": {
+    "message": "履歴をチェック"
+  },
+  "popupUpdate": {
+    "message": "今すぐ更新"
+  },
+  "popupUpdating": {
+    "message": "更新中"
+  },
+  "popupRulesLine": {
+    "message": "検出ルール バージョン $1、$2"
+  },
+  "popupRulesBundled": {
+    "message": "組み込み"
+  },
+  "popupRulesUpdated": {
+    "message": "オンラインで更新済み"
+  },
+  "supportShort": {
+    "message": "支援"
+  },
+  "tipSupport": {
+    "message": "寄付で ClickFix Warden を支援できるページを開きます"
+  },
+  "supportProject": {
+    "message": "プロジェクトを支援する"
+  },
+  "kind_clipboard": {
+    "message": "クリップボードのコマンド"
+  },
+  "kind_manual_copy": {
+    "message": "コピーしたコマンド"
+  },
+  "kind_paste": {
+    "message": "サインイン リンクの貼り付け"
+  },
+  "kind_protocol": {
+    "message": "プログラムを開くリンク"
+  },
+  "kind_fullscreen": {
+    "message": "偽の更新画面"
+  },
+  "kind_page_instructions": {
+    "message": "貼り付けの指示"
+  },
+  "kind_web3_loader": {
+    "message": "ブロックチェーン ローダー"
+  },
+  "kind_reputation": {
+    "message": "報告済みのサイト"
+  },
+  "kind_reputation_block": {
+    "message": "既知の ClickFix サイト"
+  },
+  "action_blocked": {
+    "message": "ブロック"
+  },
+  "action_warned": {
+    "message": "警告"
+  },
+  "action_copied_anyway": {
+    "message": "そのままコピー"
+  },
+  "action_continued": {
+    "message": "そのまま表示"
+  },
+  "action_trusted": {
+    "message": "信頼"
+  },
+  "timeNever": {
+    "message": "なし"
+  },
+  "timeJustNow": {
+    "message": "たった今"
+  },
+  "timeMinutes": {
+    "message": "$1 分前"
+  },
+  "timeHours": {
+    "message": "$1 時間前"
+  },
+  "timeDays": {
+    "message": "$1 日前"
+  },
+  "navProtection": {
+    "message": "保護"
+  },
+  "navTrusted": {
+    "message": "信頼済みサイト"
+  },
+  "navHistory": {
+    "message": "履歴チェック"
+  },
+  "navExtensions": {
+    "message": "拡張機能チェック"
+  },
+  "navLog": {
+    "message": "検出ログ"
+  },
+  "navDatabase": {
+    "message": "データベース"
+  },
+  "navAbout": {
+    "message": "情報"
+  },
+  "welcomeTitle": {
+    "message": "保護されています"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden は、コマンドを実行させようとするページを監視し、悪意があると報告されたサイトについて警告します。"
+  },
+  "welcomePrivacy": {
+    "message": "チェックはすべてブラウザー内で行われ、閲覧に関する情報はどこにも送信されません。"
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden がウェブサイトを保護するには、すべてのウェブサイトへのアクセスが必要です。"
+  },
+  "welcomeGrant": {
+    "message": "すべてのウェブサイトで許可"
+  },
+  "tipGrantHosts": {
+    "message": "ClickFix Warden がすべてのページで ClickFix の手口を監視できるようにします"
+  },
+  "managedNote": {
+    "message": "一部の設定は組織によって管理されています。"
+  },
+  "protectionLead": {
+    "message": "ClickFix Warden が監視する内容を選んでください。すべてブラウザー内で動作します。"
+  },
+  "setEnabled": {
+    "message": "保護をオンにする"
+  },
+  "tipEnabled": {
+    "message": "すべてのチェックをまとめてオンまたはオフにします"
+  },
+  "setClipboard": {
+    "message": "クリップボード内の危険なコマンドをブロックする"
+  },
+  "tipClipboard": {
+    "message": "ページが隠されたコマンドをクリップボードに入れるのを防ぎ、代わりに無害なメモを入れます"
+  },
+  "setPaste": {
+    "message": "ウェブサイトへのサインイン リンクの貼り付けをブロックする"
+  },
+  "tipPaste": {
+    "message": "秘密のコードを含むサインイン リンクを、アカウントを盗むおそれのあるページに貼り付けるのを防ぎます"
+  },
+  "setProtocols": {
+    "message": "コンピューター上のプログラムを開くリンクをブロックする"
+  },
+  "tipProtocols": {
+    "message": "ページがスクリプトエディタ、リモート フォルダーに対する Windows 検索などのプログラムを開くのを防ぎます"
+  },
+  "setFullscreen": {
+    "message": "偽の全画面更新ページを止める"
+  },
+  "tipFullscreen": {
+    "message": "コマンドの貼り付けを指示するページが、偽の更新画面で画面をロックするのを防ぎます"
+  },
+  "setPageWarnings": {
+    "message": "貼り付けを指示するページについて警告する"
+  },
+  "tipPageWarnings": {
+    "message": "ページが「ファイル名を指定して実行」、ターミナル、エクスプローラーに何かを貼り付けるよう指示したときに警告バーを表示します"
+  },
+  "setWeb3": {
+    "message": "ブロックチェーンから読み込まれるコードを監視する"
+  },
+  "tipWeb3": {
+    "message": "通常のウェブサイトがブロックチェーンから隠されたコードを取得したときに警告します。ハッキングされたサイトが使う手口です"
+  },
+  "setReputation": {
+    "message": "報告されたサイトについて警告する"
+  },
+  "tipReputation": {
+    "message": "公開されている脅威データベースで悪意があるとされたサイトに警告バーを表示します"
+  },
+  "setBlockPage": {
+    "message": "既知の ClickFix サイトを読み込む前にブロックする"
+  },
+  "tipBlockPage": {
+    "message": "データベースで ClickFix ページとされたサイトの代わりに、全画面の警告を表示します"
+  },
+  "setFeedUpdates": {
+    "message": "データベースとルールの更新をダウンロードする"
+  },
+  "tipFeedUpdates": {
+    "message": "署名付きの報告済みサイト一覧と最新の検出ルールを 1 時間ごとにダウンロードします"
+  },
+  "trustedLead": {
+    "message": "これらのサイトは一切チェックされません。サイトを信頼するには、警告の場合と同じ確認が必要です。"
+  },
+  "trustedInputLabel": {
+    "message": "サイトのアドレス"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "追加"
+  },
+  "tipTrustedAdd": {
+    "message": "確認後、チェックしないサイトの一覧にこのサイトを追加します"
+  },
+  "trustedRemove": {
+    "message": "削除"
+  },
+  "tipTrustedRemove": {
+    "message": "このサイトのチェックを再開します"
+  },
+  "trustedEmpty": {
+    "message": "信頼済みのサイトはありません"
+  },
+  "orgTitle": {
+    "message": "警告に表示するメッセージ"
+  },
+  "orgLead": {
+    "message": "すべての警告に表示する追加のテキストです。たとえば、社内の問い合わせ先などを入力します。"
+  },
+  "orgPlaceholder": {
+    "message": "たとえば、続行する前に IT ヘルプデスクに電話してください"
+  },
+  "orgSave": {
+    "message": "保存"
+  },
+  "tipOrgSave": {
+    "message": "すべての警告に表示するテキストを保存します"
+  },
+  "orgSaved": {
+    "message": "保存しました"
+  },
+  "historyLead": {
+    "message": "現在データベースに登録されているサイトにアクセスしたことがあるかを確認します。チェックはブラウザー内でのみ行われます。"
+  },
+  "historyDays7": {
+    "message": "過去 7 日間"
+  },
+  "historyDays30": {
+    "message": "過去 30 日間"
+  },
+  "historyDays90": {
+    "message": "過去 90 日間"
+  },
+  "tipHistoryDays": {
+    "message": "どこまでさかのぼって確認するか"
+  },
+  "historyScan": {
+    "message": "履歴をチェック"
+  },
+  "tipHistoryScan": {
+    "message": "閲覧履歴へのアクセスを求め、ブラウザー内でデータベースと照合します"
+  },
+  "historyScanning": {
+    "message": "チェック中"
+  },
+  "historyChecked": {
+    "message": "過去 $2 日間の $1 件のアドレスをチェックしました。"
+  },
+  "historyClean": {
+    "message": "アクセスしたサイトの中に登録済みのものはありません"
+  },
+  "historyFound": {
+    "message": "アクセスしたアドレスのうち $1 件が登録されています"
+  },
+  "historyAdvice": {
+    "message": "登録済みのサイトの指示で何かを実行した場合は、別のデバイスからパスワードを変更し、このコンピューターを点検してもらってください。"
+  },
+  "historyDenied": {
+    "message": "履歴へのアクセスが許可されませんでした。"
+  },
+  "historyDrop": {
+    "message": "履歴へのアクセスを解除"
+  },
+  "tipHistoryDrop": {
+    "message": "次にチェックするまで、履歴へのアクセス許可を返却します"
+  },
+  "exportJson": {
+    "message": "JSON をエクスポート"
+  },
+  "tipExport": {
+    "message": "結果を JSON ファイルとしてこのコンピューターに保存します"
+  },
+  "tipExportLog": {
+    "message": "ログを JSON ファイルとしてこのコンピューターに保存します"
+  },
+  "colVisited": {
+    "message": "最終アクセス"
+  },
+  "colAddress": {
+    "message": "アドレス"
+  },
+  "colReport": {
+    "message": "報告"
+  },
+  "colTime": {
+    "message": "時刻"
+  },
+  "colWhat": {
+    "message": "内容"
+  },
+  "colSite": {
+    "message": "サイト"
+  },
+  "colDetails": {
+    "message": "詳細"
+  },
+  "extensionsLead": {
+    "message": "CrashFix 攻撃で使われる偽の広告ブロッカーなど、悪意があることがわかっているブラウザー拡張機能がインストールされていないかを確認します。"
+  },
+  "extensionsScan": {
+    "message": "インストール済みの拡張機能をチェック"
+  },
+  "tipExtensionsScan": {
+    "message": "拡張機能の一覧を取得する許可を求め、既知の悪意のある拡張機能の一覧と照合します"
+  },
+  "extensionsDrop": {
+    "message": "アクセスを解除"
+  },
+  "tipExtensionsDrop": {
+    "message": "拡張機能の一覧を取得する許可を返却します"
+  },
+  "extensionsDenied": {
+    "message": "アクセスが許可されませんでした。"
+  },
+  "extensionsChecked": {
+    "message": "インストール済みの拡張機能 $1 個をチェックしました。"
+  },
+  "extensionsClean": {
+    "message": "既知の悪意のある拡張機能は見つかりませんでした"
+  },
+  "extensionsKnownAs": {
+    "message": "$1 として知られています"
+  },
+  "extensionsRemove": {
+    "message": "削除"
+  },
+  "tipExtensionsRemove": {
+    "message": "確認後、この拡張機能をアンインストールします"
+  },
+  "logLead": {
+    "message": "ClickFix Warden がブロックまたは警告した内容です。ログはこのコンピューターにのみ保存されます。"
+  },
+  "logClear": {
+    "message": "ログを消去"
+  },
+  "tipLogClear": {
+    "message": "ログのすべての項目を削除します"
+  },
+  "logClearConfirm": {
+    "message": "検出ログのすべての項目を削除しますか?"
+  },
+  "databaseLead": {
+    "message": "報告は公開されている abuse.ch のデータベースから取得され、使用前にデジタル署名で検証されます。"
+  },
+  "dbGenerated": {
+    "message": "報告 $1 件、公開 $2"
+  },
+  "dbChecked": {
+    "message": "最終確認 $1"
+  },
+  "dbError": {
+    "message": "前回の更新に失敗しました。$1"
+  },
+  "dbUpdated": {
+    "message": "最新の状態です"
+  },
+  "tipUpdateNow": {
+    "message": "最新のデータベースとルールを今すぐダウンロードします"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden はデータを一切収集しません。アカウント、テレメトリ、独自のサーバーはありません。"
+  },
+  "aboutNetwork": {
+    "message": "ダウンロードするのは GitHub にある署名付きのデータベースとルールだけで、GitHub が受け取るのは通常の更新と同じリクエストです。"
+  },
+  "aboutProject": {
+    "message": "ソース コード"
+  },
+  "aboutPolicy": {
+    "message": "プライバシー ポリシー"
+  },
+  "descClipboard": {
+    "message": "このページがクリップボードに$1を入れようとしました。$2ため、ブロックしました。"
+  },
+  "descManual": {
+    "message": "コピーしようとしたテキストは$1です。$2ため、コピーしませんでした。"
+  },
+  "descPaste": {
+    "message": "このページに$1を貼り付けようとしていました。$2ため、ブロックしました。"
+  },
+  "descProtocol": {
+    "message": "このページが$1を開こうとしました。$2ため、ブロックしました。"
+  },
+  "descFullscreen": {
+    "message": "このページが$1を試みました。$2ため、ブロックしました。"
+  },
+  "repLine": {
+    "message": "$1 はこれを$2として登録しています。初確認は $3 です。"
+  },
+  "repLineNoDate": {
+    "message": "$1 はこれを$2として登録しています。"
+  },
+  "warnLead": {
+    "message": "$1 は $2 に$3として登録されています。このようなページは、だまして$4コマンドを貼り付けさせます。"
+  },
+  "warnLeadUnknown": {
+    "message": "$1 は公開されている脅威データベースに登録されています。このようなページは、だまして$2コマンドを貼り付けさせます。"
+  },
+  "confirmBody": {
+    "message": "続行すると ClickFix Warden はこのサイトのチェックを停止し、このようなページが$1おそれがあります。"
+  },
+  "popupBlockedLine": {
+    "message": "$2、$1をブロックしました"
+  },
+  "popupReports": {
+    "message": "報告済みアドレス $1 件"
+  },
+  "kindAction": {
+    "message": "$1($2)"
+  },
+  "proto_applescript": {
+    "message": "用意されたスクリプトが入ったスクリプトエディタ"
+  },
+  "proto_search_ms": {
+    "message": "リモート フォルダーを表示する Windows 検索ウィンドウ"
+  },
+  "proto_ms_msdt": {
+    "message": "隠し設定が付いた Windows トラブルシューティング ツール"
+  },
+  "proto_ms_officecmd": {
+    "message": "隠し設定が付いた Office"
+  },
+  "proto_ms_appinstaller": {
+    "message": "インターネット上のアプリ インストーラー"
+  },
+  "setLanguage": {
+    "message": "言語"
+  },
+  "tipLanguage": {
+    "message": "ClickFix Warden の表示言語を変更します。「ブラウザーの既定」ではブラウザーの言語に合わせます"
+  },
+  "langBrowser": {
+    "message": "ブラウザーの既定"
+  }
+}

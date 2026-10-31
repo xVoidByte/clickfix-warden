@@ -22,7 +22,9 @@
       .recent .item { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); }
       .recent .item span:last-child { color: var(--muted); white-space: nowrap; }
       footer { padding: 14px 18px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 18px; font-size: 14px; font-weight: 600; }
-      footer .support { margin-left: auto; }
+      footer { flex-wrap: wrap; row-gap: 10px; }
+      footer a { white-space: nowrap; }
+      footer .support { margin-inline-start: auto; }
       .g-backdrop { position: fixed; }
       body .g-card, body .g-card.wide { width: 340px; padding: 20px; }
       .g-title { font-size: 20px; }

@@ -21,6 +21,10 @@ ClickFix pages pretend to be a CAPTCHA, a browser error or a Windows update. The
 
 Pages that merely show commands with a copy button, like install guides for Rust, Homebrew, uv or Docker, keep working. A command is only blocked when it carries the marks of a ClickFix lure, or when the page around it walks you through pasting it.
 
+## Languages
+
+The interface comes in 32 languages and follows the browser language, with English as the fallback. Anyone can pick a different language in the settings. The privacy policy has the same language picker in its top right corner.
+
 ## Privacy
 
 ClickFix Warden collects no data. It has no account, no telemetry and no server of its own, and every check runs inside your browser. The only network request is the hourly download of the signed database and rules from GitHub Pages, which carries nothing about you or your browsing. The detection log and the optional history check stay on your computer. See the [privacy policy](https://xvoidbyte.github.io/ClickFixWarden/privacy.html).

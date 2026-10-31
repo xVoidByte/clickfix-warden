@@ -1,6 +1,6 @@
 // Graphite design tokens and the shared warning parts used by the in-page overlay and the extension pages.
 
-import { t } from '../shared/i18n';
+import { t, tParts } from '../shared/i18n';
 
 export const FONT_STACK = "'CFW Jakarta', 'CFW Manrope', 'Plus Jakarta Sans', Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif";
 
@@ -32,7 +32,7 @@ export const PARTS_CSS = `
 .g-check span { white-space: nowrap; }
 .g-card.wide { width: 780px; container-type: inline-size; }
 @container (max-width: 720px) { .g-check span { white-space: normal; } }
-.g-card { width: 560px; max-width: calc(100vw - 32px); max-height: calc(100vh - 32px); overflow: auto; box-sizing: border-box; background: #222327; border: 1px solid #34363C; border-radius: 18px; box-shadow: 0 24px 70px rgba(0,0,0,0.55); padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 14px; color: #F3F3F4; text-align: left; }
+.g-card { width: 560px; max-width: calc(100vw - 32px); max-height: calc(100vh - 32px); overflow: auto; box-sizing: border-box; background: #222327; border: 1px solid #34363C; border-radius: 18px; box-shadow: 0 24px 70px rgba(0,0,0,0.55); padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 14px; color: #F3F3F4; text-align: start; }
 .g-backdrop { position: fixed; inset: 0; background: rgba(8,8,10,0.66); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 2147483647; }
 .g-note { margin: 0; padding: 12px 14px; border-radius: 12px; background: #1A1B1E; border: 1px solid #34363C; font-size: 14px; line-height: 1.55; color: #F3F3F4; }
 `;
@@ -77,11 +77,10 @@ export function dangerHead(doc: Document): HTMLElement {
   return head;
 }
 
-/** "A <strong>what</strong> B <strong>why</strong>." with the text kept out of HTML parsing. */
-export function boldSentence(doc: Document, a: string, what: string, b: string, why: string): HTMLParagraphElement {
+/** A message with $1 and $2 shown in bold, each language keeps its own word order, text never goes through HTML parsing. */
+export function boldSentence(doc: Document, key: string, ...bold: string[]): HTMLParagraphElement {
   const p = el(doc, 'p', 'g-text');
-  const sep = /^[,.]/.test(b) ? '' : ' ';
-  p.append(a + ' ', el(doc, 'strong', undefined, what), sep + b + ' ', el(doc, 'strong', undefined, why), '.');
+  p.append(...tParts(key, bold.map((b) => el(doc, 'strong', undefined, b))));
   return p;
 }
 
@@ -103,9 +102,8 @@ export function confirmDialog(doc: Document, opts: ConfirmOptions): HTMLElement 
   const title = el(doc, 'h1', 'g-title white', t(opts.mode === 'trust' ? 'confirmTrustTitle' : 'confirmOpenTitle', opts.host));
   title.id = 'cfw-confirm-title';
   card.setAttribute('aria-labelledby', title.id);
-  const body = el(doc, 'p', 'g-text');
-  if (opts.reported) body.append(t('confirmReported') + ' ');
-  body.append(t('confirmBodyA') + ' ', el(doc, 'strong', undefined, t('confirmBodyStrong')), '.');
+  const body = boldSentence(doc, 'confirmBody', t('confirmBodyStrong'));
+  if (opts.reported) body.prepend(t('confirmReported') + ' ');
   const only = el(doc, 'p', 'g-text', t(opts.reported ? 'confirmOnlyReported' : 'confirmOnlyKnown'));
   const label = el(doc, 'label', 'g-check');
   const box = el(doc, 'input');

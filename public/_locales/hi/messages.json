@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "आपसे कमांड चलवाने वाले ClickFix और नकली CAPTCHA हमलों को रोकता है, और दुर्भावनापूर्ण बताई गई साइटों पर चेतावनी देता है।"
+  },
+  "dangerLabel": {
+    "message": "संभावित रूप से खतरनाक साइट"
+  },
+  "titleClipboard": {
+    "message": "खतरनाक कमांड ब्लॉक किया गया"
+  },
+  "titleManual": {
+    "message": "खतरनाक कमांड कॉपी नहीं किया गया"
+  },
+  "titlePaste": {
+    "message": "खतरनाक पेस्ट ब्लॉक किया गया"
+  },
+  "titleProtocol": {
+    "message": "खतरनाक लिंक ब्लॉक किया गया"
+  },
+  "titleFullscreen": {
+    "message": "नकली अपडेट स्क्रीन ब्लॉक की गई"
+  },
+  "descNote": {
+    "message": "अब आपके क्लिपबोर्ड में एक हानिरहित नोट है, इसलिए पेस्ट करने से कुछ नहीं होगा।"
+  },
+  "descManualNote": {
+    "message": "इसकी जगह एक हानिरहित नोट कॉपी किया गया।"
+  },
+  "descFullscreenNote": {
+    "message": "अगर स्क्रीन पर अब भी कुछ छाया हुआ है, तो Esc दबाएँ, फिर टैब बंद करें।"
+  },
+  "whatTemplate": {
+    "message": "$2 एक $1"
+  },
+  "what_powershell": {
+    "message": "PowerShell कमांड"
+  },
+  "what_powershell_hidden": {
+    "message": "छिपा हुआ PowerShell कमांड"
+  },
+  "what_applescript": {
+    "message": "AppleScript कमांड"
+  },
+  "what_applescript_hidden": {
+    "message": "छिपा हुआ AppleScript कमांड"
+  },
+  "what_terminal": {
+    "message": "टर्मिनल कमांड"
+  },
+  "what_terminal_hidden": {
+    "message": "छिपा हुआ टर्मिनल कमांड"
+  },
+  "what_script": {
+    "message": "स्क्रिप्ट कमांड"
+  },
+  "what_script_hidden": {
+    "message": "छिपा हुआ स्क्रिप्ट कमांड"
+  },
+  "what_cmd": {
+    "message": "कमांड प्रॉम्प्ट कमांड"
+  },
+  "what_cmd_hidden": {
+    "message": "छिपा हुआ कमांड प्रॉम्प्ट कमांड"
+  },
+  "what_windows": {
+    "message": "Windows कमांड"
+  },
+  "what_windows_hidden": {
+    "message": "छिपा हुआ Windows कमांड"
+  },
+  "what_generic": {
+    "message": "कमांड"
+  },
+  "what_generic_hidden": {
+    "message": "छिपा हुआ कमांड"
+  },
+  "effect_download_run": {
+    "message": "प्रोग्राम डाउनलोड करके चलाने वाला"
+  },
+  "effect_disables_av": {
+    "message": "आपकी एंटीवायरस सुरक्षा बंद करने वाला"
+  },
+  "effect_password": {
+    "message": "नकली विंडो दिखाकर आपका पासवर्ड माँगने वाला"
+  },
+  "effect_remote_share": {
+    "message": "रिमोट नेटवर्क शेयर से फ़ाइलें चलाने वाला"
+  },
+  "effect_remote_script": {
+    "message": "सीधे इंटरनेट से स्क्रिप्ट चलाने वाला"
+  },
+  "effect_remote_install": {
+    "message": "सीधे इंटरनेट से प्रोग्राम इंस्टॉल करने वाला"
+  },
+  "effect_dns": {
+    "message": "DNS रिकॉर्ड से छिपे हुए कमांड लाने वाला"
+  },
+  "effect_finger": {
+    "message": "रिमोट सर्वर से छिपे हुए कमांड लाने वाला"
+  },
+  "effect_runs": {
+    "message": "आपसे पूछे बिना आपके कंप्यूटर पर चलने वाला"
+  },
+  "whyPage1": {
+    "message": "पेज $1"
+  },
+  "whyPage2": {
+    "message": "पेज $1 और $2"
+  },
+  "lure_captcha": {
+    "message": "CAPTCHA होने का दिखावा करता है"
+  },
+  "lure_update": {
+    "message": "अपडेट इंस्टॉल करने का दिखावा करता है"
+  },
+  "lure_fix": {
+    "message": "इसे किसी त्रुटि के समाधान के रूप में पेश करता है"
+  },
+  "target_explorer": {
+    "message": "आपसे इसे फ़ाइल एक्सप्लोरर के पता बार में पेस्ट करने को कहता है"
+  },
+  "target_terminal": {
+    "message": "आपसे इसे टर्मिनल में पेस्ट करने को कहता है"
+  },
+  "target_run": {
+    "message": "आपसे इसे चलाएँ बॉक्स में पेस्ट करने को कहता है"
+  },
+  "target_paste": {
+    "message": "आपसे इसे अपने कंप्यूटर पर कहीं पेस्ट करने को कहता है"
+  },
+  "why_payload_reported": {
+    "message": "यह कमांड दुर्भावनापूर्ण बताए गए पते से डाउनलोड करता है"
+  },
+  "why_site_reported": {
+    "message": "इस साइट को दुर्भावनापूर्ण बताया गया है"
+  },
+  "why_decoy": {
+    "message": "कमांड के बाद नकली सत्यापन टेक्स्ट छिपाया गया है"
+  },
+  "why_padding": {
+    "message": "असली कमांड खाली जगह के पीछे छिपाया गया है"
+  },
+  "why_disguised": {
+    "message": "कमांड का रूप बदला गया है ताकि पता न चले कि वह क्या करता है"
+  },
+  "why_hidden_window": {
+    "message": "यह कमांड छिपी हुई विंडो में चलता है"
+  },
+  "why_generic": {
+    "message": "इसमें ClickFix हमले के निशान हैं"
+  },
+  "why_fullscreen": {
+    "message": "पेज आपसे एक कमांड पेस्ट करने को कहता है"
+  },
+  "fullscreenWhat": {
+    "message": "नकली Windows अपडेट की तरह आपकी पूरी स्क्रीन पर कब्ज़ा"
+  },
+  "pasteWhat": {
+    "message": "गुप्त कोड वाला साइन-इन लिंक"
+  },
+  "pasteWhy": {
+    "message": "ऐसा पेज इसका इस्तेमाल करके आपके खाते पर कब्ज़ा कर सकता है"
+  },
+  "protocolWhy": {
+    "message": "ऐसे लिंक आपकी जानकारी के बिना आपके कंप्यूटर पर कमांड चला सकते हैं"
+  },
+  "btnClose": {
+    "message": "बंद करें"
+  },
+  "btnLeave": {
+    "message": "यह साइट छोड़ें"
+  },
+  "btnTrust": {
+    "message": "इस साइट पर भरोसा करें"
+  },
+  "tipClose": {
+    "message": "यह चेतावनी छिपाता है और आपको इसी पेज पर रखता है"
+  },
+  "tipLeave": {
+    "message": "यह पेज बंद करके एक नया टैब खोलता है"
+  },
+  "tipTrust": {
+    "message": "आपकी पुष्टि के बाद इस साइट पर सभी जाँच बंद कर देता है"
+  },
+  "tipUntrust": {
+    "message": "इस साइट की जाँच फिर से शुरू करता है"
+  },
+  "bannerReported": {
+    "message": "इस साइट को दुर्भावनापूर्ण बताया गया है।"
+  },
+  "bannerDetails": {
+    "message": "विवरण"
+  },
+  "bannerFirstSeen": {
+    "message": "पहली बार $1 को देखा गया"
+  },
+  "bannerWeb3": {
+    "message": "यह साइट ब्लॉकचेन से छिपा हुआ कोड लोड करती है।"
+  },
+  "bannerWeb3Detail": {
+    "message": "हैक की गई वेबसाइटें नकली CAPTCHA पेज दिखाने के लिए यह तरकीब इस्तेमाल करती हैं।"
+  },
+  "bannerInstructions": {
+    "message": "यह पेज आपसे चलाएँ, टर्मिनल या फ़ाइल एक्सप्लोरर में कुछ पेस्ट करने को कहता है।"
+  },
+  "bannerInstructionsDetail": {
+    "message": "असली वेबसाइटें आपसे ऐसा करने को कभी नहीं कहतीं।"
+  },
+  "rep_clickfix": {
+    "message": "एक ClickFix पेज"
+  },
+  "rep_clickfix_family": {
+    "message": "$1 फैलाने वाला एक ClickFix पेज"
+  },
+  "rep_malware": {
+    "message": "एक मैलवेयर डाउनलोड"
+  },
+  "rep_malware_family": {
+    "message": "$1 का डाउनलोड"
+  },
+  "rep_c2": {
+    "message": "एक मैलवेयर कंट्रोल सर्वर"
+  },
+  "rep_c2_family": {
+    "message": "$1 का कंट्रोल सर्वर"
+  },
+  "rep_phishing": {
+    "message": "एक फ़िशिंग पेज"
+  },
+  "rep_phishing_family": {
+    "message": "$1 का फ़िशिंग पेज"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "मैलवेयर डाउनलोड"
+  },
+  "category_c2": {
+    "message": "मैलवेयर कंट्रोल सर्वर"
+  },
+  "category_phishing": {
+    "message": "फ़िशिंग"
+  },
+  "confirmTrustTitle": {
+    "message": "$1 की सुरक्षा बंद करें?"
+  },
+  "confirmOpenTitle": {
+    "message": "फिर भी $1 खोलें?"
+  },
+  "confirmReported": {
+    "message": "इस साइट की सार्वजनिक खतरा डेटाबेस में रिपोर्ट की गई है।"
+  },
+  "confirmBodyStrong": {
+    "message": "आपके कंप्यूटर को संक्रमित करके आपके पासवर्ड, सेव किए गए क्रेडिट कार्ड और क्रिप्टो वॉलेट चुरा सकता है"
+  },
+  "confirmOnlyReported": {
+    "message": "ऐसा तभी करें जब आपको पता हो कि रिपोर्ट गलत है।"
+  },
+  "confirmOnlyKnown": {
+    "message": "ऐसा सिर्फ़ उन साइटों के लिए करें जिन्हें आप अच्छी तरह जानते हैं।"
+  },
+  "confirmCheckTrust": {
+    "message": "मुझे पता है कि इस साइट पर भरोसा करने से मेरे क्रेडेंशियल, कुकी और पैसे जा सकते हैं"
+  },
+  "confirmCheckOpen": {
+    "message": "मुझे पता है कि इस साइट को खोलने से मेरे क्रेडेंशियल, कुकी और पैसे जा सकते हैं"
+  },
+  "confirmTrust": {
+    "message": "इस साइट पर भरोसा करें"
+  },
+  "confirmOpen": {
+    "message": "फिर भी खोलें"
+  },
+  "confirmKeep": {
+    "message": "मुझे सुरक्षित रखें"
+  },
+  "warnTitle": {
+    "message": "खतरनाक साइट ब्लॉक की गई"
+  },
+  "warnAddress": {
+    "message": "पता"
+  },
+  "warnReportedBy": {
+    "message": "रिपोर्ट करने वाला"
+  },
+  "warnSteals": {
+    "message": "आपके पासवर्ड, सेव किए गए क्रेडिट कार्ड और क्रिप्टो वॉलेट चुरा लेता है"
+  },
+  "warnLeave": {
+    "message": "सुरक्षित जगह पर वापस जाएँ"
+  },
+  "warnLeaveTip": {
+    "message": "इस साइट की जगह एक नया टैब खोलता है"
+  },
+  "warnContinue": {
+    "message": "फिर भी खोलें"
+  },
+  "warnContinueTip": {
+    "message": "जोखिम की पुष्टि करने के बाद अगले एक घंटे के लिए साइट खोलता है"
+  },
+  "warnAdvice": {
+    "message": "कोई भी असली वेबसाइट आपसे चलाएँ, टर्मिनल या फ़ाइल एक्सप्लोरर में कुछ भी पेस्ट करने को नहीं कहती।"
+  },
+  "popupOn": {
+    "message": "चालू"
+  },
+  "popupOff": {
+    "message": "सुरक्षा बंद है।"
+  },
+  "popupNotWebPage": {
+    "message": "यह वेब पेज नहीं है"
+  },
+  "popupTrusted": {
+    "message": "आपने भरोसा किया है, जाँच नहीं होती"
+  },
+  "popupReported": {
+    "message": "दुर्भावनापूर्ण बताया गया"
+  },
+  "popupNoReports": {
+    "message": "इस साइट के बारे में कोई रिपोर्ट नहीं"
+  },
+  "popupUntrust": {
+    "message": "इस साइट पर भरोसा हटाएँ"
+  },
+  "popupUpdated": {
+    "message": "$1 अपडेट हुआ, नियम संस्करण $2"
+  },
+  "popupFeedNone": {
+    "message": "डेटाबेस अभी डाउनलोड नहीं हुआ है"
+  },
+  "popupFeedError": {
+    "message": "डेटाबेस अपडेट विफल रहा, सेटिंग देखें"
+  },
+  "popupNoDetections": {
+    "message": "अभी तक कुछ भी ब्लॉक नहीं हुआ"
+  },
+  "popupSettings": {
+    "message": "सेटिंग"
+  },
+  "popupHistory": {
+    "message": "मेरा इतिहास जाँचें"
+  },
+  "popupUpdate": {
+    "message": "अभी अपडेट करें"
+  },
+  "popupUpdating": {
+    "message": "अपडेट हो रहा है"
+  },
+  "popupRulesLine": {
+    "message": "पहचान नियम संस्करण $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "बिल्ट-इन"
+  },
+  "popupRulesUpdated": {
+    "message": "ऑनलाइन अपडेट किए गए"
+  },
+  "supportShort": {
+    "message": "समर्थन"
+  },
+  "tipSupport": {
+    "message": "एक पेज खोलता है जहाँ आप दान देकर ClickFix Warden का समर्थन कर सकते हैं"
+  },
+  "supportProject": {
+    "message": "प्रोजेक्ट का समर्थन करें"
+  },
+  "kind_clipboard": {
+    "message": "क्लिपबोर्ड कमांड"
+  },
+  "kind_manual_copy": {
+    "message": "कॉपी किया गया कमांड"
+  },
+  "kind_paste": {
+    "message": "साइन-इन लिंक पेस्ट"
+  },
+  "kind_protocol": {
+    "message": "प्रोग्राम लिंक"
+  },
+  "kind_fullscreen": {
+    "message": "नकली अपडेट स्क्रीन"
+  },
+  "kind_page_instructions": {
+    "message": "पेस्ट करने के निर्देश"
+  },
+  "kind_web3_loader": {
+    "message": "ब्लॉकचेन लोडर"
+  },
+  "kind_reputation": {
+    "message": "रिपोर्ट की गई साइट"
+  },
+  "kind_reputation_block": {
+    "message": "जानी-मानी ClickFix साइट"
+  },
+  "action_blocked": {
+    "message": "ब्लॉक किया गया"
+  },
+  "action_warned": {
+    "message": "चेतावनी दी गई"
+  },
+  "action_copied_anyway": {
+    "message": "फिर भी कॉपी किया गया"
+  },
+  "action_continued": {
+    "message": "फिर भी खोला गया"
+  },
+  "action_trusted": {
+    "message": "भरोसेमंद माना गया"
+  },
+  "timeNever": {
+    "message": "कभी नहीं"
+  },
+  "timeJustNow": {
+    "message": "अभी-अभी"
+  },
+  "timeMinutes": {
+    "message": "$1 मिनट पहले"
+  },
+  "timeHours": {
+    "message": "$1 घंटे पहले"
+  },
+  "timeDays": {
+    "message": "$1 दिन पहले"
+  },
+  "navProtection": {
+    "message": "सुरक्षा"
+  },
+  "navTrusted": {
+    "message": "भरोसेमंद साइटें"
+  },
+  "navHistory": {
+    "message": "इतिहास जाँच"
+  },
+  "navExtensions": {
+    "message": "एक्सटेंशन जाँच"
+  },
+  "navLog": {
+    "message": "पहचान लॉग"
+  },
+  "navDatabase": {
+    "message": "डेटाबेस"
+  },
+  "navAbout": {
+    "message": "परिचय"
+  },
+  "welcomeTitle": {
+    "message": "आप सुरक्षित हैं"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden अब उन पेजों पर नज़र रखता है जो आपको धोखा देकर कमांड चलवाने की कोशिश करते हैं, और दुर्भावनापूर्ण बताई गई साइटों के बारे में आपको चेतावनी देता है।"
+  },
+  "welcomePrivacy": {
+    "message": "सब कुछ आपके ब्राउज़र के अंदर ही जाँचा जाता है, आपकी ब्राउज़िंग के बारे में कुछ भी कहीं नहीं भेजा जाता।"
+  },
+  "welcomeHostAccess": {
+    "message": "वेबसाइटों की सुरक्षा के लिए ClickFix Warden को सभी वेबसाइटों तक पहुँच चाहिए।"
+  },
+  "welcomeGrant": {
+    "message": "सभी वेबसाइटों पर अनुमति दें"
+  },
+  "tipGrantHosts": {
+    "message": "ClickFix Warden को हर पेज पर ClickFix तरकीबों की निगरानी करने देता है"
+  },
+  "managedNote": {
+    "message": "कुछ सेटिंग आपके संगठन द्वारा प्रबंधित की जाती हैं।"
+  },
+  "protectionLead": {
+    "message": "चुनें कि ClickFix Warden किन चीज़ों पर नज़र रखे। सब कुछ आपके ब्राउज़र के अंदर चलता है।"
+  },
+  "setEnabled": {
+    "message": "सुरक्षा चालू"
+  },
+  "tipEnabled": {
+    "message": "सभी जाँच एक साथ चालू या बंद करता है"
+  },
+  "setClipboard": {
+    "message": "क्लिपबोर्ड में खतरनाक कमांड ब्लॉक करें"
+  },
+  "tipClipboard": {
+    "message": "पेजों को आपके क्लिपबोर्ड में छिपा हुआ कमांड डालने से रोकता है और उसकी जगह एक हानिरहित नोट रख देता है"
+  },
+  "setPaste": {
+    "message": "वेबसाइटों में साइन-इन लिंक पेस्ट करना ब्लॉक करें"
+  },
+  "tipPaste": {
+    "message": "गुप्त कोड वाले साइन-इन लिंक को ऐसे पेज में पेस्ट करने से रोकता है जो आपका खाता चुरा सकता है"
+  },
+  "setProtocols": {
+    "message": "आपके कंप्यूटर पर प्रोग्राम खोलने वाले लिंक ब्लॉक करें"
+  },
+  "tipProtocols": {
+    "message": "पेजों को स्क्रिप्ट एडिटर, रिमोट फ़ोल्डरों पर Windows खोज और ऐसे ही दूसरे प्रोग्राम खोलने से रोकता है"
+  },
+  "setFullscreen": {
+    "message": "नकली फ़ुल-स्क्रीन अपडेट पेज रोकें"
+  },
+  "tipFullscreen": {
+    "message": "कमांड पेस्ट करने को कहने वाले पेजों को नकली अपडेट से स्क्रीन लॉक करने से रोकता है"
+  },
+  "setPageWarnings": {
+    "message": "पेस्ट करने के निर्देशों वाले पेजों के बारे में चेतावनी दें"
+  },
+  "tipPageWarnings": {
+    "message": "जब कोई पेज आपसे चलाएँ, टर्मिनल या फ़ाइल एक्सप्लोरर में कुछ पेस्ट करने को कहता है, तो चेतावनी बार दिखाता है"
+  },
+  "setWeb3": {
+    "message": "ब्लॉकचेन से लोड किए गए कोड पर नज़र रखें"
+  },
+  "tipWeb3": {
+    "message": "जब कोई सामान्य वेबसाइट ब्लॉकचेन से छिपा हुआ कोड लाती है, तो चेतावनी देता है, यह हैक की गई साइटों की एक तरकीब है"
+  },
+  "setReputation": {
+    "message": "रिपोर्ट की गई साइटों के बारे में चेतावनी दें"
+  },
+  "tipReputation": {
+    "message": "सार्वजनिक खतरा डेटाबेस में दुर्भावनापूर्ण के रूप में दर्ज साइटों पर चेतावनी बार दिखाता है"
+  },
+  "setBlockPage": {
+    "message": "जानी-मानी ClickFix साइटों को लोड होने से पहले ब्लॉक करें"
+  },
+  "tipBlockPage": {
+    "message": "डेटाबेस में ClickFix पेज के रूप में दर्ज साइट की जगह पूरे पेज की चेतावनी दिखाता है"
+  },
+  "setFeedUpdates": {
+    "message": "डेटाबेस और नियमों के अपडेट डाउनलोड करें"
+  },
+  "tipFeedUpdates": {
+    "message": "रिपोर्ट की गई साइटों की हस्ताक्षरित सूची और नए पहचान नियम हर घंटे डाउनलोड करता है"
+  },
+  "trustedLead": {
+    "message": "इन साइटों की बिल्कुल जाँच नहीं होती, किसी साइट पर भरोसा करने के लिए वही पुष्टि चाहिए जो चेतावनी में होती है।"
+  },
+  "trustedInputLabel": {
+    "message": "साइट का पता"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "जोड़ें"
+  },
+  "tipTrustedAdd": {
+    "message": "आपकी पुष्टि के बाद साइट को उन साइटों की सूची में जोड़ता है जिनकी जाँच नहीं होती"
+  },
+  "trustedRemove": {
+    "message": "हटाएँ"
+  },
+  "tipTrustedRemove": {
+    "message": "इस साइट की जाँच फिर से शुरू करता है"
+  },
+  "trustedEmpty": {
+    "message": "कोई भरोसेमंद साइट नहीं"
+  },
+  "orgTitle": {
+    "message": "चेतावनियों में संदेश"
+  },
+  "orgLead": {
+    "message": "हर चेतावनी में दिखने वाला अतिरिक्त टेक्स्ट, जैसे आपकी कंपनी में किससे संपर्क करें।"
+  },
+  "orgPlaceholder": {
+    "message": "उदाहरण के लिए, आगे बढ़ने से पहले IT हेल्पडेस्क को कॉल करें"
+  },
+  "orgSave": {
+    "message": "सहेजें"
+  },
+  "tipOrgSave": {
+    "message": "हर चेतावनी में दिखने वाला टेक्स्ट सहेजता है"
+  },
+  "orgSaved": {
+    "message": "सहेजा गया"
+  },
+  "historyLead": {
+    "message": "जाँचें कि क्या आपने ऐसी कोई साइट देखी है जो अब डेटाबेस में दर्ज है, यह जाँच सिर्फ़ आपके ब्राउज़र में चलती है।"
+  },
+  "historyDays7": {
+    "message": "पिछले 7 दिन"
+  },
+  "historyDays30": {
+    "message": "पिछले 30 दिन"
+  },
+  "historyDays90": {
+    "message": "पिछले 90 दिन"
+  },
+  "tipHistoryDays": {
+    "message": "कितना पीछे तक देखना है"
+  },
+  "historyScan": {
+    "message": "मेरा इतिहास जाँचें"
+  },
+  "tipHistoryScan": {
+    "message": "आपके इतिहास तक पहुँच माँगता है और आपके ब्राउज़र के अंदर उसकी तुलना डेटाबेस से करता है"
+  },
+  "historyScanning": {
+    "message": "जाँच हो रही है"
+  },
+  "historyChecked": {
+    "message": "पिछले $2 दिनों के $1 पतों की जाँच की गई।"
+  },
+  "historyClean": {
+    "message": "आपकी देखी गई कोई भी साइट सूची में नहीं है"
+  },
+  "historyFound": {
+    "message": "आपके देखे गए $1 पते सूची में हैं"
+  },
+  "historyAdvice": {
+    "message": "अगर आपने किसी सूचीबद्ध साइट के कहने पर कुछ चलाया है, तो किसी दूसरे डिवाइस से अपने पासवर्ड बदलें और इस कंप्यूटर की जाँच करवाएँ।"
+  },
+  "historyDenied": {
+    "message": "इतिहास तक पहुँच नहीं दी गई।"
+  },
+  "historyDrop": {
+    "message": "इतिहास की पहुँच हटाएँ"
+  },
+  "tipHistoryDrop": {
+    "message": "अगली जाँच तक इतिहास की अनुमति वापस कर देता है"
+  },
+  "exportJson": {
+    "message": "JSON निर्यात करें"
+  },
+  "tipExport": {
+    "message": "परिणामों को इस कंप्यूटर पर JSON फ़ाइल के रूप में सहेजता है"
+  },
+  "tipExportLog": {
+    "message": "लॉग को इस कंप्यूटर पर JSON फ़ाइल के रूप में सहेजता है"
+  },
+  "colVisited": {
+    "message": "पिछली विज़िट"
+  },
+  "colAddress": {
+    "message": "पता"
+  },
+  "colReport": {
+    "message": "रिपोर्ट"
+  },
+  "colTime": {
+    "message": "समय"
+  },
+  "colWhat": {
+    "message": "क्या"
+  },
+  "colSite": {
+    "message": "साइट"
+  },
+  "colDetails": {
+    "message": "विवरण"
+  },
+  "extensionsLead": {
+    "message": "इंस्टॉल किए गए ऐसे ब्राउज़र एक्सटेंशन खोजें जो दुर्भावनापूर्ण माने जाते हैं, जैसे CrashFix हमलों में इस्तेमाल होने वाले नकली ऐड ब्लॉकर।"
+  },
+  "extensionsScan": {
+    "message": "इंस्टॉल किए गए एक्सटेंशन जाँचें"
+  },
+  "tipExtensionsScan": {
+    "message": "आपके एक्सटेंशन की सूची देखने की अनुमति माँगता है और उनकी तुलना जाने-माने दुर्भावनापूर्ण एक्सटेंशन की सूची से करता है"
+  },
+  "extensionsDrop": {
+    "message": "पहुँच हटाएँ"
+  },
+  "tipExtensionsDrop": {
+    "message": "आपके एक्सटेंशन की सूची देखने की अनुमति वापस कर देता है"
+  },
+  "extensionsDenied": {
+    "message": "पहुँच नहीं दी गई।"
+  },
+  "extensionsChecked": {
+    "message": "इंस्टॉल किए गए $1 एक्सटेंशन की जाँच की गई।"
+  },
+  "extensionsClean": {
+    "message": "कोई जाना-माना दुर्भावनापूर्ण एक्सटेंशन नहीं मिला"
+  },
+  "extensionsKnownAs": {
+    "message": "$1 के नाम से जाना जाता है"
+  },
+  "extensionsRemove": {
+    "message": "हटाएँ"
+  },
+  "tipExtensionsRemove": {
+    "message": "आपकी पुष्टि के बाद यह एक्सटेंशन अनइंस्टॉल करता है"
+  },
+  "logLead": {
+    "message": "ClickFix Warden ने क्या ब्लॉक किया या किसके बारे में चेतावनी दी, यह लॉग इसी कंप्यूटर पर रहता है।"
+  },
+  "logClear": {
+    "message": "लॉग साफ़ करें"
+  },
+  "tipLogClear": {
+    "message": "लॉग की हर एंट्री मिटा देता है"
+  },
+  "logClearConfirm": {
+    "message": "पहचान लॉग की हर एंट्री मिटाएँ?"
+  },
+  "databaseLead": {
+    "message": "रिपोर्ट सार्वजनिक abuse.ch डेटाबेस से आती हैं और इस्तेमाल से पहले डिजिटल हस्ताक्षर से जाँची जाती हैं।"
+  },
+  "dbGenerated": {
+    "message": "$1 रिपोर्ट, $2 प्रकाशित"
+  },
+  "dbChecked": {
+    "message": "पिछली जाँच $1"
+  },
+  "dbError": {
+    "message": "पिछला अपडेट विफल रहा, $1"
+  },
+  "dbUpdated": {
+    "message": "अप टू डेट"
+  },
+  "tipUpdateNow": {
+    "message": "नया डेटाबेस और नियम अभी डाउनलोड करता है"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden कोई डेटा इकट्ठा नहीं करता, इसका कोई खाता, टेलीमेट्री या अपना सर्वर नहीं है।"
+  },
+  "aboutNetwork": {
+    "message": "यह सिर्फ़ GitHub से हस्ताक्षरित डेटाबेस और नियम डाउनलोड करता है, और GitHub को वैसा ही अनुरोध दिखता है जैसा कोई भी अपडेट भेजता है।"
+  },
+  "aboutProject": {
+    "message": "सोर्स कोड"
+  },
+  "aboutPolicy": {
+    "message": "गोपनीयता नीति"
+  },
+  "descClipboard": {
+    "message": "इस पेज ने आपके क्लिपबोर्ड में $1 डालने की कोशिश की। इसे रोक दिया गया क्योंकि $2।"
+  },
+  "descManual": {
+    "message": "आप जो टेक्स्ट कॉपी करना चाहते थे वह $1 है, और इसे कॉपी नहीं किया गया क्योंकि $2।"
+  },
+  "descPaste": {
+    "message": "आप इस पेज में $1 पेस्ट करने वाले थे। इसे रोक दिया गया क्योंकि $2।"
+  },
+  "descProtocol": {
+    "message": "इस पेज ने $1 खोलने की कोशिश की। इसे रोक दिया गया क्योंकि $2।"
+  },
+  "descFullscreen": {
+    "message": "इस पेज ने $1 करने की कोशिश की। इसे रोक दिया गया क्योंकि $2।"
+  },
+  "repLine": {
+    "message": "$1 में इसे $2 बताया गया है, यह पहली बार $3 को देखा गया।"
+  },
+  "repLineNoDate": {
+    "message": "$1 में इसे $2 बताया गया है।"
+  },
+  "warnLead": {
+    "message": "$2 में $1 को $3 बताया गया है। ऐसे पेज आपको धोखा देकर ऐसा कमांड पेस्ट करवाते हैं जो $4।"
+  },
+  "warnLeadUnknown": {
+    "message": "$1 सार्वजनिक खतरा डेटाबेस में दर्ज है। ऐसे पेज आपको धोखा देकर ऐसा कमांड पेस्ट करवाते हैं जो $2।"
+  },
+  "confirmBody": {
+    "message": "अगर आप आगे बढ़ते हैं, तो ClickFix Warden इसकी जाँच बंद कर देगा, और ऐसा पेज $1।"
+  },
+  "popupBlockedLine": {
+    "message": "$1 $2 ब्लॉक किया गया"
+  },
+  "popupReports": {
+    "message": "$1 रिपोर्ट किए गए पते"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "पहले से तैयार स्क्रिप्ट के साथ स्क्रिप्ट एडिटर"
+  },
+  "proto_search_ms": {
+    "message": "रिमोट फ़ोल्डर पर Windows खोज विंडो"
+  },
+  "proto_ms_msdt": {
+    "message": "छिपी हुई सेटिंग के साथ Windows समस्या निवारक"
+  },
+  "proto_ms_officecmd": {
+    "message": "छिपी हुई सेटिंग के साथ Office"
+  },
+  "proto_ms_appinstaller": {
+    "message": "इंटरनेट से एक ऐप इंस्टॉलर"
+  },
+  "setLanguage": {
+    "message": "भाषा"
+  },
+  "tipLanguage": {
+    "message": "ClickFix Warden की भाषा बदलता है, ब्राउज़र डिफ़ॉल्ट आपके ब्राउज़र की भाषा अपनाता है"
+  },
+  "langBrowser": {
+    "message": "ब्राउज़र डिफ़ॉल्ट"
+  }
+}

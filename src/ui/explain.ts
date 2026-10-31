@@ -91,5 +91,10 @@ export function whatOfReport(hits: FeedHit[]): { source: string; what: string; f
 export function longDate(isoDay: string, lang: string): string {
   const d = new Date(isoDay + 'T00:00:00Z');
   if (Number.isNaN(d.getTime())) return isoDay;
-  return d.toLocaleDateString(lang === 'bg' ? 'bg-BG' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  const tag = !lang || lang === 'en' ? 'en-GB' : lang;
+  try {
+    return d.toLocaleDateString(tag, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+  } catch {
+    return isoDay;
+  }
 }

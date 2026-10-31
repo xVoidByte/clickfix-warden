@@ -1,8 +1,9 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { describe, expect, it, vi } from 'vitest';
 
 const locale = { lang: 'en' };
+const LOCALES = readdirSync(resolve(import.meta.dirname, '..', '..', 'public/_locales'));
 const messages = (lang: string) =>
   JSON.parse(readFileSync(resolve(import.meta.dirname, '..', '..', `public/_locales/${lang}/messages.json`), 'utf8')) as Record<string, { message: string }>;
 
@@ -41,11 +42,15 @@ describe('warning sentences', () => {
     expect(e.what).toBe('a hidden PowerShell command that downloads and runs a program');
     expect(e.why).toBe('the page pretends to be a CAPTCHA and tells you to paste it into the Run box');
   });
-  it('describes the same lure in Bulgarian', () => {
-    locale.lang = 'bg';
-    const e = explain(LURES['powershell hidden with fake recaptcha id'], 'Press Windows Key + R, press CTRL + V', 'captcha');
-    expect(e.what).toBe('скрита PowerShell команда, която сваля и пуска програма');
-    expect(e.why).toBe('страницата се прави на CAPTCHA и ви казва да я поставите в прозореца Run');
+  it('builds complete sentences in every language', () => {
+    for (const lang of LOCALES) {
+      locale.lang = lang;
+      const e = explain(LURES['powershell hidden with fake recaptcha id'], 'Press Windows Key + R, press CTRL + V', 'captcha');
+      for (const text of [e.what, e.why]) {
+        expect(text, lang).not.toMatch(/\$\d|what_|effect_|lure_|target_|whyPage/);
+        expect(text.length, lang).toBeGreaterThan(5);
+      }
+    }
     locale.lang = 'en';
   });
   it('names mshta, WebDAV and macOS lures by what they do', () => {

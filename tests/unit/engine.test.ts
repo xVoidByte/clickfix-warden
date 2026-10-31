@@ -88,9 +88,10 @@ describe('page instructions', () => {
     expect(v.score).toBe(50);
     expect(v.standalone).toBe(true);
   });
-  it('understands bulgarian and russian instructions', () => {
-    expect(scorePageText('Потвърдете, че сте човек. Натиснете Win + R, после Ctrl + V и натиснете Enter', rules).standalone).toBe(true);
+  it('understands instructions in other languages', () => {
+    expect(scorePageText('No soy un robot. Presione Win + R, luego Ctrl + V y presione Enter', rules).standalone).toBe(true);
     expect(scorePageText('Я не робот. Нажмите Win + R, затем Ctrl + V и нажмите Enter', rules).standalone).toBe(true);
+    expect(scorePageText('Ich bin kein Roboter. Drücken Sie Win + R, dann Strg + V und drücken Sie Enter', rules).standalone).toBe(true);
   });
   it('scores the Win+X terminal variant', () => {
     const v = scorePageText('Press Win + X, choose Terminal (Admin), press Ctrl + V. I am not a robot', rules);
@@ -123,7 +124,7 @@ describe('trigger classification', () => {
   });
   it('treats copy buttons as copy', () => {
     expect(classifyTriggerText('Copy', false, rules)).toBe('copy');
-    expect(classifyTriggerText('Копирай', false, rules)).toBe('copy');
+    expect(classifyTriggerText('Kopieren', false, rules)).toBe('copy');
   });
   it('treats fix buttons as fix', () => {
     expect(classifyTriggerText('Fix it', false, rules)).toBe('fix');

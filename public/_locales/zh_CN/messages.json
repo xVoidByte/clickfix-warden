@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "拦截诱骗你运行命令的 ClickFix 和虚假 CAPTCHA 攻击，并在你访问被举报为恶意的网站时发出警告。"
+  },
+  "dangerLabel": {
+    "message": "潜在危险网站"
+  },
+  "titleClipboard": {
+    "message": "已拦截危险命令"
+  },
+  "titleManual": {
+    "message": "危险命令未被复制"
+  },
+  "titlePaste": {
+    "message": "已拦截危险的粘贴内容"
+  },
+  "titleProtocol": {
+    "message": "已拦截危险链接"
+  },
+  "titleFullscreen": {
+    "message": "已拦截虚假更新界面"
+  },
+  "descNote": {
+    "message": "你的剪贴板中现在是一条无害的提示，粘贴也不会有任何作用。"
+  },
+  "descManualNote": {
+    "message": "已改为复制一条无害的提示。"
+  },
+  "descFullscreenNote": {
+    "message": "如果仍有内容遮挡屏幕，请按 Esc，然后关闭此标签页。"
+  },
+  "whatTemplate": {
+    "message": "一条会$2的$1"
+  },
+  "what_powershell": {
+    "message": "PowerShell 命令"
+  },
+  "what_powershell_hidden": {
+    "message": "隐藏 PowerShell 命令"
+  },
+  "what_applescript": {
+    "message": "AppleScript 命令"
+  },
+  "what_applescript_hidden": {
+    "message": "隐藏 AppleScript 命令"
+  },
+  "what_terminal": {
+    "message": "终端命令"
+  },
+  "what_terminal_hidden": {
+    "message": "隐藏终端命令"
+  },
+  "what_script": {
+    "message": "脚本命令"
+  },
+  "what_script_hidden": {
+    "message": "隐藏脚本命令"
+  },
+  "what_cmd": {
+    "message": "命令提示符命令"
+  },
+  "what_cmd_hidden": {
+    "message": "隐藏命令提示符命令"
+  },
+  "what_windows": {
+    "message": "Windows 命令"
+  },
+  "what_windows_hidden": {
+    "message": "隐藏 Windows 命令"
+  },
+  "what_generic": {
+    "message": "命令"
+  },
+  "what_generic_hidden": {
+    "message": "隐藏命令"
+  },
+  "effect_download_run": {
+    "message": "下载并运行程序"
+  },
+  "effect_disables_av": {
+    "message": "关闭杀毒软件防护"
+  },
+  "effect_password": {
+    "message": "用虚假窗口索要你的密码"
+  },
+  "effect_remote_share": {
+    "message": "运行远程网络共享中的文件"
+  },
+  "effect_remote_script": {
+    "message": "直接从互联网运行脚本"
+  },
+  "effect_remote_install": {
+    "message": "直接从互联网安装程序"
+  },
+  "effect_dns": {
+    "message": "从 DNS 记录中获取隐藏命令"
+  },
+  "effect_finger": {
+    "message": "从远程服务器获取隐藏命令"
+  },
+  "effect_runs": {
+    "message": "不经询问就在你的电脑上运行"
+  },
+  "whyPage1": {
+    "message": "页面$1"
+  },
+  "whyPage2": {
+    "message": "页面$1，并$2"
+  },
+  "lure_captcha": {
+    "message": "伪装成 CAPTCHA"
+  },
+  "lure_update": {
+    "message": "假装正在安装更新"
+  },
+  "lure_fix": {
+    "message": "把命令说成是错误的解决办法"
+  },
+  "target_explorer": {
+    "message": "要求你将命令粘贴到文件资源管理器的地址栏"
+  },
+  "target_terminal": {
+    "message": "要求你将命令粘贴到终端"
+  },
+  "target_run": {
+    "message": "要求你将命令粘贴到“运行”对话框"
+  },
+  "target_paste": {
+    "message": "要求你将命令粘贴到电脑上的某个地方"
+  },
+  "why_payload_reported": {
+    "message": "该命令会从被举报为恶意的地址下载内容"
+  },
+  "why_site_reported": {
+    "message": "此网站已被举报为恶意网站"
+  },
+  "why_decoy": {
+    "message": "命令后面藏有虚假的验证文字"
+  },
+  "why_padding": {
+    "message": "真正的命令藏在一大段空白后面"
+  },
+  "why_disguised": {
+    "message": "命令经过伪装，以掩盖其真实作用"
+  },
+  "why_hidden_window": {
+    "message": "该命令会在隐藏窗口中运行"
+  },
+  "why_generic": {
+    "message": "它带有 ClickFix 攻击的特征"
+  },
+  "why_fullscreen": {
+    "message": "页面要求你粘贴命令"
+  },
+  "fullscreenWhat": {
+    "message": "像虚假的 Windows 更新那样占据整个屏幕"
+  },
+  "pasteWhat": {
+    "message": "一个带有秘密代码的登录链接"
+  },
+  "pasteWhy": {
+    "message": "这类页面可以利用它接管你的账户"
+  },
+  "protocolWhy": {
+    "message": "这类链接可以在你毫不知情的情况下在电脑上运行命令"
+  },
+  "btnClose": {
+    "message": "关闭"
+  },
+  "btnLeave": {
+    "message": "离开此网站"
+  },
+  "btnTrust": {
+    "message": "信任此网站"
+  },
+  "tipClose": {
+    "message": "隐藏此警告并留在当前页面"
+  },
+  "tipLeave": {
+    "message": "关闭此页面并打开新标签页"
+  },
+  "tipTrust": {
+    "message": "经你确认后，停止对此网站的所有检查"
+  },
+  "tipUntrust": {
+    "message": "重新开始检查此网站"
+  },
+  "bannerReported": {
+    "message": "此网站已被举报为恶意网站。"
+  },
+  "bannerDetails": {
+    "message": "详情"
+  },
+  "bannerFirstSeen": {
+    "message": "首次发现于 $1"
+  },
+  "bannerWeb3": {
+    "message": "此网站正在从区块链加载隐藏代码。"
+  },
+  "bannerWeb3Detail": {
+    "message": "被黑的网站会用这种手法显示虚假的 CAPTCHA 页面。"
+  },
+  "bannerInstructions": {
+    "message": "此页面要求你把内容粘贴到“运行”、终端或文件资源管理器中。"
+  },
+  "bannerInstructionsDetail": {
+    "message": "正规网站从来不会要求你这样做。"
+  },
+  "rep_clickfix": {
+    "message": "ClickFix 页面"
+  },
+  "rep_clickfix_family": {
+    "message": "传播 $1 的 ClickFix 页面"
+  },
+  "rep_malware": {
+    "message": "恶意软件下载地址"
+  },
+  "rep_malware_family": {
+    "message": "$1 下载地址"
+  },
+  "rep_c2": {
+    "message": "恶意软件控制服务器"
+  },
+  "rep_c2_family": {
+    "message": "$1 控制服务器"
+  },
+  "rep_phishing": {
+    "message": "钓鱼页面"
+  },
+  "rep_phishing_family": {
+    "message": "$1 钓鱼页面"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "恶意软件下载"
+  },
+  "category_c2": {
+    "message": "恶意软件控制服务器"
+  },
+  "category_phishing": {
+    "message": "网络钓鱼"
+  },
+  "confirmTrustTitle": {
+    "message": "要停止保护 $1 吗？"
+  },
+  "confirmOpenTitle": {
+    "message": "仍要打开 $1 吗？"
+  },
+  "confirmReported": {
+    "message": "此网站已在公开的威胁数据库中被举报。"
+  },
+  "confirmBodyStrong": {
+    "message": "感染你的电脑，并窃取你的密码、已保存的信用卡和加密货币钱包"
+  },
+  "confirmOnlyReported": {
+    "message": "只有在你确定举报有误时才这样做。"
+  },
+  "confirmOnlyKnown": {
+    "message": "只对你非常熟悉的网站这样做。"
+  },
+  "confirmCheckTrust": {
+    "message": "我明白将此网站加入白名单可能让我丢失登录凭据、Cookie 和钱财"
+  },
+  "confirmCheckOpen": {
+    "message": "我明白打开此网站可能让我丢失登录凭据、Cookie 和钱财"
+  },
+  "confirmTrust": {
+    "message": "信任此网站"
+  },
+  "confirmOpen": {
+    "message": "仍要打开"
+  },
+  "confirmKeep": {
+    "message": "继续保护我"
+  },
+  "warnTitle": {
+    "message": "已拦截危险网站"
+  },
+  "warnAddress": {
+    "message": "地址"
+  },
+  "warnReportedBy": {
+    "message": "举报来源"
+  },
+  "warnSteals": {
+    "message": "窃取你的密码、已保存的信用卡和加密货币钱包"
+  },
+  "warnLeave": {
+    "message": "返回安全页面"
+  },
+  "warnLeaveTip": {
+    "message": "打开新标签页，而不是此网站"
+  },
+  "warnContinue": {
+    "message": "仍要打开"
+  },
+  "warnContinueTip": {
+    "message": "确认风险后，可在接下来的一小时内打开此网站"
+  },
+  "warnAdvice": {
+    "message": "正规网站绝不会要求你把任何内容粘贴到“运行”、终端或文件资源管理器中。"
+  },
+  "popupOn": {
+    "message": "开"
+  },
+  "popupOff": {
+    "message": "保护已关闭。"
+  },
+  "popupNotWebPage": {
+    "message": "不是网页"
+  },
+  "popupTrusted": {
+    "message": "已被你信任，不做检查"
+  },
+  "popupReported": {
+    "message": "已被举报为恶意网站"
+  },
+  "popupNoReports": {
+    "message": "没有关于此网站的举报"
+  },
+  "popupUntrust": {
+    "message": "不再信任此网站"
+  },
+  "popupUpdated": {
+    "message": "更新于 $1，规则版本 $2"
+  },
+  "popupFeedNone": {
+    "message": "数据库尚未下载"
+  },
+  "popupFeedError": {
+    "message": "数据库更新失败，请查看设置"
+  },
+  "popupNoDetections": {
+    "message": "尚未拦截任何内容"
+  },
+  "popupSettings": {
+    "message": "设置"
+  },
+  "popupHistory": {
+    "message": "检查我的历史记录"
+  },
+  "popupUpdate": {
+    "message": "立即更新"
+  },
+  "popupUpdating": {
+    "message": "正在更新"
+  },
+  "popupRulesLine": {
+    "message": "检测规则版本 $1，$2"
+  },
+  "popupRulesBundled": {
+    "message": "内置"
+  },
+  "popupRulesUpdated": {
+    "message": "已在线更新"
+  },
+  "supportShort": {
+    "message": "支持"
+  },
+  "tipSupport": {
+    "message": "打开一个页面，你可以在那里通过捐款支持 ClickFix Warden"
+  },
+  "supportProject": {
+    "message": "支持本项目"
+  },
+  "kind_clipboard": {
+    "message": "剪贴板命令"
+  },
+  "kind_manual_copy": {
+    "message": "复制的命令"
+  },
+  "kind_paste": {
+    "message": "粘贴登录链接"
+  },
+  "kind_protocol": {
+    "message": "程序链接"
+  },
+  "kind_fullscreen": {
+    "message": "虚假更新界面"
+  },
+  "kind_page_instructions": {
+    "message": "粘贴指示"
+  },
+  "kind_web3_loader": {
+    "message": "区块链加载器"
+  },
+  "kind_reputation": {
+    "message": "被举报的网站"
+  },
+  "kind_reputation_block": {
+    "message": "已知 ClickFix 网站"
+  },
+  "action_blocked": {
+    "message": "已拦截"
+  },
+  "action_warned": {
+    "message": "已警告"
+  },
+  "action_copied_anyway": {
+    "message": "仍然复制"
+  },
+  "action_continued": {
+    "message": "仍然打开"
+  },
+  "action_trusted": {
+    "message": "已信任"
+  },
+  "timeNever": {
+    "message": "从未"
+  },
+  "timeJustNow": {
+    "message": "刚刚"
+  },
+  "timeMinutes": {
+    "message": "$1 分钟前"
+  },
+  "timeHours": {
+    "message": "$1 小时前"
+  },
+  "timeDays": {
+    "message": "$1 天前"
+  },
+  "navProtection": {
+    "message": "保护"
+  },
+  "navTrusted": {
+    "message": "受信任的网站"
+  },
+  "navHistory": {
+    "message": "历史记录检查"
+  },
+  "navExtensions": {
+    "message": "扩展程序检查"
+  },
+  "navLog": {
+    "message": "检测日志"
+  },
+  "navDatabase": {
+    "message": "数据库"
+  },
+  "navAbout": {
+    "message": "关于"
+  },
+  "welcomeTitle": {
+    "message": "你已受到保护"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden 现在会留意诱骗你运行命令的页面，并在你访问被举报为恶意的网站时发出警告。"
+  },
+  "welcomePrivacy": {
+    "message": "所有检查都在你的浏览器内完成，你的浏览信息不会被发送到任何地方。"
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden 需要访问所有网站的权限才能保护它们。"
+  },
+  "welcomeGrant": {
+    "message": "在所有网站上允许"
+  },
+  "tipGrantHosts": {
+    "message": "让 ClickFix Warden 在每个页面上留意 ClickFix 骗局"
+  },
+  "managedNote": {
+    "message": "部分设置由你的组织管理。"
+  },
+  "protectionLead": {
+    "message": "选择 ClickFix Warden 要留意的内容。所有检查都在你的浏览器内运行。"
+  },
+  "setEnabled": {
+    "message": "开启保护"
+  },
+  "tipEnabled": {
+    "message": "一次性开启或关闭所有检查"
+  },
+  "setClipboard": {
+    "message": "拦截剪贴板中的危险命令"
+  },
+  "tipClipboard": {
+    "message": "阻止页面将隐藏命令放入你的剪贴板，并改为放入一条无害的提示"
+  },
+  "setPaste": {
+    "message": "阻止将登录链接粘贴到网站"
+  },
+  "tipPaste": {
+    "message": "阻止你将带有秘密代码的登录链接粘贴到可能盗取你账户的页面"
+  },
+  "setProtocols": {
+    "message": "拦截会打开电脑上程序的链接"
+  },
+  "tipProtocols": {
+    "message": "阻止页面打开脚本编辑器、针对远程文件夹的 Windows 搜索以及类似程序"
+  },
+  "setFullscreen": {
+    "message": "阻止虚假的全屏更新页面"
+  },
+  "tipFullscreen": {
+    "message": "阻止要求你粘贴命令的页面用虚假更新锁住屏幕"
+  },
+  "setPageWarnings": {
+    "message": "对含有粘贴指示的页面发出警告"
+  },
+  "tipPageWarnings": {
+    "message": "当页面要求你把内容粘贴到“运行”、终端或文件资源管理器时，显示警告栏"
+  },
+  "setWeb3": {
+    "message": "留意从区块链加载的代码"
+  },
+  "tipWeb3": {
+    "message": "当普通网站从区块链获取隐藏代码时发出警告，这是被黑网站常用的手法"
+  },
+  "setReputation": {
+    "message": "对被举报的网站发出警告"
+  },
+  "tipReputation": {
+    "message": "在被公开威胁数据库列为恶意的网站上显示警告栏"
+  },
+  "setBlockPage": {
+    "message": "在已知 ClickFix 网站加载前将其拦截"
+  },
+  "tipBlockPage": {
+    "message": "对数据库列为 ClickFix 页面的网站，显示整页警告来代替网站内容"
+  },
+  "setFeedUpdates": {
+    "message": "下载数据库和规则更新"
+  },
+  "tipFeedUpdates": {
+    "message": "每小时下载一次经过签名的被举报网站列表和最新的检测规则"
+  },
+  "trustedLead": {
+    "message": "这些网站完全不会被检查，信任一个网站需要经过与警告中相同的确认。"
+  },
+  "trustedInputLabel": {
+    "message": "网站地址"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "添加"
+  },
+  "tipTrustedAdd": {
+    "message": "经你确认后，将此网站加入不检查的网站列表"
+  },
+  "trustedRemove": {
+    "message": "移除"
+  },
+  "tipTrustedRemove": {
+    "message": "重新开始检查此网站"
+  },
+  "trustedEmpty": {
+    "message": "没有受信任的网站"
+  },
+  "orgTitle": {
+    "message": "警告中的消息"
+  },
+  "orgLead": {
+    "message": "每条警告中都会显示的额外文字，例如在公司内应该联系谁。"
+  },
+  "orgPlaceholder": {
+    "message": "例如，继续之前请致电 IT 服务台"
+  },
+  "orgSave": {
+    "message": "保存"
+  },
+  "tipOrgSave": {
+    "message": "保存每条警告中显示的文字"
+  },
+  "orgSaved": {
+    "message": "已保存"
+  },
+  "historyLead": {
+    "message": "检查你是否访问过现已列入数据库的网站，检查只在你的浏览器内进行。"
+  },
+  "historyDays7": {
+    "message": "最近 7 天"
+  },
+  "historyDays30": {
+    "message": "最近 30 天"
+  },
+  "historyDays90": {
+    "message": "最近 90 天"
+  },
+  "tipHistoryDays": {
+    "message": "要往回检查多长时间"
+  },
+  "historyScan": {
+    "message": "检查我的历史记录"
+  },
+  "tipHistoryScan": {
+    "message": "请求访问你的历史记录，并在浏览器内与数据库进行比对"
+  },
+  "historyScanning": {
+    "message": "正在检查"
+  },
+  "historyChecked": {
+    "message": "已检查最近 $2 天内的 $1 个地址。"
+  },
+  "historyClean": {
+    "message": "访问过的网站均未列入数据库"
+  },
+  "historyFound": {
+    "message": "有 $1 个访问过的地址已列入数据库"
+  },
+  "historyAdvice": {
+    "message": "如果你按照被列出网站的指示运行过任何东西，请在另一台设备上更改密码，并请人检查这台电脑。"
+  },
+  "historyDenied": {
+    "message": "未获得历史记录访问权限。"
+  },
+  "historyDrop": {
+    "message": "移除历史记录访问权限"
+  },
+  "tipHistoryDrop": {
+    "message": "交还历史记录权限，直到你再次检查"
+  },
+  "exportJson": {
+    "message": "导出 JSON"
+  },
+  "tipExport": {
+    "message": "将结果以 JSON 文件保存到此电脑"
+  },
+  "tipExportLog": {
+    "message": "将日志以 JSON 文件保存到此电脑"
+  },
+  "colVisited": {
+    "message": "上次访问"
+  },
+  "colAddress": {
+    "message": "地址"
+  },
+  "colReport": {
+    "message": "举报"
+  },
+  "colTime": {
+    "message": "时间"
+  },
+  "colWhat": {
+    "message": "内容"
+  },
+  "colSite": {
+    "message": "网站"
+  },
+  "colDetails": {
+    "message": "详情"
+  },
+  "extensionsLead": {
+    "message": "查找已安装的已知恶意浏览器扩展程序，例如 CrashFix 攻击中使用的虚假广告拦截器。"
+  },
+  "extensionsScan": {
+    "message": "检查已安装的扩展程序"
+  },
+  "tipExtensionsScan": {
+    "message": "请求列出你的扩展程序的权限，并与已知恶意扩展程序列表进行比对"
+  },
+  "extensionsDrop": {
+    "message": "移除访问权限"
+  },
+  "tipExtensionsDrop": {
+    "message": "交还列出扩展程序的权限"
+  },
+  "extensionsDenied": {
+    "message": "未获得访问权限。"
+  },
+  "extensionsChecked": {
+    "message": "已检查 $1 个已安装的扩展程序。"
+  },
+  "extensionsClean": {
+    "message": "未发现已知的恶意扩展程序"
+  },
+  "extensionsKnownAs": {
+    "message": "已知名称为 $1"
+  },
+  "extensionsRemove": {
+    "message": "移除"
+  },
+  "tipExtensionsRemove": {
+    "message": "经你确认后卸载此扩展程序"
+  },
+  "logLead": {
+    "message": "ClickFix Warden 拦截或警告过的内容，日志只保存在此电脑上。"
+  },
+  "logClear": {
+    "message": "清除日志"
+  },
+  "tipLogClear": {
+    "message": "删除日志中的所有条目"
+  },
+  "logClearConfirm": {
+    "message": "要删除检测日志中的所有条目吗？"
+  },
+  "databaseLead": {
+    "message": "举报来自公开的 abuse.ch 数据库，使用前会先验证其数字签名。"
+  },
+  "dbGenerated": {
+    "message": "$1 条举报，发布于 $2"
+  },
+  "dbChecked": {
+    "message": "上次检查：$1"
+  },
+  "dbError": {
+    "message": "上次更新失败，$1"
+  },
+  "dbUpdated": {
+    "message": "已是最新"
+  },
+  "tipUpdateNow": {
+    "message": "立即下载最新的数据库和规则"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden 不收集任何数据，它没有账户、没有遥测，也没有自己的服务器。"
+  },
+  "aboutNetwork": {
+    "message": "它唯一下载的是来自 GitHub 的已签名数据库和规则，GitHub 看到的请求与任何更新的请求都一样。"
+  },
+  "aboutProject": {
+    "message": "源代码"
+  },
+  "aboutPolicy": {
+    "message": "隐私政策"
+  },
+  "descClipboard": {
+    "message": "此页面试图将$1放入你的剪贴板。由于$2，此操作已被阻止。"
+  },
+  "descManual": {
+    "message": "你试图复制的文本是$1。由于$2，该文本未被复制。"
+  },
+  "descPaste": {
+    "message": "你正要将$1粘贴到此页面。由于$2，此操作已被阻止。"
+  },
+  "descProtocol": {
+    "message": "此页面试图打开$1。由于$2，此操作已被阻止。"
+  },
+  "descFullscreen": {
+    "message": "此页面试图$1。由于$2，此操作已被阻止。"
+  },
+  "repLine": {
+    "message": "$1 将其列为$2，首次发现于 $3。"
+  },
+  "repLineNoDate": {
+    "message": "$1 将其列为$2。"
+  },
+  "warnLead": {
+    "message": "$1 已被 $2 列为$3。这类页面会诱骗你粘贴一条会$4的命令。"
+  },
+  "warnLeadUnknown": {
+    "message": "$1 已被列入公开的威胁数据库。这类页面会诱骗你粘贴一条会$2的命令。"
+  },
+  "confirmBody": {
+    "message": "如果继续，ClickFix Warden 将停止检查此网站，而这类页面可能会$1。"
+  },
+  "popupBlockedLine": {
+    "message": "$2拦截了$1"
+  },
+  "popupReports": {
+    "message": "$1 个被举报的地址"
+  },
+  "kindAction": {
+    "message": "$1（$2）"
+  },
+  "proto_applescript": {
+    "message": "装有预设脚本的脚本编辑器"
+  },
+  "proto_search_ms": {
+    "message": "指向远程文件夹的 Windows 搜索窗口"
+  },
+  "proto_ms_msdt": {
+    "message": "带有隐藏设置的 Windows 疑难解答"
+  },
+  "proto_ms_officecmd": {
+    "message": "带有隐藏设置的 Office"
+  },
+  "proto_ms_appinstaller": {
+    "message": "来自互联网的应用安装程序"
+  },
+  "setLanguage": {
+    "message": "语言"
+  },
+  "tipLanguage": {
+    "message": "更改 ClickFix Warden 的语言，选择“浏览器默认”则跟随浏览器的语言"
+  },
+  "langBrowser": {
+    "message": "浏览器默认"
+  }
+}

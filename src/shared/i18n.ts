@@ -1,35 +1,156 @@
 import { browser } from 'wxt/browser';
-import type { Label, Lang } from '../engine/types';
+import type { Label } from '../engine/types';
+
+/** Interface languages, folder name under public/_locales and the name people know it by. */
+export const LANGUAGES: { code: string; name: string }[] = [
+  { code: 'en', name: 'English' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'bg', name: 'Български' },
+  { code: 'cs', name: 'Čeština' },
+  { code: 'da', name: 'Dansk' },
+  { code: 'de', name: 'Deutsch' },
+  { code: 'el', name: 'Ελληνικά' },
+  { code: 'es', name: 'Español' },
+  { code: 'fi', name: 'Suomi' },
+  { code: 'fr', name: 'Français' },
+  { code: 'he', name: 'עברית' },
+  { code: 'hi', name: 'हिन्दी' },
+  { code: 'hu', name: 'Magyar' },
+  { code: 'id', name: 'Bahasa Indonesia' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'ja', name: '日本語' },
+  { code: 'ko', name: '한국어' },
+  { code: 'nb', name: 'Norsk bokmål' },
+  { code: 'nl', name: 'Nederlands' },
+  { code: 'pl', name: 'Polski' },
+  { code: 'pt_BR', name: 'Português (Brasil)' },
+  { code: 'pt_PT', name: 'Português (Portugal)' },
+  { code: 'ro', name: 'Română' },
+  { code: 'ru', name: 'Русский' },
+  { code: 'sk', name: 'Slovenčina' },
+  { code: 'sv', name: 'Svenska' },
+  { code: 'th', name: 'ไทย' },
+  { code: 'tr', name: 'Türkçe' },
+  { code: 'uk', name: 'Українська' },
+  { code: 'vi', name: 'Tiếng Việt' },
+  { code: 'zh_CN', name: '简体中文' },
+  { code: 'zh_TW', name: '繁體中文' },
+];
+
+const RTL = new Set(['ar', 'he']);
+
+interface Override {
+  lang: string;
+  messages: Record<string, string>;
+}
+
+let override: Override | null = null;
+
+/** The language picked in the settings, empty when the browser language is used. */
+export function overrideLang(): string {
+  return override?.lang ?? '';
+}
+
+export function setI18nOverride(value: unknown): void {
+  const o = value as Override | null | undefined;
+  override = o && typeof o.lang === 'string' && o.messages && typeof o.messages === 'object' ? o : null;
+}
+
+/** Reads the language picked in the settings, if any, before a page renders. */
+export async function loadI18nOverride(): Promise<void> {
+  try {
+    const { i18nOverride } = await browser.storage.local.get('i18nOverride');
+    setI18nOverride(i18nOverride);
+  } catch {
+    override = null;
+  }
+}
+
+/** Loads a language's messages from the extension and stores them, an empty code goes back to the browser language. */
+export async function chooseLanguage(code: string): Promise<void> {
+  if (!code) {
+    await browser.storage.local.remove('i18nOverride');
+    return;
+  }
+  const url = (browser.runtime.getURL as unknown as (p: string) => string)(`/_locales/${code}/messages.json`);
+  const raw = (await (await fetch(url)).json()) as Record<string, { message: string }>;
+  const messages: Record<string, string> = {};
+  for (const [key, value] of Object.entries(raw)) messages[key] = value.message;
+  await browser.storage.local.set({ i18nOverride: { lang: code, messages } });
+}
+
+function fill(text: string, subs: string[]): string {
+  return text.replace(/\$(\d)/g, (m, d: string) => subs[Number(d) - 1] ?? m);
+}
 
 export function t(key: string, subs?: string | string[]): string {
+  const list = subs === undefined ? [] : Array.isArray(subs) ? subs : [subs];
+  const own = override?.messages[key];
+  if (own !== undefined) return fill(own, list);
   try {
-    const value = browser.i18n.getMessage(key as never, subs as never);
+    const value = browser.i18n.getMessage(key as never, list as never);
     return value || key;
   } catch {
     return key;
   }
 }
 
-export function uiLang(): Lang {
+/** Fills a message whose $1, $2 are elements, for example bold phrases, keeping each language's word order. */
+export function tParts(key: string, parts: (string | Node)[]): (string | Node)[] {
+  const marks = parts.map((_, i) => String.fromCharCode(0xe000 + i));
+  const text = t(key, marks);
+  const out: (string | Node)[] = [];
+  let buf = '';
+  for (const ch of text) {
+    const index = ch.charCodeAt(0) - 0xe000;
+    if (index >= 0 && index < parts.length) {
+      if (buf) out.push(buf);
+      buf = '';
+      out.push(parts[index]);
+    } else buf += ch;
+  }
+  if (buf) out.push(buf);
+  return out;
+}
+
+/** The interface language as a BCP 47 tag, for dates and the lang attribute. */
+export function uiLang(): string {
   try {
-    return browser.i18n.getUILanguage().toLowerCase().startsWith('bg') ? 'bg' : 'en';
+    return (override?.lang ?? browser.i18n.getUILanguage()).replace('_', '-');
   } catch {
     return 'en';
   }
 }
 
-export function label(l: Label | undefined, fallback: string): string {
-  if (!l) return fallback;
-  return l[uiLang()] || l.en || fallback;
+/** The locale folder that matches the interface language, for links such as the privacy policy. */
+export function uiLocaleCode(): string {
+  const tag = uiLang();
+  const exact = LANGUAGES.find((l) => l.code.toLowerCase() === tag.replace('-', '_').toLowerCase());
+  if (exact) return exact.code;
+  const base = tag.split('-')[0].toLowerCase();
+  if (base === 'pt') return 'pt_BR';
+  if (base === 'zh') return 'zh_CN';
+  if (base === 'no' || base === 'nn') return 'nb';
+  return LANGUAGES.find((l) => l.code === base)?.code ?? 'en';
 }
 
-/** Fills every element that carries data-i18n, data-i18n-title or data-i18n-placeholder. */
+export function isRtl(): boolean {
+  return RTL.has(uiLang().split('-')[0]);
+}
+
+export function label(l: Label | undefined, fallback: string): string {
+  if (!l) return fallback;
+  return l[uiLang().split('-')[0]] || l.en || fallback;
+}
+
+/** Fills every element that carries data-i18n, data-i18n-title, data-i18n-placeholder or data-i18n-tip. */
 export function localizePage(root: ParentNode = document): void {
   for (const el of root.querySelectorAll<HTMLElement>('[data-i18n]')) el.textContent = t(el.dataset.i18n!);
   for (const el of root.querySelectorAll<HTMLElement>('[data-i18n-title]')) el.title = t(el.dataset.i18nTitle!);
   for (const el of root.querySelectorAll<HTMLInputElement>('[data-i18n-placeholder]')) el.placeholder = t(el.dataset.i18nPlaceholder!);
   for (const el of root.querySelectorAll<HTMLElement>('[data-i18n-tip]')) el.dataset.tip = t(el.dataset.i18nTip!);
   document.documentElement.lang = uiLang();
+  document.documentElement.dir = isRtl() ? 'rtl' : 'ltr';
 }
 
 export function relativeTime(iso: string | undefined): string {

@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Zastaví útoky ClickFix a falešné CAPTCHA, které vás navádějí ke spuštění příkazů, a varuje před nahlášenými škodlivými weby."
+  },
+  "dangerLabel": {
+    "message": "POTENCIÁLNĚ NEBEZPEČNÝ WEB"
+  },
+  "titleClipboard": {
+    "message": "Nebezpečný příkaz byl zablokován"
+  },
+  "titleManual": {
+    "message": "Nebezpečný příkaz nebyl zkopírován"
+  },
+  "titlePaste": {
+    "message": "Nebezpečné vložení bylo zablokováno"
+  },
+  "titleProtocol": {
+    "message": "Nebezpečný odkaz byl zablokován"
+  },
+  "titleFullscreen": {
+    "message": "Falešná obrazovka aktualizace byla zablokována"
+  },
+  "descNote": {
+    "message": "Ve schránce je teď neškodná poznámka, takže vložení nic neudělá."
+  },
+  "descManualNote": {
+    "message": "Místo toho byla zkopírována neškodná poznámka."
+  },
+  "descFullscreenNote": {
+    "message": "Pokud něco stále zakrývá obrazovku, stiskněte Esc a potom zavřete kartu."
+  },
+  "whatTemplate": {
+    "message": "$1, který $2"
+  },
+  "what_powershell": {
+    "message": "příkaz PowerShellu"
+  },
+  "what_powershell_hidden": {
+    "message": "skrytý příkaz PowerShellu"
+  },
+  "what_applescript": {
+    "message": "příkaz AppleScriptu"
+  },
+  "what_applescript_hidden": {
+    "message": "skrytý příkaz AppleScriptu"
+  },
+  "what_terminal": {
+    "message": "příkaz pro Terminál"
+  },
+  "what_terminal_hidden": {
+    "message": "skrytý příkaz pro Terminál"
+  },
+  "what_script": {
+    "message": "skriptový příkaz"
+  },
+  "what_script_hidden": {
+    "message": "skrytý skriptový příkaz"
+  },
+  "what_cmd": {
+    "message": "příkaz pro Příkazový řádek"
+  },
+  "what_cmd_hidden": {
+    "message": "skrytý příkaz pro Příkazový řádek"
+  },
+  "what_windows": {
+    "message": "příkaz systému Windows"
+  },
+  "what_windows_hidden": {
+    "message": "skrytý příkaz systému Windows"
+  },
+  "what_generic": {
+    "message": "příkaz"
+  },
+  "what_generic_hidden": {
+    "message": "skrytý příkaz"
+  },
+  "effect_download_run": {
+    "message": "stahuje a spouští program"
+  },
+  "effect_disables_av": {
+    "message": "vypíná vaši antivirovou ochranu"
+  },
+  "effect_password": {
+    "message": "žádá o vaše heslo ve falešném okně"
+  },
+  "effect_remote_share": {
+    "message": "spouští soubory ze vzdálené síťové složky"
+  },
+  "effect_remote_script": {
+    "message": "spouští skript přímo z internetu"
+  },
+  "effect_remote_install": {
+    "message": "instaluje program přímo z internetu"
+  },
+  "effect_dns": {
+    "message": "stahuje skryté příkazy ze záznamů DNS"
+  },
+  "effect_finger": {
+    "message": "stahuje skryté příkazy ze vzdáleného serveru"
+  },
+  "effect_runs": {
+    "message": "se spouští ve vašem počítači bez dotazu"
+  },
+  "whyPage1": {
+    "message": "stránka $1"
+  },
+  "whyPage2": {
+    "message": "stránka $1 a $2"
+  },
+  "lure_captcha": {
+    "message": "se vydává za CAPTCHA"
+  },
+  "lure_update": {
+    "message": "předstírá instalaci aktualizací"
+  },
+  "lure_fix": {
+    "message": "ho nabízí jako opravu chyby"
+  },
+  "target_explorer": {
+    "message": "vás vyzývá, abyste ho vložili do adresního řádku Průzkumníka souborů"
+  },
+  "target_terminal": {
+    "message": "vás vyzývá, abyste ho vložili do Terminálu"
+  },
+  "target_run": {
+    "message": "vás vyzývá, abyste ho vložili do okna Spustit"
+  },
+  "target_paste": {
+    "message": "vás vyzývá, abyste ho někam vložili ve svém počítači"
+  },
+  "why_payload_reported": {
+    "message": "příkaz stahuje data z adresy nahlášené jako škodlivá"
+  },
+  "why_site_reported": {
+    "message": "tento web je nahlášen jako škodlivý"
+  },
+  "why_decoy": {
+    "message": "za příkazem je skrytý falešný ověřovací text"
+  },
+  "why_padding": {
+    "message": "skutečný příkaz je schovaný za prázdným místem"
+  },
+  "why_disguised": {
+    "message": "příkaz je zamaskovaný, aby nebylo vidět, co dělá"
+  },
+  "why_hidden_window": {
+    "message": "příkaz se spouští ve skrytém okně"
+  },
+  "why_generic": {
+    "message": "příkaz nese znaky útoku ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "stránka vás vyzývá k vložení příkazu"
+  },
+  "fullscreenWhat": {
+    "message": "falešné okno aktualizace Windows přes celou obrazovku"
+  },
+  "pasteWhat": {
+    "message": "přihlašovací odkaz s tajným kódem"
+  },
+  "pasteWhy": {
+    "message": "taková stránka by s ním mohla převzít váš účet"
+  },
+  "protocolWhy": {
+    "message": "takové odkazy mohou nepozorovaně spouštět příkazy ve vašem počítači"
+  },
+  "btnClose": {
+    "message": "Zavřít"
+  },
+  "btnLeave": {
+    "message": "Opustit tento web"
+  },
+  "btnTrust": {
+    "message": "Důvěřovat tomuto webu"
+  },
+  "tipClose": {
+    "message": "Skryje toto varování a ponechá vás na stránce"
+  },
+  "tipLeave": {
+    "message": "Zavře tuto stránku a otevře novou kartu"
+  },
+  "tipTrust": {
+    "message": "Po potvrzení vypne na tomto webu všechny kontroly"
+  },
+  "tipUntrust": {
+    "message": "Znovu začne tento web kontrolovat"
+  },
+  "bannerReported": {
+    "message": "Tento web je nahlášen jako škodlivý."
+  },
+  "bannerDetails": {
+    "message": "Podrobnosti"
+  },
+  "bannerFirstSeen": {
+    "message": "první záznam $1"
+  },
+  "bannerWeb3": {
+    "message": "Tento web načítá skrytý kód z blockchainu."
+  },
+  "bannerWeb3Detail": {
+    "message": "Napadené weby tento trik používají k zobrazení falešných stránek CAPTCHA."
+  },
+  "bannerInstructions": {
+    "message": "Tato stránka vás vyzývá, abyste něco vložili do okna Spustit, Terminálu nebo Průzkumníka souborů."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Skutečné weby po vás nic takového nikdy nechtějí."
+  },
+  "rep_clickfix": {
+    "message": "stránka ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "stránka ClickFix, která šíří $1"
+  },
+  "rep_malware": {
+    "message": "adresa pro stažení malwaru"
+  },
+  "rep_malware_family": {
+    "message": "adresa pro stažení $1"
+  },
+  "rep_c2": {
+    "message": "řídicí server malwaru"
+  },
+  "rep_c2_family": {
+    "message": "řídicí server $1"
+  },
+  "rep_phishing": {
+    "message": "phishingová stránka"
+  },
+  "rep_phishing_family": {
+    "message": "phishingová stránka $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "stahování malwaru"
+  },
+  "category_c2": {
+    "message": "řídicí server malwaru"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "Přestat chránit $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Přesto otevřít $1?"
+  },
+  "confirmReported": {
+    "message": "Tento web je nahlášen ve veřejných databázích hrozeb."
+  },
+  "confirmBodyStrong": {
+    "message": "infikovat váš počítač a ukrást vaše hesla, uložené platební karty a kryptopeněženky"
+  },
+  "confirmOnlyReported": {
+    "message": "Udělejte to, jen pokud víte, že je hlášení chybné."
+  },
+  "confirmOnlyKnown": {
+    "message": "Udělejte to jen u webů, které dobře znáte."
+  },
+  "confirmCheckTrust": {
+    "message": "Rozumím, že přidáním webu mezi důvěryhodné mohu přijít o přihlašovací údaje, cookies a peníze"
+  },
+  "confirmCheckOpen": {
+    "message": "Rozumím, že otevřením tohoto webu mohu přijít o přihlašovací údaje, cookies a peníze"
+  },
+  "confirmTrust": {
+    "message": "Důvěřovat tomuto webu"
+  },
+  "confirmOpen": {
+    "message": "Přesto otevřít"
+  },
+  "confirmKeep": {
+    "message": "Nechat ochranu zapnutou"
+  },
+  "warnTitle": {
+    "message": "Nebezpečný web byl zablokován"
+  },
+  "warnAddress": {
+    "message": "Adresa"
+  },
+  "warnReportedBy": {
+    "message": "Nahlásil"
+  },
+  "warnSteals": {
+    "message": "krade hesla, uložené platební karty a kryptopeněženky"
+  },
+  "warnLeave": {
+    "message": "Zpět do bezpečí"
+  },
+  "warnLeaveTip": {
+    "message": "Místo tohoto webu otevře novou kartu"
+  },
+  "warnContinue": {
+    "message": "Přesto otevřít"
+  },
+  "warnContinueTip": {
+    "message": "Po potvrzení rizika otevře web na příští hodinu"
+  },
+  "warnAdvice": {
+    "message": "Žádný skutečný web po vás nechce, abyste cokoli vkládali do okna Spustit, Terminálu nebo Průzkumníka souborů."
+  },
+  "popupOn": {
+    "message": "Zap."
+  },
+  "popupOff": {
+    "message": "Ochrana je vypnutá."
+  },
+  "popupNotWebPage": {
+    "message": "Toto není webová stránka"
+  },
+  "popupTrusted": {
+    "message": "Důvěřujete mu, nekontroluje se"
+  },
+  "popupReported": {
+    "message": "Nahlášen jako škodlivý"
+  },
+  "popupNoReports": {
+    "message": "O tomto webu nejsou žádná hlášení"
+  },
+  "popupUntrust": {
+    "message": "Přestat důvěřovat tomuto webu"
+  },
+  "popupUpdated": {
+    "message": "Aktualizováno $1, verze pravidel $2"
+  },
+  "popupFeedNone": {
+    "message": "Databáze zatím nebyla stažena"
+  },
+  "popupFeedError": {
+    "message": "Aktualizace databáze selhala, podrobnosti najdete v Nastavení"
+  },
+  "popupNoDetections": {
+    "message": "Zatím nebylo nic zablokováno"
+  },
+  "popupSettings": {
+    "message": "Nastavení"
+  },
+  "popupHistory": {
+    "message": "Zkontrolovat historii"
+  },
+  "popupUpdate": {
+    "message": "Aktualizovat nyní"
+  },
+  "popupUpdating": {
+    "message": "Aktualizace"
+  },
+  "popupRulesLine": {
+    "message": "Verze pravidel detekce $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "vestavěná"
+  },
+  "popupRulesUpdated": {
+    "message": "aktualizovaná online"
+  },
+  "supportShort": {
+    "message": "Podpořit"
+  },
+  "tipSupport": {
+    "message": "Otevře stránku, kde můžete ClickFix Warden podpořit darem"
+  },
+  "supportProject": {
+    "message": "Podpořit projekt"
+  },
+  "kind_clipboard": {
+    "message": "Příkaz ve schránce"
+  },
+  "kind_manual_copy": {
+    "message": "Zkopírovaný příkaz"
+  },
+  "kind_paste": {
+    "message": "Vložení přihlašovacího odkazu"
+  },
+  "kind_protocol": {
+    "message": "Odkaz na program"
+  },
+  "kind_fullscreen": {
+    "message": "Falešná obrazovka aktualizace"
+  },
+  "kind_page_instructions": {
+    "message": "Pokyny k vložení"
+  },
+  "kind_web3_loader": {
+    "message": "Načítání z blockchainu"
+  },
+  "kind_reputation": {
+    "message": "Nahlášený web"
+  },
+  "kind_reputation_block": {
+    "message": "Známý web ClickFix"
+  },
+  "action_blocked": {
+    "message": "zablokováno"
+  },
+  "action_warned": {
+    "message": "zobrazeno varování"
+  },
+  "action_copied_anyway": {
+    "message": "přesto zkopírováno"
+  },
+  "action_continued": {
+    "message": "přesto otevřeno"
+  },
+  "action_trusted": {
+    "message": "přidáno mezi důvěryhodné"
+  },
+  "timeNever": {
+    "message": "nikdy"
+  },
+  "timeJustNow": {
+    "message": "právě teď"
+  },
+  "timeMinutes": {
+    "message": "před $1 min"
+  },
+  "timeHours": {
+    "message": "před $1 h"
+  },
+  "timeDays": {
+    "message": "před $1 dny"
+  },
+  "navProtection": {
+    "message": "Ochrana"
+  },
+  "navTrusted": {
+    "message": "Důvěryhodné weby"
+  },
+  "navHistory": {
+    "message": "Kontrola historie"
+  },
+  "navExtensions": {
+    "message": "Kontrola rozšíření"
+  },
+  "navLog": {
+    "message": "Protokol detekcí"
+  },
+  "navDatabase": {
+    "message": "Databáze"
+  },
+  "navAbout": {
+    "message": "O rozšíření"
+  },
+  "welcomeTitle": {
+    "message": "Jste chráněni"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden teď hlídá stránky, které se vás snaží napálit, abyste spustili příkazy, a varuje vás před weby nahlášenými jako škodlivé."
+  },
+  "welcomePrivacy": {
+    "message": "Vše se kontroluje přímo ve vašem prohlížeči, nic o vašem prohlížení se nikam neodesílá."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden potřebuje přístup ke všem webům, aby je mohl chránit."
+  },
+  "welcomeGrant": {
+    "message": "Povolit na všech webech"
+  },
+  "tipGrantHosts": {
+    "message": "Umožní ClickFix Warden hlídat triky ClickFix na každé stránce"
+  },
+  "managedNote": {
+    "message": "Některá nastavení spravuje vaše organizace."
+  },
+  "protectionLead": {
+    "message": "Vyberte, co má ClickFix Warden hlídat. Vše běží ve vašem prohlížeči."
+  },
+  "setEnabled": {
+    "message": "Ochrana zapnuta"
+  },
+  "tipEnabled": {
+    "message": "Zapne nebo vypne všechny kontroly najednou"
+  },
+  "setClipboard": {
+    "message": "Blokovat nebezpečné příkazy ve schránce"
+  },
+  "tipClipboard": {
+    "message": "Zabrání stránkám vložit do schránky skrytý příkaz a místo něj tam vloží neškodnou poznámku"
+  },
+  "setPaste": {
+    "message": "Blokovat vkládání přihlašovacích odkazů do webů"
+  },
+  "tipPaste": {
+    "message": "Zabrání vložení přihlašovacího odkazu s tajným kódem do stránky, která by mohla ukrást váš účet"
+  },
+  "setProtocols": {
+    "message": "Blokovat odkazy, které otevírají programy ve vašem počítači"
+  },
+  "tipProtocols": {
+    "message": "Zabrání stránkám otevírat Editor skriptů, Vyhledávání ve Windows nad vzdálenými složkami a podobné programy"
+  },
+  "setFullscreen": {
+    "message": "Zastavovat falešné stránky aktualizace přes celou obrazovku"
+  },
+  "tipFullscreen": {
+    "message": "Zabrání stránkám, které vás vyzývají k vkládání příkazů, zamknout obrazovku falešnou aktualizací"
+  },
+  "setPageWarnings": {
+    "message": "Varovat před stránkami s pokyny k vložení"
+  },
+  "tipPageWarnings": {
+    "message": "Zobrazí varovný pruh, když vás stránka vyzve, abyste něco vložili do okna Spustit, Terminálu nebo Průzkumníka souborů"
+  },
+  "setWeb3": {
+    "message": "Hlídat kód načítaný z blockchainu"
+  },
+  "tipWeb3": {
+    "message": "Varuje, když běžný web stahuje skrytý kód z blockchainu, což je trik napadených webů"
+  },
+  "setReputation": {
+    "message": "Varovat před nahlášenými weby"
+  },
+  "tipReputation": {
+    "message": "Zobrazí varovný pruh na webech, které jsou ve veřejných databázích hrozeb vedeny jako škodlivé"
+  },
+  "setBlockPage": {
+    "message": "Blokovat známé weby ClickFix ještě před načtením"
+  },
+  "tipBlockPage": {
+    "message": "Místo webu, který databáze vedou jako stránku ClickFix, zobrazí varování přes celou stránku"
+  },
+  "setFeedUpdates": {
+    "message": "Stahovat aktualizace databáze a pravidel"
+  },
+  "tipFeedUpdates": {
+    "message": "Každou hodinu stáhne podepsaný seznam nahlášených webů a nejnovější pravidla detekce"
+  },
+  "trustedLead": {
+    "message": "Tyto weby se vůbec nekontrolují, přidání webu mezi důvěryhodné vyžaduje stejné potvrzení jako ve varování."
+  },
+  "trustedInputLabel": {
+    "message": "Adresa webu"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Přidat"
+  },
+  "tipTrustedAdd": {
+    "message": "Po potvrzení přidá web do seznamu webů, které se nekontrolují"
+  },
+  "trustedRemove": {
+    "message": "Odebrat"
+  },
+  "tipTrustedRemove": {
+    "message": "Znovu začne tento web kontrolovat"
+  },
+  "trustedEmpty": {
+    "message": "Žádné důvěryhodné weby"
+  },
+  "orgTitle": {
+    "message": "Zpráva ve varováních"
+  },
+  "orgLead": {
+    "message": "Doplňující text zobrazený v každém varování, například na koho se ve firmě obrátit."
+  },
+  "orgPlaceholder": {
+    "message": "Například, než budete pokračovat, zavolejte na IT podporu"
+  },
+  "orgSave": {
+    "message": "Uložit"
+  },
+  "tipOrgSave": {
+    "message": "Uloží text zobrazovaný v každém varování"
+  },
+  "orgSaved": {
+    "message": "Uloženo"
+  },
+  "historyLead": {
+    "message": "Zkontrolujte, zda jste nenavštívili web, který je teď v databázi, kontrola probíhá jen ve vašem prohlížeči."
+  },
+  "historyDays7": {
+    "message": "Posledních 7 dní"
+  },
+  "historyDays30": {
+    "message": "Posledních 30 dní"
+  },
+  "historyDays90": {
+    "message": "Posledních 90 dní"
+  },
+  "tipHistoryDays": {
+    "message": "Jak daleko do minulosti hledat"
+  },
+  "historyScan": {
+    "message": "Zkontrolovat historii"
+  },
+  "tipHistoryScan": {
+    "message": "Požádá o přístup k historii a porovná ji s databází přímo v prohlížeči"
+  },
+  "historyScanning": {
+    "message": "Kontrola"
+  },
+  "historyChecked": {
+    "message": "Zkontrolovány adresy z posledních $2 dní, celkem $1."
+  },
+  "historyClean": {
+    "message": "Žádný navštívený web není v databázi"
+  },
+  "historyFound": {
+    "message": "Navštívené adresy v databázi, celkem $1"
+  },
+  "historyAdvice": {
+    "message": "Pokud jste spustili cokoli, k čemu vás takový web vyzval, změňte hesla z jiného zařízení a nechte tento počítač zkontrolovat."
+  },
+  "historyDenied": {
+    "message": "Přístup k historii nebyl udělen."
+  },
+  "historyDrop": {
+    "message": "Odebrat přístup k historii"
+  },
+  "tipHistoryDrop": {
+    "message": "Vrátí oprávnění k historii až do další kontroly"
+  },
+  "exportJson": {
+    "message": "Exportovat JSON"
+  },
+  "tipExport": {
+    "message": "Uloží výsledky jako soubor JSON do tohoto počítače"
+  },
+  "tipExportLog": {
+    "message": "Uloží protokol jako soubor JSON do tohoto počítače"
+  },
+  "colVisited": {
+    "message": "Poslední návštěva"
+  },
+  "colAddress": {
+    "message": "Adresa"
+  },
+  "colReport": {
+    "message": "Hlášení"
+  },
+  "colTime": {
+    "message": "Čas"
+  },
+  "colWhat": {
+    "message": "Co"
+  },
+  "colSite": {
+    "message": "Web"
+  },
+  "colDetails": {
+    "message": "Podrobnosti"
+  },
+  "extensionsLead": {
+    "message": "Vyhledejte nainstalovaná rozšíření prohlížeče, o kterých je známo, že jsou škodlivá, například falešné blokovače reklam z útoků CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Zkontrolovat nainstalovaná rozšíření"
+  },
+  "tipExtensionsScan": {
+    "message": "Požádá o oprávnění zobrazit seznam rozšíření a porovná je se seznamem známých škodlivých"
+  },
+  "extensionsDrop": {
+    "message": "Odebrat přístup"
+  },
+  "tipExtensionsDrop": {
+    "message": "Vrátí oprávnění zobrazit seznam rozšíření"
+  },
+  "extensionsDenied": {
+    "message": "Přístup nebyl udělen."
+  },
+  "extensionsChecked": {
+    "message": "Zkontrolována nainstalovaná rozšíření, celkem $1."
+  },
+  "extensionsClean": {
+    "message": "Nebylo nalezeno žádné známé škodlivé rozšíření"
+  },
+  "extensionsKnownAs": {
+    "message": "Známé jako $1"
+  },
+  "extensionsRemove": {
+    "message": "Odebrat"
+  },
+  "tipExtensionsRemove": {
+    "message": "Po potvrzení toto rozšíření odinstaluje"
+  },
+  "logLead": {
+    "message": "Co ClickFix Warden zablokoval nebo před čím varoval, protokol zůstává v tomto počítači."
+  },
+  "logClear": {
+    "message": "Vymazat protokol"
+  },
+  "tipLogClear": {
+    "message": "Smaže všechny záznamy v protokolu"
+  },
+  "logClearConfirm": {
+    "message": "Smazat všechny záznamy v protokolu detekcí?"
+  },
+  "databaseLead": {
+    "message": "Hlášení pocházejí z veřejných databází abuse.ch a před použitím se ověřují digitálním podpisem."
+  },
+  "dbGenerated": {
+    "message": "$1 hlášení, zveřejněno $2"
+  },
+  "dbChecked": {
+    "message": "Naposledy zkontrolováno $1"
+  },
+  "dbError": {
+    "message": "Poslední aktualizace selhala, $1"
+  },
+  "dbUpdated": {
+    "message": "Aktuální"
+  },
+  "tipUpdateNow": {
+    "message": "Hned teď stáhne nejnovější databázi a pravidla"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden neshromažďuje žádná data, nemá účet, telemetrii ani vlastní server."
+  },
+  "aboutNetwork": {
+    "message": "Stahuje jen podepsanou databázi a pravidla z GitHubu, který vidí stejný požadavek jako u jakékoli aktualizace."
+  },
+  "aboutProject": {
+    "message": "Zdrojový kód"
+  },
+  "aboutPolicy": {
+    "message": "Zásady ochrany osobních údajů"
+  },
+  "descClipboard": {
+    "message": "Tato stránka se pokusila vložit do vaší schránky $1. Bylo to zastaveno, protože $2."
+  },
+  "descManual": {
+    "message": "Text, který jste se pokusili zkopírovat, je $1, a nebyl zkopírován, protože $2."
+  },
+  "descPaste": {
+    "message": "Chystali jste se do této stránky vložit $1. Bylo to zastaveno, protože $2."
+  },
+  "descProtocol": {
+    "message": "Tato stránka se pokusila otevřít $1. Bylo to zastaveno, protože $2."
+  },
+  "descFullscreen": {
+    "message": "Tato stránka se pokusila zobrazit $1. Bylo to zastaveno, protože $2."
+  },
+  "repLine": {
+    "message": "Podle $1 je to $2, první záznam $3."
+  },
+  "repLineNoDate": {
+    "message": "Podle $1 je to $2."
+  },
+  "warnLead": {
+    "message": "Web $1 je v databázi $2 veden jako $3. Takové stránky vás lstí přimějí vložit příkaz, který $4."
+  },
+  "warnLeadUnknown": {
+    "message": "Web $1 je veden ve veřejných databázích hrozeb. Takové stránky vás lstí přimějí vložit příkaz, který $2."
+  },
+  "confirmBody": {
+    "message": "Pokud budete pokračovat, ClickFix Warden přestane tento web kontrolovat a taková stránka může $1."
+  },
+  "popupBlockedLine": {
+    "message": "ClickFix Warden $2 zablokoval $1"
+  },
+  "popupReports": {
+    "message": "Počet nahlášených adres $1"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "Editor skriptů s připraveným skriptem"
+  },
+  "proto_search_ms": {
+    "message": "okno Vyhledávání ve Windows nad vzdálenou složkou"
+  },
+  "proto_ms_msdt": {
+    "message": "Poradce při potížích s Windows se skrytým nastavením"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office se skrytým nastavením"
+  },
+  "proto_ms_appinstaller": {
+    "message": "instalátor aplikací z internetu"
+  },
+  "setLanguage": {
+    "message": "Jazyk"
+  },
+  "tipLanguage": {
+    "message": "Změní jazyk ClickFix Warden, volba Podle prohlížeče použije jazyk vašeho prohlížeče"
+  },
+  "langBrowser": {
+    "message": "Podle prohlížeče"
+  }
+}

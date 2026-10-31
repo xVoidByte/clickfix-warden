@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "阻擋誘騙你執行指令的 ClickFix 和假 CAPTCHA 攻擊，並在你造訪遭回報為惡意的網站時發出警告。"
+  },
+  "dangerLabel": {
+    "message": "潛在危險網站"
+  },
+  "titleClipboard": {
+    "message": "已封鎖危險指令"
+  },
+  "titleManual": {
+    "message": "未複製危險指令"
+  },
+  "titlePaste": {
+    "message": "已封鎖危險的貼上內容"
+  },
+  "titleProtocol": {
+    "message": "已封鎖危險連結"
+  },
+  "titleFullscreen": {
+    "message": "已封鎖假的更新畫面"
+  },
+  "descNote": {
+    "message": "你的剪貼簿現在只有一則無害的提示，貼上也不會有任何作用。"
+  },
+  "descManualNote": {
+    "message": "已改為複製一則無害的提示。"
+  },
+  "descFullscreenNote": {
+    "message": "如果仍有內容遮住畫面，請按 Esc，然後關閉分頁。"
+  },
+  "whatTemplate": {
+    "message": "一個會$2的$1"
+  },
+  "what_powershell": {
+    "message": "PowerShell 指令"
+  },
+  "what_powershell_hidden": {
+    "message": "隱藏 PowerShell 指令"
+  },
+  "what_applescript": {
+    "message": "AppleScript 指令"
+  },
+  "what_applescript_hidden": {
+    "message": "隱藏 AppleScript 指令"
+  },
+  "what_terminal": {
+    "message": "終端機指令"
+  },
+  "what_terminal_hidden": {
+    "message": "隱藏終端機指令"
+  },
+  "what_script": {
+    "message": "腳本指令"
+  },
+  "what_script_hidden": {
+    "message": "隱藏腳本指令"
+  },
+  "what_cmd": {
+    "message": "命令提示字元指令"
+  },
+  "what_cmd_hidden": {
+    "message": "隱藏命令提示字元指令"
+  },
+  "what_windows": {
+    "message": "Windows 指令"
+  },
+  "what_windows_hidden": {
+    "message": "隱藏 Windows 指令"
+  },
+  "what_generic": {
+    "message": "指令"
+  },
+  "what_generic_hidden": {
+    "message": "隱藏指令"
+  },
+  "effect_download_run": {
+    "message": "下載並執行程式"
+  },
+  "effect_disables_av": {
+    "message": "關閉防毒保護"
+  },
+  "effect_password": {
+    "message": "用假視窗要你輸入密碼"
+  },
+  "effect_remote_share": {
+    "message": "執行遠端網路共用資料夾中的檔案"
+  },
+  "effect_remote_script": {
+    "message": "直接從網際網路執行腳本"
+  },
+  "effect_remote_install": {
+    "message": "直接從網際網路安裝程式"
+  },
+  "effect_dns": {
+    "message": "從 DNS 記錄取得隱藏指令"
+  },
+  "effect_finger": {
+    "message": "從遠端伺服器取得隱藏指令"
+  },
+  "effect_runs": {
+    "message": "不經詢問就在你的電腦上執行"
+  },
+  "whyPage1": {
+    "message": "頁面$1"
+  },
+  "whyPage2": {
+    "message": "頁面$1，並$2"
+  },
+  "lure_captcha": {
+    "message": "偽裝成 CAPTCHA"
+  },
+  "lure_update": {
+    "message": "假裝正在安裝更新"
+  },
+  "lure_fix": {
+    "message": "把指令說成是錯誤的修正方法"
+  },
+  "target_explorer": {
+    "message": "要你把指令貼到檔案總管的網址列"
+  },
+  "target_terminal": {
+    "message": "要你把指令貼到終端機"
+  },
+  "target_run": {
+    "message": "要你把指令貼到「執行」對話方塊"
+  },
+  "target_paste": {
+    "message": "要你把指令貼到電腦上的某個地方"
+  },
+  "why_payload_reported": {
+    "message": "該指令會從遭回報為惡意的位址下載內容"
+  },
+  "why_site_reported": {
+    "message": "此網站已遭回報為惡意網站"
+  },
+  "why_decoy": {
+    "message": "指令後面藏有假的驗證文字"
+  },
+  "why_padding": {
+    "message": "真正的指令藏在一大段空白後面"
+  },
+  "why_disguised": {
+    "message": "指令經過偽裝，以掩飾其真正用途"
+  },
+  "why_hidden_window": {
+    "message": "該指令會在隱藏的視窗中執行"
+  },
+  "why_generic": {
+    "message": "它帶有 ClickFix 攻擊的特徵"
+  },
+  "why_fullscreen": {
+    "message": "頁面要你貼上指令"
+  },
+  "fullscreenWhat": {
+    "message": "像假的 Windows 更新一樣佔據整個畫面"
+  },
+  "pasteWhat": {
+    "message": "一個帶有秘密代碼的登入連結"
+  },
+  "pasteWhy": {
+    "message": "這類頁面可以利用它接管你的帳戶"
+  },
+  "protocolWhy": {
+    "message": "這類連結可以在你毫不知情的情況下在電腦上執行指令"
+  },
+  "btnClose": {
+    "message": "關閉"
+  },
+  "btnLeave": {
+    "message": "離開此網站"
+  },
+  "btnTrust": {
+    "message": "信任此網站"
+  },
+  "tipClose": {
+    "message": "隱藏此警告並留在此頁面"
+  },
+  "tipLeave": {
+    "message": "關閉此頁面並開啟新分頁"
+  },
+  "tipTrust": {
+    "message": "經你確認後，停止對此網站的所有檢查"
+  },
+  "tipUntrust": {
+    "message": "重新開始檢查此網站"
+  },
+  "bannerReported": {
+    "message": "此網站已遭回報為惡意網站。"
+  },
+  "bannerDetails": {
+    "message": "詳細資料"
+  },
+  "bannerFirstSeen": {
+    "message": "首次發現於 $1"
+  },
+  "bannerWeb3": {
+    "message": "此網站正在從區塊鏈載入隱藏的程式碼。"
+  },
+  "bannerWeb3Detail": {
+    "message": "遭駭的網站會用這種手法顯示假的 CAPTCHA 頁面。"
+  },
+  "bannerInstructions": {
+    "message": "此頁面要你把內容貼到「執行」、終端機或檔案總管中。"
+  },
+  "bannerInstructionsDetail": {
+    "message": "正當的網站絕不會要你這樣做。"
+  },
+  "rep_clickfix": {
+    "message": "ClickFix 頁面"
+  },
+  "rep_clickfix_family": {
+    "message": "散播 $1 的 ClickFix 頁面"
+  },
+  "rep_malware": {
+    "message": "惡意軟體下載位址"
+  },
+  "rep_malware_family": {
+    "message": "$1 下載位址"
+  },
+  "rep_c2": {
+    "message": "惡意軟體控制伺服器"
+  },
+  "rep_c2_family": {
+    "message": "$1 控制伺服器"
+  },
+  "rep_phishing": {
+    "message": "釣魚頁面"
+  },
+  "rep_phishing_family": {
+    "message": "$1 釣魚頁面"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "惡意軟體下載"
+  },
+  "category_c2": {
+    "message": "惡意軟體控制伺服器"
+  },
+  "category_phishing": {
+    "message": "網路釣魚"
+  },
+  "confirmTrustTitle": {
+    "message": "要停止保護 $1 嗎？"
+  },
+  "confirmOpenTitle": {
+    "message": "仍要開啟 $1 嗎？"
+  },
+  "confirmReported": {
+    "message": "此網站已在公開的威脅資料庫中遭到回報。"
+  },
+  "confirmBodyStrong": {
+    "message": "感染你的電腦，並竊取你的密碼、已儲存的信用卡和加密貨幣錢包"
+  },
+  "confirmOnlyReported": {
+    "message": "只有在你確定回報有誤時才這麼做。"
+  },
+  "confirmOnlyKnown": {
+    "message": "只對你熟悉的網站這麼做。"
+  },
+  "confirmCheckTrust": {
+    "message": "我了解將此網站加入白名單可能讓我失去登入憑證、Cookie 和金錢"
+  },
+  "confirmCheckOpen": {
+    "message": "我了解開啟此網站可能讓我失去登入憑證、Cookie 和金錢"
+  },
+  "confirmTrust": {
+    "message": "信任此網站"
+  },
+  "confirmOpen": {
+    "message": "仍要開啟"
+  },
+  "confirmKeep": {
+    "message": "繼續保護我"
+  },
+  "warnTitle": {
+    "message": "已封鎖危險網站"
+  },
+  "warnAddress": {
+    "message": "網址"
+  },
+  "warnReportedBy": {
+    "message": "回報來源"
+  },
+  "warnSteals": {
+    "message": "竊取你的密碼、已儲存的信用卡和加密貨幣錢包"
+  },
+  "warnLeave": {
+    "message": "回到安全的地方"
+  },
+  "warnLeaveTip": {
+    "message": "開啟新分頁，而不是此網站"
+  },
+  "warnContinue": {
+    "message": "仍要開啟"
+  },
+  "warnContinueTip": {
+    "message": "確認風險後，在接下來一小時內開放此網站"
+  },
+  "warnAdvice": {
+    "message": "正當的網站絕不會要你把任何內容貼到「執行」、終端機或檔案總管中。"
+  },
+  "popupOn": {
+    "message": "開啟"
+  },
+  "popupOff": {
+    "message": "保護已關閉。"
+  },
+  "popupNotWebPage": {
+    "message": "不是網頁"
+  },
+  "popupTrusted": {
+    "message": "你已信任此網站，不會檢查"
+  },
+  "popupReported": {
+    "message": "已遭回報為惡意網站"
+  },
+  "popupNoReports": {
+    "message": "沒有關於此網站的回報"
+  },
+  "popupUntrust": {
+    "message": "不再信任此網站"
+  },
+  "popupUpdated": {
+    "message": "更新於 $1，規則版本 $2"
+  },
+  "popupFeedNone": {
+    "message": "尚未下載資料庫"
+  },
+  "popupFeedError": {
+    "message": "資料庫更新失敗，請查看設定"
+  },
+  "popupNoDetections": {
+    "message": "尚未封鎖任何內容"
+  },
+  "popupSettings": {
+    "message": "設定"
+  },
+  "popupHistory": {
+    "message": "檢查我的瀏覽記錄"
+  },
+  "popupUpdate": {
+    "message": "立即更新"
+  },
+  "popupUpdating": {
+    "message": "正在更新"
+  },
+  "popupRulesLine": {
+    "message": "偵測規則版本 $1，$2"
+  },
+  "popupRulesBundled": {
+    "message": "內建"
+  },
+  "popupRulesUpdated": {
+    "message": "已線上更新"
+  },
+  "supportShort": {
+    "message": "支持"
+  },
+  "tipSupport": {
+    "message": "開啟可以捐款支持 ClickFix Warden 的頁面"
+  },
+  "supportProject": {
+    "message": "支持本專案"
+  },
+  "kind_clipboard": {
+    "message": "剪貼簿指令"
+  },
+  "kind_manual_copy": {
+    "message": "複製的指令"
+  },
+  "kind_paste": {
+    "message": "貼上登入連結"
+  },
+  "kind_protocol": {
+    "message": "程式連結"
+  },
+  "kind_fullscreen": {
+    "message": "假的更新畫面"
+  },
+  "kind_page_instructions": {
+    "message": "貼上指示"
+  },
+  "kind_web3_loader": {
+    "message": "區塊鏈載入器"
+  },
+  "kind_reputation": {
+    "message": "遭回報的網站"
+  },
+  "kind_reputation_block": {
+    "message": "已知的 ClickFix 網站"
+  },
+  "action_blocked": {
+    "message": "已封鎖"
+  },
+  "action_warned": {
+    "message": "已警告"
+  },
+  "action_copied_anyway": {
+    "message": "仍然複製"
+  },
+  "action_continued": {
+    "message": "仍然開啟"
+  },
+  "action_trusted": {
+    "message": "已信任"
+  },
+  "timeNever": {
+    "message": "從未"
+  },
+  "timeJustNow": {
+    "message": "剛剛"
+  },
+  "timeMinutes": {
+    "message": "$1 分鐘前"
+  },
+  "timeHours": {
+    "message": "$1 小時前"
+  },
+  "timeDays": {
+    "message": "$1 天前"
+  },
+  "navProtection": {
+    "message": "保護"
+  },
+  "navTrusted": {
+    "message": "信任的網站"
+  },
+  "navHistory": {
+    "message": "瀏覽記錄檢查"
+  },
+  "navExtensions": {
+    "message": "擴充功能檢查"
+  },
+  "navLog": {
+    "message": "偵測記錄"
+  },
+  "navDatabase": {
+    "message": "資料庫"
+  },
+  "navAbout": {
+    "message": "關於"
+  },
+  "welcomeTitle": {
+    "message": "你已受到保護"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden 現在會留意誘騙你執行指令的頁面，並在你造訪遭回報為惡意的網站時發出警告。"
+  },
+  "welcomePrivacy": {
+    "message": "所有檢查都在你的瀏覽器內完成，你的瀏覽資訊不會傳送到任何地方。"
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden 需要所有網站的存取權才能保護它們。"
+  },
+  "welcomeGrant": {
+    "message": "在所有網站上允許"
+  },
+  "tipGrantHosts": {
+    "message": "讓 ClickFix Warden 在每個頁面上留意 ClickFix 手法"
+  },
+  "managedNote": {
+    "message": "部分設定由你的組織管理。"
+  },
+  "protectionLead": {
+    "message": "選擇 ClickFix Warden 要留意的項目。所有檢查都在你的瀏覽器內執行。"
+  },
+  "setEnabled": {
+    "message": "開啟保護"
+  },
+  "tipEnabled": {
+    "message": "一次開啟或關閉所有檢查"
+  },
+  "setClipboard": {
+    "message": "封鎖剪貼簿中的危險指令"
+  },
+  "tipClipboard": {
+    "message": "防止頁面將隱藏指令放入你的剪貼簿，並改放一則無害的提示"
+  },
+  "setPaste": {
+    "message": "封鎖將登入連結貼到網站"
+  },
+  "tipPaste": {
+    "message": "防止你將帶有秘密代碼的登入連結貼到可能盜取你帳戶的頁面"
+  },
+  "setProtocols": {
+    "message": "封鎖會開啟電腦上程式的連結"
+  },
+  "tipProtocols": {
+    "message": "防止頁面開啟工序指令編寫程式、針對遠端資料夾的 Windows 搜尋及類似程式"
+  },
+  "setFullscreen": {
+    "message": "阻止假的全螢幕更新頁面"
+  },
+  "tipFullscreen": {
+    "message": "防止要你貼上指令的頁面用假的更新畫面鎖住螢幕"
+  },
+  "setPageWarnings": {
+    "message": "對含有貼上指示的頁面發出警告"
+  },
+  "tipPageWarnings": {
+    "message": "當頁面要你把內容貼到「執行」、終端機或檔案總管時，顯示警告列"
+  },
+  "setWeb3": {
+    "message": "留意從區塊鏈載入的程式碼"
+  },
+  "tipWeb3": {
+    "message": "當一般網站從區塊鏈取得隱藏的程式碼時發出警告，這是遭駭網站常用的手法"
+  },
+  "setReputation": {
+    "message": "對遭回報的網站發出警告"
+  },
+  "tipReputation": {
+    "message": "在公開威脅資料庫列為惡意的網站上顯示警告列"
+  },
+  "setBlockPage": {
+    "message": "在已知的 ClickFix 網站載入前加以封鎖"
+  },
+  "tipBlockPage": {
+    "message": "對資料庫列為 ClickFix 頁面的網站，改為顯示整頁警告"
+  },
+  "setFeedUpdates": {
+    "message": "下載資料庫和規則更新"
+  },
+  "tipFeedUpdates": {
+    "message": "每小時下載經過簽署的遭回報網站清單和最新的偵測規則"
+  },
+  "trustedLead": {
+    "message": "這些網站完全不會受到檢查，信任網站需要經過與警告中相同的確認。"
+  },
+  "trustedInputLabel": {
+    "message": "網站網址"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "新增"
+  },
+  "tipTrustedAdd": {
+    "message": "經你確認後，將此網站加入不檢查的網站清單"
+  },
+  "trustedRemove": {
+    "message": "移除"
+  },
+  "tipTrustedRemove": {
+    "message": "重新開始檢查此網站"
+  },
+  "trustedEmpty": {
+    "message": "沒有信任的網站"
+  },
+  "orgTitle": {
+    "message": "警告中的訊息"
+  },
+  "orgLead": {
+    "message": "每則警告中都會顯示的額外文字，例如在公司內應該聯絡誰。"
+  },
+  "orgPlaceholder": {
+    "message": "例如，繼續之前請先致電 IT 服務台"
+  },
+  "orgSave": {
+    "message": "儲存"
+  },
+  "tipOrgSave": {
+    "message": "儲存每則警告中顯示的文字"
+  },
+  "orgSaved": {
+    "message": "已儲存"
+  },
+  "historyLead": {
+    "message": "檢查你是否造訪過現已列入資料庫的網站，檢查只會在你的瀏覽器內進行。"
+  },
+  "historyDays7": {
+    "message": "過去 7 天"
+  },
+  "historyDays30": {
+    "message": "過去 30 天"
+  },
+  "historyDays90": {
+    "message": "過去 90 天"
+  },
+  "tipHistoryDays": {
+    "message": "要往回檢查多久"
+  },
+  "historyScan": {
+    "message": "檢查我的瀏覽記錄"
+  },
+  "tipHistoryScan": {
+    "message": "要求存取你的瀏覽記錄，並在瀏覽器內與資料庫比對"
+  },
+  "historyScanning": {
+    "message": "正在檢查"
+  },
+  "historyChecked": {
+    "message": "已檢查過去 $2 天內的 $1 個網址。"
+  },
+  "historyClean": {
+    "message": "造訪過的網站都未列入資料庫"
+  },
+  "historyFound": {
+    "message": "有 $1 個造訪過的網址已列入資料庫"
+  },
+  "historyAdvice": {
+    "message": "如果你曾依照列出網站的指示執行任何東西，請用另一台裝置變更密碼，並請人檢查這台電腦。"
+  },
+  "historyDenied": {
+    "message": "未取得瀏覽記錄存取權。"
+  },
+  "historyDrop": {
+    "message": "移除瀏覽記錄存取權"
+  },
+  "tipHistoryDrop": {
+    "message": "交還瀏覽記錄權限，直到你再次檢查"
+  },
+  "exportJson": {
+    "message": "匯出 JSON"
+  },
+  "tipExport": {
+    "message": "將結果以 JSON 檔案儲存到這台電腦"
+  },
+  "tipExportLog": {
+    "message": "將記錄以 JSON 檔案儲存到這台電腦"
+  },
+  "colVisited": {
+    "message": "上次造訪"
+  },
+  "colAddress": {
+    "message": "網址"
+  },
+  "colReport": {
+    "message": "回報"
+  },
+  "colTime": {
+    "message": "時間"
+  },
+  "colWhat": {
+    "message": "內容"
+  },
+  "colSite": {
+    "message": "網站"
+  },
+  "colDetails": {
+    "message": "詳細資料"
+  },
+  "extensionsLead": {
+    "message": "尋找已安裝且已知為惡意的瀏覽器擴充功能，例如 CrashFix 攻擊中使用的假廣告封鎖器。"
+  },
+  "extensionsScan": {
+    "message": "檢查已安裝的擴充功能"
+  },
+  "tipExtensionsScan": {
+    "message": "要求列出擴充功能的權限，並與已知的惡意擴充功能清單比對"
+  },
+  "extensionsDrop": {
+    "message": "移除存取權"
+  },
+  "tipExtensionsDrop": {
+    "message": "交還列出擴充功能的權限"
+  },
+  "extensionsDenied": {
+    "message": "未取得存取權。"
+  },
+  "extensionsChecked": {
+    "message": "已檢查 $1 個已安裝的擴充功能。"
+  },
+  "extensionsClean": {
+    "message": "未發現已知的惡意擴充功能"
+  },
+  "extensionsKnownAs": {
+    "message": "已知名稱為 $1"
+  },
+  "extensionsRemove": {
+    "message": "移除"
+  },
+  "tipExtensionsRemove": {
+    "message": "經你確認後解除安裝此擴充功能"
+  },
+  "logLead": {
+    "message": "ClickFix Warden 封鎖或警告過的內容，記錄只會保存在這台電腦上。"
+  },
+  "logClear": {
+    "message": "清除記錄"
+  },
+  "tipLogClear": {
+    "message": "刪除記錄中的所有項目"
+  },
+  "logClearConfirm": {
+    "message": "要刪除偵測記錄中的所有項目嗎？"
+  },
+  "databaseLead": {
+    "message": "回報來自公開的 abuse.ch 資料庫，使用前會先驗證數位簽章。"
+  },
+  "dbGenerated": {
+    "message": "$1 筆回報，發布於 $2"
+  },
+  "dbChecked": {
+    "message": "上次檢查：$1"
+  },
+  "dbError": {
+    "message": "上次更新失敗，$1"
+  },
+  "dbUpdated": {
+    "message": "已是最新版本"
+  },
+  "tipUpdateNow": {
+    "message": "立即下載最新的資料庫和規則"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden 不會收集任何資料，它沒有帳戶、沒有遙測，也沒有自己的伺服器。"
+  },
+  "aboutNetwork": {
+    "message": "它唯一下載的是來自 GitHub 的已簽署資料庫和規則，GitHub 看到的請求和任何更新的請求都一樣。"
+  },
+  "aboutProject": {
+    "message": "原始碼"
+  },
+  "aboutPolicy": {
+    "message": "隱私權政策"
+  },
+  "descClipboard": {
+    "message": "此頁面試圖將$1放入你的剪貼簿。由於$2，此動作已遭封鎖。"
+  },
+  "descManual": {
+    "message": "你試圖複製的文字是$1。由於$2，因此沒有複製。"
+  },
+  "descPaste": {
+    "message": "你正要將$1貼到此頁面。由於$2，此動作已遭封鎖。"
+  },
+  "descProtocol": {
+    "message": "此頁面試圖開啟$1。由於$2，此動作已遭封鎖。"
+  },
+  "descFullscreen": {
+    "message": "此頁面試圖$1。由於$2，此動作已遭封鎖。"
+  },
+  "repLine": {
+    "message": "$1 將其列為$2，首次發現於 $3。"
+  },
+  "repLineNoDate": {
+    "message": "$1 將其列為$2。"
+  },
+  "warnLead": {
+    "message": "$1 已被 $2 列為$3。這類頁面會誘騙你貼上一個會$4的指令。"
+  },
+  "warnLeadUnknown": {
+    "message": "$1 已列入公開的威脅資料庫。這類頁面會誘騙你貼上一個會$2的指令。"
+  },
+  "confirmBody": {
+    "message": "如果繼續，ClickFix Warden 將停止檢查此網站，而這類頁面可能會$1。"
+  },
+  "popupBlockedLine": {
+    "message": "$2封鎖了$1"
+  },
+  "popupReports": {
+    "message": "$1 個遭回報的網址"
+  },
+  "kindAction": {
+    "message": "$1（$2）"
+  },
+  "proto_applescript": {
+    "message": "內含預先備妥工序指令的工序指令編寫程式"
+  },
+  "proto_search_ms": {
+    "message": "指向遠端資料夾的 Windows 搜尋視窗"
+  },
+  "proto_ms_msdt": {
+    "message": "帶有隱藏設定的 Windows 疑難排解員"
+  },
+  "proto_ms_officecmd": {
+    "message": "帶有隱藏設定的 Office"
+  },
+  "proto_ms_appinstaller": {
+    "message": "來自網際網路的應用程式安裝程式"
+  },
+  "setLanguage": {
+    "message": "語言"
+  },
+  "tipLanguage": {
+    "message": "變更 ClickFix Warden 的語言，選擇「瀏覽器預設」則會跟隨瀏覽器的語言"
+  },
+  "langBrowser": {
+    "message": "瀏覽器預設"
+  }
+}

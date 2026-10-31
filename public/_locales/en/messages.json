@@ -1,282 +1,788 @@
 {
-  "extName": { "message": "ClickFix Warden" },
-  "extDescription": { "message": "Stops ClickFix and fake CAPTCHA attacks that trick you into running commands, and warns about sites reported as malicious." },
-
-  "dangerLabel": { "message": "POTENTIALLY DANGEROUS SITE" },
-  "titleClipboard": { "message": "Dangerous command blocked" },
-  "titleManual": { "message": "Dangerous command not copied" },
-  "titlePaste": { "message": "Dangerous paste blocked" },
-  "titleProtocol": { "message": "Dangerous link blocked" },
-  "titleFullscreen": { "message": "Fake update screen blocked" },
-
-  "descClipboardA": { "message": "This page tried to put" },
-  "descClipboardB": { "message": "in your clipboard. It was stopped because" },
-  "descNote": { "message": "Your clipboard now holds a harmless note, so pasting does nothing." },
-  "descManualA": { "message": "The text you tried to copy is" },
-  "descManualB": { "message": ", and it was not copied because" },
-  "descManualNote": { "message": "A harmless note was copied instead." },
-  "descPasteA": { "message": "You were about to paste" },
-  "descPasteB": { "message": "into this page. It was stopped because" },
-  "descProtocolA": { "message": "This page tried to open" },
-  "descFullscreenA": { "message": "This page tried to" },
-  "descStoppedB": { "message": ". It was stopped because" },
-  "descFullscreenNote": { "message": "Press Esc if anything still covers the screen, then close the tab." },
-
-  "whatTemplate": { "message": "$1 that $2" },
-  "what_powershell": { "message": "a PowerShell command" },
-  "what_powershell_hidden": { "message": "a hidden PowerShell command" },
-  "what_applescript": { "message": "an AppleScript command" },
-  "what_applescript_hidden": { "message": "a hidden AppleScript command" },
-  "what_terminal": { "message": "a Terminal command" },
-  "what_terminal_hidden": { "message": "a hidden Terminal command" },
-  "what_script": { "message": "a script command" },
-  "what_script_hidden": { "message": "a hidden script command" },
-  "what_cmd": { "message": "a Command Prompt command" },
-  "what_cmd_hidden": { "message": "a hidden Command Prompt command" },
-  "what_windows": { "message": "a Windows command" },
-  "what_windows_hidden": { "message": "a hidden Windows command" },
-  "what_generic": { "message": "a command" },
-  "what_generic_hidden": { "message": "a hidden command" },
-  "effect_download_run": { "message": "downloads and runs a program" },
-  "effect_disables_av": { "message": "turns off your antivirus protection" },
-  "effect_password": { "message": "asks for your password with a fake window" },
-  "effect_remote_share": { "message": "runs files from a remote network share" },
-  "effect_remote_script": { "message": "runs a script straight from the internet" },
-  "effect_remote_install": { "message": "installs a program straight from the internet" },
-  "effect_dns": { "message": "pulls hidden commands from DNS records" },
-  "effect_finger": { "message": "pulls hidden commands from a remote server" },
-  "effect_runs": { "message": "runs on your computer without asking" },
-
-  "whyPage1": { "message": "the page $1" },
-  "whyPage2": { "message": "the page $1 and $2" },
-  "lure_captcha": { "message": "pretends to be a CAPTCHA" },
-  "lure_update": { "message": "pretends to install updates" },
-  "lure_fix": { "message": "offers it as a fix for an error" },
-  "target_explorer": { "message": "tells you to paste it into the File Explorer address bar" },
-  "target_terminal": { "message": "tells you to paste it into Terminal" },
-  "target_run": { "message": "tells you to paste it into the Run box" },
-  "target_paste": { "message": "tells you to paste it somewhere on your computer" },
-  "why_payload_reported": { "message": "it downloads from an address reported as malicious" },
-  "why_site_reported": { "message": "this site is reported as malicious" },
-  "why_decoy": { "message": "fake verification text is hidden after the command" },
-  "why_padding": { "message": "the real command is hidden behind blank space" },
-  "why_disguised": { "message": "the command is disguised to hide what it does" },
-  "why_hidden_window": { "message": "it runs in a hidden window" },
-  "why_generic": { "message": "it carries the marks of a ClickFix attack" },
-  "why_fullscreen": { "message": "the page tells you to paste a command" },
-  "fullscreenWhat": { "message": "take over your whole screen like a fake Windows update" },
-  "pasteWhat": { "message": "a sign-in link with a secret code" },
-  "pasteWhy": { "message": "a page like this can use it to take over your account" },
-  "protocolWhy": { "message": "links like this can run commands on your computer without you noticing" },
-
-  "btnClose": { "message": "Close" },
-  "btnLeave": { "message": "Leave this site" },
-  "btnTrust": { "message": "Trust this site" },
-  "tipClose": { "message": "Hides this warning and stays on the page" },
-  "tipLeave": { "message": "Closes this page and opens a new tab" },
-  "tipTrust": { "message": "Stops all checks on this site after you confirm" },
-  "tipUntrust": { "message": "Starts checking this site again" },
-
-  "bannerReported": { "message": "This site is reported as malicious." },
-  "repListsAs": { "message": "$1 lists it as" },
-  "repFirstSeen": { "message": ", first seen $1." },
-  "bannerDetails": { "message": "Details" },
-  "bannerFirstSeen": { "message": "first seen $1" },
-  "bannerWeb3": { "message": "This site loads hidden code from a blockchain." },
-  "bannerWeb3Detail": { "message": "Hacked websites use this trick to show fake CAPTCHA pages." },
-  "bannerInstructions": { "message": "This page tells you to paste something into Run, Terminal or File Explorer." },
-  "bannerInstructionsDetail": { "message": "Real websites never ask you to do that." },
-  "rep_clickfix": { "message": "a ClickFix page" },
-  "rep_clickfix_family": { "message": "a ClickFix page that spreads $1" },
-  "rep_malware": { "message": "a malware download" },
-  "rep_malware_family": { "message": "a $1 download" },
-  "rep_c2": { "message": "a malware control server" },
-  "rep_c2_family": { "message": "a $1 control server" },
-  "rep_phishing": { "message": "a phishing page" },
-  "rep_phishing_family": { "message": "a $1 phishing page" },
-
-  "category_clickfix": { "message": "ClickFix" },
-  "category_malware": { "message": "malware download" },
-  "category_c2": { "message": "malware control server" },
-  "category_phishing": { "message": "phishing" },
-
-  "confirmTrustTitle": { "message": "Stop protecting $1?" },
-  "confirmOpenTitle": { "message": "Open $1 anyway?" },
-  "confirmReported": { "message": "This site is reported in public threat databases." },
-  "confirmBodyA": { "message": "If you continue, ClickFix Warden stops checking it, and a page like this can" },
-  "confirmBodyStrong": { "message": "infect your computer and steal your passwords, saved credit cards and crypto wallets" },
-  "confirmOnlyReported": { "message": "Only do this if you know the report is wrong." },
-  "confirmOnlyKnown": { "message": "Only do this for sites you know well." },
-  "confirmCheckTrust": { "message": "I understand that I can lose my credentials, cookies and money by whitelisting this site" },
-  "confirmCheckOpen": { "message": "I understand that I can lose my credentials, cookies and money by opening this site" },
-  "confirmTrust": { "message": "Trust this site" },
-  "confirmOpen": { "message": "Open anyway" },
-  "confirmKeep": { "message": "Keep me protected" },
-
-  "warnTitle": { "message": "Dangerous site blocked" },
-  "warnAddress": { "message": "Address" },
-  "warnReportedBy": { "message": "Reported by" },
-  "warnListedAs": { "message": "is listed in $1 as" },
-  "warnPagesLike": { "message": "Pages like this trick you into pasting a command that" },
-  "warnSteals": { "message": "steals your passwords, saved credit cards and crypto wallets" },
-  "warnLeave": { "message": "Back to safety" },
-  "warnLeaveTip": { "message": "Opens a new tab instead of this site" },
-  "warnContinue": { "message": "Open anyway" },
-  "warnContinueTip": { "message": "Opens the site for the next hour after you confirm the risk" },
-  "warnAdvice": { "message": "No real website asks you to paste anything into Run, Terminal or File Explorer." },
-
-  "popupOn": { "message": "On" },
-  "popupOff": { "message": "Protection is turned off." },
-  "popupNotWebPage": { "message": "Not a web page" },
-  "popupTrusted": { "message": "Trusted by you, not checked" },
-  "popupBlocked": { "message": "Blocked" },
-  "popupReported": { "message": "Reported as malicious" },
-  "popupNoReports": { "message": "No reports about this site" },
-  "popupUntrust": { "message": "Stop trusting this site" },
-  "popupReportsSuffix": { "message": "reported addresses" },
-  "popupUpdated": { "message": "Updated $1, rules version $2" },
-  "popupFeedNone": { "message": "Database not downloaded yet" },
-  "popupFeedError": { "message": "Database update failed, see Settings" },
-  "popupNoDetections": { "message": "Nothing blocked yet" },
-  "popupSettings": { "message": "Settings" },
-  "popupHistory": { "message": "Check my history" },
-  "popupUpdate": { "message": "Update now" },
-  "popupUpdating": { "message": "Updating" },
-  "popupRulesLine": { "message": "Detection rules version $1, $2" },
-  "popupRulesBundled": { "message": "built in" },
-  "popupRulesUpdated": { "message": "updated online" },
-  "supportShort": { "message": "Support" },
-  "tipSupport": { "message": "Opens a page where you can support ClickFix Warden with a donation" },
-  "supportProject": { "message": "Support the project" },
-
-  "kind_clipboard": { "message": "Clipboard command" },
-  "kind_manual_copy": { "message": "Copied command" },
-  "kind_paste": { "message": "Sign-in link paste" },
-  "kind_protocol": { "message": "Program link" },
-  "kind_fullscreen": { "message": "Fake update screen" },
-  "kind_page_instructions": { "message": "Paste instructions" },
-  "kind_web3_loader": { "message": "Blockchain loader" },
-  "kind_reputation": { "message": "Reported site" },
-  "kind_reputation_block": { "message": "Known ClickFix site" },
-  "action_blocked": { "message": "blocked" },
-  "action_warned": { "message": "warned" },
-  "action_copied_anyway": { "message": "copied anyway" },
-  "action_continued": { "message": "opened anyway" },
-  "action_trusted": { "message": "trusted" },
-
-  "timeNever": { "message": "never" },
-  "timeJustNow": { "message": "just now" },
-  "timeMinutes": { "message": "$1 min ago" },
-  "timeHours": { "message": "$1 h ago" },
-  "timeDays": { "message": "$1 days ago" },
-
-  "navProtection": { "message": "Protection" },
-  "navTrusted": { "message": "Trusted sites" },
-  "navHistory": { "message": "History check" },
-  "navExtensions": { "message": "Extensions check" },
-  "navLog": { "message": "Detection log" },
-  "navDatabase": { "message": "Database" },
-  "navAbout": { "message": "About" },
-
-  "welcomeTitle": { "message": "You are protected" },
-  "welcomeBody": { "message": "ClickFix Warden now watches for pages that try to trick you into running commands, and warns you about sites reported as malicious." },
-  "welcomePrivacy": { "message": "Everything is checked inside your browser, nothing about your browsing is sent anywhere." },
-  "welcomeHostAccess": { "message": "ClickFix Warden needs access to all websites to protect them." },
-  "welcomeGrant": { "message": "Allow on all websites" },
-  "tipGrantHosts": { "message": "Lets ClickFix Warden watch every page for ClickFix tricks" },
-  "managedNote": { "message": "Some settings are managed by your organisation." },
-  "protectionLead": { "message": "Choose what ClickFix Warden watches for. Everything runs inside your browser." },
-
-  "setEnabled": { "message": "Protection on" },
-  "tipEnabled": { "message": "Turns every check on or off at once" },
-  "setClipboard": { "message": "Block dangerous commands in the clipboard" },
-  "tipClipboard": { "message": "Stops pages from putting a hidden command in your clipboard and puts a harmless note there instead" },
-  "setPaste": { "message": "Block pasting sign-in links into websites" },
-  "tipPaste": { "message": "Stops you from pasting a sign-in link that carries a secret code into a page that could steal your account" },
-  "setProtocols": { "message": "Block links that open programs on your computer" },
-  "tipProtocols": { "message": "Stops pages from opening Script Editor, Windows search on remote folders and similar programs" },
-  "setFullscreen": { "message": "Stop fake full-screen update pages" },
-  "tipFullscreen": { "message": "Stops pages that tell you to paste commands from locking the screen with a fake update" },
-  "setPageWarnings": { "message": "Warn about pages with paste instructions" },
-  "tipPageWarnings": { "message": "Shows a warning bar when a page tells you to paste something into Run, Terminal or File Explorer" },
-  "setWeb3": { "message": "Watch for code loaded from a blockchain" },
-  "tipWeb3": { "message": "Warns when a normal website pulls hidden code from a blockchain, a trick used by hacked sites" },
-  "setReputation": { "message": "Warn about reported sites" },
-  "tipReputation": { "message": "Shows a warning bar on sites listed as malicious in public threat databases" },
-  "setBlockPage": { "message": "Block known ClickFix sites before they load" },
-  "tipBlockPage": { "message": "Shows a full-page warning instead of a site that the databases list as a ClickFix page" },
-  "setFeedUpdates": { "message": "Download database and rule updates" },
-  "tipFeedUpdates": { "message": "Downloads the signed list of reported sites and the newest detection rules every hour" },
-
-  "trustedLead": { "message": "These sites are not checked at all, trusting a site needs the same confirmation as in a warning." },
-  "trustedInputLabel": { "message": "Site address" },
-  "trustedPlaceholder": { "message": "intranet.company.com" },
-  "trustedAdd": { "message": "Add" },
-  "tipTrustedAdd": { "message": "Adds the site to the list of sites that are not checked, after you confirm" },
-  "trustedRemove": { "message": "Remove" },
-  "tipTrustedRemove": { "message": "Starts checking this site again" },
-  "trustedEmpty": { "message": "No trusted sites" },
-
-  "orgTitle": { "message": "Message in warnings" },
-  "orgLead": { "message": "Extra text shown in every warning, for example who to contact in your company." },
-  "orgPlaceholder": { "message": "For example, call the IT helpdesk before you continue" },
-  "orgSave": { "message": "Save" },
-  "tipOrgSave": { "message": "Saves the text shown in every warning" },
-  "orgSaved": { "message": "Saved" },
-
-  "historyLead": { "message": "Check whether you visited any site that is now listed in the database, the check runs only in your browser." },
-  "historyDays7": { "message": "Last 7 days" },
-  "historyDays30": { "message": "Last 30 days" },
-  "historyDays90": { "message": "Last 90 days" },
-  "tipHistoryDays": { "message": "How far back to look" },
-  "historyScan": { "message": "Check my history" },
-  "tipHistoryScan": { "message": "Asks for access to your history and compares it with the database inside your browser" },
-  "historyScanning": { "message": "Checking" },
-  "historyChecked": { "message": "Checked $1 addresses from the last $2 days." },
-  "historyClean": { "message": "No visited site is listed" },
-  "historyFound": { "message": "$1 visited addresses are listed" },
-  "historyAdvice": { "message": "If you ran anything a listed site told you to, change your passwords from another device and have this computer checked." },
-  "historyDenied": { "message": "History access was not granted." },
-  "historyDrop": { "message": "Remove history access" },
-  "tipHistoryDrop": { "message": "Gives back the history permission until you check again" },
-  "exportJson": { "message": "Export JSON" },
-  "tipExport": { "message": "Saves the results as a JSON file on this computer" },
-  "tipExportLog": { "message": "Saves the log as a JSON file on this computer" },
-
-  "colVisited": { "message": "Last visit" },
-  "colAddress": { "message": "Address" },
-  "colReport": { "message": "Report" },
-  "colTime": { "message": "Time" },
-  "colWhat": { "message": "What" },
-  "colSite": { "message": "Site" },
-  "colDetails": { "message": "Details" },
-
-  "extensionsLead": { "message": "Look for installed browser extensions that are known to be malicious, such as fake ad blockers used in CrashFix attacks." },
-  "extensionsScan": { "message": "Check installed extensions" },
-  "tipExtensionsScan": { "message": "Asks for permission to list your extensions and compares them with a list of known malicious ones" },
-  "extensionsDrop": { "message": "Remove access" },
-  "tipExtensionsDrop": { "message": "Gives back the permission to list your extensions" },
-  "extensionsDenied": { "message": "Access was not granted." },
-  "extensionsChecked": { "message": "Checked $1 installed extensions." },
-  "extensionsClean": { "message": "No known malicious extension found" },
-  "extensionsKnownAs": { "message": "Known as $1" },
-  "extensionsRemove": { "message": "Remove" },
-  "tipExtensionsRemove": { "message": "Uninstalls this extension after you confirm" },
-
-  "logLead": { "message": "What ClickFix Warden blocked or warned about, the log stays on this computer." },
-  "logClear": { "message": "Clear the log" },
-  "tipLogClear": { "message": "Deletes every entry in the log" },
-  "logClearConfirm": { "message": "Delete every entry in the detection log?" },
-
-  "databaseLead": { "message": "Reports come from the public abuse.ch databases and are checked against a digital signature before use." },
-  "dbGenerated": { "message": "$1 reports, published $2" },
-  "dbChecked": { "message": "Last checked $1" },
-  "dbError": { "message": "Last update failed, $1" },
-  "dbUpdated": { "message": "Up to date" },
-  "tipUpdateNow": { "message": "Downloads the newest database and rules right now" },
-
-  "aboutPrivacy": { "message": "ClickFix Warden collects no data, it has no account, no telemetry and no server of its own." },
-  "aboutNetwork": { "message": "The only thing it downloads is the signed database and rules from GitHub, which sees the same request any update makes." },
-  "aboutProject": { "message": "Source code" },
-  "aboutPolicy": { "message": "Privacy policy" }
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Stops ClickFix and fake CAPTCHA attacks that trick you into running commands, and warns about sites reported as malicious."
+  },
+  "dangerLabel": {
+    "message": "POTENTIALLY DANGEROUS SITE"
+  },
+  "titleClipboard": {
+    "message": "Dangerous command blocked"
+  },
+  "titleManual": {
+    "message": "Dangerous command not copied"
+  },
+  "titlePaste": {
+    "message": "Dangerous paste blocked"
+  },
+  "titleProtocol": {
+    "message": "Dangerous link blocked"
+  },
+  "titleFullscreen": {
+    "message": "Fake update screen blocked"
+  },
+  "descNote": {
+    "message": "Your clipboard now holds a harmless note, so pasting does nothing."
+  },
+  "descManualNote": {
+    "message": "A harmless note was copied instead."
+  },
+  "descFullscreenNote": {
+    "message": "Press Esc if anything still covers the screen, then close the tab."
+  },
+  "whatTemplate": {
+    "message": "$1 that $2"
+  },
+  "what_powershell": {
+    "message": "a PowerShell command"
+  },
+  "what_powershell_hidden": {
+    "message": "a hidden PowerShell command"
+  },
+  "what_applescript": {
+    "message": "an AppleScript command"
+  },
+  "what_applescript_hidden": {
+    "message": "a hidden AppleScript command"
+  },
+  "what_terminal": {
+    "message": "a Terminal command"
+  },
+  "what_terminal_hidden": {
+    "message": "a hidden Terminal command"
+  },
+  "what_script": {
+    "message": "a script command"
+  },
+  "what_script_hidden": {
+    "message": "a hidden script command"
+  },
+  "what_cmd": {
+    "message": "a Command Prompt command"
+  },
+  "what_cmd_hidden": {
+    "message": "a hidden Command Prompt command"
+  },
+  "what_windows": {
+    "message": "a Windows command"
+  },
+  "what_windows_hidden": {
+    "message": "a hidden Windows command"
+  },
+  "what_generic": {
+    "message": "a command"
+  },
+  "what_generic_hidden": {
+    "message": "a hidden command"
+  },
+  "effect_download_run": {
+    "message": "downloads and runs a program"
+  },
+  "effect_disables_av": {
+    "message": "turns off your antivirus protection"
+  },
+  "effect_password": {
+    "message": "asks for your password with a fake window"
+  },
+  "effect_remote_share": {
+    "message": "runs files from a remote network share"
+  },
+  "effect_remote_script": {
+    "message": "runs a script straight from the internet"
+  },
+  "effect_remote_install": {
+    "message": "installs a program straight from the internet"
+  },
+  "effect_dns": {
+    "message": "pulls hidden commands from DNS records"
+  },
+  "effect_finger": {
+    "message": "pulls hidden commands from a remote server"
+  },
+  "effect_runs": {
+    "message": "runs on your computer without asking"
+  },
+  "whyPage1": {
+    "message": "the page $1"
+  },
+  "whyPage2": {
+    "message": "the page $1 and $2"
+  },
+  "lure_captcha": {
+    "message": "pretends to be a CAPTCHA"
+  },
+  "lure_update": {
+    "message": "pretends to install updates"
+  },
+  "lure_fix": {
+    "message": "offers it as a fix for an error"
+  },
+  "target_explorer": {
+    "message": "tells you to paste it into the File Explorer address bar"
+  },
+  "target_terminal": {
+    "message": "tells you to paste it into Terminal"
+  },
+  "target_run": {
+    "message": "tells you to paste it into the Run box"
+  },
+  "target_paste": {
+    "message": "tells you to paste it somewhere on your computer"
+  },
+  "why_payload_reported": {
+    "message": "it downloads from an address reported as malicious"
+  },
+  "why_site_reported": {
+    "message": "this site is reported as malicious"
+  },
+  "why_decoy": {
+    "message": "fake verification text is hidden after the command"
+  },
+  "why_padding": {
+    "message": "the real command is hidden behind blank space"
+  },
+  "why_disguised": {
+    "message": "the command is disguised to hide what it does"
+  },
+  "why_hidden_window": {
+    "message": "it runs in a hidden window"
+  },
+  "why_generic": {
+    "message": "it carries the marks of a ClickFix attack"
+  },
+  "why_fullscreen": {
+    "message": "the page tells you to paste a command"
+  },
+  "fullscreenWhat": {
+    "message": "take over your whole screen like a fake Windows update"
+  },
+  "pasteWhat": {
+    "message": "a sign-in link with a secret code"
+  },
+  "pasteWhy": {
+    "message": "a page like this can use it to take over your account"
+  },
+  "protocolWhy": {
+    "message": "links like this can run commands on your computer without you noticing"
+  },
+  "btnClose": {
+    "message": "Close"
+  },
+  "btnLeave": {
+    "message": "Leave this site"
+  },
+  "btnTrust": {
+    "message": "Trust this site"
+  },
+  "tipClose": {
+    "message": "Hides this warning and stays on the page"
+  },
+  "tipLeave": {
+    "message": "Closes this page and opens a new tab"
+  },
+  "tipTrust": {
+    "message": "Stops all checks on this site after you confirm"
+  },
+  "tipUntrust": {
+    "message": "Starts checking this site again"
+  },
+  "bannerReported": {
+    "message": "This site is reported as malicious."
+  },
+  "bannerDetails": {
+    "message": "Details"
+  },
+  "bannerFirstSeen": {
+    "message": "first seen $1"
+  },
+  "bannerWeb3": {
+    "message": "This site loads hidden code from a blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "Hacked websites use this trick to show fake CAPTCHA pages."
+  },
+  "bannerInstructions": {
+    "message": "This page tells you to paste something into Run, Terminal or File Explorer."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Real websites never ask you to do that."
+  },
+  "rep_clickfix": {
+    "message": "a ClickFix page"
+  },
+  "rep_clickfix_family": {
+    "message": "a ClickFix page that spreads $1"
+  },
+  "rep_malware": {
+    "message": "a malware download"
+  },
+  "rep_malware_family": {
+    "message": "a $1 download"
+  },
+  "rep_c2": {
+    "message": "a malware control server"
+  },
+  "rep_c2_family": {
+    "message": "a $1 control server"
+  },
+  "rep_phishing": {
+    "message": "a phishing page"
+  },
+  "rep_phishing_family": {
+    "message": "a $1 phishing page"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "malware download"
+  },
+  "category_c2": {
+    "message": "malware control server"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "Stop protecting $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Open $1 anyway?"
+  },
+  "confirmReported": {
+    "message": "This site is reported in public threat databases."
+  },
+  "confirmBodyStrong": {
+    "message": "infect your computer and steal your passwords, saved credit cards and crypto wallets"
+  },
+  "confirmOnlyReported": {
+    "message": "Only do this if you know the report is wrong."
+  },
+  "confirmOnlyKnown": {
+    "message": "Only do this for sites you know well."
+  },
+  "confirmCheckTrust": {
+    "message": "I understand that I can lose my credentials, cookies and money by whitelisting this site"
+  },
+  "confirmCheckOpen": {
+    "message": "I understand that I can lose my credentials, cookies and money by opening this site"
+  },
+  "confirmTrust": {
+    "message": "Trust this site"
+  },
+  "confirmOpen": {
+    "message": "Open anyway"
+  },
+  "confirmKeep": {
+    "message": "Keep me protected"
+  },
+  "warnTitle": {
+    "message": "Dangerous site blocked"
+  },
+  "warnAddress": {
+    "message": "Address"
+  },
+  "warnReportedBy": {
+    "message": "Reported by"
+  },
+  "warnSteals": {
+    "message": "steals your passwords, saved credit cards and crypto wallets"
+  },
+  "warnLeave": {
+    "message": "Back to safety"
+  },
+  "warnLeaveTip": {
+    "message": "Opens a new tab instead of this site"
+  },
+  "warnContinue": {
+    "message": "Open anyway"
+  },
+  "warnContinueTip": {
+    "message": "Opens the site for the next hour after you confirm the risk"
+  },
+  "warnAdvice": {
+    "message": "No real website asks you to paste anything into Run, Terminal or File Explorer."
+  },
+  "popupOn": {
+    "message": "On"
+  },
+  "popupOff": {
+    "message": "Protection is turned off."
+  },
+  "popupNotWebPage": {
+    "message": "Not a web page"
+  },
+  "popupTrusted": {
+    "message": "Trusted by you, not checked"
+  },
+  "popupReported": {
+    "message": "Reported as malicious"
+  },
+  "popupNoReports": {
+    "message": "No reports about this site"
+  },
+  "popupUntrust": {
+    "message": "Stop trusting this site"
+  },
+  "popupUpdated": {
+    "message": "Updated $1, rules version $2"
+  },
+  "popupFeedNone": {
+    "message": "Database not downloaded yet"
+  },
+  "popupFeedError": {
+    "message": "Database update failed, see Settings"
+  },
+  "popupNoDetections": {
+    "message": "Nothing blocked yet"
+  },
+  "popupSettings": {
+    "message": "Settings"
+  },
+  "popupHistory": {
+    "message": "Check my history"
+  },
+  "popupUpdate": {
+    "message": "Update now"
+  },
+  "popupUpdating": {
+    "message": "Updating"
+  },
+  "popupRulesLine": {
+    "message": "Detection rules version $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "built in"
+  },
+  "popupRulesUpdated": {
+    "message": "updated online"
+  },
+  "supportShort": {
+    "message": "Support"
+  },
+  "tipSupport": {
+    "message": "Opens a page where you can support ClickFix Warden with a donation"
+  },
+  "supportProject": {
+    "message": "Support the project"
+  },
+  "kind_clipboard": {
+    "message": "Clipboard command"
+  },
+  "kind_manual_copy": {
+    "message": "Copied command"
+  },
+  "kind_paste": {
+    "message": "Sign-in link paste"
+  },
+  "kind_protocol": {
+    "message": "Program link"
+  },
+  "kind_fullscreen": {
+    "message": "Fake update screen"
+  },
+  "kind_page_instructions": {
+    "message": "Paste instructions"
+  },
+  "kind_web3_loader": {
+    "message": "Blockchain loader"
+  },
+  "kind_reputation": {
+    "message": "Reported site"
+  },
+  "kind_reputation_block": {
+    "message": "Known ClickFix site"
+  },
+  "action_blocked": {
+    "message": "blocked"
+  },
+  "action_warned": {
+    "message": "warned"
+  },
+  "action_copied_anyway": {
+    "message": "copied anyway"
+  },
+  "action_continued": {
+    "message": "opened anyway"
+  },
+  "action_trusted": {
+    "message": "trusted"
+  },
+  "timeNever": {
+    "message": "never"
+  },
+  "timeJustNow": {
+    "message": "just now"
+  },
+  "timeMinutes": {
+    "message": "$1 min ago"
+  },
+  "timeHours": {
+    "message": "$1 h ago"
+  },
+  "timeDays": {
+    "message": "$1 days ago"
+  },
+  "navProtection": {
+    "message": "Protection"
+  },
+  "navTrusted": {
+    "message": "Trusted sites"
+  },
+  "navHistory": {
+    "message": "History check"
+  },
+  "navExtensions": {
+    "message": "Extensions check"
+  },
+  "navLog": {
+    "message": "Detection log"
+  },
+  "navDatabase": {
+    "message": "Database"
+  },
+  "navAbout": {
+    "message": "About"
+  },
+  "welcomeTitle": {
+    "message": "You are protected"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden now watches for pages that try to trick you into running commands, and warns you about sites reported as malicious."
+  },
+  "welcomePrivacy": {
+    "message": "Everything is checked inside your browser, nothing about your browsing is sent anywhere."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden needs access to all websites to protect them."
+  },
+  "welcomeGrant": {
+    "message": "Allow on all websites"
+  },
+  "tipGrantHosts": {
+    "message": "Lets ClickFix Warden watch every page for ClickFix tricks"
+  },
+  "managedNote": {
+    "message": "Some settings are managed by your organisation."
+  },
+  "protectionLead": {
+    "message": "Choose what ClickFix Warden watches for. Everything runs inside your browser."
+  },
+  "setEnabled": {
+    "message": "Protection on"
+  },
+  "tipEnabled": {
+    "message": "Turns every check on or off at once"
+  },
+  "setClipboard": {
+    "message": "Block dangerous commands in the clipboard"
+  },
+  "tipClipboard": {
+    "message": "Stops pages from putting a hidden command in your clipboard and puts a harmless note there instead"
+  },
+  "setPaste": {
+    "message": "Block pasting sign-in links into websites"
+  },
+  "tipPaste": {
+    "message": "Stops you from pasting a sign-in link that carries a secret code into a page that could steal your account"
+  },
+  "setProtocols": {
+    "message": "Block links that open programs on your computer"
+  },
+  "tipProtocols": {
+    "message": "Stops pages from opening Script Editor, Windows search on remote folders and similar programs"
+  },
+  "setFullscreen": {
+    "message": "Stop fake full-screen update pages"
+  },
+  "tipFullscreen": {
+    "message": "Stops pages that tell you to paste commands from locking the screen with a fake update"
+  },
+  "setPageWarnings": {
+    "message": "Warn about pages with paste instructions"
+  },
+  "tipPageWarnings": {
+    "message": "Shows a warning bar when a page tells you to paste something into Run, Terminal or File Explorer"
+  },
+  "setWeb3": {
+    "message": "Watch for code loaded from a blockchain"
+  },
+  "tipWeb3": {
+    "message": "Warns when a normal website pulls hidden code from a blockchain, a trick used by hacked sites"
+  },
+  "setReputation": {
+    "message": "Warn about reported sites"
+  },
+  "tipReputation": {
+    "message": "Shows a warning bar on sites listed as malicious in public threat databases"
+  },
+  "setBlockPage": {
+    "message": "Block known ClickFix sites before they load"
+  },
+  "tipBlockPage": {
+    "message": "Shows a full-page warning instead of a site that the databases list as a ClickFix page"
+  },
+  "setFeedUpdates": {
+    "message": "Download database and rule updates"
+  },
+  "tipFeedUpdates": {
+    "message": "Downloads the signed list of reported sites and the newest detection rules every hour"
+  },
+  "trustedLead": {
+    "message": "These sites are not checked at all, trusting a site needs the same confirmation as in a warning."
+  },
+  "trustedInputLabel": {
+    "message": "Site address"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Add"
+  },
+  "tipTrustedAdd": {
+    "message": "Adds the site to the list of sites that are not checked, after you confirm"
+  },
+  "trustedRemove": {
+    "message": "Remove"
+  },
+  "tipTrustedRemove": {
+    "message": "Starts checking this site again"
+  },
+  "trustedEmpty": {
+    "message": "No trusted sites"
+  },
+  "orgTitle": {
+    "message": "Message in warnings"
+  },
+  "orgLead": {
+    "message": "Extra text shown in every warning, for example who to contact in your company."
+  },
+  "orgPlaceholder": {
+    "message": "For example, call the IT helpdesk before you continue"
+  },
+  "orgSave": {
+    "message": "Save"
+  },
+  "tipOrgSave": {
+    "message": "Saves the text shown in every warning"
+  },
+  "orgSaved": {
+    "message": "Saved"
+  },
+  "historyLead": {
+    "message": "Check whether you visited any site that is now listed in the database, the check runs only in your browser."
+  },
+  "historyDays7": {
+    "message": "Last 7 days"
+  },
+  "historyDays30": {
+    "message": "Last 30 days"
+  },
+  "historyDays90": {
+    "message": "Last 90 days"
+  },
+  "tipHistoryDays": {
+    "message": "How far back to look"
+  },
+  "historyScan": {
+    "message": "Check my history"
+  },
+  "tipHistoryScan": {
+    "message": "Asks for access to your history and compares it with the database inside your browser"
+  },
+  "historyScanning": {
+    "message": "Checking"
+  },
+  "historyChecked": {
+    "message": "Checked $1 addresses from the last $2 days."
+  },
+  "historyClean": {
+    "message": "No visited site is listed"
+  },
+  "historyFound": {
+    "message": "$1 visited addresses are listed"
+  },
+  "historyAdvice": {
+    "message": "If you ran anything a listed site told you to, change your passwords from another device and have this computer checked."
+  },
+  "historyDenied": {
+    "message": "History access was not granted."
+  },
+  "historyDrop": {
+    "message": "Remove history access"
+  },
+  "tipHistoryDrop": {
+    "message": "Gives back the history permission until you check again"
+  },
+  "exportJson": {
+    "message": "Export JSON"
+  },
+  "tipExport": {
+    "message": "Saves the results as a JSON file on this computer"
+  },
+  "tipExportLog": {
+    "message": "Saves the log as a JSON file on this computer"
+  },
+  "colVisited": {
+    "message": "Last visit"
+  },
+  "colAddress": {
+    "message": "Address"
+  },
+  "colReport": {
+    "message": "Report"
+  },
+  "colTime": {
+    "message": "Time"
+  },
+  "colWhat": {
+    "message": "What"
+  },
+  "colSite": {
+    "message": "Site"
+  },
+  "colDetails": {
+    "message": "Details"
+  },
+  "extensionsLead": {
+    "message": "Look for installed browser extensions that are known to be malicious, such as fake ad blockers used in CrashFix attacks."
+  },
+  "extensionsScan": {
+    "message": "Check installed extensions"
+  },
+  "tipExtensionsScan": {
+    "message": "Asks for permission to list your extensions and compares them with a list of known malicious ones"
+  },
+  "extensionsDrop": {
+    "message": "Remove access"
+  },
+  "tipExtensionsDrop": {
+    "message": "Gives back the permission to list your extensions"
+  },
+  "extensionsDenied": {
+    "message": "Access was not granted."
+  },
+  "extensionsChecked": {
+    "message": "Checked $1 installed extensions."
+  },
+  "extensionsClean": {
+    "message": "No known malicious extension found"
+  },
+  "extensionsKnownAs": {
+    "message": "Known as $1"
+  },
+  "extensionsRemove": {
+    "message": "Remove"
+  },
+  "tipExtensionsRemove": {
+    "message": "Uninstalls this extension after you confirm"
+  },
+  "logLead": {
+    "message": "What ClickFix Warden blocked or warned about, the log stays on this computer."
+  },
+  "logClear": {
+    "message": "Clear the log"
+  },
+  "tipLogClear": {
+    "message": "Deletes every entry in the log"
+  },
+  "logClearConfirm": {
+    "message": "Delete every entry in the detection log?"
+  },
+  "databaseLead": {
+    "message": "Reports come from the public abuse.ch databases and are checked against a digital signature before use."
+  },
+  "dbGenerated": {
+    "message": "$1 reports, published $2"
+  },
+  "dbChecked": {
+    "message": "Last checked $1"
+  },
+  "dbError": {
+    "message": "Last update failed, $1"
+  },
+  "dbUpdated": {
+    "message": "Up to date"
+  },
+  "tipUpdateNow": {
+    "message": "Downloads the newest database and rules right now"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden collects no data, it has no account, no telemetry and no server of its own."
+  },
+  "aboutNetwork": {
+    "message": "The only thing it downloads is the signed database and rules from GitHub, which sees the same request any update makes."
+  },
+  "aboutProject": {
+    "message": "Source code"
+  },
+  "aboutPolicy": {
+    "message": "Privacy policy"
+  },
+  "descClipboard": {
+    "message": "This page tried to put $1 in your clipboard. It was stopped because $2."
+  },
+  "descManual": {
+    "message": "The text you tried to copy is $1, and it was not copied because $2."
+  },
+  "descPaste": {
+    "message": "You were about to paste $1 into this page. It was stopped because $2."
+  },
+  "descProtocol": {
+    "message": "This page tried to open $1. It was stopped because $2."
+  },
+  "descFullscreen": {
+    "message": "This page tried to $1. It was stopped because $2."
+  },
+  "repLine": {
+    "message": "$1 lists it as $2, first seen $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 lists it as $2."
+  },
+  "warnLead": {
+    "message": "$1 is listed in $2 as $3. Pages like this trick you into pasting a command that $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 is listed in public threat databases. Pages like this trick you into pasting a command that $2."
+  },
+  "confirmBody": {
+    "message": "If you continue, ClickFix Warden stops checking it, and a page like this can $1."
+  },
+  "popupBlockedLine": {
+    "message": "Blocked $1 $2"
+  },
+  "popupReports": {
+    "message": "$1 reported addresses"
+  },
+  "kindAction": {
+    "message": "$1 $2"
+  },
+  "proto_applescript": {
+    "message": "Script Editor with a prepared script"
+  },
+  "proto_search_ms": {
+    "message": "a Windows search window on a remote folder"
+  },
+  "proto_ms_msdt": {
+    "message": "the Windows troubleshooter with hidden settings"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office with hidden settings"
+  },
+  "proto_ms_appinstaller": {
+    "message": "an app installer from the internet"
+  },
+  "setLanguage": {
+    "message": "Language"
+  },
+  "tipLanguage": {
+    "message": "Changes the language of ClickFix Warden, browser default follows the language of your browser"
+  },
+  "langBrowser": {
+    "message": "Browser default"
+  }
 }

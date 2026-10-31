@@ -7,7 +7,7 @@ import { BUNDLED_RULES, pickRules } from '../engine/rules';
 import { evaluateCommand } from '../engine/score';
 import type { CommandContext, PageVerdict, Reason, RulesFile, TriggerKind, Verdict } from '../engine/types';
 import type { FeedHit } from '../feed/types';
-import { label, t } from '../shared/i18n';
+import { label, setI18nOverride, t } from '../shared/i18n';
 import type { AlertData, DetectionAction, DetectionKind, Message, PageStatus, TabMessage } from '../shared/messages';
 import { DEFAULT_SETTINGS, type EffectiveSettings, isTrusted, type Settings } from '../shared/settings';
 import { whatOfCommand, whyOfCommand, whyOfPage } from '../ui/explain';
@@ -40,7 +40,8 @@ export function startGuard(): void {
   // ---- state from storage ----
   async function load(): Promise<void> {
     try {
-      const stored = await browser.storage.local.get(['rules', 'effective']);
+      const stored = await browser.storage.local.get(['rules', 'effective', 'i18nOverride']);
+      setI18nOverride(stored.i18nOverride);
       rules = pickRules(stored.rules);
       const eff = stored.effective as EffectiveSettings | undefined;
       if (eff?.settings) settings = { ...DEFAULT_SETTINGS, ...eff.settings };
@@ -52,7 +53,7 @@ export function startGuard(): void {
   void load();
   try {
     browser.storage.onChanged.addListener((changes, area) => {
-      if (area === 'local' && (changes.rules || changes.effective)) void load();
+      if (area === 'local' && (changes.rules || changes.effective || changes.i18nOverride)) void load();
     });
   } catch {
     // ignore
@@ -211,7 +212,8 @@ export function startGuard(): void {
     if (!active() || !settings.protocols) return false;
     const rule = matchProtocol(url, rules);
     if (!rule) return false;
-    const what = label(rule.label, rule.id);
+    const key = 'proto_' + rule.id.replace(/^proto-/, '').replace(/-/g, '_');
+    const what = t(key) !== key ? t(key) : label(rule.label, rule.id);
     present({ kind: 'protocol', host, what, why: t('protocolWhy') });
     log('protocol', 'blocked', { reasons: [rule.id], command: url, what });
     return true;

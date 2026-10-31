@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Stopt ClickFix en nep-CAPTCHA's die u ertoe verleiden opdrachten uit te voeren, en waarschuwt voor als schadelijk gemelde sites."
+  },
+  "dangerLabel": {
+    "message": "MOGELIJK GEVAARLIJKE SITE"
+  },
+  "titleClipboard": {
+    "message": "Gevaarlijke opdracht geblokkeerd"
+  },
+  "titleManual": {
+    "message": "Gevaarlijke opdracht niet gekopieerd"
+  },
+  "titlePaste": {
+    "message": "Gevaarlijk plakken geblokkeerd"
+  },
+  "titleProtocol": {
+    "message": "Gevaarlijke link geblokkeerd"
+  },
+  "titleFullscreen": {
+    "message": "Nep-updatescherm geblokkeerd"
+  },
+  "descNote": {
+    "message": "Op uw klembord staat nu een onschuldige notitie, dus plakken doet niets."
+  },
+  "descManualNote": {
+    "message": "In plaats daarvan is een onschuldige notitie gekopieerd."
+  },
+  "descFullscreenNote": {
+    "message": "Druk op Esc als er nog iets over het scherm ligt en sluit daarna het tabblad."
+  },
+  "whatTemplate": {
+    "message": "$1 die $2"
+  },
+  "what_powershell": {
+    "message": "een PowerShell-opdracht"
+  },
+  "what_powershell_hidden": {
+    "message": "een verborgen PowerShell-opdracht"
+  },
+  "what_applescript": {
+    "message": "een AppleScript-opdracht"
+  },
+  "what_applescript_hidden": {
+    "message": "een verborgen AppleScript-opdracht"
+  },
+  "what_terminal": {
+    "message": "een Terminal-opdracht"
+  },
+  "what_terminal_hidden": {
+    "message": "een verborgen Terminal-opdracht"
+  },
+  "what_script": {
+    "message": "een scriptopdracht"
+  },
+  "what_script_hidden": {
+    "message": "een verborgen scriptopdracht"
+  },
+  "what_cmd": {
+    "message": "een opdracht voor de Opdrachtprompt"
+  },
+  "what_cmd_hidden": {
+    "message": "een verborgen opdracht voor de Opdrachtprompt"
+  },
+  "what_windows": {
+    "message": "een Windows-opdracht"
+  },
+  "what_windows_hidden": {
+    "message": "een verborgen Windows-opdracht"
+  },
+  "what_generic": {
+    "message": "een opdracht"
+  },
+  "what_generic_hidden": {
+    "message": "een verborgen opdracht"
+  },
+  "effect_download_run": {
+    "message": "een programma downloadt en uitvoert"
+  },
+  "effect_disables_av": {
+    "message": "uw antivirusbeveiliging uitschakelt"
+  },
+  "effect_password": {
+    "message": "met een nepvenster om uw wachtwoord vraagt"
+  },
+  "effect_remote_share": {
+    "message": "bestanden uitvoert vanaf een externe netwerkshare"
+  },
+  "effect_remote_script": {
+    "message": "een script rechtstreeks vanaf internet uitvoert"
+  },
+  "effect_remote_install": {
+    "message": "een programma rechtstreeks vanaf internet installeert"
+  },
+  "effect_dns": {
+    "message": "verborgen opdrachten uit DNS-records ophaalt"
+  },
+  "effect_finger": {
+    "message": "verborgen opdrachten van een externe server ophaalt"
+  },
+  "effect_runs": {
+    "message": "zonder te vragen op uw computer wordt uitgevoerd"
+  },
+  "whyPage1": {
+    "message": "de pagina $1"
+  },
+  "whyPage2": {
+    "message": "de pagina $1 en $2"
+  },
+  "lure_captcha": {
+    "message": "zich voordoet als CAPTCHA"
+  },
+  "lure_update": {
+    "message": "zogenaamd updates installeert"
+  },
+  "lure_fix": {
+    "message": "de opdracht aanbiedt als oplossing voor een fout"
+  },
+  "target_explorer": {
+    "message": "u vraagt deze in de adresbalk van Verkenner te plakken"
+  },
+  "target_terminal": {
+    "message": "u vraagt deze in Terminal te plakken"
+  },
+  "target_run": {
+    "message": "u vraagt deze in het venster Uitvoeren te plakken"
+  },
+  "target_paste": {
+    "message": "u vraagt deze ergens op uw computer te plakken"
+  },
+  "why_payload_reported": {
+    "message": "de opdracht bestanden downloadt van een adres dat als schadelijk is gemeld"
+  },
+  "why_site_reported": {
+    "message": "deze site als schadelijk is gemeld"
+  },
+  "why_decoy": {
+    "message": "er na de opdracht nep-verificatietekst verborgen staat"
+  },
+  "why_padding": {
+    "message": "de echte opdracht achter veel lege ruimte verborgen zit"
+  },
+  "why_disguised": {
+    "message": "de opdracht vermomd is om te verbergen wat deze doet"
+  },
+  "why_hidden_window": {
+    "message": "de opdracht in een verborgen venster wordt uitgevoerd"
+  },
+  "why_generic": {
+    "message": "de opdracht de kenmerken van een ClickFix-aanval heeft"
+  },
+  "why_fullscreen": {
+    "message": "de pagina u vraagt een opdracht te plakken"
+  },
+  "fullscreenWhat": {
+    "message": "uw hele scherm over te nemen als een nep-Windows-update"
+  },
+  "pasteWhat": {
+    "message": "een aanmeldlink met een geheime code"
+  },
+  "pasteWhy": {
+    "message": "een pagina als deze daarmee uw account kan overnemen"
+  },
+  "protocolWhy": {
+    "message": "zulke links ongemerkt opdrachten op uw computer kunnen uitvoeren"
+  },
+  "btnClose": {
+    "message": "Sluiten"
+  },
+  "btnLeave": {
+    "message": "Deze site verlaten"
+  },
+  "btnTrust": {
+    "message": "Deze site vertrouwen"
+  },
+  "tipClose": {
+    "message": "Verbergt deze waarschuwing en blijft op de pagina"
+  },
+  "tipLeave": {
+    "message": "Sluit deze pagina en opent een nieuw tabblad"
+  },
+  "tipTrust": {
+    "message": "Stopt alle controles op deze site nadat u dit bevestigt"
+  },
+  "tipUntrust": {
+    "message": "Controleert deze site weer"
+  },
+  "bannerReported": {
+    "message": "Deze site is als schadelijk gemeld."
+  },
+  "bannerDetails": {
+    "message": "Details"
+  },
+  "bannerFirstSeen": {
+    "message": "voor het eerst gezien op $1"
+  },
+  "bannerWeb3": {
+    "message": "Deze site laadt verborgen code uit een blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "Gehackte websites gebruiken deze truc om nep-CAPTCHA-pagina's te tonen."
+  },
+  "bannerInstructions": {
+    "message": "Deze pagina vraagt u iets te plakken in Uitvoeren, Terminal of Verkenner."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Echte websites vragen u dat nooit."
+  },
+  "rep_clickfix": {
+    "message": "een ClickFix-pagina"
+  },
+  "rep_clickfix_family": {
+    "message": "een ClickFix-pagina die $1 verspreidt"
+  },
+  "rep_malware": {
+    "message": "een malwaredownload"
+  },
+  "rep_malware_family": {
+    "message": "een download van $1"
+  },
+  "rep_c2": {
+    "message": "een besturingsserver voor malware"
+  },
+  "rep_c2_family": {
+    "message": "een besturingsserver van $1"
+  },
+  "rep_phishing": {
+    "message": "een phishingpagina"
+  },
+  "rep_phishing_family": {
+    "message": "een phishingpagina van $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "malwaredownload"
+  },
+  "category_c2": {
+    "message": "besturingsserver voor malware"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "$1 niet meer beschermen?"
+  },
+  "confirmOpenTitle": {
+    "message": "$1 toch openen?"
+  },
+  "confirmReported": {
+    "message": "Deze site is gemeld in openbare dreigingsdatabases."
+  },
+  "confirmBodyStrong": {
+    "message": "uw computer infecteren en uw wachtwoorden, opgeslagen creditcards en cryptowallets stelen"
+  },
+  "confirmOnlyReported": {
+    "message": "Doe dit alleen als u weet dat de melding onjuist is."
+  },
+  "confirmOnlyKnown": {
+    "message": "Doe dit alleen voor sites die u goed kent."
+  },
+  "confirmCheckTrust": {
+    "message": "Ik begrijp dat ik inloggegevens, cookies en geld kan verliezen als ik deze site vertrouw"
+  },
+  "confirmCheckOpen": {
+    "message": "Ik begrijp dat ik inloggegevens, cookies en geld kan verliezen als ik deze site open"
+  },
+  "confirmTrust": {
+    "message": "Deze site vertrouwen"
+  },
+  "confirmOpen": {
+    "message": "Toch openen"
+  },
+  "confirmKeep": {
+    "message": "Beschermd blijven"
+  },
+  "warnTitle": {
+    "message": "Gevaarlijke site geblokkeerd"
+  },
+  "warnAddress": {
+    "message": "Adres"
+  },
+  "warnReportedBy": {
+    "message": "Gemeld door"
+  },
+  "warnSteals": {
+    "message": "uw wachtwoorden, opgeslagen creditcards en cryptowallets steelt"
+  },
+  "warnLeave": {
+    "message": "Terug naar veilig terrein"
+  },
+  "warnLeaveTip": {
+    "message": "Opent een nieuw tabblad in plaats van deze site"
+  },
+  "warnContinue": {
+    "message": "Toch openen"
+  },
+  "warnContinueTip": {
+    "message": "Opent de site voor het komende uur nadat u het risico bevestigt"
+  },
+  "warnAdvice": {
+    "message": "Geen echte website vraagt u iets te plakken in Uitvoeren, Terminal of Verkenner."
+  },
+  "popupOn": {
+    "message": "Aan"
+  },
+  "popupOff": {
+    "message": "De bescherming staat uit."
+  },
+  "popupNotWebPage": {
+    "message": "Geen webpagina"
+  },
+  "popupTrusted": {
+    "message": "Door u vertrouwd, niet gecontroleerd"
+  },
+  "popupReported": {
+    "message": "Gemeld als schadelijk"
+  },
+  "popupNoReports": {
+    "message": "Geen meldingen over deze site"
+  },
+  "popupUntrust": {
+    "message": "Deze site niet meer vertrouwen"
+  },
+  "popupUpdated": {
+    "message": "Bijgewerkt $1, regelversie $2"
+  },
+  "popupFeedNone": {
+    "message": "Database nog niet gedownload"
+  },
+  "popupFeedError": {
+    "message": "Bijwerken van de database mislukt, zie Instellingen"
+  },
+  "popupNoDetections": {
+    "message": "Nog niets geblokkeerd"
+  },
+  "popupSettings": {
+    "message": "Instellingen"
+  },
+  "popupHistory": {
+    "message": "Mijn geschiedenis controleren"
+  },
+  "popupUpdate": {
+    "message": "Nu bijwerken"
+  },
+  "popupUpdating": {
+    "message": "Bijwerken"
+  },
+  "popupRulesLine": {
+    "message": "Detectieregels versie $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "ingebouwd"
+  },
+  "popupRulesUpdated": {
+    "message": "online bijgewerkt"
+  },
+  "supportShort": {
+    "message": "Steunen"
+  },
+  "tipSupport": {
+    "message": "Opent een pagina waar u ClickFix Warden kunt steunen met een donatie"
+  },
+  "supportProject": {
+    "message": "Steun het project"
+  },
+  "kind_clipboard": {
+    "message": "Opdracht op klembord"
+  },
+  "kind_manual_copy": {
+    "message": "Gekopieerde opdracht"
+  },
+  "kind_paste": {
+    "message": "Geplakte aanmeldlink"
+  },
+  "kind_protocol": {
+    "message": "Programmalink"
+  },
+  "kind_fullscreen": {
+    "message": "Nep-updatescherm"
+  },
+  "kind_page_instructions": {
+    "message": "Plakinstructies"
+  },
+  "kind_web3_loader": {
+    "message": "Blockchain-loader"
+  },
+  "kind_reputation": {
+    "message": "Gemelde site"
+  },
+  "kind_reputation_block": {
+    "message": "Bekende ClickFix-site"
+  },
+  "action_blocked": {
+    "message": "geblokkeerd"
+  },
+  "action_warned": {
+    "message": "waarschuwing getoond"
+  },
+  "action_copied_anyway": {
+    "message": "toch gekopieerd"
+  },
+  "action_continued": {
+    "message": "toch geopend"
+  },
+  "action_trusted": {
+    "message": "vertrouwd"
+  },
+  "timeNever": {
+    "message": "nooit"
+  },
+  "timeJustNow": {
+    "message": "zojuist"
+  },
+  "timeMinutes": {
+    "message": "$1 min geleden"
+  },
+  "timeHours": {
+    "message": "$1 uur geleden"
+  },
+  "timeDays": {
+    "message": "$1 dagen geleden"
+  },
+  "navProtection": {
+    "message": "Bescherming"
+  },
+  "navTrusted": {
+    "message": "Vertrouwde sites"
+  },
+  "navHistory": {
+    "message": "Geschiedeniscontrole"
+  },
+  "navExtensions": {
+    "message": "Extensiecontrole"
+  },
+  "navLog": {
+    "message": "Detectielogboek"
+  },
+  "navDatabase": {
+    "message": "Database"
+  },
+  "navAbout": {
+    "message": "Over"
+  },
+  "welcomeTitle": {
+    "message": "U bent beschermd"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden let nu op pagina's die u ertoe willen verleiden opdrachten uit te voeren, en waarschuwt u voor sites die als schadelijk zijn gemeld."
+  },
+  "welcomePrivacy": {
+    "message": "Alles wordt in uw browser gecontroleerd, er wordt niets over uw surfgedrag verstuurd."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden heeft toegang tot alle websites nodig om u daar te beschermen."
+  },
+  "welcomeGrant": {
+    "message": "Toestaan op alle websites"
+  },
+  "tipGrantHosts": {
+    "message": "Laat ClickFix Warden elke pagina controleren op ClickFix-trucs"
+  },
+  "managedNote": {
+    "message": "Sommige instellingen worden beheerd door uw organisatie."
+  },
+  "protectionLead": {
+    "message": "Kies waar ClickFix Warden op let. Alles draait in uw browser."
+  },
+  "setEnabled": {
+    "message": "Bescherming aan"
+  },
+  "tipEnabled": {
+    "message": "Zet alle controles in één keer aan of uit"
+  },
+  "setClipboard": {
+    "message": "Gevaarlijke opdrachten op het klembord blokkeren"
+  },
+  "tipClipboard": {
+    "message": "Voorkomt dat pagina's een verborgen opdracht op uw klembord zetten en zet er in plaats daarvan een onschuldige notitie neer"
+  },
+  "setPaste": {
+    "message": "Plakken van aanmeldlinks in websites blokkeren"
+  },
+  "tipPaste": {
+    "message": "Voorkomt dat u een aanmeldlink met een geheime code plakt in een pagina die uw account kan stelen"
+  },
+  "setProtocols": {
+    "message": "Links blokkeren die programma's op uw computer openen"
+  },
+  "tipProtocols": {
+    "message": "Voorkomt dat pagina's Scripteditor, Windows Zoeken in externe mappen en vergelijkbare programma's openen"
+  },
+  "setFullscreen": {
+    "message": "Nep-updatepagina's op volledig scherm stoppen"
+  },
+  "tipFullscreen": {
+    "message": "Voorkomt dat pagina's die u vragen opdrachten te plakken het scherm vergrendelen met een nep-update"
+  },
+  "setPageWarnings": {
+    "message": "Waarschuwen voor pagina's met plakinstructies"
+  },
+  "tipPageWarnings": {
+    "message": "Toont een waarschuwingsbalk als een pagina u vraagt iets te plakken in Uitvoeren, Terminal of Verkenner"
+  },
+  "setWeb3": {
+    "message": "Letten op code die uit een blockchain wordt geladen"
+  },
+  "tipWeb3": {
+    "message": "Waarschuwt als een gewone website verborgen code uit een blockchain haalt, een truc van gehackte sites"
+  },
+  "setReputation": {
+    "message": "Waarschuwen voor gemelde sites"
+  },
+  "tipReputation": {
+    "message": "Toont een waarschuwingsbalk op sites die in openbare dreigingsdatabases als schadelijk staan vermeld"
+  },
+  "setBlockPage": {
+    "message": "Bekende ClickFix-sites blokkeren voordat ze laden"
+  },
+  "tipBlockPage": {
+    "message": "Toont een waarschuwing over de hele pagina in plaats van een site die de databases als ClickFix-pagina vermelden"
+  },
+  "setFeedUpdates": {
+    "message": "Updates van database en regels downloaden"
+  },
+  "tipFeedUpdates": {
+    "message": "Downloadt elk uur de ondertekende lijst van gemelde sites en de nieuwste detectieregels"
+  },
+  "trustedLead": {
+    "message": "Deze sites worden helemaal niet gecontroleerd, een site vertrouwen vraagt dezelfde bevestiging als in een waarschuwing."
+  },
+  "trustedInputLabel": {
+    "message": "Siteadres"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.bedrijf.nl"
+  },
+  "trustedAdd": {
+    "message": "Toevoegen"
+  },
+  "tipTrustedAdd": {
+    "message": "Voegt de site toe aan de lijst met sites die niet worden gecontroleerd, nadat u dit bevestigt"
+  },
+  "trustedRemove": {
+    "message": "Verwijderen"
+  },
+  "tipTrustedRemove": {
+    "message": "Controleert deze site weer"
+  },
+  "trustedEmpty": {
+    "message": "Geen vertrouwde sites"
+  },
+  "orgTitle": {
+    "message": "Bericht in waarschuwingen"
+  },
+  "orgLead": {
+    "message": "Extra tekst die in elke waarschuwing wordt getoond, bijvoorbeeld met wie u contact opneemt in uw bedrijf."
+  },
+  "orgPlaceholder": {
+    "message": "Bel bijvoorbeeld de IT-helpdesk voordat u verdergaat"
+  },
+  "orgSave": {
+    "message": "Opslaan"
+  },
+  "tipOrgSave": {
+    "message": "Slaat de tekst op die in elke waarschuwing wordt getoond"
+  },
+  "orgSaved": {
+    "message": "Opgeslagen"
+  },
+  "historyLead": {
+    "message": "Controleer of u een site hebt bezocht die nu in de database staat, de controle gebeurt alleen in uw browser."
+  },
+  "historyDays7": {
+    "message": "Afgelopen 7 dagen"
+  },
+  "historyDays30": {
+    "message": "Afgelopen 30 dagen"
+  },
+  "historyDays90": {
+    "message": "Afgelopen 90 dagen"
+  },
+  "tipHistoryDays": {
+    "message": "Hoe ver terug er wordt gekeken"
+  },
+  "historyScan": {
+    "message": "Mijn geschiedenis controleren"
+  },
+  "tipHistoryScan": {
+    "message": "Vraagt toegang tot uw geschiedenis en vergelijkt deze in uw browser met de database"
+  },
+  "historyScanning": {
+    "message": "Bezig met controleren"
+  },
+  "historyChecked": {
+    "message": "$1 adressen van de afgelopen $2 dagen gecontroleerd."
+  },
+  "historyClean": {
+    "message": "Geen enkele bezochte site staat vermeld"
+  },
+  "historyFound": {
+    "message": "$1 bezochte adressen staan vermeld"
+  },
+  "historyAdvice": {
+    "message": "Als u iets hebt uitgevoerd waar een vermelde site om vroeg, wijzig dan uw wachtwoorden vanaf een ander apparaat en laat deze computer nakijken."
+  },
+  "historyDenied": {
+    "message": "Er is geen toegang tot de geschiedenis gegeven."
+  },
+  "historyDrop": {
+    "message": "Toegang tot geschiedenis intrekken"
+  },
+  "tipHistoryDrop": {
+    "message": "Geeft de toestemming voor de geschiedenis terug tot u opnieuw controleert"
+  },
+  "exportJson": {
+    "message": "JSON exporteren"
+  },
+  "tipExport": {
+    "message": "Slaat de resultaten op als JSON-bestand op deze computer"
+  },
+  "tipExportLog": {
+    "message": "Slaat het logboek op als JSON-bestand op deze computer"
+  },
+  "colVisited": {
+    "message": "Laatste bezoek"
+  },
+  "colAddress": {
+    "message": "Adres"
+  },
+  "colReport": {
+    "message": "Melding"
+  },
+  "colTime": {
+    "message": "Tijd"
+  },
+  "colWhat": {
+    "message": "Wat"
+  },
+  "colSite": {
+    "message": "Site"
+  },
+  "colDetails": {
+    "message": "Details"
+  },
+  "extensionsLead": {
+    "message": "Zoek naar geïnstalleerde browserextensies die als schadelijk bekendstaan, zoals nep-adblockers die bij CrashFix-aanvallen worden gebruikt."
+  },
+  "extensionsScan": {
+    "message": "Geïnstalleerde extensies controleren"
+  },
+  "tipExtensionsScan": {
+    "message": "Vraagt toestemming om uw extensies op te sommen en vergelijkt ze met een lijst van bekende schadelijke extensies"
+  },
+  "extensionsDrop": {
+    "message": "Toegang intrekken"
+  },
+  "tipExtensionsDrop": {
+    "message": "Geeft de toestemming om uw extensies op te sommen terug"
+  },
+  "extensionsDenied": {
+    "message": "Er is geen toegang gegeven."
+  },
+  "extensionsChecked": {
+    "message": "$1 geïnstalleerde extensies gecontroleerd."
+  },
+  "extensionsClean": {
+    "message": "Geen bekende schadelijke extensie gevonden"
+  },
+  "extensionsKnownAs": {
+    "message": "Bekend als $1"
+  },
+  "extensionsRemove": {
+    "message": "Verwijderen"
+  },
+  "tipExtensionsRemove": {
+    "message": "Verwijdert deze extensie nadat u dit bevestigt"
+  },
+  "logLead": {
+    "message": "Wat ClickFix Warden heeft geblokkeerd of waarvoor het heeft gewaarschuwd, het logboek blijft op deze computer."
+  },
+  "logClear": {
+    "message": "Logboek wissen"
+  },
+  "tipLogClear": {
+    "message": "Verwijdert alle items uit het logboek"
+  },
+  "logClearConfirm": {
+    "message": "Alle items in het detectielogboek verwijderen?"
+  },
+  "databaseLead": {
+    "message": "Meldingen komen uit de openbare databases van abuse.ch en worden voor gebruik gecontroleerd met een digitale handtekening."
+  },
+  "dbGenerated": {
+    "message": "$1 meldingen, gepubliceerd $2"
+  },
+  "dbChecked": {
+    "message": "Laatst gecontroleerd $1"
+  },
+  "dbError": {
+    "message": "Laatste update mislukt, $1"
+  },
+  "dbUpdated": {
+    "message": "Up-to-date"
+  },
+  "tipUpdateNow": {
+    "message": "Downloadt nu meteen de nieuwste database en regels"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden verzamelt geen gegevens, het heeft geen account, geen telemetrie en geen eigen server."
+  },
+  "aboutNetwork": {
+    "message": "Het downloadt alleen de ondertekende database en regels van GitHub, dat hetzelfde verzoek ziet als bij elke update."
+  },
+  "aboutProject": {
+    "message": "Broncode"
+  },
+  "aboutPolicy": {
+    "message": "Privacybeleid"
+  },
+  "descClipboard": {
+    "message": "Deze pagina probeerde uw klembord te vullen met $1. Dit is tegengehouden omdat $2."
+  },
+  "descManual": {
+    "message": "De tekst die u probeerde te kopiëren is $1. Deze is niet gekopieerd omdat $2."
+  },
+  "descPaste": {
+    "message": "U stond op het punt om $1 in deze pagina te plakken. Dit is tegengehouden omdat $2."
+  },
+  "descProtocol": {
+    "message": "Deze pagina probeerde $1 te openen. Dit is tegengehouden omdat $2."
+  },
+  "descFullscreen": {
+    "message": "Deze pagina probeerde $1. Dit is tegengehouden omdat $2."
+  },
+  "repLine": {
+    "message": "$1 vermeldt deze als $2, voor het eerst gezien op $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 vermeldt deze als $2."
+  },
+  "warnLead": {
+    "message": "$1 staat in $2 vermeld als $3. Pagina's zoals deze verleiden u om een opdracht te plakken die $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 staat vermeld in openbare dreigingsdatabases. Pagina's zoals deze verleiden u om een opdracht te plakken die $2."
+  },
+  "confirmBody": {
+    "message": "Als u doorgaat, controleert ClickFix Warden deze site niet meer en kan een pagina als deze $1."
+  },
+  "popupBlockedLine": {
+    "message": "ClickFix Warden blokkeerde $2 $1"
+  },
+  "popupReports": {
+    "message": "$1 gemelde adressen"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "Scripteditor met een voorbereid script"
+  },
+  "proto_search_ms": {
+    "message": "een venster van Windows Zoeken op een externe map"
+  },
+  "proto_ms_msdt": {
+    "message": "de probleemoplosser van Windows met verborgen instellingen"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office met verborgen instellingen"
+  },
+  "proto_ms_appinstaller": {
+    "message": "een app-installatieprogramma vanaf internet"
+  },
+  "setLanguage": {
+    "message": "Taal"
+  },
+  "tipLanguage": {
+    "message": "Wijzigt de taal van ClickFix Warden, Browserstandaard volgt de taal van uw browser"
+  },
+  "langBrowser": {
+    "message": "Browserstandaard"
+  }
+}

@@ -1,282 +1,788 @@
 {
-  "extName": { "message": "ClickFix Warden" },
-  "extDescription": { "message": "Спира ClickFix и фалшиви CAPTCHA атаки, които ви подвеждат да пуснете команди, и предупреждава за докладвани зловредни сайтове." },
-
-  "dangerLabel": { "message": "ПОТЕНЦИАЛНО ОПАСЕН САЙТ" },
-  "titleClipboard": { "message": "Опасна команда е спряна" },
-  "titleManual": { "message": "Опасната команда не е копирана" },
-  "titlePaste": { "message": "Опасно поставяне е спряно" },
-  "titleProtocol": { "message": "Опасен линк е спрян" },
-  "titleFullscreen": { "message": "Фалшив екран за обновяване е спрян" },
-
-  "descClipboardA": { "message": "Тази страница се опита да сложи" },
-  "descClipboardB": { "message": "в клипборда ви. Тя беше спряна, защото" },
-  "descNote": { "message": "Сега в клипборда ви има безобидна бележка, така че поставянето не прави нищо." },
-  "descManualA": { "message": "Текстът, който опитахте да копирате, е" },
-  "descManualB": { "message": ", и не беше копиран, защото" },
-  "descManualNote": { "message": "Вместо него беше копирана безобидна бележка." },
-  "descPasteA": { "message": "Щяхте да поставите" },
-  "descPasteB": { "message": "в тази страница. Беше спряно, защото" },
-  "descProtocolA": { "message": "Тази страница се опита да отвори" },
-  "descFullscreenA": { "message": "Тази страница се опита да" },
-  "descStoppedB": { "message": ". Беше спряна, защото" },
-  "descFullscreenNote": { "message": "Натиснете Esc, ако нещо още покрива екрана, и затворете раздела." },
-
-  "whatTemplate": { "message": "$1, която $2" },
-  "what_powershell": { "message": "PowerShell команда" },
-  "what_powershell_hidden": { "message": "скрита PowerShell команда" },
-  "what_applescript": { "message": "AppleScript команда" },
-  "what_applescript_hidden": { "message": "скрита AppleScript команда" },
-  "what_terminal": { "message": "команда за Terminal" },
-  "what_terminal_hidden": { "message": "скрита команда за Terminal" },
-  "what_script": { "message": "скриптова команда" },
-  "what_script_hidden": { "message": "скрита скриптова команда" },
-  "what_cmd": { "message": "команда за Command Prompt" },
-  "what_cmd_hidden": { "message": "скрита команда за Command Prompt" },
-  "what_windows": { "message": "Windows команда" },
-  "what_windows_hidden": { "message": "скрита Windows команда" },
-  "what_generic": { "message": "команда" },
-  "what_generic_hidden": { "message": "скрита команда" },
-  "effect_download_run": { "message": "сваля и пуска програма" },
-  "effect_disables_av": { "message": "изключва антивирусната ви защита" },
-  "effect_password": { "message": "иска паролата ви с фалшив прозорец" },
-  "effect_remote_share": { "message": "пуска файлове от отдалечена мрежова папка" },
-  "effect_remote_script": { "message": "пуска скрипт директно от интернет" },
-  "effect_remote_install": { "message": "инсталира програма директно от интернет" },
-  "effect_dns": { "message": "изтегля скрити команди от DNS записи" },
-  "effect_finger": { "message": "изтегля скрити команди от отдалечен сървър" },
-  "effect_runs": { "message": "се изпълнява на компютъра ви, без да пита" },
-
-  "whyPage1": { "message": "страницата $1" },
-  "whyPage2": { "message": "страницата $1 и $2" },
-  "lure_captcha": { "message": "се прави на CAPTCHA" },
-  "lure_update": { "message": "се прави, че инсталира обновления" },
-  "lure_fix": { "message": "я представя като поправка на грешка" },
-  "target_explorer": { "message": "ви казва да я поставите в адресната лента на File Explorer" },
-  "target_terminal": { "message": "ви казва да я поставите в Terminal" },
-  "target_run": { "message": "ви казва да я поставите в прозореца Run" },
-  "target_paste": { "message": "ви казва да я поставите някъде на компютъра си" },
-  "why_payload_reported": { "message": "тя сваля от адрес, докладван като зловреден" },
-  "why_site_reported": { "message": "този сайт е докладван като зловреден" },
-  "why_decoy": { "message": "след командата е скрит фалшив текст за проверка" },
-  "why_padding": { "message": "истинската команда е скрита зад празно място" },
-  "why_disguised": { "message": "командата е маскирана, за да скрие какво прави" },
-  "why_hidden_window": { "message": "тя работи в скрит прозорец" },
-  "why_generic": { "message": "носи белезите на ClickFix атака" },
-  "why_fullscreen": { "message": "страницата ви казва да поставите команда" },
-  "fullscreenWhat": { "message": "заеме целия ви екран като фалшиво обновяване на Windows" },
-  "pasteWhat": { "message": "линк за вход с таен код" },
-  "pasteWhy": { "message": "такава страница може да го използва, за да вземе акаунта ви" },
-  "protocolWhy": { "message": "такива линкове могат да пускат команди на компютъра ви, без да забележите" },
-
-  "btnClose": { "message": "Затвори" },
-  "btnLeave": { "message": "Напусни сайта" },
-  "btnTrust": { "message": "Имам доверие на сайта" },
-  "tipClose": { "message": "Скрива предупреждението и остава на страницата" },
-  "tipLeave": { "message": "Затваря страницата и отваря нов раздел" },
-  "tipTrust": { "message": "Спира всички проверки на сайта, след като потвърдите" },
-  "tipUntrust": { "message": "Започва отново да проверява този сайт" },
-
-  "bannerReported": { "message": "Този сайт е докладван като зловреден." },
-  "repListsAs": { "message": "$1 го води като" },
-  "repFirstSeen": { "message": ", видян за първи път на $1." },
-  "bannerDetails": { "message": "Подробности" },
-  "bannerFirstSeen": { "message": "видян за първи път на $1" },
-  "bannerWeb3": { "message": "Този сайт зарежда скрит код от блокчейн." },
-  "bannerWeb3Detail": { "message": "Хакнати сайтове използват този номер, за да показват фалшиви CAPTCHA страници." },
-  "bannerInstructions": { "message": "Тази страница ви казва да поставите нещо в Run, Terminal или File Explorer." },
-  "bannerInstructionsDetail": { "message": "Истинските сайтове никога не искат това." },
-  "rep_clickfix": { "message": "ClickFix страница" },
-  "rep_clickfix_family": { "message": "ClickFix страница, която разпространява $1" },
-  "rep_malware": { "message": "сваляне на зловреден софтуер" },
-  "rep_malware_family": { "message": "сваляне на $1" },
-  "rep_c2": { "message": "сървър за управление на зловреден софтуер" },
-  "rep_c2_family": { "message": "сървър за управление на $1" },
-  "rep_phishing": { "message": "фишинг страница" },
-  "rep_phishing_family": { "message": "фишинг страница на $1" },
-
-  "category_clickfix": { "message": "ClickFix" },
-  "category_malware": { "message": "сваляне на зловреден софтуер" },
-  "category_c2": { "message": "сървър за управление на зловреден софтуер" },
-  "category_phishing": { "message": "фишинг" },
-
-  "confirmTrustTitle": { "message": "Да спра ли защитата на $1?" },
-  "confirmOpenTitle": { "message": "Да отворя ли $1 въпреки това?" },
-  "confirmReported": { "message": "Този сайт е докладван в публични бази данни." },
-  "confirmBodyA": { "message": "Ако продължите, ClickFix Warden спира да го проверява и такава страница може да" },
-  "confirmBodyStrong": { "message": "зарази компютъра ви и да открадне паролите, запазените карти и крипто портфейлите ви" },
-  "confirmOnlyReported": { "message": "Правете го само ако знаете, че докладът е грешен." },
-  "confirmOnlyKnown": { "message": "Правете го само за сайтове, които познавате добре." },
-  "confirmCheckTrust": { "message": "Разбирам, че мога да загубя данни за вход, бисквитки и пари, ако се доверя на сайта" },
-  "confirmCheckOpen": { "message": "Разбирам, че мога да загубя данни за вход, бисквитки и пари, ако отворя сайта" },
-  "confirmTrust": { "message": "Имам доверие на сайта" },
-  "confirmOpen": { "message": "Отвори въпреки това" },
-  "confirmKeep": { "message": "Остави ме защитен" },
-
-  "warnTitle": { "message": "Опасен сайт е спрян" },
-  "warnAddress": { "message": "Адрес" },
-  "warnReportedBy": { "message": "Докладван от" },
-  "warnListedAs": { "message": "е в $1 като" },
-  "warnPagesLike": { "message": "Такива страници ви подвеждат да поставите команда, която" },
-  "warnSteals": { "message": "краде паролите, запазените карти и крипто портфейлите ви" },
-  "warnLeave": { "message": "Върни се на сигурно място" },
-  "warnLeaveTip": { "message": "Отваря нов раздел вместо този сайт" },
-  "warnContinue": { "message": "Отвори въпреки това" },
-  "warnContinueTip": { "message": "Отваря сайта за следващия час, след като потвърдите риска" },
-  "warnAdvice": { "message": "Нито един истински сайт не иска да поставите нещо в Run, Terminal или File Explorer." },
-
-  "popupOn": { "message": "Вкл." },
-  "popupOff": { "message": "Защитата е изключена." },
-  "popupNotWebPage": { "message": "Това не е уеб страница" },
-  "popupTrusted": { "message": "Доверен от вас, не се проверява" },
-  "popupBlocked": { "message": "Спряна е" },
-  "popupReported": { "message": "Докладван като зловреден" },
-  "popupNoReports": { "message": "Няма доклади за този сайт" },
-  "popupUntrust": { "message": "Премахни доверието" },
-  "popupReportsSuffix": { "message": "докладвани адреса" },
-  "popupUpdated": { "message": "Обновено $1, правила версия $2" },
-  "popupFeedNone": { "message": "Базата още не е свалена" },
-  "popupFeedError": { "message": "Обновяването на базата не успя, вижте Настройки" },
-  "popupNoDetections": { "message": "Още нищо не е спряно" },
-  "popupSettings": { "message": "Настройки" },
-  "popupHistory": { "message": "Провери историята ми" },
-  "popupUpdate": { "message": "Обнови сега" },
-  "popupUpdating": { "message": "Обновява се" },
-  "popupRulesLine": { "message": "Правила за засичане версия $1, $2" },
-  "popupRulesBundled": { "message": "вградени" },
-  "popupRulesUpdated": { "message": "обновени онлайн" },
-  "supportShort": { "message": "Подкрепи" },
-  "tipSupport": { "message": "Отваря страница, от която можете да подкрепите ClickFix Warden с дарение" },
-  "supportProject": { "message": "Подкрепи проекта" },
-
-  "kind_clipboard": { "message": "Команда в клипборда" },
-  "kind_manual_copy": { "message": "Копирана команда" },
-  "kind_paste": { "message": "Поставяне на линк за вход" },
-  "kind_protocol": { "message": "Линк към програма" },
-  "kind_fullscreen": { "message": "Фалшив екран за обновяване" },
-  "kind_page_instructions": { "message": "Инструкции за поставяне" },
-  "kind_web3_loader": { "message": "Зареждане от блокчейн" },
-  "kind_reputation": { "message": "Докладван сайт" },
-  "kind_reputation_block": { "message": "Известен ClickFix сайт" },
-  "action_blocked": { "message": "спряно" },
-  "action_warned": { "message": "предупреждение" },
-  "action_copied_anyway": { "message": "копирано въпреки това" },
-  "action_continued": { "message": "отворено въпреки това" },
-  "action_trusted": { "message": "добавен като доверен" },
-
-  "timeNever": { "message": "никога" },
-  "timeJustNow": { "message": "току-що" },
-  "timeMinutes": { "message": "преди $1 мин" },
-  "timeHours": { "message": "преди $1 ч" },
-  "timeDays": { "message": "преди $1 дни" },
-
-  "navProtection": { "message": "Защита" },
-  "navTrusted": { "message": "Доверени сайтове" },
-  "navHistory": { "message": "Проверка на историята" },
-  "navExtensions": { "message": "Проверка на разширенията" },
-  "navLog": { "message": "Лог на засичанията" },
-  "navDatabase": { "message": "База данни" },
-  "navAbout": { "message": "Информация" },
-
-  "welcomeTitle": { "message": "Защитени сте" },
-  "welcomeBody": { "message": "ClickFix Warden вече следи за страници, които се опитват да ви подведат да пуснете команди, и ви предупреждава за сайтове, докладвани като зловредни." },
-  "welcomePrivacy": { "message": "Всичко се проверява във вашия браузър, нищо за сърфирането ви не се изпраща никъде." },
-  "welcomeHostAccess": { "message": "ClickFix Warden има нужда от достъп до всички сайтове, за да ги пази." },
-  "welcomeGrant": { "message": "Разреши за всички сайтове" },
-  "tipGrantHosts": { "message": "Позволява на ClickFix Warden да следи всяка страница за ClickFix номера" },
-  "managedNote": { "message": "Някои настройки се управляват от вашата организация." },
-  "protectionLead": { "message": "Изберете за какво да следи ClickFix Warden. Всичко става във вашия браузър." },
-
-  "setEnabled": { "message": "Защитата е включена" },
-  "tipEnabled": { "message": "Включва или изключва всички проверки наведнъж" },
-  "setClipboard": { "message": "Спирай опасни команди в клипборда" },
-  "tipClipboard": { "message": "Не позволява на страници да слагат скрита команда в клипборда ви и слага там безобидна бележка" },
-  "setPaste": { "message": "Спирай поставянето на линкове за вход в сайтове" },
-  "tipPaste": { "message": "Не ви позволява да поставите линк за вход с таен код в страница, която може да открадне акаунта ви" },
-  "setProtocols": { "message": "Спирай линкове, които отварят програми на компютъра" },
-  "tipProtocols": { "message": "Не позволява на страници да отварят Script Editor, търсене в Windows към отдалечени папки и подобни програми" },
-  "setFullscreen": { "message": "Спирай фалшиви страници за обновяване на цял екран" },
-  "tipFullscreen": { "message": "Не позволява на страници, които ви казват да поставяте команди, да заключат екрана с фалшиво обновяване" },
-  "setPageWarnings": { "message": "Предупреждавай за страници с инструкции за поставяне" },
-  "tipPageWarnings": { "message": "Показва лента с предупреждение, когато страница ви казва да поставите нещо в Run, Terminal или File Explorer" },
-  "setWeb3": { "message": "Следи за код, зареден от блокчейн" },
-  "tipWeb3": { "message": "Предупреждава, когато обикновен сайт тегли скрит код от блокчейн, номер на хакнатите сайтове" },
-  "setReputation": { "message": "Предупреждавай за докладвани сайтове" },
-  "tipReputation": { "message": "Показва лента с предупреждение на сайтове, докладвани като зловредни в публични бази данни" },
-  "setBlockPage": { "message": "Спирай известни ClickFix сайтове, преди да се заредят" },
-  "tipBlockPage": { "message": "Показва предупреждение на цял екран вместо сайт, който базите водят като ClickFix страница" },
-  "setFeedUpdates": { "message": "Сваляй обновления на базата и правилата" },
-  "tipFeedUpdates": { "message": "Сваля подписания списък с докладвани сайтове и най-новите правила за засичане на всеки час" },
-
-  "trustedLead": { "message": "Тези сайтове изобщо не се проверяват, доверието иска същото потвърждение като в предупреждението." },
-  "trustedInputLabel": { "message": "Адрес на сайта" },
-  "trustedPlaceholder": { "message": "intranet.company.com" },
-  "trustedAdd": { "message": "Добави" },
-  "tipTrustedAdd": { "message": "Добавя сайта в списъка със сайтове, които не се проверяват, след като потвърдите" },
-  "trustedRemove": { "message": "Премахни" },
-  "tipTrustedRemove": { "message": "Започва отново да проверява този сайт" },
-  "trustedEmpty": { "message": "Няма доверени сайтове" },
-
-  "orgTitle": { "message": "Съобщение в предупрежденията" },
-  "orgLead": { "message": "Допълнителен текст във всяко предупреждение, например към кого да се обърнат във фирмата ви." },
-  "orgPlaceholder": { "message": "Например, обадете се на IT поддръжката, преди да продължите" },
-  "orgSave": { "message": "Запази" },
-  "tipOrgSave": { "message": "Запазва текста, който се показва във всяко предупреждение" },
-  "orgSaved": { "message": "Запазено" },
-
-  "historyLead": { "message": "Проверете дали сте посещавали сайт, който вече е в базата, проверката става само във вашия браузър." },
-  "historyDays7": { "message": "Последните 7 дни" },
-  "historyDays30": { "message": "Последните 30 дни" },
-  "historyDays90": { "message": "Последните 90 дни" },
-  "tipHistoryDays": { "message": "Колко назад да се проверява" },
-  "historyScan": { "message": "Провери историята ми" },
-  "tipHistoryScan": { "message": "Иска достъп до историята ви и я сравнява с базата във вашия браузър" },
-  "historyScanning": { "message": "Проверява се" },
-  "historyChecked": { "message": "Проверени са $1 адреса от последните $2 дни." },
-  "historyClean": { "message": "Няма посетен сайт в базата" },
-  "historyFound": { "message": "$1 посетени адреса са в базата" },
-  "historyAdvice": { "message": "Ако сте пуснали нещо, което такъв сайт ви е казал, сменете паролите си от друго устройство и дайте компютъра за проверка." },
-  "historyDenied": { "message": "Достъпът до историята не беше разрешен." },
-  "historyDrop": { "message": "Премахни достъпа до историята" },
-  "tipHistoryDrop": { "message": "Връща разрешението за историята, докато не проверите отново" },
-  "exportJson": { "message": "Експорт в JSON" },
-  "tipExport": { "message": "Запазва резултатите като JSON файл на този компютър" },
-  "tipExportLog": { "message": "Запазва лога като JSON файл на този компютър" },
-
-  "colVisited": { "message": "Последно посещение" },
-  "colAddress": { "message": "Адрес" },
-  "colReport": { "message": "Доклад" },
-  "colTime": { "message": "Час" },
-  "colWhat": { "message": "Какво" },
-  "colSite": { "message": "Сайт" },
-  "colDetails": { "message": "Подробности" },
-
-  "extensionsLead": { "message": "Потърсете инсталирани разширения, известни като зловредни, например фалшиви блокери на реклами от CrashFix атаките." },
-  "extensionsScan": { "message": "Провери инсталираните разширения" },
-  "tipExtensionsScan": { "message": "Иска разрешение да види разширенията ви и ги сравнява със списък на известни зловредни" },
-  "extensionsDrop": { "message": "Премахни достъпа" },
-  "tipExtensionsDrop": { "message": "Връща разрешението за списъка с разширения" },
-  "extensionsDenied": { "message": "Достъпът не беше разрешен." },
-  "extensionsChecked": { "message": "Проверени са $1 инсталирани разширения." },
-  "extensionsClean": { "message": "Няма известно зловредно разширение" },
-  "extensionsKnownAs": { "message": "Известно като $1" },
-  "extensionsRemove": { "message": "Премахни" },
-  "tipExtensionsRemove": { "message": "Деинсталира разширението, след като потвърдите" },
-
-  "logLead": { "message": "Какво е спрял или за какво е предупредил ClickFix Warden, логът остава на този компютър." },
-  "logClear": { "message": "Изчисти лога" },
-  "tipLogClear": { "message": "Изтрива всички записи в лога" },
-  "logClearConfirm": { "message": "Да се изтрият ли всички записи в лога?" },
-
-  "databaseLead": { "message": "Докладите идват от публичните бази на abuse.ch и се проверяват с цифров подпис, преди да се използват." },
-  "dbGenerated": { "message": "$1 доклада, публикувани $2" },
-  "dbChecked": { "message": "Последна проверка $1" },
-  "dbError": { "message": "Последното обновяване не успя, $1" },
-  "dbUpdated": { "message": "Всичко е обновено" },
-  "tipUpdateNow": { "message": "Сваля най-новата база и правила веднага" },
-
-  "aboutPrivacy": { "message": "ClickFix Warden не събира никакви данни, няма акаунт, няма телеметрия и няма собствен сървър." },
-  "aboutNetwork": { "message": "Единственото, което сваля, е подписаната база и правилата от GitHub, който вижда същата заявка като при всяко обновяване." },
-  "aboutProject": { "message": "Изходен код" },
-  "aboutPolicy": { "message": "Политика за поверителност" }
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Спира атаките ClickFix и фалшивите CAPTCHA, които ви подмамват да пускате команди, и предупреждава за опасни сайтове."
+  },
+  "dangerLabel": {
+    "message": "ПОТЕНЦИАЛНО ОПАСЕН САЙТ"
+  },
+  "titleClipboard": {
+    "message": "Опасна команда е блокирана"
+  },
+  "titleManual": {
+    "message": "Опасната команда не е копирана"
+  },
+  "titlePaste": {
+    "message": "Опасно поставяне е блокирано"
+  },
+  "titleProtocol": {
+    "message": "Опасна връзка е блокирана"
+  },
+  "titleFullscreen": {
+    "message": "Фалшив екран за актуализация е блокиран"
+  },
+  "descNote": {
+    "message": "Сега в клипборда ви има безобидна бележка, така че поставянето няма да направи нищо."
+  },
+  "descManualNote": {
+    "message": "Вместо това беше копирана безобидна бележка."
+  },
+  "descFullscreenNote": {
+    "message": "Ако нещо все още покрива екрана, натиснете Esc, след това затворете раздела."
+  },
+  "whatTemplate": {
+    "message": "$1, която $2"
+  },
+  "what_powershell": {
+    "message": "команда на PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "скрита команда на PowerShell"
+  },
+  "what_applescript": {
+    "message": "команда на AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "скрита команда на AppleScript"
+  },
+  "what_terminal": {
+    "message": "команда за Терминал"
+  },
+  "what_terminal_hidden": {
+    "message": "скрита команда за Терминал"
+  },
+  "what_script": {
+    "message": "скриптова команда"
+  },
+  "what_script_hidden": {
+    "message": "скрита скриптова команда"
+  },
+  "what_cmd": {
+    "message": "команда за командния прозорец"
+  },
+  "what_cmd_hidden": {
+    "message": "скрита команда за командния прозорец"
+  },
+  "what_windows": {
+    "message": "команда на Windows"
+  },
+  "what_windows_hidden": {
+    "message": "скрита команда на Windows"
+  },
+  "what_generic": {
+    "message": "команда"
+  },
+  "what_generic_hidden": {
+    "message": "скрита команда"
+  },
+  "effect_download_run": {
+    "message": "изтегля и стартира програма"
+  },
+  "effect_disables_av": {
+    "message": "изключва антивирусната ви защита"
+  },
+  "effect_password": {
+    "message": "иска паролата ви чрез фалшив прозорец"
+  },
+  "effect_remote_share": {
+    "message": "стартира файлове от отдалечена мрежова папка"
+  },
+  "effect_remote_script": {
+    "message": "стартира скрипт направо от интернет"
+  },
+  "effect_remote_install": {
+    "message": "инсталира програма направо от интернет"
+  },
+  "effect_dns": {
+    "message": "извлича скрити команди от DNS записи"
+  },
+  "effect_finger": {
+    "message": "извлича скрити команди от отдалечен сървър"
+  },
+  "effect_runs": {
+    "message": "се изпълнява на компютъра ви, без да пита"
+  },
+  "whyPage1": {
+    "message": "страницата $1"
+  },
+  "whyPage2": {
+    "message": "страницата $1 и $2"
+  },
+  "lure_captcha": {
+    "message": "се представя за CAPTCHA"
+  },
+  "lure_update": {
+    "message": "се преструва, че инсталира актуализации"
+  },
+  "lure_fix": {
+    "message": "я представя като поправка на грешка"
+  },
+  "target_explorer": {
+    "message": "ви казва да я поставите в адресната лента на Файловия мениджър"
+  },
+  "target_terminal": {
+    "message": "ви казва да я поставите в Терминал"
+  },
+  "target_run": {
+    "message": "ви казва да я поставите в прозореца „Изпълнение“"
+  },
+  "target_paste": {
+    "message": "ви казва да я поставите някъде на компютъра си"
+  },
+  "why_payload_reported": {
+    "message": "тя изтегля от адрес, докладван като зловреден"
+  },
+  "why_site_reported": {
+    "message": "този сайт е докладван като зловреден"
+  },
+  "why_decoy": {
+    "message": "след командата е скрит фалшив текст за проверка"
+  },
+  "why_padding": {
+    "message": "истинската команда е скрита зад празно място"
+  },
+  "why_disguised": {
+    "message": "командата е маскирана, за да не се вижда какво прави"
+  },
+  "why_hidden_window": {
+    "message": "тя се изпълнява в скрит прозорец"
+  },
+  "why_generic": {
+    "message": "тя има белезите на атака ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "страницата ви казва да поставите команда"
+  },
+  "fullscreenWhat": {
+    "message": "фалшива актуализация на Windows на цял екран"
+  },
+  "pasteWhat": {
+    "message": "връзка за вход с таен код"
+  },
+  "pasteWhy": {
+    "message": "такава страница може да я използва, за да превземе профила ви"
+  },
+  "protocolWhy": {
+    "message": "такива връзки могат да изпълняват команди на компютъра ви, без да забележите"
+  },
+  "btnClose": {
+    "message": "Затвори"
+  },
+  "btnLeave": {
+    "message": "Напусни сайта"
+  },
+  "btnTrust": {
+    "message": "Довери се на сайта"
+  },
+  "tipClose": {
+    "message": "Скрива предупреждението и остава на страницата"
+  },
+  "tipLeave": {
+    "message": "Затваря страницата и отваря нов раздел"
+  },
+  "tipTrust": {
+    "message": "Спира всички проверки на сайта, след като потвърдите"
+  },
+  "tipUntrust": {
+    "message": "Отново започва да проверява сайта"
+  },
+  "bannerReported": {
+    "message": "Този сайт е докладван като зловреден."
+  },
+  "bannerDetails": {
+    "message": "Подробности"
+  },
+  "bannerFirstSeen": {
+    "message": "засечен за първи път на $1"
+  },
+  "bannerWeb3": {
+    "message": "Този сайт зарежда скрит код от блокчейн."
+  },
+  "bannerWeb3Detail": {
+    "message": "Хакнати сайтове използват този трик, за да показват фалшиви CAPTCHA страници."
+  },
+  "bannerInstructions": {
+    "message": "Тази страница ви казва да поставите нещо в „Изпълнение“, Терминал или Файловия мениджър."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Истинските сайтове никога не искат това от вас."
+  },
+  "rep_clickfix": {
+    "message": "страница на ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "страница на ClickFix, която разпространява $1"
+  },
+  "rep_malware": {
+    "message": "адрес за изтегляне на зловреден софтуер"
+  },
+  "rep_malware_family": {
+    "message": "адрес за изтегляне на $1"
+  },
+  "rep_c2": {
+    "message": "сървър за управление на зловреден софтуер"
+  },
+  "rep_c2_family": {
+    "message": "сървър за управление на $1"
+  },
+  "rep_phishing": {
+    "message": "фишинг страница"
+  },
+  "rep_phishing_family": {
+    "message": "фишинг страница на $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "изтегляне на зловреден софтуер"
+  },
+  "category_c2": {
+    "message": "сървър за управление на зловреден софтуер"
+  },
+  "category_phishing": {
+    "message": "фишинг"
+  },
+  "confirmTrustTitle": {
+    "message": "Да се спре ли защитата за $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Да се отвори ли $1 въпреки това?"
+  },
+  "confirmReported": {
+    "message": "Този сайт е докладван в публични бази данни за заплахи."
+  },
+  "confirmBodyStrong": {
+    "message": "зарази компютъра ви и да открадне паролите ви, запазените банкови карти и криптопортфейлите"
+  },
+  "confirmOnlyReported": {
+    "message": "Направете това само ако знаете, че докладът е грешен."
+  },
+  "confirmOnlyKnown": {
+    "message": "Направете това само за сайтове, които познавате добре."
+  },
+  "confirmCheckTrust": {
+    "message": "Разбирам, че мога да загубя данните си за вход, бисквитките и парите си, ако се доверя на сайта"
+  },
+  "confirmCheckOpen": {
+    "message": "Разбирам, че мога да загубя данните си за вход, бисквитките и парите си, ако отворя сайта"
+  },
+  "confirmTrust": {
+    "message": "Довери се на сайта"
+  },
+  "confirmOpen": {
+    "message": "Отвори въпреки това"
+  },
+  "confirmKeep": {
+    "message": "Запази защитата"
+  },
+  "warnTitle": {
+    "message": "Опасен сайт е блокиран"
+  },
+  "warnAddress": {
+    "message": "Адрес"
+  },
+  "warnReportedBy": {
+    "message": "Докладван от"
+  },
+  "warnSteals": {
+    "message": "краде пароли, запазени банкови карти и криптопортфейли"
+  },
+  "warnLeave": {
+    "message": "Обратно на сигурно място"
+  },
+  "warnLeaveTip": {
+    "message": "Отваря нов раздел вместо този сайт"
+  },
+  "warnContinue": {
+    "message": "Отвори въпреки това"
+  },
+  "warnContinueTip": {
+    "message": "Отваря сайта за следващия един час, след като потвърдите риска"
+  },
+  "warnAdvice": {
+    "message": "Нито един истински сайт не иска от вас да поставяте нещо в „Изпълнение“, Терминал или Файловия мениджър."
+  },
+  "popupOn": {
+    "message": "Вкл."
+  },
+  "popupOff": {
+    "message": "Защитата е изключена."
+  },
+  "popupNotWebPage": {
+    "message": "Не е уеб страница"
+  },
+  "popupTrusted": {
+    "message": "Доверен от вас, не се проверява"
+  },
+  "popupReported": {
+    "message": "Докладван като зловреден"
+  },
+  "popupNoReports": {
+    "message": "Няма доклади за този сайт"
+  },
+  "popupUntrust": {
+    "message": "Премахни сайта от доверените"
+  },
+  "popupUpdated": {
+    "message": "Обновено $1, версия на правилата $2"
+  },
+  "popupFeedNone": {
+    "message": "Базата данни още не е изтеглена"
+  },
+  "popupFeedError": {
+    "message": "Обновяването на базата данни не успя, вижте Настройки"
+  },
+  "popupNoDetections": {
+    "message": "Още нищо не е блокирано"
+  },
+  "popupSettings": {
+    "message": "Настройки"
+  },
+  "popupHistory": {
+    "message": "Провери историята ми"
+  },
+  "popupUpdate": {
+    "message": "Обнови сега"
+  },
+  "popupUpdating": {
+    "message": "Обновяване"
+  },
+  "popupRulesLine": {
+    "message": "Правила за откриване, версия $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "вградени"
+  },
+  "popupRulesUpdated": {
+    "message": "обновени онлайн"
+  },
+  "supportShort": {
+    "message": "Подкрепа"
+  },
+  "tipSupport": {
+    "message": "Отваря страница, където можете да подкрепите ClickFix Warden с дарение"
+  },
+  "supportProject": {
+    "message": "Подкрепете проекта"
+  },
+  "kind_clipboard": {
+    "message": "Команда в клипборда"
+  },
+  "kind_manual_copy": {
+    "message": "Копирана команда"
+  },
+  "kind_paste": {
+    "message": "Поставяне на връзка за вход"
+  },
+  "kind_protocol": {
+    "message": "Връзка към програма"
+  },
+  "kind_fullscreen": {
+    "message": "Фалшив екран за актуализация"
+  },
+  "kind_page_instructions": {
+    "message": "Указания за поставяне"
+  },
+  "kind_web3_loader": {
+    "message": "Зареждане от блокчейн"
+  },
+  "kind_reputation": {
+    "message": "Докладван сайт"
+  },
+  "kind_reputation_block": {
+    "message": "Известен сайт на ClickFix"
+  },
+  "action_blocked": {
+    "message": "блокирано"
+  },
+  "action_warned": {
+    "message": "показано предупреждение"
+  },
+  "action_copied_anyway": {
+    "message": "копирано въпреки това"
+  },
+  "action_continued": {
+    "message": "отворено въпреки това"
+  },
+  "action_trusted": {
+    "message": "добавено към доверените"
+  },
+  "timeNever": {
+    "message": "никога"
+  },
+  "timeJustNow": {
+    "message": "току-що"
+  },
+  "timeMinutes": {
+    "message": "преди $1 мин"
+  },
+  "timeHours": {
+    "message": "преди $1 ч"
+  },
+  "timeDays": {
+    "message": "преди $1 дни"
+  },
+  "navProtection": {
+    "message": "Защита"
+  },
+  "navTrusted": {
+    "message": "Доверени сайтове"
+  },
+  "navHistory": {
+    "message": "Проверка на историята"
+  },
+  "navExtensions": {
+    "message": "Проверка на разширенията"
+  },
+  "navLog": {
+    "message": "Дневник на засичанията"
+  },
+  "navDatabase": {
+    "message": "База данни"
+  },
+  "navAbout": {
+    "message": "Относно"
+  },
+  "welcomeTitle": {
+    "message": "Защитени сте"
+  },
+  "welcomeBody": {
+    "message": "Сега ClickFix Warden следи за страници, които се опитват да ви подмамят да пуснете команди, и ви предупреждава за сайтове, докладвани като зловредни."
+  },
+  "welcomePrivacy": {
+    "message": "Всичко се проверява в браузъра ви, нищо за сърфирането ви не се изпраща никъде."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden се нуждае от достъп до всички уебсайтове, за да ги защитава."
+  },
+  "welcomeGrant": {
+    "message": "Разреши на всички уебсайтове"
+  },
+  "tipGrantHosts": {
+    "message": "Позволява на ClickFix Warden да следи всяка страница за трикове на ClickFix"
+  },
+  "managedNote": {
+    "message": "Някои настройки се управляват от вашата организация."
+  },
+  "protectionLead": {
+    "message": "Изберете за какво да следи ClickFix Warden. Всичко работи в браузъра ви."
+  },
+  "setEnabled": {
+    "message": "Защитата е включена"
+  },
+  "tipEnabled": {
+    "message": "Включва или изключва всички проверки наведнъж"
+  },
+  "setClipboard": {
+    "message": "Блокиране на опасни команди в клипборда"
+  },
+  "tipClipboard": {
+    "message": "Не позволява на страниците да слагат скрита команда в клипборда ви и слага там безобидна бележка"
+  },
+  "setPaste": {
+    "message": "Блокиране на поставянето на връзки за вход в уебсайтове"
+  },
+  "tipPaste": {
+    "message": "Не ви позволява да поставите връзка за вход с таен код в страница, която може да открадне профила ви"
+  },
+  "setProtocols": {
+    "message": "Блокиране на връзки, които отварят програми на компютъра ви"
+  },
+  "tipProtocols": {
+    "message": "Не позволява на страниците да отварят Редактора на скриптове, търсенето в Windows в отдалечени папки и подобни програми"
+  },
+  "setFullscreen": {
+    "message": "Спиране на фалшиви страници с актуализация на цял екран"
+  },
+  "tipFullscreen": {
+    "message": "Не позволява на страници, които ви казват да поставяте команди, да заключват екрана с фалшива актуализация"
+  },
+  "setPageWarnings": {
+    "message": "Предупреждение за страници с указания за поставяне"
+  },
+  "tipPageWarnings": {
+    "message": "Показва лента с предупреждение, когато страница ви казва да поставите нещо в „Изпълнение“, Терминал или Файловия мениджър"
+  },
+  "setWeb3": {
+    "message": "Следене за код, зареден от блокчейн"
+  },
+  "tipWeb3": {
+    "message": "Предупреждава, когато обикновен сайт извлича скрит код от блокчейн, трик на хакнати сайтове"
+  },
+  "setReputation": {
+    "message": "Предупреждение за докладвани сайтове"
+  },
+  "tipReputation": {
+    "message": "Показва лента с предупреждение на сайтове, вписани като зловредни в публични бази данни за заплахи"
+  },
+  "setBlockPage": {
+    "message": "Блокиране на известни сайтове на ClickFix, преди да се заредят"
+  },
+  "tipBlockPage": {
+    "message": "Показва предупреждение на цялата страница вместо сайт, който базите данни водят като страница на ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Изтегляне на обновления на базата данни и правилата"
+  },
+  "tipFeedUpdates": {
+    "message": "Всеки час изтегля подписания списък с докладвани сайтове и най-новите правила за откриване"
+  },
+  "trustedLead": {
+    "message": "Тези сайтове изобщо не се проверяват, добавянето на доверен сайт изисква същото потвърждение като в предупреждение."
+  },
+  "trustedInputLabel": {
+    "message": "Адрес на сайта"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Добави"
+  },
+  "tipTrustedAdd": {
+    "message": "Добавя сайта към списъка с непроверявани сайтове, след като потвърдите"
+  },
+  "trustedRemove": {
+    "message": "Премахни"
+  },
+  "tipTrustedRemove": {
+    "message": "Отново започва да проверява сайта"
+  },
+  "trustedEmpty": {
+    "message": "Няма доверени сайтове"
+  },
+  "orgTitle": {
+    "message": "Съобщение в предупрежденията"
+  },
+  "orgLead": {
+    "message": "Допълнителен текст във всяко предупреждение, например към кого да се обърнете във фирмата."
+  },
+  "orgPlaceholder": {
+    "message": "Например, обадете се на ИТ поддръжката, преди да продължите"
+  },
+  "orgSave": {
+    "message": "Запази"
+  },
+  "tipOrgSave": {
+    "message": "Запазва текста, показван във всяко предупреждение"
+  },
+  "orgSaved": {
+    "message": "Запазено"
+  },
+  "historyLead": {
+    "message": "Проверете дали сте посещавали сайт, който сега е в базата данни, проверката се извършва само в браузъра ви."
+  },
+  "historyDays7": {
+    "message": "Последните 7 дни"
+  },
+  "historyDays30": {
+    "message": "Последните 30 дни"
+  },
+  "historyDays90": {
+    "message": "Последните 90 дни"
+  },
+  "tipHistoryDays": {
+    "message": "Колко назад да се проверява"
+  },
+  "historyScan": {
+    "message": "Провери историята ми"
+  },
+  "tipHistoryScan": {
+    "message": "Иска достъп до историята ви и я сравнява с базата данни в браузъра ви"
+  },
+  "historyScanning": {
+    "message": "Проверка"
+  },
+  "historyChecked": {
+    "message": "Проверени адреси от последните $2 дни, общо $1."
+  },
+  "historyClean": {
+    "message": "Нито един посетен сайт не е в базата данни"
+  },
+  "historyFound": {
+    "message": "В базата данни има $1 от посетените адреси"
+  },
+  "historyAdvice": {
+    "message": "Ако сте пуснали нещо, което такъв сайт ви е казал, сменете паролите си от друго устройство и дайте този компютър за проверка."
+  },
+  "historyDenied": {
+    "message": "Достъпът до историята не беше разрешен."
+  },
+  "historyDrop": {
+    "message": "Премахни достъпа до историята"
+  },
+  "tipHistoryDrop": {
+    "message": "Връща разрешението за историята до следващата проверка"
+  },
+  "exportJson": {
+    "message": "Експорт в JSON"
+  },
+  "tipExport": {
+    "message": "Запазва резултатите като JSON файл на този компютър"
+  },
+  "tipExportLog": {
+    "message": "Запазва дневника като JSON файл на този компютър"
+  },
+  "colVisited": {
+    "message": "Последно посещение"
+  },
+  "colAddress": {
+    "message": "Адрес"
+  },
+  "colReport": {
+    "message": "Доклад"
+  },
+  "colTime": {
+    "message": "Час"
+  },
+  "colWhat": {
+    "message": "Какво"
+  },
+  "colSite": {
+    "message": "Сайт"
+  },
+  "colDetails": {
+    "message": "Подробности"
+  },
+  "extensionsLead": {
+    "message": "Потърсете инсталирани разширения на браузъра, известни като зловредни, например фалшиви блокери на реклами от атаки CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Провери инсталираните разширения"
+  },
+  "tipExtensionsScan": {
+    "message": "Иска разрешение да види списъка с разширенията ви и го сравнява със списък на известни зловредни"
+  },
+  "extensionsDrop": {
+    "message": "Премахни достъпа"
+  },
+  "tipExtensionsDrop": {
+    "message": "Връща разрешението за списъка с разширенията ви"
+  },
+  "extensionsDenied": {
+    "message": "Достъпът не беше разрешен."
+  },
+  "extensionsChecked": {
+    "message": "Проверени инсталирани разширения, общо $1."
+  },
+  "extensionsClean": {
+    "message": "Не е открито известно зловредно разширение"
+  },
+  "extensionsKnownAs": {
+    "message": "Известно като $1"
+  },
+  "extensionsRemove": {
+    "message": "Премахни"
+  },
+  "tipExtensionsRemove": {
+    "message": "Деинсталира това разширение, след като потвърдите"
+  },
+  "logLead": {
+    "message": "Какво ClickFix Warden е блокирал или за какво е предупредил, дневникът остава на този компютър."
+  },
+  "logClear": {
+    "message": "Изчисти дневника"
+  },
+  "tipLogClear": {
+    "message": "Изтрива всички записи в дневника"
+  },
+  "logClearConfirm": {
+    "message": "Да се изтрият ли всички записи в дневника на засичанията?"
+  },
+  "databaseLead": {
+    "message": "Докладите идват от публичните бази данни на abuse.ch и се проверяват с цифров подпис преди употреба."
+  },
+  "dbGenerated": {
+    "message": "Общо $1 доклада, публикувани $2"
+  },
+  "dbChecked": {
+    "message": "Последна проверка $1"
+  },
+  "dbError": {
+    "message": "Последното обновяване не успя, $1"
+  },
+  "dbUpdated": {
+    "message": "Актуално"
+  },
+  "tipUpdateNow": {
+    "message": "Изтегля най-новата база данни и правилата веднага"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden не събира данни, няма профил, телеметрия или собствен сървър."
+  },
+  "aboutNetwork": {
+    "message": "Единственото, което изтегля, е подписаната база данни и правилата от GitHub, който вижда същата заявка като при всяко обновяване."
+  },
+  "aboutProject": {
+    "message": "Изходен код"
+  },
+  "aboutPolicy": {
+    "message": "Политика за поверителност"
+  },
+  "descClipboard": {
+    "message": "Тази страница се опита да сложи $1 в клипборда ви. Това беше спряно, защото $2."
+  },
+  "descManual": {
+    "message": "Текстът, който се опитахте да копирате, е $1, и не беше копиран, защото $2."
+  },
+  "descPaste": {
+    "message": "Щяхте да поставите $1 в тази страница. Това беше спряно, защото $2."
+  },
+  "descProtocol": {
+    "message": "Тази страница се опита да отвори $1. Това беше спряно, защото $2."
+  },
+  "descFullscreen": {
+    "message": "Тази страница се опита да покаже $1. Това беше спряно, защото $2."
+  },
+  "repLine": {
+    "message": "$1 го води като $2, засечен за първи път на $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 го води като $2."
+  },
+  "warnLead": {
+    "message": "Сайтът $1 е вписан в $2 като $3. Страници като тази ви подмамват да поставите команда, която $4."
+  },
+  "warnLeadUnknown": {
+    "message": "Сайтът $1 е вписан в публични бази данни за заплахи. Страници като тази ви подмамват да поставите команда, която $2."
+  },
+  "confirmBody": {
+    "message": "Ако продължите, ClickFix Warden спира да проверява сайта и такава страница може да $1."
+  },
+  "popupBlockedLine": {
+    "message": "ClickFix Warden $2 блокира $1"
+  },
+  "popupReports": {
+    "message": "$1 докладвани адреса"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "Редактор на скриптове с подготвен скрипт"
+  },
+  "proto_search_ms": {
+    "message": "прозорец за търсене в Windows в отдалечена папка"
+  },
+  "proto_ms_msdt": {
+    "message": "инструмент за отстраняване на неизправности в Windows със скрити настройки"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office със скрити настройки"
+  },
+  "proto_ms_appinstaller": {
+    "message": "инсталатор на приложение от интернет"
+  },
+  "setLanguage": {
+    "message": "Език"
+  },
+  "tipLanguage": {
+    "message": "Сменя езика на ClickFix Warden, „По подразбиране за браузъра“ следва езика на браузъра ви"
+  },
+  "langBrowser": {
+    "message": "По подразбиране за браузъра"
+  }
 }

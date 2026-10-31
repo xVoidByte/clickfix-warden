@@ -19,15 +19,9 @@ export interface SignalDetail {
   host: string;
 }
 
-const SAFE_TEXT = {
-  en: '# ClickFix Warden blocked a dangerous command. Close this window and never paste commands from websites.',
-  bg: '# ClickFix Warden спря опасна команда. Затворете този прозорец и никога не поставяйте команди от сайтове.',
-};
-
 /** What lands in the clipboard instead of the attacker's command. Starts with # so shells treat it as a comment. */
-export function safeText(lang?: string): string {
-  const l = (lang ?? (typeof navigator !== 'undefined' ? navigator.language : 'en') ?? 'en').toLowerCase();
-  return l.startsWith('bg') ? SAFE_TEXT.bg : SAFE_TEXT.en;
+export function safeText(): string {
+  return '# ClickFix Warden blocked a dangerous command. Close this window and never paste commands from websites.';
 }
 
 export function htmlToText(html: string): string {

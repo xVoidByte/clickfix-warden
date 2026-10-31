@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Megállítja a parancsok futtatására rávevő ClickFix- és hamis CAPTCHA-támadásokat, és figyelmeztet a bejelentett kártékony oldalakra."
+  },
+  "dangerLabel": {
+    "message": "POTENCIÁLISAN VESZÉLYES WEBHELY"
+  },
+  "titleClipboard": {
+    "message": "Veszélyes parancs letiltva"
+  },
+  "titleManual": {
+    "message": "Veszélyes parancs másolása letiltva"
+  },
+  "titlePaste": {
+    "message": "Veszélyes beillesztés letiltva"
+  },
+  "titleProtocol": {
+    "message": "Veszélyes hivatkozás letiltva"
+  },
+  "titleFullscreen": {
+    "message": "Hamis frissítési képernyő letiltva"
+  },
+  "descNote": {
+    "message": "A vágólapon most egy ártalmatlan megjegyzés van, így a beillesztés nem tesz semmit."
+  },
+  "descManualNote": {
+    "message": "Helyette egy ártalmatlan megjegyzés került a vágólapra."
+  },
+  "descFullscreenNote": {
+    "message": "Nyomja meg az Esc billentyűt, ha valami még mindig takarja a képernyőt, majd zárja be a lapot."
+  },
+  "whatTemplate": {
+    "message": "$1, amely $2"
+  },
+  "what_powershell": {
+    "message": "egy PowerShell-parancs"
+  },
+  "what_powershell_hidden": {
+    "message": "egy rejtett PowerShell-parancs"
+  },
+  "what_applescript": {
+    "message": "egy AppleScript-parancs"
+  },
+  "what_applescript_hidden": {
+    "message": "egy rejtett AppleScript-parancs"
+  },
+  "what_terminal": {
+    "message": "egy Terminál-parancs"
+  },
+  "what_terminal_hidden": {
+    "message": "egy rejtett Terminál-parancs"
+  },
+  "what_script": {
+    "message": "egy szkriptparancs"
+  },
+  "what_script_hidden": {
+    "message": "egy rejtett szkriptparancs"
+  },
+  "what_cmd": {
+    "message": "egy Parancssorba szánt parancs"
+  },
+  "what_cmd_hidden": {
+    "message": "egy rejtett, Parancssorba szánt parancs"
+  },
+  "what_windows": {
+    "message": "egy Windows-parancs"
+  },
+  "what_windows_hidden": {
+    "message": "egy rejtett Windows-parancs"
+  },
+  "what_generic": {
+    "message": "egy parancs"
+  },
+  "what_generic_hidden": {
+    "message": "egy rejtett parancs"
+  },
+  "effect_download_run": {
+    "message": "letölt és futtat egy programot"
+  },
+  "effect_disables_av": {
+    "message": "kikapcsolja a víruskereső védelmet"
+  },
+  "effect_password": {
+    "message": "hamis ablakban kéri el a jelszavát"
+  },
+  "effect_remote_share": {
+    "message": "fájlokat futtat egy távoli hálózati megosztásról"
+  },
+  "effect_remote_script": {
+    "message": "egy szkriptet futtat közvetlenül az internetről"
+  },
+  "effect_remote_install": {
+    "message": "egy programot telepít közvetlenül az internetről"
+  },
+  "effect_dns": {
+    "message": "rejtett parancsokat tölt le DNS-rekordokból"
+  },
+  "effect_finger": {
+    "message": "rejtett parancsokat tölt le egy távoli kiszolgálóról"
+  },
+  "effect_runs": {
+    "message": "engedély kérése nélkül fut a számítógépén"
+  },
+  "whyPage1": {
+    "message": "az oldal $1"
+  },
+  "whyPage2": {
+    "message": "az oldal $1, és $2"
+  },
+  "lure_captcha": {
+    "message": "CAPTCHA-nak adja ki magát"
+  },
+  "lure_update": {
+    "message": "úgy tesz, mintha frissítéseket telepítene"
+  },
+  "lure_fix": {
+    "message": "egy hiba javításaként kínálja"
+  },
+  "target_explorer": {
+    "message": "arra kéri, hogy illessze be a Fájlkezelő címsorába"
+  },
+  "target_terminal": {
+    "message": "arra kéri, hogy illessze be a Terminálba"
+  },
+  "target_run": {
+    "message": "arra kéri, hogy illessze be a Futtatás párbeszédpanelbe"
+  },
+  "target_paste": {
+    "message": "arra kéri, hogy illessze be valahová a számítógépén"
+  },
+  "why_payload_reported": {
+    "message": "kártékonyként jelentett címről tölt le"
+  },
+  "why_site_reported": {
+    "message": "ezt a webhelyet kártékonyként jelentették"
+  },
+  "why_decoy": {
+    "message": "a parancs után hamis ellenőrző szöveg van elrejtve"
+  },
+  "why_padding": {
+    "message": "a valódi parancs üres hely mögé van rejtve"
+  },
+  "why_disguised": {
+    "message": "a parancsot álcázták, hogy ne lehessen látni, mit csinál"
+  },
+  "why_hidden_window": {
+    "message": "rejtett ablakban fut"
+  },
+  "why_generic": {
+    "message": "egy ClickFix-támadás jeleit mutatja"
+  },
+  "why_fullscreen": {
+    "message": "az oldal arra kéri, hogy illesszen be egy parancsot"
+  },
+  "fullscreenWhat": {
+    "message": "átvenni az egész képernyőt, mint egy hamis Windows-frissítés"
+  },
+  "pasteWhat": {
+    "message": "egy titkos kódot tartalmazó bejelentkezési link"
+  },
+  "pasteWhy": {
+    "message": "egy ilyen oldal ezzel átveheti az irányítást a fiókja felett"
+  },
+  "protocolWhy": {
+    "message": "az ilyen hivatkozások parancsokat futtathatnak a számítógépén anélkül, hogy észrevenné"
+  },
+  "btnClose": {
+    "message": "Bezárás"
+  },
+  "btnLeave": {
+    "message": "Webhely elhagyása"
+  },
+  "btnTrust": {
+    "message": "Megbízom a webhelyben"
+  },
+  "tipClose": {
+    "message": "Elrejti ezt a figyelmeztetést, és az oldalon marad"
+  },
+  "tipLeave": {
+    "message": "Bezárja ezt az oldalt, és új lapot nyit"
+  },
+  "tipTrust": {
+    "message": "Megerősítés után leállít minden ellenőrzést ezen a webhelyen"
+  },
+  "tipUntrust": {
+    "message": "Újra elkezdi ellenőrizni ezt a webhelyet"
+  },
+  "bannerReported": {
+    "message": "Ezt a webhelyet kártékonyként jelentették."
+  },
+  "bannerDetails": {
+    "message": "Részletek"
+  },
+  "bannerFirstSeen": {
+    "message": "első észlelés $1"
+  },
+  "bannerWeb3": {
+    "message": "Ez a webhely rejtett kódot tölt be egy blokkláncból."
+  },
+  "bannerWeb3Detail": {
+    "message": "A feltört webhelyek ezzel a trükkel jelenítenek meg hamis CAPTCHA-oldalakat."
+  },
+  "bannerInstructions": {
+    "message": "Ez az oldal arra kéri, hogy illesszen be valamit a Futtatás ablakba, a Terminálba vagy a Fájlkezelőbe."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Valódi webhelyek soha nem kérnek ilyet."
+  },
+  "rep_clickfix": {
+    "message": "egy ClickFix-oldal"
+  },
+  "rep_clickfix_family": {
+    "message": "egy $1 kártevőt terjesztő ClickFix-oldal"
+  },
+  "rep_malware": {
+    "message": "egy kártevő letöltési címe"
+  },
+  "rep_malware_family": {
+    "message": "egy $1 kártevő letöltési címe"
+  },
+  "rep_c2": {
+    "message": "egy kártevő vezérlőszervere"
+  },
+  "rep_c2_family": {
+    "message": "egy $1 kártevő vezérlőszervere"
+  },
+  "rep_phishing": {
+    "message": "egy adathalász oldal"
+  },
+  "rep_phishing_family": {
+    "message": "egy $1 adathalász oldal"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "kártevő letöltése"
+  },
+  "category_c2": {
+    "message": "kártevő vezérlőszervere"
+  },
+  "category_phishing": {
+    "message": "adathalászat"
+  },
+  "confirmTrustTitle": {
+    "message": "$1 védelmének kikapcsolása?"
+  },
+  "confirmOpenTitle": {
+    "message": "$1 megnyitása ennek ellenére?"
+  },
+  "confirmReported": {
+    "message": "Ez a webhely szerepel nyilvános fenyegetési adatbázisokban."
+  },
+  "confirmBodyStrong": {
+    "message": "megfertőzni a számítógépét, és ellopni a jelszavait, a mentett bankkártyáit és a kriptotárcáit"
+  },
+  "confirmOnlyReported": {
+    "message": "Csak akkor tegye ezt, ha biztosan tudja, hogy a bejelentés téves."
+  },
+  "confirmOnlyKnown": {
+    "message": "Csak olyan webhelyeknél tegye ezt, amelyeket jól ismer."
+  },
+  "confirmCheckTrust": {
+    "message": "Értem, hogy ha megbízom a webhelyben, elveszíthetem belépési adataimat, sütijeimet és pénzemet"
+  },
+  "confirmCheckOpen": {
+    "message": "Értem, hogy ha megnyitom a webhelyet, elveszíthetem belépési adataimat, sütijeimet és pénzemet"
+  },
+  "confirmTrust": {
+    "message": "Megbízom a webhelyben"
+  },
+  "confirmOpen": {
+    "message": "Megnyitás mégis"
+  },
+  "confirmKeep": {
+    "message": "Továbbra is védelmet kérek"
+  },
+  "warnTitle": {
+    "message": "Veszélyes webhely letiltva"
+  },
+  "warnAddress": {
+    "message": "Cím"
+  },
+  "warnReportedBy": {
+    "message": "Bejelentette"
+  },
+  "warnSteals": {
+    "message": "ellopja a jelszavait, a mentett bankkártyáit és a kriptotárcáit"
+  },
+  "warnLeave": {
+    "message": "Vissza a biztonságba"
+  },
+  "warnLeaveTip": {
+    "message": "Új lapot nyit e webhely helyett"
+  },
+  "warnContinue": {
+    "message": "Megnyitás mégis"
+  },
+  "warnContinueTip": {
+    "message": "A kockázat megerősítése után a következő egy órára megnyitja a webhelyet"
+  },
+  "warnAdvice": {
+    "message": "Egyetlen valódi webhely sem kéri, hogy illesszen be bármit a Futtatás ablakba, a Terminálba vagy a Fájlkezelőbe."
+  },
+  "popupOn": {
+    "message": "Be"
+  },
+  "popupOff": {
+    "message": "A védelem ki van kapcsolva."
+  },
+  "popupNotWebPage": {
+    "message": "Nem weboldal"
+  },
+  "popupTrusted": {
+    "message": "Ön megbízhatónak jelölte, nincs ellenőrizve"
+  },
+  "popupReported": {
+    "message": "Kártékonyként jelentették"
+  },
+  "popupNoReports": {
+    "message": "Nincs bejelentés erről a webhelyről"
+  },
+  "popupUntrust": {
+    "message": "Megbízhatóság visszavonása"
+  },
+  "popupUpdated": {
+    "message": "Frissítve $1, szabályverzió $2"
+  },
+  "popupFeedNone": {
+    "message": "Az adatbázis még nincs letöltve"
+  },
+  "popupFeedError": {
+    "message": "Az adatbázis frissítése sikertelen, részletek a Beállításokban"
+  },
+  "popupNoDetections": {
+    "message": "Eddig nincs letiltott elem"
+  },
+  "popupSettings": {
+    "message": "Beállítások"
+  },
+  "popupHistory": {
+    "message": "Előzmények ellenőrzése"
+  },
+  "popupUpdate": {
+    "message": "Frissítés most"
+  },
+  "popupUpdating": {
+    "message": "Frissítés folyamatban"
+  },
+  "popupRulesLine": {
+    "message": "Észlelési szabályok verziója $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "beépített"
+  },
+  "popupRulesUpdated": {
+    "message": "online frissítve"
+  },
+  "supportShort": {
+    "message": "Támogatás"
+  },
+  "tipSupport": {
+    "message": "Megnyit egy oldalt, ahol adománnyal támogathatja a ClickFix Warden fejlesztését"
+  },
+  "supportProject": {
+    "message": "A projekt támogatása"
+  },
+  "kind_clipboard": {
+    "message": "Vágólapra tett parancs"
+  },
+  "kind_manual_copy": {
+    "message": "Kimásolt parancs"
+  },
+  "kind_paste": {
+    "message": "Bejelentkezési link beillesztése"
+  },
+  "kind_protocol": {
+    "message": "Programot megnyitó hivatkozás"
+  },
+  "kind_fullscreen": {
+    "message": "Hamis frissítési képernyő"
+  },
+  "kind_page_instructions": {
+    "message": "Beillesztési utasítások"
+  },
+  "kind_web3_loader": {
+    "message": "Blokkláncos betöltő"
+  },
+  "kind_reputation": {
+    "message": "Bejelentett webhely"
+  },
+  "kind_reputation_block": {
+    "message": "Ismert ClickFix-webhely"
+  },
+  "action_blocked": {
+    "message": "letiltva"
+  },
+  "action_warned": {
+    "message": "figyelmeztetéssel jelezve"
+  },
+  "action_copied_anyway": {
+    "message": "mégis kimásolva"
+  },
+  "action_continued": {
+    "message": "mégis megnyitva"
+  },
+  "action_trusted": {
+    "message": "megbízhatónak jelölve"
+  },
+  "timeNever": {
+    "message": "soha"
+  },
+  "timeJustNow": {
+    "message": "épp most"
+  },
+  "timeMinutes": {
+    "message": "$1 perce"
+  },
+  "timeHours": {
+    "message": "$1 órája"
+  },
+  "timeDays": {
+    "message": "$1 napja"
+  },
+  "navProtection": {
+    "message": "Védelem"
+  },
+  "navTrusted": {
+    "message": "Megbízható webhelyek"
+  },
+  "navHistory": {
+    "message": "Előzmények ellenőrzése"
+  },
+  "navExtensions": {
+    "message": "Bővítmények ellenőrzése"
+  },
+  "navLog": {
+    "message": "Észlelési napló"
+  },
+  "navDatabase": {
+    "message": "Adatbázis"
+  },
+  "navAbout": {
+    "message": "Névjegy"
+  },
+  "welcomeTitle": {
+    "message": "Ön védelem alatt áll"
+  },
+  "welcomeBody": {
+    "message": "A ClickFix Warden mostantól figyeli azokat az oldalakat, amelyek parancsok futtatására próbálják rávenni, és figyelmezteti a kártékonyként jelentett webhelyekre."
+  },
+  "welcomePrivacy": {
+    "message": "Minden ellenőrzés a böngészőjében történik, a böngészéséről semmilyen adat nem kerül sehová."
+  },
+  "welcomeHostAccess": {
+    "message": "A ClickFix Warden csak akkor tudja védeni a webhelyeket, ha mindegyikhez hozzáfér."
+  },
+  "welcomeGrant": {
+    "message": "Engedélyezés minden webhelyen"
+  },
+  "tipGrantHosts": {
+    "message": "Lehetővé teszi, hogy a ClickFix Warden minden oldalon figyelje a ClickFix-trükköket"
+  },
+  "managedNote": {
+    "message": "Egyes beállításokat a szervezete kezel."
+  },
+  "protectionLead": {
+    "message": "Válassza ki, mit figyeljen a ClickFix Warden. Minden a böngészőjében fut."
+  },
+  "setEnabled": {
+    "message": "Védelem bekapcsolva"
+  },
+  "tipEnabled": {
+    "message": "Egyszerre kapcsol be vagy ki minden ellenőrzést"
+  },
+  "setClipboard": {
+    "message": "Veszélyes parancsok letiltása a vágólapon"
+  },
+  "tipClipboard": {
+    "message": "Megakadályozza, hogy az oldalak rejtett parancsot tegyenek a vágólapra, és helyette egy ártalmatlan megjegyzést tesz oda"
+  },
+  "setPaste": {
+    "message": "Bejelentkezési linkek beillesztésének letiltása webhelyeken"
+  },
+  "tipPaste": {
+    "message": "Megakadályozza, hogy titkos kódot tartalmazó bejelentkezési linket illesszen be egy olyan oldalra, amely ellophatja a fiókját"
+  },
+  "setProtocols": {
+    "message": "Programokat megnyitó hivatkozások letiltása"
+  },
+  "tipProtocols": {
+    "message": "Megakadályozza, hogy az oldalak megnyissák a Szkriptszerkesztőt, a távoli mappákra irányított Windows Keresést és hasonló programokat"
+  },
+  "setFullscreen": {
+    "message": "Hamis teljes képernyős frissítési oldalak megállítása"
+  },
+  "tipFullscreen": {
+    "message": "Megakadályozza, hogy a parancsok beillesztésére kérő oldalak hamis frissítéssel lezárják a képernyőt"
+  },
+  "setPageWarnings": {
+    "message": "Figyelmeztetés a beillesztési utasításokat tartalmazó oldalakra"
+  },
+  "tipPageWarnings": {
+    "message": "Figyelmeztető sávot jelenít meg, ha egy oldal arra kéri, hogy illesszen be valamit a Futtatás ablakba, a Terminálba vagy a Fájlkezelőbe"
+  },
+  "setWeb3": {
+    "message": "Blokkláncból betöltött kód figyelése"
+  },
+  "tipWeb3": {
+    "message": "Figyelmeztet, ha egy átlagos webhely rejtett kódot tölt le egy blokkláncból, ami a feltört webhelyek egyik trükkje"
+  },
+  "setReputation": {
+    "message": "Figyelmeztetés a bejelentett webhelyekre"
+  },
+  "tipReputation": {
+    "message": "Figyelmeztető sávot jelenít meg a nyilvános fenyegetési adatbázisokban kártékonyként szereplő webhelyeken"
+  },
+  "setBlockPage": {
+    "message": "Ismert ClickFix-webhelyek letiltása betöltés előtt"
+  },
+  "tipBlockPage": {
+    "message": "Teljes oldalas figyelmeztetést jelenít meg azon webhelyek helyett, amelyeket az adatbázisok ClickFix-oldalként tartanak nyilván"
+  },
+  "setFeedUpdates": {
+    "message": "Adatbázis- és szabályfrissítések letöltése"
+  },
+  "tipFeedUpdates": {
+    "message": "Óránként letölti a bejelentett webhelyek aláírt listáját és a legújabb észlelési szabályokat"
+  },
+  "trustedLead": {
+    "message": "Ezeket a webhelyeket a bővítmény egyáltalán nem ellenőrzi, és egy webhely megbízhatóvá tétele ugyanazt a megerősítést igényli, mint egy figyelmeztetésben."
+  },
+  "trustedInputLabel": {
+    "message": "Webhely címe"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Hozzáadás"
+  },
+  "tipTrustedAdd": {
+    "message": "Megerősítés után felveszi a webhelyet a nem ellenőrzött webhelyek listájára"
+  },
+  "trustedRemove": {
+    "message": "Eltávolítás"
+  },
+  "tipTrustedRemove": {
+    "message": "Újra elkezdi ellenőrizni ezt a webhelyet"
+  },
+  "trustedEmpty": {
+    "message": "Nincsenek megbízható webhelyek"
+  },
+  "orgTitle": {
+    "message": "Üzenet a figyelmeztetésekben"
+  },
+  "orgLead": {
+    "message": "Minden figyelmeztetésben megjelenő további szöveg, például hogy kihez forduljon a cégénél."
+  },
+  "orgPlaceholder": {
+    "message": "Például hívja fel az informatikai ügyfélszolgálatot, mielőtt folytatja"
+  },
+  "orgSave": {
+    "message": "Mentés"
+  },
+  "tipOrgSave": {
+    "message": "Menti a minden figyelmeztetésben megjelenő szöveget"
+  },
+  "orgSaved": {
+    "message": "Mentve"
+  },
+  "historyLead": {
+    "message": "Ellenőrizze, hogy meglátogatott-e olyan webhelyet, amely most szerepel az adatbázisban, az ellenőrzés csak a böngészőjében fut."
+  },
+  "historyDays7": {
+    "message": "Az elmúlt 7 nap"
+  },
+  "historyDays30": {
+    "message": "Az elmúlt 30 nap"
+  },
+  "historyDays90": {
+    "message": "Az elmúlt 90 nap"
+  },
+  "tipHistoryDays": {
+    "message": "Milyen régre visszamenőleg legyen az ellenőrzés"
+  },
+  "historyScan": {
+    "message": "Előzmények ellenőrzése"
+  },
+  "tipHistoryScan": {
+    "message": "Hozzáférést kér az előzményeihez, és a böngészőjén belül összeveti azokat az adatbázissal"
+  },
+  "historyScanning": {
+    "message": "Ellenőrzés"
+  },
+  "historyChecked": {
+    "message": "$1 cím ellenőrizve az elmúlt $2 napból."
+  },
+  "historyClean": {
+    "message": "Egyetlen meglátogatott webhely sem szerepel a listán"
+  },
+  "historyFound": {
+    "message": "$1 meglátogatott cím szerepel a listán"
+  },
+  "historyAdvice": {
+    "message": "Ha futtatott valamit, amire egy listán szereplő webhely kérte, egy másik eszközről változtassa meg a jelszavait, és ellenőriztesse ezt a számítógépet."
+  },
+  "historyDenied": {
+    "message": "Az előzmények elérését nem engedélyezte."
+  },
+  "historyDrop": {
+    "message": "Előzményhozzáférés visszavonása"
+  },
+  "tipHistoryDrop": {
+    "message": "Visszaadja az előzmények olvasására vonatkozó engedélyt a következő ellenőrzésig"
+  },
+  "exportJson": {
+    "message": "Exportálás JSON-ként"
+  },
+  "tipExport": {
+    "message": "JSON-fájlként menti az eredményeket ezen a számítógépen"
+  },
+  "tipExportLog": {
+    "message": "JSON-fájlként menti a naplót ezen a számítógépen"
+  },
+  "colVisited": {
+    "message": "Utolsó látogatás"
+  },
+  "colAddress": {
+    "message": "Cím"
+  },
+  "colReport": {
+    "message": "Bejelentés"
+  },
+  "colTime": {
+    "message": "Idő"
+  },
+  "colWhat": {
+    "message": "Esemény"
+  },
+  "colSite": {
+    "message": "Webhely"
+  },
+  "colDetails": {
+    "message": "Részletek"
+  },
+  "extensionsLead": {
+    "message": "Keressen olyan telepített böngészőbővítményeket, amelyek ismerten kártékonyak, például a CrashFix-támadásokban használt hamis reklámblokkolókat."
+  },
+  "extensionsScan": {
+    "message": "Telepített bővítmények ellenőrzése"
+  },
+  "tipExtensionsScan": {
+    "message": "Engedélyt kér a bővítményei listázására, és összeveti őket az ismert kártékony bővítmények listájával"
+  },
+  "extensionsDrop": {
+    "message": "Hozzáférés visszavonása"
+  },
+  "tipExtensionsDrop": {
+    "message": "Visszaadja a bővítmények listázására vonatkozó engedélyt"
+  },
+  "extensionsDenied": {
+    "message": "A hozzáférést nem engedélyezte."
+  },
+  "extensionsChecked": {
+    "message": "$1 telepített bővítmény ellenőrizve."
+  },
+  "extensionsClean": {
+    "message": "Nem található ismert kártékony bővítmény"
+  },
+  "extensionsKnownAs": {
+    "message": "$1 néven ismert"
+  },
+  "extensionsRemove": {
+    "message": "Eltávolítás"
+  },
+  "tipExtensionsRemove": {
+    "message": "Megerősítés után eltávolítja ezt a bővítményt"
+  },
+  "logLead": {
+    "message": "Amit a ClickFix Warden letiltott, vagy amire figyelmeztetett, a napló ezen a számítógépen marad."
+  },
+  "logClear": {
+    "message": "Napló törlése"
+  },
+  "tipLogClear": {
+    "message": "Minden bejegyzést töröl a naplóból"
+  },
+  "logClearConfirm": {
+    "message": "Törli az észlelési napló összes bejegyzését?"
+  },
+  "databaseLead": {
+    "message": "A bejelentések az abuse.ch nyilvános adatbázisaiból származnak, és használat előtt a bővítmény ellenőrzi a digitális aláírásukat."
+  },
+  "dbGenerated": {
+    "message": "$1 bejelentés, közzétéve $2"
+  },
+  "dbChecked": {
+    "message": "Utoljára ellenőrizve $1"
+  },
+  "dbError": {
+    "message": "A legutóbbi frissítés sikertelen, $1"
+  },
+  "dbUpdated": {
+    "message": "Naprakész"
+  },
+  "tipUpdateNow": {
+    "message": "Azonnal letölti a legújabb adatbázist és szabályokat"
+  },
+  "aboutPrivacy": {
+    "message": "A ClickFix Warden nem gyűjt adatokat, nincs fiókja, telemetriája és saját kiszolgálója."
+  },
+  "aboutNetwork": {
+    "message": "Csak az aláírt adatbázist és a szabályokat tölti le a GitHubról, amely ugyanazt a kérést látja, mint bármely frissítésnél."
+  },
+  "aboutProject": {
+    "message": "Forráskód"
+  },
+  "aboutPolicy": {
+    "message": "Adatvédelmi irányelvek"
+  },
+  "descClipboard": {
+    "message": "Amit ez az oldal a vágólapra próbált tenni, az $1. A ClickFix Warden megállította, mert $2."
+  },
+  "descManual": {
+    "message": "A kimásolni próbált szöveg $1, és a ClickFix Warden nem másolta ki, mert $2."
+  },
+  "descPaste": {
+    "message": "Amit erre az oldalra készült beilleszteni, az $1. A ClickFix Warden megállította, mert $2."
+  },
+  "descProtocol": {
+    "message": "Amit ez az oldal meg próbált nyitni, az $1. A ClickFix Warden megállította, mert $2."
+  },
+  "descFullscreen": {
+    "message": "Ez az oldal megpróbálta $1. A ClickFix Warden megállította, mert $2."
+  },
+  "repLine": {
+    "message": "$1 szerint ez $2, első észlelés ideje $3"
+  },
+  "repLineNoDate": {
+    "message": "$1 szerint ez $2."
+  },
+  "warnLead": {
+    "message": "$2 szerint $1 $3. Az ilyen oldalak trükkel ráveszik, hogy beillesszen egy parancsot, amely $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 szerepel a nyilvános fenyegetési adatbázisokban. Az ilyen oldalak trükkel ráveszik, hogy beillesszen egy parancsot, amely $2."
+  },
+  "confirmBody": {
+    "message": "Ha folytatja, a ClickFix Warden többé nem ellenőrzi ezt a webhelyet, egy ilyen oldal pedig képes $1."
+  },
+  "popupBlockedLine": {
+    "message": "Letiltva $2: $1"
+  },
+  "popupReports": {
+    "message": "$1 bejelentett cím"
+  },
+  "kindAction": {
+    "message": "$1 $2"
+  },
+  "proto_applescript": {
+    "message": "a Szkriptszerkesztő egy előre megírt szkripttel"
+  },
+  "proto_search_ms": {
+    "message": "egy távoli mappát mutató Windows Keresés ablak"
+  },
+  "proto_ms_msdt": {
+    "message": "a Windows hibaelhárító rejtett beállításokkal"
+  },
+  "proto_ms_officecmd": {
+    "message": "az Office rejtett beállításokkal"
+  },
+  "proto_ms_appinstaller": {
+    "message": "egy alkalmazástelepítő az internetről"
+  },
+  "setLanguage": {
+    "message": "Nyelv"
+  },
+  "tipLanguage": {
+    "message": "Módosítja a ClickFix Warden nyelvét, a Böngésző alapértelmezése beállítás a böngésző nyelvét követi"
+  },
+  "langBrowser": {
+    "message": "Böngésző alapértelmezése"
+  }
+}

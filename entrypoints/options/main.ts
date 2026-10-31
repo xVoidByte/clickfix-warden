@@ -5,14 +5,13 @@ import { lookupKeysForUrl } from '../../src/feed/keys';
 import { type FeedMeta, type FeedRecord, SOURCE_NAMES, type UpdateState } from '../../src/feed/types';
 import type { UpdateResult } from '../../src/feed/update';
 import { DONATE_URL, PRIVACY_URL, PROJECT_URL } from '../../src/shared/constants';
-import { localizePage, relativeTime, t } from '../../src/shared/i18n';
+import { chooseLanguage, LANGUAGES, loadI18nOverride, localizePage, overrideLang, relativeTime, t, uiLocaleCode } from '../../src/shared/i18n';
 import type { Detection, Message } from '../../src/shared/messages';
 import { computeEffectiveSettings, type EffectiveSettings, normalizeSite, saveSettings, type Settings } from '../../src/shared/settings';
 import { confirmDialog } from '../../src/ui/graphite';
 import { addPageParts } from '../../src/ui/page-parts';
 
 addPageParts();
-localizePage();
 const $ = <T extends HTMLElement = HTMLElement>(id: string) => document.getElementById(id) as T;
 const send = <T>(msg: Message) => browser.runtime.sendMessage(msg) as Promise<T>;
 
@@ -63,9 +62,23 @@ function locked(key: string): boolean {
   return eff.locked || eff.managedKeys.includes(key);
 }
 
+function languageRow(): HTMLElement {
+  const select = make('select', { id: 'language' });
+  select.append(make('option', { value: '', textContent: t('langBrowser') }));
+  for (const l of LANGUAGES) select.append(make('option', { value: l.code, textContent: l.name }));
+  select.value = overrideLang();
+  select.addEventListener('change', async () => {
+    select.disabled = true;
+    await chooseLanguage(select.value);
+    location.reload();
+  });
+  const label = make('label', { htmlFor: 'language', className: 'grow', textContent: t('setLanguage') });
+  return make('div', { className: 'row lang' }, label, tip('tipLanguage'), select);
+}
+
 function renderToggles(): void {
   const box = $('toggles');
-  box.replaceChildren();
+  box.replaceChildren(languageRow());
   for (const item of TOGGLES) {
     const input = make('input', { type: 'checkbox', checked: eff.settings[item.key] as boolean, disabled: locked(item.key) });
     input.id = 'set-' + item.key;
@@ -276,7 +289,7 @@ async function renderLog(): Promise<Detection[]> {
         'tr',
         {},
         make('td', { textContent: new Date(d.time).toLocaleString() }),
-        make('td', { textContent: `${t('kind_' + d.kind.replace(/-/g, '_'))}, ${t('action_' + d.action.replace(/-/g, '_'))}` }),
+        make('td', { textContent: t('kindAction', [t('kind_' + d.kind.replace(/-/g, '_')), t('action_' + d.action.replace(/-/g, '_'))]) }),
         make('td', { className: 'url', textContent: d.host || d.url }),
         details,
       ),
@@ -326,7 +339,6 @@ $('updateNow').addEventListener('click', async () => {
 
 // ---- about and welcome ----
 $<HTMLAnchorElement>('projectLink').href = PROJECT_URL;
-$<HTMLAnchorElement>('privacyLink').href = PRIVACY_URL;
 if (DONATE_URL) {
   const d = $<HTMLAnchorElement>('donateLink');
   d.href = DONATE_URL;
@@ -357,6 +369,9 @@ async function refresh(): Promise<void> {
 }
 
 void (async () => {
+  await loadI18nOverride();
+  localizePage();
+  $<HTMLAnchorElement>('privacyLink').href = PRIVACY_URL + '?lang=' + uiLocaleCode();
   await refresh();
   await renderLog();
   await renderDatabase();

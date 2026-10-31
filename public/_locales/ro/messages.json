@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Oprește atacurile ClickFix și CAPTCHA false care vă păcălesc să rulați comenzi și semnalează site-urile raportate ca periculoase."
+  },
+  "dangerLabel": {
+    "message": "SITE POTENȚIAL PERICULOS"
+  },
+  "titleClipboard": {
+    "message": "Comandă periculoasă blocată"
+  },
+  "titleManual": {
+    "message": "Comanda periculoasă nu a fost copiată"
+  },
+  "titlePaste": {
+    "message": "Lipire periculoasă blocată"
+  },
+  "titleProtocol": {
+    "message": "Link periculos blocat"
+  },
+  "titleFullscreen": {
+    "message": "Ecran fals de actualizare blocat"
+  },
+  "descNote": {
+    "message": "Clipboardul conține acum o notă inofensivă, așa că lipirea nu face nimic."
+  },
+  "descManualNote": {
+    "message": "În schimb, a fost copiată o notă inofensivă."
+  },
+  "descFullscreenNote": {
+    "message": "Apăsați Esc dacă ceva încă acoperă ecranul, apoi închideți fila."
+  },
+  "whatTemplate": {
+    "message": "$1 care $2"
+  },
+  "what_powershell": {
+    "message": "o comandă PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "o comandă PowerShell ascunsă"
+  },
+  "what_applescript": {
+    "message": "o comandă AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "o comandă AppleScript ascunsă"
+  },
+  "what_terminal": {
+    "message": "o comandă Terminal"
+  },
+  "what_terminal_hidden": {
+    "message": "o comandă Terminal ascunsă"
+  },
+  "what_script": {
+    "message": "o comandă de script"
+  },
+  "what_script_hidden": {
+    "message": "o comandă de script ascunsă"
+  },
+  "what_cmd": {
+    "message": "o comandă pentru Linia de comandă"
+  },
+  "what_cmd_hidden": {
+    "message": "o comandă ascunsă pentru Linia de comandă"
+  },
+  "what_windows": {
+    "message": "o comandă Windows"
+  },
+  "what_windows_hidden": {
+    "message": "o comandă Windows ascunsă"
+  },
+  "what_generic": {
+    "message": "o comandă"
+  },
+  "what_generic_hidden": {
+    "message": "o comandă ascunsă"
+  },
+  "effect_download_run": {
+    "message": "descarcă și rulează un program"
+  },
+  "effect_disables_av": {
+    "message": "vă dezactivează protecția antivirus"
+  },
+  "effect_password": {
+    "message": "vă cere parola într-o fereastră falsă"
+  },
+  "effect_remote_share": {
+    "message": "rulează fișiere dintr-un folder partajat de pe un server la distanță"
+  },
+  "effect_remote_script": {
+    "message": "rulează un script direct de pe internet"
+  },
+  "effect_remote_install": {
+    "message": "instalează un program direct de pe internet"
+  },
+  "effect_dns": {
+    "message": "preia comenzi ascunse din înregistrări DNS"
+  },
+  "effect_finger": {
+    "message": "preia comenzi ascunse de pe un server la distanță"
+  },
+  "effect_runs": {
+    "message": "rulează pe computerul dvs. fără să vă întrebe"
+  },
+  "whyPage1": {
+    "message": "pagina $1"
+  },
+  "whyPage2": {
+    "message": "pagina $1 și $2"
+  },
+  "lure_captcha": {
+    "message": "se dă drept CAPTCHA"
+  },
+  "lure_update": {
+    "message": "pretinde că instalează actualizări"
+  },
+  "lure_fix": {
+    "message": "o prezintă drept soluție pentru o eroare"
+  },
+  "target_explorer": {
+    "message": "vă cere să o lipiți în bara de adrese din Explorer"
+  },
+  "target_terminal": {
+    "message": "vă cere să o lipiți în Terminal"
+  },
+  "target_run": {
+    "message": "vă cere să o lipiți în caseta Executare"
+  },
+  "target_paste": {
+    "message": "vă cere să o lipiți undeva pe computer"
+  },
+  "why_payload_reported": {
+    "message": "descarcă de la o adresă raportată ca rău intenționată"
+  },
+  "why_site_reported": {
+    "message": "acest site este raportat ca rău intenționat"
+  },
+  "why_decoy": {
+    "message": "după comandă este ascuns un text fals de verificare"
+  },
+  "why_padding": {
+    "message": "comanda reală este ascunsă după spații goale"
+  },
+  "why_disguised": {
+    "message": "comanda este deghizată ca să ascundă ce face"
+  },
+  "why_hidden_window": {
+    "message": "rulează într-o fereastră ascunsă"
+  },
+  "why_generic": {
+    "message": "are semnele unui atac ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "pagina vă cere să lipiți o comandă"
+  },
+  "fullscreenWhat": {
+    "message": "preia tot ecranul, ca o actualizare Windows falsă"
+  },
+  "pasteWhat": {
+    "message": "un link de conectare cu un cod secret"
+  },
+  "pasteWhy": {
+    "message": "o pagină ca aceasta îl poate folosi pentru a vă prelua contul"
+  },
+  "protocolWhy": {
+    "message": "astfel de linkuri pot rula comenzi pe computerul dvs. fără să observați"
+  },
+  "btnClose": {
+    "message": "Închideți"
+  },
+  "btnLeave": {
+    "message": "Părăsiți site-ul"
+  },
+  "btnTrust": {
+    "message": "Am încredere în site"
+  },
+  "tipClose": {
+    "message": "Ascunde avertismentul și rămâne pe pagină"
+  },
+  "tipLeave": {
+    "message": "Închide pagina și deschide o filă nouă"
+  },
+  "tipTrust": {
+    "message": "Oprește toate verificările pe acest site după ce confirmați"
+  },
+  "tipUntrust": {
+    "message": "Reîncepe verificarea acestui site"
+  },
+  "bannerReported": {
+    "message": "Acest site este raportat ca rău intenționat."
+  },
+  "bannerDetails": {
+    "message": "Detalii"
+  },
+  "bannerFirstSeen": {
+    "message": "văzut prima dată pe $1"
+  },
+  "bannerWeb3": {
+    "message": "Acest site încarcă cod ascuns dintr-un blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "Site-urile compromise folosesc acest truc pentru a afișa pagini CAPTCHA false."
+  },
+  "bannerInstructions": {
+    "message": "Această pagină vă cere să lipiți ceva în Executare, Terminal sau Explorer."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Site-urile reale nu vă cer niciodată asta."
+  },
+  "rep_clickfix": {
+    "message": "pagină ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "pagină ClickFix care răspândește $1"
+  },
+  "rep_malware": {
+    "message": "descărcare de malware"
+  },
+  "rep_malware_family": {
+    "message": "descărcare de $1"
+  },
+  "rep_c2": {
+    "message": "server de control pentru malware"
+  },
+  "rep_c2_family": {
+    "message": "server de control pentru $1"
+  },
+  "rep_phishing": {
+    "message": "pagină de phishing"
+  },
+  "rep_phishing_family": {
+    "message": "pagină de phishing $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "descărcare de malware"
+  },
+  "category_c2": {
+    "message": "server de control pentru malware"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "Opriți protecția pentru $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Deschideți totuși $1?"
+  },
+  "confirmReported": {
+    "message": "Acest site este raportat în baze de date publice despre amenințări."
+  },
+  "confirmBodyStrong": {
+    "message": "infecta computerul și fura parolele, cardurile salvate și portofelele de criptomonede"
+  },
+  "confirmOnlyReported": {
+    "message": "Faceți asta doar dacă știți că raportul este greșit."
+  },
+  "confirmOnlyKnown": {
+    "message": "Faceți asta doar pentru site-uri pe care le cunoașteți bine."
+  },
+  "confirmCheckTrust": {
+    "message": "Înțeleg că pot pierde date de conectare, cookie-uri și bani dacă am încredere în acest site"
+  },
+  "confirmCheckOpen": {
+    "message": "Înțeleg că pot pierde date de conectare, cookie-uri și bani dacă deschid acest site"
+  },
+  "confirmTrust": {
+    "message": "Am încredere în site"
+  },
+  "confirmOpen": {
+    "message": "Deschideți totuși"
+  },
+  "confirmKeep": {
+    "message": "Păstrați protecția"
+  },
+  "warnTitle": {
+    "message": "Site periculos blocat"
+  },
+  "warnAddress": {
+    "message": "Adresă"
+  },
+  "warnReportedBy": {
+    "message": "Raportat de"
+  },
+  "warnSteals": {
+    "message": "vă fură parolele, cardurile salvate și portofelele de criptomonede"
+  },
+  "warnLeave": {
+    "message": "Înapoi în siguranță"
+  },
+  "warnLeaveTip": {
+    "message": "Deschide o filă nouă în locul acestui site"
+  },
+  "warnContinue": {
+    "message": "Deschideți totuși"
+  },
+  "warnContinueTip": {
+    "message": "Deschide site-ul pentru următoarea oră după ce confirmați riscul"
+  },
+  "warnAdvice": {
+    "message": "Niciun site real nu vă cere să lipiți ceva în Executare, Terminal sau Explorer."
+  },
+  "popupOn": {
+    "message": "Activat"
+  },
+  "popupOff": {
+    "message": "Protecția este dezactivată."
+  },
+  "popupNotWebPage": {
+    "message": "Nu este o pagină web"
+  },
+  "popupTrusted": {
+    "message": "Marcat de dvs. ca fiind de încredere, neverificat"
+  },
+  "popupReported": {
+    "message": "Raportat ca rău intenționat"
+  },
+  "popupNoReports": {
+    "message": "Nu există rapoarte despre acest site"
+  },
+  "popupUntrust": {
+    "message": "Retrageți încrederea în site"
+  },
+  "popupUpdated": {
+    "message": "Actualizat $1, versiunea regulilor $2"
+  },
+  "popupFeedNone": {
+    "message": "Baza de date nu a fost descărcată încă"
+  },
+  "popupFeedError": {
+    "message": "Actualizarea bazei de date a eșuat, consultați Setări"
+  },
+  "popupNoDetections": {
+    "message": "Nimic blocat încă"
+  },
+  "popupSettings": {
+    "message": "Setări"
+  },
+  "popupHistory": {
+    "message": "Verificați istoricul"
+  },
+  "popupUpdate": {
+    "message": "Actualizați acum"
+  },
+  "popupUpdating": {
+    "message": "Se actualizează"
+  },
+  "popupRulesLine": {
+    "message": "Reguli de detectare versiunea $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "integrate"
+  },
+  "popupRulesUpdated": {
+    "message": "actualizate online"
+  },
+  "supportShort": {
+    "message": "Susțineți"
+  },
+  "tipSupport": {
+    "message": "Deschide o pagină unde puteți susține ClickFix Warden printr-o donație"
+  },
+  "supportProject": {
+    "message": "Susțineți proiectul"
+  },
+  "kind_clipboard": {
+    "message": "Comandă din clipboard"
+  },
+  "kind_manual_copy": {
+    "message": "Comandă selectată pentru copiere"
+  },
+  "kind_paste": {
+    "message": "Lipire de link de conectare"
+  },
+  "kind_protocol": {
+    "message": "Legătură către un program"
+  },
+  "kind_fullscreen": {
+    "message": "Actualizare falsă pe tot ecranul"
+  },
+  "kind_page_instructions": {
+    "message": "Pagină cu instrucțiuni de lipire"
+  },
+  "kind_web3_loader": {
+    "message": "Încărcare de cod din blockchain"
+  },
+  "kind_reputation": {
+    "message": "Adresă raportată"
+  },
+  "kind_reputation_block": {
+    "message": "Adresă ClickFix cunoscută"
+  },
+  "action_blocked": {
+    "message": "blocată"
+  },
+  "action_warned": {
+    "message": "semnalată"
+  },
+  "action_copied_anyway": {
+    "message": "copiată totuși"
+  },
+  "action_continued": {
+    "message": "deschisă totuși"
+  },
+  "action_trusted": {
+    "message": "marcată ca fiind de încredere"
+  },
+  "timeNever": {
+    "message": "niciodată"
+  },
+  "timeJustNow": {
+    "message": "chiar acum"
+  },
+  "timeMinutes": {
+    "message": "acum $1 min"
+  },
+  "timeHours": {
+    "message": "acum $1 h"
+  },
+  "timeDays": {
+    "message": "acum $1 zile"
+  },
+  "navProtection": {
+    "message": "Protecție"
+  },
+  "navTrusted": {
+    "message": "Site-uri de încredere"
+  },
+  "navHistory": {
+    "message": "Verificarea istoricului"
+  },
+  "navExtensions": {
+    "message": "Verificarea extensiilor"
+  },
+  "navLog": {
+    "message": "Jurnal de detectări"
+  },
+  "navDatabase": {
+    "message": "Bază de date"
+  },
+  "navAbout": {
+    "message": "Despre"
+  },
+  "welcomeTitle": {
+    "message": "Protecția este activă"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden urmărește acum paginile care încearcă să vă păcălească să rulați comenzi și vă avertizează despre site-urile raportate ca rău intenționate."
+  },
+  "welcomePrivacy": {
+    "message": "Totul se verifică în browserul dvs., nimic despre navigarea dvs. nu este trimis nicăieri."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden are nevoie de acces la toate site-urile pentru a le proteja."
+  },
+  "welcomeGrant": {
+    "message": "Permiteți pe toate site-urile"
+  },
+  "tipGrantHosts": {
+    "message": "Îi permite lui ClickFix Warden să verifice fiecare pagină pentru trucuri ClickFix"
+  },
+  "managedNote": {
+    "message": "Unele setări sunt gestionate de organizația dvs."
+  },
+  "protectionLead": {
+    "message": "Alegeți ce urmărește ClickFix Warden. Totul rulează în browserul dvs."
+  },
+  "setEnabled": {
+    "message": "Protecție activată"
+  },
+  "tipEnabled": {
+    "message": "Activează sau dezactivează toate verificările deodată"
+  },
+  "setClipboard": {
+    "message": "Blocați comenzile periculoase din clipboard"
+  },
+  "tipClipboard": {
+    "message": "Împiedică paginile să pună o comandă ascunsă în clipboard și pune acolo o notă inofensivă"
+  },
+  "setPaste": {
+    "message": "Blocați lipirea linkurilor de conectare în site-uri"
+  },
+  "tipPaste": {
+    "message": "Vă împiedică să lipiți un link de conectare cu un cod secret într-o pagină care v-ar putea fura contul"
+  },
+  "setProtocols": {
+    "message": "Blocați linkurile care deschid programe pe computer"
+  },
+  "tipProtocols": {
+    "message": "Împiedică paginile să deschidă Editor scripturi, Căutare Windows în foldere la distanță și programe similare"
+  },
+  "setFullscreen": {
+    "message": "Opriți paginile false de actualizare pe tot ecranul"
+  },
+  "tipFullscreen": {
+    "message": "Împiedică paginile care vă cer să lipiți comenzi să blocheze ecranul cu o actualizare falsă"
+  },
+  "setPageWarnings": {
+    "message": "Avertizați despre paginile cu instrucțiuni de lipire"
+  },
+  "tipPageWarnings": {
+    "message": "Afișează o bară de avertizare când o pagină vă cere să lipiți ceva în Executare, Terminal sau Explorer"
+  },
+  "setWeb3": {
+    "message": "Urmăriți codul încărcat dintr-un blockchain"
+  },
+  "tipWeb3": {
+    "message": "Avertizează când un site obișnuit preia cod ascuns dintr-un blockchain, un truc folosit de site-urile compromise"
+  },
+  "setReputation": {
+    "message": "Avertizați despre site-urile raportate"
+  },
+  "tipReputation": {
+    "message": "Afișează o bară de avertizare pe site-urile listate ca rău intenționate în baze de date publice despre amenințări"
+  },
+  "setBlockPage": {
+    "message": "Blocați site-urile ClickFix cunoscute înainte să se încarce"
+  },
+  "tipBlockPage": {
+    "message": "Afișează un avertisment pe toată pagina în locul unui site pe care bazele de date îl listează ca pagină ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Descărcați actualizările bazei de date și ale regulilor"
+  },
+  "tipFeedUpdates": {
+    "message": "Descarcă în fiecare oră lista semnată a site-urilor raportate și cele mai noi reguli de detectare"
+  },
+  "trustedLead": {
+    "message": "Aceste site-uri nu sunt verificate deloc, iar încrederea într-un site necesită aceeași confirmare ca într-un avertisment."
+  },
+  "trustedInputLabel": {
+    "message": "Adresa site-ului"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Adăugați"
+  },
+  "tipTrustedAdd": {
+    "message": "Adaugă site-ul în lista site-urilor care nu sunt verificate, după ce confirmați"
+  },
+  "trustedRemove": {
+    "message": "Eliminați"
+  },
+  "tipTrustedRemove": {
+    "message": "Reîncepe verificarea acestui site"
+  },
+  "trustedEmpty": {
+    "message": "Niciun site de încredere"
+  },
+  "orgTitle": {
+    "message": "Mesaj în avertismente"
+  },
+  "orgLead": {
+    "message": "Text suplimentar afișat în fiecare avertisment, de exemplu pe cine să contactați în companie."
+  },
+  "orgPlaceholder": {
+    "message": "De exemplu, sunați la asistența IT înainte să continuați"
+  },
+  "orgSave": {
+    "message": "Salvați"
+  },
+  "tipOrgSave": {
+    "message": "Salvează textul afișat în fiecare avertisment"
+  },
+  "orgSaved": {
+    "message": "Salvat"
+  },
+  "historyLead": {
+    "message": "Verificați dacă ați vizitat vreun site care este acum listat în baza de date, verificarea rulează doar în browserul dvs."
+  },
+  "historyDays7": {
+    "message": "Ultimele 7 zile"
+  },
+  "historyDays30": {
+    "message": "Ultimele 30 de zile"
+  },
+  "historyDays90": {
+    "message": "Ultimele 90 de zile"
+  },
+  "tipHistoryDays": {
+    "message": "Cât de departe în trecut să se caute"
+  },
+  "historyScan": {
+    "message": "Verificați istoricul"
+  },
+  "tipHistoryScan": {
+    "message": "Cere acces la istoric și îl compară cu baza de date în browserul dvs."
+  },
+  "historyScanning": {
+    "message": "Se verifică"
+  },
+  "historyChecked": {
+    "message": "Au fost verificate $1 adrese din ultimele $2 zile."
+  },
+  "historyClean": {
+    "message": "Niciun site vizitat nu este listat"
+  },
+  "historyFound": {
+    "message": "$1 adrese vizitate sunt listate"
+  },
+  "historyAdvice": {
+    "message": "Dacă ați rulat ceva ce v-a cerut un site listat, schimbați-vă parolele de pe alt dispozitiv și cereți verificarea acestui computer."
+  },
+  "historyDenied": {
+    "message": "Accesul la istoric nu a fost acordat."
+  },
+  "historyDrop": {
+    "message": "Eliminați accesul la istoric"
+  },
+  "tipHistoryDrop": {
+    "message": "Renunță la permisiunea pentru istoric până la următoarea verificare"
+  },
+  "exportJson": {
+    "message": "Exportați JSON"
+  },
+  "tipExport": {
+    "message": "Salvează rezultatele ca fișier JSON pe acest computer"
+  },
+  "tipExportLog": {
+    "message": "Salvează jurnalul ca fișier JSON pe acest computer"
+  },
+  "colVisited": {
+    "message": "Ultima vizită"
+  },
+  "colAddress": {
+    "message": "Adresă"
+  },
+  "colReport": {
+    "message": "Raport"
+  },
+  "colTime": {
+    "message": "Ora"
+  },
+  "colWhat": {
+    "message": "Ce"
+  },
+  "colSite": {
+    "message": "Site"
+  },
+  "colDetails": {
+    "message": "Detalii"
+  },
+  "extensionsLead": {
+    "message": "Căutați extensii de browser instalate care sunt cunoscute ca rău intenționate, cum ar fi blocantele de reclame false folosite în atacurile CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Verificați extensiile instalate"
+  },
+  "tipExtensionsScan": {
+    "message": "Cere permisiunea de a vă lista extensiile și le compară cu o listă de extensii rău intenționate cunoscute"
+  },
+  "extensionsDrop": {
+    "message": "Eliminați accesul"
+  },
+  "tipExtensionsDrop": {
+    "message": "Renunță la permisiunea de a vă lista extensiile"
+  },
+  "extensionsDenied": {
+    "message": "Accesul nu a fost acordat."
+  },
+  "extensionsChecked": {
+    "message": "Au fost verificate $1 extensii instalate."
+  },
+  "extensionsClean": {
+    "message": "Nu s-a găsit nicio extensie rău intenționată cunoscută"
+  },
+  "extensionsKnownAs": {
+    "message": "Cunoscută ca $1"
+  },
+  "extensionsRemove": {
+    "message": "Eliminați"
+  },
+  "tipExtensionsRemove": {
+    "message": "Dezinstalează această extensie după ce confirmați"
+  },
+  "logLead": {
+    "message": "Ce a blocat ClickFix Warden sau despre ce a avertizat, jurnalul rămâne pe acest computer."
+  },
+  "logClear": {
+    "message": "Goliți jurnalul"
+  },
+  "tipLogClear": {
+    "message": "Șterge toate intrările din jurnal"
+  },
+  "logClearConfirm": {
+    "message": "Ștergeți toate intrările din jurnalul de detectări?"
+  },
+  "databaseLead": {
+    "message": "Rapoartele provin din bazele de date publice abuse.ch și sunt verificate cu o semnătură digitală înainte de utilizare."
+  },
+  "dbGenerated": {
+    "message": "$1 de rapoarte, publicate $2"
+  },
+  "dbChecked": {
+    "message": "Ultima verificare $1"
+  },
+  "dbError": {
+    "message": "Ultima actualizare a eșuat, $1"
+  },
+  "dbUpdated": {
+    "message": "Actualizat"
+  },
+  "tipUpdateNow": {
+    "message": "Descarcă imediat cea mai nouă bază de date și cele mai noi reguli"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden nu colectează date, nu are cont, telemetrie sau server propriu."
+  },
+  "aboutNetwork": {
+    "message": "Singurul lucru pe care îl descarcă este baza de date semnată și regulile de pe GitHub, care vede aceeași cerere ca la orice actualizare."
+  },
+  "aboutProject": {
+    "message": "Cod sursă"
+  },
+  "aboutPolicy": {
+    "message": "Politica de confidențialitate"
+  },
+  "descClipboard": {
+    "message": "Această pagină a încercat să vă pună în clipboard $1. Încercarea a fost oprită pentru că $2."
+  },
+  "descManual": {
+    "message": "Textul pe care ați încercat să îl copiați este $1 și nu a fost copiat pentru că $2."
+  },
+  "descPaste": {
+    "message": "Erați pe cale să lipiți în această pagină $1. Acțiunea a fost oprită pentru că $2."
+  },
+  "descProtocol": {
+    "message": "Această pagină a încercat să deschidă $1. Încercarea a fost oprită pentru că $2."
+  },
+  "descFullscreen": {
+    "message": "Această pagină a încercat să $1. Încercarea a fost oprită pentru că $2."
+  },
+  "repLine": {
+    "message": "$1 îl listează ca $2, văzut prima dată pe $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 îl listează ca $2."
+  },
+  "warnLead": {
+    "message": "$1 este listat în $2 ca $3. Paginile de acest fel vă păcălesc să lipiți o comandă care $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 este listat în baze de date publice despre amenințări. Paginile de acest fel vă păcălesc să lipiți o comandă care $2."
+  },
+  "confirmBody": {
+    "message": "Dacă continuați, ClickFix Warden nu îl mai verifică, iar o pagină ca aceasta vă poate $1."
+  },
+  "popupBlockedLine": {
+    "message": "Am blocat $2 $1"
+  },
+  "popupReports": {
+    "message": "$1 de adrese raportate"
+  },
+  "kindAction": {
+    "message": "$1 $2"
+  },
+  "proto_applescript": {
+    "message": "Editor scripturi cu un script pregătit"
+  },
+  "proto_search_ms": {
+    "message": "o fereastră Căutare Windows pentru un folder la distanță"
+  },
+  "proto_ms_msdt": {
+    "message": "instrumentul de depanare Windows cu setări ascunse"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office cu setări ascunse"
+  },
+  "proto_ms_appinstaller": {
+    "message": "un program de instalare a aplicațiilor de pe internet"
+  },
+  "setLanguage": {
+    "message": "Limbă"
+  },
+  "tipLanguage": {
+    "message": "Schimbă limba ClickFix Warden, Limba browserului urmează limba setată în browserul dvs."
+  },
+  "langBrowser": {
+    "message": "Limba browserului"
+  }
+}

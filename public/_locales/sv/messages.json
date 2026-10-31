@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Stoppar ClickFix och falska CAPTCHA-attacker som lurar dig att köra kommandon, och varnar för webbplatser rapporterade som skadliga."
+  },
+  "dangerLabel": {
+    "message": "POTENTIELLT FARLIG WEBBPLATS"
+  },
+  "titleClipboard": {
+    "message": "Farligt kommando blockerat"
+  },
+  "titleManual": {
+    "message": "Farligt kommando kopierades inte"
+  },
+  "titlePaste": {
+    "message": "Farlig inklistring blockerad"
+  },
+  "titleProtocol": {
+    "message": "Farlig länk blockerad"
+  },
+  "titleFullscreen": {
+    "message": "Falsk uppdateringsskärm blockerad"
+  },
+  "descNote": {
+    "message": "Ditt urklipp innehåller nu en ofarlig anteckning, så inget händer om du klistrar in."
+  },
+  "descManualNote": {
+    "message": "En ofarlig anteckning kopierades i stället."
+  },
+  "descFullscreenNote": {
+    "message": "Tryck på Esc om något fortfarande täcker skärmen och stäng sedan fliken."
+  },
+  "whatTemplate": {
+    "message": "$1 som $2"
+  },
+  "what_powershell": {
+    "message": "ett PowerShell-kommando"
+  },
+  "what_powershell_hidden": {
+    "message": "ett dolt PowerShell-kommando"
+  },
+  "what_applescript": {
+    "message": "ett AppleScript-kommando"
+  },
+  "what_applescript_hidden": {
+    "message": "ett dolt AppleScript-kommando"
+  },
+  "what_terminal": {
+    "message": "ett Terminal-kommando"
+  },
+  "what_terminal_hidden": {
+    "message": "ett dolt Terminal-kommando"
+  },
+  "what_script": {
+    "message": "ett skriptkommando"
+  },
+  "what_script_hidden": {
+    "message": "ett dolt skriptkommando"
+  },
+  "what_cmd": {
+    "message": "ett kommando för Kommandotolken"
+  },
+  "what_cmd_hidden": {
+    "message": "ett dolt kommando för Kommandotolken"
+  },
+  "what_windows": {
+    "message": "ett Windows-kommando"
+  },
+  "what_windows_hidden": {
+    "message": "ett dolt Windows-kommando"
+  },
+  "what_generic": {
+    "message": "ett kommando"
+  },
+  "what_generic_hidden": {
+    "message": "ett dolt kommando"
+  },
+  "effect_download_run": {
+    "message": "laddar ner och kör ett program"
+  },
+  "effect_disables_av": {
+    "message": "stänger av ditt antivirusskydd"
+  },
+  "effect_password": {
+    "message": "ber om ditt lösenord i ett falskt fönster"
+  },
+  "effect_remote_share": {
+    "message": "kör filer från en delad mapp på en fjärrserver"
+  },
+  "effect_remote_script": {
+    "message": "kör ett skript direkt från internet"
+  },
+  "effect_remote_install": {
+    "message": "installerar ett program direkt från internet"
+  },
+  "effect_dns": {
+    "message": "hämtar dolda kommandon från DNS-poster"
+  },
+  "effect_finger": {
+    "message": "hämtar dolda kommandon från en fjärrserver"
+  },
+  "effect_runs": {
+    "message": "körs på din dator utan att fråga"
+  },
+  "whyPage1": {
+    "message": "sidan $1"
+  },
+  "whyPage2": {
+    "message": "sidan $1 och $2"
+  },
+  "lure_captcha": {
+    "message": "låtsas vara en CAPTCHA"
+  },
+  "lure_update": {
+    "message": "låtsas installera uppdateringar"
+  },
+  "lure_fix": {
+    "message": "erbjuder det som en lösning på ett fel"
+  },
+  "target_explorer": {
+    "message": "säger åt dig att klistra in det i adressfältet i Utforskaren"
+  },
+  "target_terminal": {
+    "message": "säger åt dig att klistra in det i Terminal"
+  },
+  "target_run": {
+    "message": "säger åt dig att klistra in det i rutan Kör"
+  },
+  "target_paste": {
+    "message": "säger åt dig att klistra in det någonstans på datorn"
+  },
+  "why_payload_reported": {
+    "message": "det laddar ner från en adress som har rapporterats som skadlig"
+  },
+  "why_site_reported": {
+    "message": "den här webbplatsen har rapporterats som skadlig"
+  },
+  "why_decoy": {
+    "message": "falsk verifieringstext är gömd efter kommandot"
+  },
+  "why_padding": {
+    "message": "det riktiga kommandot är gömt bakom tomt utrymme"
+  },
+  "why_disguised": {
+    "message": "kommandot är förklätt för att dölja vad det gör"
+  },
+  "why_hidden_window": {
+    "message": "det körs i ett dolt fönster"
+  },
+  "why_generic": {
+    "message": "det har kännetecknen för en ClickFix-attack"
+  },
+  "why_fullscreen": {
+    "message": "sidan säger åt dig att klistra in ett kommando"
+  },
+  "fullscreenWhat": {
+    "message": "ta över hela skärmen som en falsk Windows-uppdatering"
+  },
+  "pasteWhat": {
+    "message": "en inloggningslänk med en hemlig kod"
+  },
+  "pasteWhy": {
+    "message": "en sådan sida kan använda den för att ta över ditt konto"
+  },
+  "protocolWhy": {
+    "message": "sådana länkar kan köra kommandon på din dator utan att du märker det"
+  },
+  "btnClose": {
+    "message": "Stäng"
+  },
+  "btnLeave": {
+    "message": "Lämna webbplatsen"
+  },
+  "btnTrust": {
+    "message": "Lita på webbplatsen"
+  },
+  "tipClose": {
+    "message": "Döljer varningen och stannar kvar på sidan"
+  },
+  "tipLeave": {
+    "message": "Stänger sidan och öppnar en ny flik"
+  },
+  "tipTrust": {
+    "message": "Stoppar alla kontroller på den här webbplatsen när du har bekräftat"
+  },
+  "tipUntrust": {
+    "message": "Börjar kontrollera den här webbplatsen igen"
+  },
+  "bannerReported": {
+    "message": "Den här webbplatsen har rapporterats som skadlig."
+  },
+  "bannerDetails": {
+    "message": "Detaljer"
+  },
+  "bannerFirstSeen": {
+    "message": "först upptäckt $1"
+  },
+  "bannerWeb3": {
+    "message": "Den här webbplatsen laddar dold kod från en blockkedja."
+  },
+  "bannerWeb3Detail": {
+    "message": "Hackade webbplatser använder det här tricket för att visa falska CAPTCHA-sidor."
+  },
+  "bannerInstructions": {
+    "message": "Den här sidan säger åt dig att klistra in något i Kör, Terminal eller Utforskaren."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Riktiga webbplatser ber dig aldrig att göra det."
+  },
+  "rep_clickfix": {
+    "message": "en ClickFix-sida"
+  },
+  "rep_clickfix_family": {
+    "message": "en ClickFix-sida som sprider $1"
+  },
+  "rep_malware": {
+    "message": "en nedladdning av skadlig kod"
+  },
+  "rep_malware_family": {
+    "message": "en nedladdning av $1"
+  },
+  "rep_c2": {
+    "message": "en styrserver för skadlig kod"
+  },
+  "rep_c2_family": {
+    "message": "en styrserver för $1"
+  },
+  "rep_phishing": {
+    "message": "en nätfiskesida"
+  },
+  "rep_phishing_family": {
+    "message": "en nätfiskesida av typen $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "nedladdning av skadlig kod"
+  },
+  "category_c2": {
+    "message": "styrserver för skadlig kod"
+  },
+  "category_phishing": {
+    "message": "nätfiske"
+  },
+  "confirmTrustTitle": {
+    "message": "Vill du sluta skydda $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Vill du öppna $1 ändå?"
+  },
+  "confirmReported": {
+    "message": "Den här webbplatsen har rapporterats i offentliga hotdatabaser."
+  },
+  "confirmBodyStrong": {
+    "message": "infektera din dator och stjäla dina lösenord, sparade kreditkort och kryptoplånböcker"
+  },
+  "confirmOnlyReported": {
+    "message": "Gör det bara om du vet att rapporten är fel."
+  },
+  "confirmOnlyKnown": {
+    "message": "Gör det bara för webbplatser som du känner väl."
+  },
+  "confirmCheckTrust": {
+    "message": "Jag förstår att jag kan förlora inloggningar, cookies och pengar om jag litar på webbplatsen"
+  },
+  "confirmCheckOpen": {
+    "message": "Jag förstår att jag kan förlora inloggningar, cookies och pengar om jag öppnar webbplatsen"
+  },
+  "confirmTrust": {
+    "message": "Lita på webbplatsen"
+  },
+  "confirmOpen": {
+    "message": "Öppna ändå"
+  },
+  "confirmKeep": {
+    "message": "Fortsätt skydda mig"
+  },
+  "warnTitle": {
+    "message": "Farlig webbplats blockerad"
+  },
+  "warnAddress": {
+    "message": "Adress"
+  },
+  "warnReportedBy": {
+    "message": "Rapporterad av"
+  },
+  "warnSteals": {
+    "message": "stjäl dina lösenord, sparade kreditkort och kryptoplånböcker"
+  },
+  "warnLeave": {
+    "message": "Tillbaka till säkerheten"
+  },
+  "warnLeaveTip": {
+    "message": "Öppnar en ny flik i stället för den här webbplatsen"
+  },
+  "warnContinue": {
+    "message": "Öppna ändå"
+  },
+  "warnContinueTip": {
+    "message": "Öppnar webbplatsen under den närmaste timmen när du har bekräftat risken"
+  },
+  "warnAdvice": {
+    "message": "Ingen riktig webbplats ber dig att klistra in något i Kör, Terminal eller Utforskaren."
+  },
+  "popupOn": {
+    "message": "På"
+  },
+  "popupOff": {
+    "message": "Skyddet är avstängt."
+  },
+  "popupNotWebPage": {
+    "message": "Inte en webbsida"
+  },
+  "popupTrusted": {
+    "message": "Betrodd av dig, kontrolleras inte"
+  },
+  "popupReported": {
+    "message": "Rapporterad som skadlig"
+  },
+  "popupNoReports": {
+    "message": "Inga rapporter om den här webbplatsen"
+  },
+  "popupUntrust": {
+    "message": "Sluta lita på webbplatsen"
+  },
+  "popupUpdated": {
+    "message": "Uppdaterad $1, regelversion $2"
+  },
+  "popupFeedNone": {
+    "message": "Databasen har inte laddats ner än"
+  },
+  "popupFeedError": {
+    "message": "Databasen kunde inte uppdateras, se Inställningar"
+  },
+  "popupNoDetections": {
+    "message": "Inget har blockerats än"
+  },
+  "popupSettings": {
+    "message": "Inställningar"
+  },
+  "popupHistory": {
+    "message": "Kontrollera min historik"
+  },
+  "popupUpdate": {
+    "message": "Uppdatera nu"
+  },
+  "popupUpdating": {
+    "message": "Uppdaterar"
+  },
+  "popupRulesLine": {
+    "message": "Identifieringsregler version $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "inbyggda"
+  },
+  "popupRulesUpdated": {
+    "message": "uppdaterade online"
+  },
+  "supportShort": {
+    "message": "Stöd"
+  },
+  "tipSupport": {
+    "message": "Öppnar en sida där du kan stödja ClickFix Warden med en donation"
+  },
+  "supportProject": {
+    "message": "Stöd projektet"
+  },
+  "kind_clipboard": {
+    "message": "Kommando i urklipp"
+  },
+  "kind_manual_copy": {
+    "message": "Kopierat kommando"
+  },
+  "kind_paste": {
+    "message": "Inklistrad inloggningslänk"
+  },
+  "kind_protocol": {
+    "message": "Programlänk"
+  },
+  "kind_fullscreen": {
+    "message": "Falsk uppdateringsskärm"
+  },
+  "kind_page_instructions": {
+    "message": "Instruktioner om inklistring"
+  },
+  "kind_web3_loader": {
+    "message": "Blockkedjeladdare"
+  },
+  "kind_reputation": {
+    "message": "Rapporterad webbplats"
+  },
+  "kind_reputation_block": {
+    "message": "Känd ClickFix-webbplats"
+  },
+  "action_blocked": {
+    "message": "blockerades"
+  },
+  "action_warned": {
+    "message": "utlöste en varning"
+  },
+  "action_copied_anyway": {
+    "message": "kopierades ändå"
+  },
+  "action_continued": {
+    "message": "öppnades ändå"
+  },
+  "action_trusted": {
+    "message": "markerades som betrodd"
+  },
+  "timeNever": {
+    "message": "aldrig"
+  },
+  "timeJustNow": {
+    "message": "nyss"
+  },
+  "timeMinutes": {
+    "message": "för $1 min sedan"
+  },
+  "timeHours": {
+    "message": "för $1 tim sedan"
+  },
+  "timeDays": {
+    "message": "för $1 dagar sedan"
+  },
+  "navProtection": {
+    "message": "Skydd"
+  },
+  "navTrusted": {
+    "message": "Betrodda webbplatser"
+  },
+  "navHistory": {
+    "message": "Historikkontroll"
+  },
+  "navExtensions": {
+    "message": "Tilläggskontroll"
+  },
+  "navLog": {
+    "message": "Identifieringslogg"
+  },
+  "navDatabase": {
+    "message": "Databas"
+  },
+  "navAbout": {
+    "message": "Om"
+  },
+  "welcomeTitle": {
+    "message": "Du är skyddad"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden håller nu utkik efter sidor som försöker lura dig att köra kommandon, och varnar dig för webbplatser som har rapporterats som skadliga."
+  },
+  "welcomePrivacy": {
+    "message": "Allt kontrolleras i din webbläsare, inget om din surfning skickas någonstans."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden behöver åtkomst till alla webbplatser för att kunna skydda dem."
+  },
+  "welcomeGrant": {
+    "message": "Tillåt på alla webbplatser"
+  },
+  "tipGrantHosts": {
+    "message": "Låter ClickFix Warden bevaka alla sidor efter ClickFix-trick"
+  },
+  "managedNote": {
+    "message": "Vissa inställningar hanteras av din organisation."
+  },
+  "protectionLead": {
+    "message": "Välj vad ClickFix Warden ska hålla utkik efter. Allt körs i din webbläsare."
+  },
+  "setEnabled": {
+    "message": "Skydd på"
+  },
+  "tipEnabled": {
+    "message": "Slår på eller av alla kontroller på en gång"
+  },
+  "setClipboard": {
+    "message": "Blockera farliga kommandon i urklipp"
+  },
+  "tipClipboard": {
+    "message": "Hindrar sidor från att lägga ett dolt kommando i ditt urklipp och lägger en ofarlig anteckning där i stället"
+  },
+  "setPaste": {
+    "message": "Blockera inklistring av inloggningslänkar på webbplatser"
+  },
+  "tipPaste": {
+    "message": "Hindrar dig från att klistra in en inloggningslänk med en hemlig kod på en sida som kan stjäla ditt konto"
+  },
+  "setProtocols": {
+    "message": "Blockera länkar som öppnar program på din dator"
+  },
+  "tipProtocols": {
+    "message": "Hindrar sidor från att öppna Manusredigerare, Windows Sök i fjärrmappar och liknande program"
+  },
+  "setFullscreen": {
+    "message": "Stoppa falska uppdateringssidor i helskärm"
+  },
+  "tipFullscreen": {
+    "message": "Hindrar sidor som säger åt dig att klistra in kommandon från att låsa skärmen med en falsk uppdatering"
+  },
+  "setPageWarnings": {
+    "message": "Varna för sidor med instruktioner om inklistring"
+  },
+  "tipPageWarnings": {
+    "message": "Visar ett varningsfält när en sida säger åt dig att klistra in något i Kör, Terminal eller Utforskaren"
+  },
+  "setWeb3": {
+    "message": "Håll utkik efter kod som laddas från en blockkedja"
+  },
+  "tipWeb3": {
+    "message": "Varnar när en vanlig webbplats hämtar dold kod från en blockkedja, ett trick som hackade webbplatser använder"
+  },
+  "setReputation": {
+    "message": "Varna för rapporterade webbplatser"
+  },
+  "tipReputation": {
+    "message": "Visar ett varningsfält på webbplatser som listas som skadliga i offentliga hotdatabaser"
+  },
+  "setBlockPage": {
+    "message": "Blockera kända ClickFix-webbplatser innan de läses in"
+  },
+  "tipBlockPage": {
+    "message": "Visar en helsidesvarning i stället för en webbplats som databaserna listar som en ClickFix-sida"
+  },
+  "setFeedUpdates": {
+    "message": "Ladda ner uppdateringar av databasen och reglerna"
+  },
+  "tipFeedUpdates": {
+    "message": "Laddar ner den signerade listan över rapporterade webbplatser och de senaste identifieringsreglerna varje timme"
+  },
+  "trustedLead": {
+    "message": "De här webbplatserna kontrolleras inte alls, och att lita på en webbplats kräver samma bekräftelse som i en varning."
+  },
+  "trustedInputLabel": {
+    "message": "Webbplatsens adress"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Lägg till"
+  },
+  "tipTrustedAdd": {
+    "message": "Lägger till webbplatsen i listan över webbplatser som inte kontrolleras, när du har bekräftat"
+  },
+  "trustedRemove": {
+    "message": "Ta bort"
+  },
+  "tipTrustedRemove": {
+    "message": "Börjar kontrollera den här webbplatsen igen"
+  },
+  "trustedEmpty": {
+    "message": "Inga betrodda webbplatser"
+  },
+  "orgTitle": {
+    "message": "Meddelande i varningar"
+  },
+  "orgLead": {
+    "message": "Extra text som visas i alla varningar, till exempel vem du ska kontakta på ditt företag."
+  },
+  "orgPlaceholder": {
+    "message": "Ring till exempel IT-supporten innan du fortsätter"
+  },
+  "orgSave": {
+    "message": "Spara"
+  },
+  "tipOrgSave": {
+    "message": "Sparar texten som visas i alla varningar"
+  },
+  "orgSaved": {
+    "message": "Sparat"
+  },
+  "historyLead": {
+    "message": "Kontrollera om du har besökt någon webbplats som nu finns i databasen, kontrollen körs bara i din webbläsare."
+  },
+  "historyDays7": {
+    "message": "Senaste 7 dagarna"
+  },
+  "historyDays30": {
+    "message": "Senaste 30 dagarna"
+  },
+  "historyDays90": {
+    "message": "Senaste 90 dagarna"
+  },
+  "tipHistoryDays": {
+    "message": "Hur långt tillbaka som ska kontrolleras"
+  },
+  "historyScan": {
+    "message": "Kontrollera min historik"
+  },
+  "tipHistoryScan": {
+    "message": "Ber om åtkomst till din historik och jämför den med databasen i din webbläsare"
+  },
+  "historyScanning": {
+    "message": "Kontrollerar"
+  },
+  "historyChecked": {
+    "message": "Kontrollerade $1 adresser från de senaste $2 dagarna."
+  },
+  "historyClean": {
+    "message": "Ingen besökt webbplats finns i listan"
+  },
+  "historyFound": {
+    "message": "$1 besökta adresser finns i listan"
+  },
+  "historyAdvice": {
+    "message": "Om du körde något som en listad webbplats sa åt dig att köra, byt lösenord från en annan enhet och låt någon kontrollera den här datorn."
+  },
+  "historyDenied": {
+    "message": "Åtkomst till historiken beviljades inte."
+  },
+  "historyDrop": {
+    "message": "Ta bort åtkomst till historiken"
+  },
+  "tipHistoryDrop": {
+    "message": "Lämnar tillbaka behörigheten för historiken tills du kontrollerar igen"
+  },
+  "exportJson": {
+    "message": "Exportera JSON"
+  },
+  "tipExport": {
+    "message": "Sparar resultaten som en JSON-fil på den här datorn"
+  },
+  "tipExportLog": {
+    "message": "Sparar loggen som en JSON-fil på den här datorn"
+  },
+  "colVisited": {
+    "message": "Senaste besök"
+  },
+  "colAddress": {
+    "message": "Adress"
+  },
+  "colReport": {
+    "message": "Rapport"
+  },
+  "colTime": {
+    "message": "Tid"
+  },
+  "colWhat": {
+    "message": "Vad"
+  },
+  "colSite": {
+    "message": "Webbplats"
+  },
+  "colDetails": {
+    "message": "Detaljer"
+  },
+  "extensionsLead": {
+    "message": "Leta efter installerade webbläsartillägg som är kända som skadliga, till exempel falska annonsblockerare som används i CrashFix-attacker."
+  },
+  "extensionsScan": {
+    "message": "Kontrollera installerade tillägg"
+  },
+  "tipExtensionsScan": {
+    "message": "Ber om behörighet att lista dina tillägg och jämför dem med en lista över kända skadliga tillägg"
+  },
+  "extensionsDrop": {
+    "message": "Ta bort åtkomst"
+  },
+  "tipExtensionsDrop": {
+    "message": "Lämnar tillbaka behörigheten att lista dina tillägg"
+  },
+  "extensionsDenied": {
+    "message": "Åtkomst beviljades inte."
+  },
+  "extensionsChecked": {
+    "message": "Kontrollerade $1 installerade tillägg."
+  },
+  "extensionsClean": {
+    "message": "Inga kända skadliga tillägg hittades"
+  },
+  "extensionsKnownAs": {
+    "message": "Känt som $1"
+  },
+  "extensionsRemove": {
+    "message": "Ta bort"
+  },
+  "tipExtensionsRemove": {
+    "message": "Avinstallerar tillägget när du har bekräftat"
+  },
+  "logLead": {
+    "message": "Vad ClickFix Warden har blockerat eller varnat för, loggen stannar på den här datorn."
+  },
+  "logClear": {
+    "message": "Rensa loggen"
+  },
+  "tipLogClear": {
+    "message": "Tar bort alla poster i loggen"
+  },
+  "logClearConfirm": {
+    "message": "Vill du ta bort alla poster i identifieringsloggen?"
+  },
+  "databaseLead": {
+    "message": "Rapporterna kommer från de offentliga databaserna hos abuse.ch och kontrolleras mot en digital signatur innan de används."
+  },
+  "dbGenerated": {
+    "message": "$1 rapporter, publicerade $2"
+  },
+  "dbChecked": {
+    "message": "Senast kontrollerad $1"
+  },
+  "dbError": {
+    "message": "Den senaste uppdateringen misslyckades, $1"
+  },
+  "dbUpdated": {
+    "message": "Uppdaterad"
+  },
+  "tipUpdateNow": {
+    "message": "Laddar ner den senaste databasen och reglerna direkt"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden samlar inte in några data, det har inget konto, ingen telemetri och ingen egen server."
+  },
+  "aboutNetwork": {
+    "message": "Det enda som laddas ner är den signerade databasen och reglerna från GitHub, som ser samma förfrågan som vid vilken uppdatering som helst."
+  },
+  "aboutProject": {
+    "message": "Källkod"
+  },
+  "aboutPolicy": {
+    "message": "Integritetspolicy"
+  },
+  "descClipboard": {
+    "message": "Den här sidan försökte lägga $1 i ditt urklipp. Det stoppades eftersom $2."
+  },
+  "descManual": {
+    "message": "Texten du försökte kopiera är $1, och den kopierades inte eftersom $2."
+  },
+  "descPaste": {
+    "message": "Du höll på att klistra in $1 på den här sidan. Det stoppades eftersom $2."
+  },
+  "descProtocol": {
+    "message": "Den här sidan försökte öppna $1. Det stoppades eftersom $2."
+  },
+  "descFullscreen": {
+    "message": "Den här sidan försökte $1. Det stoppades eftersom $2."
+  },
+  "repLine": {
+    "message": "$1 listar den som $2, först upptäckt $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 listar den som $2."
+  },
+  "warnLead": {
+    "message": "$1 är listad i $2 som $3. Sådana sidor lurar dig att klistra in ett kommando som $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 är listad i offentliga hotdatabaser. Sådana sidor lurar dig att klistra in ett kommando som $2."
+  },
+  "confirmBody": {
+    "message": "Om du fortsätter slutar ClickFix Warden att kontrollera den, och en sådan sida kan $1."
+  },
+  "popupBlockedLine": {
+    "message": "Blockerade $2 $1"
+  },
+  "popupReports": {
+    "message": "$1 rapporterade adresser"
+  },
+  "kindAction": {
+    "message": "$1 $2"
+  },
+  "proto_applescript": {
+    "message": "Manusredigerare med ett förberett skript"
+  },
+  "proto_search_ms": {
+    "message": "ett sökfönster i Windows för en fjärrmapp"
+  },
+  "proto_ms_msdt": {
+    "message": "felsökaren i Windows med dolda inställningar"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office med dolda inställningar"
+  },
+  "proto_ms_appinstaller": {
+    "message": "ett appinstallationsprogram från internet"
+  },
+  "setLanguage": {
+    "message": "Språk"
+  },
+  "tipLanguage": {
+    "message": "Ändrar språket i ClickFix Warden, Webbläsarens standard följer språket i din webbläsare"
+  },
+  "langBrowser": {
+    "message": "Webbläsarens standard"
+  }
+}

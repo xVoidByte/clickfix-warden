@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Зупиняє атаки ClickFix і фальшиві CAPTCHA, що змушують запускати команди, і попереджає про сайти, позначені як шкідливі."
+  },
+  "dangerLabel": {
+    "message": "ПОТЕНЦІЙНО НЕБЕЗПЕЧНИЙ САЙТ"
+  },
+  "titleClipboard": {
+    "message": "Небезпечну команду заблоковано"
+  },
+  "titleManual": {
+    "message": "Небезпечну команду не скопійовано"
+  },
+  "titlePaste": {
+    "message": "Небезпечне вставлення заблоковано"
+  },
+  "titleProtocol": {
+    "message": "Небезпечне посилання заблоковано"
+  },
+  "titleFullscreen": {
+    "message": "Фальшивий екран оновлення заблоковано"
+  },
+  "descNote": {
+    "message": "Тепер у буфері обміну безпечна нотатка, тож вставлення нічого не зробить."
+  },
+  "descManualNote": {
+    "message": "Натомість скопійовано безпечну нотатку."
+  },
+  "descFullscreenNote": {
+    "message": "Якщо щось досі закриває екран, натисніть Esc, а потім закрийте вкладку."
+  },
+  "whatTemplate": {
+    "message": "$1, яка $2"
+  },
+  "what_powershell": {
+    "message": "команду PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "приховану команду PowerShell"
+  },
+  "what_applescript": {
+    "message": "команду AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "приховану команду AppleScript"
+  },
+  "what_terminal": {
+    "message": "команду для Термінала"
+  },
+  "what_terminal_hidden": {
+    "message": "приховану команду для Термінала"
+  },
+  "what_script": {
+    "message": "скриптову команду"
+  },
+  "what_script_hidden": {
+    "message": "приховану скриптову команду"
+  },
+  "what_cmd": {
+    "message": "команду для командного рядка"
+  },
+  "what_cmd_hidden": {
+    "message": "приховану команду для командного рядка"
+  },
+  "what_windows": {
+    "message": "команду Windows"
+  },
+  "what_windows_hidden": {
+    "message": "приховану команду Windows"
+  },
+  "what_generic": {
+    "message": "команду"
+  },
+  "what_generic_hidden": {
+    "message": "приховану команду"
+  },
+  "effect_download_run": {
+    "message": "завантажує й запускає програму"
+  },
+  "effect_disables_av": {
+    "message": "вимикає ваш антивірусний захист"
+  },
+  "effect_password": {
+    "message": "запитує ваш пароль через фальшиве вікно"
+  },
+  "effect_remote_share": {
+    "message": "запускає файли з віддаленої мережевої папки"
+  },
+  "effect_remote_script": {
+    "message": "запускає скрипт просто з інтернету"
+  },
+  "effect_remote_install": {
+    "message": "встановлює програму просто з інтернету"
+  },
+  "effect_dns": {
+    "message": "отримує приховані команди із записів DNS"
+  },
+  "effect_finger": {
+    "message": "отримує приховані команди з віддаленого сервера"
+  },
+  "effect_runs": {
+    "message": "запускається на вашому комп’ютері без запиту"
+  },
+  "whyPage1": {
+    "message": "сторінка $1"
+  },
+  "whyPage2": {
+    "message": "сторінка $1 і $2"
+  },
+  "lure_captcha": {
+    "message": "видає себе за CAPTCHA"
+  },
+  "lure_update": {
+    "message": "вдає, що встановлює оновлення"
+  },
+  "lure_fix": {
+    "message": "видає її за виправлення помилки"
+  },
+  "target_explorer": {
+    "message": "просить вставити її в адресний рядок Провідника"
+  },
+  "target_terminal": {
+    "message": "просить вставити її в Термінал"
+  },
+  "target_run": {
+    "message": "просить вставити її у вікно «Виконати»"
+  },
+  "target_paste": {
+    "message": "просить вставити її кудись на вашому комп’ютері"
+  },
+  "why_payload_reported": {
+    "message": "вона завантажує дані з адреси, позначеної як шкідлива"
+  },
+  "why_site_reported": {
+    "message": "цей сайт позначено як шкідливий"
+  },
+  "why_decoy": {
+    "message": "після команди приховано фальшивий текст перевірки"
+  },
+  "why_padding": {
+    "message": "справжню команду сховано за великою кількістю пробілів"
+  },
+  "why_disguised": {
+    "message": "команду замасковано, щоб приховати, що вона робить"
+  },
+  "why_hidden_window": {
+    "message": "вона запускається в прихованому вікні"
+  },
+  "why_generic": {
+    "message": "вона має ознаки атаки ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "сторінка просить вставити команду"
+  },
+  "fullscreenWhat": {
+    "message": "фальшиве оновлення Windows на весь екран"
+  },
+  "pasteWhat": {
+    "message": "посилання для входу із секретним кодом"
+  },
+  "pasteWhy": {
+    "message": "така сторінка може за його допомогою захопити ваш обліковий запис"
+  },
+  "protocolWhy": {
+    "message": "такі посилання можуть непомітно для вас запускати команди на вашому комп’ютері"
+  },
+  "btnClose": {
+    "message": "Закрити"
+  },
+  "btnLeave": {
+    "message": "Залишити цей сайт"
+  },
+  "btnTrust": {
+    "message": "Довіряти цьому сайту"
+  },
+  "tipClose": {
+    "message": "Ховає це попередження, ви залишаєтеся на сторінці"
+  },
+  "tipLeave": {
+    "message": "Закриває цю сторінку й відкриває нову вкладку"
+  },
+  "tipTrust": {
+    "message": "Вимикає всі перевірки на цьому сайті після підтвердження"
+  },
+  "tipUntrust": {
+    "message": "Знову вмикає перевірку цього сайту"
+  },
+  "bannerReported": {
+    "message": "Цей сайт позначено як шкідливий."
+  },
+  "bannerDetails": {
+    "message": "Докладніше"
+  },
+  "bannerFirstSeen": {
+    "message": "уперше помічений $1"
+  },
+  "bannerWeb3": {
+    "message": "Цей сайт завантажує прихований код із блокчейну."
+  },
+  "bannerWeb3Detail": {
+    "message": "Зламані сайти використовують цей прийом, щоб показувати фальшиві сторінки CAPTCHA."
+  },
+  "bannerInstructions": {
+    "message": "Ця сторінка просить вставити щось у вікно «Виконати», Термінал або Провідник."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Справжні сайти ніколи про це не просять."
+  },
+  "rep_clickfix": {
+    "message": "сторінка ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "сторінка ClickFix, яка поширює $1"
+  },
+  "rep_malware": {
+    "message": "адреса завантаження шкідливої програми"
+  },
+  "rep_malware_family": {
+    "message": "адреса завантаження $1"
+  },
+  "rep_c2": {
+    "message": "сервер керування шкідливою програмою"
+  },
+  "rep_c2_family": {
+    "message": "сервер керування $1"
+  },
+  "rep_phishing": {
+    "message": "фішингова сторінка"
+  },
+  "rep_phishing_family": {
+    "message": "фішингова сторінка $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "завантаження шкідливих програм"
+  },
+  "category_c2": {
+    "message": "сервер керування шкідливою програмою"
+  },
+  "category_phishing": {
+    "message": "фішинг"
+  },
+  "confirmTrustTitle": {
+    "message": "Вимкнути захист для $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Усе одно відкрити $1?"
+  },
+  "confirmReported": {
+    "message": "Цей сайт позначено у відкритих базах загроз."
+  },
+  "confirmBodyStrong": {
+    "message": "заразити ваш комп’ютер і викрасти паролі, збережені банківські картки та криптогаманці"
+  },
+  "confirmOnlyReported": {
+    "message": "Робіть це, лише якщо знаєте, що позначка помилкова."
+  },
+  "confirmOnlyKnown": {
+    "message": "Робіть це лише для сайтів, які ви добре знаєте."
+  },
+  "confirmCheckTrust": {
+    "message": "Я розумію, що можу втратити дані для входу, cookie та гроші, додавши сайт до довірених"
+  },
+  "confirmCheckOpen": {
+    "message": "Я розумію, що можу втратити дані для входу, cookie та гроші, відкривши цей сайт"
+  },
+  "confirmTrust": {
+    "message": "Довіряти цьому сайту"
+  },
+  "confirmOpen": {
+    "message": "Усе одно відкрити"
+  },
+  "confirmKeep": {
+    "message": "Залишити захист"
+  },
+  "warnTitle": {
+    "message": "Небезпечний сайт заблоковано"
+  },
+  "warnAddress": {
+    "message": "Адреса"
+  },
+  "warnReportedBy": {
+    "message": "Джерело"
+  },
+  "warnSteals": {
+    "message": "викрадає паролі, збережені банківські картки та криптогаманці"
+  },
+  "warnLeave": {
+    "message": "Повернутися в безпечне місце"
+  },
+  "warnLeaveTip": {
+    "message": "Відкриває нову вкладку замість цього сайту"
+  },
+  "warnContinue": {
+    "message": "Усе одно відкрити"
+  },
+  "warnContinueTip": {
+    "message": "Відкриває сайт на найближчу годину після підтвердження ризику"
+  },
+  "warnAdvice": {
+    "message": "Жоден справжній сайт не просить вставляти щось у вікно «Виконати», Термінал або Провідник."
+  },
+  "popupOn": {
+    "message": "Увімк."
+  },
+  "popupOff": {
+    "message": "Захист вимкнено."
+  },
+  "popupNotWebPage": {
+    "message": "Це не вебсторінка"
+  },
+  "popupTrusted": {
+    "message": "Ви довіряєте цьому сайту, він не перевіряється"
+  },
+  "popupReported": {
+    "message": "Позначено як шкідливий"
+  },
+  "popupNoReports": {
+    "message": "Про цей сайт немає повідомлень"
+  },
+  "popupUntrust": {
+    "message": "Більше не довіряти цьому сайту"
+  },
+  "popupUpdated": {
+    "message": "Оновлено $1, версія правил $2"
+  },
+  "popupFeedNone": {
+    "message": "Базу ще не завантажено"
+  },
+  "popupFeedError": {
+    "message": "Не вдалося оновити базу, докладніше в налаштуваннях"
+  },
+  "popupNoDetections": {
+    "message": "Поки що нічого не заблоковано"
+  },
+  "popupSettings": {
+    "message": "Налаштування"
+  },
+  "popupHistory": {
+    "message": "Перевірити мою історію"
+  },
+  "popupUpdate": {
+    "message": "Оновити зараз"
+  },
+  "popupUpdating": {
+    "message": "Оновлення"
+  },
+  "popupRulesLine": {
+    "message": "Версія правил виявлення $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "вбудовані"
+  },
+  "popupRulesUpdated": {
+    "message": "оновлені через інтернет"
+  },
+  "supportShort": {
+    "message": "Підтримати"
+  },
+  "tipSupport": {
+    "message": "Відкриває сторінку, де можна підтримати ClickFix Warden пожертвою"
+  },
+  "supportProject": {
+    "message": "Підтримати проєкт"
+  },
+  "kind_clipboard": {
+    "message": "Команда в буфері обміну"
+  },
+  "kind_manual_copy": {
+    "message": "Скопійована команда"
+  },
+  "kind_paste": {
+    "message": "Вставлення посилання для входу"
+  },
+  "kind_protocol": {
+    "message": "Посилання на програму"
+  },
+  "kind_fullscreen": {
+    "message": "Фальшивий екран оновлення"
+  },
+  "kind_page_instructions": {
+    "message": "Інструкції зі вставлення"
+  },
+  "kind_web3_loader": {
+    "message": "Завантажувач із блокчейну"
+  },
+  "kind_reputation": {
+    "message": "Позначений сайт"
+  },
+  "kind_reputation_block": {
+    "message": "Відомий сайт ClickFix"
+  },
+  "action_blocked": {
+    "message": "заблоковано"
+  },
+  "action_warned": {
+    "message": "показано попередження"
+  },
+  "action_copied_anyway": {
+    "message": "усе одно скопійовано"
+  },
+  "action_continued": {
+    "message": "усе одно відкрито"
+  },
+  "action_trusted": {
+    "message": "додано до довірених"
+  },
+  "timeNever": {
+    "message": "ніколи"
+  },
+  "timeJustNow": {
+    "message": "щойно"
+  },
+  "timeMinutes": {
+    "message": "$1 хв тому"
+  },
+  "timeHours": {
+    "message": "$1 год тому"
+  },
+  "timeDays": {
+    "message": "$1 дн. тому"
+  },
+  "navProtection": {
+    "message": "Захист"
+  },
+  "navTrusted": {
+    "message": "Довірені сайти"
+  },
+  "navHistory": {
+    "message": "Перевірка історії"
+  },
+  "navExtensions": {
+    "message": "Перевірка розширень"
+  },
+  "navLog": {
+    "message": "Журнал виявлень"
+  },
+  "navDatabase": {
+    "message": "База даних"
+  },
+  "navAbout": {
+    "message": "Про розширення"
+  },
+  "welcomeTitle": {
+    "message": "Ви під захистом"
+  },
+  "welcomeBody": {
+    "message": "Тепер ClickFix Warden стежить за сторінками, які намагаються обманом змусити вас запустити команди, і попереджає про сайти, позначені як шкідливі."
+  },
+  "welcomePrivacy": {
+    "message": "Усе перевіряється у вашому браузері, жодні дані про ваші відвідування нікуди не надсилаються."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden потрібен доступ до всіх сайтів, щоб їх захищати."
+  },
+  "welcomeGrant": {
+    "message": "Дозволити на всіх сайтах"
+  },
+  "tipGrantHosts": {
+    "message": "Дає ClickFix Warden змогу перевіряти кожну сторінку на прийоми ClickFix"
+  },
+  "managedNote": {
+    "message": "Деякими налаштуваннями керує ваша організація."
+  },
+  "protectionLead": {
+    "message": "Виберіть, за чим стежить ClickFix Warden. Усе працює у вашому браузері."
+  },
+  "setEnabled": {
+    "message": "Захист увімкнено"
+  },
+  "tipEnabled": {
+    "message": "Вмикає або вимикає всі перевірки одразу"
+  },
+  "setClipboard": {
+    "message": "Блокувати небезпечні команди в буфері обміну"
+  },
+  "tipClipboard": {
+    "message": "Не дає сторінкам класти приховану команду в буфер обміну й кладе туди безпечну нотатку"
+  },
+  "setPaste": {
+    "message": "Блокувати вставлення посилань для входу на сайти"
+  },
+  "tipPaste": {
+    "message": "Не дає вставити посилання для входу із секретним кодом на сторінку, яка може викрасти ваш обліковий запис"
+  },
+  "setProtocols": {
+    "message": "Блокувати посилання, які відкривають програми на комп’ютері"
+  },
+  "tipProtocols": {
+    "message": "Не дає сторінкам відкривати Редактор скриптів, пошук Windows у віддалених папках і подібні програми"
+  },
+  "setFullscreen": {
+    "message": "Зупиняти фальшиві повноекранні сторінки оновлення"
+  },
+  "tipFullscreen": {
+    "message": "Не дає сторінкам, які просять вставити команди, блокувати екран фальшивим оновленням"
+  },
+  "setPageWarnings": {
+    "message": "Попереджати про сторінки з інструкціями зі вставлення"
+  },
+  "tipPageWarnings": {
+    "message": "Показує панель попередження, коли сторінка просить вставити щось у вікно «Виконати», Термінал або Провідник"
+  },
+  "setWeb3": {
+    "message": "Стежити за кодом, завантаженим із блокчейну"
+  },
+  "tipWeb3": {
+    "message": "Попереджає, коли звичайний сайт отримує прихований код із блокчейну, це прийом зламаних сайтів"
+  },
+  "setReputation": {
+    "message": "Попереджати про позначені сайти"
+  },
+  "tipReputation": {
+    "message": "Показує панель попередження на сайтах, позначених як шкідливі у відкритих базах загроз"
+  },
+  "setBlockPage": {
+    "message": "Блокувати відомі сайти ClickFix до їх завантаження"
+  },
+  "tipBlockPage": {
+    "message": "Показує попередження на всю сторінку замість сайту, який у базах значиться як сторінка ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Завантажувати оновлення бази та правил"
+  },
+  "tipFeedUpdates": {
+    "message": "Щогодини завантажує підписаний список позначених сайтів і найновіші правила виявлення"
+  },
+  "trustedLead": {
+    "message": "Ці сайти взагалі не перевіряються, щоб довіряти сайту, потрібне таке саме підтвердження, як у попередженні."
+  },
+  "trustedInputLabel": {
+    "message": "Адреса сайту"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Додати"
+  },
+  "tipTrustedAdd": {
+    "message": "Додає сайт до списку сайтів, які не перевіряються, після підтвердження"
+  },
+  "trustedRemove": {
+    "message": "Видалити"
+  },
+  "tipTrustedRemove": {
+    "message": "Знову вмикає перевірку цього сайту"
+  },
+  "trustedEmpty": {
+    "message": "Немає довірених сайтів"
+  },
+  "orgTitle": {
+    "message": "Повідомлення в попередженнях"
+  },
+  "orgLead": {
+    "message": "Додатковий текст у кожному попередженні, наприклад до кого звертатися у вашій компанії."
+  },
+  "orgPlaceholder": {
+    "message": "Наприклад, зателефонуйте до служби ІТ-підтримки, перш ніж продовжити"
+  },
+  "orgSave": {
+    "message": "Зберегти"
+  },
+  "tipOrgSave": {
+    "message": "Зберігає текст, який показується в кожному попередженні"
+  },
+  "orgSaved": {
+    "message": "Збережено"
+  },
+  "historyLead": {
+    "message": "Перевірте, чи не відвідували ви сайти, які тепер є в базі, перевірка виконується лише у вашому браузері."
+  },
+  "historyDays7": {
+    "message": "Останні 7 днів"
+  },
+  "historyDays30": {
+    "message": "Останні 30 днів"
+  },
+  "historyDays90": {
+    "message": "Останні 90 днів"
+  },
+  "tipHistoryDays": {
+    "message": "За який період перевіряти"
+  },
+  "historyScan": {
+    "message": "Перевірити мою історію"
+  },
+  "tipHistoryScan": {
+    "message": "Запитує доступ до вашої історії та порівнює її з базою у вашому браузері"
+  },
+  "historyScanning": {
+    "message": "Перевірка"
+  },
+  "historyChecked": {
+    "message": "Перевірено адрес $1 за останні $2 днів."
+  },
+  "historyClean": {
+    "message": "Жоден із відвіданих сайтів не значиться в базі"
+  },
+  "historyFound": {
+    "message": "Відвіданих адрес у базі $1"
+  },
+  "historyAdvice": {
+    "message": "Якщо ви запускали щось за вказівкою такого сайту, змініть паролі з іншого пристрою та віддайте цей комп’ютер на перевірку."
+  },
+  "historyDenied": {
+    "message": "Доступ до історії не надано."
+  },
+  "historyDrop": {
+    "message": "Відкликати доступ до історії"
+  },
+  "tipHistoryDrop": {
+    "message": "Відкликає дозвіл на читання історії до наступної перевірки"
+  },
+  "exportJson": {
+    "message": "Експорт у JSON"
+  },
+  "tipExport": {
+    "message": "Зберігає результати у файл JSON на цьому комп’ютері"
+  },
+  "tipExportLog": {
+    "message": "Зберігає журнал у файл JSON на цьому комп’ютері"
+  },
+  "colVisited": {
+    "message": "Останнє відвідування"
+  },
+  "colAddress": {
+    "message": "Адреса"
+  },
+  "colReport": {
+    "message": "Запис у базі"
+  },
+  "colTime": {
+    "message": "Час"
+  },
+  "colWhat": {
+    "message": "Що"
+  },
+  "colSite": {
+    "message": "Сайт"
+  },
+  "colDetails": {
+    "message": "Подробиці"
+  },
+  "extensionsLead": {
+    "message": "Знайдіть установлені розширення браузера, відомі як шкідливі, наприклад фальшиві блокувальники реклами з атак CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Перевірити встановлені розширення"
+  },
+  "tipExtensionsScan": {
+    "message": "Запитує дозвіл на перегляд списку розширень і порівнює їх зі списком відомих шкідливих"
+  },
+  "extensionsDrop": {
+    "message": "Відкликати доступ"
+  },
+  "tipExtensionsDrop": {
+    "message": "Відкликає дозвіл на перегляд списку розширень"
+  },
+  "extensionsDenied": {
+    "message": "Доступ не надано."
+  },
+  "extensionsChecked": {
+    "message": "Перевірено встановлених розширень $1."
+  },
+  "extensionsClean": {
+    "message": "Відомих шкідливих розширень не знайдено"
+  },
+  "extensionsKnownAs": {
+    "message": "Відоме як $1"
+  },
+  "extensionsRemove": {
+    "message": "Видалити"
+  },
+  "tipExtensionsRemove": {
+    "message": "Видаляє це розширення після підтвердження"
+  },
+  "logLead": {
+    "message": "Що ClickFix Warden заблокував або про що попередив, журнал зберігається на цьому комп’ютері."
+  },
+  "logClear": {
+    "message": "Очистити журнал"
+  },
+  "tipLogClear": {
+    "message": "Видаляє всі записи журналу"
+  },
+  "logClearConfirm": {
+    "message": "Видалити всі записи з журналу виявлень?"
+  },
+  "databaseLead": {
+    "message": "Дані надходять із відкритих баз abuse.ch і перед використанням перевіряються за цифровим підписом."
+  },
+  "dbGenerated": {
+    "message": "Записів $1, опубліковано $2"
+  },
+  "dbChecked": {
+    "message": "Остання перевірка $1"
+  },
+  "dbError": {
+    "message": "Останнє оновлення не вдалося, $1"
+  },
+  "dbUpdated": {
+    "message": "База актуальна"
+  },
+  "tipUpdateNow": {
+    "message": "Завантажує найновішу базу та правила просто зараз"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden не збирає жодних даних, у нього немає облікового запису, телеметрії та власного сервера."
+  },
+  "aboutNetwork": {
+    "message": "Він завантажує лише підписану базу та правила з GitHub, який бачить такий самий запит, як і під час будь-якого оновлення."
+  },
+  "aboutProject": {
+    "message": "Вихідний код"
+  },
+  "aboutPolicy": {
+    "message": "Політика конфіденційності"
+  },
+  "descClipboard": {
+    "message": "Ця сторінка намагалася покласти в буфер обміну $1. Це зупинено, тому що $2."
+  },
+  "descManual": {
+    "message": "Ви намагалися скопіювати $1, і її не скопійовано, тому що $2."
+  },
+  "descPaste": {
+    "message": "Ви збиралися вставити на цю сторінку $1. Це зупинено, тому що $2."
+  },
+  "descProtocol": {
+    "message": "Ця сторінка намагалася відкрити $1. Це зупинено, тому що $2."
+  },
+  "descFullscreen": {
+    "message": "Ця сторінка намагалася показати $1. Це зупинено, тому що $2."
+  },
+  "repLine": {
+    "message": "У базі $1 він значиться як $2, уперше помічений $3."
+  },
+  "repLineNoDate": {
+    "message": "У базі $1 він значиться як $2."
+  },
+  "warnLead": {
+    "message": "Сайт $1 значиться в базі $2 як $3. Такі сторінки обманом змушують вставити команду, яка $4."
+  },
+  "warnLeadUnknown": {
+    "message": "Сайт $1 значиться у відкритих базах загроз. Такі сторінки обманом змушують вставити команду, яка $2."
+  },
+  "confirmBody": {
+    "message": "Якщо ви продовжите, ClickFix Warden перестане перевіряти цей сайт, і така сторінка зможе $1."
+  },
+  "popupBlockedLine": {
+    "message": "ClickFix Warden $2 заблокував $1"
+  },
+  "popupReports": {
+    "message": "Позначених адрес $1"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "Редактор скриптів із підготовленим скриптом"
+  },
+  "proto_search_ms": {
+    "message": "вікно пошуку Windows у віддаленій папці"
+  },
+  "proto_ms_msdt": {
+    "message": "засіб усунення неполадок Windows із прихованими параметрами"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office із прихованими параметрами"
+  },
+  "proto_ms_appinstaller": {
+    "message": "інсталятор програми з інтернету"
+  },
+  "setLanguage": {
+    "message": "Мова"
+  },
+  "tipLanguage": {
+    "message": "Змінює мову ClickFix Warden, варіант «Як у браузері» використовує мову вашого браузера"
+  },
+  "langBrowser": {
+    "message": "Як у браузері"
+  }
+}

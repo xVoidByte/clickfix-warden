@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Estää ClickFix- ja vale-CAPTCHA-hyökkäykset, jotka huijaavat ajamaan komentoja, ja varoittaa haitallisiksi ilmoitetuista sivuista."
+  },
+  "dangerLabel": {
+    "message": "MAHDOLLISESTI VAARALLINEN SIVUSTO"
+  },
+  "titleClipboard": {
+    "message": "Vaarallinen komento estetty"
+  },
+  "titleManual": {
+    "message": "Vaarallista komentoa ei kopioitu"
+  },
+  "titlePaste": {
+    "message": "Vaarallinen liittäminen estetty"
+  },
+  "titleProtocol": {
+    "message": "Vaarallinen linkki estetty"
+  },
+  "titleFullscreen": {
+    "message": "Väärennetty päivitysnäkymä estetty"
+  },
+  "descNote": {
+    "message": "Leikepöydälläsi on nyt vaaraton viesti, joten liittäminen ei tee mitään."
+  },
+  "descManualNote": {
+    "message": "Sen sijaan kopioitiin vaaraton viesti."
+  },
+  "descFullscreenNote": {
+    "message": "Paina Esc, jos jokin peittää vielä näytön, ja sulje sitten välilehti."
+  },
+  "whatTemplate": {
+    "message": "$1, joka $2"
+  },
+  "what_powershell": {
+    "message": "PowerShell-komento"
+  },
+  "what_powershell_hidden": {
+    "message": "piilotettu PowerShell-komento"
+  },
+  "what_applescript": {
+    "message": "AppleScript-komento"
+  },
+  "what_applescript_hidden": {
+    "message": "piilotettu AppleScript-komento"
+  },
+  "what_terminal": {
+    "message": "Pääte-komento"
+  },
+  "what_terminal_hidden": {
+    "message": "piilotettu Pääte-komento"
+  },
+  "what_script": {
+    "message": "skriptikomento"
+  },
+  "what_script_hidden": {
+    "message": "piilotettu skriptikomento"
+  },
+  "what_cmd": {
+    "message": "Komentokehotteen komento"
+  },
+  "what_cmd_hidden": {
+    "message": "piilotettu Komentokehotteen komento"
+  },
+  "what_windows": {
+    "message": "Windows-komento"
+  },
+  "what_windows_hidden": {
+    "message": "piilotettu Windows-komento"
+  },
+  "what_generic": {
+    "message": "komento"
+  },
+  "what_generic_hidden": {
+    "message": "piilotettu komento"
+  },
+  "effect_download_run": {
+    "message": "lataa ja suorittaa ohjelman"
+  },
+  "effect_disables_av": {
+    "message": "poistaa virustorjunnan käytöstä"
+  },
+  "effect_password": {
+    "message": "kysyy salasanaasi väärennetyssä ikkunassa"
+  },
+  "effect_remote_share": {
+    "message": "suorittaa tiedostoja etäpalvelimen jaetusta kansiosta"
+  },
+  "effect_remote_script": {
+    "message": "suorittaa skriptin suoraan internetistä"
+  },
+  "effect_remote_install": {
+    "message": "asentaa ohjelman suoraan internetistä"
+  },
+  "effect_dns": {
+    "message": "hakee piilotettuja komentoja DNS-tietueista"
+  },
+  "effect_finger": {
+    "message": "hakee piilotettuja komentoja etäpalvelimelta"
+  },
+  "effect_runs": {
+    "message": "käynnistyy tietokoneellasi kysymättä"
+  },
+  "whyPage1": {
+    "message": "sivu $1"
+  },
+  "whyPage2": {
+    "message": "sivu $1 ja $2"
+  },
+  "lure_captcha": {
+    "message": "esiintyy CAPTCHA-tarkistuksena"
+  },
+  "lure_update": {
+    "message": "teeskentelee asentavansa päivityksiä"
+  },
+  "lure_fix": {
+    "message": "tarjoaa sitä virheen korjaukseksi"
+  },
+  "target_explorer": {
+    "message": "kehottaa sinua liittämään sen Resurssienhallinnan osoiteriville"
+  },
+  "target_terminal": {
+    "message": "kehottaa sinua liittämään sen Päätteeseen"
+  },
+  "target_run": {
+    "message": "kehottaa sinua liittämään sen Suorita-ikkunaan"
+  },
+  "target_paste": {
+    "message": "kehottaa sinua liittämään sen johonkin kohtaan tietokoneellasi"
+  },
+  "why_payload_reported": {
+    "message": "se lataa tiedostoja osoitteesta, joka on ilmoitettu haitalliseksi"
+  },
+  "why_site_reported": {
+    "message": "tämä sivusto on ilmoitettu haitalliseksi"
+  },
+  "why_decoy": {
+    "message": "komennon perään on piilotettu väärennetty vahvistusteksti"
+  },
+  "why_padding": {
+    "message": "varsinainen komento on piilotettu tyhjän tilan taakse"
+  },
+  "why_disguised": {
+    "message": "komento on naamioitu, jotta sen toimintaa ei huomaisi"
+  },
+  "why_hidden_window": {
+    "message": "se toimii piilotetussa ikkunassa"
+  },
+  "why_generic": {
+    "message": "siinä on ClickFix-hyökkäyksen tuntomerkit"
+  },
+  "why_fullscreen": {
+    "message": "sivu kehottaa sinua liittämään komennon"
+  },
+  "fullscreenWhat": {
+    "message": "vallata koko näytön väärennetyn Windows-päivityksen tavoin"
+  },
+  "pasteWhat": {
+    "message": "kirjautumislinkki, jossa on salainen koodi"
+  },
+  "pasteWhy": {
+    "message": "tällainen sivu voi käyttää sitä tilisi kaappaamiseen"
+  },
+  "protocolWhy": {
+    "message": "tällaiset linkit voivat suorittaa komentoja tietokoneellasi huomaamattasi"
+  },
+  "btnClose": {
+    "message": "Sulje"
+  },
+  "btnLeave": {
+    "message": "Poistu sivustolta"
+  },
+  "btnTrust": {
+    "message": "Luota sivustoon"
+  },
+  "tipClose": {
+    "message": "Piilottaa varoituksen ja pysyy sivulla"
+  },
+  "tipLeave": {
+    "message": "Sulkee sivun ja avaa uuden välilehden"
+  },
+  "tipTrust": {
+    "message": "Lopettaa kaikki tarkistukset tällä sivustolla, kun olet vahvistanut"
+  },
+  "tipUntrust": {
+    "message": "Aloittaa tämän sivuston tarkistamisen uudelleen"
+  },
+  "bannerReported": {
+    "message": "Tämä sivusto on ilmoitettu haitalliseksi."
+  },
+  "bannerDetails": {
+    "message": "Lisätiedot"
+  },
+  "bannerFirstSeen": {
+    "message": "havaittu ensimmäisen kerran $1"
+  },
+  "bannerWeb3": {
+    "message": "Tämä sivusto lataa piilotettua koodia lohkoketjusta."
+  },
+  "bannerWeb3Detail": {
+    "message": "Murretut sivustot käyttävät tätä temppua väärennettyjen CAPTCHA-sivujen näyttämiseen."
+  },
+  "bannerInstructions": {
+    "message": "Tämä sivu kehottaa liittämään jotain Suorita-ikkunaan, Päätteeseen tai Resurssienhallintaan."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Oikeat sivustot eivät koskaan pyydä tekemään niin."
+  },
+  "rep_clickfix": {
+    "message": "ClickFix-sivuksi"
+  },
+  "rep_clickfix_family": {
+    "message": "ClickFix-sivuksi, joka levittää haittaohjelmaa $1"
+  },
+  "rep_malware": {
+    "message": "haittaohjelman latauslinkiksi"
+  },
+  "rep_malware_family": {
+    "message": "haittaohjelman $1 latauslinkiksi"
+  },
+  "rep_c2": {
+    "message": "haittaohjelman ohjauspalvelimeksi"
+  },
+  "rep_c2_family": {
+    "message": "haittaohjelman $1 ohjauspalvelimeksi"
+  },
+  "rep_phishing": {
+    "message": "tietojenkalastelusivuksi"
+  },
+  "rep_phishing_family": {
+    "message": "tietojenkalastelukampanjan $1 sivuksi"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "haittaohjelman lataus"
+  },
+  "category_c2": {
+    "message": "haittaohjelman ohjauspalvelin"
+  },
+  "category_phishing": {
+    "message": "tietojenkalastelu"
+  },
+  "confirmTrustTitle": {
+    "message": "Lopetetaanko sivuston $1 suojaaminen?"
+  },
+  "confirmOpenTitle": {
+    "message": "Avataanko $1 silti?"
+  },
+  "confirmReported": {
+    "message": "Tämä sivusto on ilmoitettu julkisiin uhkatietokantoihin."
+  },
+  "confirmBodyStrong": {
+    "message": "saastuttaa tietokoneesi ja varastaa salasanasi, tallennetut maksukorttisi ja kryptolompakkosi"
+  },
+  "confirmOnlyReported": {
+    "message": "Tee näin vain, jos tiedät, että ilmoitus on virheellinen."
+  },
+  "confirmOnlyKnown": {
+    "message": "Tee näin vain sivustoille, jotka tunnet hyvin."
+  },
+  "confirmCheckTrust": {
+    "message": "Ymmärrän, että voin menettää tunnukseni, evästeeni ja rahaa, jos luotan tähän sivustoon"
+  },
+  "confirmCheckOpen": {
+    "message": "Ymmärrän, että voin menettää tunnukseni, evästeeni ja rahaa, jos avaan tämän sivuston"
+  },
+  "confirmTrust": {
+    "message": "Luota sivustoon"
+  },
+  "confirmOpen": {
+    "message": "Avaa silti"
+  },
+  "confirmKeep": {
+    "message": "Pidä minut suojattuna"
+  },
+  "warnTitle": {
+    "message": "Vaarallinen sivusto estetty"
+  },
+  "warnAddress": {
+    "message": "Osoite"
+  },
+  "warnReportedBy": {
+    "message": "Ilmoittaja"
+  },
+  "warnSteals": {
+    "message": "varastaa salasanasi, tallennetut maksukorttisi ja kryptolompakkosi"
+  },
+  "warnLeave": {
+    "message": "Takaisin turvaan"
+  },
+  "warnLeaveTip": {
+    "message": "Avaa uuden välilehden tämän sivuston sijaan"
+  },
+  "warnContinue": {
+    "message": "Avaa silti"
+  },
+  "warnContinueTip": {
+    "message": "Avaa sivuston seuraavaksi tunniksi, kun olet vahvistanut riskin"
+  },
+  "warnAdvice": {
+    "message": "Mikään oikea sivusto ei pyydä liittämään mitään Suorita-ikkunaan, Päätteeseen tai Resurssienhallintaan."
+  },
+  "popupOn": {
+    "message": "Käytössä"
+  },
+  "popupOff": {
+    "message": "Suojaus on poistettu käytöstä."
+  },
+  "popupNotWebPage": {
+    "message": "Ei verkkosivu"
+  },
+  "popupTrusted": {
+    "message": "Merkitty luotetuksi, ei tarkisteta"
+  },
+  "popupReported": {
+    "message": "Ilmoitettu haitalliseksi"
+  },
+  "popupNoReports": {
+    "message": "Ei ilmoituksia tästä sivustosta"
+  },
+  "popupUntrust": {
+    "message": "Lopeta sivustoon luottaminen"
+  },
+  "popupUpdated": {
+    "message": "Päivitetty $1, sääntöversio $2"
+  },
+  "popupFeedNone": {
+    "message": "Tietokantaa ei ole vielä ladattu"
+  },
+  "popupFeedError": {
+    "message": "Tietokannan päivitys epäonnistui, katso Asetukset"
+  },
+  "popupNoDetections": {
+    "message": "Mitään ei ole vielä estetty"
+  },
+  "popupSettings": {
+    "message": "Asetukset"
+  },
+  "popupHistory": {
+    "message": "Tarkista selaushistoriani"
+  },
+  "popupUpdate": {
+    "message": "Päivitä nyt"
+  },
+  "popupUpdating": {
+    "message": "Päivitetään"
+  },
+  "popupRulesLine": {
+    "message": "Tunnistussääntöjen versio $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "sisäänrakennettu"
+  },
+  "popupRulesUpdated": {
+    "message": "päivitetty verkosta"
+  },
+  "supportShort": {
+    "message": "Tue"
+  },
+  "tipSupport": {
+    "message": "Avaa sivun, jolla voit tukea ClickFix Wardenia lahjoituksella"
+  },
+  "supportProject": {
+    "message": "Tue projektia"
+  },
+  "kind_clipboard": {
+    "message": "Leikepöydän komento"
+  },
+  "kind_manual_copy": {
+    "message": "Kopioitu komento"
+  },
+  "kind_paste": {
+    "message": "Kirjautumislinkin liittäminen"
+  },
+  "kind_protocol": {
+    "message": "Ohjelmalinkki"
+  },
+  "kind_fullscreen": {
+    "message": "Väärennetty päivitysnäkymä"
+  },
+  "kind_page_instructions": {
+    "message": "Liittämisohjeet"
+  },
+  "kind_web3_loader": {
+    "message": "Lohkoketjulataaja"
+  },
+  "kind_reputation": {
+    "message": "Ilmoitettu sivusto"
+  },
+  "kind_reputation_block": {
+    "message": "Tunnettu ClickFix-sivusto"
+  },
+  "action_blocked": {
+    "message": "estetty"
+  },
+  "action_warned": {
+    "message": "varoitus näytetty"
+  },
+  "action_copied_anyway": {
+    "message": "kopioitu silti"
+  },
+  "action_continued": {
+    "message": "avattu silti"
+  },
+  "action_trusted": {
+    "message": "merkitty luotetuksi"
+  },
+  "timeNever": {
+    "message": "ei koskaan"
+  },
+  "timeJustNow": {
+    "message": "juuri nyt"
+  },
+  "timeMinutes": {
+    "message": "$1 min sitten"
+  },
+  "timeHours": {
+    "message": "$1 t sitten"
+  },
+  "timeDays": {
+    "message": "$1 päivää sitten"
+  },
+  "navProtection": {
+    "message": "Suojaus"
+  },
+  "navTrusted": {
+    "message": "Luotetut sivustot"
+  },
+  "navHistory": {
+    "message": "Historian tarkistus"
+  },
+  "navExtensions": {
+    "message": "Laajennusten tarkistus"
+  },
+  "navLog": {
+    "message": "Tunnistusloki"
+  },
+  "navDatabase": {
+    "message": "Tietokanta"
+  },
+  "navAbout": {
+    "message": "Tietoja"
+  },
+  "welcomeTitle": {
+    "message": "Olet suojattu"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden tarkkailee nyt sivuja, jotka yrittävät huijata sinut suorittamaan komentoja, ja varoittaa sivustoista, jotka on ilmoitettu haitallisiksi."
+  },
+  "welcomePrivacy": {
+    "message": "Kaikki tarkistetaan selaimessasi, eikä selaamisestasi lähetetä mitään minnekään."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden tarvitsee pääsyn kaikille sivustoille, jotta se voi suojata niitä."
+  },
+  "welcomeGrant": {
+    "message": "Salli kaikilla sivustoilla"
+  },
+  "tipGrantHosts": {
+    "message": "Antaa ClickFix Wardenin tarkkailla jokaista sivua ClickFix-temppujen varalta"
+  },
+  "managedNote": {
+    "message": "Organisaatiosi hallitsee joitakin asetuksia."
+  },
+  "protectionLead": {
+    "message": "Valitse, mitä ClickFix Warden tarkkailee. Kaikki toimii selaimessasi."
+  },
+  "setEnabled": {
+    "message": "Suojaus käytössä"
+  },
+  "tipEnabled": {
+    "message": "Ottaa kaikki tarkistukset käyttöön tai poistaa ne käytöstä kerralla"
+  },
+  "setClipboard": {
+    "message": "Estä vaaralliset komennot leikepöydällä"
+  },
+  "tipClipboard": {
+    "message": "Estää sivuja laittamasta piilotettua komentoa leikepöydällesi ja laittaa sinne sen sijaan vaarattoman viestin"
+  },
+  "setPaste": {
+    "message": "Estä kirjautumislinkkien liittäminen sivustoille"
+  },
+  "tipPaste": {
+    "message": "Estää sinua liittämästä salaista koodia sisältävää kirjautumislinkkiä sivulle, joka voisi varastaa tilisi"
+  },
+  "setProtocols": {
+    "message": "Estä linkit, jotka avaavat ohjelmia tietokoneellasi"
+  },
+  "tipProtocols": {
+    "message": "Estää sivuja avaamasta Skriptieditoria, etäkansioiden Windows-hakua ja vastaavia ohjelmia"
+  },
+  "setFullscreen": {
+    "message": "Pysäytä väärennetyt koko näytön päivityssivut"
+  },
+  "tipFullscreen": {
+    "message": "Estää komentojen liittämiseen kehottavia sivuja lukitsemasta näyttöä väärennetyllä päivityksellä"
+  },
+  "setPageWarnings": {
+    "message": "Varoita sivuista, joilla on liittämisohjeita"
+  },
+  "tipPageWarnings": {
+    "message": "Näyttää varoituspalkin, kun sivu kehottaa liittämään jotain Suorita-ikkunaan, Päätteeseen tai Resurssienhallintaan"
+  },
+  "setWeb3": {
+    "message": "Tarkkaile lohkoketjusta ladattavaa koodia"
+  },
+  "tipWeb3": {
+    "message": "Varoittaa, kun tavallinen sivusto hakee piilotettua koodia lohkoketjusta, mikä on murrettujen sivustojen käyttämä temppu"
+  },
+  "setReputation": {
+    "message": "Varoita ilmoitetuista sivustoista"
+  },
+  "tipReputation": {
+    "message": "Näyttää varoituspalkin sivustoilla, jotka on merkitty haitallisiksi julkisissa uhkatietokannoissa"
+  },
+  "setBlockPage": {
+    "message": "Estä tunnetut ClickFix-sivustot ennen kuin ne latautuvat"
+  },
+  "tipBlockPage": {
+    "message": "Näyttää koko sivun varoituksen sellaisen sivuston sijaan, jonka tietokannat ovat merkinneet ClickFix-sivuksi"
+  },
+  "setFeedUpdates": {
+    "message": "Lataa tietokannan ja sääntöjen päivitykset"
+  },
+  "tipFeedUpdates": {
+    "message": "Lataa joka tunti allekirjoitetun luettelon ilmoitetuista sivustoista ja uusimmat tunnistussäännöt"
+  },
+  "trustedLead": {
+    "message": "Näitä sivustoja ei tarkisteta lainkaan, ja sivustoon luottaminen vaatii saman vahvistuksen kuin varoituksessa."
+  },
+  "trustedInputLabel": {
+    "message": "Sivuston osoite"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Lisää"
+  },
+  "tipTrustedAdd": {
+    "message": "Lisää sivuston tarkistamattomien sivustojen luetteloon, kun olet vahvistanut"
+  },
+  "trustedRemove": {
+    "message": "Poista"
+  },
+  "tipTrustedRemove": {
+    "message": "Aloittaa tämän sivuston tarkistamisen uudelleen"
+  },
+  "trustedEmpty": {
+    "message": "Ei luotettuja sivustoja"
+  },
+  "orgTitle": {
+    "message": "Viesti varoituksissa"
+  },
+  "orgLead": {
+    "message": "Lisäteksti, joka näytetään jokaisessa varoituksessa, esimerkiksi keneen ottaa yhteyttä yrityksessäsi."
+  },
+  "orgPlaceholder": {
+    "message": "Esimerkiksi soita IT-tukeen ennen kuin jatkat"
+  },
+  "orgSave": {
+    "message": "Tallenna"
+  },
+  "tipOrgSave": {
+    "message": "Tallentaa jokaisessa varoituksessa näytettävän tekstin"
+  },
+  "orgSaved": {
+    "message": "Tallennettu"
+  },
+  "historyLead": {
+    "message": "Tarkista, oletko käynyt jollakin sivustolla, joka on nyt tietokannassa, tarkistus tehdään vain selaimessasi."
+  },
+  "historyDays7": {
+    "message": "Viimeiset 7 päivää"
+  },
+  "historyDays30": {
+    "message": "Viimeiset 30 päivää"
+  },
+  "historyDays90": {
+    "message": "Viimeiset 90 päivää"
+  },
+  "tipHistoryDays": {
+    "message": "Kuinka kauas taaksepäin tarkistetaan"
+  },
+  "historyScan": {
+    "message": "Tarkista selaushistoriani"
+  },
+  "tipHistoryScan": {
+    "message": "Pyytää pääsyä selaushistoriaasi ja vertaa sitä tietokantaan selaimessasi"
+  },
+  "historyScanning": {
+    "message": "Tarkistetaan"
+  },
+  "historyChecked": {
+    "message": "Tarkistettiin $1 osoitetta viimeisten $2 päivän ajalta."
+  },
+  "historyClean": {
+    "message": "Yksikään vierailemasi sivusto ei ole luettelossa"
+  },
+  "historyFound": {
+    "message": "$1 vierailemaasi osoitetta on luettelossa"
+  },
+  "historyAdvice": {
+    "message": "Jos suoritit jotain, mitä luettelossa oleva sivusto kehotti suorittamaan, vaihda salasanasi toisella laitteella ja tarkistuta tämä tietokone."
+  },
+  "historyDenied": {
+    "message": "Pääsyä historiaan ei myönnetty."
+  },
+  "historyDrop": {
+    "message": "Poista pääsy historiaan"
+  },
+  "tipHistoryDrop": {
+    "message": "Luopuu historian käyttöoikeudesta, kunnes tarkistat uudelleen"
+  },
+  "exportJson": {
+    "message": "Vie JSON"
+  },
+  "tipExport": {
+    "message": "Tallentaa tulokset JSON-tiedostona tähän tietokoneeseen"
+  },
+  "tipExportLog": {
+    "message": "Tallentaa lokin JSON-tiedostona tähän tietokoneeseen"
+  },
+  "colVisited": {
+    "message": "Viimeisin käynti"
+  },
+  "colAddress": {
+    "message": "Osoite"
+  },
+  "colReport": {
+    "message": "Ilmoitus"
+  },
+  "colTime": {
+    "message": "Aika"
+  },
+  "colWhat": {
+    "message": "Mitä"
+  },
+  "colSite": {
+    "message": "Sivusto"
+  },
+  "colDetails": {
+    "message": "Tiedot"
+  },
+  "extensionsLead": {
+    "message": "Etsi asennettuja selainlaajennuksia, joiden tiedetään olevan haitallisia, kuten CrashFix-hyökkäyksissä käytettyjä väärennettyjä mainostenestäjiä."
+  },
+  "extensionsScan": {
+    "message": "Tarkista asennetut laajennukset"
+  },
+  "tipExtensionsScan": {
+    "message": "Pyytää lupaa luetella laajennuksesi ja vertaa niitä tunnettujen haitallisten laajennusten luetteloon"
+  },
+  "extensionsDrop": {
+    "message": "Poista käyttöoikeus"
+  },
+  "tipExtensionsDrop": {
+    "message": "Luopuu luvasta luetella laajennuksesi"
+  },
+  "extensionsDenied": {
+    "message": "Käyttöoikeutta ei myönnetty."
+  },
+  "extensionsChecked": {
+    "message": "Tarkistettiin $1 asennettua laajennusta."
+  },
+  "extensionsClean": {
+    "message": "Tunnettuja haitallisia laajennuksia ei löytynyt"
+  },
+  "extensionsKnownAs": {
+    "message": "Tunnetaan nimellä $1"
+  },
+  "extensionsRemove": {
+    "message": "Poista"
+  },
+  "tipExtensionsRemove": {
+    "message": "Poistaa tämän laajennuksen, kun olet vahvistanut"
+  },
+  "logLead": {
+    "message": "Mitä ClickFix Warden on estänyt tai mistä se on varoittanut, loki pysyy tällä tietokoneella."
+  },
+  "logClear": {
+    "message": "Tyhjennä loki"
+  },
+  "tipLogClear": {
+    "message": "Poistaa kaikki lokin merkinnät"
+  },
+  "logClearConfirm": {
+    "message": "Poistetaanko kaikki tunnistuslokin merkinnät?"
+  },
+  "databaseLead": {
+    "message": "Ilmoitukset tulevat abuse.ch:n julkisista tietokannoista, ja niiden digitaalinen allekirjoitus tarkistetaan ennen käyttöä."
+  },
+  "dbGenerated": {
+    "message": "$1 ilmoitusta, julkaistu $2"
+  },
+  "dbChecked": {
+    "message": "Viimeksi tarkistettu $1"
+  },
+  "dbError": {
+    "message": "Viimeisin päivitys epäonnistui, $1"
+  },
+  "dbUpdated": {
+    "message": "Ajan tasalla"
+  },
+  "tipUpdateNow": {
+    "message": "Lataa uusimman tietokannan ja säännöt heti"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden ei kerää mitään tietoja, sillä ei ole tiliä, telemetriaa eikä omaa palvelinta."
+  },
+  "aboutNetwork": {
+    "message": "Se lataa ainoastaan allekirjoitetun tietokannan ja säännöt GitHubista, joka näkee saman pyynnön kuin minkä tahansa päivityksen."
+  },
+  "aboutProject": {
+    "message": "Lähdekoodi"
+  },
+  "aboutPolicy": {
+    "message": "Tietosuojakäytäntö"
+  },
+  "descClipboard": {
+    "message": "Tällä sivulla yritettiin laittaa leikepöydällesi $1. Se estettiin, koska $2."
+  },
+  "descManual": {
+    "message": "Teksti, jota yritit kopioida, on $1, eikä sitä kopioitu, koska $2."
+  },
+  "descPaste": {
+    "message": "Teksti, jota olit liittämässä tälle sivulle, on $1. Se estettiin, koska $2."
+  },
+  "descProtocol": {
+    "message": "Tällä sivulla yritettiin avata $1. Se estettiin, koska $2."
+  },
+  "descFullscreen": {
+    "message": "Tämä sivu yritti $1. Se estettiin, koska $2."
+  },
+  "repLine": {
+    "message": "$1 on merkinnyt sen $2, havaittu ensimmäisen kerran $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 on merkinnyt sen $2."
+  },
+  "warnLead": {
+    "message": "$2 on merkinnyt osoitteen $1 $3. Tällaiset sivut huijaavat sinut liittämään komennon, joka $4."
+  },
+  "warnLeadUnknown": {
+    "message": "Osoite $1 on merkitty julkisiin uhkatietokantoihin. Tällaiset sivut huijaavat sinut liittämään komennon, joka $2."
+  },
+  "confirmBody": {
+    "message": "Jos jatkat, ClickFix Warden lopettaa sen tarkistamisen, ja tällainen sivu voi $1."
+  },
+  "popupBlockedLine": {
+    "message": "Estettiin $2 $1"
+  },
+  "popupReports": {
+    "message": "$1 ilmoitettua osoitetta"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "Skriptieditori valmiiksi kirjoitetulla skriptillä"
+  },
+  "proto_search_ms": {
+    "message": "etäkansiota näyttävä Windows-hakuikkuna"
+  },
+  "proto_ms_msdt": {
+    "message": "Windowsin vianmääritys piilotetuilla asetuksilla"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office piilotetuilla asetuksilla"
+  },
+  "proto_ms_appinstaller": {
+    "message": "sovellusten asennusohjelma internetistä"
+  },
+  "setLanguage": {
+    "message": "Kieli"
+  },
+  "tipLanguage": {
+    "message": "Vaihtaa ClickFix Wardenin kielen, Selaimen oletus seuraa selaimesi kieltä"
+  },
+  "langBrowser": {
+    "message": "Selaimen oletus"
+  }
+}

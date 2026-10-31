@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "หยุดการโจมตีแบบ ClickFix และ CAPTCHA ปลอมที่หลอกให้คุณเรียกใช้คำสั่ง และเตือนเกี่ยวกับเว็บไซต์ที่ถูกรายงานว่าเป็นอันตราย"
+  },
+  "dangerLabel": {
+    "message": "เว็บไซต์ที่อาจเป็นอันตราย"
+  },
+  "titleClipboard": {
+    "message": "บล็อกคำสั่งอันตรายแล้ว"
+  },
+  "titleManual": {
+    "message": "ไม่ได้คัดลอกคำสั่งอันตราย"
+  },
+  "titlePaste": {
+    "message": "บล็อกการวางที่เป็นอันตรายแล้ว"
+  },
+  "titleProtocol": {
+    "message": "บล็อกลิงก์อันตรายแล้ว"
+  },
+  "titleFullscreen": {
+    "message": "บล็อกหน้าจออัปเดตปลอมแล้ว"
+  },
+  "descNote": {
+    "message": "ตอนนี้คลิปบอร์ดของคุณมีเพียงข้อความที่ไม่เป็นอันตราย การวางจึงไม่มีผลใดๆ"
+  },
+  "descManualNote": {
+    "message": "คัดลอกข้อความที่ไม่เป็นอันตรายแทนแล้ว"
+  },
+  "descFullscreenNote": {
+    "message": "หากยังมีสิ่งใดบังหน้าจออยู่ ให้กด Esc แล้วปิดแท็บนี้"
+  },
+  "whatTemplate": {
+    "message": "$1 ที่$2"
+  },
+  "what_powershell": {
+    "message": "คำสั่ง PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "คำสั่ง PowerShell แบบซ่อน"
+  },
+  "what_applescript": {
+    "message": "คำสั่ง AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "คำสั่ง AppleScript แบบซ่อน"
+  },
+  "what_terminal": {
+    "message": "คำสั่งเทอร์มินัล"
+  },
+  "what_terminal_hidden": {
+    "message": "คำสั่งเทอร์มินัลแบบซ่อน"
+  },
+  "what_script": {
+    "message": "คำสั่งสคริปต์"
+  },
+  "what_script_hidden": {
+    "message": "คำสั่งสคริปต์แบบซ่อน"
+  },
+  "what_cmd": {
+    "message": "คำสั่งในพร้อมท์คำสั่ง"
+  },
+  "what_cmd_hidden": {
+    "message": "คำสั่งแบบซ่อนในพร้อมท์คำสั่ง"
+  },
+  "what_windows": {
+    "message": "คำสั่ง Windows"
+  },
+  "what_windows_hidden": {
+    "message": "คำสั่ง Windows แบบซ่อน"
+  },
+  "what_generic": {
+    "message": "คำสั่ง"
+  },
+  "what_generic_hidden": {
+    "message": "คำสั่งแบบซ่อน"
+  },
+  "effect_download_run": {
+    "message": "ดาวน์โหลดและเรียกใช้โปรแกรม"
+  },
+  "effect_disables_av": {
+    "message": "ปิดการป้องกันไวรัสของคุณ"
+  },
+  "effect_password": {
+    "message": "ขอรหัสผ่านของคุณผ่านหน้าต่างปลอม"
+  },
+  "effect_remote_share": {
+    "message": "เรียกใช้ไฟล์จากโฟลเดอร์แชร์บนเครือข่ายระยะไกล"
+  },
+  "effect_remote_script": {
+    "message": "เรียกใช้สคริปต์จากอินเทอร์เน็ตโดยตรง"
+  },
+  "effect_remote_install": {
+    "message": "ติดตั้งโปรแกรมจากอินเทอร์เน็ตโดยตรง"
+  },
+  "effect_dns": {
+    "message": "ดึงคำสั่งที่ซ่อนอยู่จากระเบียน DNS"
+  },
+  "effect_finger": {
+    "message": "ดึงคำสั่งที่ซ่อนอยู่จากเซิร์ฟเวอร์ระยะไกล"
+  },
+  "effect_runs": {
+    "message": "ทำงานบนคอมพิวเตอร์ของคุณโดยไม่ถามก่อน"
+  },
+  "whyPage1": {
+    "message": "หน้าเว็บนี้$1"
+  },
+  "whyPage2": {
+    "message": "หน้าเว็บนี้$1 และ$2"
+  },
+  "lure_captcha": {
+    "message": "แสร้งเป็น CAPTCHA"
+  },
+  "lure_update": {
+    "message": "แสร้งว่ากำลังติดตั้งอัปเดต"
+  },
+  "lure_fix": {
+    "message": "อ้างว่าคำสั่งนี้ใช้แก้ไขข้อผิดพลาด"
+  },
+  "target_explorer": {
+    "message": "บอกให้คุณวางคำสั่งลงในแถบที่อยู่ของตัวสำรวจไฟล์"
+  },
+  "target_terminal": {
+    "message": "บอกให้คุณวางคำสั่งลงในเทอร์มินัล"
+  },
+  "target_run": {
+    "message": "บอกให้คุณวางคำสั่งลงในกล่องโต้ตอบ “เรียกใช้”"
+  },
+  "target_paste": {
+    "message": "บอกให้คุณวางคำสั่งไว้ที่ใดที่หนึ่งในคอมพิวเตอร์"
+  },
+  "why_payload_reported": {
+    "message": "คำสั่งนี้ดาวน์โหลดจากที่อยู่ที่ถูกรายงานว่าเป็นอันตราย"
+  },
+  "why_site_reported": {
+    "message": "เว็บไซต์นี้ถูกรายงานว่าเป็นอันตราย"
+  },
+  "why_decoy": {
+    "message": "มีข้อความยืนยันปลอมซ่อนอยู่หลังคำสั่ง"
+  },
+  "why_padding": {
+    "message": "คำสั่งจริงถูกซ่อนไว้หลังช่องว่างจำนวนมาก"
+  },
+  "why_disguised": {
+    "message": "คำสั่งถูกอำพรางเพื่อซ่อนสิ่งที่มันทำ"
+  },
+  "why_hidden_window": {
+    "message": "คำสั่งนี้ทำงานในหน้าต่างที่ซ่อนอยู่"
+  },
+  "why_generic": {
+    "message": "คำสั่งนี้มีลักษณะของการโจมตีแบบ ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "หน้าเว็บนี้บอกให้คุณวางคำสั่ง"
+  },
+  "fullscreenWhat": {
+    "message": "ยึดทั้งหน้าจอเหมือนการอัปเดต Windows ปลอม"
+  },
+  "pasteWhat": {
+    "message": "ลิงก์ลงชื่อเข้าใช้ที่มีรหัสลับ"
+  },
+  "pasteWhy": {
+    "message": "หน้าแบบนี้สามารถใช้ลิงก์นั้นยึดบัญชีของคุณได้"
+  },
+  "protocolWhy": {
+    "message": "ลิงก์แบบนี้สามารถเรียกใช้คำสั่งบนคอมพิวเตอร์ของคุณได้โดยที่คุณไม่ทันสังเกต"
+  },
+  "btnClose": {
+    "message": "ปิด"
+  },
+  "btnLeave": {
+    "message": "ออกจากเว็บไซต์นี้"
+  },
+  "btnTrust": {
+    "message": "เชื่อถือเว็บไซต์นี้"
+  },
+  "tipClose": {
+    "message": "ซ่อนคำเตือนนี้และอยู่ในหน้านี้ต่อ"
+  },
+  "tipLeave": {
+    "message": "ปิดหน้านี้และเปิดแท็บใหม่"
+  },
+  "tipTrust": {
+    "message": "หยุดการตรวจสอบทั้งหมดในเว็บไซต์นี้หลังจากคุณยืนยัน"
+  },
+  "tipUntrust": {
+    "message": "เริ่มตรวจสอบเว็บไซต์นี้อีกครั้ง"
+  },
+  "bannerReported": {
+    "message": "เว็บไซต์นี้ถูกรายงานว่าเป็นอันตราย"
+  },
+  "bannerDetails": {
+    "message": "รายละเอียด"
+  },
+  "bannerFirstSeen": {
+    "message": "พบครั้งแรก $1"
+  },
+  "bannerWeb3": {
+    "message": "เว็บไซต์นี้โหลดโค้ดที่ซ่อนอยู่จากบล็อกเชน"
+  },
+  "bannerWeb3Detail": {
+    "message": "เว็บไซต์ที่ถูกแฮ็กใช้กลวิธีนี้เพื่อแสดงหน้า CAPTCHA ปลอม"
+  },
+  "bannerInstructions": {
+    "message": "หน้านี้บอกให้คุณวางบางอย่างลงใน “เรียกใช้” เทอร์มินัล หรือตัวสำรวจไฟล์"
+  },
+  "bannerInstructionsDetail": {
+    "message": "เว็บไซต์จริงไม่เคยขอให้คุณทำแบบนั้น"
+  },
+  "rep_clickfix": {
+    "message": "หน้า ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "หน้า ClickFix ที่แพร่ $1"
+  },
+  "rep_malware": {
+    "message": "แหล่งดาวน์โหลดมัลแวร์"
+  },
+  "rep_malware_family": {
+    "message": "แหล่งดาวน์โหลด $1"
+  },
+  "rep_c2": {
+    "message": "เซิร์ฟเวอร์ควบคุมมัลแวร์"
+  },
+  "rep_c2_family": {
+    "message": "เซิร์ฟเวอร์ควบคุม $1"
+  },
+  "rep_phishing": {
+    "message": "หน้าฟิชชิง"
+  },
+  "rep_phishing_family": {
+    "message": "หน้าฟิชชิง $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "แหล่งดาวน์โหลดมัลแวร์"
+  },
+  "category_c2": {
+    "message": "เซิร์ฟเวอร์ควบคุมมัลแวร์"
+  },
+  "category_phishing": {
+    "message": "ฟิชชิง"
+  },
+  "confirmTrustTitle": {
+    "message": "หยุดปกป้อง $1 หรือไม่"
+  },
+  "confirmOpenTitle": {
+    "message": "ยังต้องการเปิด $1 หรือไม่"
+  },
+  "confirmReported": {
+    "message": "เว็บไซต์นี้ถูกรายงานในฐานข้อมูลภัยคุกคามสาธารณะ"
+  },
+  "confirmBodyStrong": {
+    "message": "ทำให้คอมพิวเตอร์ของคุณติดมัลแวร์ และขโมยรหัสผ่าน บัตรเครดิตที่บันทึกไว้ และกระเป๋าเงินคริปโตของคุณ"
+  },
+  "confirmOnlyReported": {
+    "message": "ทำเช่นนี้เฉพาะเมื่อคุณรู้ว่ารายงานนั้นผิด"
+  },
+  "confirmOnlyKnown": {
+    "message": "ทำเช่นนี้เฉพาะกับเว็บไซต์ที่คุณรู้จักดี"
+  },
+  "confirmCheckTrust": {
+    "message": "ฉันเข้าใจว่าการอนุญาตเว็บไซต์นี้อาจทำให้ฉันเสียข้อมูลเข้าสู่ระบบ คุกกี้ และเงิน"
+  },
+  "confirmCheckOpen": {
+    "message": "ฉันเข้าใจว่าการเปิดเว็บไซต์นี้อาจทำให้ฉันเสียข้อมูลเข้าสู่ระบบ คุกกี้ และเงิน"
+  },
+  "confirmTrust": {
+    "message": "เชื่อถือเว็บไซต์นี้"
+  },
+  "confirmOpen": {
+    "message": "เปิดต่อไป"
+  },
+  "confirmKeep": {
+    "message": "ปกป้องฉันต่อไป"
+  },
+  "warnTitle": {
+    "message": "บล็อกเว็บไซต์อันตรายแล้ว"
+  },
+  "warnAddress": {
+    "message": "ที่อยู่"
+  },
+  "warnReportedBy": {
+    "message": "รายงานโดย"
+  },
+  "warnSteals": {
+    "message": "ขโมยรหัสผ่าน บัตรเครดิตที่บันทึกไว้ และกระเป๋าเงินคริปโตของคุณ"
+  },
+  "warnLeave": {
+    "message": "กลับไปที่ปลอดภัย"
+  },
+  "warnLeaveTip": {
+    "message": "เปิดแท็บใหม่แทนเว็บไซต์นี้"
+  },
+  "warnContinue": {
+    "message": "เปิดต่อไป"
+  },
+  "warnContinueTip": {
+    "message": "เปิดเว็บไซต์นี้ได้ตลอดหนึ่งชั่วโมงถัดไปหลังจากคุณยืนยันความเสี่ยง"
+  },
+  "warnAdvice": {
+    "message": "ไม่มีเว็บไซต์จริงใดขอให้คุณวางสิ่งใดลงใน “เรียกใช้” เทอร์มินัล หรือตัวสำรวจไฟล์"
+  },
+  "popupOn": {
+    "message": "เปิด"
+  },
+  "popupOff": {
+    "message": "การป้องกันปิดอยู่"
+  },
+  "popupNotWebPage": {
+    "message": "ไม่ใช่หน้าเว็บ"
+  },
+  "popupTrusted": {
+    "message": "คุณเชื่อถือเว็บไซต์นี้ จึงไม่ได้ตรวจสอบ"
+  },
+  "popupReported": {
+    "message": "ถูกรายงานว่าเป็นอันตราย"
+  },
+  "popupNoReports": {
+    "message": "ไม่มีรายงานเกี่ยวกับเว็บไซต์นี้"
+  },
+  "popupUntrust": {
+    "message": "เลิกเชื่อถือเว็บไซต์นี้"
+  },
+  "popupUpdated": {
+    "message": "อัปเดตเมื่อ $1 เวอร์ชันกฎ $2"
+  },
+  "popupFeedNone": {
+    "message": "ยังไม่ได้ดาวน์โหลดฐานข้อมูล"
+  },
+  "popupFeedError": {
+    "message": "อัปเดตฐานข้อมูลไม่สำเร็จ โปรดดูที่การตั้งค่า"
+  },
+  "popupNoDetections": {
+    "message": "ยังไม่มีการบล็อกใดๆ"
+  },
+  "popupSettings": {
+    "message": "การตั้งค่า"
+  },
+  "popupHistory": {
+    "message": "ตรวจสอบประวัติของฉัน"
+  },
+  "popupUpdate": {
+    "message": "อัปเดตเดี๋ยวนี้"
+  },
+  "popupUpdating": {
+    "message": "กำลังอัปเดต"
+  },
+  "popupRulesLine": {
+    "message": "กฎการตรวจจับเวอร์ชัน $1 ($2)"
+  },
+  "popupRulesBundled": {
+    "message": "ในตัว"
+  },
+  "popupRulesUpdated": {
+    "message": "อัปเดตทางออนไลน์แล้ว"
+  },
+  "supportShort": {
+    "message": "สนับสนุน"
+  },
+  "tipSupport": {
+    "message": "เปิดหน้าที่คุณสามารถบริจาคเพื่อสนับสนุน ClickFix Warden"
+  },
+  "supportProject": {
+    "message": "สนับสนุนโครงการ"
+  },
+  "kind_clipboard": {
+    "message": "คำสั่งในคลิปบอร์ด"
+  },
+  "kind_manual_copy": {
+    "message": "คำสั่งที่คัดลอก"
+  },
+  "kind_paste": {
+    "message": "การวางลิงก์ลงชื่อเข้าใช้"
+  },
+  "kind_protocol": {
+    "message": "ลิงก์เปิดโปรแกรม"
+  },
+  "kind_fullscreen": {
+    "message": "หน้าจออัปเดตปลอม"
+  },
+  "kind_page_instructions": {
+    "message": "คำแนะนำให้วาง"
+  },
+  "kind_web3_loader": {
+    "message": "ตัวโหลดจากบล็อกเชน"
+  },
+  "kind_reputation": {
+    "message": "เว็บไซต์ที่ถูกรายงาน"
+  },
+  "kind_reputation_block": {
+    "message": "เว็บไซต์ ClickFix ที่รู้จัก"
+  },
+  "action_blocked": {
+    "message": "บล็อกแล้ว"
+  },
+  "action_warned": {
+    "message": "เตือนแล้ว"
+  },
+  "action_copied_anyway": {
+    "message": "คัดลอกแม้มีคำเตือน"
+  },
+  "action_continued": {
+    "message": "เปิดแม้มีคำเตือน"
+  },
+  "action_trusted": {
+    "message": "เชื่อถือแล้ว"
+  },
+  "timeNever": {
+    "message": "ไม่เคย"
+  },
+  "timeJustNow": {
+    "message": "เมื่อสักครู่"
+  },
+  "timeMinutes": {
+    "message": "$1 นาทีที่แล้ว"
+  },
+  "timeHours": {
+    "message": "$1 ชั่วโมงที่แล้ว"
+  },
+  "timeDays": {
+    "message": "$1 วันที่แล้ว"
+  },
+  "navProtection": {
+    "message": "การป้องกัน"
+  },
+  "navTrusted": {
+    "message": "เว็บไซต์ที่เชื่อถือ"
+  },
+  "navHistory": {
+    "message": "ตรวจสอบประวัติ"
+  },
+  "navExtensions": {
+    "message": "ตรวจสอบส่วนขยาย"
+  },
+  "navLog": {
+    "message": "บันทึกการตรวจจับ"
+  },
+  "navDatabase": {
+    "message": "ฐานข้อมูล"
+  },
+  "navAbout": {
+    "message": "เกี่ยวกับ"
+  },
+  "welcomeTitle": {
+    "message": "คุณได้รับการปกป้องแล้ว"
+  },
+  "welcomeBody": {
+    "message": "ตอนนี้ ClickFix Warden คอยเฝ้าดูหน้าเว็บที่พยายามหลอกให้คุณเรียกใช้คำสั่ง และเตือนคุณเกี่ยวกับเว็บไซต์ที่ถูกรายงานว่าเป็นอันตราย"
+  },
+  "welcomePrivacy": {
+    "message": "ทุกอย่างถูกตรวจสอบภายในเบราว์เซอร์ของคุณ ไม่มีข้อมูลการท่องเว็บของคุณถูกส่งไปที่ใดเลย"
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden ต้องเข้าถึงเว็บไซต์ทั้งหมดเพื่อปกป้องเว็บไซต์เหล่านั้น"
+  },
+  "welcomeGrant": {
+    "message": "อนุญาตในเว็บไซต์ทั้งหมด"
+  },
+  "tipGrantHosts": {
+    "message": "ให้ ClickFix Warden เฝ้าดูกลลวงแบบ ClickFix ในทุกหน้า"
+  },
+  "managedNote": {
+    "message": "การตั้งค่าบางอย่างได้รับการจัดการโดยองค์กรของคุณ"
+  },
+  "protectionLead": {
+    "message": "เลือกสิ่งที่ ClickFix Warden จะเฝ้าดู ทุกอย่างทำงานภายในเบราว์เซอร์ของคุณ"
+  },
+  "setEnabled": {
+    "message": "เปิดการป้องกัน"
+  },
+  "tipEnabled": {
+    "message": "เปิดหรือปิดการตรวจสอบทั้งหมดพร้อมกัน"
+  },
+  "setClipboard": {
+    "message": "บล็อกคำสั่งอันตรายในคลิปบอร์ด"
+  },
+  "tipClipboard": {
+    "message": "ป้องกันไม่ให้หน้าเว็บใส่คำสั่งที่ซ่อนอยู่ลงในคลิปบอร์ดของคุณ และใส่ข้อความที่ไม่เป็นอันตรายแทน"
+  },
+  "setPaste": {
+    "message": "บล็อกการวางลิงก์ลงชื่อเข้าใช้ลงในเว็บไซต์"
+  },
+  "tipPaste": {
+    "message": "ป้องกันไม่ให้คุณวางลิงก์ลงชื่อเข้าใช้ที่มีรหัสลับลงในหน้าที่อาจขโมยบัญชีของคุณ"
+  },
+  "setProtocols": {
+    "message": "บล็อกลิงก์ที่เปิดโปรแกรมบนคอมพิวเตอร์ของคุณ"
+  },
+  "tipProtocols": {
+    "message": "ป้องกันไม่ให้หน้าเว็บเปิดตัวแก้ไขสคริปต์ การค้นหาของ Windows ในโฟลเดอร์ระยะไกล และโปรแกรมที่คล้ายกัน"
+  },
+  "setFullscreen": {
+    "message": "หยุดหน้าอัปเดตเต็มหน้าจอปลอม"
+  },
+  "tipFullscreen": {
+    "message": "ป้องกันไม่ให้หน้าที่บอกให้คุณวางคำสั่งล็อกหน้าจอด้วยการอัปเดตปลอม"
+  },
+  "setPageWarnings": {
+    "message": "เตือนเกี่ยวกับหน้าที่มีคำแนะนำให้วาง"
+  },
+  "tipPageWarnings": {
+    "message": "แสดงแถบคำเตือนเมื่อหน้าเว็บบอกให้คุณวางบางอย่างลงใน “เรียกใช้” เทอร์มินัล หรือตัวสำรวจไฟล์"
+  },
+  "setWeb3": {
+    "message": "เฝ้าดูโค้ดที่โหลดจากบล็อกเชน"
+  },
+  "tipWeb3": {
+    "message": "เตือนเมื่อเว็บไซต์ทั่วไปดึงโค้ดที่ซ่อนอยู่จากบล็อกเชน ซึ่งเป็นกลวิธีที่เว็บไซต์ที่ถูกแฮ็กใช้"
+  },
+  "setReputation": {
+    "message": "เตือนเกี่ยวกับเว็บไซต์ที่ถูกรายงาน"
+  },
+  "tipReputation": {
+    "message": "แสดงแถบคำเตือนบนเว็บไซต์ที่ฐานข้อมูลภัยคุกคามสาธารณะระบุว่าเป็นอันตราย"
+  },
+  "setBlockPage": {
+    "message": "บล็อกเว็บไซต์ ClickFix ที่รู้จักก่อนที่จะโหลด"
+  },
+  "tipBlockPage": {
+    "message": "แสดงคำเตือนเต็มหน้าแทนเว็บไซต์ที่ฐานข้อมูลระบุว่าเป็นหน้า ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "ดาวน์โหลดการอัปเดตฐานข้อมูลและกฎ"
+  },
+  "tipFeedUpdates": {
+    "message": "ดาวน์โหลดรายชื่อเว็บไซต์ที่ถูกรายงานซึ่งมีลายเซ็นดิจิทัล และกฎการตรวจจับล่าสุดทุกชั่วโมง"
+  },
+  "trustedLead": {
+    "message": "เว็บไซต์เหล่านี้จะไม่ถูกตรวจสอบเลย การเชื่อถือเว็บไซต์ต้องยืนยันแบบเดียวกับในคำเตือน"
+  },
+  "trustedInputLabel": {
+    "message": "ที่อยู่เว็บไซต์"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "เพิ่ม"
+  },
+  "tipTrustedAdd": {
+    "message": "เพิ่มเว็บไซต์ลงในรายการเว็บไซต์ที่ไม่ตรวจสอบ หลังจากคุณยืนยัน"
+  },
+  "trustedRemove": {
+    "message": "ลบ"
+  },
+  "tipTrustedRemove": {
+    "message": "เริ่มตรวจสอบเว็บไซต์นี้อีกครั้ง"
+  },
+  "trustedEmpty": {
+    "message": "ไม่มีเว็บไซต์ที่เชื่อถือ"
+  },
+  "orgTitle": {
+    "message": "ข้อความในคำเตือน"
+  },
+  "orgLead": {
+    "message": "ข้อความเพิ่มเติมที่แสดงในทุกคำเตือน เช่น ผู้ที่ควรติดต่อในบริษัทของคุณ"
+  },
+  "orgPlaceholder": {
+    "message": "เช่น โทรหาฝ่ายช่วยเหลือด้านไอทีก่อนดำเนินการต่อ"
+  },
+  "orgSave": {
+    "message": "บันทึก"
+  },
+  "tipOrgSave": {
+    "message": "บันทึกข้อความที่แสดงในทุกคำเตือน"
+  },
+  "orgSaved": {
+    "message": "บันทึกแล้ว"
+  },
+  "historyLead": {
+    "message": "ตรวจสอบว่าคุณเคยเข้าชมเว็บไซต์ที่ตอนนี้อยู่ในฐานข้อมูลหรือไม่ การตรวจสอบทำงานในเบราว์เซอร์ของคุณเท่านั้น"
+  },
+  "historyDays7": {
+    "message": "7 วันที่ผ่านมา"
+  },
+  "historyDays30": {
+    "message": "30 วันที่ผ่านมา"
+  },
+  "historyDays90": {
+    "message": "90 วันที่ผ่านมา"
+  },
+  "tipHistoryDays": {
+    "message": "ระยะเวลาย้อนหลังที่จะตรวจสอบ"
+  },
+  "historyScan": {
+    "message": "ตรวจสอบประวัติของฉัน"
+  },
+  "tipHistoryScan": {
+    "message": "ขอสิทธิ์เข้าถึงประวัติของคุณ แล้วเปรียบเทียบกับฐานข้อมูลภายในเบราว์เซอร์ของคุณ"
+  },
+  "historyScanning": {
+    "message": "กำลังตรวจสอบ"
+  },
+  "historyChecked": {
+    "message": "ตรวจสอบที่อยู่ $1 รายการจาก $2 วันที่ผ่านมาแล้ว"
+  },
+  "historyClean": {
+    "message": "ไม่มีเว็บไซต์ที่คุณเคยเข้าชมอยู่ในรายการ"
+  },
+  "historyFound": {
+    "message": "มีที่อยู่ที่คุณเคยเข้าชม $1 รายการอยู่ในรายการ"
+  },
+  "historyAdvice": {
+    "message": "หากคุณเคยเรียกใช้สิ่งใดตามที่เว็บไซต์ในรายการบอก ให้เปลี่ยนรหัสผ่านจากอุปกรณ์อื่น และให้ผู้เชี่ยวชาญตรวจสอบคอมพิวเตอร์เครื่องนี้"
+  },
+  "historyDenied": {
+    "message": "ไม่ได้รับสิทธิ์เข้าถึงประวัติ"
+  },
+  "historyDrop": {
+    "message": "ยกเลิกสิทธิ์เข้าถึงประวัติ"
+  },
+  "tipHistoryDrop": {
+    "message": "คืนสิทธิ์เข้าถึงประวัติจนกว่าคุณจะตรวจสอบอีกครั้ง"
+  },
+  "exportJson": {
+    "message": "ส่งออก JSON"
+  },
+  "tipExport": {
+    "message": "บันทึกผลลัพธ์เป็นไฟล์ JSON ในคอมพิวเตอร์เครื่องนี้"
+  },
+  "tipExportLog": {
+    "message": "บันทึกล็อกเป็นไฟล์ JSON ในคอมพิวเตอร์เครื่องนี้"
+  },
+  "colVisited": {
+    "message": "เข้าชมล่าสุด"
+  },
+  "colAddress": {
+    "message": "ที่อยู่"
+  },
+  "colReport": {
+    "message": "รายงาน"
+  },
+  "colTime": {
+    "message": "เวลา"
+  },
+  "colWhat": {
+    "message": "สิ่งที่พบ"
+  },
+  "colSite": {
+    "message": "เว็บไซต์"
+  },
+  "colDetails": {
+    "message": "รายละเอียด"
+  },
+  "extensionsLead": {
+    "message": "ค้นหาส่วนขยายเบราว์เซอร์ที่ติดตั้งไว้ซึ่งทราบกันว่าเป็นอันตราย เช่น ตัวบล็อกโฆษณาปลอมที่ใช้ในการโจมตีแบบ CrashFix"
+  },
+  "extensionsScan": {
+    "message": "ตรวจสอบส่วนขยายที่ติดตั้ง"
+  },
+  "tipExtensionsScan": {
+    "message": "ขอสิทธิ์แสดงรายการส่วนขยายของคุณ แล้วเปรียบเทียบกับรายชื่อส่วนขยายที่ทราบว่าเป็นอันตราย"
+  },
+  "extensionsDrop": {
+    "message": "ยกเลิกสิทธิ์เข้าถึง"
+  },
+  "tipExtensionsDrop": {
+    "message": "คืนสิทธิ์แสดงรายการส่วนขยายของคุณ"
+  },
+  "extensionsDenied": {
+    "message": "ไม่ได้รับสิทธิ์เข้าถึง"
+  },
+  "extensionsChecked": {
+    "message": "ตรวจสอบส่วนขยายที่ติดตั้งไว้ $1 รายการแล้ว"
+  },
+  "extensionsClean": {
+    "message": "ไม่พบส่วนขยายที่ทราบว่าเป็นอันตราย"
+  },
+  "extensionsKnownAs": {
+    "message": "รู้จักในชื่อ $1"
+  },
+  "extensionsRemove": {
+    "message": "ลบ"
+  },
+  "tipExtensionsRemove": {
+    "message": "ถอนการติดตั้งส่วนขยายนี้หลังจากคุณยืนยัน"
+  },
+  "logLead": {
+    "message": "สิ่งที่ ClickFix Warden บล็อกหรือเตือน บันทึกนี้เก็บไว้ในคอมพิวเตอร์เครื่องนี้เท่านั้น"
+  },
+  "logClear": {
+    "message": "ล้างบันทึก"
+  },
+  "tipLogClear": {
+    "message": "ลบทุกรายการในบันทึก"
+  },
+  "logClearConfirm": {
+    "message": "ลบทุกรายการในบันทึกการตรวจจับหรือไม่"
+  },
+  "databaseLead": {
+    "message": "รายงานมาจากฐานข้อมูลสาธารณะของ abuse.ch และจะถูกตรวจสอบลายเซ็นดิจิทัลก่อนใช้งาน"
+  },
+  "dbGenerated": {
+    "message": "$1 รายงาน เผยแพร่เมื่อ $2"
+  },
+  "dbChecked": {
+    "message": "ตรวจสอบล่าสุด $1"
+  },
+  "dbError": {
+    "message": "อัปเดตครั้งล่าสุดไม่สำเร็จ $1"
+  },
+  "dbUpdated": {
+    "message": "เป็นเวอร์ชันล่าสุดแล้ว"
+  },
+  "tipUpdateNow": {
+    "message": "ดาวน์โหลดฐานข้อมูลและกฎล่าสุดทันที"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden ไม่เก็บข้อมูลใดๆ ไม่มีบัญชี ไม่มีการส่งข้อมูลการใช้งาน และไม่มีเซิร์ฟเวอร์ของตัวเอง"
+  },
+  "aboutNetwork": {
+    "message": "สิ่งเดียวที่ดาวน์โหลดคือฐานข้อมูลและกฎที่มีลายเซ็นจาก GitHub ซึ่ง GitHub จะเห็นคำขอแบบเดียวกับการอัปเดตทั่วไป"
+  },
+  "aboutProject": {
+    "message": "ซอร์สโค้ด"
+  },
+  "aboutPolicy": {
+    "message": "นโยบายความเป็นส่วนตัว"
+  },
+  "descClipboard": {
+    "message": "หน้านี้พยายามใส่ $1 ลงในคลิปบอร์ดของคุณ ระบบหยุดไว้เพราะ$2"
+  },
+  "descManual": {
+    "message": "ข้อความที่คุณพยายามคัดลอกคือ $1 และไม่ได้ถูกคัดลอกเพราะ$2"
+  },
+  "descPaste": {
+    "message": "คุณกำลังจะวาง $1 ลงในหน้านี้ ระบบหยุดไว้เพราะ$2"
+  },
+  "descProtocol": {
+    "message": "หน้านี้พยายามเปิด $1 ระบบหยุดไว้เพราะ$2"
+  },
+  "descFullscreen": {
+    "message": "หน้านี้พยายาม$1 ระบบหยุดไว้เพราะ$2"
+  },
+  "repLine": {
+    "message": "$1 ระบุว่าเป็น$2 พบครั้งแรกเมื่อ $3"
+  },
+  "repLineNoDate": {
+    "message": "$1 ระบุว่าเป็น$2"
+  },
+  "warnLead": {
+    "message": "$1 ถูกระบุใน $2 ว่าเป็น$3 หน้าแบบนี้จะหลอกให้คุณวางคำสั่งที่$4"
+  },
+  "warnLeadUnknown": {
+    "message": "$1 อยู่ในฐานข้อมูลภัยคุกคามสาธารณะ หน้าแบบนี้จะหลอกให้คุณวางคำสั่งที่$2"
+  },
+  "confirmBody": {
+    "message": "หากดำเนินการต่อ ClickFix Warden จะหยุดตรวจสอบเว็บไซต์นี้ และหน้าแบบนี้อาจ$1ได้"
+  },
+  "popupBlockedLine": {
+    "message": "$2 บล็อก $1"
+  },
+  "popupReports": {
+    "message": "ที่อยู่ที่ถูกรายงาน $1 รายการ"
+  },
+  "kindAction": {
+    "message": "$1 ($2)"
+  },
+  "proto_applescript": {
+    "message": "ตัวแก้ไขสคริปต์พร้อมสคริปต์ที่เตรียมไว้"
+  },
+  "proto_search_ms": {
+    "message": "หน้าต่างการค้นหาของ Windows ที่ชี้ไปยังโฟลเดอร์ระยะไกล"
+  },
+  "proto_ms_msdt": {
+    "message": "ตัวแก้ไขปัญหาของ Windows ที่มีการตั้งค่าซ่อนอยู่"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office ที่มีการตั้งค่าซ่อนอยู่"
+  },
+  "proto_ms_appinstaller": {
+    "message": "ตัวติดตั้งแอปจากอินเทอร์เน็ต"
+  },
+  "setLanguage": {
+    "message": "ภาษา"
+  },
+  "tipLanguage": {
+    "message": "เปลี่ยนภาษาของ ClickFix Warden ค่าเริ่มต้นของเบราว์เซอร์จะใช้ภาษาเดียวกับเบราว์เซอร์ของคุณ"
+  },
+  "langBrowser": {
+    "message": "ค่าเริ่มต้นของเบราว์เซอร์"
+  }
+}

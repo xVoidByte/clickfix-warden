@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Blocca gli attacchi ClickFix e i falsi CAPTCHA che ti spingono a eseguire comandi, e avvisa dei siti segnalati come dannosi."
+  },
+  "dangerLabel": {
+    "message": "SITO POTENZIALMENTE PERICOLOSO"
+  },
+  "titleClipboard": {
+    "message": "Comando pericoloso bloccato"
+  },
+  "titleManual": {
+    "message": "Comando pericoloso non copiato"
+  },
+  "titlePaste": {
+    "message": "Incolla pericoloso bloccato"
+  },
+  "titleProtocol": {
+    "message": "Link pericoloso bloccato"
+  },
+  "titleFullscreen": {
+    "message": "Finta schermata di aggiornamento bloccata"
+  },
+  "descNote": {
+    "message": "Ora negli appunti c'è una nota innocua, quindi incollare non fa nulla."
+  },
+  "descManualNote": {
+    "message": "Al suo posto è stata copiata una nota innocua."
+  },
+  "descFullscreenNote": {
+    "message": "Premi Esc se qualcosa copre ancora lo schermo, poi chiudi la scheda."
+  },
+  "whatTemplate": {
+    "message": "$1 che $2"
+  },
+  "what_powershell": {
+    "message": "un comando PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "un comando PowerShell nascosto"
+  },
+  "what_applescript": {
+    "message": "un comando AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "un comando AppleScript nascosto"
+  },
+  "what_terminal": {
+    "message": "un comando del Terminale"
+  },
+  "what_terminal_hidden": {
+    "message": "un comando nascosto del Terminale"
+  },
+  "what_script": {
+    "message": "un comando di script"
+  },
+  "what_script_hidden": {
+    "message": "un comando di script nascosto"
+  },
+  "what_cmd": {
+    "message": "un comando del Prompt dei comandi"
+  },
+  "what_cmd_hidden": {
+    "message": "un comando nascosto del Prompt dei comandi"
+  },
+  "what_windows": {
+    "message": "un comando di Windows"
+  },
+  "what_windows_hidden": {
+    "message": "un comando nascosto di Windows"
+  },
+  "what_generic": {
+    "message": "un comando"
+  },
+  "what_generic_hidden": {
+    "message": "un comando nascosto"
+  },
+  "effect_download_run": {
+    "message": "scarica ed esegue un programma"
+  },
+  "effect_disables_av": {
+    "message": "disattiva la tua protezione antivirus"
+  },
+  "effect_password": {
+    "message": "ti chiede la password con una finestra falsa"
+  },
+  "effect_remote_share": {
+    "message": "esegue file da una cartella di rete remota"
+  },
+  "effect_remote_script": {
+    "message": "esegue uno script direttamente da Internet"
+  },
+  "effect_remote_install": {
+    "message": "installa un programma direttamente da Internet"
+  },
+  "effect_dns": {
+    "message": "recupera comandi nascosti dai record DNS"
+  },
+  "effect_finger": {
+    "message": "recupera comandi nascosti da un server remoto"
+  },
+  "effect_runs": {
+    "message": "si avvia sul tuo computer senza chiedere"
+  },
+  "whyPage1": {
+    "message": "la pagina $1"
+  },
+  "whyPage2": {
+    "message": "la pagina $1 e $2"
+  },
+  "lure_captcha": {
+    "message": "finge di essere un CAPTCHA"
+  },
+  "lure_update": {
+    "message": "finge di installare aggiornamenti"
+  },
+  "lure_fix": {
+    "message": "presenta il comando come soluzione a un errore"
+  },
+  "target_explorer": {
+    "message": "ti chiede di incollarlo nella barra degli indirizzi di Esplora file"
+  },
+  "target_terminal": {
+    "message": "ti chiede di incollarlo nel Terminale"
+  },
+  "target_run": {
+    "message": "ti chiede di incollarlo nella finestra Esegui"
+  },
+  "target_paste": {
+    "message": "ti chiede di incollarlo da qualche parte sul tuo computer"
+  },
+  "why_payload_reported": {
+    "message": "il comando scarica file da un indirizzo segnalato come dannoso"
+  },
+  "why_site_reported": {
+    "message": "questo sito è segnalato come dannoso"
+  },
+  "why_decoy": {
+    "message": "dopo il comando è nascosto un falso testo di verifica"
+  },
+  "why_padding": {
+    "message": "il vero comando è nascosto dietro molti spazi vuoti"
+  },
+  "why_disguised": {
+    "message": "il comando è camuffato per nascondere cosa fa"
+  },
+  "why_hidden_window": {
+    "message": "il comando viene eseguito in una finestra nascosta"
+  },
+  "why_generic": {
+    "message": "il comando ha le caratteristiche di un attacco ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "la pagina ti chiede di incollare un comando"
+  },
+  "fullscreenWhat": {
+    "message": "occupare tutto lo schermo come un finto aggiornamento di Windows"
+  },
+  "pasteWhat": {
+    "message": "un link di accesso con un codice segreto"
+  },
+  "pasteWhy": {
+    "message": "una pagina come questa può usarlo per prendere il controllo del tuo account"
+  },
+  "protocolWhy": {
+    "message": "i link di questo tipo possono eseguire comandi sul tuo computer senza che te ne accorga"
+  },
+  "btnClose": {
+    "message": "Chiudi"
+  },
+  "btnLeave": {
+    "message": "Esci da questo sito"
+  },
+  "btnTrust": {
+    "message": "Considera attendibile"
+  },
+  "tipClose": {
+    "message": "Nasconde questo avviso e resta sulla pagina"
+  },
+  "tipLeave": {
+    "message": "Chiude questa pagina e apre una nuova scheda"
+  },
+  "tipTrust": {
+    "message": "Interrompe tutti i controlli su questo sito dopo la tua conferma"
+  },
+  "tipUntrust": {
+    "message": "Riprende a controllare questo sito"
+  },
+  "bannerReported": {
+    "message": "Questo sito è segnalato come dannoso."
+  },
+  "bannerDetails": {
+    "message": "Dettagli"
+  },
+  "bannerFirstSeen": {
+    "message": "visto per la prima volta il $1"
+  },
+  "bannerWeb3": {
+    "message": "Questo sito carica codice nascosto da una blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "I siti violati usano questo trucco per mostrare false pagine CAPTCHA."
+  },
+  "bannerInstructions": {
+    "message": "Questa pagina ti chiede di incollare qualcosa in Esegui, nel Terminale o in Esplora file."
+  },
+  "bannerInstructionsDetail": {
+    "message": "I siti veri non te lo chiedono mai."
+  },
+  "rep_clickfix": {
+    "message": "una pagina ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "una pagina ClickFix che diffonde $1"
+  },
+  "rep_malware": {
+    "message": "un download di malware"
+  },
+  "rep_malware_family": {
+    "message": "un download di $1"
+  },
+  "rep_c2": {
+    "message": "un server di controllo di malware"
+  },
+  "rep_c2_family": {
+    "message": "un server di controllo di $1"
+  },
+  "rep_phishing": {
+    "message": "una pagina di phishing"
+  },
+  "rep_phishing_family": {
+    "message": "una pagina di phishing $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "download di malware"
+  },
+  "category_c2": {
+    "message": "server di controllo di malware"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "Smettere di proteggere $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Aprire comunque $1?"
+  },
+  "confirmReported": {
+    "message": "Questo sito è segnalato in database pubblici di minacce."
+  },
+  "confirmBodyStrong": {
+    "message": "infettare il tuo computer e rubare le tue password, le carte di credito salvate e i portafogli di criptovalute"
+  },
+  "confirmOnlyReported": {
+    "message": "Fallo solo se sai che la segnalazione è sbagliata."
+  },
+  "confirmOnlyKnown": {
+    "message": "Fallo solo per siti che conosci bene."
+  },
+  "confirmCheckTrust": {
+    "message": "So che posso perdere credenziali, cookie e denaro considerando attendibile questo sito"
+  },
+  "confirmCheckOpen": {
+    "message": "So che posso perdere credenziali, cookie e denaro aprendo questo sito"
+  },
+  "confirmTrust": {
+    "message": "Considera attendibile"
+  },
+  "confirmOpen": {
+    "message": "Apri comunque"
+  },
+  "confirmKeep": {
+    "message": "Mantieni la protezione"
+  },
+  "warnTitle": {
+    "message": "Sito pericoloso bloccato"
+  },
+  "warnAddress": {
+    "message": "Indirizzo"
+  },
+  "warnReportedBy": {
+    "message": "Segnalato da"
+  },
+  "warnSteals": {
+    "message": "ruba le tue password, le carte di credito salvate e i portafogli di criptovalute"
+  },
+  "warnLeave": {
+    "message": "Torna al sicuro"
+  },
+  "warnLeaveTip": {
+    "message": "Apre una nuova scheda al posto di questo sito"
+  },
+  "warnContinue": {
+    "message": "Apri comunque"
+  },
+  "warnContinueTip": {
+    "message": "Apre il sito per la prossima ora dopo che hai confermato il rischio"
+  },
+  "warnAdvice": {
+    "message": "Nessun sito vero ti chiede di incollare qualcosa in Esegui, nel Terminale o in Esplora file."
+  },
+  "popupOn": {
+    "message": "Attiva"
+  },
+  "popupOff": {
+    "message": "La protezione è disattivata."
+  },
+  "popupNotWebPage": {
+    "message": "Non è una pagina web"
+  },
+  "popupTrusted": {
+    "message": "Considerato attendibile da te, non controllato"
+  },
+  "popupReported": {
+    "message": "Segnalato come dannoso"
+  },
+  "popupNoReports": {
+    "message": "Nessuna segnalazione su questo sito"
+  },
+  "popupUntrust": {
+    "message": "Non considerare più attendibile"
+  },
+  "popupUpdated": {
+    "message": "Aggiornato $1, regole versione $2"
+  },
+  "popupFeedNone": {
+    "message": "Database non ancora scaricato"
+  },
+  "popupFeedError": {
+    "message": "Aggiornamento del database non riuscito, vedi Impostazioni"
+  },
+  "popupNoDetections": {
+    "message": "Ancora nulla di bloccato"
+  },
+  "popupSettings": {
+    "message": "Impostazioni"
+  },
+  "popupHistory": {
+    "message": "Controlla la cronologia"
+  },
+  "popupUpdate": {
+    "message": "Aggiorna ora"
+  },
+  "popupUpdating": {
+    "message": "Aggiornamento in corso"
+  },
+  "popupRulesLine": {
+    "message": "Regole di rilevamento versione $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "integrate"
+  },
+  "popupRulesUpdated": {
+    "message": "aggiornate online"
+  },
+  "supportShort": {
+    "message": "Sostieni"
+  },
+  "tipSupport": {
+    "message": "Apre una pagina dove puoi sostenere ClickFix Warden con una donazione"
+  },
+  "supportProject": {
+    "message": "Sostieni il progetto"
+  },
+  "kind_clipboard": {
+    "message": "Comando negli appunti"
+  },
+  "kind_manual_copy": {
+    "message": "Comando copiato"
+  },
+  "kind_paste": {
+    "message": "Link di accesso incollato"
+  },
+  "kind_protocol": {
+    "message": "Link a un programma"
+  },
+  "kind_fullscreen": {
+    "message": "Finto aggiornamento a schermo intero"
+  },
+  "kind_page_instructions": {
+    "message": "Invito a incollare"
+  },
+  "kind_web3_loader": {
+    "message": "Caricamento da blockchain"
+  },
+  "kind_reputation": {
+    "message": "Sito segnalato"
+  },
+  "kind_reputation_block": {
+    "message": "Sito ClickFix noto"
+  },
+  "action_blocked": {
+    "message": "bloccato"
+  },
+  "action_warned": {
+    "message": "avviso mostrato"
+  },
+  "action_copied_anyway": {
+    "message": "copiato comunque"
+  },
+  "action_continued": {
+    "message": "aperto comunque"
+  },
+  "action_trusted": {
+    "message": "considerato attendibile"
+  },
+  "timeNever": {
+    "message": "mai"
+  },
+  "timeJustNow": {
+    "message": "proprio ora"
+  },
+  "timeMinutes": {
+    "message": "$1 min fa"
+  },
+  "timeHours": {
+    "message": "$1 h fa"
+  },
+  "timeDays": {
+    "message": "$1 giorni fa"
+  },
+  "navProtection": {
+    "message": "Protezione"
+  },
+  "navTrusted": {
+    "message": "Siti attendibili"
+  },
+  "navHistory": {
+    "message": "Controllo cronologia"
+  },
+  "navExtensions": {
+    "message": "Controllo estensioni"
+  },
+  "navLog": {
+    "message": "Registro rilevamenti"
+  },
+  "navDatabase": {
+    "message": "Database"
+  },
+  "navAbout": {
+    "message": "Informazioni"
+  },
+  "welcomeTitle": {
+    "message": "La protezione è attiva"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden ora controlla le pagine che cercano di spingerti a eseguire comandi, e ti avvisa dei siti segnalati come dannosi."
+  },
+  "welcomePrivacy": {
+    "message": "Tutto viene controllato nel tuo browser, nulla sulla tua navigazione viene inviato altrove."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden ha bisogno di accedere a tutti i siti web per proteggerti su di essi."
+  },
+  "welcomeGrant": {
+    "message": "Consenti su tutti i siti web"
+  },
+  "tipGrantHosts": {
+    "message": "Permette a ClickFix Warden di controllare ogni pagina in cerca di trucchi ClickFix"
+  },
+  "managedNote": {
+    "message": "Alcune impostazioni sono gestite dalla tua organizzazione."
+  },
+  "protectionLead": {
+    "message": "Scegli cosa controlla ClickFix Warden. Tutto avviene nel tuo browser."
+  },
+  "setEnabled": {
+    "message": "Protezione attiva"
+  },
+  "tipEnabled": {
+    "message": "Attiva o disattiva tutti i controlli insieme"
+  },
+  "setClipboard": {
+    "message": "Blocca i comandi pericolosi negli appunti"
+  },
+  "tipClipboard": {
+    "message": "Impedisce alle pagine di mettere un comando nascosto negli appunti e al suo posto inserisce una nota innocua"
+  },
+  "setPaste": {
+    "message": "Blocca l'incolla di link di accesso nei siti web"
+  },
+  "tipPaste": {
+    "message": "Ti impedisce di incollare un link di accesso con un codice segreto in una pagina che potrebbe rubarti l'account"
+  },
+  "setProtocols": {
+    "message": "Blocca i link che aprono programmi sul tuo computer"
+  },
+  "tipProtocols": {
+    "message": "Impedisce alle pagine di aprire Editor di Script, la ricerca di Windows su cartelle remote e programmi simili"
+  },
+  "setFullscreen": {
+    "message": "Ferma le false pagine di aggiornamento a schermo intero"
+  },
+  "tipFullscreen": {
+    "message": "Impedisce alle pagine che ti chiedono di incollare comandi di bloccare lo schermo con un finto aggiornamento"
+  },
+  "setPageWarnings": {
+    "message": "Avvisa delle pagine con istruzioni per incollare"
+  },
+  "tipPageWarnings": {
+    "message": "Mostra una barra di avviso quando una pagina ti chiede di incollare qualcosa in Esegui, nel Terminale o in Esplora file"
+  },
+  "setWeb3": {
+    "message": "Controlla il codice caricato da una blockchain"
+  },
+  "tipWeb3": {
+    "message": "Avvisa quando un sito normale carica codice nascosto da una blockchain, un trucco usato dai siti violati"
+  },
+  "setReputation": {
+    "message": "Avvisa dei siti segnalati"
+  },
+  "tipReputation": {
+    "message": "Mostra una barra di avviso sui siti indicati come dannosi nei database pubblici di minacce"
+  },
+  "setBlockPage": {
+    "message": "Blocca i siti ClickFix noti prima che si carichino"
+  },
+  "tipBlockPage": {
+    "message": "Mostra un avviso a tutta pagina al posto di un sito che i database indicano come pagina ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Scarica gli aggiornamenti del database e delle regole"
+  },
+  "tipFeedUpdates": {
+    "message": "Scarica ogni ora l'elenco firmato dei siti segnalati e le regole di rilevamento più recenti"
+  },
+  "trustedLead": {
+    "message": "Questi siti non vengono controllati affatto, considerare attendibile un sito richiede la stessa conferma di un avviso."
+  },
+  "trustedInputLabel": {
+    "message": "Indirizzo del sito"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.azienda.it"
+  },
+  "trustedAdd": {
+    "message": "Aggiungi"
+  },
+  "tipTrustedAdd": {
+    "message": "Aggiunge il sito all'elenco dei siti non controllati, dopo la tua conferma"
+  },
+  "trustedRemove": {
+    "message": "Rimuovi"
+  },
+  "tipTrustedRemove": {
+    "message": "Riprende a controllare questo sito"
+  },
+  "trustedEmpty": {
+    "message": "Nessun sito attendibile"
+  },
+  "orgTitle": {
+    "message": "Messaggio negli avvisi"
+  },
+  "orgLead": {
+    "message": "Testo aggiuntivo mostrato in ogni avviso, ad esempio chi contattare nella tua azienda."
+  },
+  "orgPlaceholder": {
+    "message": "Ad esempio, chiama l'assistenza IT prima di continuare"
+  },
+  "orgSave": {
+    "message": "Salva"
+  },
+  "tipOrgSave": {
+    "message": "Salva il testo mostrato in ogni avviso"
+  },
+  "orgSaved": {
+    "message": "Salvato"
+  },
+  "historyLead": {
+    "message": "Controlla se hai visitato un sito che ora è presente nel database, il controllo avviene solo nel tuo browser."
+  },
+  "historyDays7": {
+    "message": "Ultimi 7 giorni"
+  },
+  "historyDays30": {
+    "message": "Ultimi 30 giorni"
+  },
+  "historyDays90": {
+    "message": "Ultimi 90 giorni"
+  },
+  "tipHistoryDays": {
+    "message": "Quanto indietro nel tempo controllare"
+  },
+  "historyScan": {
+    "message": "Controlla la cronologia"
+  },
+  "tipHistoryScan": {
+    "message": "Chiede l'accesso alla cronologia e la confronta con il database nel tuo browser"
+  },
+  "historyScanning": {
+    "message": "Controllo in corso"
+  },
+  "historyChecked": {
+    "message": "Controllati $1 indirizzi degli ultimi $2 giorni."
+  },
+  "historyClean": {
+    "message": "Nessun sito visitato è presente nell'elenco"
+  },
+  "historyFound": {
+    "message": "$1 indirizzi visitati sono presenti nell'elenco"
+  },
+  "historyAdvice": {
+    "message": "Se hai eseguito qualcosa che un sito dell'elenco ti ha chiesto, cambia le password da un altro dispositivo e fai controllare questo computer."
+  },
+  "historyDenied": {
+    "message": "L'accesso alla cronologia non è stato concesso."
+  },
+  "historyDrop": {
+    "message": "Rimuovi l'accesso alla cronologia"
+  },
+  "tipHistoryDrop": {
+    "message": "Restituisce il permesso della cronologia fino al prossimo controllo"
+  },
+  "exportJson": {
+    "message": "Esporta JSON"
+  },
+  "tipExport": {
+    "message": "Salva i risultati come file JSON su questo computer"
+  },
+  "tipExportLog": {
+    "message": "Salva il registro come file JSON su questo computer"
+  },
+  "colVisited": {
+    "message": "Ultima visita"
+  },
+  "colAddress": {
+    "message": "Indirizzo"
+  },
+  "colReport": {
+    "message": "Segnalazione"
+  },
+  "colTime": {
+    "message": "Ora"
+  },
+  "colWhat": {
+    "message": "Cosa"
+  },
+  "colSite": {
+    "message": "Sito"
+  },
+  "colDetails": {
+    "message": "Dettagli"
+  },
+  "extensionsLead": {
+    "message": "Cerca le estensioni del browser installate che sono note come dannose, ad esempio i falsi blocchi pubblicità usati negli attacchi CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Controlla le estensioni installate"
+  },
+  "tipExtensionsScan": {
+    "message": "Chiede il permesso di elencare le tue estensioni e le confronta con un elenco di estensioni dannose note"
+  },
+  "extensionsDrop": {
+    "message": "Rimuovi l'accesso"
+  },
+  "tipExtensionsDrop": {
+    "message": "Restituisce il permesso di elencare le tue estensioni"
+  },
+  "extensionsDenied": {
+    "message": "L'accesso non è stato concesso."
+  },
+  "extensionsChecked": {
+    "message": "Controllate $1 estensioni installate."
+  },
+  "extensionsClean": {
+    "message": "Nessuna estensione dannosa nota trovata"
+  },
+  "extensionsKnownAs": {
+    "message": "Nota come $1"
+  },
+  "extensionsRemove": {
+    "message": "Rimuovi"
+  },
+  "tipExtensionsRemove": {
+    "message": "Disinstalla questa estensione dopo la tua conferma"
+  },
+  "logLead": {
+    "message": "Cosa ha bloccato o segnalato ClickFix Warden, il registro resta su questo computer."
+  },
+  "logClear": {
+    "message": "Svuota il registro"
+  },
+  "tipLogClear": {
+    "message": "Elimina tutte le voci del registro"
+  },
+  "logClearConfirm": {
+    "message": "Eliminare tutte le voci del registro dei rilevamenti?"
+  },
+  "databaseLead": {
+    "message": "Le segnalazioni provengono dai database pubblici di abuse.ch e vengono verificate con una firma digitale prima dell'uso."
+  },
+  "dbGenerated": {
+    "message": "$1 segnalazioni, pubblicate $2"
+  },
+  "dbChecked": {
+    "message": "Ultimo controllo $1"
+  },
+  "dbError": {
+    "message": "Ultimo aggiornamento non riuscito, $1"
+  },
+  "dbUpdated": {
+    "message": "Aggiornato"
+  },
+  "tipUpdateNow": {
+    "message": "Scarica subito il database e le regole più recenti"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden non raccoglie dati, non ha account, né telemetria, né un server proprio."
+  },
+  "aboutNetwork": {
+    "message": "Scarica soltanto il database e le regole firmati da GitHub, che vede la stessa richiesta di qualsiasi aggiornamento."
+  },
+  "aboutProject": {
+    "message": "Codice sorgente"
+  },
+  "aboutPolicy": {
+    "message": "Informativa sulla privacy"
+  },
+  "descClipboard": {
+    "message": "Questa pagina ha cercato di mettere negli appunti $1. L'operazione è stata bloccata perché $2."
+  },
+  "descManual": {
+    "message": "Il testo che hai cercato di copiare è $1, e non è stato copiato perché $2."
+  },
+  "descPaste": {
+    "message": "Stavi per incollare $1 in questa pagina. L'operazione è stata bloccata perché $2."
+  },
+  "descProtocol": {
+    "message": "Questa pagina ha cercato di aprire $1. L'operazione è stata bloccata perché $2."
+  },
+  "descFullscreen": {
+    "message": "Questa pagina ha cercato di $1. L'operazione è stata bloccata perché $2."
+  },
+  "repLine": {
+    "message": "$1 lo indica come $2, visto per la prima volta il $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 lo indica come $2."
+  },
+  "warnLead": {
+    "message": "$1 è indicato in $2 come $3. Pagine come questa ti spingono a incollare un comando che $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 è presente nei database pubblici di minacce. Pagine come questa ti spingono a incollare un comando che $2."
+  },
+  "confirmBody": {
+    "message": "Se continui, ClickFix Warden smette di controllare questo sito, e una pagina come questa può $1."
+  },
+  "popupBlockedLine": {
+    "message": "ClickFix Warden ha bloccato $1 $2"
+  },
+  "popupReports": {
+    "message": "$1 indirizzi segnalati"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "Editor di Script con uno script già pronto"
+  },
+  "proto_search_ms": {
+    "message": "una finestra di ricerca di Windows su una cartella remota"
+  },
+  "proto_ms_msdt": {
+    "message": "lo strumento di risoluzione dei problemi di Windows con impostazioni nascoste"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office con impostazioni nascoste"
+  },
+  "proto_ms_appinstaller": {
+    "message": "un programma di installazione di app da Internet"
+  },
+  "setLanguage": {
+    "message": "Lingua"
+  },
+  "tipLanguage": {
+    "message": "Cambia la lingua di ClickFix Warden, Predefinita del browser segue la lingua del tuo browser"
+  },
+  "langBrowser": {
+    "message": "Predefinita del browser"
+  }
+}

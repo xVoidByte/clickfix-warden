@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Chặn tấn công ClickFix và CAPTCHA giả lừa bạn chạy lệnh, đồng thời cảnh báo về các trang bị báo cáo là độc hại."
+  },
+  "dangerLabel": {
+    "message": "TRANG WEB CÓ THỂ NGUY HIỂM"
+  },
+  "titleClipboard": {
+    "message": "Đã chặn lệnh nguy hiểm"
+  },
+  "titleManual": {
+    "message": "Lệnh nguy hiểm không được sao chép"
+  },
+  "titlePaste": {
+    "message": "Đã chặn thao tác dán nguy hiểm"
+  },
+  "titleProtocol": {
+    "message": "Đã chặn liên kết nguy hiểm"
+  },
+  "titleFullscreen": {
+    "message": "Đã chặn màn hình cập nhật giả"
+  },
+  "descNote": {
+    "message": "Bảng tạm của bạn giờ chỉ chứa một ghi chú vô hại, nên dán vào cũng không có tác dụng gì."
+  },
+  "descManualNote": {
+    "message": "Một ghi chú vô hại đã được sao chép thay thế."
+  },
+  "descFullscreenNote": {
+    "message": "Nhấn Esc nếu vẫn còn thứ gì che màn hình, sau đó đóng tab."
+  },
+  "whatTemplate": {
+    "message": "$1 sẽ $2"
+  },
+  "what_powershell": {
+    "message": "một lệnh PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "một lệnh PowerShell ẩn"
+  },
+  "what_applescript": {
+    "message": "một lệnh AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "một lệnh AppleScript ẩn"
+  },
+  "what_terminal": {
+    "message": "một lệnh Terminal"
+  },
+  "what_terminal_hidden": {
+    "message": "một lệnh Terminal ẩn"
+  },
+  "what_script": {
+    "message": "một lệnh script"
+  },
+  "what_script_hidden": {
+    "message": "một lệnh script ẩn"
+  },
+  "what_cmd": {
+    "message": "một lệnh của Dấu nhắc Lệnh"
+  },
+  "what_cmd_hidden": {
+    "message": "một lệnh ẩn của Dấu nhắc Lệnh"
+  },
+  "what_windows": {
+    "message": "một lệnh Windows"
+  },
+  "what_windows_hidden": {
+    "message": "một lệnh Windows ẩn"
+  },
+  "what_generic": {
+    "message": "một lệnh"
+  },
+  "what_generic_hidden": {
+    "message": "một lệnh ẩn"
+  },
+  "effect_download_run": {
+    "message": "tải xuống và chạy một chương trình"
+  },
+  "effect_disables_av": {
+    "message": "tắt tính năng bảo vệ chống vi-rút của bạn"
+  },
+  "effect_password": {
+    "message": "hỏi mật khẩu của bạn bằng một cửa sổ giả"
+  },
+  "effect_remote_share": {
+    "message": "chạy tệp từ một thư mục chia sẻ trên mạng từ xa"
+  },
+  "effect_remote_script": {
+    "message": "chạy một script trực tiếp từ Internet"
+  },
+  "effect_remote_install": {
+    "message": "cài đặt một chương trình trực tiếp từ Internet"
+  },
+  "effect_dns": {
+    "message": "lấy các lệnh ẩn từ bản ghi DNS"
+  },
+  "effect_finger": {
+    "message": "lấy các lệnh ẩn từ một máy chủ từ xa"
+  },
+  "effect_runs": {
+    "message": "tự chạy trên máy tính của bạn mà không hỏi"
+  },
+  "whyPage1": {
+    "message": "trang này $1"
+  },
+  "whyPage2": {
+    "message": "trang này $1 và $2"
+  },
+  "lure_captcha": {
+    "message": "giả làm CAPTCHA"
+  },
+  "lure_update": {
+    "message": "giả vờ đang cài đặt bản cập nhật"
+  },
+  "lure_fix": {
+    "message": "đưa lệnh ra như cách sửa một lỗi"
+  },
+  "target_explorer": {
+    "message": "bảo bạn dán lệnh vào thanh địa chỉ của File Explorer"
+  },
+  "target_terminal": {
+    "message": "bảo bạn dán lệnh vào Terminal"
+  },
+  "target_run": {
+    "message": "bảo bạn dán lệnh vào hộp thoại Chạy"
+  },
+  "target_paste": {
+    "message": "bảo bạn dán lệnh vào đâu đó trên máy tính"
+  },
+  "why_payload_reported": {
+    "message": "lệnh này tải xuống từ một địa chỉ bị báo cáo là độc hại"
+  },
+  "why_site_reported": {
+    "message": "trang web này bị báo cáo là độc hại"
+  },
+  "why_decoy": {
+    "message": "có văn bản xác minh giả được giấu sau lệnh"
+  },
+  "why_padding": {
+    "message": "lệnh thật bị giấu sau một khoảng trống dài"
+  },
+  "why_disguised": {
+    "message": "lệnh được ngụy trang để che giấu việc nó làm"
+  },
+  "why_hidden_window": {
+    "message": "lệnh này chạy trong một cửa sổ ẩn"
+  },
+  "why_generic": {
+    "message": "lệnh này mang dấu hiệu của một cuộc tấn công ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "trang này bảo bạn dán một lệnh"
+  },
+  "fullscreenWhat": {
+    "message": "chiếm toàn bộ màn hình giống như một bản cập nhật Windows giả"
+  },
+  "pasteWhat": {
+    "message": "một liên kết đăng nhập có chứa mã bí mật"
+  },
+  "pasteWhy": {
+    "message": "những trang như thế này có thể dùng nó để chiếm tài khoản của bạn"
+  },
+  "protocolWhy": {
+    "message": "những liên kết như thế này có thể chạy lệnh trên máy tính của bạn mà bạn không hề hay biết"
+  },
+  "btnClose": {
+    "message": "Đóng"
+  },
+  "btnLeave": {
+    "message": "Rời khỏi trang này"
+  },
+  "btnTrust": {
+    "message": "Tin cậy trang này"
+  },
+  "tipClose": {
+    "message": "Ẩn cảnh báo này và ở lại trang"
+  },
+  "tipLeave": {
+    "message": "Đóng trang này và mở một tab mới"
+  },
+  "tipTrust": {
+    "message": "Dừng mọi kiểm tra trên trang này sau khi bạn xác nhận"
+  },
+  "tipUntrust": {
+    "message": "Bắt đầu kiểm tra lại trang này"
+  },
+  "bannerReported": {
+    "message": "Trang web này bị báo cáo là độc hại."
+  },
+  "bannerDetails": {
+    "message": "Chi tiết"
+  },
+  "bannerFirstSeen": {
+    "message": "lần đầu phát hiện $1"
+  },
+  "bannerWeb3": {
+    "message": "Trang này tải mã ẩn từ một blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "Các trang web bị tấn công dùng thủ đoạn này để hiển thị trang CAPTCHA giả."
+  },
+  "bannerInstructions": {
+    "message": "Trang này bảo bạn dán thứ gì đó vào Chạy, Terminal hoặc File Explorer."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Trang web thật không bao giờ yêu cầu bạn làm như vậy."
+  },
+  "rep_clickfix": {
+    "message": "một trang ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "một trang ClickFix phát tán $1"
+  },
+  "rep_malware": {
+    "message": "một nguồn tải phần mềm độc hại"
+  },
+  "rep_malware_family": {
+    "message": "một nguồn tải $1"
+  },
+  "rep_c2": {
+    "message": "một máy chủ điều khiển phần mềm độc hại"
+  },
+  "rep_c2_family": {
+    "message": "một máy chủ điều khiển $1"
+  },
+  "rep_phishing": {
+    "message": "một trang lừa đảo"
+  },
+  "rep_phishing_family": {
+    "message": "một trang lừa đảo $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "nguồn tải phần mềm độc hại"
+  },
+  "category_c2": {
+    "message": "máy chủ điều khiển phần mềm độc hại"
+  },
+  "category_phishing": {
+    "message": "lừa đảo"
+  },
+  "confirmTrustTitle": {
+    "message": "Ngừng bảo vệ $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Vẫn mở $1?"
+  },
+  "confirmReported": {
+    "message": "Trang web này bị báo cáo trong các cơ sở dữ liệu mối đe dọa công khai."
+  },
+  "confirmBodyStrong": {
+    "message": "lây nhiễm máy tính của bạn và đánh cắp mật khẩu, thẻ tín dụng đã lưu và ví tiền mã hóa của bạn"
+  },
+  "confirmOnlyReported": {
+    "message": "Chỉ làm điều này nếu bạn biết báo cáo là sai."
+  },
+  "confirmOnlyKnown": {
+    "message": "Chỉ làm điều này với những trang bạn biết rõ."
+  },
+  "confirmCheckTrust": {
+    "message": "Tôi hiểu rằng tôi có thể mất thông tin đăng nhập, cookie và tiền khi tin cậy trang này"
+  },
+  "confirmCheckOpen": {
+    "message": "Tôi hiểu rằng tôi có thể mất thông tin đăng nhập, cookie và tiền khi mở trang này"
+  },
+  "confirmTrust": {
+    "message": "Tin cậy trang này"
+  },
+  "confirmOpen": {
+    "message": "Vẫn mở"
+  },
+  "confirmKeep": {
+    "message": "Tiếp tục bảo vệ tôi"
+  },
+  "warnTitle": {
+    "message": "Đã chặn trang web nguy hiểm"
+  },
+  "warnAddress": {
+    "message": "Địa chỉ"
+  },
+  "warnReportedBy": {
+    "message": "Được báo cáo bởi"
+  },
+  "warnSteals": {
+    "message": "đánh cắp mật khẩu, thẻ tín dụng đã lưu và ví tiền mã hóa của bạn"
+  },
+  "warnLeave": {
+    "message": "Quay lại nơi an toàn"
+  },
+  "warnLeaveTip": {
+    "message": "Mở một tab mới thay cho trang này"
+  },
+  "warnContinue": {
+    "message": "Vẫn mở"
+  },
+  "warnContinueTip": {
+    "message": "Mở trang này trong một giờ tới sau khi bạn xác nhận rủi ro"
+  },
+  "warnAdvice": {
+    "message": "Không có trang web thật nào yêu cầu bạn dán bất cứ thứ gì vào Chạy, Terminal hoặc File Explorer."
+  },
+  "popupOn": {
+    "message": "Bật"
+  },
+  "popupOff": {
+    "message": "Tính năng bảo vệ đang tắt."
+  },
+  "popupNotWebPage": {
+    "message": "Không phải trang web"
+  },
+  "popupTrusted": {
+    "message": "Bạn đã tin cậy, không kiểm tra"
+  },
+  "popupReported": {
+    "message": "Bị báo cáo là độc hại"
+  },
+  "popupNoReports": {
+    "message": "Không có báo cáo nào về trang này"
+  },
+  "popupUntrust": {
+    "message": "Ngừng tin cậy trang này"
+  },
+  "popupUpdated": {
+    "message": "Cập nhật $1, phiên bản quy tắc $2"
+  },
+  "popupFeedNone": {
+    "message": "Chưa tải cơ sở dữ liệu xuống"
+  },
+  "popupFeedError": {
+    "message": "Cập nhật cơ sở dữ liệu thất bại, hãy xem Cài đặt"
+  },
+  "popupNoDetections": {
+    "message": "Chưa chặn gì"
+  },
+  "popupSettings": {
+    "message": "Cài đặt"
+  },
+  "popupHistory": {
+    "message": "Kiểm tra lịch sử của tôi"
+  },
+  "popupUpdate": {
+    "message": "Cập nhật ngay"
+  },
+  "popupUpdating": {
+    "message": "Đang cập nhật"
+  },
+  "popupRulesLine": {
+    "message": "Quy tắc phát hiện phiên bản $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "có sẵn"
+  },
+  "popupRulesUpdated": {
+    "message": "đã cập nhật trực tuyến"
+  },
+  "supportShort": {
+    "message": "Ủng hộ"
+  },
+  "tipSupport": {
+    "message": "Mở trang nơi bạn có thể ủng hộ ClickFix Warden bằng một khoản quyên góp"
+  },
+  "supportProject": {
+    "message": "Ủng hộ dự án"
+  },
+  "kind_clipboard": {
+    "message": "Lệnh trong bảng tạm"
+  },
+  "kind_manual_copy": {
+    "message": "Lệnh được sao chép"
+  },
+  "kind_paste": {
+    "message": "Dán liên kết đăng nhập"
+  },
+  "kind_protocol": {
+    "message": "Liên kết mở chương trình"
+  },
+  "kind_fullscreen": {
+    "message": "Màn hình cập nhật giả"
+  },
+  "kind_page_instructions": {
+    "message": "Hướng dẫn dán"
+  },
+  "kind_web3_loader": {
+    "message": "Trình tải từ blockchain"
+  },
+  "kind_reputation": {
+    "message": "Trang bị báo cáo"
+  },
+  "kind_reputation_block": {
+    "message": "Trang ClickFix đã biết"
+  },
+  "action_blocked": {
+    "message": "đã chặn"
+  },
+  "action_warned": {
+    "message": "đã cảnh báo"
+  },
+  "action_copied_anyway": {
+    "message": "vẫn sao chép"
+  },
+  "action_continued": {
+    "message": "vẫn mở"
+  },
+  "action_trusted": {
+    "message": "đã tin cậy"
+  },
+  "timeNever": {
+    "message": "chưa bao giờ"
+  },
+  "timeJustNow": {
+    "message": "vừa xong"
+  },
+  "timeMinutes": {
+    "message": "$1 phút trước"
+  },
+  "timeHours": {
+    "message": "$1 giờ trước"
+  },
+  "timeDays": {
+    "message": "$1 ngày trước"
+  },
+  "navProtection": {
+    "message": "Bảo vệ"
+  },
+  "navTrusted": {
+    "message": "Trang tin cậy"
+  },
+  "navHistory": {
+    "message": "Kiểm tra lịch sử"
+  },
+  "navExtensions": {
+    "message": "Kiểm tra tiện ích"
+  },
+  "navLog": {
+    "message": "Nhật ký phát hiện"
+  },
+  "navDatabase": {
+    "message": "Cơ sở dữ liệu"
+  },
+  "navAbout": {
+    "message": "Giới thiệu"
+  },
+  "welcomeTitle": {
+    "message": "Bạn đã được bảo vệ"
+  },
+  "welcomeBody": {
+    "message": "Giờ đây ClickFix Warden theo dõi các trang tìm cách lừa bạn chạy lệnh, và cảnh báo bạn về các trang bị báo cáo là độc hại."
+  },
+  "welcomePrivacy": {
+    "message": "Mọi thứ đều được kiểm tra ngay trong trình duyệt của bạn, không có thông tin duyệt web nào được gửi đi đâu cả."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden cần quyền truy cập vào tất cả các trang web để bảo vệ chúng."
+  },
+  "welcomeGrant": {
+    "message": "Cho phép trên tất cả các trang web"
+  },
+  "tipGrantHosts": {
+    "message": "Cho phép ClickFix Warden theo dõi mọi trang để phát hiện thủ đoạn ClickFix"
+  },
+  "managedNote": {
+    "message": "Một số cài đặt do tổ chức của bạn quản lý."
+  },
+  "protectionLead": {
+    "message": "Chọn những gì ClickFix Warden sẽ theo dõi. Mọi thứ đều chạy trong trình duyệt của bạn."
+  },
+  "setEnabled": {
+    "message": "Bật bảo vệ"
+  },
+  "tipEnabled": {
+    "message": "Bật hoặc tắt mọi kiểm tra cùng lúc"
+  },
+  "setClipboard": {
+    "message": "Chặn lệnh nguy hiểm trong bảng tạm"
+  },
+  "tipClipboard": {
+    "message": "Ngăn các trang đưa lệnh ẩn vào bảng tạm của bạn và đặt một ghi chú vô hại vào đó thay thế"
+  },
+  "setPaste": {
+    "message": "Chặn việc dán liên kết đăng nhập vào trang web"
+  },
+  "tipPaste": {
+    "message": "Ngăn bạn dán liên kết đăng nhập có chứa mã bí mật vào một trang có thể đánh cắp tài khoản của bạn"
+  },
+  "setProtocols": {
+    "message": "Chặn liên kết mở chương trình trên máy tính của bạn"
+  },
+  "tipProtocols": {
+    "message": "Ngăn các trang mở Trình soạn thảo Tập lệnh, Tìm kiếm Windows trên thư mục từ xa và các chương trình tương tự"
+  },
+  "setFullscreen": {
+    "message": "Chặn trang cập nhật toàn màn hình giả"
+  },
+  "tipFullscreen": {
+    "message": "Ngăn các trang bảo bạn dán lệnh khóa màn hình bằng một bản cập nhật giả"
+  },
+  "setPageWarnings": {
+    "message": "Cảnh báo về trang có hướng dẫn dán"
+  },
+  "tipPageWarnings": {
+    "message": "Hiển thị thanh cảnh báo khi một trang bảo bạn dán thứ gì đó vào Chạy, Terminal hoặc File Explorer"
+  },
+  "setWeb3": {
+    "message": "Theo dõi mã được tải từ blockchain"
+  },
+  "tipWeb3": {
+    "message": "Cảnh báo khi một trang web bình thường lấy mã ẩn từ blockchain, một thủ đoạn mà các trang bị tấn công hay dùng"
+  },
+  "setReputation": {
+    "message": "Cảnh báo về trang bị báo cáo"
+  },
+  "tipReputation": {
+    "message": "Hiển thị thanh cảnh báo trên các trang được liệt kê là độc hại trong cơ sở dữ liệu mối đe dọa công khai"
+  },
+  "setBlockPage": {
+    "message": "Chặn các trang ClickFix đã biết trước khi chúng tải"
+  },
+  "tipBlockPage": {
+    "message": "Hiển thị cảnh báo toàn trang thay cho trang mà cơ sở dữ liệu liệt kê là trang ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Tải xuống bản cập nhật cơ sở dữ liệu và quy tắc"
+  },
+  "tipFeedUpdates": {
+    "message": "Tải xuống danh sách trang bị báo cáo đã ký và các quy tắc phát hiện mới nhất mỗi giờ"
+  },
+  "trustedLead": {
+    "message": "Các trang này hoàn toàn không được kiểm tra, việc tin cậy một trang cần xác nhận giống như trong cảnh báo."
+  },
+  "trustedInputLabel": {
+    "message": "Địa chỉ trang"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "Thêm"
+  },
+  "tipTrustedAdd": {
+    "message": "Thêm trang vào danh sách các trang không được kiểm tra, sau khi bạn xác nhận"
+  },
+  "trustedRemove": {
+    "message": "Xóa"
+  },
+  "tipTrustedRemove": {
+    "message": "Bắt đầu kiểm tra lại trang này"
+  },
+  "trustedEmpty": {
+    "message": "Không có trang tin cậy nào"
+  },
+  "orgTitle": {
+    "message": "Thông điệp trong cảnh báo"
+  },
+  "orgLead": {
+    "message": "Nội dung bổ sung hiển thị trong mọi cảnh báo, ví dụ người cần liên hệ trong công ty của bạn."
+  },
+  "orgPlaceholder": {
+    "message": "Ví dụ, hãy gọi bộ phận hỗ trợ IT trước khi tiếp tục"
+  },
+  "orgSave": {
+    "message": "Lưu"
+  },
+  "tipOrgSave": {
+    "message": "Lưu nội dung hiển thị trong mọi cảnh báo"
+  },
+  "orgSaved": {
+    "message": "Đã lưu"
+  },
+  "historyLead": {
+    "message": "Kiểm tra xem bạn có từng truy cập trang nào hiện có trong cơ sở dữ liệu không, việc kiểm tra chỉ chạy trong trình duyệt của bạn."
+  },
+  "historyDays7": {
+    "message": "7 ngày qua"
+  },
+  "historyDays30": {
+    "message": "30 ngày qua"
+  },
+  "historyDays90": {
+    "message": "90 ngày qua"
+  },
+  "tipHistoryDays": {
+    "message": "Khoảng thời gian cần kiểm tra"
+  },
+  "historyScan": {
+    "message": "Kiểm tra lịch sử của tôi"
+  },
+  "tipHistoryScan": {
+    "message": "Yêu cầu quyền truy cập lịch sử của bạn và so sánh với cơ sở dữ liệu ngay trong trình duyệt"
+  },
+  "historyScanning": {
+    "message": "Đang kiểm tra"
+  },
+  "historyChecked": {
+    "message": "Đã kiểm tra $1 địa chỉ trong $2 ngày qua."
+  },
+  "historyClean": {
+    "message": "Không có trang đã truy cập nào nằm trong danh sách"
+  },
+  "historyFound": {
+    "message": "Có $1 địa chỉ đã truy cập nằm trong danh sách"
+  },
+  "historyAdvice": {
+    "message": "Nếu bạn đã chạy bất cứ thứ gì theo lời một trang trong danh sách, hãy đổi mật khẩu từ một thiết bị khác và nhờ người kiểm tra máy tính này."
+  },
+  "historyDenied": {
+    "message": "Quyền truy cập lịch sử chưa được cấp."
+  },
+  "historyDrop": {
+    "message": "Thu hồi quyền truy cập lịch sử"
+  },
+  "tipHistoryDrop": {
+    "message": "Trả lại quyền truy cập lịch sử cho đến khi bạn kiểm tra lần nữa"
+  },
+  "exportJson": {
+    "message": "Xuất JSON"
+  },
+  "tipExport": {
+    "message": "Lưu kết quả thành tệp JSON trên máy tính này"
+  },
+  "tipExportLog": {
+    "message": "Lưu nhật ký thành tệp JSON trên máy tính này"
+  },
+  "colVisited": {
+    "message": "Lần truy cập cuối"
+  },
+  "colAddress": {
+    "message": "Địa chỉ"
+  },
+  "colReport": {
+    "message": "Báo cáo"
+  },
+  "colTime": {
+    "message": "Thời gian"
+  },
+  "colWhat": {
+    "message": "Nội dung"
+  },
+  "colSite": {
+    "message": "Trang"
+  },
+  "colDetails": {
+    "message": "Chi tiết"
+  },
+  "extensionsLead": {
+    "message": "Tìm các tiện ích trình duyệt đã cài đặt được biết là độc hại, chẳng hạn như trình chặn quảng cáo giả dùng trong các cuộc tấn công CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Kiểm tra tiện ích đã cài đặt"
+  },
+  "tipExtensionsScan": {
+    "message": "Yêu cầu quyền liệt kê các tiện ích của bạn và so sánh với danh sách tiện ích độc hại đã biết"
+  },
+  "extensionsDrop": {
+    "message": "Thu hồi quyền truy cập"
+  },
+  "tipExtensionsDrop": {
+    "message": "Trả lại quyền liệt kê các tiện ích của bạn"
+  },
+  "extensionsDenied": {
+    "message": "Quyền truy cập chưa được cấp."
+  },
+  "extensionsChecked": {
+    "message": "Đã kiểm tra $1 tiện ích đã cài đặt."
+  },
+  "extensionsClean": {
+    "message": "Không tìm thấy tiện ích độc hại nào đã biết"
+  },
+  "extensionsKnownAs": {
+    "message": "Được biết đến với tên $1"
+  },
+  "extensionsRemove": {
+    "message": "Gỡ bỏ"
+  },
+  "tipExtensionsRemove": {
+    "message": "Gỡ cài đặt tiện ích này sau khi bạn xác nhận"
+  },
+  "logLead": {
+    "message": "Những gì ClickFix Warden đã chặn hoặc cảnh báo, nhật ký chỉ lưu trên máy tính này."
+  },
+  "logClear": {
+    "message": "Xóa nhật ký"
+  },
+  "tipLogClear": {
+    "message": "Xóa mọi mục trong nhật ký"
+  },
+  "logClearConfirm": {
+    "message": "Xóa mọi mục trong nhật ký phát hiện?"
+  },
+  "databaseLead": {
+    "message": "Các báo cáo đến từ cơ sở dữ liệu công khai của abuse.ch và được kiểm tra chữ ký số trước khi sử dụng."
+  },
+  "dbGenerated": {
+    "message": "$1 báo cáo, phát hành $2"
+  },
+  "dbChecked": {
+    "message": "Kiểm tra lần cuối $1"
+  },
+  "dbError": {
+    "message": "Lần cập nhật gần nhất thất bại, $1"
+  },
+  "dbUpdated": {
+    "message": "Đã cập nhật mới nhất"
+  },
+  "tipUpdateNow": {
+    "message": "Tải xuống cơ sở dữ liệu và quy tắc mới nhất ngay bây giờ"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden không thu thập dữ liệu nào, không có tài khoản, không có đo từ xa và không có máy chủ riêng."
+  },
+  "aboutNetwork": {
+    "message": "Thứ duy nhất nó tải xuống là cơ sở dữ liệu và quy tắc đã ký từ GitHub, nơi chỉ thấy yêu cầu giống như bất kỳ bản cập nhật nào."
+  },
+  "aboutProject": {
+    "message": "Mã nguồn"
+  },
+  "aboutPolicy": {
+    "message": "Chính sách quyền riêng tư"
+  },
+  "descClipboard": {
+    "message": "Trang này đã cố đưa vào bảng tạm của bạn $1. Thao tác đã bị chặn vì $2."
+  },
+  "descManual": {
+    "message": "Văn bản bạn định sao chép là $1, và nó không được sao chép vì $2."
+  },
+  "descPaste": {
+    "message": "Bạn sắp dán $1 vào trang này. Thao tác đã bị chặn vì $2."
+  },
+  "descProtocol": {
+    "message": "Trang này đã cố mở $1. Thao tác đã bị chặn vì $2."
+  },
+  "descFullscreen": {
+    "message": "Trang này đã cố $1. Thao tác đã bị chặn vì $2."
+  },
+  "repLine": {
+    "message": "$1 liệt kê trang này là $2, lần đầu phát hiện ngày $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 liệt kê trang này là $2."
+  },
+  "warnLead": {
+    "message": "$1 được $2 liệt kê là $3. Những trang như thế này lừa bạn dán một lệnh sẽ $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 có trong các cơ sở dữ liệu mối đe dọa công khai. Những trang như thế này lừa bạn dán một lệnh sẽ $2."
+  },
+  "confirmBody": {
+    "message": "Nếu bạn tiếp tục, ClickFix Warden sẽ ngừng kiểm tra trang này, và một trang như thế này có thể $1."
+  },
+  "popupBlockedLine": {
+    "message": "Đã chặn $1, $2"
+  },
+  "popupReports": {
+    "message": "$1 địa chỉ bị báo cáo"
+  },
+  "kindAction": {
+    "message": "$1 ($2)"
+  },
+  "proto_applescript": {
+    "message": "Trình soạn thảo Tập lệnh với một tập lệnh được chuẩn bị sẵn"
+  },
+  "proto_search_ms": {
+    "message": "một cửa sổ Tìm kiếm Windows trỏ đến thư mục từ xa"
+  },
+  "proto_ms_msdt": {
+    "message": "Trình khắc phục sự cố Windows với các cài đặt ẩn"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office với các cài đặt ẩn"
+  },
+  "proto_ms_appinstaller": {
+    "message": "một trình cài đặt ứng dụng từ Internet"
+  },
+  "setLanguage": {
+    "message": "Ngôn ngữ"
+  },
+  "tipLanguage": {
+    "message": "Thay đổi ngôn ngữ của ClickFix Warden, Mặc định của trình duyệt sẽ theo ngôn ngữ trình duyệt của bạn"
+  },
+  "langBrowser": {
+    "message": "Mặc định của trình duyệt"
+  }
+}

@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Menghentikan serangan ClickFix dan CAPTCHA palsu yang menipu Anda agar menjalankan perintah, serta memperingatkan situs berbahaya."
+  },
+  "dangerLabel": {
+    "message": "SITUS BERPOTENSI BERBAHAYA"
+  },
+  "titleClipboard": {
+    "message": "Perintah berbahaya diblokir"
+  },
+  "titleManual": {
+    "message": "Perintah berbahaya tidak disalin"
+  },
+  "titlePaste": {
+    "message": "Penempelan berbahaya diblokir"
+  },
+  "titleProtocol": {
+    "message": "Tautan berbahaya diblokir"
+  },
+  "titleFullscreen": {
+    "message": "Layar pembaruan palsu diblokir"
+  },
+  "descNote": {
+    "message": "Papan klip Anda kini berisi catatan yang tidak berbahaya, jadi menempel tidak akan melakukan apa pun."
+  },
+  "descManualNote": {
+    "message": "Sebagai gantinya, catatan yang tidak berbahaya telah disalin."
+  },
+  "descFullscreenNote": {
+    "message": "Tekan Esc jika masih ada yang menutupi layar, lalu tutup tab."
+  },
+  "whatTemplate": {
+    "message": "$1 yang $2"
+  },
+  "what_powershell": {
+    "message": "perintah PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "perintah PowerShell tersembunyi"
+  },
+  "what_applescript": {
+    "message": "perintah AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "perintah AppleScript tersembunyi"
+  },
+  "what_terminal": {
+    "message": "perintah Terminal"
+  },
+  "what_terminal_hidden": {
+    "message": "perintah Terminal tersembunyi"
+  },
+  "what_script": {
+    "message": "perintah skrip"
+  },
+  "what_script_hidden": {
+    "message": "perintah skrip tersembunyi"
+  },
+  "what_cmd": {
+    "message": "perintah untuk Prompt Perintah"
+  },
+  "what_cmd_hidden": {
+    "message": "perintah tersembunyi untuk Prompt Perintah"
+  },
+  "what_windows": {
+    "message": "perintah Windows"
+  },
+  "what_windows_hidden": {
+    "message": "perintah Windows tersembunyi"
+  },
+  "what_generic": {
+    "message": "perintah"
+  },
+  "what_generic_hidden": {
+    "message": "perintah tersembunyi"
+  },
+  "effect_download_run": {
+    "message": "mengunduh dan menjalankan program"
+  },
+  "effect_disables_av": {
+    "message": "mematikan perlindungan antivirus Anda"
+  },
+  "effect_password": {
+    "message": "meminta kata sandi Anda lewat jendela palsu"
+  },
+  "effect_remote_share": {
+    "message": "menjalankan file dari folder berbagi di jaringan jarak jauh"
+  },
+  "effect_remote_script": {
+    "message": "menjalankan skrip langsung dari internet"
+  },
+  "effect_remote_install": {
+    "message": "memasang program langsung dari internet"
+  },
+  "effect_dns": {
+    "message": "mengambil perintah tersembunyi dari catatan DNS"
+  },
+  "effect_finger": {
+    "message": "mengambil perintah tersembunyi dari server jarak jauh"
+  },
+  "effect_runs": {
+    "message": "berjalan di komputer Anda tanpa bertanya"
+  },
+  "whyPage1": {
+    "message": "halaman ini $1"
+  },
+  "whyPage2": {
+    "message": "halaman ini $1 dan $2"
+  },
+  "lure_captcha": {
+    "message": "berpura-pura menjadi CAPTCHA"
+  },
+  "lure_update": {
+    "message": "berpura-pura memasang pembaruan"
+  },
+  "lure_fix": {
+    "message": "menawarkannya sebagai perbaikan untuk suatu kesalahan"
+  },
+  "target_explorer": {
+    "message": "meminta Anda menempelkannya ke bilah alamat File Explorer"
+  },
+  "target_terminal": {
+    "message": "meminta Anda menempelkannya ke Terminal"
+  },
+  "target_run": {
+    "message": "meminta Anda menempelkannya ke kotak Jalankan"
+  },
+  "target_paste": {
+    "message": "meminta Anda menempelkannya di suatu tempat di komputer Anda"
+  },
+  "why_payload_reported": {
+    "message": "perintah ini mengunduh dari alamat yang dilaporkan berbahaya"
+  },
+  "why_site_reported": {
+    "message": "situs ini dilaporkan berbahaya"
+  },
+  "why_decoy": {
+    "message": "teks verifikasi palsu disembunyikan setelah perintah"
+  },
+  "why_padding": {
+    "message": "perintah yang sebenarnya disembunyikan di balik ruang kosong"
+  },
+  "why_disguised": {
+    "message": "perintah ini disamarkan untuk menyembunyikan apa yang dilakukannya"
+  },
+  "why_hidden_window": {
+    "message": "perintah ini berjalan di jendela tersembunyi"
+  },
+  "why_generic": {
+    "message": "perintah ini memiliki ciri-ciri serangan ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "halaman ini meminta Anda menempelkan perintah"
+  },
+  "fullscreenWhat": {
+    "message": "mengambil alih seluruh layar Anda seperti pembaruan Windows palsu"
+  },
+  "pasteWhat": {
+    "message": "tautan masuk dengan kode rahasia"
+  },
+  "pasteWhy": {
+    "message": "halaman seperti ini dapat menggunakannya untuk mengambil alih akun Anda"
+  },
+  "protocolWhy": {
+    "message": "tautan seperti ini dapat menjalankan perintah di komputer Anda tanpa Anda sadari"
+  },
+  "btnClose": {
+    "message": "Tutup"
+  },
+  "btnLeave": {
+    "message": "Tinggalkan situs ini"
+  },
+  "btnTrust": {
+    "message": "Percayai situs ini"
+  },
+  "tipClose": {
+    "message": "Menyembunyikan peringatan ini dan tetap di halaman"
+  },
+  "tipLeave": {
+    "message": "Menutup halaman ini dan membuka tab baru"
+  },
+  "tipTrust": {
+    "message": "Menghentikan semua pemeriksaan di situs ini setelah Anda mengonfirmasi"
+  },
+  "tipUntrust": {
+    "message": "Mulai memeriksa situs ini lagi"
+  },
+  "bannerReported": {
+    "message": "Situs ini dilaporkan berbahaya."
+  },
+  "bannerDetails": {
+    "message": "Detail"
+  },
+  "bannerFirstSeen": {
+    "message": "pertama kali terlihat $1"
+  },
+  "bannerWeb3": {
+    "message": "Situs ini memuat kode tersembunyi dari blockchain."
+  },
+  "bannerWeb3Detail": {
+    "message": "Situs web yang diretas memakai trik ini untuk menampilkan halaman CAPTCHA palsu."
+  },
+  "bannerInstructions": {
+    "message": "Halaman ini meminta Anda menempelkan sesuatu ke Jalankan, Terminal, atau File Explorer."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Situs web asli tidak pernah meminta Anda melakukan itu."
+  },
+  "rep_clickfix": {
+    "message": "halaman ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "halaman ClickFix yang menyebarkan $1"
+  },
+  "rep_malware": {
+    "message": "unduhan malware"
+  },
+  "rep_malware_family": {
+    "message": "unduhan $1"
+  },
+  "rep_c2": {
+    "message": "server kendali malware"
+  },
+  "rep_c2_family": {
+    "message": "server kendali $1"
+  },
+  "rep_phishing": {
+    "message": "halaman phishing"
+  },
+  "rep_phishing_family": {
+    "message": "halaman phishing $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "unduhan malware"
+  },
+  "category_c2": {
+    "message": "server kendali malware"
+  },
+  "category_phishing": {
+    "message": "phishing"
+  },
+  "confirmTrustTitle": {
+    "message": "Berhenti melindungi $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "Tetap buka $1?"
+  },
+  "confirmReported": {
+    "message": "Situs ini dilaporkan di basis data ancaman publik."
+  },
+  "confirmBodyStrong": {
+    "message": "menginfeksi komputer Anda dan mencuri kata sandi, kartu kredit tersimpan, dan dompet kripto Anda"
+  },
+  "confirmOnlyReported": {
+    "message": "Lakukan ini hanya jika Anda tahu laporannya salah."
+  },
+  "confirmOnlyKnown": {
+    "message": "Lakukan ini hanya untuk situs yang Anda kenal baik."
+  },
+  "confirmCheckTrust": {
+    "message": "Saya paham bahwa saya bisa kehilangan kredensial, cookie, dan uang dengan memercayai situs ini"
+  },
+  "confirmCheckOpen": {
+    "message": "Saya paham bahwa saya bisa kehilangan kredensial, cookie, dan uang dengan membuka situs ini"
+  },
+  "confirmTrust": {
+    "message": "Percayai situs ini"
+  },
+  "confirmOpen": {
+    "message": "Tetap buka"
+  },
+  "confirmKeep": {
+    "message": "Tetap lindungi saya"
+  },
+  "warnTitle": {
+    "message": "Situs berbahaya diblokir"
+  },
+  "warnAddress": {
+    "message": "Alamat"
+  },
+  "warnReportedBy": {
+    "message": "Dilaporkan oleh"
+  },
+  "warnSteals": {
+    "message": "mencuri kata sandi, kartu kredit tersimpan, dan dompet kripto Anda"
+  },
+  "warnLeave": {
+    "message": "Kembali ke tempat aman"
+  },
+  "warnLeaveTip": {
+    "message": "Membuka tab baru alih-alih situs ini"
+  },
+  "warnContinue": {
+    "message": "Tetap buka"
+  },
+  "warnContinueTip": {
+    "message": "Membuka situs selama satu jam ke depan setelah Anda mengonfirmasi risikonya"
+  },
+  "warnAdvice": {
+    "message": "Tidak ada situs web asli yang meminta Anda menempelkan apa pun ke Jalankan, Terminal, atau File Explorer."
+  },
+  "popupOn": {
+    "message": "Aktif"
+  },
+  "popupOff": {
+    "message": "Perlindungan dinonaktifkan."
+  },
+  "popupNotWebPage": {
+    "message": "Bukan halaman web"
+  },
+  "popupTrusted": {
+    "message": "Dipercaya oleh Anda, tidak diperiksa"
+  },
+  "popupReported": {
+    "message": "Dilaporkan berbahaya"
+  },
+  "popupNoReports": {
+    "message": "Tidak ada laporan tentang situs ini"
+  },
+  "popupUntrust": {
+    "message": "Berhenti memercayai situs ini"
+  },
+  "popupUpdated": {
+    "message": "Diperbarui $1, versi aturan $2"
+  },
+  "popupFeedNone": {
+    "message": "Basis data belum diunduh"
+  },
+  "popupFeedError": {
+    "message": "Pembaruan basis data gagal, lihat Pengaturan"
+  },
+  "popupNoDetections": {
+    "message": "Belum ada yang diblokir"
+  },
+  "popupSettings": {
+    "message": "Pengaturan"
+  },
+  "popupHistory": {
+    "message": "Periksa riwayat saya"
+  },
+  "popupUpdate": {
+    "message": "Perbarui sekarang"
+  },
+  "popupUpdating": {
+    "message": "Memperbarui"
+  },
+  "popupRulesLine": {
+    "message": "Aturan deteksi versi $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "bawaan"
+  },
+  "popupRulesUpdated": {
+    "message": "diperbarui secara online"
+  },
+  "supportShort": {
+    "message": "Dukung"
+  },
+  "tipSupport": {
+    "message": "Membuka halaman tempat Anda dapat mendukung ClickFix Warden dengan donasi"
+  },
+  "supportProject": {
+    "message": "Dukung proyek ini"
+  },
+  "kind_clipboard": {
+    "message": "Perintah papan klip"
+  },
+  "kind_manual_copy": {
+    "message": "Perintah yang disalin"
+  },
+  "kind_paste": {
+    "message": "Penempelan tautan masuk"
+  },
+  "kind_protocol": {
+    "message": "Tautan program"
+  },
+  "kind_fullscreen": {
+    "message": "Layar pembaruan palsu"
+  },
+  "kind_page_instructions": {
+    "message": "Instruksi menempel"
+  },
+  "kind_web3_loader": {
+    "message": "Pemuat blockchain"
+  },
+  "kind_reputation": {
+    "message": "Situs yang dilaporkan"
+  },
+  "kind_reputation_block": {
+    "message": "Situs ClickFix yang dikenal"
+  },
+  "action_blocked": {
+    "message": "diblokir"
+  },
+  "action_warned": {
+    "message": "memicu peringatan"
+  },
+  "action_copied_anyway": {
+    "message": "tetap disalin"
+  },
+  "action_continued": {
+    "message": "tetap dibuka"
+  },
+  "action_trusted": {
+    "message": "dipercaya"
+  },
+  "timeNever": {
+    "message": "tidak pernah"
+  },
+  "timeJustNow": {
+    "message": "baru saja"
+  },
+  "timeMinutes": {
+    "message": "$1 mnt lalu"
+  },
+  "timeHours": {
+    "message": "$1 jam lalu"
+  },
+  "timeDays": {
+    "message": "$1 hari lalu"
+  },
+  "navProtection": {
+    "message": "Perlindungan"
+  },
+  "navTrusted": {
+    "message": "Situs tepercaya"
+  },
+  "navHistory": {
+    "message": "Pemeriksaan riwayat"
+  },
+  "navExtensions": {
+    "message": "Pemeriksaan ekstensi"
+  },
+  "navLog": {
+    "message": "Log deteksi"
+  },
+  "navDatabase": {
+    "message": "Basis data"
+  },
+  "navAbout": {
+    "message": "Tentang"
+  },
+  "welcomeTitle": {
+    "message": "Anda terlindungi"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden kini mengawasi halaman yang mencoba menipu Anda agar menjalankan perintah, dan memperingatkan Anda tentang situs yang dilaporkan berbahaya."
+  },
+  "welcomePrivacy": {
+    "message": "Semuanya diperiksa di dalam browser Anda, tidak ada data penjelajahan Anda yang dikirim ke mana pun."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden memerlukan akses ke semua situs web untuk melindunginya."
+  },
+  "welcomeGrant": {
+    "message": "Izinkan di semua situs web"
+  },
+  "tipGrantHosts": {
+    "message": "Memungkinkan ClickFix Warden mengawasi setiap halaman dari trik ClickFix"
+  },
+  "managedNote": {
+    "message": "Beberapa pengaturan dikelola oleh organisasi Anda."
+  },
+  "protectionLead": {
+    "message": "Pilih apa yang diawasi ClickFix Warden. Semuanya berjalan di dalam browser Anda."
+  },
+  "setEnabled": {
+    "message": "Perlindungan aktif"
+  },
+  "tipEnabled": {
+    "message": "Mengaktifkan atau menonaktifkan semua pemeriksaan sekaligus"
+  },
+  "setClipboard": {
+    "message": "Blokir perintah berbahaya di papan klip"
+  },
+  "tipClipboard": {
+    "message": "Mencegah halaman memasukkan perintah tersembunyi ke papan klip Anda dan menaruh catatan yang tidak berbahaya sebagai gantinya"
+  },
+  "setPaste": {
+    "message": "Blokir penempelan tautan masuk ke situs web"
+  },
+  "tipPaste": {
+    "message": "Mencegah Anda menempelkan tautan masuk yang membawa kode rahasia ke halaman yang dapat mencuri akun Anda"
+  },
+  "setProtocols": {
+    "message": "Blokir tautan yang membuka program di komputer Anda"
+  },
+  "tipProtocols": {
+    "message": "Mencegah halaman membuka Editor Skrip, Pencarian Windows pada folder jarak jauh, dan program serupa"
+  },
+  "setFullscreen": {
+    "message": "Hentikan halaman pembaruan layar penuh palsu"
+  },
+  "tipFullscreen": {
+    "message": "Mencegah halaman yang meminta Anda menempelkan perintah mengunci layar dengan pembaruan palsu"
+  },
+  "setPageWarnings": {
+    "message": "Peringatkan tentang halaman dengan instruksi menempel"
+  },
+  "tipPageWarnings": {
+    "message": "Menampilkan bilah peringatan saat halaman meminta Anda menempelkan sesuatu ke Jalankan, Terminal, atau File Explorer"
+  },
+  "setWeb3": {
+    "message": "Awasi kode yang dimuat dari blockchain"
+  },
+  "tipWeb3": {
+    "message": "Memperingatkan saat situs web biasa mengambil kode tersembunyi dari blockchain, trik yang dipakai situs yang diretas"
+  },
+  "setReputation": {
+    "message": "Peringatkan tentang situs yang dilaporkan"
+  },
+  "tipReputation": {
+    "message": "Menampilkan bilah peringatan di situs yang tercantum sebagai berbahaya di basis data ancaman publik"
+  },
+  "setBlockPage": {
+    "message": "Blokir situs ClickFix yang dikenal sebelum dimuat"
+  },
+  "tipBlockPage": {
+    "message": "Menampilkan peringatan satu halaman penuh alih-alih situs yang dicantumkan basis data sebagai halaman ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "Unduh pembaruan basis data dan aturan"
+  },
+  "tipFeedUpdates": {
+    "message": "Mengunduh daftar bertanda tangan berisi situs yang dilaporkan dan aturan deteksi terbaru setiap jam"
+  },
+  "trustedLead": {
+    "message": "Situs-situs ini sama sekali tidak diperiksa, memercayai sebuah situs memerlukan konfirmasi yang sama seperti di peringatan."
+  },
+  "trustedInputLabel": {
+    "message": "Alamat situs"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.perusahaan.co.id"
+  },
+  "trustedAdd": {
+    "message": "Tambah"
+  },
+  "tipTrustedAdd": {
+    "message": "Menambahkan situs ke daftar situs yang tidak diperiksa, setelah Anda mengonfirmasi"
+  },
+  "trustedRemove": {
+    "message": "Hapus"
+  },
+  "tipTrustedRemove": {
+    "message": "Mulai memeriksa situs ini lagi"
+  },
+  "trustedEmpty": {
+    "message": "Tidak ada situs tepercaya"
+  },
+  "orgTitle": {
+    "message": "Pesan dalam peringatan"
+  },
+  "orgLead": {
+    "message": "Teks tambahan yang ditampilkan di setiap peringatan, misalnya siapa yang harus dihubungi di perusahaan Anda."
+  },
+  "orgPlaceholder": {
+    "message": "Misalnya, hubungi layanan bantuan TI sebelum melanjutkan"
+  },
+  "orgSave": {
+    "message": "Simpan"
+  },
+  "tipOrgSave": {
+    "message": "Menyimpan teks yang ditampilkan di setiap peringatan"
+  },
+  "orgSaved": {
+    "message": "Tersimpan"
+  },
+  "historyLead": {
+    "message": "Periksa apakah Anda pernah mengunjungi situs yang kini tercantum di basis data, pemeriksaan hanya berjalan di browser Anda."
+  },
+  "historyDays7": {
+    "message": "7 hari terakhir"
+  },
+  "historyDays30": {
+    "message": "30 hari terakhir"
+  },
+  "historyDays90": {
+    "message": "90 hari terakhir"
+  },
+  "tipHistoryDays": {
+    "message": "Seberapa jauh ke belakang yang diperiksa"
+  },
+  "historyScan": {
+    "message": "Periksa riwayat saya"
+  },
+  "tipHistoryScan": {
+    "message": "Meminta akses ke riwayat Anda dan membandingkannya dengan basis data di dalam browser Anda"
+  },
+  "historyScanning": {
+    "message": "Memeriksa"
+  },
+  "historyChecked": {
+    "message": "$1 alamat dari $2 hari terakhir telah diperiksa."
+  },
+  "historyClean": {
+    "message": "Tidak ada situs yang dikunjungi yang tercantum"
+  },
+  "historyFound": {
+    "message": "$1 alamat yang dikunjungi tercantum"
+  },
+  "historyAdvice": {
+    "message": "Jika Anda menjalankan sesuatu yang diminta oleh situs yang tercantum, ganti kata sandi Anda dari perangkat lain dan minta komputer ini diperiksa."
+  },
+  "historyDenied": {
+    "message": "Akses riwayat tidak diberikan."
+  },
+  "historyDrop": {
+    "message": "Cabut akses riwayat"
+  },
+  "tipHistoryDrop": {
+    "message": "Mengembalikan izin riwayat sampai Anda memeriksa lagi"
+  },
+  "exportJson": {
+    "message": "Ekspor JSON"
+  },
+  "tipExport": {
+    "message": "Menyimpan hasil sebagai file JSON di komputer ini"
+  },
+  "tipExportLog": {
+    "message": "Menyimpan log sebagai file JSON di komputer ini"
+  },
+  "colVisited": {
+    "message": "Kunjungan terakhir"
+  },
+  "colAddress": {
+    "message": "Alamat"
+  },
+  "colReport": {
+    "message": "Laporan"
+  },
+  "colTime": {
+    "message": "Waktu"
+  },
+  "colWhat": {
+    "message": "Apa"
+  },
+  "colSite": {
+    "message": "Situs"
+  },
+  "colDetails": {
+    "message": "Detail"
+  },
+  "extensionsLead": {
+    "message": "Cari ekstensi browser terpasang yang dikenal berbahaya, seperti pemblokir iklan palsu yang dipakai dalam serangan CrashFix."
+  },
+  "extensionsScan": {
+    "message": "Periksa ekstensi terpasang"
+  },
+  "tipExtensionsScan": {
+    "message": "Meminta izin untuk melihat daftar ekstensi Anda dan membandingkannya dengan daftar ekstensi berbahaya yang dikenal"
+  },
+  "extensionsDrop": {
+    "message": "Cabut akses"
+  },
+  "tipExtensionsDrop": {
+    "message": "Mengembalikan izin untuk melihat daftar ekstensi Anda"
+  },
+  "extensionsDenied": {
+    "message": "Akses tidak diberikan."
+  },
+  "extensionsChecked": {
+    "message": "$1 ekstensi terpasang telah diperiksa."
+  },
+  "extensionsClean": {
+    "message": "Tidak ditemukan ekstensi berbahaya yang dikenal"
+  },
+  "extensionsKnownAs": {
+    "message": "Dikenal sebagai $1"
+  },
+  "extensionsRemove": {
+    "message": "Hapus"
+  },
+  "tipExtensionsRemove": {
+    "message": "Mencopot ekstensi ini setelah Anda mengonfirmasi"
+  },
+  "logLead": {
+    "message": "Apa yang diblokir atau diperingatkan oleh ClickFix Warden, log tetap tersimpan di komputer ini."
+  },
+  "logClear": {
+    "message": "Hapus log"
+  },
+  "tipLogClear": {
+    "message": "Menghapus setiap entri di log"
+  },
+  "logClearConfirm": {
+    "message": "Hapus setiap entri di log deteksi?"
+  },
+  "databaseLead": {
+    "message": "Laporan berasal dari basis data publik abuse.ch dan diperiksa dengan tanda tangan digital sebelum digunakan."
+  },
+  "dbGenerated": {
+    "message": "$1 laporan, diterbitkan $2"
+  },
+  "dbChecked": {
+    "message": "Terakhir diperiksa $1"
+  },
+  "dbError": {
+    "message": "Pembaruan terakhir gagal, $1"
+  },
+  "dbUpdated": {
+    "message": "Sudah terbaru"
+  },
+  "tipUpdateNow": {
+    "message": "Mengunduh basis data dan aturan terbaru sekarang juga"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden tidak mengumpulkan data apa pun, tidak memiliki akun, telemetri, maupun server sendiri."
+  },
+  "aboutNetwork": {
+    "message": "Satu-satunya yang diunduhnya adalah basis data dan aturan bertanda tangan dari GitHub, yang melihat permintaan yang sama seperti pembaruan apa pun."
+  },
+  "aboutProject": {
+    "message": "Kode sumber"
+  },
+  "aboutPolicy": {
+    "message": "Kebijakan privasi"
+  },
+  "descClipboard": {
+    "message": "Halaman ini mencoba memasukkan $1 ke papan klip Anda. Upaya ini dihentikan karena $2."
+  },
+  "descManual": {
+    "message": "Teks yang Anda coba salin adalah $1, dan teks itu tidak disalin karena $2."
+  },
+  "descPaste": {
+    "message": "Anda hampir menempelkan $1 ke halaman ini. Upaya ini dihentikan karena $2."
+  },
+  "descProtocol": {
+    "message": "Halaman ini mencoba membuka $1. Upaya ini dihentikan karena $2."
+  },
+  "descFullscreen": {
+    "message": "Halaman ini mencoba $1. Upaya ini dihentikan karena $2."
+  },
+  "repLine": {
+    "message": "$1 mencantumkannya sebagai $2, pertama kali terlihat pada $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 mencantumkannya sebagai $2."
+  },
+  "warnLead": {
+    "message": "$1 tercantum di $2 sebagai $3. Halaman seperti ini menipu Anda agar menempelkan perintah yang $4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 tercantum di basis data ancaman publik. Halaman seperti ini menipu Anda agar menempelkan perintah yang $2."
+  },
+  "confirmBody": {
+    "message": "Jika Anda melanjutkan, ClickFix Warden berhenti memeriksanya, dan halaman seperti ini dapat $1."
+  },
+  "popupBlockedLine": {
+    "message": "$1 diblokir $2"
+  },
+  "popupReports": {
+    "message": "$1 alamat dilaporkan"
+  },
+  "kindAction": {
+    "message": "$1 $2"
+  },
+  "proto_applescript": {
+    "message": "Editor Skrip dengan skrip yang sudah disiapkan"
+  },
+  "proto_search_ms": {
+    "message": "jendela Pencarian Windows pada folder jarak jauh"
+  },
+  "proto_ms_msdt": {
+    "message": "pemecah masalah Windows dengan pengaturan tersembunyi"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office dengan pengaturan tersembunyi"
+  },
+  "proto_ms_appinstaller": {
+    "message": "penginstal aplikasi dari internet"
+  },
+  "setLanguage": {
+    "message": "Bahasa"
+  },
+  "tipLanguage": {
+    "message": "Mengubah bahasa ClickFix Warden, bawaan browser mengikuti bahasa browser Anda"
+  },
+  "langBrowser": {
+    "message": "Bawaan browser"
+  }
+}

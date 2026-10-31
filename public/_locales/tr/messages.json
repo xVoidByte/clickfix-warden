@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "Sizi komut çalıştırmaya kandıran ClickFix ve sahte CAPTCHA saldırılarını durdurur, kötü amaçlı bildirilen siteler için uyarır."
+  },
+  "dangerLabel": {
+    "message": "TEHLİKELİ OLABİLECEK SİTE"
+  },
+  "titleClipboard": {
+    "message": "Tehlikeli komut engellendi"
+  },
+  "titleManual": {
+    "message": "Tehlikeli komut kopyalanmadı"
+  },
+  "titlePaste": {
+    "message": "Tehlikeli yapıştırma engellendi"
+  },
+  "titleProtocol": {
+    "message": "Tehlikeli bağlantı engellendi"
+  },
+  "titleFullscreen": {
+    "message": "Sahte güncelleme ekranı engellendi"
+  },
+  "descNote": {
+    "message": "Panonuzda artık zararsız bir not var, yapıştırmak hiçbir şey yapmaz."
+  },
+  "descManualNote": {
+    "message": "Bunun yerine zararsız bir not kopyalandı."
+  },
+  "descFullscreenNote": {
+    "message": "Ekranı hâlâ bir şey kaplıyorsa Esc tuşuna basın, ardından sekmeyi kapatın."
+  },
+  "whatTemplate": {
+    "message": "$2 $1"
+  },
+  "what_powershell": {
+    "message": "bir PowerShell komutu"
+  },
+  "what_powershell_hidden": {
+    "message": "gizli bir PowerShell komutu"
+  },
+  "what_applescript": {
+    "message": "bir AppleScript komutu"
+  },
+  "what_applescript_hidden": {
+    "message": "gizli bir AppleScript komutu"
+  },
+  "what_terminal": {
+    "message": "bir Terminal komutu"
+  },
+  "what_terminal_hidden": {
+    "message": "gizli bir Terminal komutu"
+  },
+  "what_script": {
+    "message": "bir betik komutu"
+  },
+  "what_script_hidden": {
+    "message": "gizli bir betik komutu"
+  },
+  "what_cmd": {
+    "message": "bir Komut İstemi komutu"
+  },
+  "what_cmd_hidden": {
+    "message": "gizli bir Komut İstemi komutu"
+  },
+  "what_windows": {
+    "message": "bir Windows komutu"
+  },
+  "what_windows_hidden": {
+    "message": "gizli bir Windows komutu"
+  },
+  "what_generic": {
+    "message": "bir komut"
+  },
+  "what_generic_hidden": {
+    "message": "gizli bir komut"
+  },
+  "effect_download_run": {
+    "message": "bir program indirip çalıştıran"
+  },
+  "effect_disables_av": {
+    "message": "virüsten koruma yazılımınızı kapatan"
+  },
+  "effect_password": {
+    "message": "sahte bir pencereyle parolanızı isteyen"
+  },
+  "effect_remote_share": {
+    "message": "uzak bir ağ paylaşımındaki dosyaları çalıştıran"
+  },
+  "effect_remote_script": {
+    "message": "doğrudan internetten bir betik çalıştıran"
+  },
+  "effect_remote_install": {
+    "message": "doğrudan internetten bir program yükleyen"
+  },
+  "effect_dns": {
+    "message": "DNS kayıtlarından gizli komutlar çeken"
+  },
+  "effect_finger": {
+    "message": "uzak bir sunucudan gizli komutlar çeken"
+  },
+  "effect_runs": {
+    "message": "size sormadan bilgisayarınızda çalışan"
+  },
+  "whyPage1": {
+    "message": "sayfa $1"
+  },
+  "whyPage2": {
+    "message": "sayfa $1 ve $2"
+  },
+  "lure_captcha": {
+    "message": "kendini CAPTCHA gibi gösteriyor"
+  },
+  "lure_update": {
+    "message": "güncelleme yüklüyormuş gibi yapıyor"
+  },
+  "lure_fix": {
+    "message": "bunu bir hatanın çözümü olarak sunuyor"
+  },
+  "target_explorer": {
+    "message": "komutu Dosya Gezgini adres çubuğuna yapıştırmanızı söylüyor"
+  },
+  "target_terminal": {
+    "message": "komutu Terminal'e yapıştırmanızı söylüyor"
+  },
+  "target_run": {
+    "message": "komutu Çalıştır kutusuna yapıştırmanızı söylüyor"
+  },
+  "target_paste": {
+    "message": "komutu bilgisayarınızda bir yere yapıştırmanızı söylüyor"
+  },
+  "why_payload_reported": {
+    "message": "komut, kötü amaçlı olarak bildirilmiş bir adresten indirme yapıyor"
+  },
+  "why_site_reported": {
+    "message": "bu site kötü amaçlı olarak bildirilmiş"
+  },
+  "why_decoy": {
+    "message": "komutun arkasına sahte doğrulama metni gizlenmiş"
+  },
+  "why_padding": {
+    "message": "asıl komut boşlukların arkasına gizlenmiş"
+  },
+  "why_disguised": {
+    "message": "komut, ne yaptığını saklamak için kamufle edilmiş"
+  },
+  "why_hidden_window": {
+    "message": "komut gizli bir pencerede çalışıyor"
+  },
+  "why_generic": {
+    "message": "komut bir ClickFix saldırısının izlerini taşıyor"
+  },
+  "why_fullscreen": {
+    "message": "sayfa bir komut yapıştırmanızı söylüyor"
+  },
+  "fullscreenWhat": {
+    "message": "sahte bir Windows güncellemesi gibi tüm ekranınızı kaplamak"
+  },
+  "pasteWhat": {
+    "message": "gizli bir kod içeren bir oturum açma bağlantısı"
+  },
+  "pasteWhy": {
+    "message": "böyle bir sayfa bunu hesabınızı ele geçirmek için kullanabilir"
+  },
+  "protocolWhy": {
+    "message": "bu tür bağlantılar siz fark etmeden bilgisayarınızda komut çalıştırabilir"
+  },
+  "btnClose": {
+    "message": "Kapat"
+  },
+  "btnLeave": {
+    "message": "Bu siteden çık"
+  },
+  "btnTrust": {
+    "message": "Bu siteye güven"
+  },
+  "tipClose": {
+    "message": "Bu uyarıyı gizler ve sayfada kalır"
+  },
+  "tipLeave": {
+    "message": "Bu sayfayı kapatır ve yeni bir sekme açar"
+  },
+  "tipTrust": {
+    "message": "Onayladıktan sonra bu sitedeki tüm denetimleri durdurur"
+  },
+  "tipUntrust": {
+    "message": "Bu siteyi yeniden denetlemeye başlar"
+  },
+  "bannerReported": {
+    "message": "Bu site kötü amaçlı olarak bildirildi."
+  },
+  "bannerDetails": {
+    "message": "Ayrıntılar"
+  },
+  "bannerFirstSeen": {
+    "message": "ilk görülme tarihi $1"
+  },
+  "bannerWeb3": {
+    "message": "Bu site bir blokzincirden gizli kod yüklüyor."
+  },
+  "bannerWeb3Detail": {
+    "message": "Ele geçirilmiş web siteleri sahte CAPTCHA sayfaları göstermek için bu hileyi kullanır."
+  },
+  "bannerInstructions": {
+    "message": "Bu sayfa Çalıştır, Terminal veya Dosya Gezgini'ne bir şey yapıştırmanızı söylüyor."
+  },
+  "bannerInstructionsDetail": {
+    "message": "Gerçek web siteleri bunu asla istemez."
+  },
+  "rep_clickfix": {
+    "message": "bir ClickFix sayfası"
+  },
+  "rep_clickfix_family": {
+    "message": "$1 yayan bir ClickFix sayfası"
+  },
+  "rep_malware": {
+    "message": "bir kötü amaçlı yazılım indirmesi"
+  },
+  "rep_malware_family": {
+    "message": "bir $1 indirmesi"
+  },
+  "rep_c2": {
+    "message": "bir kötü amaçlı yazılım kontrol sunucusu"
+  },
+  "rep_c2_family": {
+    "message": "bir $1 kontrol sunucusu"
+  },
+  "rep_phishing": {
+    "message": "bir kimlik avı sayfası"
+  },
+  "rep_phishing_family": {
+    "message": "bir $1 kimlik avı sayfası"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "kötü amaçlı yazılım indirmesi"
+  },
+  "category_c2": {
+    "message": "kötü amaçlı yazılım kontrol sunucusu"
+  },
+  "category_phishing": {
+    "message": "kimlik avı"
+  },
+  "confirmTrustTitle": {
+    "message": "$1 için koruma kapatılsın mı?"
+  },
+  "confirmOpenTitle": {
+    "message": "$1 yine de açılsın mı?"
+  },
+  "confirmReported": {
+    "message": "Bu site herkese açık tehdit veritabanlarında bildirilmiş."
+  },
+  "confirmBodyStrong": {
+    "message": "bilgisayarınıza virüs bulaştırıp parolalarınızı, kayıtlı kredi kartlarınızı ve kripto cüzdanlarınızı çalabilir"
+  },
+  "confirmOnlyReported": {
+    "message": "Bunu yalnızca bildirimin yanlış olduğunu biliyorsanız yapın."
+  },
+  "confirmOnlyKnown": {
+    "message": "Bunu yalnızca iyi tanıdığınız siteler için yapın."
+  },
+  "confirmCheckTrust": {
+    "message": "Bu siteye güvenerek kimlik bilgilerimi, çerezlerimi ve paramı kaybedebileceğimi anlıyorum"
+  },
+  "confirmCheckOpen": {
+    "message": "Bu siteyi açarak kimlik bilgilerimi, çerezlerimi ve paramı kaybedebileceğimi anlıyorum"
+  },
+  "confirmTrust": {
+    "message": "Bu siteye güven"
+  },
+  "confirmOpen": {
+    "message": "Yine de aç"
+  },
+  "confirmKeep": {
+    "message": "Korunmaya devam et"
+  },
+  "warnTitle": {
+    "message": "Tehlikeli site engellendi"
+  },
+  "warnAddress": {
+    "message": "Adres"
+  },
+  "warnReportedBy": {
+    "message": "Bildiren"
+  },
+  "warnSteals": {
+    "message": "parolalarınızı, kayıtlı kredi kartlarınızı ve kripto cüzdanlarınızı çalan"
+  },
+  "warnLeave": {
+    "message": "Güvenli yere dön"
+  },
+  "warnLeaveTip": {
+    "message": "Bu site yerine yeni bir sekme açar"
+  },
+  "warnContinue": {
+    "message": "Yine de aç"
+  },
+  "warnContinueTip": {
+    "message": "Riski onayladıktan sonra siteyi bir saatliğine açar"
+  },
+  "warnAdvice": {
+    "message": "Hiçbir gerçek web sitesi sizden Çalıştır, Terminal veya Dosya Gezgini'ne bir şey yapıştırmanızı istemez."
+  },
+  "popupOn": {
+    "message": "Açık"
+  },
+  "popupOff": {
+    "message": "Koruma kapalı."
+  },
+  "popupNotWebPage": {
+    "message": "Web sayfası değil"
+  },
+  "popupTrusted": {
+    "message": "Sizin güvendiğiniz site, denetlenmiyor"
+  },
+  "popupReported": {
+    "message": "Kötü amaçlı olarak bildirildi"
+  },
+  "popupNoReports": {
+    "message": "Bu site hakkında bildirim yok"
+  },
+  "popupUntrust": {
+    "message": "Bu siteye güvenmeyi bırak"
+  },
+  "popupUpdated": {
+    "message": "$1 güncellendi, kural sürümü $2"
+  },
+  "popupFeedNone": {
+    "message": "Veritabanı henüz indirilmedi"
+  },
+  "popupFeedError": {
+    "message": "Veritabanı güncellenemedi, Ayarlar'a bakın"
+  },
+  "popupNoDetections": {
+    "message": "Henüz hiçbir şey engellenmedi"
+  },
+  "popupSettings": {
+    "message": "Ayarlar"
+  },
+  "popupHistory": {
+    "message": "Geçmişimi denetle"
+  },
+  "popupUpdate": {
+    "message": "Şimdi güncelle"
+  },
+  "popupUpdating": {
+    "message": "Güncelleniyor"
+  },
+  "popupRulesLine": {
+    "message": "Algılama kuralları sürümü $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "yerleşik"
+  },
+  "popupRulesUpdated": {
+    "message": "çevrimiçi güncellendi"
+  },
+  "supportShort": {
+    "message": "Destek"
+  },
+  "tipSupport": {
+    "message": "ClickFix Warden'ı bağışla destekleyebileceğiniz bir sayfa açar"
+  },
+  "supportProject": {
+    "message": "Projeyi destekleyin"
+  },
+  "kind_clipboard": {
+    "message": "Pano komutu"
+  },
+  "kind_manual_copy": {
+    "message": "Kopyalanan komut"
+  },
+  "kind_paste": {
+    "message": "Oturum açma bağlantısı yapıştırma"
+  },
+  "kind_protocol": {
+    "message": "Program bağlantısı"
+  },
+  "kind_fullscreen": {
+    "message": "Sahte güncelleme ekranı"
+  },
+  "kind_page_instructions": {
+    "message": "Yapıştırma talimatları"
+  },
+  "kind_web3_loader": {
+    "message": "Blokzincir yükleyicisi"
+  },
+  "kind_reputation": {
+    "message": "Bildirilen site"
+  },
+  "kind_reputation_block": {
+    "message": "Bilinen ClickFix sitesi"
+  },
+  "action_blocked": {
+    "message": "engellendi"
+  },
+  "action_warned": {
+    "message": "için uyarı verildi"
+  },
+  "action_copied_anyway": {
+    "message": "yine de kopyalandı"
+  },
+  "action_continued": {
+    "message": "yine de açıldı"
+  },
+  "action_trusted": {
+    "message": "güvenilir sayıldı"
+  },
+  "timeNever": {
+    "message": "hiçbir zaman"
+  },
+  "timeJustNow": {
+    "message": "az önce"
+  },
+  "timeMinutes": {
+    "message": "$1 dk önce"
+  },
+  "timeHours": {
+    "message": "$1 sa önce"
+  },
+  "timeDays": {
+    "message": "$1 gün önce"
+  },
+  "navProtection": {
+    "message": "Koruma"
+  },
+  "navTrusted": {
+    "message": "Güvenilen siteler"
+  },
+  "navHistory": {
+    "message": "Geçmiş denetimi"
+  },
+  "navExtensions": {
+    "message": "Uzantı denetimi"
+  },
+  "navLog": {
+    "message": "Algılama günlüğü"
+  },
+  "navDatabase": {
+    "message": "Veritabanı"
+  },
+  "navAbout": {
+    "message": "Hakkında"
+  },
+  "welcomeTitle": {
+    "message": "Korunuyorsunuz"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden artık sizi kandırıp komut çalıştırtmaya çalışan sayfaları izliyor ve kötü amaçlı olarak bildirilen siteler hakkında sizi uyarıyor."
+  },
+  "welcomePrivacy": {
+    "message": "Her şey tarayıcınızın içinde denetlenir, gezinmenizle ilgili hiçbir bilgi hiçbir yere gönderilmez."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden'ın web sitelerini koruyabilmesi için tüm web sitelerine erişmesi gerekir."
+  },
+  "welcomeGrant": {
+    "message": "Tüm web sitelerinde izin ver"
+  },
+  "tipGrantHosts": {
+    "message": "ClickFix Warden'ın her sayfayı ClickFix hilelerine karşı izlemesini sağlar"
+  },
+  "managedNote": {
+    "message": "Bazı ayarlar kuruluşunuz tarafından yönetiliyor."
+  },
+  "protectionLead": {
+    "message": "ClickFix Warden'ın neleri izleyeceğini seçin. Her şey tarayıcınızın içinde çalışır."
+  },
+  "setEnabled": {
+    "message": "Koruma açık"
+  },
+  "tipEnabled": {
+    "message": "Tüm denetimleri tek seferde açar veya kapatır"
+  },
+  "setClipboard": {
+    "message": "Panodaki tehlikeli komutları engelle"
+  },
+  "tipClipboard": {
+    "message": "Sayfaların panonuza gizli bir komut koymasını engeller ve yerine zararsız bir not koyar"
+  },
+  "setPaste": {
+    "message": "Web sitelerine oturum açma bağlantısı yapıştırmayı engelle"
+  },
+  "tipPaste": {
+    "message": "Gizli kod taşıyan bir oturum açma bağlantısını, hesabınızı çalabilecek bir sayfaya yapıştırmanızı engeller"
+  },
+  "setProtocols": {
+    "message": "Bilgisayarınızda program açan bağlantıları engelle"
+  },
+  "tipProtocols": {
+    "message": "Sayfaların Betik Düzenleyici'yi, uzak klasörlerde Windows Arama'yı ve benzeri programları açmasını engeller"
+  },
+  "setFullscreen": {
+    "message": "Sahte tam ekran güncelleme sayfalarını durdur"
+  },
+  "tipFullscreen": {
+    "message": "Komut yapıştırmanızı söyleyen sayfaların ekranı sahte bir güncellemeyle kilitlemesini engeller"
+  },
+  "setPageWarnings": {
+    "message": "Yapıştırma talimatı içeren sayfalar için uyar"
+  },
+  "tipPageWarnings": {
+    "message": "Bir sayfa Çalıştır, Terminal veya Dosya Gezgini'ne bir şey yapıştırmanızı söylediğinde uyarı çubuğu gösterir"
+  },
+  "setWeb3": {
+    "message": "Blokzincirden yüklenen kodu izle"
+  },
+  "tipWeb3": {
+    "message": "Normal bir web sitesi blokzincirden gizli kod çektiğinde uyarır, bu ele geçirilmiş sitelerin kullandığı bir hiledir"
+  },
+  "setReputation": {
+    "message": "Bildirilen siteler için uyar"
+  },
+  "tipReputation": {
+    "message": "Herkese açık tehdit veritabanlarında kötü amaçlı olarak listelenen sitelerde uyarı çubuğu gösterir"
+  },
+  "setBlockPage": {
+    "message": "Bilinen ClickFix sitelerini yüklenmeden engelle"
+  },
+  "tipBlockPage": {
+    "message": "Veritabanlarının ClickFix sayfası olarak listelediği bir site yerine tam sayfa uyarı gösterir"
+  },
+  "setFeedUpdates": {
+    "message": "Veritabanı ve kural güncellemelerini indir"
+  },
+  "tipFeedUpdates": {
+    "message": "Bildirilen sitelerin imzalı listesini ve en yeni algılama kurallarını her saat indirir"
+  },
+  "trustedLead": {
+    "message": "Bu siteler hiç denetlenmez, bir siteye güvenmek bir uyarıdakiyle aynı onayı gerektirir."
+  },
+  "trustedInputLabel": {
+    "message": "Site adresi"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.sirket.com"
+  },
+  "trustedAdd": {
+    "message": "Ekle"
+  },
+  "tipTrustedAdd": {
+    "message": "Onayladıktan sonra siteyi denetlenmeyen siteler listesine ekler"
+  },
+  "trustedRemove": {
+    "message": "Kaldır"
+  },
+  "tipTrustedRemove": {
+    "message": "Bu siteyi yeniden denetlemeye başlar"
+  },
+  "trustedEmpty": {
+    "message": "Güvenilen site yok"
+  },
+  "orgTitle": {
+    "message": "Uyarılardaki mesaj"
+  },
+  "orgLead": {
+    "message": "Her uyarıda gösterilen ek metin, örneğin şirketinizde kime başvurulacağı."
+  },
+  "orgPlaceholder": {
+    "message": "Örneğin, devam etmeden önce BT yardım masasını arayın"
+  },
+  "orgSave": {
+    "message": "Kaydet"
+  },
+  "tipOrgSave": {
+    "message": "Her uyarıda gösterilen metni kaydeder"
+  },
+  "orgSaved": {
+    "message": "Kaydedildi"
+  },
+  "historyLead": {
+    "message": "Şu anda veritabanında listelenen bir siteyi ziyaret edip etmediğinizi denetleyin, denetim yalnızca tarayıcınızda çalışır."
+  },
+  "historyDays7": {
+    "message": "Son 7 gün"
+  },
+  "historyDays30": {
+    "message": "Son 30 gün"
+  },
+  "historyDays90": {
+    "message": "Son 90 gün"
+  },
+  "tipHistoryDays": {
+    "message": "Ne kadar geriye bakılacağı"
+  },
+  "historyScan": {
+    "message": "Geçmişimi denetle"
+  },
+  "tipHistoryScan": {
+    "message": "Geçmişinize erişim ister ve onu tarayıcınızın içinde veritabanıyla karşılaştırır"
+  },
+  "historyScanning": {
+    "message": "Denetleniyor"
+  },
+  "historyChecked": {
+    "message": "Son $2 güne ait $1 adres denetlendi."
+  },
+  "historyClean": {
+    "message": "Ziyaret edilen hiçbir site listede yok"
+  },
+  "historyFound": {
+    "message": "Ziyaret edilen $1 adres listede yer alıyor"
+  },
+  "historyAdvice": {
+    "message": "Listelenen bir sitenin söylediği bir şeyi çalıştırdıysanız parolalarınızı başka bir cihazdan değiştirin ve bu bilgisayarı kontrol ettirin."
+  },
+  "historyDenied": {
+    "message": "Geçmiş erişimi verilmedi."
+  },
+  "historyDrop": {
+    "message": "Geçmiş erişimini kaldır"
+  },
+  "tipHistoryDrop": {
+    "message": "Yeniden denetleyene kadar geçmiş iznini geri verir"
+  },
+  "exportJson": {
+    "message": "JSON olarak dışa aktar"
+  },
+  "tipExport": {
+    "message": "Sonuçları bu bilgisayara bir JSON dosyası olarak kaydeder"
+  },
+  "tipExportLog": {
+    "message": "Günlüğü bu bilgisayara bir JSON dosyası olarak kaydeder"
+  },
+  "colVisited": {
+    "message": "Son ziyaret"
+  },
+  "colAddress": {
+    "message": "Adres"
+  },
+  "colReport": {
+    "message": "Bildirim"
+  },
+  "colTime": {
+    "message": "Zaman"
+  },
+  "colWhat": {
+    "message": "Ne"
+  },
+  "colSite": {
+    "message": "Site"
+  },
+  "colDetails": {
+    "message": "Ayrıntılar"
+  },
+  "extensionsLead": {
+    "message": "CrashFix saldırılarında kullanılan sahte reklam engelleyiciler gibi, kötü amaçlı olduğu bilinen yüklü tarayıcı uzantılarını arayın."
+  },
+  "extensionsScan": {
+    "message": "Yüklü uzantıları denetle"
+  },
+  "tipExtensionsScan": {
+    "message": "Uzantılarınızı listelemek için izin ister ve onları bilinen kötü amaçlı uzantılar listesiyle karşılaştırır"
+  },
+  "extensionsDrop": {
+    "message": "Erişimi kaldır"
+  },
+  "tipExtensionsDrop": {
+    "message": "Uzantılarınızı listeleme iznini geri verir"
+  },
+  "extensionsDenied": {
+    "message": "Erişim verilmedi."
+  },
+  "extensionsChecked": {
+    "message": "Yüklü $1 uzantı denetlendi."
+  },
+  "extensionsClean": {
+    "message": "Bilinen kötü amaçlı uzantı bulunamadı"
+  },
+  "extensionsKnownAs": {
+    "message": "$1 olarak biliniyor"
+  },
+  "extensionsRemove": {
+    "message": "Kaldır"
+  },
+  "tipExtensionsRemove": {
+    "message": "Onayladıktan sonra bu uzantıyı kaldırır"
+  },
+  "logLead": {
+    "message": "ClickFix Warden'ın engellediği veya uyardığı şeyler, günlük bu bilgisayarda kalır."
+  },
+  "logClear": {
+    "message": "Günlüğü temizle"
+  },
+  "tipLogClear": {
+    "message": "Günlükteki tüm kayıtları siler"
+  },
+  "logClearConfirm": {
+    "message": "Algılama günlüğündeki tüm kayıtlar silinsin mi?"
+  },
+  "databaseLead": {
+    "message": "Bildirimler herkese açık abuse.ch veritabanlarından gelir ve kullanılmadan önce dijital imzayla doğrulanır."
+  },
+  "dbGenerated": {
+    "message": "$1 bildirim, $2 yayımlandı"
+  },
+  "dbChecked": {
+    "message": "Son denetim $1"
+  },
+  "dbError": {
+    "message": "Son güncelleme başarısız oldu, $1"
+  },
+  "dbUpdated": {
+    "message": "Güncel"
+  },
+  "tipUpdateNow": {
+    "message": "En yeni veritabanını ve kuralları hemen indirir"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden hiçbir veri toplamaz, hesabı, telemetrisi ve kendine ait bir sunucusu yoktur."
+  },
+  "aboutNetwork": {
+    "message": "İndirdiği tek şey GitHub'daki imzalı veritabanı ve kurallardır, GitHub herhangi bir güncellemenin yaptığı isteğin aynısını görür."
+  },
+  "aboutProject": {
+    "message": "Kaynak kodu"
+  },
+  "aboutPolicy": {
+    "message": "Gizlilik politikası"
+  },
+  "descClipboard": {
+    "message": "Bu sayfa panonuza $1 koymaya çalıştı. Engellendi, çünkü $2."
+  },
+  "descManual": {
+    "message": "Kopyalamaya çalıştığınız metin $1. Kopyalanmadı, çünkü $2."
+  },
+  "descPaste": {
+    "message": "Bu sayfaya $1 yapıştırmak üzereydiniz. Engellendi, çünkü $2."
+  },
+  "descProtocol": {
+    "message": "Bu sayfada $1 açılmaya çalışıldı. Engellendi, çünkü $2."
+  },
+  "descFullscreen": {
+    "message": "Bu sayfa $1 istedi. Engellendi, çünkü $2."
+  },
+  "repLine": {
+    "message": "$1 bunu $2 olarak listeliyor, ilk görülme tarihi $3."
+  },
+  "repLineNoDate": {
+    "message": "$1 bunu $2 olarak listeliyor."
+  },
+  "warnLead": {
+    "message": "$1, $2 veritabanında $3 olarak listeleniyor. Bu tür sayfalar sizi kandırarak $4 bir komutu yapıştırmanızı sağlar."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 herkese açık tehdit veritabanlarında listeleniyor. Bu tür sayfalar sizi kandırarak $2 bir komutu yapıştırmanızı sağlar."
+  },
+  "confirmBody": {
+    "message": "Devam ederseniz ClickFix Warden bu siteyi denetlemeyi bırakır ve böyle bir sayfa $1."
+  },
+  "popupBlockedLine": {
+    "message": "$1 $2 engellendi"
+  },
+  "popupReports": {
+    "message": "$1 bildirilmiş adres"
+  },
+  "kindAction": {
+    "message": "$1 $2"
+  },
+  "proto_applescript": {
+    "message": "hazırlanmış bir betik içeren Betik Düzenleyici"
+  },
+  "proto_search_ms": {
+    "message": "uzak bir klasörü gösteren bir Windows Arama penceresi"
+  },
+  "proto_ms_msdt": {
+    "message": "gizli ayarlarla Windows sorun gidericisi"
+  },
+  "proto_ms_officecmd": {
+    "message": "gizli ayarlarla Office"
+  },
+  "proto_ms_appinstaller": {
+    "message": "internetten bir uygulama yükleyicisi"
+  },
+  "setLanguage": {
+    "message": "Dil"
+  },
+  "tipLanguage": {
+    "message": "ClickFix Warden'ın dilini değiştirir, tarayıcı varsayılanı tarayıcınızın dilini izler"
+  },
+  "langBrowser": {
+    "message": "Tarayıcı varsayılanı"
+  }
+}

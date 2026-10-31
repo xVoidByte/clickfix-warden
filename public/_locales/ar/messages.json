@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "يوقف هجمات ClickFix واختبارات CAPTCHA المزيفة التي تخدعك لتشغيل أوامر، وينبّهك إلى المواقع المُبلّغ عنها بأنها ضارة."
+  },
+  "dangerLabel": {
+    "message": "موقع قد يكون خطيرًا"
+  },
+  "titleClipboard": {
+    "message": "تم حظر أمر خطير"
+  },
+  "titleManual": {
+    "message": "لم يتم نسخ أمر خطير"
+  },
+  "titlePaste": {
+    "message": "تم حظر لصق خطير"
+  },
+  "titleProtocol": {
+    "message": "تم حظر رابط خطير"
+  },
+  "titleFullscreen": {
+    "message": "تم حظر شاشة تحديث مزيفة"
+  },
+  "descNote": {
+    "message": "تحتوي الحافظة الآن على ملاحظة غير ضارة، لذا لن يفعل اللصق شيئًا."
+  },
+  "descManualNote": {
+    "message": "تم نسخ ملاحظة غير ضارة بدلًا من ذلك."
+  },
+  "descFullscreenNote": {
+    "message": "اضغط على Esc إذا كان هناك شيء لا يزال يغطي الشاشة، ثم أغلق علامة التبويب."
+  },
+  "whatTemplate": {
+    "message": "$1 $2"
+  },
+  "what_powershell": {
+    "message": "أمر PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "أمر PowerShell مخفي"
+  },
+  "what_applescript": {
+    "message": "أمر AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "أمر AppleScript مخفي"
+  },
+  "what_terminal": {
+    "message": "أمر للوحدة الطرفية"
+  },
+  "what_terminal_hidden": {
+    "message": "أمر مخفي للوحدة الطرفية"
+  },
+  "what_script": {
+    "message": "أمر برنامج نصي"
+  },
+  "what_script_hidden": {
+    "message": "أمر برنامج نصي مخفي"
+  },
+  "what_cmd": {
+    "message": "أمر لموجه الأوامر"
+  },
+  "what_cmd_hidden": {
+    "message": "أمر مخفي لموجه الأوامر"
+  },
+  "what_windows": {
+    "message": "أمر Windows"
+  },
+  "what_windows_hidden": {
+    "message": "أمر Windows مخفي"
+  },
+  "what_generic": {
+    "message": "أمر"
+  },
+  "what_generic_hidden": {
+    "message": "أمر مخفي"
+  },
+  "effect_download_run": {
+    "message": "ينزّل برنامجًا ويشغّله"
+  },
+  "effect_disables_av": {
+    "message": "يوقف الحماية من الفيروسات على جهازك"
+  },
+  "effect_password": {
+    "message": "يطلب كلمة المرور عبر نافذة مزيفة"
+  },
+  "effect_remote_share": {
+    "message": "يشغّل ملفات من مجلد مشترك على شبكة بعيدة"
+  },
+  "effect_remote_script": {
+    "message": "يشغّل برنامجًا نصيًا مباشرة من الإنترنت"
+  },
+  "effect_remote_install": {
+    "message": "يثبّت برنامجًا مباشرة من الإنترنت"
+  },
+  "effect_dns": {
+    "message": "يجلب أوامر مخفية من سجلات DNS"
+  },
+  "effect_finger": {
+    "message": "يجلب أوامر مخفية من خادم بعيد"
+  },
+  "effect_runs": {
+    "message": "يعمل على جهازك دون أن يسألك"
+  },
+  "whyPage1": {
+    "message": "الصفحة $1"
+  },
+  "whyPage2": {
+    "message": "الصفحة $1 و$2"
+  },
+  "lure_captcha": {
+    "message": "تتظاهر بأنها اختبار CAPTCHA"
+  },
+  "lure_update": {
+    "message": "تتظاهر بأنها تثبّت تحديثات"
+  },
+  "lure_fix": {
+    "message": "تعرضه كحل لخطأ ما"
+  },
+  "target_explorer": {
+    "message": "تطلب منك لصقه في شريط العناوين في مستكشف الملفات"
+  },
+  "target_terminal": {
+    "message": "تطلب منك لصقه في الوحدة الطرفية"
+  },
+  "target_run": {
+    "message": "تطلب منك لصقه في مربع «تشغيل»"
+  },
+  "target_paste": {
+    "message": "تطلب منك لصقه في مكان ما على جهازك"
+  },
+  "why_payload_reported": {
+    "message": "الأمر ينزّل ملفات من عنوان مُبلّغ عنه بأنه ضار"
+  },
+  "why_site_reported": {
+    "message": "هذا الموقع مُبلّغ عنه بأنه ضار"
+  },
+  "why_decoy": {
+    "message": "هناك نص تحقق مزيف مخفي بعد الأمر"
+  },
+  "why_padding": {
+    "message": "الأمر الحقيقي مخفي خلف مسافات فارغة"
+  },
+  "why_disguised": {
+    "message": "الأمر مموّه لإخفاء ما يفعله"
+  },
+  "why_hidden_window": {
+    "message": "الأمر يعمل في نافذة مخفية"
+  },
+  "why_generic": {
+    "message": "الأمر يحمل علامات هجوم ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "الصفحة تطلب منك لصق أمر"
+  },
+  "fullscreenWhat": {
+    "message": "الاستيلاء على الشاشة بالكامل مثل تحديث Windows مزيف"
+  },
+  "pasteWhat": {
+    "message": "رابط تسجيل دخول يحتوي على رمز سري"
+  },
+  "pasteWhy": {
+    "message": "مثل هذه الصفحات يمكنها استخدامه للاستيلاء على حسابك"
+  },
+  "protocolWhy": {
+    "message": "مثل هذه الروابط يمكنها تشغيل أوامر على جهازك دون أن تلاحظ"
+  },
+  "btnClose": {
+    "message": "إغلاق"
+  },
+  "btnLeave": {
+    "message": "مغادرة هذا الموقع"
+  },
+  "btnTrust": {
+    "message": "الوثوق بهذا الموقع"
+  },
+  "tipClose": {
+    "message": "يخفي هذا التحذير ويبقيك في الصفحة"
+  },
+  "tipLeave": {
+    "message": "يغلق هذه الصفحة ويفتح علامة تبويب جديدة"
+  },
+  "tipTrust": {
+    "message": "يوقف كل عمليات الفحص على هذا الموقع بعد تأكيدك"
+  },
+  "tipUntrust": {
+    "message": "يعيد فحص هذا الموقع من جديد"
+  },
+  "bannerReported": {
+    "message": "هذا الموقع مُبلّغ عنه بأنه ضار."
+  },
+  "bannerDetails": {
+    "message": "التفاصيل"
+  },
+  "bannerFirstSeen": {
+    "message": "ظهر لأول مرة في $1"
+  },
+  "bannerWeb3": {
+    "message": "يحمّل هذا الموقع شيفرة مخفية من سلسلة الكتل (blockchain)."
+  },
+  "bannerWeb3Detail": {
+    "message": "تستخدم المواقع المخترقة هذه الحيلة لعرض صفحات CAPTCHA مزيفة."
+  },
+  "bannerInstructions": {
+    "message": "تطلب منك هذه الصفحة لصق شيء في «تشغيل» أو الوحدة الطرفية أو مستكشف الملفات."
+  },
+  "bannerInstructionsDetail": {
+    "message": "المواقع الحقيقية لا تطلب منك ذلك أبدًا."
+  },
+  "rep_clickfix": {
+    "message": "صفحة ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "صفحة ClickFix تنشر $1"
+  },
+  "rep_malware": {
+    "message": "تنزيل لبرامج ضارة"
+  },
+  "rep_malware_family": {
+    "message": "تنزيل للبرنامج الضار $1"
+  },
+  "rep_c2": {
+    "message": "خادم تحكم لبرامج ضارة"
+  },
+  "rep_c2_family": {
+    "message": "خادم تحكم للبرنامج الضار $1"
+  },
+  "rep_phishing": {
+    "message": "صفحة تصيّد احتيالي"
+  },
+  "rep_phishing_family": {
+    "message": "صفحة تصيّد احتيالي من نوع $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "تنزيل برامج ضارة"
+  },
+  "category_c2": {
+    "message": "خادم تحكم لبرامج ضارة"
+  },
+  "category_phishing": {
+    "message": "تصيّد احتيالي"
+  },
+  "confirmTrustTitle": {
+    "message": "إيقاف حماية $1؟"
+  },
+  "confirmOpenTitle": {
+    "message": "فتح $1 على أي حال؟"
+  },
+  "confirmReported": {
+    "message": "هذا الموقع مُبلّغ عنه في قواعد بيانات التهديدات العامة."
+  },
+  "confirmBodyStrong": {
+    "message": "تصيب جهازك وتسرق كلمات المرور وبطاقات الائتمان المحفوظة ومحافظ العملات المشفرة"
+  },
+  "confirmOnlyReported": {
+    "message": "لا تفعل ذلك إلا إذا كنت تعرف أن البلاغ خاطئ."
+  },
+  "confirmOnlyKnown": {
+    "message": "لا تفعل ذلك إلا مع المواقع التي تعرفها جيدًا."
+  },
+  "confirmCheckTrust": {
+    "message": "أدرك أنني قد أفقد بيانات الدخول وملفات تعريف الارتباط والمال إذا وثقت بهذا الموقع"
+  },
+  "confirmCheckOpen": {
+    "message": "أدرك أنني قد أفقد بيانات الدخول وملفات تعريف الارتباط والمال إذا فتحت هذا الموقع"
+  },
+  "confirmTrust": {
+    "message": "الوثوق بهذا الموقع"
+  },
+  "confirmOpen": {
+    "message": "الفتح على أي حال"
+  },
+  "confirmKeep": {
+    "message": "استمرار الحماية"
+  },
+  "warnTitle": {
+    "message": "تم حظر موقع خطير"
+  },
+  "warnAddress": {
+    "message": "العنوان"
+  },
+  "warnReportedBy": {
+    "message": "أبلغ عنه"
+  },
+  "warnSteals": {
+    "message": "يسرق كلمات المرور وبطاقات الائتمان المحفوظة ومحافظ العملات المشفرة"
+  },
+  "warnLeave": {
+    "message": "العودة إلى الأمان"
+  },
+  "warnLeaveTip": {
+    "message": "يفتح علامة تبويب جديدة بدلًا من هذا الموقع"
+  },
+  "warnContinue": {
+    "message": "الفتح على أي حال"
+  },
+  "warnContinueTip": {
+    "message": "يفتح الموقع لمدة الساعة القادمة بعد أن تؤكد أنك تدرك الخطر"
+  },
+  "warnAdvice": {
+    "message": "لا يطلب منك أي موقع حقيقي لصق أي شيء في «تشغيل» أو الوحدة الطرفية أو مستكشف الملفات."
+  },
+  "popupOn": {
+    "message": "مُفعّل"
+  },
+  "popupOff": {
+    "message": "الحماية متوقفة."
+  },
+  "popupNotWebPage": {
+    "message": "ليست صفحة ويب"
+  },
+  "popupTrusted": {
+    "message": "موثوق من قبلك، لا يتم فحصه"
+  },
+  "popupReported": {
+    "message": "مُبلّغ عنه بأنه ضار"
+  },
+  "popupNoReports": {
+    "message": "لا توجد بلاغات عن هذا الموقع"
+  },
+  "popupUntrust": {
+    "message": "التوقف عن الوثوق بهذا الموقع"
+  },
+  "popupUpdated": {
+    "message": "تم التحديث $1، إصدار القواعد $2"
+  },
+  "popupFeedNone": {
+    "message": "لم يتم تنزيل قاعدة البيانات بعد"
+  },
+  "popupFeedError": {
+    "message": "فشل تحديث قاعدة البيانات، راجع الإعدادات"
+  },
+  "popupNoDetections": {
+    "message": "لم يتم حظر أي شيء بعد"
+  },
+  "popupSettings": {
+    "message": "الإعدادات"
+  },
+  "popupHistory": {
+    "message": "فحص سجل التصفح"
+  },
+  "popupUpdate": {
+    "message": "التحديث الآن"
+  },
+  "popupUpdating": {
+    "message": "جارٍ التحديث"
+  },
+  "popupRulesLine": {
+    "message": "إصدار قواعد الكشف $1، $2"
+  },
+  "popupRulesBundled": {
+    "message": "مضمّنة"
+  },
+  "popupRulesUpdated": {
+    "message": "محدّثة عبر الإنترنت"
+  },
+  "supportShort": {
+    "message": "الدعم"
+  },
+  "tipSupport": {
+    "message": "يفتح صفحة يمكنك فيها دعم ClickFix Warden بتبرع"
+  },
+  "supportProject": {
+    "message": "ادعم المشروع"
+  },
+  "kind_clipboard": {
+    "message": "أمر في الحافظة"
+  },
+  "kind_manual_copy": {
+    "message": "أمر منسوخ"
+  },
+  "kind_paste": {
+    "message": "لصق رابط تسجيل دخول"
+  },
+  "kind_protocol": {
+    "message": "رابط يفتح برنامجًا"
+  },
+  "kind_fullscreen": {
+    "message": "شاشة تحديث مزيفة"
+  },
+  "kind_page_instructions": {
+    "message": "تعليمات لصق"
+  },
+  "kind_web3_loader": {
+    "message": "محمّل من سلسلة الكتل"
+  },
+  "kind_reputation": {
+    "message": "موقع مُبلّغ عنه"
+  },
+  "kind_reputation_block": {
+    "message": "موقع ClickFix معروف"
+  },
+  "action_blocked": {
+    "message": "تم الحظر"
+  },
+  "action_warned": {
+    "message": "تم التحذير"
+  },
+  "action_copied_anyway": {
+    "message": "تم النسخ رغم ذلك"
+  },
+  "action_continued": {
+    "message": "تم الفتح رغم ذلك"
+  },
+  "action_trusted": {
+    "message": "تم الوثوق به"
+  },
+  "timeNever": {
+    "message": "أبدًا"
+  },
+  "timeJustNow": {
+    "message": "الآن"
+  },
+  "timeMinutes": {
+    "message": "قبل $1 دقيقة"
+  },
+  "timeHours": {
+    "message": "قبل $1 ساعة"
+  },
+  "timeDays": {
+    "message": "قبل $1 يوم"
+  },
+  "navProtection": {
+    "message": "الحماية"
+  },
+  "navTrusted": {
+    "message": "المواقع الموثوقة"
+  },
+  "navHistory": {
+    "message": "فحص السجل"
+  },
+  "navExtensions": {
+    "message": "فحص الإضافات"
+  },
+  "navLog": {
+    "message": "سجل الاكتشافات"
+  },
+  "navDatabase": {
+    "message": "قاعدة البيانات"
+  },
+  "navAbout": {
+    "message": "حول"
+  },
+  "welcomeTitle": {
+    "message": "أنت محمي"
+  },
+  "welcomeBody": {
+    "message": "يراقب ClickFix Warden الآن الصفحات التي تحاول خداعك لتشغيل أوامر، وينبّهك إلى المواقع المُبلّغ عنها بأنها ضارة."
+  },
+  "welcomePrivacy": {
+    "message": "يتم فحص كل شيء داخل متصفحك، ولا يُرسل أي شيء عن تصفحك إلى أي مكان."
+  },
+  "welcomeHostAccess": {
+    "message": "يحتاج ClickFix Warden إلى الوصول إلى جميع المواقع ليتمكن من حمايتها."
+  },
+  "welcomeGrant": {
+    "message": "السماح على جميع المواقع"
+  },
+  "tipGrantHosts": {
+    "message": "يتيح لـ ClickFix Warden مراقبة كل صفحة بحثًا عن حيل ClickFix"
+  },
+  "managedNote": {
+    "message": "تتولى مؤسستك إدارة بعض الإعدادات."
+  },
+  "protectionLead": {
+    "message": "اختر ما يراقبه ClickFix Warden. كل شيء يعمل داخل متصفحك."
+  },
+  "setEnabled": {
+    "message": "الحماية مُفعّلة"
+  },
+  "tipEnabled": {
+    "message": "يشغّل كل عمليات الفحص أو يوقفها دفعة واحدة"
+  },
+  "setClipboard": {
+    "message": "حظر الأوامر الخطيرة في الحافظة"
+  },
+  "tipClipboard": {
+    "message": "يمنع الصفحات من وضع أمر مخفي في الحافظة ويضع ملاحظة غير ضارة بدلًا منه"
+  },
+  "setPaste": {
+    "message": "حظر لصق روابط تسجيل الدخول في المواقع"
+  },
+  "tipPaste": {
+    "message": "يمنعك من لصق رابط تسجيل دخول يحمل رمزًا سريًا في صفحة قد تسرق حسابك"
+  },
+  "setProtocols": {
+    "message": "حظر الروابط التي تفتح برامج على جهازك"
+  },
+  "tipProtocols": {
+    "message": "يمنع الصفحات من فتح محرر النصوص البرمجية وبحث Windows على مجلدات بعيدة والبرامج المشابهة"
+  },
+  "setFullscreen": {
+    "message": "إيقاف صفحات التحديث المزيفة بملء الشاشة"
+  },
+  "tipFullscreen": {
+    "message": "يمنع الصفحات التي تطلب منك لصق أوامر من قفل الشاشة بتحديث مزيف"
+  },
+  "setPageWarnings": {
+    "message": "التحذير من الصفحات التي تحتوي على تعليمات لصق"
+  },
+  "tipPageWarnings": {
+    "message": "يعرض شريط تحذير عندما تطلب منك صفحة لصق شيء في «تشغيل» أو الوحدة الطرفية أو مستكشف الملفات"
+  },
+  "setWeb3": {
+    "message": "مراقبة الشيفرة المحمّلة من سلسلة الكتل"
+  },
+  "tipWeb3": {
+    "message": "ينبّهك عندما يجلب موقع عادي شيفرة مخفية من سلسلة الكتل، وهي حيلة تستخدمها المواقع المخترقة"
+  },
+  "setReputation": {
+    "message": "التحذير من المواقع المُبلّغ عنها"
+  },
+  "tipReputation": {
+    "message": "يعرض شريط تحذير على المواقع المدرجة كمواقع ضارة في قواعد بيانات التهديدات العامة"
+  },
+  "setBlockPage": {
+    "message": "حظر مواقع ClickFix المعروفة قبل تحميلها"
+  },
+  "tipBlockPage": {
+    "message": "يعرض تحذيرًا بملء الصفحة بدلًا من موقع تدرجه قواعد البيانات كصفحة ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "تنزيل تحديثات قاعدة البيانات والقواعد"
+  },
+  "tipFeedUpdates": {
+    "message": "ينزّل كل ساعة القائمة الموقّعة للمواقع المُبلّغ عنها وأحدث قواعد الكشف"
+  },
+  "trustedLead": {
+    "message": "لا يتم فحص هذه المواقع إطلاقًا، والوثوق بموقع يحتاج إلى التأكيد نفسه المطلوب في التحذير."
+  },
+  "trustedInputLabel": {
+    "message": "عنوان الموقع"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.com"
+  },
+  "trustedAdd": {
+    "message": "إضافة"
+  },
+  "tipTrustedAdd": {
+    "message": "يضيف الموقع إلى قائمة المواقع التي لا يتم فحصها، بعد تأكيدك"
+  },
+  "trustedRemove": {
+    "message": "إزالة"
+  },
+  "tipTrustedRemove": {
+    "message": "يعيد فحص هذا الموقع من جديد"
+  },
+  "trustedEmpty": {
+    "message": "لا توجد مواقع موثوقة"
+  },
+  "orgTitle": {
+    "message": "رسالة في التحذيرات"
+  },
+  "orgLead": {
+    "message": "نص إضافي يظهر في كل تحذير، مثل الجهة التي يجب التواصل معها في شركتك."
+  },
+  "orgPlaceholder": {
+    "message": "مثلًا، اتصل بمكتب الدعم الفني قبل المتابعة"
+  },
+  "orgSave": {
+    "message": "حفظ"
+  },
+  "tipOrgSave": {
+    "message": "يحفظ النص الذي يظهر في كل تحذير"
+  },
+  "orgSaved": {
+    "message": "تم الحفظ"
+  },
+  "historyLead": {
+    "message": "تحقق مما إذا كنت قد زرت أي موقع مدرج الآن في قاعدة البيانات، ويتم الفحص داخل متصفحك فقط."
+  },
+  "historyDays7": {
+    "message": "آخر 7 أيام"
+  },
+  "historyDays30": {
+    "message": "آخر 30 يومًا"
+  },
+  "historyDays90": {
+    "message": "آخر 90 يومًا"
+  },
+  "tipHistoryDays": {
+    "message": "إلى أي مدى يعود البحث في الماضي"
+  },
+  "historyScan": {
+    "message": "فحص سجل التصفح"
+  },
+  "tipHistoryScan": {
+    "message": "يطلب الوصول إلى سجل التصفح ويقارنه بقاعدة البيانات داخل متصفحك"
+  },
+  "historyScanning": {
+    "message": "جارٍ الفحص"
+  },
+  "historyChecked": {
+    "message": "تم فحص $1 من العناوين خلال الأيام الـ$2 الماضية."
+  },
+  "historyClean": {
+    "message": "لا يوجد أي موقع زرته في القائمة"
+  },
+  "historyFound": {
+    "message": "$1 من العناوين التي زرتها مدرجة في القائمة"
+  },
+  "historyAdvice": {
+    "message": "إذا شغّلت أي شيء طلبه منك موقع مدرج، فغيّر كلمات المرور من جهاز آخر واطلب فحص هذا الكمبيوتر."
+  },
+  "historyDenied": {
+    "message": "لم يتم منح الوصول إلى السجل."
+  },
+  "historyDrop": {
+    "message": "إزالة الوصول إلى السجل"
+  },
+  "tipHistoryDrop": {
+    "message": "يعيد إذن الوصول إلى السجل حتى تفحص مرة أخرى"
+  },
+  "exportJson": {
+    "message": "تصدير JSON"
+  },
+  "tipExport": {
+    "message": "يحفظ النتائج كملف JSON على هذا الكمبيوتر"
+  },
+  "tipExportLog": {
+    "message": "يحفظ السجل كملف JSON على هذا الكمبيوتر"
+  },
+  "colVisited": {
+    "message": "آخر زيارة"
+  },
+  "colAddress": {
+    "message": "العنوان"
+  },
+  "colReport": {
+    "message": "البلاغ"
+  },
+  "colTime": {
+    "message": "الوقت"
+  },
+  "colWhat": {
+    "message": "ماذا"
+  },
+  "colSite": {
+    "message": "الموقع"
+  },
+  "colDetails": {
+    "message": "التفاصيل"
+  },
+  "extensionsLead": {
+    "message": "ابحث عن إضافات المتصفح المثبتة المعروف أنها ضارة، مثل أدوات حظر الإعلانات المزيفة المستخدمة في هجمات CrashFix."
+  },
+  "extensionsScan": {
+    "message": "فحص الإضافات المثبتة"
+  },
+  "tipExtensionsScan": {
+    "message": "يطلب الإذن بعرض قائمة إضافاتك ويقارنها بقائمة الإضافات الضارة المعروفة"
+  },
+  "extensionsDrop": {
+    "message": "إزالة الوصول"
+  },
+  "tipExtensionsDrop": {
+    "message": "يعيد إذن عرض قائمة إضافاتك"
+  },
+  "extensionsDenied": {
+    "message": "لم يتم منح الوصول."
+  },
+  "extensionsChecked": {
+    "message": "تم فحص $1 من الإضافات المثبتة."
+  },
+  "extensionsClean": {
+    "message": "لم يتم العثور على أي إضافة ضارة معروفة"
+  },
+  "extensionsKnownAs": {
+    "message": "معروفة باسم $1"
+  },
+  "extensionsRemove": {
+    "message": "إزالة"
+  },
+  "tipExtensionsRemove": {
+    "message": "يلغي تثبيت هذه الإضافة بعد تأكيدك"
+  },
+  "logLead": {
+    "message": "ما حظره ClickFix Warden أو حذّر منه، ويبقى السجل على هذا الكمبيوتر."
+  },
+  "logClear": {
+    "message": "مسح السجل"
+  },
+  "tipLogClear": {
+    "message": "يحذف كل الإدخالات في السجل"
+  },
+  "logClearConfirm": {
+    "message": "هل تريد حذف كل الإدخالات في سجل الاكتشافات؟"
+  },
+  "databaseLead": {
+    "message": "تأتي البلاغات من قواعد بيانات abuse.ch العامة، ويتم التحقق منها بتوقيع رقمي قبل استخدامها."
+  },
+  "dbGenerated": {
+    "message": "$1 من البلاغات، نُشرت $2"
+  },
+  "dbChecked": {
+    "message": "آخر فحص $1"
+  },
+  "dbError": {
+    "message": "فشل آخر تحديث، $1"
+  },
+  "dbUpdated": {
+    "message": "محدّثة"
+  },
+  "tipUpdateNow": {
+    "message": "ينزّل أحدث قاعدة بيانات وقواعد الآن"
+  },
+  "aboutPrivacy": {
+    "message": "لا يجمع ClickFix Warden أي بيانات، فليس له حساب ولا قياس عن بُعد ولا خادم خاص به."
+  },
+  "aboutNetwork": {
+    "message": "الشيء الوحيد الذي ينزّله هو قاعدة البيانات والقواعد الموقّعة من GitHub، الذي يرى الطلب نفسه الذي يرسله أي تحديث."
+  },
+  "aboutProject": {
+    "message": "الشيفرة المصدرية"
+  },
+  "aboutPolicy": {
+    "message": "سياسة الخصوصية"
+  },
+  "descClipboard": {
+    "message": "حاولت هذه الصفحة وضع $1 في الحافظة. تم منع ذلك لأن $2."
+  },
+  "descManual": {
+    "message": "النص الذي حاولت نسخه هو $1، ولم يتم نسخه لأن $2."
+  },
+  "descPaste": {
+    "message": "كنت على وشك لصق $1 في هذه الصفحة. تم منع ذلك لأن $2."
+  },
+  "descProtocol": {
+    "message": "حاولت هذه الصفحة فتح $1. تم منع ذلك لأن $2."
+  },
+  "descFullscreen": {
+    "message": "حاولت هذه الصفحة $1. تم منع ذلك لأن $2."
+  },
+  "repLine": {
+    "message": "يدرجه $1 على أنه $2، وقد ظهر لأول مرة في $3."
+  },
+  "repLineNoDate": {
+    "message": "يدرجه $1 على أنه $2."
+  },
+  "warnLead": {
+    "message": "الموقع $1 مدرج في $2 على أنه $3. صفحات مثل هذه تخدعك لتلصق أمرًا $4."
+  },
+  "warnLeadUnknown": {
+    "message": "الموقع $1 مدرج في قواعد بيانات التهديدات العامة. صفحات مثل هذه تخدعك لتلصق أمرًا $2."
+  },
+  "confirmBody": {
+    "message": "إذا تابعت، فسيتوقف ClickFix Warden عن فحصه، ويمكن لصفحة مثل هذه أن $1."
+  },
+  "popupBlockedLine": {
+    "message": "تم حظر $1 $2"
+  },
+  "popupReports": {
+    "message": "$1 من العناوين المُبلّغ عنها"
+  },
+  "kindAction": {
+    "message": "$1، $2"
+  },
+  "proto_applescript": {
+    "message": "محرر النصوص البرمجية مع برنامج نصي مُعدّ مسبقًا"
+  },
+  "proto_search_ms": {
+    "message": "نافذة بحث Windows على مجلد بعيد"
+  },
+  "proto_ms_msdt": {
+    "message": "مستكشف أخطاء Windows ومصلحها بإعدادات مخفية"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office بإعدادات مخفية"
+  },
+  "proto_ms_appinstaller": {
+    "message": "مثبّت تطبيقات من الإنترنت"
+  },
+  "setLanguage": {
+    "message": "اللغة"
+  },
+  "tipLanguage": {
+    "message": "يغيّر لغة ClickFix Warden، ويتبع الخيار الافتراضي لغة متصفحك"
+  },
+  "langBrowser": {
+    "message": "لغة المتصفح الافتراضية"
+  }
+}

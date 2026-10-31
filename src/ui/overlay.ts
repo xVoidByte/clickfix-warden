@@ -1,7 +1,7 @@
 // In-page warnings in the Graphite design, inside a closed shadow root so page styles and scripts cannot reach them.
 
 import { browser } from 'wxt/browser';
-import { t, uiLang } from '../shared/i18n';
+import { isRtl, t, tParts, uiLang } from '../shared/i18n';
 import type { AlertData } from '../shared/messages';
 import { longDate, whatOfReport } from './explain';
 import { boldSentence, confirmDialog, dangerHead, el, FONT_FACES, FONT_STACK, PARTS_CSS, warnIcon } from './graphite';
@@ -49,6 +49,8 @@ function root(): ShadowRoot {
   if (hostEl && shadow && hostEl.isConnected) return shadow;
   addFonts();
   hostEl = document.createElement('cfw-warden');
+  hostEl.setAttribute('dir', isRtl() ? 'rtl' : 'ltr');
+  hostEl.setAttribute('lang', uiLang());
   hostEl.setAttribute('style', 'all: initial !important; display: block !important; position: static !important;');
   shadow = hostEl.attachShadow({ mode: 'closed' });
   const style = document.createElement('style');
@@ -72,12 +74,12 @@ function closeIcon(): SVGSVGElement {
   return s;
 }
 
-const TEXT_KEYS: Record<string, { title: string; a: string; b: string; note?: string }> = {
-  clipboard: { title: 'titleClipboard', a: 'descClipboardA', b: 'descClipboardB', note: 'descNote' },
-  'manual-copy': { title: 'titleManual', a: 'descManualA', b: 'descManualB', note: 'descManualNote' },
-  paste: { title: 'titlePaste', a: 'descPasteA', b: 'descPasteB' },
-  protocol: { title: 'titleProtocol', a: 'descProtocolA', b: 'descStoppedB' },
-  fullscreen: { title: 'titleFullscreen', a: 'descFullscreenA', b: 'descStoppedB', note: 'descFullscreenNote' },
+const TEXT_KEYS: Record<string, { title: string; desc: string; note?: string }> = {
+  clipboard: { title: 'titleClipboard', desc: 'descClipboard', note: 'descNote' },
+  'manual-copy': { title: 'titleManual', desc: 'descManual', note: 'descManualNote' },
+  paste: { title: 'titlePaste', desc: 'descPaste' },
+  protocol: { title: 'titleProtocol', desc: 'descProtocol' },
+  fullscreen: { title: 'titleFullscreen', desc: 'descFullscreen', note: 'descFullscreenNote' },
 };
 
 export function showAlert(alert: AlertData, actions: OverlayActions, customWarning = ''): void {
@@ -98,7 +100,7 @@ function showDialog(alert: AlertData, actions: OverlayActions, customWarning: st
   const title = el(document, 'h1', 'g-title', t(keys.title));
   title.id = 'cfw-title';
   card.setAttribute('aria-labelledby', 'cfw-title');
-  card.append(dangerHead(document), title, boldSentence(document, t(keys.a), alert.what ?? '', t(keys.b), alert.why ?? ''));
+  card.append(dangerHead(document), title, boldSentence(document, keys.desc, alert.what ?? '', alert.why ?? ''));
   if (keys.note) card.append(el(document, 'p', 'g-text', t(keys.note)));
   if (customWarning) card.append(el(document, 'p', 'g-note', customWarning));
 
@@ -136,8 +138,9 @@ function bannerText(alert: AlertData): HTMLElement {
     text.append(el(document, 'strong', undefined, t('bannerReported')), ' ');
     const rep = whatOfReport(alert.hits);
     if (rep) {
-      text.append(t('repListsAs', rep.source) + ' ', el(document, 'strong', undefined, rep.what));
-      text.append(rep.firstSeen ? t('repFirstSeen', longDate(rep.firstSeen, uiLang())) : '.');
+      const what = el(document, 'strong', undefined, rep.what);
+      if (rep.firstSeen) text.append(...tParts('repLine', [rep.source, what, longDate(rep.firstSeen, uiLang())]));
+      else text.append(...tParts('repLineNoDate', [rep.source, what]));
       if (/^https:\/\/(urlhaus|threatfox|feodotracker)\.abuse\.ch\//.test(rep.ref)) {
         const a = el(document, 'a', undefined, t('bannerDetails'));
         a.href = rep.ref;

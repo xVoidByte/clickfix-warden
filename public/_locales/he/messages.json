@@ -1,0 +1,788 @@
+{
+  "extName": {
+    "message": "ClickFix Warden"
+  },
+  "extDescription": {
+    "message": "עוצר מתקפות ClickFix ו-CAPTCHA מזויפות שמרמות אותך להפעיל פקודות, ומזהיר מפני אתרים שדווחו כזדוניים."
+  },
+  "dangerLabel": {
+    "message": "אתר שעלול להיות מסוכן"
+  },
+  "titleClipboard": {
+    "message": "פקודה מסוכנת נחסמה"
+  },
+  "titleManual": {
+    "message": "פקודה מסוכנת לא הועתקה"
+  },
+  "titlePaste": {
+    "message": "הדבקה מסוכנת נחסמה"
+  },
+  "titleProtocol": {
+    "message": "קישור מסוכן נחסם"
+  },
+  "titleFullscreen": {
+    "message": "מסך עדכון מזויף נחסם"
+  },
+  "descNote": {
+    "message": "בלוח יש עכשיו הערה לא מזיקה, כך שהדבקה לא תעשה דבר."
+  },
+  "descManualNote": {
+    "message": "במקום זאת הועתקה הערה לא מזיקה."
+  },
+  "descFullscreenNote": {
+    "message": "אם משהו עדיין מכסה את המסך, יש ללחוץ על Esc ואז לסגור את הכרטיסייה."
+  },
+  "whatTemplate": {
+    "message": "$1 ש$2"
+  },
+  "what_powershell": {
+    "message": "פקודת PowerShell"
+  },
+  "what_powershell_hidden": {
+    "message": "פקודת PowerShell מוסתרת"
+  },
+  "what_applescript": {
+    "message": "פקודת AppleScript"
+  },
+  "what_applescript_hidden": {
+    "message": "פקודת AppleScript מוסתרת"
+  },
+  "what_terminal": {
+    "message": "פקודת מסוף"
+  },
+  "what_terminal_hidden": {
+    "message": "פקודת מסוף מוסתרת"
+  },
+  "what_script": {
+    "message": "פקודת סקריפט"
+  },
+  "what_script_hidden": {
+    "message": "פקודת סקריפט מוסתרת"
+  },
+  "what_cmd": {
+    "message": "פקודה של שורת הפקודה"
+  },
+  "what_cmd_hidden": {
+    "message": "פקודה מוסתרת של שורת הפקודה"
+  },
+  "what_windows": {
+    "message": "פקודת Windows"
+  },
+  "what_windows_hidden": {
+    "message": "פקודת Windows מוסתרת"
+  },
+  "what_generic": {
+    "message": "פקודה"
+  },
+  "what_generic_hidden": {
+    "message": "פקודה מוסתרת"
+  },
+  "effect_download_run": {
+    "message": "מורידה ומפעילה תוכנה"
+  },
+  "effect_disables_av": {
+    "message": "מכבה את ההגנה מפני וירוסים"
+  },
+  "effect_password": {
+    "message": "מבקשת את הסיסמה שלך בחלון מזויף"
+  },
+  "effect_remote_share": {
+    "message": "מפעילה קבצים מתיקייה משותפת ברשת מרוחקת"
+  },
+  "effect_remote_script": {
+    "message": "מפעילה סקריפט ישירות מהאינטרנט"
+  },
+  "effect_remote_install": {
+    "message": "מתקינה תוכנה ישירות מהאינטרנט"
+  },
+  "effect_dns": {
+    "message": "מושכת פקודות מוסתרות מרשומות DNS"
+  },
+  "effect_finger": {
+    "message": "מושכת פקודות מוסתרות משרת מרוחק"
+  },
+  "effect_runs": {
+    "message": "פועלת במחשב שלך בלי לשאול"
+  },
+  "whyPage1": {
+    "message": "הדף $1"
+  },
+  "whyPage2": {
+    "message": "הדף $1 ו$2"
+  },
+  "lure_captcha": {
+    "message": "מתחזה ל-CAPTCHA"
+  },
+  "lure_update": {
+    "message": "מעמיד פנים שהוא מתקין עדכונים"
+  },
+  "lure_fix": {
+    "message": "מציג אותה כפתרון לשגיאה"
+  },
+  "target_explorer": {
+    "message": "אומר לך להדביק אותה בשורת הכתובת של סייר הקבצים"
+  },
+  "target_terminal": {
+    "message": "אומר לך להדביק אותה במסוף"
+  },
+  "target_run": {
+    "message": "אומר לך להדביק אותה בתיבה ״הפעלה״"
+  },
+  "target_paste": {
+    "message": "אומר לך להדביק אותה במקום כלשהו במחשב"
+  },
+  "why_payload_reported": {
+    "message": "הפקודה מורידה קבצים מכתובת שדווחה כזדונית"
+  },
+  "why_site_reported": {
+    "message": "האתר הזה דווח כזדוני"
+  },
+  "why_decoy": {
+    "message": "אחרי הפקודה מוסתר טקסט אימות מזויף"
+  },
+  "why_padding": {
+    "message": "הפקודה האמיתית מוסתרת מאחורי שטח ריק"
+  },
+  "why_disguised": {
+    "message": "הפקודה מוסווית כדי להסתיר את מה שהיא עושה"
+  },
+  "why_hidden_window": {
+    "message": "הפקודה פועלת בחלון מוסתר"
+  },
+  "why_generic": {
+    "message": "יש בפקודה סימנים של מתקפת ClickFix"
+  },
+  "why_fullscreen": {
+    "message": "הדף אומר לך להדביק פקודה"
+  },
+  "fullscreenWhat": {
+    "message": "השתלטות על כל המסך כמו עדכון Windows מזויף"
+  },
+  "pasteWhat": {
+    "message": "קישור התחברות עם קוד סודי"
+  },
+  "pasteWhy": {
+    "message": "דף כזה יכול להשתמש בו כדי להשתלט על החשבון שלך"
+  },
+  "protocolWhy": {
+    "message": "קישורים כאלה יכולים להפעיל פקודות במחשב שלך בלי שתשים לב"
+  },
+  "btnClose": {
+    "message": "סגירה"
+  },
+  "btnLeave": {
+    "message": "יציאה מהאתר"
+  },
+  "btnTrust": {
+    "message": "מתן אמון באתר"
+  },
+  "tipClose": {
+    "message": "מסתיר את האזהרה ונשאר בדף"
+  },
+  "tipLeave": {
+    "message": "סוגר את הדף ופותח כרטיסייה חדשה"
+  },
+  "tipTrust": {
+    "message": "מפסיק את כל הבדיקות באתר הזה אחרי אישור"
+  },
+  "tipUntrust": {
+    "message": "מתחיל לבדוק את האתר הזה שוב"
+  },
+  "bannerReported": {
+    "message": "האתר הזה דווח כזדוני."
+  },
+  "bannerDetails": {
+    "message": "פרטים"
+  },
+  "bannerFirstSeen": {
+    "message": "נראה לראשונה ב-$1"
+  },
+  "bannerWeb3": {
+    "message": "האתר הזה טוען קוד מוסתר מבלוקצ׳יין."
+  },
+  "bannerWeb3Detail": {
+    "message": "אתרים פרוצים משתמשים בתרגיל הזה כדי להציג דפי CAPTCHA מזויפים."
+  },
+  "bannerInstructions": {
+    "message": "הדף הזה אומר לך להדביק משהו ב״הפעלה״, במסוף או בסייר הקבצים."
+  },
+  "bannerInstructionsDetail": {
+    "message": "אתרים אמיתיים אף פעם לא מבקשים לעשות את זה."
+  },
+  "rep_clickfix": {
+    "message": "דף ClickFix"
+  },
+  "rep_clickfix_family": {
+    "message": "דף ClickFix שמפיץ את $1"
+  },
+  "rep_malware": {
+    "message": "הורדה של נוזקה"
+  },
+  "rep_malware_family": {
+    "message": "הורדה של $1"
+  },
+  "rep_c2": {
+    "message": "שרת שליטה של נוזקה"
+  },
+  "rep_c2_family": {
+    "message": "שרת שליטה של $1"
+  },
+  "rep_phishing": {
+    "message": "דף פישינג"
+  },
+  "rep_phishing_family": {
+    "message": "דף פישינג של $1"
+  },
+  "category_clickfix": {
+    "message": "ClickFix"
+  },
+  "category_malware": {
+    "message": "הורדת נוזקה"
+  },
+  "category_c2": {
+    "message": "שרת שליטה של נוזקה"
+  },
+  "category_phishing": {
+    "message": "פישינג"
+  },
+  "confirmTrustTitle": {
+    "message": "להפסיק להגן על $1?"
+  },
+  "confirmOpenTitle": {
+    "message": "לפתוח את $1 בכל זאת?"
+  },
+  "confirmReported": {
+    "message": "האתר הזה דווח במאגרי איומים ציבוריים."
+  },
+  "confirmBodyStrong": {
+    "message": "להדביק את המחשב שלך בנוזקה ולגנוב את הסיסמאות, כרטיסי האשראי השמורים וארנקי הקריפטו שלך"
+  },
+  "confirmOnlyReported": {
+    "message": "כדאי לעשות זאת רק אם ידוע לך שהדיווח שגוי."
+  },
+  "confirmOnlyKnown": {
+    "message": "כדאי לעשות זאת רק באתרים שמוכרים לך היטב."
+  },
+  "confirmCheckTrust": {
+    "message": "ידוע לי שמתן אמון באתר הזה עלול לגרום לי לאבד פרטי התחברות, קובצי Cookie וכסף"
+  },
+  "confirmCheckOpen": {
+    "message": "ידוע לי שפתיחת האתר הזה עלולה לגרום לי לאבד פרטי התחברות, קובצי Cookie וכסף"
+  },
+  "confirmTrust": {
+    "message": "מתן אמון באתר"
+  },
+  "confirmOpen": {
+    "message": "פתיחה בכל זאת"
+  },
+  "confirmKeep": {
+    "message": "המשך ההגנה"
+  },
+  "warnTitle": {
+    "message": "אתר מסוכן נחסם"
+  },
+  "warnAddress": {
+    "message": "כתובת"
+  },
+  "warnReportedBy": {
+    "message": "דווח על ידי"
+  },
+  "warnSteals": {
+    "message": "גונבת את הסיסמאות, כרטיסי האשראי השמורים וארנקי הקריפטו שלך"
+  },
+  "warnLeave": {
+    "message": "חזרה למקום בטוח"
+  },
+  "warnLeaveTip": {
+    "message": "פותח כרטיסייה חדשה במקום האתר הזה"
+  },
+  "warnContinue": {
+    "message": "פתיחה בכל זאת"
+  },
+  "warnContinueTip": {
+    "message": "פותח את האתר לשעה הקרובה אחרי אישור הסיכון"
+  },
+  "warnAdvice": {
+    "message": "אף אתר אמיתי לא מבקש להדביק משהו ב״הפעלה״, במסוף או בסייר הקבצים."
+  },
+  "popupOn": {
+    "message": "פועל"
+  },
+  "popupOff": {
+    "message": "ההגנה כבויה."
+  },
+  "popupNotWebPage": {
+    "message": "זה לא דף אינטרנט"
+  },
+  "popupTrusted": {
+    "message": "מהימן לפי בחירתך, לא נבדק"
+  },
+  "popupReported": {
+    "message": "דווח כזדוני"
+  },
+  "popupNoReports": {
+    "message": "אין דיווחים על האתר הזה"
+  },
+  "popupUntrust": {
+    "message": "הפסקת האמון באתר"
+  },
+  "popupUpdated": {
+    "message": "עודכן $1, גרסת כללים $2"
+  },
+  "popupFeedNone": {
+    "message": "מסד הנתונים עדיין לא הורד"
+  },
+  "popupFeedError": {
+    "message": "עדכון מסד הנתונים נכשל, יש לבדוק בהגדרות"
+  },
+  "popupNoDetections": {
+    "message": "עדיין לא נחסם דבר"
+  },
+  "popupSettings": {
+    "message": "הגדרות"
+  },
+  "popupHistory": {
+    "message": "בדיקת ההיסטוריה שלי"
+  },
+  "popupUpdate": {
+    "message": "עדכון עכשיו"
+  },
+  "popupUpdating": {
+    "message": "מתבצע עדכון"
+  },
+  "popupRulesLine": {
+    "message": "גרסת כללי הזיהוי $1, $2"
+  },
+  "popupRulesBundled": {
+    "message": "מובנים"
+  },
+  "popupRulesUpdated": {
+    "message": "עודכנו ברשת"
+  },
+  "supportShort": {
+    "message": "תמיכה"
+  },
+  "tipSupport": {
+    "message": "פותח דף שבו אפשר לתמוך ב-ClickFix Warden בתרומה"
+  },
+  "supportProject": {
+    "message": "תמיכה בפרויקט"
+  },
+  "kind_clipboard": {
+    "message": "פקודה בלוח"
+  },
+  "kind_manual_copy": {
+    "message": "פקודה שהועתקה"
+  },
+  "kind_paste": {
+    "message": "הדבקת קישור התחברות"
+  },
+  "kind_protocol": {
+    "message": "קישור לתוכנה"
+  },
+  "kind_fullscreen": {
+    "message": "מסך עדכון מזויף"
+  },
+  "kind_page_instructions": {
+    "message": "הוראות הדבקה"
+  },
+  "kind_web3_loader": {
+    "message": "טוען מבלוקצ׳יין"
+  },
+  "kind_reputation": {
+    "message": "אתר שדווח"
+  },
+  "kind_reputation_block": {
+    "message": "אתר ClickFix ידוע"
+  },
+  "action_blocked": {
+    "message": "חסימה"
+  },
+  "action_warned": {
+    "message": "אזהרה"
+  },
+  "action_copied_anyway": {
+    "message": "העתקה בכל זאת"
+  },
+  "action_continued": {
+    "message": "פתיחה בכל זאת"
+  },
+  "action_trusted": {
+    "message": "סימון כמהימן"
+  },
+  "timeNever": {
+    "message": "אף פעם"
+  },
+  "timeJustNow": {
+    "message": "עכשיו"
+  },
+  "timeMinutes": {
+    "message": "לפני $1 דק׳"
+  },
+  "timeHours": {
+    "message": "לפני $1 שע׳"
+  },
+  "timeDays": {
+    "message": "לפני $1 ימים"
+  },
+  "navProtection": {
+    "message": "הגנה"
+  },
+  "navTrusted": {
+    "message": "אתרים מהימנים"
+  },
+  "navHistory": {
+    "message": "בדיקת היסטוריה"
+  },
+  "navExtensions": {
+    "message": "בדיקת תוספים"
+  },
+  "navLog": {
+    "message": "יומן זיהויים"
+  },
+  "navDatabase": {
+    "message": "מסד נתונים"
+  },
+  "navAbout": {
+    "message": "אודות"
+  },
+  "welcomeTitle": {
+    "message": "ההגנה פעילה"
+  },
+  "welcomeBody": {
+    "message": "ClickFix Warden עוקב עכשיו אחרי דפים שמנסים לגרום לך להפעיל פקודות, ומזהיר אותך מפני אתרים שדווחו כזדוניים."
+  },
+  "welcomePrivacy": {
+    "message": "הכול נבדק בתוך הדפדפן שלך, ושום מידע על הגלישה שלך לא נשלח לשום מקום."
+  },
+  "welcomeHostAccess": {
+    "message": "ClickFix Warden צריך גישה לכל האתרים כדי להגן עליהם."
+  },
+  "welcomeGrant": {
+    "message": "אישור בכל האתרים"
+  },
+  "tipGrantHosts": {
+    "message": "מאפשר ל-ClickFix Warden לבדוק כל דף ולזהות תרגילי ClickFix"
+  },
+  "managedNote": {
+    "message": "חלק מההגדרות מנוהלות על ידי הארגון שלך."
+  },
+  "protectionLead": {
+    "message": "כאן בוחרים מה ClickFix Warden בודק. הכול פועל בתוך הדפדפן שלך."
+  },
+  "setEnabled": {
+    "message": "ההגנה פועלת"
+  },
+  "tipEnabled": {
+    "message": "מפעיל או מכבה את כל הבדיקות בבת אחת"
+  },
+  "setClipboard": {
+    "message": "חסימת פקודות מסוכנות בלוח"
+  },
+  "tipClipboard": {
+    "message": "מונע מדפים להכניס פקודה מוסתרת ללוח ושם במקומה הערה לא מזיקה"
+  },
+  "setPaste": {
+    "message": "חסימת הדבקה של קישורי התחברות באתרים"
+  },
+  "tipPaste": {
+    "message": "מונע הדבקה של קישור התחברות עם קוד סודי בדף שעלול לגנוב את החשבון שלך"
+  },
+  "setProtocols": {
+    "message": "חסימת קישורים שפותחים תוכנות במחשב"
+  },
+  "tipProtocols": {
+    "message": "מונע מדפים לפתוח את עורך התסריטים, את חיפוש Windows בתיקיות מרוחקות ותוכנות דומות"
+  },
+  "setFullscreen": {
+    "message": "עצירת דפי עדכון מזויפים במסך מלא"
+  },
+  "tipFullscreen": {
+    "message": "מונע מדפים שאומרים לך להדביק פקודות לנעול את המסך עם עדכון מזויף"
+  },
+  "setPageWarnings": {
+    "message": "אזהרה על דפים עם הוראות הדבקה"
+  },
+  "tipPageWarnings": {
+    "message": "מציג סרגל אזהרה כשדף אומר לך להדביק משהו ב״הפעלה״, במסוף או בסייר הקבצים"
+  },
+  "setWeb3": {
+    "message": "מעקב אחרי קוד שנטען מבלוקצ׳יין"
+  },
+  "tipWeb3": {
+    "message": "מזהיר כשאתר רגיל מושך קוד מוסתר מבלוקצ׳יין, תרגיל שאתרים פרוצים משתמשים בו"
+  },
+  "setReputation": {
+    "message": "אזהרה על אתרים שדווחו"
+  },
+  "tipReputation": {
+    "message": "מציג סרגל אזהרה באתרים שרשומים כזדוניים במאגרי איומים ציבוריים"
+  },
+  "setBlockPage": {
+    "message": "חסימת אתרי ClickFix ידועים לפני שהם נטענים"
+  },
+  "tipBlockPage": {
+    "message": "מציג אזהרה על פני כל הדף במקום אתר שהמאגרים רושמים כדף ClickFix"
+  },
+  "setFeedUpdates": {
+    "message": "הורדת עדכונים למסד הנתונים ולכללים"
+  },
+  "tipFeedUpdates": {
+    "message": "מוריד בכל שעה את הרשימה החתומה של אתרים שדווחו ואת כללי הזיהוי החדשים ביותר"
+  },
+  "trustedLead": {
+    "message": "האתרים האלה לא נבדקים בכלל, ומתן אמון באתר דורש את אותו אישור כמו באזהרה."
+  },
+  "trustedInputLabel": {
+    "message": "כתובת האתר"
+  },
+  "trustedPlaceholder": {
+    "message": "intranet.company.co.il"
+  },
+  "trustedAdd": {
+    "message": "הוספה"
+  },
+  "tipTrustedAdd": {
+    "message": "מוסיף את האתר לרשימת האתרים שלא נבדקים, אחרי אישור"
+  },
+  "trustedRemove": {
+    "message": "הסרה"
+  },
+  "tipTrustedRemove": {
+    "message": "מתחיל לבדוק את האתר הזה שוב"
+  },
+  "trustedEmpty": {
+    "message": "אין אתרים מהימנים"
+  },
+  "orgTitle": {
+    "message": "הודעה באזהרות"
+  },
+  "orgLead": {
+    "message": "טקסט נוסף שמוצג בכל אזהרה, למשל למי לפנות בחברה."
+  },
+  "orgPlaceholder": {
+    "message": "לדוגמה, יש להתקשר למוקד התמיכה של IT לפני שממשיכים"
+  },
+  "orgSave": {
+    "message": "שמירה"
+  },
+  "tipOrgSave": {
+    "message": "שומר את הטקסט שמוצג בכל אזהרה"
+  },
+  "orgSaved": {
+    "message": "נשמר"
+  },
+  "historyLead": {
+    "message": "בדיקה אם ביקרת באתר כלשהו שרשום עכשיו במסד הנתונים, הבדיקה מתבצעת רק בדפדפן שלך."
+  },
+  "historyDays7": {
+    "message": "7 הימים האחרונים"
+  },
+  "historyDays30": {
+    "message": "30 הימים האחרונים"
+  },
+  "historyDays90": {
+    "message": "90 הימים האחרונים"
+  },
+  "tipHistoryDays": {
+    "message": "כמה זמן אחורה לבדוק"
+  },
+  "historyScan": {
+    "message": "בדיקת ההיסטוריה שלי"
+  },
+  "tipHistoryScan": {
+    "message": "מבקש גישה להיסטוריה שלך ומשווה אותה למסד הנתונים בתוך הדפדפן"
+  },
+  "historyScanning": {
+    "message": "הבדיקה מתבצעת"
+  },
+  "historyChecked": {
+    "message": "נבדקו $1 כתובות מ-$2 הימים האחרונים."
+  },
+  "historyClean": {
+    "message": "אף אתר שביקרת בו לא רשום"
+  },
+  "historyFound": {
+    "message": "$1 כתובות שביקרת בהן רשומות"
+  },
+  "historyAdvice": {
+    "message": "אם הפעלת משהו שאתר רשום אמר לך להפעיל, יש לשנות את הסיסמאות ממכשיר אחר ולתת למישהו לבדוק את המחשב הזה."
+  },
+  "historyDenied": {
+    "message": "לא ניתנה גישה להיסטוריה."
+  },
+  "historyDrop": {
+    "message": "הסרת הגישה להיסטוריה"
+  },
+  "tipHistoryDrop": {
+    "message": "מחזיר את ההרשאה להיסטוריה עד לבדיקה הבאה"
+  },
+  "exportJson": {
+    "message": "ייצוא JSON"
+  },
+  "tipExport": {
+    "message": "שומר את התוצאות כקובץ JSON במחשב הזה"
+  },
+  "tipExportLog": {
+    "message": "שומר את היומן כקובץ JSON במחשב הזה"
+  },
+  "colVisited": {
+    "message": "ביקור אחרון"
+  },
+  "colAddress": {
+    "message": "כתובת"
+  },
+  "colReport": {
+    "message": "דיווח"
+  },
+  "colTime": {
+    "message": "זמן"
+  },
+  "colWhat": {
+    "message": "מה"
+  },
+  "colSite": {
+    "message": "אתר"
+  },
+  "colDetails": {
+    "message": "פרטים"
+  },
+  "extensionsLead": {
+    "message": "חיפוש תוספי דפדפן מותקנים שידוע שהם זדוניים, כמו חוסמי פרסומות מזויפים שמשמשים במתקפות CrashFix."
+  },
+  "extensionsScan": {
+    "message": "בדיקת התוספים המותקנים"
+  },
+  "tipExtensionsScan": {
+    "message": "מבקש הרשאה להציג את רשימת התוספים שלך ומשווה אותה לרשימה של תוספים זדוניים ידועים"
+  },
+  "extensionsDrop": {
+    "message": "הסרת הגישה"
+  },
+  "tipExtensionsDrop": {
+    "message": "מחזיר את ההרשאה להציג את רשימת התוספים שלך"
+  },
+  "extensionsDenied": {
+    "message": "לא ניתנה גישה."
+  },
+  "extensionsChecked": {
+    "message": "נבדקו $1 תוספים מותקנים."
+  },
+  "extensionsClean": {
+    "message": "לא נמצא אף תוסף זדוני ידוע"
+  },
+  "extensionsKnownAs": {
+    "message": "ידוע בשם $1"
+  },
+  "extensionsRemove": {
+    "message": "הסרה"
+  },
+  "tipExtensionsRemove": {
+    "message": "מסיר את התוסף הזה אחרי אישור"
+  },
+  "logLead": {
+    "message": "מה ש-ClickFix Warden חסם או הזהיר מפניו, היומן נשמר במחשב הזה."
+  },
+  "logClear": {
+    "message": "ניקוי היומן"
+  },
+  "tipLogClear": {
+    "message": "מוחק את כל הרשומות ביומן"
+  },
+  "logClearConfirm": {
+    "message": "למחוק את כל הרשומות ביומן הזיהויים?"
+  },
+  "databaseLead": {
+    "message": "הדיווחים מגיעים ממאגרי abuse.ch הציבוריים ונבדקים מול חתימה דיגיטלית לפני השימוש."
+  },
+  "dbGenerated": {
+    "message": "$1 דיווחים, פורסמו $2"
+  },
+  "dbChecked": {
+    "message": "נבדק לאחרונה $1"
+  },
+  "dbError": {
+    "message": "העדכון האחרון נכשל, $1"
+  },
+  "dbUpdated": {
+    "message": "מעודכן"
+  },
+  "tipUpdateNow": {
+    "message": "מוריד עכשיו את מסד הנתונים והכללים החדשים ביותר"
+  },
+  "aboutPrivacy": {
+    "message": "ClickFix Warden לא אוסף שום מידע, אין לו חשבון, טלמטריה או שרת משלו."
+  },
+  "aboutNetwork": {
+    "message": "הדבר היחיד שהוא מוריד הוא מסד הנתונים והכללים החתומים מ-GitHub, שרואה את אותה בקשה שכל עדכון שולח."
+  },
+  "aboutProject": {
+    "message": "קוד המקור"
+  },
+  "aboutPolicy": {
+    "message": "מדיניות הפרטיות"
+  },
+  "descClipboard": {
+    "message": "הדף הזה ניסה להכניס ללוח $1. הפעולה נעצרה כי $2."
+  },
+  "descManual": {
+    "message": "הטקסט שניסית להעתיק הוא $1, והוא לא הועתק כי $2."
+  },
+  "descPaste": {
+    "message": "עמדת להדביק בדף הזה $1. הפעולה נעצרה כי $2."
+  },
+  "descProtocol": {
+    "message": "הדף הזה ניסה לפתוח את $1. הפעולה נעצרה כי $2."
+  },
+  "descFullscreen": {
+    "message": "הדף הזה ניסה לבצע $1. הפעולה נעצרה כי $2."
+  },
+  "repLine": {
+    "message": "$1 מסווג אותו כ$2, והוא נראה לראשונה ב-$3."
+  },
+  "repLineNoDate": {
+    "message": "$1 מסווג אותו כ$2."
+  },
+  "warnLead": {
+    "message": "$1 רשום ב-$2 כ$3. דפים כאלה מרמים אותך להדביק פקודה ש$4."
+  },
+  "warnLeadUnknown": {
+    "message": "$1 רשום במאגרי איומים ציבוריים. דפים כאלה מרמים אותך להדביק פקודה ש$2."
+  },
+  "confirmBody": {
+    "message": "אם תמשיך, ClickFix Warden יפסיק לבדוק אותו, ודף כזה יכול $1."
+  },
+  "popupBlockedLine": {
+    "message": "חסימת $1, $2"
+  },
+  "popupReports": {
+    "message": "$1 כתובות שדווחו"
+  },
+  "kindAction": {
+    "message": "$1, $2"
+  },
+  "proto_applescript": {
+    "message": "עורך התסריטים עם תסריט מוכן מראש"
+  },
+  "proto_search_ms": {
+    "message": "חלון החיפוש של Windows בתיקייה מרוחקת"
+  },
+  "proto_ms_msdt": {
+    "message": "פותר הבעיות של Windows עם הגדרות מוסתרות"
+  },
+  "proto_ms_officecmd": {
+    "message": "Office עם הגדרות מוסתרות"
+  },
+  "proto_ms_appinstaller": {
+    "message": "מתקין האפליקציות עם אפליקציה מהאינטרנט"
+  },
+  "setLanguage": {
+    "message": "שפה"
+  },
+  "tipLanguage": {
+    "message": "משנה את השפה של ClickFix Warden, ברירת המחדל של הדפדפן עוקבת אחרי שפת הדפדפן שלך"
+  },
+  "langBrowser": {
+    "message": "ברירת המחדל של הדפדפן"
+  }
+}

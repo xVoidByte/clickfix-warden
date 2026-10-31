@@ -1,13 +1,12 @@
 import { browser } from 'wxt/browser';
 import type { FeedHit } from '../../src/feed/types';
-import { localizePage, t, uiLang } from '../../src/shared/i18n';
+import { loadI18nOverride, localizePage, t, tParts, uiLang } from '../../src/shared/i18n';
 import type { Message } from '../../src/shared/messages';
 import { longDate, whatOfReport } from '../../src/ui/explain';
 import { confirmDialog, el, warnIcon } from '../../src/ui/graphite';
 import { addPageParts } from '../../src/ui/page-parts';
 
 addPageParts();
-localizePage();
 
 const target = new URLSearchParams(location.search).get('u') ?? '';
 const send = (msg: Message) => browser.runtime.sendMessage(msg);
@@ -27,9 +26,9 @@ async function render(): Promise<void> {
   const hits = ((await send({ type: 'lookup-url', url: target })) ?? []) as FeedHit[];
   const rep = whatOfReport(hits);
   const lead = document.getElementById('lead')!;
-  lead.append(el(document, 'strong', undefined, host), ' ');
-  if (rep) lead.append(t('warnListedAs', rep.source) + ' ', el(document, 'strong', undefined, rep.what), '. ');
-  lead.append(t('warnPagesLike') + ' ', el(document, 'strong', undefined, t('warnSteals')), '.');
+  const strong = (s: string) => el(document, 'strong', undefined, s);
+  if (rep) lead.append(...tParts('warnLead', [strong(host), rep.source, strong(rep.what), strong(t('warnSteals'))]));
+  else lead.append(...tParts('warnLeadUnknown', [strong(host), strong(t('warnSteals'))]));
 
   const row = document.getElementById('reports')!;
   row.append(el(document, 'span', 'key', t('warnReportedBy')));
@@ -63,4 +62,8 @@ document.getElementById('continue')!.addEventListener('click', () => {
   );
 });
 
-void render();
+void (async () => {
+  await loadI18nOverride();
+  localizePage();
+  await render();
+})();

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../src/ui/page.css" />
     <style>
       .layout { display: flex; flex-wrap: wrap; min-height: 100vh; }
-      nav { flex: 0 0 260px; padding: 36px 28px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; }
+      nav { flex: 0 0 260px; padding: 36px 28px; border-inline-end: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; position: sticky; top: 0; height: 100vh; overflow-y: auto; align-self: flex-start; }
       nav .brand { margin-bottom: 28px; font-size: 17px; }
       nav .item { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-size: 15px; text-decoration: none; }
       nav .item:hover { color: var(--text); }
@@ -21,8 +21,9 @@
       section h2 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
       section .lead { margin: 6px 0 14px; color: var(--muted); }
       .rows > .row.setting { padding: 11px 0; }
-      .rows > .row .sub { padding-left: 22px; }
-      .rows > .row .switch { margin-left: 10px; }
+      .rows > .row .sub { padding-inline-start: 22px; }
+      .rows > .row .switch { margin-inline-start: 10px; }
+      .rows > .row.lang select { min-width: 200px; }
       .inline { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
       .textlink { background: none; border: none; padding: 0; color: var(--muted); font-size: 14px; text-decoration: underline; cursor: pointer; }
       .textlink:disabled { opacity: 0.5; cursor: default; }
@@ -32,16 +33,17 @@
       .notice strong { color: #FFFFFF; }
       textarea { width: 100%; min-height: 80px; resize: vertical; }
       table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
-      th, td { text-align: left; padding: 9px 8px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+      th, td { text-align: start; padding-block: 9px; padding-inline: 0 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
       th { color: var(--muted); font-weight: 600; font-size: 13px; }
       td.url { word-break: break-all; }
       .table-wrap { overflow-x: auto; }
-      .sources { margin: 8px 0 0; padding-left: 18px; color: var(--text2); }
+      .sources { margin: 8px 0 0; padding-inline-start: 18px; color: var(--text2); }
       #dbStatus { color: var(--text2); line-height: 1.7; }
       @media (max-width: 720px) {
-        nav { flex-basis: 100%; border-right: none; border-bottom: 1px solid var(--line); padding: 20px 16px; flex-direction: row; flex-wrap: wrap; }
+        nav { flex-basis: 100%; border-inline-end: none; border-bottom: 1px solid var(--line); padding: 20px 16px; flex-direction: row; flex-wrap: wrap; position: static; height: auto; }
         nav .brand { flex-basis: 100%; margin-bottom: 8px; }
         nav .grow, nav .foot { display: none; }
+        nav .support { margin: 8px 0 0; }
         main { padding: 24px 16px 48px; }
         th.opt, td.opt { display: none; }
       }
