@@ -177,19 +177,37 @@ async function handle(msg: Message, sender: Browser.runtime.MessageSender): Prom
   }
 }
 
+/** Downloads the database when there is none yet, for example right after install or after a failed first try. */
+async function ensureFeed(): Promise<void> {
+  const { settings } = await getEffective();
+  if (!settings.feedUpdates) return;
+  const { feedMeta, updateState } = (await browser.storage.local.get(['feedMeta', 'updateState'])) as {
+    feedMeta?: unknown;
+    updateState?: { lastAttempt?: string };
+  };
+  if (feedMeta) return;
+  const last = updateState?.lastAttempt ? Date.parse(updateState.lastAttempt) : 0;
+  if (Date.now() - last < 2 * 60_000) return;
+  await updateAll();
+}
+
+async function ensureAlarm(): Promise<void> {
+  const alarm = await browser.alarms.get(ALARM);
+  if (!alarm) await browser.alarms.create(ALARM, { periodInMinutes: FEED_REFRESH_MINUTES, delayInMinutes: 5 });
+}
+
 export default defineBackground(() => {
-  browser.runtime.onInstalled.addListener(async (details) => {
-    await browser.alarms.create(ALARM, { periodInMinutes: FEED_REFRESH_MINUTES, delayInMinutes: FEED_REFRESH_MINUTES });
+  // Each step stands alone, so a failing welcome tab cannot hold up the first download.
+  browser.runtime.onInstalled.addListener((details) => {
+    void ensureAlarm().catch(() => undefined);
     if (details.reason === 'install') {
-      await browser.tabs.create({ url: browser.runtime.getURL('/options.html') + '?welcome=1' });
+      void Promise.resolve(browser.tabs.create({ url: browser.runtime.getURL('/options.html') + '?welcome=1' })).catch(() => undefined);
     }
-    const { settings } = await getEffective();
-    if (settings.feedUpdates) await updateAll();
+    void ensureFeed().catch(() => undefined);
   });
 
-  browser.runtime.onStartup.addListener(async () => {
-    const alarm = await browser.alarms.get(ALARM);
-    if (!alarm) await browser.alarms.create(ALARM, { periodInMinutes: FEED_REFRESH_MINUTES, delayInMinutes: 1 });
+  browser.runtime.onStartup.addListener(() => {
+    void ensureAlarm().catch(() => undefined);
   });
 
   browser.alarms.onAlarm.addListener(async (alarm) => {
@@ -245,4 +263,6 @@ export default defineBackground(() => {
   });
 
   void getEffective();
+  void ensureAlarm().catch(() => undefined);
+  void ensureFeed().catch(() => undefined);
 });
